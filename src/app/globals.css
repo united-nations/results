@@ -1,0 +1,58 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@un-eosg/ui/theme.css";
+
+/* Product semantics refer to shared brand facts. Do not copy the palette. */
+:root {
+  --background: var(--color-un-white);
+  --foreground: var(--color-un-black);
+  --card: var(--background);
+  --card-foreground: var(--foreground);
+  --popover: var(--background);
+  --popover-foreground: var(--foreground);
+  --primary: var(--color-un-blue-shade);
+  --primary-foreground: var(--color-un-white);
+  --secondary: var(--color-un-blue-tint-50);
+  --secondary-foreground: var(--color-un-blue-text);
+  --muted: var(--color-neutral-surface);
+  --muted-foreground: var(--color-neutral-text);
+  --accent: var(--color-un-blue-tint-50);
+  --accent-foreground: var(--color-un-blue-text);
+  --destructive: var(--color-un-red-text);
+  --border: var(--color-neutral-border);
+  --input: var(--color-neutral-control);
+  --ring: var(--color-un-blue);
+  --radius: 0.5rem;
+}
+@theme inline {
+  --font-sans: var(--font-roboto), Roboto, Arial, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background font-sans text-foreground;
+  }
+}
+html {
+  scrollbar-gutter: stable;
+}
