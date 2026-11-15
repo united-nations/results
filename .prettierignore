@@ -9,3 +9,6 @@ public
 .cursor
 playwright-report
 test-results
+# Keep the OICT source files byte-for-byte and the generated snapshot compact.
+data/oict/
+data/ppb-2027.json
