@@ -2,18 +2,19 @@
 
 Python is optional. Use it when you want to clean or convert a spreadsheet before publishing it on your website. Node.js and pnpm run the website; [uv](https://docs.astral.sh/uv/getting-started/installation/) manages the separate Python environment and the dependencies in `pyproject.toml`. Python does not run automatically when you start or build the website.
 
-## Convert the included example
+## Convert a CSV
 
-Install uv, then run these commands from the repository root:
+Install uv, then create the example CSV below or use your own file. Run these
+commands from the repository root:
 
 ```bash
 uv sync
-uv run python python/data_prep.py
+uv run python python/data_prep.py data/example.csv
 ```
 
 The project requires Python 3.13 or newer; uv can download a compatible interpreter if needed. `uv sync` creates a local `.venv` and installs the locked Python dependencies, including pandas for CSV processing and ipykernel for optional notebooks. You do not need to activate `.venv` when using `uv run`.
 
-The input is `data/example.csv`:
+To try the example, save this as `data/example.csv`:
 
 ```csv
 name,value
@@ -85,9 +86,7 @@ export function DataExample() {
   return (
     <>
       <h1 className={typography.pageTitle}>Example data</h1>
-      <p className={`${typography.meta} mt-4`}>
-        Source: included demonstration CSV.
-      </p>
+      <p className={`${typography.meta} mt-4`}>Source: demonstration CSV.</p>
       {failed ? (
         <p role="alert">Could not load data. Please try again.</p>
       ) : rows ? (
@@ -111,8 +110,8 @@ Visit `/data-example`. This example expects the demonstrated columns and unique 
 ## Use your own CSV and publish updates
 
 1. Export your spreadsheet as CSV and put it in `data/`.
-2. Change `input_path` in `python/data_prep.py` to your filename. Adjust any transformations and the page's fields for your data.
-3. Run `uv run python python/data_prep.py` again after every source update. Starting the website does not regenerate JSON.
+2. Adjust any transformations and the page's fields for your data.
+3. Run `uv run python python/data_prep.py data/your-file.csv` after every source update. Starting the website does not regenerate JSON.
 4. Check `public/data/data.json` and your page in the browser. Review values, missing data and field types; document the source and update date.
 5. Run the website checks and `pnpm build` from the README.
 6. Commit the generated `public/data/data.json`, the page, and any script changes. Include the source CSV only if it is suitable to share. Push to publish using your hosting workflow.
@@ -124,6 +123,6 @@ The supplied Pages workflow builds the website from committed files; it does not
 | Problem                       | Try this                                                                                                                   |
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | `uv` is not recognised        | Finish uv installation and reopen your terminal.                                                                           |
-| CSV file not found            | Run from the repository root and check `input_path` against the actual filename.                                           |
+| CSV file not found            | Run from the repository root and check the path you passed to the script.                                                  |
 | JSON is unchanged             | Rerun the Python script, then inspect its output before rebuilding.                                                        |
 | The page reports a data error | Check that the generated file exists and its fields match the page; check the browser's network panel for the failing URL. |
