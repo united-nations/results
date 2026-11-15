@@ -2,8 +2,94 @@ import { test, expect } from "@playwright/test";
 test("public pages share navigation, branded footer and keyboard skip link", async ({
   page,
 }) => {
-  await page.goto("/about");
-  await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+  await page.goto("/");
+  await expect(
+    page.getByRole("heading", { level: 1, name: "UN Secretariat" }),
+  ).toBeVisible();
+  const directorySearch = page.getByRole("searchbox", {
+    name: "Search priority areas or entities",
+  });
+  await directorySearch.fill("economic commission for africa");
+  await expect(
+    page.getByRole("link", {
+      name: "ECA, Economic Commission for Africa",
+      exact: true,
+    }),
+  ).toHaveCount(2);
+  await expect(
+    page.getByRole("heading", { name: "Disarmament", exact: true }),
+  ).toHaveCount(0);
+  await directorySearch.fill("disarmament");
+  await expect(
+    page.getByRole("heading", { name: "Disarmament", exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: /ODA, Office for Disarmament Affairs/ }),
+  ).toBeVisible();
+  await directorySearch.fill("");
+  const header = page.getByRole("banner");
+  await expect(
+    header.getByRole("link", { name: "UN Secretariat", exact: true }),
+  ).toHaveAttribute("aria-current", "page");
+  await page
+    .getByRole("link", {
+      name: "OICT, Office of Information and Communications Technology",
+      exact: true,
+    })
+    .click();
+  await expect(
+    page.getByRole("heading", {
+      level: 1,
+      name: "Office of Information and Communications Technology",
+    }),
+  ).toBeVisible();
+  await page
+    .getByRole("navigation", { name: "Subprogrammes" })
+    .getByRole("link", { name: "SP 1", exact: true })
+    .click();
+  await expect(
+    page.getByRole("heading", { name: "Strategy and technology innovation" }),
+  ).toBeVisible();
+  for (const name of [
+    "Objective",
+    "Strategy",
+    "Programme performance in 2025",
+    "Planned results for 2027",
+  ]) {
+    await expect(
+      page.getByRole("heading", { name, exact: true }),
+    ).toBeVisible();
+  }
+  await expect(
+    page.getByRole("link", { name: "A/81/6 (Sect. 29C)", exact: true }),
+  ).toHaveAttribute("href", /documents\.un\.org/);
+  await page
+    .getByRole("navigation", { name: "Subprogrammes" })
+    .getByRole("link", { name: "SP 2", exact: true })
+    .click();
+  const result = page.getByRole("button", {
+    name: /More reliable and stable connectivity for delegates and staff/,
+  });
+  await result.click();
+  const sidecar = page.getByRole("dialog", {
+    name: /More reliable and stable connectivity for delegates and staff/,
+  });
+  await expect(
+    sidecar.getByRole("img", { name: /number of Wi-Fi incidents/i }),
+  ).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(sidecar).toHaveCount(0);
+  await expect(result).toBeFocused();
+  const systemLink = header.getByRole("link", {
+    name: "UN System",
+    exact: true,
+  });
+  await systemLink.click();
+  await expect(
+    page.getByRole("heading", { level: 1, name: "UN System" }),
+  ).toBeVisible();
+  await expect(systemLink).toHaveAttribute("aria-current", "page");
+  await page.reload();
   await expect(page.getByRole("banner")).toBeVisible();
   await expect(page.getByRole("contentinfo")).toBeVisible();
   await expect(
@@ -21,7 +107,7 @@ test("public pages share navigation, branded footer and keyboard skip link", asy
   ).toBeVisible();
   await page.getByRole("button", { name: "Open navigation menu" }).click();
   await expect(
-    page.getByRole("menuitem", { name: "About", exact: true }),
+    page.getByRole("menuitem", { name: "UN Secretariat", exact: true }),
   ).toBeVisible();
   expect(
     await page.evaluate(

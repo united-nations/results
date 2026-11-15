@@ -7,7 +7,7 @@ export default defineConfig({
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
   webServer: {
     command: "pnpm dev --hostname 127.0.0.1 --port 3100",
-    url: `${previewUrl}/about`,
+    url: previewUrl,
     reuseExistingServer: !process.env.CI,
   },
 });

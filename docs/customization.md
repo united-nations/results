@@ -2,18 +2,18 @@
 
 ## Find the right file
 
-| What you want to change                              | File                                                         |
-| ---------------------------------------------------- | ------------------------------------------------------------ |
-| Website name, description and navigation             | `src/lib/site-config.ts`                                     |
-| Homepage content, including the example UN80 palette | `src/app/page.tsx`                                           |
-| About text, sources and contact information          | `src/app/about/page.tsx`                                     |
-| Header options and account slot                      | `src/components/SiteHeader.tsx`                              |
-| Footer options                                       | `src/components/SiteFooter.tsx`                              |
-| Shared page width and spacing                        | `src/lib/site-config.ts` and `src/components/SiteChrome.tsx` |
-| Theme imports and colour-token mappings              | `src/app/globals.css`                                        |
-| Browser metadata and font loading                    | `src/app/layout.tsx`                                         |
+| What you want to change                  | File                                                         |
+| ---------------------------------------- | ------------------------------------------------------------ |
+| Website name, description and navigation | `src/lib/site-config.ts`                                     |
+| UN Secretariat homepage content          | `src/app/page.tsx`                                           |
+| UN System page content                   | `src/app/un-system/page.tsx`                                 |
+| Header options and account slot          | `src/components/SiteHeader.tsx`                              |
+| Footer options                           | `src/components/SiteFooter.tsx`                              |
+| Shared page width and spacing            | `src/lib/site-config.ts` and `src/components/SiteChrome.tsx` |
+| Theme imports and colour-token mappings  | `src/app/globals.css`                                        |
+| Browser metadata and font loading        | `src/app/layout.tsx`                                         |
 
-The `name` setting controls the header descriptor and default browser title. `description` supplies default page metadata and the About introduction. Replace other example text directly in the page files. Keep secrets in `.env.local` or your hosting service's secret settings.
+The `name` setting controls the header descriptor and default browser title. `description` supplies default page metadata. Replace other example text directly in the page files. Keep secrets in `.env.local` or your hosting service's secret settings.
 
 ## Add a page
 
@@ -33,8 +33,8 @@ export default function Resources() {
     <SiteShell>
       <h1 className={typography.pageTitle}>Resources</h1>
       <p className={`${typography.body} mt-4`}>Find out more about our work.</p>
-      <Link href="/about" className={buttonVariants({ className: "mt-6" })}>
-        About this website
+      <Link href="/un-system" className={buttonVariants({ className: "mt-6" })}>
+        UN System
       </Link>
     </SiteShell>
   );
@@ -53,7 +53,7 @@ Browse the [UI catalogue](https://un-eosg-analytics.github.io/ui/) before buildi
 
 Pages are Server Components by default. Interactive controls with event handlers such as `onClick` belong in a separate component whose first line is `"use client"`. Import that component into your page. Database access and secrets belong in server code, never in a client component.
 
-`globals.css` imports the shared theme. Use classes such as `bg-background`, `text-foreground`, `text-muted-foreground` and `text-un-blue-text`, and the typography styles in the example. The homepage lists UN80 colour tokens you can use elsewhere. Keep full class names in source files so Tailwind can discover them.
+`globals.css` imports the shared theme. Use classes such as `bg-background`, `text-foreground`, `text-muted-foreground` and `text-un-blue-text`, and the typography styles in the example. Keep full class names in source files so Tailwind can discover them.
 
 The UI library supplies header/footer logos and official footer text. Set shared-component options in the local header/footer wrappers. The header's `emblemPlacement="outboard"` places the emblem outside the content width on wide screens. Contribute reusable UI changes to the UI library; keep website-specific content in your application.
 
@@ -73,6 +73,6 @@ Only pass site-relative paths beginning with `/` to this helper. Leave external 
 
 ## Data and analytics
 
-[Prepare website data with Python](data-preparation.md) walks through CSV conversion and displaying the result. The website can also use JSON you prepare without Python. Put browser-readable data in `public/data/`, and explain its source, update date and limitations on the page or About page.
+[Prepare website data with Python](data-preparation.md) walks through CSV conversion and displaying the result. The website can also use JSON you prepare without Python. Put browser-readable data in `public/data/`, and explain its source, update date and limitations on the page.
 
 Analytics is off by default. For a local build, set both `NEXT_PUBLIC_ANALYTICS_SCRIPT_URL` and `NEXT_PUBLIC_ANALYTICS_WEBSITE_ID` in `.env.local`, then rebuild. For GitHub Pages, configure repository variables as described in [the publishing guide](github-pages.md#analytics-and-other-build-settings). On a Node.js host, supply them at build time. The integration supports Umami-compatible services; adapt `src/app/layout.tsx` for other providers.

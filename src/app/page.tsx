@@ -1,65 +1,61 @@
+import type { Metadata } from "next";
 import { typography } from "@un-eosg/ui/typography";
+import { PriorityDirectory } from "@/components/PriorityDirectory";
 import { SiteShell } from "@/components/SiteShell";
-import { siteConfig } from "@/lib/site-config";
+import { withBasePath } from "@/lib/paths";
+import {
+  type BudgetEntity,
+  budgetEdition,
+  budgetEntities,
+  budgetPriorities,
+  entityHref,
+  priorityYear,
+} from "@/lib/programme-budget";
 
-// Complete class names keep Tailwind's source scanner and shared theme in sync.
-const palette = [
-  { name: "UN Blue", className: "bg-un-blue", token: "un-blue" },
-  { name: "Faded Jade", className: "bg-faded-jade", token: "faded-jade" },
-  {
-    name: "Camouflage Green",
-    className: "bg-camouflage-green",
-    token: "camouflage-green",
-  },
-  {
-    name: "Pale Oyster",
-    className: "bg-un80-warm-gray",
-    token: "un80-warm-gray",
-  },
-  { name: "Au Chico", className: "bg-au-chico", token: "au-chico" },
-  { name: "Smoky", className: "bg-smoky", token: "smoky" },
-  { name: "Shuttle Gray", className: "bg-shuttle-gray", token: "shuttle-gray" },
-  { name: "Trout", className: "bg-trout", token: "trout" },
-  { name: "Dusty Gray", className: "bg-dusty-gray", token: "dusty-gray" },
+export const metadata: Metadata = { title: "UN Secretariat" };
+
+function directoryGroup(name: string, entities: BudgetEntity[]) {
+  return {
+    name,
+    entities: entities.map((entity) => ({
+      name: entity.name,
+      code: entity.code,
+      href: withBasePath(entityHref(entity.id)),
+    })),
+  };
+}
+
+const entities = budgetEntities.filter((entity) => entity.kind === "entity");
+const directory = [
+  ...budgetPriorities.map((priority) =>
+    directoryGroup(
+      priority,
+      entities.filter((entity) => entity.priorities.includes(priority)),
+    ),
+  ),
+  directoryGroup(
+    "Entities without a mapped priority",
+    entities.filter((entity) => !entity.priorities.length),
+  ),
+  directoryGroup(
+    "Other budget units",
+    budgetEntities.filter((entity) => entity.kind === "budget-unit"),
+  ),
 ];
 
-export default function Home() {
+export default function UNSecretariat() {
   return (
     <SiteShell>
-      <div className="max-w-2xl space-y-6">
-        <h1 className={typography.pageTitle}>UN {siteConfig.name}</h1>
-        <p className={typography.lead}>
-          A modern, responsive foundation for United Nations web applications.
-        </p>
-        <a
-          className="text-un-blue-text underline underline-offset-4"
-          href="https://github.com/united-nations/website-boilerplate"
-        >
-          View on GitHub
-        </a>
-      </div>
-      <section className="mt-12" aria-labelledby="palette-heading">
-        <h2 id="palette-heading" className={typography.sectionTitle}>
-          UN80 colours
-        </h2>
-        <p className={`${typography.meta} mt-2`}>
-          The boilerplate’s working palette, supplied by the shared UI theme.
-        </p>
-        <div className="mt-6 grid grid-cols-2 gap-6 sm:grid-cols-3">
-          {palette.map((colour) => (
-            <div key={colour.token}>
-              <div
-                className={`h-20 rounded-lg ${colour.className}`}
-                aria-hidden="true"
-              />
-              <p className={`${typography.body} mt-2 font-medium`}>
-                {colour.name}
-              </p>
-              <p className={typography.caption}>{colour.token}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <p className={typography.eyebrow}>
+        {budgetEdition} proposed programme budget
+      </p>
+      <h1 className={`${typography.pageTitle} mt-2`}>UN Secretariat</h1>
+      <p className={`${typography.prose} mt-4 max-w-2xl`}>
+        Explore what each entity plans to achieve and what it reported
+        achieving. Priority areas follow Open UN’s {priorityYear} financial
+        reporting.
+      </p>
+      <PriorityDirectory groups={directory} />
     </SiteShell>
   );
 }
