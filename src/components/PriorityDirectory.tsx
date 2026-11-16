@@ -1,17 +1,28 @@
 "use client";
 
-import { useState } from "react";
-import { ChevronRight } from "lucide-react";
-import { Chip } from "@un-eosg/ui/components/chip";
+import { useId, useState } from "react";
+import { ChevronRight, Minus, Plus } from "lucide-react";
+import { Button } from "@un-eosg/ui/components/button";
 import { SearchInput } from "@un-eosg/ui/components/search-input";
 import { typography } from "@un-eosg/ui/typography";
 
-type EntityGroup = {
+type DirectoryEntity = {
   name: string;
-  entities: { name: string; code: string | null; href: string }[];
+  code: string | null;
+  href: string;
+  description: string;
 };
 
-type PriorityGroup = EntityGroup & { clusters?: EntityGroup[] };
+type EntityGroup = {
+  name: string;
+  entities: DirectoryEntity[];
+};
+
+type PriorityGroup = EntityGroup & {
+  headline?: string;
+  officialName?: string;
+  clusters?: EntityGroup[];
+};
 
 const normalize = (value: string) =>
   value
@@ -19,25 +30,85 @@ const normalize = (value: string) =>
     .replace(/\p{Diacritic}/gu, "")
     .toLowerCase();
 
-function EntityPills({ entities }: { entities: EntityGroup["entities"] }) {
+function EntityRow({ entity }: { entity: DirectoryEntity }) {
+  const descriptionId = useId();
+  return (
+    <li>
+      <a
+        href={entity.href}
+        aria-label={
+          entity.code ? `${entity.code}, ${entity.name}` : entity.name
+        }
+        aria-describedby={descriptionId}
+        className="group/row flex items-center gap-3 px-3 py-2.5 hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset"
+      >
+        <span className="min-w-0 flex-1 space-y-1">
+          <span className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+            {entity.code && (
+              <span className="text-sm font-medium text-un-blue-text">
+                {entity.code}
+              </span>
+            )}
+            <span className={`${typography.meta} wrap-break-word`}>
+              {entity.name}
+            </span>
+          </span>
+          <span
+            id={descriptionId}
+            className={`${typography.body} block group-hover/row:text-un-blue-text`}
+          >
+            {entity.description}
+          </span>
+        </span>
+        <ChevronRight
+          aria-hidden
+          className="size-4 shrink-0 text-muted-foreground"
+        />
+      </a>
+    </li>
+  );
+}
+
+const entityPreviewLimit = 5;
+
+function EntityList({ entities }: { entities: DirectoryEntity[] }) {
+  const [showAll, setShowAll] = useState(false);
+  const remainingId = useId();
   if (!entities.length) return null;
 
+  const remaining = entities.slice(entityPreviewLimit);
   return (
-    <ul className="mt-3 flex flex-wrap gap-2">
-      {entities.map((entity) => (
-        <li key={entity.href} className="max-w-full">
-          <Chip
-            href={entity.href}
-            aria-label={
-              entity.code ? `${entity.code}, ${entity.name}` : entity.name
-            }
-            title={entity.name}
+    <>
+      <ul role="list" className="divide-y divide-border">
+        {entities.slice(0, entityPreviewLimit).map((entity) => (
+          <EntityRow key={entity.href} entity={entity} />
+        ))}
+      </ul>
+      {remaining.length > 0 && (
+        <>
+          <Button
+            type="button"
+            variant="link"
+            size="sm"
+            aria-expanded={showAll}
+            aria-controls={remainingId}
+            onClick={() => setShowAll(!showAll)}
           >
-            {entity.code ?? entity.name}
-          </Chip>
-        </li>
-      ))}
-    </ul>
+            {showAll ? "Show fewer" : `Show ${remaining.length} more`}
+          </Button>
+          <ul
+            id={remainingId}
+            role="list"
+            className="divide-y divide-border"
+            hidden={!showAll}
+          >
+            {remaining.map((entity) => (
+              <EntityRow key={entity.href} entity={entity} />
+            ))}
+          </ul>
+        </>
+      )}
+    </>
   );
 }
 
@@ -47,25 +118,30 @@ export function PriorityDirectory({ groups }: { groups: PriorityGroup[] }) {
   const searching = terms.length > 0;
   function filterEntities({ name, entities }: EntityGroup) {
     return entities.filter((entity) => {
-      const text = normalize(`${name} ${entity.name} ${entity.code ?? ""}`);
+      const text = normalize(
+        `${name} ${entity.name} ${entity.code ?? ""} ${entity.description}`,
+      );
       return terms.every((term) => text.includes(term));
     });
   }
 
   const visible = groups
-    .map((group) => ({
-      ...group,
-      entities: filterEntities(group),
-      clusters: group.clusters
-        ?.map((cluster) => ({
-          ...cluster,
-          entities: filterEntities({
+    .map((group) => {
+      const labels = [group.name, group.headline, group.officialName].join(" ");
+      return {
+        ...group,
+        entities: filterEntities({ ...group, name: labels }),
+        clusters: group.clusters
+          ?.map((cluster) => ({
             ...cluster,
-            name: `${group.name} ${cluster.name}`,
-          }),
-        }))
-        .filter((cluster) => cluster.entities.length > 0),
-    }))
+            entities: filterEntities({
+              ...cluster,
+              name: `${labels} ${cluster.name}`,
+            }),
+          }))
+          .filter((cluster) => cluster.entities.length > 0),
+      };
+    })
     .filter((group) => group.entities.length > 0 || group.clusters?.length);
 
   return (
@@ -85,30 +161,54 @@ export function PriorityDirectory({ groups }: { groups: PriorityGroup[] }) {
         {visible.length} matching groups
       </p>
       {visible.length > 0 ? (
-        <div className="mt-7 sm:columns-2 sm:gap-8">
+        <div className="mt-6 space-y-1.5">
           {visible.map((group) => (
-            <section
-              key={group.name}
-              className="mb-6 inline-block w-full break-inside-avoid border-t pt-4 align-top"
-            >
-              <h2 className={typography.sectionTitle}>{group.name}</h2>
-              <EntityPills entities={group.entities} />
-              {group.clusters?.map((cluster) => (
-                <details
-                  key={`${cluster.name}-${searching ? query : ""}`}
-                  open={searching}
-                  className="group mt-3 border-t pt-3"
-                >
-                  <summary className="flex cursor-pointer items-center gap-2">
-                    <ChevronRight
-                      className="size-4 shrink-0 group-open:rotate-90"
-                      aria-hidden
-                    />
-                    <h3 className={typography.subTitle}>{cluster.name}</h3>
-                  </summary>
-                  <EntityPills entities={cluster.entities} />
-                </details>
-              ))}
+            <section key={group.name}>
+              <details
+                key={searching ? query : ""}
+                open={searching}
+                className="group/priority"
+              >
+                <summary className="flex cursor-pointer items-center justify-between gap-3 bg-un-blue-surface px-3 py-2 transition-colors group-open/priority:bg-accent hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset">
+                  <h2 className="text-base font-medium group-open/priority:text-un-blue-text-aaa">
+                    {group.headline ?? group.name}
+                  </h2>
+                  <Plus
+                    className="size-4 shrink-0 text-un-blue-text-aaa group-open/priority:hidden"
+                    aria-hidden
+                  />
+                  <Minus
+                    className="hidden size-4 shrink-0 text-un-blue-text-aaa group-open/priority:block"
+                    aria-hidden
+                  />
+                </summary>
+                {group.officialName && (
+                  <p className={`${typography.meta} px-3 pt-2 pb-1`}>
+                    {group.officialName}
+                  </p>
+                )}
+                <EntityList entities={group.entities} />
+                {group.clusters?.map((cluster) => (
+                  <details
+                    key={cluster.name}
+                    open={searching}
+                    className="group/cluster mt-1"
+                  >
+                    <summary className="flex cursor-pointer items-center justify-between gap-3 bg-un-blue-surface py-1.5 ps-5 pe-3 transition-colors group-open/cluster:bg-accent hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset">
+                      <h3 className="text-sm font-medium">{cluster.name}</h3>
+                      <Plus
+                        className="size-4 shrink-0 text-un-blue-text-aaa group-open/cluster:hidden"
+                        aria-hidden
+                      />
+                      <Minus
+                        className="hidden size-4 shrink-0 text-un-blue-text-aaa group-open/cluster:block"
+                        aria-hidden
+                      />
+                    </summary>
+                    <EntityList entities={cluster.entities} />
+                  </details>
+                ))}
+              </details>
             </section>
           ))}
         </div>

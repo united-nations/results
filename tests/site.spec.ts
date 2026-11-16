@@ -4,15 +4,60 @@ test("Peace and Security clusters are collapsed and searchable", async ({
   page,
 }) => {
   await page.goto("/");
-  const priority = page.locator("section").filter({
-    has: page.getByRole("heading", {
-      name: "Maintenance of international peace and security",
-      exact: true,
-    }),
+  const priorityHeading = page.getByRole("heading", {
+    name: "Fostering peace and security",
+    exact: true,
   });
-  await expect(priority.locator("details")).toHaveCount(3);
-  await expect(priority.locator("details[open]")).toHaveCount(0);
-  await expect(priority.getByRole("link", { name: /^DPO,/ })).toBeVisible();
+  const priority = page.locator("section").filter({
+    has: priorityHeading,
+  });
+  await expect(page.locator("main details[open]")).toHaveCount(0);
+  const officialName = priority.getByText(
+    "Maintenance of international peace and security",
+    { exact: true },
+  );
+  await expect(officialName).toBeHidden();
+  await expect(priority.getByRole("link", { name: /^DPO,/ })).toBeHidden();
+  await priorityHeading.click();
+  await expect(officialName).toBeVisible();
+  await expect(priority.locator("details details")).toHaveCount(4);
+  await expect(priority.locator("details details[open]")).toHaveCount(0);
+  await expect(priority.getByRole("link")).toHaveCount(5);
+  for (const code of ["DPPA", "DPO", "OOSA", "UNAOC"]) {
+    await expect(
+      priority.getByRole("link", { name: new RegExp(`^${code},`) }),
+    ).toBeVisible();
+  }
+
+  const more = priority.getByRole("button", { name: "Show 4 more" });
+  await expect(more).toHaveAttribute("aria-expanded", "false");
+  await more.click();
+  await expect(priority.getByRole("link")).toHaveCount(9);
+  for (const code of ["UNOAU", "UNRoD", "UNSCO", "UNMOGIP", "UNTSO"]) {
+    await expect(
+      priority.getByRole("link", { name: new RegExp(`^${code},`) }),
+    ).toBeVisible();
+  }
+  const fewer = priority.getByRole("button", { name: "Show fewer" });
+  await expect(fewer).toHaveAttribute("aria-expanded", "true");
+  await fewer.click();
+  await expect(priority.getByRole("link")).toHaveCount(5);
+
+  const protectionHeading = page.getByRole("heading", {
+    name: "Special representatives and coordinators for protection",
+    exact: true,
+  });
+  const protection = priority
+    .locator("details details")
+    .filter({ has: protectionHeading });
+  await protectionHeading.click();
+  await expect(protection.getByRole("link")).toHaveCount(4);
+  for (const code of ["OSC-SEA", "OSRSG-CAAC", "OSRSG-SVC", "OSRSG-VAC"]) {
+    await expect(
+      protection.getByRole("link", { name: new RegExp(`^${code},`) }),
+    ).toBeVisible();
+  }
+  await protectionHeading.click();
 
   const envoys = priority.getByText("Envoys, advisers and representatives");
   const cyprus = priority.getByRole("link", { name: /^GOM-Cyprus,/ });
@@ -25,11 +70,21 @@ test("Peace and Security clusters are collapsed and searchable", async ({
   const search = page.getByRole("searchbox", {
     name: "Search priority areas or entities",
   });
-  await search.fill("GOM-Cyprus");
+  await search.fill("build trust and pursue a negotiated settlement");
   await expect(cyprus).toBeVisible();
-  await expect(priority.locator("details")).toHaveCount(1);
+  await expect(cyprus).toHaveAccessibleDescription(/build trust/);
+  await expect(priority.locator("details details[open]")).toHaveCount(1);
   await search.clear();
   await expect(priority.locator("details[open]")).toHaveCount(0);
+  await priorityHeading.click();
+  await envoys.click();
+  await cyprus.click();
+  await expect(
+    page.getByText(/build trust and pursue a negotiated settlement/),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: /III\.1, Strategy and external factors/ }),
+  ).toHaveAttribute("href", /documents\.un\.org/);
 });
 
 test("public pages share navigation, branded footer and keyboard skip link", async ({
@@ -37,11 +92,43 @@ test("public pages share navigation, branded footer and keyboard skip link", asy
 }) => {
   await page.goto("/");
   await expect(
-    page.getByRole("heading", { level: 1, name: "UN Secretariat" }),
+    page.getByRole("heading", { level: 1, name: "UN Secretariat Results" }),
   ).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: "2027 proposed programme budget" }),
+  ).toHaveAttribute("href", "https://www.un.org/en/ga/fifth/81/ppb2027.shtml");
   const directorySearch = page.getByRole("searchbox", {
     name: "Search priority areas or entities",
   });
+  await expect(
+    page.locator("main section > details > summary > h2"),
+  ).toHaveText([
+    "Forging pathways for sustainable development",
+    "Fostering peace and security",
+    "Propelling African growth",
+    "Upholding human rights",
+    "Securing humanitarian assistance",
+    "Advancing justice and international law",
+    "Championing disarmament",
+    "Combating drugs, crime and terrorism",
+    "Enhancing our operations",
+    "Other",
+  ]);
+  const otherHeading = page.getByRole("heading", {
+    name: "Other",
+    exact: true,
+  });
+  const other = page.locator("section").filter({ has: otherHeading });
+  await otherHeading.click();
+  await expect(other.getByRole("link")).toHaveCount(4);
+  await expect(other.getByRole("link", { name: /^IIMA,/ })).toBeVisible();
+  await expect(
+    other.getByRole("link", {
+      name: "Sectoral advisory services",
+      exact: true,
+    }),
+  ).toBeVisible();
+  await otherHeading.click();
   await directorySearch.fill("economic commission for africa");
   await expect(
     page.getByRole("link", {
@@ -50,20 +137,26 @@ test("public pages share navigation, branded footer and keyboard skip link", asy
     }),
   ).toHaveCount(1);
   await expect(
-    page.getByRole("heading", { name: "Development of Africa", exact: true }),
+    page.getByRole("heading", {
+      name: "Propelling African growth",
+      exact: true,
+    }),
+  ).toBeVisible();
+  await expect(
+    page.getByText("Development in Africa", { exact: true }),
   ).toBeVisible();
   await expect(
     page.getByRole("heading", {
-      name: "Promotion of sustained economic growth and sustainable development",
+      name: "Forging pathways for sustainable development",
       exact: true,
     }),
   ).toHaveCount(0);
   await expect(
-    page.getByRole("heading", { name: "Disarmament", exact: true }),
+    page.getByRole("heading", { name: "Championing disarmament", exact: true }),
   ).toHaveCount(0);
-  await directorySearch.fill("disarmament");
+  await directorySearch.fill("non-proliferation");
   await expect(
-    page.getByRole("heading", { name: "Disarmament", exact: true }),
+    page.getByRole("heading", { name: "Championing disarmament", exact: true }),
   ).toBeVisible();
   await expect(
     page.getByRole("link", { name: /ODA, Office for Disarmament Affairs/ }),
@@ -73,6 +166,16 @@ test("public pages share navigation, branded footer and keyboard skip link", asy
   await expect(
     header.getByRole("link", { name: "UN Secretariat", exact: true }),
   ).toHaveAttribute("aria-current", "page");
+  const effectiveFunctioning = page.getByRole("heading", {
+    name: "Enhancing our operations",
+    exact: true,
+  });
+  await effectiveFunctioning.click();
+  await page
+    .locator("section")
+    .filter({ has: effectiveFunctioning })
+    .getByRole("button", { name: "Show 13 more" })
+    .click();
   await page
     .getByRole("link", {
       name: "OICT, Office of Information and Communications Technology",

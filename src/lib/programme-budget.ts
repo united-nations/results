@@ -48,9 +48,7 @@ export type BudgetEntity = {
 };
 
 export const budgetEdition = snapshot.edition;
-export const priorityYear = snapshot.priorityYear;
 export const budgetEntities: BudgetEntity[] = snapshot.entities;
-export const budgetPriorities = snapshot.priorities;
 
 const entitiesById = new Map(
   budgetEntities.map((entity) => [entity.id, entity]),
