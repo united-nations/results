@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { ArrowLeft, ChevronRight } from "lucide-react";
+import { ExternalLink } from "@un-eosg/ui/components/external-link";
 import { SecondaryHeader } from "@un-eosg/ui/components/secondary-header";
 import { typography } from "@un-eosg/ui/typography";
 import { BudgetMeasures, BudgetProse } from "@/components/BudgetNarrative";
@@ -61,14 +62,14 @@ function ResultsList({
                       percent={percent}
                     />
                   ))}
-                  <a
+                  <ExternalLink
                     className={`${typography.caption} inline-block text-un-blue-text underline underline-offset-4`}
                     href={figure.source ?? source}
                   >
                     {figure.label
                       ? `View ${figure.label.toLowerCase()} in the budget document`
                       : "View figure in the budget document"}
-                  </a>
+                  </ExternalLink>
                 </section>
               );
             })}
@@ -117,12 +118,12 @@ function ContentSections({
           <ResultsList results={content.planned} source={content.source} />
         </div>
       )}
-      <a
+      <ExternalLink
         href={content.source}
         className={`${typography.meta} inline-block text-un-blue-text underline underline-offset-4`}
       >
         {content.symbol}
-      </a>
+      </ExternalLink>
     </section>
   );
 }
@@ -151,39 +152,29 @@ export function BudgetEntityPage({
     <SiteShell>
       <Link
         href="/"
-        className={`${typography.meta} text-un-blue-text underline underline-offset-4`}
+        className="inline-flex items-center gap-1.5 text-sm text-un-blue-text underline-offset-4 hover:underline"
       >
+        <ArrowLeft aria-hidden className="size-4 shrink-0" />
         All priority areas
       </Link>
-      <p className={`${typography.eyebrow} mt-6`}>
-        {[entity.code, `${budgetEdition} proposed programme budget`]
-          .filter(Boolean)
-          .join(" · ")}
-      </p>
-      <h1 className={`${typography.pageTitle} mt-2 max-w-4xl`}>
+      <h1 className={`${typography.pageTitle} mt-5 max-w-4xl`}>
         {entity.name}
       </h1>
       {!selected && (
         <div className="mt-4 max-w-3xl space-y-1">
           <p className={typography.prose}>{description.text}</p>
-          <a
+          <ExternalLink
             href={description.source.href}
             className={`${typography.meta} text-un-blue-text underline underline-offset-4`}
           >
             {description.source.label}
-          </a>
+          </ExternalLink>
         </div>
       )}
-      {entity.priorities.length > 0 && (
-        <p className={`${typography.meta} mt-3`}>
-          {entity.priorities.join(" · ")}
-        </p>
-      )}
-
       {tabs.length > 0 && (
         <SecondaryHeader
           label="Subprogrammes"
-          className="mt-6"
+          className="top-[var(--site-header-height,49px)] mt-6 min-[1408px]:top-[var(--site-header-height,49px)]"
           containerClassName="px-0"
           items={[{ href: path, label: "Overview" }, ...tabs]}
           activeHref={selected ? entityHref(entity.id, selected.id) : path}

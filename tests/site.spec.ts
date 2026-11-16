@@ -1,5 +1,31 @@
 import { test, expect } from "@playwright/test";
 
+test("sticky subprogramme navigation meets the site header", async ({
+  page,
+}) => {
+  await page.goto("/entities/desa/9-sp-1/");
+  await expect(
+    page.getByRole("link", { name: "All priority areas" }),
+  ).toHaveAttribute("href", "/");
+  const navigation = page.getByRole("navigation", { name: "Subprogrammes" });
+
+  for (const width of [820, 1600, 390]) {
+    await page.setViewportSize({ width, height: 720 });
+    await page.evaluate(() => window.scrollTo(0, 700));
+    await expect
+      .poll(() =>
+        navigation.evaluate((nav) => {
+          const header = document.querySelector("header")!;
+          return Math.abs(
+            nav.getBoundingClientRect().top -
+              header.getBoundingClientRect().bottom,
+          );
+        }),
+      )
+      .toBeLessThan(1);
+  }
+});
+
 test("Peace and Security clusters are collapsed and searchable", async ({
   page,
 }) => {
@@ -82,9 +108,11 @@ test("Peace and Security clusters are collapsed and searchable", async ({
   await expect(
     page.getByText(/build trust and pursue a negotiated settlement/),
   ).toBeVisible();
-  await expect(
-    page.getByRole("link", { name: /III\.1, Strategy and external factors/ }),
-  ).toHaveAttribute("href", /documents\.un\.org/);
+  const citation = page.getByRole("link", {
+    name: /III\.1, Strategy and external factors/,
+  });
+  await expect(citation).toHaveAttribute("href", /documents\.un\.org/);
+  await expect(citation).toHaveAttribute("target", "_blank");
 });
 
 test("public pages share navigation, branded footer and keyboard skip link", async ({
@@ -94,9 +122,14 @@ test("public pages share navigation, branded footer and keyboard skip link", asy
   await expect(
     page.getByRole("heading", { level: 1, name: "UN Secretariat Results" }),
   ).toBeVisible();
-  await expect(
-    page.getByRole("link", { name: "2027 proposed programme budget" }),
-  ).toHaveAttribute("href", "https://www.un.org/en/ga/fifth/81/ppb2027.shtml");
+  const budgetSource = page.getByRole("link", {
+    name: "2027 proposed programme budget",
+  });
+  await expect(budgetSource).toHaveAttribute(
+    "href",
+    "https://www.un.org/en/ga/fifth/81/ppb2027.shtml",
+  );
+  await expect(budgetSource).toHaveAttribute("target", "_blank");
   const directorySearch = page.getByRole("searchbox", {
     name: "Search priority areas or entities",
   });
@@ -205,9 +238,11 @@ test("public pages share navigation, branded footer and keyboard skip link", asy
       page.getByRole("heading", { name, exact: true }),
     ).toBeVisible();
   }
-  await expect(
-    page.getByRole("link", { name: "A/81/6 (Sect. 29C)", exact: true }),
-  ).toHaveAttribute("href", /documents\.un\.org/);
+  const budgetReference = page.getByRole("link", {
+    name: /^A\/81\/6 \(Sect\. 29C\)/,
+  });
+  await expect(budgetReference).toHaveAttribute("href", /documents\.un\.org/);
+  await expect(budgetReference).toHaveAttribute("target", "_blank");
   await page
     .getByRole("navigation", { name: "Subprogrammes" })
     .getByRole("link", { name: "SP 2", exact: true })
@@ -222,6 +257,14 @@ test("public pages share navigation, branded footer and keyboard skip link", asy
   await expect(
     sidecar.getByRole("img", { name: /number of Wi-Fi incidents/i }),
   ).toBeVisible();
+  await expect(
+    sidecar.getByRole("link", { name: /^View budget document/ }),
+  ).toHaveAttribute("target", "_blank");
+  await expect(
+    sidecar
+      .getByRole("link", { name: /^View figure.*in the budget document/ })
+      .first(),
+  ).toHaveAttribute("target", "_blank");
   await page.keyboard.press("Escape");
   await expect(sidecar).toHaveCount(0);
   await expect(result).toBeFocused();

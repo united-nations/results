@@ -5,6 +5,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { ChevronRight, X } from "lucide-react";
 import { DetailPanel } from "@un-eosg/ui/components/detail-panel";
 import { DetailPanelControls } from "@un-eosg/ui/components/detail-panel-controls";
+import { ExternalLink } from "@un-eosg/ui/components/external-link";
 import { typography } from "@un-eosg/ui/typography";
 
 export function ResultSidecar({
@@ -54,12 +55,12 @@ export function ResultSidecar({
               </Dialog.Title>
             }
             headerMetadata={
-              <a
+              <ExternalLink
                 href={source}
                 className={`${typography.meta} text-un-blue-text underline underline-offset-4`}
               >
                 View budget document
-              </a>
+              </ExternalLink>
             }
             controls={
               <DetailPanelControls

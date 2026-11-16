@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ExternalLink } from "@un-eosg/ui/components/external-link";
 import { typography } from "@un-eosg/ui/typography";
 import { PriorityDirectory } from "@/components/PriorityDirectory";
 import { SiteShell } from "@/components/SiteShell";
@@ -128,12 +129,12 @@ export default function UNSecretariat() {
       <p className={`${typography.prose} mt-4 max-w-2xl`}>
         Explore what each entity plans to achieve and what it reported
         achieving. The results come from the{" "}
-        <a
+        <ExternalLink
           href="https://www.un.org/en/ga/fifth/81/ppb2027.shtml"
           className="text-un-blue-text underline underline-offset-4"
         >
           {budgetEdition} proposed programme budget
-        </a>
+        </ExternalLink>
         .
       </p>
       <PriorityDirectory groups={directory} />
