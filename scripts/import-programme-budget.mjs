@@ -422,6 +422,12 @@ function getEntity(identity) {
       (amounts.get(cell.priority_area) ?? 0) + cell.amount,
     );
   }
+  const mappedPriorities = priorities.filter(
+    (priority) => (amounts.get(priority) ?? 0) > 0,
+  );
+  const mainPriority =
+    mappedPriorities.toSorted((a, b) => amounts.get(b) - amounts.get(a))[0] ??
+    null;
   const item = {
     id,
     code: code ?? null,
@@ -432,9 +438,8 @@ function getEntity(identity) {
     ].includes(name)
       ? "budget-unit"
       : "entity",
-    priorities: priorities.filter(
-      (priority) => (amounts.get(priority) ?? 0) > 0,
-    ),
+    priorities: mappedPriorities,
+    mainPriority,
     overview: [],
     subprogrammes: new Map(),
   };

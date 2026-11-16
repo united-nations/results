@@ -48,7 +48,16 @@ test("public pages share navigation, branded footer and keyboard skip link", asy
       name: "ECA, Economic Commission for Africa",
       exact: true,
     }),
-  ).toHaveCount(2);
+  ).toHaveCount(1);
+  await expect(
+    page.getByRole("heading", { name: "Development of Africa", exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", {
+      name: "Promotion of sustained economic growth and sustainable development",
+      exact: true,
+    }),
+  ).toHaveCount(0);
   await expect(
     page.getByRole("heading", { name: "Disarmament", exact: true }),
   ).toHaveCount(0);

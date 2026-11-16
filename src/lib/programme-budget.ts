@@ -42,6 +42,7 @@ export type BudgetEntity = {
   name: string;
   kind: string;
   priorities: string[];
+  mainPriority: string | null;
   overview: BudgetContent[];
   subprogrammes: BudgetSubprogramme[];
 };

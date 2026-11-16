@@ -20,8 +20,9 @@ settings, copy `.env.example` to `.env.local`.
 ## Refresh the data
 
 The site builds from `data/ppb-2027.json`. Page content comes from the 2027
-proposed programme budget exports. The priority directory uses Open UN's 2025
-financial classifications, so an entity can appear under several priorities.
+proposed programme budget exports. The directory lists each entity under its
+largest spending priority in Open UN's 2025 financial reporting, summed across
+funding sources.
 
 With the Programme Budget Data and Open UN checkouts alongside this one and
 Python 3 available, run:

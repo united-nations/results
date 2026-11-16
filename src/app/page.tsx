@@ -55,12 +55,12 @@ const directory = [
   ...budgetPriorities.map((priority) =>
     directoryGroup(
       priority,
-      entities.filter((entity) => entity.priorities.includes(priority)),
+      entities.filter((entity) => entity.mainPriority === priority),
     ),
   ),
   directoryGroup(
     "Entities without a mapped priority",
-    entities.filter((entity) => !entity.priorities.length),
+    entities.filter((entity) => entity.mainPriority === null),
   ),
   directoryGroup(
     "Other budget units",
@@ -77,8 +77,8 @@ export default function UNSecretariat() {
       <h1 className={`${typography.pageTitle} mt-2`}>UN Secretariat</h1>
       <p className={`${typography.prose} mt-4 max-w-2xl`}>
         Explore what each entity plans to achieve and what it reported
-        achieving. Priority areas follow Open UN’s {priorityYear} financial
-        reporting.
+        achieving. Each entity appears under its largest spending priority in
+        Open UN’s {priorityYear} financial reporting.
       </p>
       <PriorityDirectory groups={directory} />
     </SiteShell>

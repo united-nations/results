@@ -51,3 +51,20 @@ test("renamed and historical finance entities keep their priority", () => {
     ]);
   }
 });
+
+test("entities with several priorities have one main spending priority", () => {
+  const mainPriority = (id) =>
+    entities.find((entity) => entity.id === id).mainPriority;
+  assert.equal(mainPriority("eca"), "Development of Africa");
+  assert.equal(
+    mainPriority("dgc"),
+    "Effective functioning of the organization",
+  );
+  for (const entity of entities) {
+    if (entity.priorities.length) {
+      assert.ok(entity.priorities.includes(entity.mainPriority), entity.id);
+    } else {
+      assert.equal(entity.mainPriority, null, entity.id);
+    }
+  }
+});
