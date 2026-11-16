@@ -1,10 +1,9 @@
 ![WIP](https://img.shields.io/badge/status-WIP-yellow)
 
-# UN Programme Budget Results
+# UN Results
 
-Explore the entities and subprogrammes in the proposed UN programme budget.
-The Secretariat directory groups entities by priority area and links to their
-objectives, strategies, past performance and planned results.
+- __UN Secretariat:__ Explore the entities and subprogrammes in the proposed UN programme budget. The Secretariat directory groups entities by priority area and links to their objectives, strategies, past performance and planned results.
+- __UN System:__ TBD.
 
 ## Run locally
 
