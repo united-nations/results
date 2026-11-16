@@ -1,4 +1,37 @@
 import { test, expect } from "@playwright/test";
+
+test("Peace and Security clusters are collapsed and searchable", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const priority = page.locator("section").filter({
+    has: page.getByRole("heading", {
+      name: "Maintenance of international peace and security",
+      exact: true,
+    }),
+  });
+  await expect(priority.locator("details")).toHaveCount(3);
+  await expect(priority.locator("details[open]")).toHaveCount(0);
+  await expect(priority.getByRole("link", { name: /^DPO,/ })).toBeVisible();
+
+  const envoys = priority.getByText("Envoys, advisers and representatives");
+  const cyprus = priority.getByRole("link", { name: /^GOM-Cyprus,/ });
+  await expect(cyprus).toBeHidden();
+  await envoys.click();
+  await expect(cyprus).toBeVisible();
+  await envoys.click();
+  await expect(cyprus).toBeHidden();
+
+  const search = page.getByRole("searchbox", {
+    name: "Search priority areas or entities",
+  });
+  await search.fill("GOM-Cyprus");
+  await expect(cyprus).toBeVisible();
+  await expect(priority.locator("details")).toHaveCount(1);
+  await search.clear();
+  await expect(priority.locator("details[open]")).toHaveCount(0);
+});
+
 test("public pages share navigation, branded footer and keyboard skip link", async ({
   page,
 }) => {

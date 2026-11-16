@@ -2,8 +2,8 @@
 
 # UN Results
 
-- __UN Secretariat:__ Explore the entities and subprogrammes in the proposed UN programme budget. The Secretariat directory groups entities by priority area and links to their objectives, strategies, past performance and planned results.
-- __UN System:__ TBD.
+- **UN Secretariat:** Explore the entities and subprogrammes in the proposed UN programme budget. The Secretariat directory groups entities by priority area and links to their objectives, strategies, past performance and planned results.
+- **UN System:** TBD.
 
 ## Run locally
 

@@ -14,13 +14,38 @@ import {
 
 export const metadata: Metadata = { title: "UN Secretariat" };
 
+const peaceAndSecurity = "Maintenance of international peace and security";
+const politicalMissionClusters = new Map([
+  ["A/81/6 (Sect. 3)/Add.2", "Envoys, advisers and representatives"],
+  ["A/81/6 (Sect. 3)/Add.3", "Sanctions monitoring and other mechanisms"],
+  ["A/81/6 (Sect. 3)/Add.4", "Regional offices and political missions"],
+]);
+
+function directoryEntity(entity: BudgetEntity) {
+  return {
+    name: entity.name,
+    code: entity.code,
+    href: withBasePath(entityHref(entity.id)),
+  };
+}
+
 function directoryGroup(name: string, entities: BudgetEntity[]) {
+  if (name !== peaceAndSecurity) {
+    return { name, entities: entities.map(directoryEntity) };
+  }
+
+  const byCluster = Map.groupBy(entities, (entity) => {
+    const symbol =
+      entity.overview[0]?.symbol ??
+      entity.subprogrammes[0]?.sections[0]?.symbol;
+    return symbol ? politicalMissionClusters.get(symbol) : undefined;
+  });
   return {
     name,
-    entities: entities.map((entity) => ({
-      name: entity.name,
-      code: entity.code,
-      href: withBasePath(entityHref(entity.id)),
+    entities: (byCluster.get(undefined) ?? []).map(directoryEntity),
+    clusters: [...politicalMissionClusters.values()].map((name) => ({
+      name,
+      entities: (byCluster.get(name) ?? []).map(directoryEntity),
     })),
   };
 }
