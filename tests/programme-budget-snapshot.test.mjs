@@ -6,6 +6,32 @@ const { entities } = JSON.parse(
   readFileSync(new URL("../data/ppb-2027.json", import.meta.url), "utf8"),
 );
 
+test("each directory entry has a description with its own budget citation", () => {
+  const descriptions = JSON.parse(
+    readFileSync(
+      new URL("../data/entity-descriptions-2027.json", import.meta.url),
+      "utf8",
+    ),
+  );
+  assert.deepEqual(
+    Object.keys(descriptions).sort(),
+    entities.map(({ id }) => id).sort(),
+  );
+  for (const { id, overview, subprogrammes } of entities) {
+    const { text, symbol, locator } = descriptions[id];
+    assert.match(text, /\.$/, id);
+    assert.ok(locator.trim(), id);
+    const content = [
+      ...overview,
+      ...subprogrammes.flatMap(({ sections }) => sections),
+    ];
+    assert.ok(
+      content.some((section) => section.symbol === symbol),
+      id,
+    );
+  }
+});
+
 function findFigure(id, label) {
   const entity = entities.find((item) => item.id === id);
   const sections = [

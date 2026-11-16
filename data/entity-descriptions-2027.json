@@ -1,0 +1,505 @@
+{
+  "asm-aqmt": {
+    "text": "Helps two Security Council committees monitor sanctions against listed individuals and entities linked to ISIL (Da’esh), Al-Qaida or the Taliban.",
+    "symbol": "A/81/6 (Sect. 3)/Add.3",
+    "locator": "para. 135"
+  },
+  "binuh": {
+    "text": "Supports Haiti’s political process and helps Haitian authorities strengthen accountability, human rights and the rule of law.",
+    "symbol": "A/81/6 (Sect. 3)/Add.4",
+    "locator": "II.8, Mandates and background"
+  },
+  "ceb": {
+    "text": "Brings together the Secretary-General and the heads of UN system organizations to coordinate their policies, programmes and activities.",
+    "symbol": "A/81/6 (Sect. 31)",
+    "locator": "para. 31.III.1"
+  },
+  "cnmc": {
+    "text": "Supports the Cameroon–Nigeria Mixed Commission in implementing the International Court of Justice’s ruling on their shared boundary.",
+    "symbol": "A/81/6 (Sect. 3)/Add.4",
+    "locator": "II.3, Mandates and background"
+  },
+  "cted": {
+    "text": "Helps the Security Council’s Counter-Terrorism Committee monitor and support countries’ implementation of Council resolutions on terrorism.",
+    "symbol": "A/81/6 (Sect. 3)/Add.3",
+    "locator": "para. 266"
+  },
+  "desa": {
+    "text": "Supports UN talks on sustainable development, analyses global trends and helps countries put international commitments into practice.",
+    "symbol": "A/81/6 (Sect. 9)",
+    "locator": "para. 9.1"
+  },
+  "dgacm": {
+    "text": "Helps the General Assembly and other UN bodies conduct their work and provides multilingual meeting and document services.",
+    "symbol": "A/81/6 (Sect. 2)",
+    "locator": "para. 2.1"
+  },
+  "dgc": {
+    "text": "Explains the UN’s work to audiences around the world and works with partners to build support for the principles of the UN Charter.",
+    "symbol": "A/81/6 (Sect. 28)",
+    "locator": "para. 28.1"
+  },
+  "dmspc": {
+    "text": "Sets the Secretariat’s management strategy and policies and strengthens how it monitors, evaluates and accounts for its work.",
+    "symbol": "A/81/6 (Sect. 29A)",
+    "locator": "para. 29A.1"
+  },
+  "dos": {
+    "text": "Provides operational support to Secretariat entities, including supply chain, human resources, training and health services.",
+    "symbol": "A/81/6 (Sect. 29B)",
+    "locator": "paras. 29B.1–29B.2"
+  },
+  "dpo": {
+    "text": "Contributes to international peace and security by providing political and executive direction to the UN peace operations it oversees.",
+    "symbol": "A/81/6 (Sect. 5)",
+    "locator": "para. 5.I.1"
+  },
+  "dppa": {
+    "text": "Helps prevent and resolve conflicts through political analysis, mediation, electoral assistance and peacebuilding support.",
+    "symbol": "A/81/6 (Sect. 3)",
+    "locator": "para. 3.I.1"
+  },
+  "dss": {
+    "text": "Leads, supports and oversees the UN security management system so the Organization can carry out its work around the world.",
+    "symbol": "A/81/6 (Sect. 34)",
+    "locator": "para. 34.1"
+  },
+  "eca": {
+    "text": "Promotes economic and social development in African member States and fosters regional integration and international cooperation.",
+    "symbol": "A/81/6 (Sect. 18)",
+    "locator": "para. 18.1"
+  },
+  "ece": {
+    "text": "Helps its member States cooperate and integrate their economies through policy dialogue, common standards and technical advice.",
+    "symbol": "A/81/6 (Sect. 20)",
+    "locator": "paras. 20.1–20.2"
+  },
+  "eclac": {
+    "text": "Advances sustainable development in Latin America and the Caribbean through research, technical cooperation and policy advice.",
+    "symbol": "A/81/6 (Sect. 21)",
+    "locator": "para. 21.1"
+  },
+  "eo": {
+    "text": "Helps UN staff uphold standards of integrity through confidential advice, financial disclosure and work to protect staff against retaliation.",
+    "symbol": "A/81/6 (Sect. 1)",
+    "locator": "XI. Ethics Office, Strategy and external factors"
+  },
+  "escap": {
+    "text": "Helps countries in Asia and the Pacific pursue sustainable development through research, dialogue and capacity-building.",
+    "symbol": "A/81/6 (Sect. 19)",
+    "locator": "paras. 19.1–19.2"
+  },
+  "escwa": {
+    "text": "Helps Arab countries pursue inclusive, sustainable development through policy analysis, technical advice and regional dialogue.",
+    "symbol": "A/81/6 (Sect. 22)",
+    "locator": "paras. 22.1–22.3"
+  },
+  "focal-point": {
+    "text": "Reviews requests to be removed from UN sanctions lists, except those for the ISIL (Da’esh) and Al-Qaida list, which the Ombudsperson handles.",
+    "symbol": "A/81/6 (Sect. 3)/Add.3",
+    "locator": "para. 206"
+  },
+  "goe-drc": {
+    "text": "Monitors UN sanctions concerning the Democratic Republic of the Congo and provides information on potential new sanctions listings.",
+    "symbol": "A/81/6 (Sect. 3)/Add.3",
+    "locator": "para. 12"
+  },
+  "gom-cyprus": {
+    "text": "Helps the two sides in Cyprus build trust and pursue a negotiated settlement through dialogue.",
+    "symbol": "A/81/6 (Sect. 3)/Add.2",
+    "locator": "III.1, Strategy and external factors"
+  },
+  "icj": {
+    "text": "Settles legal disputes submitted by States and gives advisory opinions on legal questions referred by authorized bodies.",
+    "symbol": "A/81/6 (Sect. 7)",
+    "locator": "para. 7.1"
+  },
+  "icsc": {
+    "text": "Regulates and coordinates conditions of employment across organizations in the UN common system.",
+    "symbol": "A/81/6 (Sect. 31)",
+    "locator": "para. 31.I.1"
+  },
+  "iiim": {
+    "text": "Helps competent authorities investigate and prosecute the most serious international crimes committed in Syria since March 2011.",
+    "symbol": "A/81/6 (Sect. 8)",
+    "locator": "para. 8.III.1"
+  },
+  "iima": {
+    "text": "Prepares criminal case files on international crimes and grave violations of international law committed in Afghanistan.",
+    "symbol": "A/81/6 (Sect. 24)",
+    "locator": "para. 24.156"
+  },
+  "iimm": {
+    "text": "Builds case files on the most serious international crimes and violations of international law committed in Myanmar since 2011.",
+    "symbol": "A/81/6 (Sect. 8)",
+    "locator": "para. 8.II.1"
+  },
+  "iimp-syria": {
+    "text": "Works to find out what happened to missing people in Syria and where they are, and supports victims, survivors and families.",
+    "symbol": "A/81/6 (Sect. 24)",
+    "locator": "para. 24.135"
+  },
+  "itc": {
+    "text": "Helps micro, small and midsize businesses in developing countries and economies in transition compete internationally.",
+    "symbol": "A/81/6 (Sect. 13)",
+    "locator": "paras. 13.3–13.4"
+  },
+  "jiu": {
+    "text": "Independently inspects and evaluates participating UN organizations, including how they use funds and coordinate their work.",
+    "symbol": "A/81/6 (Sect. 31)",
+    "locator": "para. 31.II.1"
+  },
+  "oaj": {
+    "text": "Coordinates the UN’s internal justice system, supports its tribunals and helps staff access legal advice and representation.",
+    "symbol": "A/81/6 (Sect. 1)",
+    "locator": "X. Office of Administration of Justice"
+  },
+  "ocha": {
+    "text": "Coordinates international humanitarian responses to disasters and complex emergencies and helps link relief to recovery and development.",
+    "symbol": "A/81/6 (Sect. 27)",
+    "locator": "para. 27.I.1"
+  },
+  "oct": {
+    "text": "Leads and coordinates UN counter-terrorism work and strengthens UN assistance to countries in preventing and countering terrorism.",
+    "symbol": "A/81/6 (Sect. 3)",
+    "locator": "para. 3.V.1"
+  },
+  "oda": {
+    "text": "Helps countries cooperate on disarmament, arms control and non-proliferation through dialogue, training and confidence-building.",
+    "symbol": "A/81/6 (Sect. 4)",
+    "locator": "para. 4.1"
+  },
+  "odet": {
+    "text": "Advises UN leadership on emerging technologies, convenes digital policy talks and coordinates UN work on the Global Digital Compact.",
+    "symbol": "A/81/6 (Sect. 1)",
+    "locator": "XVI. Office for Digital and Emerging Technologies"
+  },
+  "odpp": {
+    "text": "Helps the UN Secretariat protect privacy and personal data when its entities use or process that data.",
+    "symbol": "A/81/6 (Sect. 1)",
+    "locator": "XV. Office of Data Protection and Privacy"
+  },
+  "ohchr": {
+    "text": "Leads the UN’s work to promote and protect human rights and works with partners to prevent ongoing violations.",
+    "symbol": "A/81/6 (Sect. 24)",
+    "locator": "paras. 24.1–24.3"
+  },
+  "oict": {
+    "text": "Sets the direction for information and communications technology across the UN and delivers ICT services.",
+    "symbol": "A/81/6 (Sect. 29C)",
+    "locator": "para. 29C.1"
+  },
+  "oios": {
+    "text": "Helps the Secretary-General oversee UN resources and staff through independent internal audits, inspections, evaluations and investigations.",
+    "symbol": "A/81/6 (Sect. 30)",
+    "locator": "para. 30.1"
+  },
+  "ojsrs": {
+    "text": "Supports a Syrian-led political transition and, with government agreement, plans to assist with a constitution, elections and transitional justice.",
+    "symbol": "A/81/6 (Sect. 3)/Add.2",
+    "locator": "III.6, Strategy and external factors"
+  },
+  "ola": {
+    "text": "Provides UN legal services, including legal representation, multilateral treaty depositary functions and treaty registration and publication.",
+    "symbol": "A/81/6 (Sect. 8)",
+    "locator": "para. 8.I.1"
+  },
+  "ombud": {
+    "text": "Offers confidential, impartial help to UN staff and other personnel who ask for support resolving a workplace dispute.",
+    "symbol": "A/81/6 (Sect. 1)",
+    "locator": "IX. Office of the United Nations Ombudsman and Mediation Services"
+  },
+  "ombud-res1904": {
+    "text": "Independently reviews requests from people and entities seeking removal from the Security Council’s ISIL and Al-Qaida sanctions list.",
+    "symbol": "A/81/6 (Sect. 3)/Add.3",
+    "locator": "para. 152"
+  },
+  "oosa": {
+    "text": "Advances international cooperation on peaceful uses of outer space and maintains the UN register of objects launched into space.",
+    "symbol": "A/81/6 (Sect. 6)",
+    "locator": "paras. 6.1–6.2"
+  },
+  "osaa": {
+    "text": "Helps coordinate UN support for Africa, tracks Sustainable Development Goal commitments for its development and advocates for Agenda 2063.",
+    "symbol": "A/81/6 (Sect. 11)",
+    "locator": "para. 11.1"
+  },
+  "osc-sea": {
+    "text": "Works across the UN system to strengthen how it prevents, reports and responds to sexual exploitation and abuse.",
+    "symbol": "A/81/6 (Sect. 1)",
+    "locator": "VIII. Office of the United Nations Special Coordinator on Improving the United Nations Response to Sexual Exploitation and Abuse"
+  },
+  "osesg-gl": {
+    "text": "Supports a regional peace framework to address violence in eastern Democratic Republic of the Congo and its causes in the Great Lakes region.",
+    "symbol": "A/81/6 (Sect. 3)/Add.2",
+    "locator": "8. Office of the Special Envoy of the Secretary-General for the Great Lakes Region"
+  },
+  "osesg-horn": {
+    "text": "Works with countries and regional bodies to prevent conflict in the Horn of Africa and encourage dialogue between Sudan and South Sudan.",
+    "symbol": "A/81/6 (Sect. 3)/Add.2",
+    "locator": "7. Office of the Special Envoy of the Secretary-General for the Horn of Africa"
+  },
+  "osesg-myanmar": {
+    "text": "Encourages dialogue on Myanmar on behalf of the Secretary-General and works with regional partners to help address the crisis.",
+    "symbol": "A/81/6 (Sect. 3)/Add.2",
+    "locator": "10. Office of the Special Envoy of the Secretary-General on Myanmar"
+  },
+  "osesg-scres1559": {
+    "text": "Supports reporting to the Security Council on resolution 1559 and encourages Lebanese-led dialogue on weapons held outside State authority.",
+    "symbol": "A/81/6 (Sect. 3)/Add.2",
+    "locator": "4. Support for the implementation of Security Council resolution 1559 (2004)"
+  },
+  "osesg-yemen": {
+    "text": "Mediates among the parties to help end the conflict in Yemen and support an inclusive, Yemeni-led political transition.",
+    "symbol": "A/81/6 (Sect. 3)/Add.2",
+    "locator": "9. Office of the Special Envoy of the Secretary-General for Yemen"
+  },
+  "osrsg-caac": {
+    "text": "Works to protect children affected by armed conflict by monitoring grave violations and advocating to end and prevent them.",
+    "symbol": "A/81/6 (Sect. 1)",
+    "locator": "IV. Office of the Special Representative of the Secretary-General for Children and Armed Conflict"
+  },
+  "osrsg-svc": {
+    "text": "Leads and coordinates work to prevent and respond to conflict-related sexual violence, including through engagement with survivors.",
+    "symbol": "A/81/6 (Sect. 1)",
+    "locator": "V. Office of the Special Representative of the Secretary-General on Sexual Violence in Conflict"
+  },
+  "osrsg-vac": {
+    "text": "Mobilizes political support and action to prevent and end all forms of violence against children.",
+    "symbol": "A/81/6 (Sect. 1)",
+    "locator": "VI. Office of the Special Representative of the Secretary-General on Violence against Children"
+  },
+  "pesg-sudan": {
+    "text": "Uses diplomacy to help the parties in Sudan seek an end to hostilities and advance an inclusive, Sudanese-led political process.",
+    "symbol": "A/81/6 (Sect. 3)/Add.2",
+    "locator": "11. Office of the Personal Envoy of the Secretary-General for the Sudan"
+  },
+  "pesg-ws": {
+    "text": "Helps Morocco and the Frente POLISARIO seek an agreed political solution providing for self-determination for the people of Western Sahara.",
+    "symbol": "A/81/6 (Sect. 3)/Add.2",
+    "locator": "3. Personal Envoy of the Secretary-General for Western Sahara"
+  },
+  "poe-car": {
+    "text": "Monitors implementation of the Central African Republic sanctions, including a targeted arms embargo, asset freeze and travel ban.",
+    "symbol": "A/81/6 (Sect. 3)/Add.3",
+    "locator": "paras. 84–85"
+  },
+  "poe-dprk": {
+    "text": "Provides Secretariat support to the DPRK sanctions committee and guidance on exemptions after the Panel of Experts’ mandate ended.",
+    "symbol": "A/81/6 (Sect. 3)/Add.3",
+    "locator": "paras. 47–49"
+  },
+  "poe-haiti": {
+    "text": "Monitors implementation of the Haiti sanctions, including the travel ban, asset freeze and territorial arms embargo.",
+    "symbol": "A/81/6 (Sect. 3)/Add.3",
+    "locator": "para. 188"
+  },
+  "poe-iran": {
+    "text": "Was tasked with monitoring Iran sanctions, including arms and nuclear proliferation restrictions, until its mandate expired on 26 September 2026.",
+    "symbol": "A/81/6 (Sect. 3)/Add.3",
+    "locator": "para. 225",
+    "update": {
+      "label": "Security Council · Work and mandate",
+      "href": "https://main.un.org/securitycouncil/en/sanctions/1737/panel-of-experts/work-and-mandate"
+    }
+  },
+  "poe-libya": {
+    "text": "Monitors Libya sanctions, including the arms embargo, asset freeze, travel ban and measures against illicit petroleum exports.",
+    "symbol": "A/81/6 (Sect. 3)/Add.3",
+    "locator": "para. 66"
+  },
+  "poe-s-sudan": {
+    "text": "Monitors implementation of the South Sudan sanctions, including the arms embargo, asset freeze and travel ban.",
+    "symbol": "A/81/6 (Sect. 3)/Add.3",
+    "locator": "paras. 118–119"
+  },
+  "poe-somalia": {
+    "text": "Monitors sanctions on Al-Shabaab, including arms embargoes and restrictions on charcoal and improvised explosive device components.",
+    "symbol": "A/81/6 (Sect. 3)/Add.3",
+    "locator": "paras. 170–172"
+  },
+  "poe-sudan": {
+    "text": "Monitors Sudan sanctions, including the arms embargo, asset freeze and travel ban, and reports on threats to peace in Darfur.",
+    "symbol": "A/81/6 (Sect. 3)/Add.3",
+    "locator": "paras. 30–31"
+  },
+  "poe-yemen": {
+    "text": "Monitors implementation of the Yemen sanctions, including the asset freeze, travel ban and targeted arms embargo.",
+    "symbol": "A/81/6 (Sect. 3)/Add.3",
+    "locator": "para. 101"
+  },
+  "rcs": {
+    "text": "Leads UN country teams in coordinating support to governments on the 2030 Agenda and its Sustainable Development Goals.",
+    "symbol": "A/81/6 (Sect. 1)",
+    "locator": "XIII. Resident coordinator system"
+  },
+  "regional-and-subregional-advisory-services": {
+    "text": "Provides advice and training through UN regional commissions to help countries put sustainable development policies into practice.",
+    "symbol": "A/81/6 (Sect. 23)",
+    "locator": "II. Regional and subregional advisory services"
+  },
+  "sasg-pgenocide": {
+    "text": "Analyses risks of genocide, alerts the Secretary-General to situations of concern and recommends preventive action.",
+    "symbol": "A/81/6 (Sect. 3)/Add.2",
+    "locator": "2. Office of the Special Adviser to the Secretary-General on the Prevention of Genocide"
+  },
+  "sc-res1540": {
+    "text": "Helps the 1540 Committee and countries that request support prevent non-State actors from acquiring weapons of mass destruction or their means of delivery.",
+    "symbol": "A/81/6 (Sect. 3)/Add.3",
+    "locator": "paras. 243–246"
+  },
+  "sectoral-advisory-services": {
+    "text": "Provides short-term advice, training and field projects to help governments put sustainable development policies into practice.",
+    "symbol": "A/81/6 (Sect. 23)",
+    "locator": "I. Sectoral advisory services"
+  },
+  "senior-representative-for-the-implementation-of-security-council-resolution-2792-2025": {
+    "text": "Helps Iraq and Kuwait cooperate on finding missing Kuwaiti and third-country nationals and returning property, including Kuwait’s national archives.",
+    "symbol": "A/81/6 (Sect. 3)/Add.2",
+    "locator": "12. Senior Representative for the implementation of Security Council resolution 2792 (2025)"
+  },
+  "sweo": {
+    "text": "Independently assesses the combined work of the United Nations development system to strengthen learning, transparency and accountability.",
+    "symbol": "A/81/6 (Sect. 1)",
+    "locator": "XVIII. United Nations Sustainable Development Group System-Wide Evaluation Office"
+  },
+  "un-women": {
+    "text": "Advances gender equality and the rights of women and girls through global standards, UN coordination and country programmes.",
+    "symbol": "A/81/6 (Sect. 17)",
+    "locator": "para. 17.1"
+  },
+  "un-habitat": {
+    "text": "Helps countries develop sustainable cities and settlements and tracks progress on the New Urban Agenda and Sustainable Development Goal 11.",
+    "symbol": "A/81/6 (Sect. 15)",
+    "locator": "para. 15.1"
+  },
+  "un-ohrlls": {
+    "text": "Advocates for least developed, landlocked developing and small island developing States and mobilizes support for their agreed development programmes.",
+    "symbol": "A/81/6 (Sect. 10)",
+    "locator": "paras. 10.1–10.2"
+  },
+  "unama": {
+    "text": "Promotes peace and stability in Afghanistan through dialogue and helps coordinate humanitarian and basic-needs assistance.",
+    "symbol": "A/81/6 (Sect. 3)/Add.4",
+    "locator": "II.9, Mandates and background"
+  },
+  "unaoc": {
+    "text": "Promotes dialogue and cooperation across cultures and religions to counter polarization and extremism.",
+    "symbol": "A/81/6 (Sect. 1)",
+    "locator": "XVII, Mandates and background"
+  },
+  "unctad": {
+    "text": "Helps developing countries participate in and benefit from the global economy to support inclusive, resilient and sustainable development.",
+    "symbol": "A/81/6 (Sect. 12)",
+    "locator": "para. 12.1"
+  },
+  "undrr": {
+    "text": "Coordinates disaster risk reduction and helps governments and other partners identify, report on and reduce disaster risks.",
+    "symbol": "A/81/6 (Sect. 27)",
+    "locator": "para. 27.II.1"
+  },
+  "unep": {
+    "text": "Leads and coordinates the UN’s environmental work and supports countries and regions in putting environmental commitments into practice.",
+    "symbol": "A/81/6 (Sect. 14)",
+    "locator": "para. 14.1"
+  },
+  "unhcr": {
+    "text": "Leads efforts to protect refugees and find lasting solutions, and helps protect stateless and internally displaced people.",
+    "symbol": "A/81/6 (Sect. 25)",
+    "locator": "para. 25.1"
+  },
+  "unmogip": {
+    "text": "Monitors the ceasefire in Jammu and Kashmir, investigates alleged violations reported by the parties and reports to the Secretary-General.",
+    "symbol": "A/81/6 (Sect. 5)",
+    "locator": "para. 5.III.1"
+  },
+  "unoau": {
+    "text": "Coordinates UN advice and operational support to the African Union to strengthen their partnership on peace and security.",
+    "symbol": "A/81/6 (Sect. 3)",
+    "locator": "para. 3.IV.1"
+  },
+  "unoca": {
+    "text": "Helps prevent conflict in Central Africa by monitoring political and security developments, supporting mediation and fostering cooperation.",
+    "symbol": "A/81/6 (Sect. 3)/Add.4",
+    "locator": "II.5, Mandates and background"
+  },
+  "unodc": {
+    "text": "Helps countries address drug-related problems, crime, corruption and terrorism, and strengthen their criminal justice systems.",
+    "symbol": "A/81/6 (Sect. 16)",
+    "locator": "para. 16.1"
+  },
+  "unog": {
+    "text": "Provides administrative support to Geneva-based entities and their field offices, and conference services for UN intergovernmental work.",
+    "symbol": "A/81/6 (Sect. 29E)",
+    "locator": "para. 29E.1"
+  },
+  "unon": {
+    "text": "Provides management, technology and administrative services in Nairobi and supports UN entities worldwide, including UNEP and UN-Habitat.",
+    "symbol": "A/81/6 (Sect. 29D)",
+    "locator": "para. 29D.1"
+  },
+  "unov": {
+    "text": "Provides administrative, conference and security services to UN and other international organizations at the Vienna International Centre.",
+    "symbol": "A/81/6 (Sect. 29F)",
+    "locator": "para. 29F.1"
+  },
+  "unowas": {
+    "text": "Helps prevent conflict in West Africa and the Sahel through political engagement, mediation support and regional cooperation.",
+    "symbol": "A/81/6 (Sect. 3)/Add.4",
+    "locator": "II.1, Mandates and background"
+  },
+  "unrcca": {
+    "text": "Helps Central Asian governments identify and address threats to peace and security through preventive diplomacy and regional dialogue.",
+    "symbol": "A/81/6 (Sect. 3)/Add.4",
+    "locator": "II.2, Mandates and background"
+  },
+  "unrgid": {
+    "text": "Helps convene and facilitate the Geneva International Discussions and the mechanism for preventing and responding to incidents in Gali, Georgia.",
+    "symbol": "A/81/6 (Sect. 3)/Add.2",
+    "locator": "III.5, Mandates and background"
+  },
+  "unrod": {
+    "text": "Records claims of damage from Israel’s construction of the wall in the Occupied Palestinian Territory, including in and around East Jerusalem.",
+    "symbol": "A/81/6 (Sect. 3)",
+    "locator": "para. 3.III.1"
+  },
+  "unrwa": {
+    "text": "Provides education, health care, humanitarian aid and protection to Palestine refugees pending a just and lasting solution to their plight.",
+    "symbol": "A/81/6 (Sect. 26)",
+    "locator": "para. 26.1"
+  },
+  "unsco": {
+    "text": "Serves as the UN focal point for the Middle East peace process and coordinates UN support for the Palestinian people.",
+    "symbol": "A/81/6 (Sect. 3)",
+    "locator": "para. 3.II.1"
+  },
+  "unscol": {
+    "text": "Represents the Secretary-General in Lebanon and provides political guidance to help coordinate the UN’s work there.",
+    "symbol": "A/81/6 (Sect. 3)/Add.4",
+    "locator": "II.4, Mandates and background"
+  },
+  "unsmil": {
+    "text": "Supports Libya’s political transition and post-conflict efforts by helping facilitate an inclusive political process.",
+    "symbol": "A/81/6 (Sect. 3)/Add.4",
+    "locator": "II.6, Mandates and background"
+  },
+  "untso": {
+    "text": "Helps the parties to the 1949 Armistice Agreements monitor compliance and deploys military observers in the Middle East.",
+    "symbol": "A/81/6 (Sect. 5)",
+    "locator": "paras. 5.II.1–5.II.2"
+  },
+  "unvmc": {
+    "text": "Verifies former FARC-EP members’ reintegration and security guarantees for former combatants and communities under Colombia’s 2016 peace agreement.",
+    "symbol": "A/81/6 (Sect. 3)/Add.4",
+    "locator": "II.7, Mandates and background",
+    "update": {
+      "label": "UN Verification Mission · Resolution 2833 mandate update",
+      "href": "https://colombia.unmissions.org/en/node/137251"
+    }
+  },
+  "unyo": {
+    "text": "Advocates for young people’s needs and rights and helps them participate meaningfully in the UN’s work.",
+    "symbol": "A/81/6 (Sect. 1)",
+    "locator": "XIV, Objective and strategy"
+  }
+}

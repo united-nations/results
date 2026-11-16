@@ -24,6 +24,13 @@ proposed programme budget exports. The directory lists each entity under its
 largest spending priority in Open UN's 2025 financial reporting, summed across
 funding sources.
 
+The one-sentence directory descriptions are edited separately in
+`data/entity-descriptions-2027.json`. Keep one entry per entity or budget unit
+in the snapshot, with the programme budget document symbol and the supporting
+paragraph number or heading.
+Where a subsequent UN decision changed a mandate, add its official source as
+an update.
+
 With the Programme Budget Data and Open UN checkouts alongside this one and
 Python 3 available, run:
 

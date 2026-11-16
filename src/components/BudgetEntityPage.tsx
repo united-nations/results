@@ -7,6 +7,7 @@ import { BudgetTimeChart } from "@/components/BudgetTimeChart";
 import { ResultSidecar } from "@/components/ResultSidecar";
 import { SiteShell } from "@/components/SiteShell";
 import { figureTimeSeries } from "@/lib/budget-time-series";
+import { getEntityDescription } from "@/lib/entity-descriptions";
 import {
   type BudgetContent,
   type BudgetEntity,
@@ -133,6 +134,7 @@ export function BudgetEntityPage({
   entity: BudgetEntity;
   selected?: BudgetSubprogramme;
 }) {
+  const description = getEntityDescription(entity.id);
   const path = entityHref(entity.id);
   const tabs = entity.subprogrammes.map((subprogramme) => ({
     href: entityHref(entity.id, subprogramme.id),
@@ -161,6 +163,17 @@ export function BudgetEntityPage({
       <h1 className={`${typography.pageTitle} mt-2 max-w-4xl`}>
         {entity.name}
       </h1>
+      {!selected && (
+        <div className="mt-4 max-w-3xl space-y-1">
+          <p className={typography.prose}>{description.text}</p>
+          <a
+            href={description.source.href}
+            className={`${typography.meta} text-un-blue-text underline underline-offset-4`}
+          >
+            {description.source.label}
+          </a>
+        </div>
+      )}
       {entity.priorities.length > 0 && (
         <p className={`${typography.meta} mt-3`}>
           {entity.priorities.join(" · ")}
