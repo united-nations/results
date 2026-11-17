@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, type ReactNode } from "react";
+import { typography } from "@un-eosg/ui/typography";
 import { BudgetResultDetails } from "@/components/BudgetResultDetails";
 import { ResultSidecar } from "@/components/ResultSidecar";
 import { withBasePath } from "@/lib/paths";
@@ -36,9 +37,15 @@ function Details({
     return () => request.abort();
   }, [summary.entity, summary.id]);
 
-  if (failed)
-    return <p role="status">The result details could not be loaded.</p>;
-  if (!result) return <p role="status">Loading result details…</p>;
+  if (failed || !result) {
+    return (
+      <p className={typography.meta} role="status">
+        {failed
+          ? "The result details could not be loaded."
+          : "Loading result details…"}
+      </p>
+    );
+  }
   return (
     <BudgetResultDetails
       result={result}

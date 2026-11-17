@@ -12,15 +12,26 @@ import { measureTimeSeries } from "@/lib/budget-time-series";
 import { formatBudgetHeading, formatBudgetText } from "@/lib/budget-text";
 import type { BudgetResult } from "@/lib/programme-budget";
 
-export function BudgetProse({ paragraphs }: { paragraphs: string[] }) {
+export function BudgetProse({
+  paragraphs,
+  headingLevel = 3,
+  compact = false,
+}: {
+  paragraphs: string[];
+  headingLevel?: 3 | 4 | 5;
+  compact?: boolean;
+}) {
+  const Heading = `h${headingLevel}` as const;
   return (
-    <div className={`${typography.prose} max-w-[72ch] space-y-4`}>
+    <div
+      className={`${compact ? typography.body : typography.prose} max-w-[72ch] space-y-4`}
+    >
       {formatBudgetText(paragraphs).map((block, index) => {
         if (block.kind === "heading") {
           return (
-            <h4 key={index} className={typography.subTitle}>
+            <Heading key={index} className={typography.subTitle}>
               {formatBudgetHeading(block.text)}
-            </h4>
+            </Heading>
           );
         }
         if (block.kind === "list") {
@@ -83,7 +94,7 @@ function QualitativeTimeline({ measures }: { measures: Measure[] }) {
             aria-hidden="true"
             className={`absolute start-0 top-1.5 z-10 size-3 rounded-full border-2 border-un-blue-text ${stage.type === "actual" ? "bg-un-blue-text" : "bg-background"}`}
           />
-          <p className={`${typography.subTitle} mb-1`}>
+          <p className={`${typography.numeric} mb-1 font-medium`}>
             {stage.year}
             <span className={`${typography.caption} ms-2 font-normal`}>
               {stage.type === "actual" ? "Actual" : "Planned"}
@@ -93,6 +104,8 @@ function QualitativeTimeline({ measures }: { measures: Measure[] }) {
             paragraphs={stage.values.map((value) =>
               isMissing(value) ? "No value reported." : value,
             )}
+            headingLevel={4}
+            compact
           />
         </li>
       ))}
@@ -122,7 +135,7 @@ export function BudgetMeasures({ measures }: { measures: Measure[] }) {
         return (
           <section key={label} className="space-y-3 border-t pt-4">
             {label && (groups.size > 1 || !/^Table\s/i.test(label)) && (
-              <h4 className={typography.subTitle}>{heading}</h4>
+              <h3 className={typography.subTitle}>{heading}</h3>
             )}
             {chart ? (
               <BudgetTimeChart

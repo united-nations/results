@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import type { BudgetResultLocation } from "./budget-scope";
 import { budgetEntities } from "./programme-budget";
 
 export type BudgetResultReference = {
@@ -13,6 +14,7 @@ export type SearchableBudgetResult = BudgetResultReference & {
   subprogramme?: string;
   kind: "performance" | "planned";
   year: number;
+  location: BudgetResultLocation;
   text: string;
 };
 
@@ -56,6 +58,12 @@ export const indexedBudgetResults = new Map(
               },
               organization: code && code !== name ? `${code} · ${name}` : name,
               subprogramme,
+              location: {
+                section: section.section,
+                entity,
+                subprogrammeId,
+                component: section.component,
+              },
               symbol: section.symbol,
               kind,
               result,

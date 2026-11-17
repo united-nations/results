@@ -22,6 +22,8 @@ export type BudgetResult = {
 export type BudgetContent = {
   name: string;
   symbol: string;
+  section: string;
+  component?: string;
   source: string;
   objectives: string[];
   strategy: string[];
@@ -49,6 +51,7 @@ export type BudgetEntity = {
 
 export const budgetEdition = snapshot.edition;
 export const budgetEntities: BudgetEntity[] = snapshot.entities;
+export const budgetSections = snapshot.budgetSections;
 
 const entitiesById = new Map(
   budgetEntities.map((entity) => [entity.id, entity]),

@@ -10,6 +10,7 @@ import {
 import { typography } from "@un-eosg/ui/typography";
 import { formatBudgetHeading } from "@/lib/budget-text";
 import type { Status, TimePoint, TimeSeries } from "@/lib/budget-time-series";
+import { cn } from "@/lib/utils";
 
 const colors = [
   "var(--color-un-blue-text)",
@@ -133,7 +134,10 @@ export function BudgetTimeChart({
           )}
           <details>
             <summary
-              className={`${typography.caption} w-fit cursor-pointer text-un-blue-text hover:underline`}
+              className={cn(
+                typography.caption,
+                "w-fit cursor-pointer text-un-blue-text underline-offset-4 hover:underline",
+              )}
             >
               View values
             </summary>
@@ -186,8 +190,7 @@ export function BudgetTimeChart({
               y={y(tick)}
               dy="0.32em"
               textAnchor="end"
-              fill="var(--muted-foreground)"
-              fontSize="11"
+              className={`${typography.caption} fill-current tabular-nums`}
             >
               {axisNumber.format(tick)}
               {suffix}
@@ -204,8 +207,7 @@ export function BudgetTimeChart({
               x={x(year)}
               y={baseline + 18}
               textAnchor="middle"
-              fill="var(--muted-foreground)"
-              fontSize="11"
+              className={`${typography.caption} fill-current tabular-nums`}
             >
               {period}
             </text>

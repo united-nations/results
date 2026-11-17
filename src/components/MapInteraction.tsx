@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, type ReactNode } from "react";
+import { typography } from "@un-eosg/ui/typography";
 import { useMapTouchScroll } from "@/hooks/useMapTouchScroll";
 
 export function MapInteraction({ children }: { children: ReactNode }) {
@@ -29,7 +30,7 @@ export function MapInteraction({ children }: { children: ReactNode }) {
         type="button"
         aria-pressed={interactive}
         onClick={() => setInteractive(!interactive)}
-        className="mb-2 hidden min-h-11 rounded-sm border border-gray-300 px-3 text-sm font-medium focus-visible:outline-2 focus-visible:outline-un-blue any-pointer-coarse:block"
+        className={`${typography.body} mb-2 hidden min-h-11 rounded-sm border px-3 font-medium focus-visible:outline-2 focus-visible:outline-un-blue any-pointer-coarse:block`}
       >
         {interactive ? "Stop panning map" : "Enable map panning"}
       </button>

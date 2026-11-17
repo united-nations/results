@@ -7,6 +7,7 @@ import { ExternalLink } from "@un-eosg/ui/components/external-link";
 import { typography } from "@un-eosg/ui/typography";
 import { SidecarContent } from "@/components/SidecarContent";
 import { formatBudgetHeading } from "@/lib/budget-text";
+import { cn } from "@/lib/utils";
 
 export function ResultSidecar({
   title,
@@ -32,17 +33,17 @@ export function ResultSidecar({
           type="button"
           className="flex w-full cursor-pointer items-center gap-3 px-4 py-3 text-left hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset"
         >
-          <span className="min-w-0 flex-1 text-base font-normal">
+          <span className={`${typography.body} min-w-0 flex-1 font-normal`}>
             {label && (
               <>
-                <span className={`${typography.meta} me-1 font-normal`}>
+                <span className={`${typography.caption} me-1`}>
                   {label}
                 </span>{" "}
               </>
             )}
             {heading}
             {supportingText && (
-              <span className={`${typography.meta} mt-0.5 block font-normal`}>
+              <span className={`${typography.caption} mt-0.5 block`}>
                 {supportingText}
               </span>
             )}
@@ -61,7 +62,10 @@ export function ResultSidecar({
         headerMetadata={
           <ExternalLink
             href={source}
-            className={`${typography.meta} text-un-blue-text underline underline-offset-4`}
+            className={cn(
+              typography.caption,
+              "text-un-blue-text underline underline-offset-4",
+            )}
           >
             View budget document
           </ExternalLink>

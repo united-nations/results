@@ -95,7 +95,9 @@ test("Member States opens nested beneficiary categories", async ({ page }) => {
 
 async function chooseLocation(page: Page, name: string) {
   await page.getByRole("button", { name: "Choose a country or area" }).click();
-  await page.getByPlaceholder("Search...").fill(name);
+  await page
+    .getByRole("searchbox", { name: "Search countries or areas" })
+    .fill(name);
   await page.getByRole("button", { name, exact: true }).press("Enter");
 }
 
@@ -122,6 +124,17 @@ test("both Secretariat directories search untagged programme budget results", as
     await search.fill(query);
     const result = page.getByRole("button", { name: resultName });
     await expect(result).toContainText("2025 programme performance");
+    if (path === "/") {
+      const entity = page.getByRole("link", { name: /^UNAMA,/ }).locator("..");
+      await expect(
+        entity.getByRole("button", { name: resultName }),
+      ).toBeVisible();
+      await expect(
+        page.getByRole("heading", {
+          name: "Matching programme budget results",
+        }),
+      ).toHaveCount(0);
+    }
     await result.click();
     const panel = page.getByRole("dialog", { name: resultName });
     await expect(panel.getByText("2025 programme performance")).toBeVisible();
@@ -288,6 +301,68 @@ test("shared location results are grouped by entity with their own coverage", as
   await expect(
     page.getByRole("button", { name: "Close result" }),
   ).toBeVisible();
+});
+
+test("budget hierarchy filters entity counts and programme results", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const trigger = page.getByRole("button", {
+    name: "Filter by budget structure",
+  });
+  await expect(trigger).toHaveClass(/\bbg-muted\b/);
+  await trigger.click();
+  const picker = page.getByRole("dialog", {
+    name: "Filter by budget structure",
+  });
+  await picker
+    .getByRole("button", {
+      name: /^Expand Part IV — International cooperation/,
+    })
+    .click();
+  await expect(
+    picker.getByRole("button", {
+      name: "Programme 10 · Section 13 — Trade and development / International Trade Centre",
+      exact: true,
+    }),
+  ).toBeVisible();
+
+  await picker
+    .getByRole("searchbox", { name: "Search budget structure" })
+    .fill("DESA subprogramme 2");
+  await picker
+    .getByRole("button", {
+      name: "Subprogramme 2 · Inclusive social development",
+      exact: true,
+    })
+    .click();
+  await expect(picker).toBeHidden();
+  const priorities = page.getByRole("heading", {
+    name: "Forging pathways for sustainable development",
+    exact: true,
+  });
+  await expect(priorities.locator("..")).toContainText("1 entity");
+  const entity = page.getByRole("link", { name: /^DESA,/ });
+  await expect(entity).toHaveAttribute("href", "/entities/desa/9-sp-2/");
+
+  await expect(entity.locator("..").getByRole("button")).toHaveCount(4);
+  await expect(
+    page.getByRole("button", {
+      name: /The World Social Report 2025 informed social policy/,
+    }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: /Reaffirmed political commitments/ }),
+  ).toBeHidden();
+
+  await page
+    .getByRole("button", {
+      name: /^Filter by budget structure: Subprogramme 2/,
+    })
+    .click();
+  await expect(picker.getByRole("searchbox")).toHaveValue("");
+  await picker.getByRole("button", { name: "All budget locations" }).click();
+  await expect(priorities.locator("..")).not.toContainText("1 entity");
 });
 
 test("sticky subprogramme navigation meets the site header", async ({
@@ -459,24 +534,20 @@ test("public pages share navigation, branded footer and keyboard skip link", asy
       exact: true,
     }),
   ).toHaveCount(1);
-  await expect(
-    page.getByRole("heading", {
-      name: "Propelling African growth",
-      exact: true,
-    }),
-  ).toBeVisible();
+  const africanGrowth = page.getByRole("heading", {
+    name: "Propelling African growth",
+    exact: true,
+  });
+  await expect(africanGrowth).toBeVisible();
   await expect(
     page.getByText("Development in Africa", { exact: true }),
   ).toBeVisible();
   await expect(
-    page.getByRole("heading", {
-      name: "Forging pathways for sustainable development",
+    africanGrowth.locator("../..").getByRole("link", {
+      name: "ECA, Economic Commission for Africa",
       exact: true,
     }),
-  ).toHaveCount(0);
-  await expect(
-    page.getByRole("heading", { name: "Championing disarmament", exact: true }),
-  ).toHaveCount(0);
+  ).toBeVisible();
   await directorySearch.fill("non-proliferation");
   await expect(
     page.getByRole("heading", { name: "Championing disarmament", exact: true }),

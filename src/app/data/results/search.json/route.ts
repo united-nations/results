@@ -24,11 +24,13 @@ export function GET() {
         subprogramme,
         result,
         kind,
+        location,
       }): SearchableBudgetResult => ({
         ...reference,
         organization,
         subprogramme,
         kind,
+        location,
         year:
           kind === "planned"
             ? budgetEdition

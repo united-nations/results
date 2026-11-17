@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PriorityDirectory } from "@/components/PriorityDirectory";
 import { SecretariatPage } from "@/components/SecretariatPage";
+import { budgetHierarchy } from "@/lib/budget-hierarchy";
 import { getEntityDescription } from "@/lib/entity-descriptions";
 import { withBasePath } from "@/lib/paths";
 import {
@@ -68,6 +69,7 @@ const protectionOfficeIds = new Set([
 
 function directoryEntity(entity: BudgetEntity) {
   return {
+    id: entity.id,
     name: entity.name,
     code: entity.code,
     href: withBasePath(entityHref(entity.id)),
@@ -123,7 +125,11 @@ const directory = [
 export default function UNSecretariat() {
   return (
     <SecretariatPage activeHref="/">
-      <PriorityDirectory groups={directory} edition={budgetEdition} />
+      <PriorityDirectory
+        groups={directory}
+        budgetHierarchy={budgetHierarchy}
+        edition={budgetEdition}
+      />
     </SecretariatPage>
   );
 }

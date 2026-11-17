@@ -3,7 +3,8 @@
 import dynamic from "next/dynamic";
 import { useMemo, useRef, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-import { HierarchicalSingleSelect } from "@un-eosg/ui/components/hierarchical-single-select";
+import { SearchablePicker } from "@/components/SearchablePicker";
+import { normalizeSearchText, searchTerms } from "@/lib/search-text";
 import {
   EntityResultGroups,
   type EntityResults,
@@ -29,7 +30,7 @@ const LocationsMap = dynamic(
   {
     ssr: false,
     loading: () => (
-      <p className="py-16 text-center" role="status">
+      <p className={`${typography.meta} py-16 text-center`} role="status">
         Loading map…
       </p>
     ),
@@ -48,11 +49,10 @@ const sortedLocations = Object.entries(locations).sort(([, a], [, b]) =>
 );
 
 const locationOptions = [
-  { id: "global", label: "Global", children: [] },
+  { id: "global", label: "Global" },
   ...sortedLocations.map(([id, { name: label }]) => ({
     id,
     label,
-    children: [],
   })),
 ];
 
@@ -118,18 +118,49 @@ export function ResultLocations({
   return (
     <div className="mt-6 space-y-4">
       <div ref={picker} className="w-fit">
-        <HierarchicalSingleSelect
-          groups={locationOptions}
-          selected={selected}
-          onChange={setSelected}
-          getLabel={(code) =>
-            code === "global"
-              ? "Global"
-              : code
-                ? areaName(code)
-                : "Choose a country or area"
+        <SearchablePicker
+          label="Choose a country or area"
+          selection={
+            selected
+              ? selected === "global"
+                ? "Global"
+                : areaName(selected)
+              : undefined
           }
-        />
+          searchLabel="Search countries or areas"
+          className="w-80 p-2"
+        >
+          {(query, close) => {
+            const terms = searchTerms(query);
+            const matches = locationOptions.filter(({ id, label }) =>
+              terms.every((term) =>
+                normalizeSearchText(`${label} ${id}`).includes(term),
+              ),
+            );
+            return matches.length ? (
+              <ul className="max-h-80 overflow-y-auto py-1">
+                {matches.map(({ id, label }) => (
+                  <li key={id}>
+                    <button
+                      type="button"
+                      className={`${typography.body} w-full rounded-sm px-3 py-1.5 text-start hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset`}
+                      onClick={() => {
+                        close();
+                        setSelected(id);
+                      }}
+                    >
+                      {label}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className={`${typography.meta} px-3 py-2`}>
+                No matching countries or areas.
+              </p>
+            );
+          }}
+        </SearchablePicker>
       </div>
       <LocationsMap
         coverage={coverage}
@@ -203,7 +234,7 @@ function TaggedAreas({ codes }: { codes: string[] }) {
   }
   return (
     <details className={`${typography.caption} px-4 pb-2`}>
-      <summary className="cursor-pointer text-muted-foreground">
+      <summary className="w-fit cursor-pointer text-muted-foreground underline-offset-4 hover:underline">
         {names.length} tagged countries and areas
       </summary>
       <p className="mt-1">{names.join(", ")}</p>

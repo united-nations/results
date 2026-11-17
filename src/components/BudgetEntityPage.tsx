@@ -16,6 +16,7 @@ import {
   budgetEdition,
   entityHref,
 } from "@/lib/programme-budget";
+import { cn } from "@/lib/utils";
 
 function ResultsList({
   results,
@@ -48,44 +49,71 @@ function ResultsList({
 function ContentSections({
   content,
   heading,
+  subprogramme,
 }: {
   content: BudgetContent;
   heading?: string;
+  subprogramme: boolean;
 }) {
+  const SectionHeading = subprogramme ? "h3" : "h2";
+  const BlockHeading = heading ? (subprogramme ? "h4" : "h3") : SectionHeading;
+  const blockStyle =
+    BlockHeading === "h2"
+      ? typography.sectionTitle
+      : cn(typography.subTitle, heading && subprogramme && "font-medium");
+  const proseHeadingLevel =
+    BlockHeading === "h4" ? 5 : BlockHeading === "h3" ? 4 : 3;
   return (
     <section className="space-y-9">
-      {heading && <h2 className={typography.sectionTitle}>{heading}</h2>}
+      {heading && (
+        <SectionHeading
+          className={
+            subprogramme ? typography.subTitle : typography.sectionTitle
+          }
+        >
+          {heading}
+        </SectionHeading>
+      )}
       {content.objectives.length > 0 && (
         <div className="space-y-3 border-s-2 border-un-blue bg-muted/40 px-4 py-4 sm:px-5">
-          <h3 className={typography.sectionTitle}>Objective</h3>
-          <BudgetProse paragraphs={content.objectives} />
+          <BlockHeading className={blockStyle}>Objective</BlockHeading>
+          <BudgetProse
+            paragraphs={content.objectives}
+            headingLevel={proseHeadingLevel}
+          />
         </div>
       )}
       {content.strategy.length > 0 && (
         <div className="space-y-3">
-          <h3 className={typography.sectionTitle}>Strategy</h3>
-          <BudgetProse paragraphs={content.strategy} />
+          <BlockHeading className={blockStyle}>Strategy</BlockHeading>
+          <BudgetProse
+            paragraphs={content.strategy}
+            headingLevel={proseHeadingLevel}
+          />
         </div>
       )}
       {content.performance.length > 0 && (
         <div className="space-y-3">
-          <h3 className={typography.sectionTitle}>
+          <BlockHeading className={blockStyle}>
             Programme performance in {budgetEdition - 2}
-          </h3>
+          </BlockHeading>
           <ResultsList results={content.performance} source={content.source} />
         </div>
       )}
       {content.planned.length > 0 && (
         <div className="space-y-3">
-          <h3 className={typography.sectionTitle}>
+          <BlockHeading className={blockStyle}>
             Planned results for {budgetEdition}
-          </h3>
+          </BlockHeading>
           <ResultsList results={content.planned} source={content.source} />
         </div>
       )}
       <ExternalLink
         href={content.source}
-        className={`${typography.meta} inline-block text-un-blue-text underline underline-offset-4`}
+        className={cn(
+          typography.caption,
+          "inline-block text-un-blue-text underline underline-offset-4",
+        )}
       >
         {content.symbol}
       </ExternalLink>
@@ -117,12 +145,15 @@ export function BudgetEntityPage({
     <SiteShell>
       <Link
         href="/"
-        className="inline-flex items-center gap-1.5 text-sm text-un-blue-text underline-offset-4 hover:underline"
+        className={cn(
+          typography.meta,
+          "inline-flex items-center gap-1.5 text-un-blue-text underline-offset-4 hover:underline",
+        )}
       >
         <ArrowLeft aria-hidden className="size-4 shrink-0" />
         All priority areas
       </Link>
-      <h1 className={`${typography.pageTitle} mt-5 max-w-4xl`}>
+      <h1 className={`${typography.pageTitle} mt-5 max-w-4xl text-balance`}>
         {entity.name}
       </h1>
       {!selected && (
@@ -130,7 +161,10 @@ export function BudgetEntityPage({
           <p className={typography.prose}>{description.text}</p>
           <ExternalLink
             href={description.source.href}
-            className={`${typography.meta} text-un-blue-text underline underline-offset-4`}
+            className={cn(
+              typography.caption,
+              "text-un-blue-text underline underline-offset-4",
+            )}
           >
             {description.source.label}
           </ExternalLink>
@@ -171,7 +205,11 @@ export function BudgetEntityPage({
                     href={tab.href}
                     className={`${typography.body} flex items-center gap-3 px-4 py-3 hover:bg-muted`}
                   >
-                    <span className="shrink-0 font-medium">{tab.label}</span>
+                    <span
+                      className={`${typography.label} shrink-0 text-un-blue-text`}
+                    >
+                      {tab.label}
+                    </span>
                     <span className="flex-1">{tab.title}</span>
                     <ChevronRight
                       className="size-4 shrink-0 text-muted-foreground"
@@ -187,6 +225,7 @@ export function BudgetEntityPage({
           <ContentSections
             key={index}
             content={section}
+            subprogramme={Boolean(selected)}
             heading={
               section.name && section.name !== entity.name
                 ? section.name

@@ -2,6 +2,8 @@
 
 import { useState, type ReactNode } from "react";
 import { Minus, Plus } from "lucide-react";
+import { typography } from "@un-eosg/ui/typography";
+import { cn } from "@/lib/utils";
 
 const countLabels = {
   result: "results",
@@ -38,10 +40,18 @@ export function ResultsExpander({
           expanded ? "bg-accent" : nested ? "bg-muted" : "bg-un-blue-surface"
         }`}
       >
-        <Heading className="text-base font-medium">{title}</Heading>
+        <Heading
+          className={cn(
+            nested ? typography.body : typography.subTitle,
+            nested && "font-semibold",
+            "min-w-0 wrap-break-word",
+          )}
+        >
+          {title}
+        </Heading>
         <span className="flex shrink-0 items-center gap-3">
           {count !== undefined && (
-            <span className="text-sm text-muted-foreground tabular-nums">
+            <span className={cn(typography.meta, "tabular-nums")}>
               {count} {count === 1 ? countUnit : countLabels[countUnit]}
             </span>
           )}

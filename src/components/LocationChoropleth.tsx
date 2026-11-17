@@ -104,7 +104,7 @@ export function LocationChoropleth({
 
   if (!map)
     return (
-      <p className="py-16 text-center" role="status">
+      <p className={`${typography.meta} py-16 text-center`} role="status">
         {failed ? "The map could not be loaded." : "Loading map…"}
       </p>
     );

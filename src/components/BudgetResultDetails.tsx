@@ -5,6 +5,7 @@ import { BudgetTimeChart } from "@/components/BudgetTimeChart";
 import { formatBudgetHeading } from "@/lib/budget-text";
 import { figureTimeSeries } from "@/lib/budget-time-series";
 import type { BudgetResult } from "@/lib/programme-budget";
+import { cn } from "@/lib/utils";
 
 export function BudgetResultDetails({
   result,
@@ -17,7 +18,9 @@ export function BudgetResultDetails({
 }) {
   return (
     <>
-      {result.narrative && <BudgetProse paragraphs={[result.narrative]} />}
+      {result.narrative && (
+        <BudgetProse paragraphs={[result.narrative]} compact />
+      )}
       {result.measures.length > 0 && (
         <BudgetMeasures measures={result.measures} />
       )}
@@ -41,7 +44,10 @@ export function BudgetResultDetails({
               />
             ))}
             <ExternalLink
-              className={`${typography.caption} inline-block text-un-blue-text underline underline-offset-4`}
+              className={cn(
+                typography.caption,
+                "inline-block text-un-blue-text underline underline-offset-4",
+              )}
               href={figure.source ?? source}
             >
               {figure.label

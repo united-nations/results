@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { typography } from "@un-eosg/ui/typography";
 import { BudgetResultPreview } from "@/components/BudgetResultPreview";
 import type {
   TaggedEntity,
@@ -26,11 +27,17 @@ export function EntityResultGroups({
     <div className="my-3 space-y-3 ps-3">
       {groups.map(({ entity, results }) => (
         <section className="border-s-2 border-un-blue-surface" key={entity.id}>
-          <Heading className="bg-muted px-3 py-2 text-sm font-medium">
+          <Heading
+            className={`${typography.body} bg-muted px-3 py-2 font-medium`}
+          >
             {entity.code && (
-              <span className="me-2 text-un-blue-text">{entity.code}</span>
+              <>
+                <span className="me-1 text-un-blue-text">
+                  {entity.code}
+                </span>{" "}
+              </>
             )}
-            {entity.name}
+            {entity.name !== entity.code && entity.name}
           </Heading>
           <ul className="divide-y">
             {results.map((summary) => (

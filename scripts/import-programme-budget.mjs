@@ -464,7 +464,16 @@ function getSubprogramme(entity, row, number, name) {
   return item;
 }
 function addContent(entity, row, name, parent, content) {
-  const section = { name, symbol: row.symbol, ...content };
+  const section = {
+    name,
+    symbol: row.symbol,
+    section: String(row.section),
+    ...(name &&
+    (row.unit_type === "component" || /^Component\s+\d+\b/i.test(name))
+      ? { component: name }
+      : {}),
+    ...content,
+  };
   if (parent) {
     const sub = getSubprogramme(entity, row, parent.number, parent.name);
     sub.sections.push(section);
@@ -557,11 +566,72 @@ const output = [...entities.values()]
   .sort((a, b) => (a.code ?? a.name).localeCompare(b.code ?? b.name, "en"));
 
 assert(output.length && output.some((entity) => entity.priorities.length > 1));
+const populatedSections = new Set(
+  output.flatMap(({ overview, subprogrammes }) =>
+    [...overview, ...subprogrammes.flatMap(({ sections }) => sections)].map(
+      ({ section }) => section,
+    ),
+  ),
+);
+const outlineBySection = Map.groupBy(outline, (row) => row.section);
+const budgetSections = identity.sections
+  .filter(({ section }) => populatedSections.has(section))
+  .map(({ section, sectionTitle }) => {
+    const fascicle = outlineBySection
+      .get(section)
+      ?.filter(({ symbol }) => symbol === `A/81/6 (Sect. ${section})`);
+    const cover = (fascicle ?? []).filter(
+      ({ position }) =>
+        position <
+        (fascicle?.find(({ text }) => clean(text) === "Contents")?.position ??
+          16),
+    );
+    const part = cover
+      .map(({ text }) =>
+        /^Part ([IVXLCDM]+)\s*[–—-]\s*(.+)$/i.exec(clean(text)),
+      )
+      .find(Boolean);
+    assert(
+      part && sectionTitle,
+      `Missing budget part or title for Section ${section}`,
+    );
+    const programmeHeading =
+      /^(?:Subprogramme \d+ of )?Programme (\d+)(?:\s*[–—-]\s*(.+))?$/i;
+    const programmeIndex = cover.findIndex(({ text }) =>
+      programmeHeading.test(clean(text)),
+    );
+    const programme = programmeHeading.exec(clean(cover[programmeIndex]?.text));
+    const programmeTitle =
+      programme?.[2] ??
+      cover
+        .slice(programmeIndex + 1)
+        .find(
+          ({ block_type, text }) =>
+            block_type.startsWith("heading") && clean(text),
+        )?.text;
+    return {
+      section,
+      title: sectionTitle,
+      part: { number: part[1], title: part[2] },
+      ...(programme && {
+        programme: {
+          number: Number(programme[1]),
+          title: clean(programmeTitle) || sectionTitle,
+        },
+      }),
+    };
+  });
+assert.equal(
+  budgetSections.length,
+  populatedSections.size,
+  "Missing section metadata",
+);
 const snapshot = {
   edition,
   priorityYear: expenses.meta.year,
   hashes,
   priorities,
+  budgetSections,
   entities: output,
 };
 writeFileSync(

@@ -22,7 +22,7 @@ export function SecretariatPage({
   return (
     <SiteShell activeHref="/">
       <h1 className={typography.pageTitle}>UN Secretariat Results</h1>
-      <p className={`${typography.prose} mt-4 max-w-2xl`}>
+      <p className={`${typography.lead} mt-4 max-w-2xl`}>
         Explore what each entity plans to achieve and what it reported
         achieving. The results come from the{" "}
         <ExternalLink
