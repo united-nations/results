@@ -111,28 +111,50 @@ class UninfoIntegrityTests(unittest.TestCase):
                 exporter.build_sdg_metrics(rows)
         self.assertNotIn('unclassified', exporter.build_sdg_metrics([node(1)]))
 
-    def test_all_current_framework_identities_and_reported_parents_survive(self):
-        raw = json.loads((ROOT / 'data/uninfo/raw/frameworks_by_country.json').read_text())
-        index = json.loads((ROOT / 'public/data/uninfo-countries-index.json').read_text())
-        for iso, entry in index.items():
-            source = raw.get(entry['name'], {})
-            expected = {item['id']: item for rows in source.values() for item in rows}
-            country = json.loads((ROOT / f'public/data/uninfo-countries/{iso}.json').read_text())
-            actual = list(walk(country.get('framework', [])))
-            with self.subTest(country=iso):
-                self.assertEqual(len(actual), len(expected))
-                self.assertEqual({item['id'] for item, _ in actual}, set(expected))
-                for item, parent in actual:
-                    self.assertEqual(parent, expected[item['id']].get('parentId'))
-                    self.assertEqual({key: item[key] for key in METRICS}, source_metrics(expected[item['id']]))
+    def test_all_published_framework_identities_and_coverage_survive_each_year(self):
+        basemap = json.loads((ROOT / 'public/data/world-map.geojson').read_text())
+        mapped = {feature['properties']['ISO3'] for feature in basemap['features']}
+        for year in range(2022, 2027):
+            raw = ROOT / f'data/uninfo/raw/{year}'
+            public = ROOT / f'public/data/uninfo/{year}'
+            entities = json.loads((raw / 'public_framework_entities.json').read_text())
+            plans = json.loads((raw / 'public_plans.json').read_text())
+            workspaces = json.loads((raw / 'workspaces.json').read_text())
+            plan_workspaces = {plan['id']: plan['workspaceId'] for plan in plans}
+            index = json.loads((public / 'uninfo-countries-index.json').read_text())
+            expected_coverage = set()
+            for iso, entry in index.items():
+                expected = {
+                    row['id']: row for row in entities
+                    if plan_workspaces[row['planId']] == workspaces[entry['name']]
+                }
+                country = json.loads((public / 'countries' / f'{iso}.json').read_text())
+                actual = list(walk(country.get('framework', [])))
+                with self.subTest(year=year, country=iso):
+                    self.assertEqual({row['id'] for row, _ in actual}, set(expected))
+                    self.assertEqual(len(actual), len(expected))
+                    self.assertEqual(entry['has_framework'], bool(expected))
+                    self.assertEqual(entry['year'], year)
+                    for row, parent in actual:
+                        self.assertEqual(parent, expected[row['id']]['parentId'])
+                if expected:
+                    expected_coverage.add(iso)
+            coverage = json.loads((public / 'coverage.json').read_text())
+            self.assertEqual(set(coverage['framework_countries']), expected_coverage)
+            self.assertTrue(expected_coverage <= mapped)
+            self.assertEqual(coverage['financial_only'], [])
+            self.assertEqual(
+                set(coverage['framework_only']),
+                expected_coverage - set(coverage['financial_countries']),
+            )
 
     def test_all_current_country_totals_include_every_source_sdg_group(self):
-        raw = json.loads((ROOT / 'data/uninfo/raw/countries_sdgs.json').read_text())
-        index = json.loads((ROOT / 'public/data/uninfo-countries-index.json').read_text())
+        raw = json.loads((ROOT / 'data/uninfo/raw/2024/countries_sdgs.json').read_text())
+        index = json.loads((ROOT / 'public/data/uninfo/2024/uninfo-countries-index.json').read_text())
         for iso, entry in index.items():
             rows = raw[entry['name']]['sdgs']
             expected = {key: round(sum(source_metrics(row)[key] for row in rows), 2) for key in METRICS}
-            country = json.loads((ROOT / f'public/data/uninfo-countries/{iso}.json').read_text())
+            country = json.loads((ROOT / f'public/data/uninfo/2024/countries/{iso}.json').read_text())
             with self.subTest(country=iso):
                 self.assertEqual(entry['totals'], expected)
                 self.assertEqual(country['totals'], expected)
@@ -142,12 +164,12 @@ class UninfoIntegrityTests(unittest.TestCase):
                     self.assertEqual(country['sdgs'][key], source_metrics(row))
 
     def test_global_unclassified_amounts_are_reported_not_inferred_from_countries(self):
-        source = json.loads((ROOT / 'data/uninfo/raw/global_sdgs.json').read_text())
-        actual = json.loads((ROOT / 'public/data/uninfo-sdgs.json').read_text())
+        source = json.loads((ROOT / 'data/uninfo/raw/2024/global_sdgs.json').read_text())
+        actual = json.loads((ROOT / 'public/data/uninfo/2024/uninfo-sdgs.json').read_text())
         expected = {str(row['id']) if row.get('id') is not None else 'unclassified': source_metrics(row)
                     for row in source}
         self.assertEqual({key: value['totals'] for key, value in actual.items()}, expected)
-        index = json.loads((ROOT / 'public/data/uninfo-countries-index.json').read_text())
+        index = json.loads((ROOT / 'public/data/uninfo/2024/uninfo-countries-index.json').read_text())
         for group in actual.values():
             for iso, metrics in group['countries'].items():
                 self.assertEqual(index[iso]['year'], 2024)

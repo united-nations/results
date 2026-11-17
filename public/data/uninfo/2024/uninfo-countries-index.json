@@ -1,0 +1,3597 @@
+{
+  "CUW": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Anguilla (United Kingdom)",
+      "Antigua and Barbuda",
+      "Aruba",
+      "Bahamas",
+      "Barbados",
+      "Belize",
+      "Bermuda",
+      "Cayman Islands",
+      "Cura\u00e7ao",
+      "Dominica",
+      "Grenada",
+      "Guyana",
+      "Jamaica",
+      "Montserrat",
+      "Saint Kitts and Nevis",
+      "Saint Lucia",
+      "Saint Vincent and the Grenadines",
+      "Sint Maarten (Dutch part)",
+      "Suriname",
+      "Trinidad and Tobago",
+      "Turks and Caicos Islands",
+      "Virgin Islands, British"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 252,
+    "name": "Cura\u00e7ao",
+    "totals": {
+      "required": 220023664.02,
+      "available": 187669359.0,
+      "spent": 100248207.02
+    },
+    "project_count": 737,
+    "has_framework": true
+  },
+  "ABW": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Anguilla (United Kingdom)",
+      "Antigua and Barbuda",
+      "Aruba",
+      "Bahamas",
+      "Barbados",
+      "Belize",
+      "Bermuda",
+      "Cayman Islands",
+      "Cura\u00e7ao",
+      "Dominica",
+      "Grenada",
+      "Guyana",
+      "Jamaica",
+      "Montserrat",
+      "Saint Kitts and Nevis",
+      "Saint Lucia",
+      "Saint Vincent and the Grenadines",
+      "Sint Maarten (Dutch part)",
+      "Suriname",
+      "Trinidad and Tobago",
+      "Turks and Caicos Islands",
+      "Virgin Islands, British"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 252,
+    "name": "Aruba",
+    "totals": {
+      "required": 220023664.02,
+      "available": 187669359.0,
+      "spent": 100248207.02
+    },
+    "project_count": 737,
+    "has_framework": true
+  },
+  "VCT": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Anguilla (United Kingdom)",
+      "Antigua and Barbuda",
+      "Aruba",
+      "Bahamas",
+      "Barbados",
+      "Belize",
+      "Bermuda",
+      "Cayman Islands",
+      "Cura\u00e7ao",
+      "Dominica",
+      "Grenada",
+      "Guyana",
+      "Jamaica",
+      "Montserrat",
+      "Saint Kitts and Nevis",
+      "Saint Lucia",
+      "Saint Vincent and the Grenadines",
+      "Sint Maarten (Dutch part)",
+      "Suriname",
+      "Trinidad and Tobago",
+      "Turks and Caicos Islands",
+      "Virgin Islands, British"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 252,
+    "name": "Saint Vincent and the Grenadines",
+    "totals": {
+      "required": 220023664.02,
+      "available": 187669359.0,
+      "spent": 100248207.02
+    },
+    "project_count": 737,
+    "has_framework": true
+  },
+  "LCA": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Anguilla (United Kingdom)",
+      "Antigua and Barbuda",
+      "Aruba",
+      "Bahamas",
+      "Barbados",
+      "Belize",
+      "Bermuda",
+      "Cayman Islands",
+      "Cura\u00e7ao",
+      "Dominica",
+      "Grenada",
+      "Guyana",
+      "Jamaica",
+      "Montserrat",
+      "Saint Kitts and Nevis",
+      "Saint Lucia",
+      "Saint Vincent and the Grenadines",
+      "Sint Maarten (Dutch part)",
+      "Suriname",
+      "Trinidad and Tobago",
+      "Turks and Caicos Islands",
+      "Virgin Islands, British"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 252,
+    "name": "Saint Lucia",
+    "totals": {
+      "required": 220023664.02,
+      "available": 187669359.0,
+      "spent": 100248207.02
+    },
+    "project_count": 737,
+    "has_framework": true
+  },
+  "KNA": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Anguilla (United Kingdom)",
+      "Antigua and Barbuda",
+      "Aruba",
+      "Bahamas",
+      "Barbados",
+      "Belize",
+      "Bermuda",
+      "Cayman Islands",
+      "Cura\u00e7ao",
+      "Dominica",
+      "Grenada",
+      "Guyana",
+      "Jamaica",
+      "Montserrat",
+      "Saint Kitts and Nevis",
+      "Saint Lucia",
+      "Saint Vincent and the Grenadines",
+      "Sint Maarten (Dutch part)",
+      "Suriname",
+      "Trinidad and Tobago",
+      "Turks and Caicos Islands",
+      "Virgin Islands, British"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 252,
+    "name": "Saint Kitts and Nevis",
+    "totals": {
+      "required": 220023664.02,
+      "available": 187669359.0,
+      "spent": 100248207.02
+    },
+    "project_count": 737,
+    "has_framework": true
+  },
+  "MSR": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Anguilla (United Kingdom)",
+      "Antigua and Barbuda",
+      "Aruba",
+      "Bahamas",
+      "Barbados",
+      "Belize",
+      "Bermuda",
+      "Cayman Islands",
+      "Cura\u00e7ao",
+      "Dominica",
+      "Grenada",
+      "Guyana",
+      "Jamaica",
+      "Montserrat",
+      "Saint Kitts and Nevis",
+      "Saint Lucia",
+      "Saint Vincent and the Grenadines",
+      "Sint Maarten (Dutch part)",
+      "Suriname",
+      "Trinidad and Tobago",
+      "Turks and Caicos Islands",
+      "Virgin Islands, British"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 252,
+    "name": "Montserrat",
+    "totals": {
+      "required": 220023664.02,
+      "available": 187669359.0,
+      "spent": 100248207.02
+    },
+    "project_count": 737,
+    "has_framework": true
+  },
+  "GRD": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Anguilla (United Kingdom)",
+      "Antigua and Barbuda",
+      "Aruba",
+      "Bahamas",
+      "Barbados",
+      "Belize",
+      "Bermuda",
+      "Cayman Islands",
+      "Cura\u00e7ao",
+      "Dominica",
+      "Grenada",
+      "Guyana",
+      "Jamaica",
+      "Montserrat",
+      "Saint Kitts and Nevis",
+      "Saint Lucia",
+      "Saint Vincent and the Grenadines",
+      "Sint Maarten (Dutch part)",
+      "Suriname",
+      "Trinidad and Tobago",
+      "Turks and Caicos Islands",
+      "Virgin Islands, British"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 252,
+    "name": "Grenada",
+    "totals": {
+      "required": 220023664.02,
+      "available": 187669359.0,
+      "spent": 100248207.02
+    },
+    "project_count": 737,
+    "has_framework": true
+  },
+  "DMA": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Anguilla (United Kingdom)",
+      "Antigua and Barbuda",
+      "Aruba",
+      "Bahamas",
+      "Barbados",
+      "Belize",
+      "Bermuda",
+      "Cayman Islands",
+      "Cura\u00e7ao",
+      "Dominica",
+      "Grenada",
+      "Guyana",
+      "Jamaica",
+      "Montserrat",
+      "Saint Kitts and Nevis",
+      "Saint Lucia",
+      "Saint Vincent and the Grenadines",
+      "Sint Maarten (Dutch part)",
+      "Suriname",
+      "Trinidad and Tobago",
+      "Turks and Caicos Islands",
+      "Virgin Islands, British"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 252,
+    "name": "Dominica",
+    "totals": {
+      "required": 220023664.02,
+      "available": 187669359.0,
+      "spent": 100248207.02
+    },
+    "project_count": 737,
+    "has_framework": true
+  },
+  "VGB": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Anguilla (United Kingdom)",
+      "Antigua and Barbuda",
+      "Aruba",
+      "Bahamas",
+      "Barbados",
+      "Belize",
+      "Bermuda",
+      "Cayman Islands",
+      "Cura\u00e7ao",
+      "Dominica",
+      "Grenada",
+      "Guyana",
+      "Jamaica",
+      "Montserrat",
+      "Saint Kitts and Nevis",
+      "Saint Lucia",
+      "Saint Vincent and the Grenadines",
+      "Sint Maarten (Dutch part)",
+      "Suriname",
+      "Trinidad and Tobago",
+      "Turks and Caicos Islands",
+      "Virgin Islands, British"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 252,
+    "name": "Virgin Islands, British",
+    "totals": {
+      "required": 220023664.02,
+      "available": 187669359.0,
+      "spent": 100248207.02
+    },
+    "project_count": 737,
+    "has_framework": true
+  },
+  "ATG": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Anguilla (United Kingdom)",
+      "Antigua and Barbuda",
+      "Aruba",
+      "Bahamas",
+      "Barbados",
+      "Belize",
+      "Bermuda",
+      "Cayman Islands",
+      "Cura\u00e7ao",
+      "Dominica",
+      "Grenada",
+      "Guyana",
+      "Jamaica",
+      "Montserrat",
+      "Saint Kitts and Nevis",
+      "Saint Lucia",
+      "Saint Vincent and the Grenadines",
+      "Sint Maarten (Dutch part)",
+      "Suriname",
+      "Trinidad and Tobago",
+      "Turks and Caicos Islands",
+      "Virgin Islands, British"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 252,
+    "name": "Antigua and Barbuda",
+    "totals": {
+      "required": 220023664.02,
+      "available": 187669359.0,
+      "spent": 100248207.02
+    },
+    "project_count": 737,
+    "has_framework": true
+  },
+  "AIA": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Anguilla (United Kingdom)",
+      "Antigua and Barbuda",
+      "Aruba",
+      "Bahamas",
+      "Barbados",
+      "Belize",
+      "Bermuda",
+      "Cayman Islands",
+      "Cura\u00e7ao",
+      "Dominica",
+      "Grenada",
+      "Guyana",
+      "Jamaica",
+      "Montserrat",
+      "Saint Kitts and Nevis",
+      "Saint Lucia",
+      "Saint Vincent and the Grenadines",
+      "Sint Maarten (Dutch part)",
+      "Suriname",
+      "Trinidad and Tobago",
+      "Turks and Caicos Islands",
+      "Virgin Islands, British"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 252,
+    "name": "Anguilla (United Kingdom)",
+    "totals": {
+      "required": 220023664.02,
+      "available": 187669359.0,
+      "spent": 100248207.02
+    },
+    "project_count": 737,
+    "has_framework": true
+  },
+  "TCA": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Anguilla (United Kingdom)",
+      "Antigua and Barbuda",
+      "Aruba",
+      "Bahamas",
+      "Barbados",
+      "Belize",
+      "Bermuda",
+      "Cayman Islands",
+      "Cura\u00e7ao",
+      "Dominica",
+      "Grenada",
+      "Guyana",
+      "Jamaica",
+      "Montserrat",
+      "Saint Kitts and Nevis",
+      "Saint Lucia",
+      "Saint Vincent and the Grenadines",
+      "Sint Maarten (Dutch part)",
+      "Suriname",
+      "Trinidad and Tobago",
+      "Turks and Caicos Islands",
+      "Virgin Islands, British"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 252,
+    "name": "Turks and Caicos Islands",
+    "totals": {
+      "required": 220023664.02,
+      "available": 187669359.0,
+      "spent": 100248207.02
+    },
+    "project_count": 737,
+    "has_framework": true
+  },
+  "CYM": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Anguilla (United Kingdom)",
+      "Antigua and Barbuda",
+      "Aruba",
+      "Bahamas",
+      "Barbados",
+      "Belize",
+      "Bermuda",
+      "Cayman Islands",
+      "Cura\u00e7ao",
+      "Dominica",
+      "Grenada",
+      "Guyana",
+      "Jamaica",
+      "Montserrat",
+      "Saint Kitts and Nevis",
+      "Saint Lucia",
+      "Saint Vincent and the Grenadines",
+      "Sint Maarten (Dutch part)",
+      "Suriname",
+      "Trinidad and Tobago",
+      "Turks and Caicos Islands",
+      "Virgin Islands, British"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 252,
+    "name": "Cayman Islands",
+    "totals": {
+      "required": 220023664.02,
+      "available": 187669359.0,
+      "spent": 100248207.02
+    },
+    "project_count": 737,
+    "has_framework": true
+  },
+  "BMU": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Anguilla (United Kingdom)",
+      "Antigua and Barbuda",
+      "Aruba",
+      "Bahamas",
+      "Barbados",
+      "Belize",
+      "Bermuda",
+      "Cayman Islands",
+      "Cura\u00e7ao",
+      "Dominica",
+      "Grenada",
+      "Guyana",
+      "Jamaica",
+      "Montserrat",
+      "Saint Kitts and Nevis",
+      "Saint Lucia",
+      "Saint Vincent and the Grenadines",
+      "Sint Maarten (Dutch part)",
+      "Suriname",
+      "Trinidad and Tobago",
+      "Turks and Caicos Islands",
+      "Virgin Islands, British"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 252,
+    "name": "Bermuda",
+    "totals": {
+      "required": 220023664.02,
+      "available": 187669359.0,
+      "spent": 100248207.02
+    },
+    "project_count": 737,
+    "has_framework": true
+  },
+  "BHS": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Anguilla (United Kingdom)",
+      "Antigua and Barbuda",
+      "Aruba",
+      "Bahamas",
+      "Barbados",
+      "Belize",
+      "Bermuda",
+      "Cayman Islands",
+      "Cura\u00e7ao",
+      "Dominica",
+      "Grenada",
+      "Guyana",
+      "Jamaica",
+      "Montserrat",
+      "Saint Kitts and Nevis",
+      "Saint Lucia",
+      "Saint Vincent and the Grenadines",
+      "Sint Maarten (Dutch part)",
+      "Suriname",
+      "Trinidad and Tobago",
+      "Turks and Caicos Islands",
+      "Virgin Islands, British"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 252,
+    "name": "Bahamas",
+    "totals": {
+      "required": 220023664.02,
+      "available": 187669359.0,
+      "spent": 100248207.02
+    },
+    "project_count": 737,
+    "has_framework": true
+  },
+  "FSM": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Cook Islands",
+      "Fiji",
+      "Kiribati",
+      "Marshall Islands",
+      "Micronesia, Federated States of",
+      "Nauru",
+      "Niue",
+      "Palau",
+      "Samoa",
+      "Solomon Islands",
+      "Tokelau",
+      "Tonga",
+      "Tuvalu",
+      "Vanuatu"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 241,
+    "name": "Micronesia, Federated States of",
+    "totals": {
+      "required": 352962433.99,
+      "available": 295477069.0,
+      "spent": 185650982.95
+    },
+    "project_count": 1469,
+    "has_framework": true
+  },
+  "PLW": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Cook Islands",
+      "Fiji",
+      "Kiribati",
+      "Marshall Islands",
+      "Micronesia, Federated States of",
+      "Nauru",
+      "Niue",
+      "Palau",
+      "Samoa",
+      "Solomon Islands",
+      "Tokelau",
+      "Tonga",
+      "Tuvalu",
+      "Vanuatu"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 241,
+    "name": "Palau",
+    "totals": {
+      "required": 352962433.99,
+      "available": 295477069.0,
+      "spent": 185650982.95
+    },
+    "project_count": 1469,
+    "has_framework": true
+  },
+  "MHL": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Cook Islands",
+      "Fiji",
+      "Kiribati",
+      "Marshall Islands",
+      "Micronesia, Federated States of",
+      "Nauru",
+      "Niue",
+      "Palau",
+      "Samoa",
+      "Solomon Islands",
+      "Tokelau",
+      "Tonga",
+      "Tuvalu",
+      "Vanuatu"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 241,
+    "name": "Marshall Islands",
+    "totals": {
+      "required": 352962433.99,
+      "available": 295477069.0,
+      "spent": 185650982.95
+    },
+    "project_count": 1469,
+    "has_framework": true
+  },
+  "KIR": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Cook Islands",
+      "Fiji",
+      "Kiribati",
+      "Marshall Islands",
+      "Micronesia, Federated States of",
+      "Nauru",
+      "Niue",
+      "Palau",
+      "Samoa",
+      "Solomon Islands",
+      "Tokelau",
+      "Tonga",
+      "Tuvalu",
+      "Vanuatu"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 241,
+    "name": "Kiribati",
+    "totals": {
+      "required": 352962433.99,
+      "available": 295477069.0,
+      "spent": 185650982.95
+    },
+    "project_count": 1469,
+    "has_framework": true
+  },
+  "NRU": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Cook Islands",
+      "Fiji",
+      "Kiribati",
+      "Marshall Islands",
+      "Micronesia, Federated States of",
+      "Nauru",
+      "Niue",
+      "Palau",
+      "Samoa",
+      "Solomon Islands",
+      "Tokelau",
+      "Tonga",
+      "Tuvalu",
+      "Vanuatu"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 241,
+    "name": "Nauru",
+    "totals": {
+      "required": 352962433.99,
+      "available": 295477069.0,
+      "spent": 185650982.95
+    },
+    "project_count": 1469,
+    "has_framework": true
+  },
+  "WSM": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Cook Islands",
+      "Fiji",
+      "Kiribati",
+      "Marshall Islands",
+      "Micronesia, Federated States of",
+      "Nauru",
+      "Niue",
+      "Palau",
+      "Samoa",
+      "Solomon Islands",
+      "Tokelau",
+      "Tonga",
+      "Tuvalu",
+      "Vanuatu"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 241,
+    "name": "Samoa",
+    "totals": {
+      "required": 352962433.99,
+      "available": 295477069.0,
+      "spent": 185650982.95
+    },
+    "project_count": 1469,
+    "has_framework": true
+  },
+  "COK": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Cook Islands",
+      "Fiji",
+      "Kiribati",
+      "Marshall Islands",
+      "Micronesia, Federated States of",
+      "Nauru",
+      "Niue",
+      "Palau",
+      "Samoa",
+      "Solomon Islands",
+      "Tokelau",
+      "Tonga",
+      "Tuvalu",
+      "Vanuatu"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 241,
+    "name": "Cook Islands",
+    "totals": {
+      "required": 352962433.99,
+      "available": 295477069.0,
+      "spent": 185650982.95
+    },
+    "project_count": 1469,
+    "has_framework": true
+  },
+  "NIU": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Cook Islands",
+      "Fiji",
+      "Kiribati",
+      "Marshall Islands",
+      "Micronesia, Federated States of",
+      "Nauru",
+      "Niue",
+      "Palau",
+      "Samoa",
+      "Solomon Islands",
+      "Tokelau",
+      "Tonga",
+      "Tuvalu",
+      "Vanuatu"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 241,
+    "name": "Niue",
+    "totals": {
+      "required": 352962433.99,
+      "available": 295477069.0,
+      "spent": 185650982.95
+    },
+    "project_count": 1469,
+    "has_framework": true
+  },
+  "TKL": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Cook Islands",
+      "Fiji",
+      "Kiribati",
+      "Marshall Islands",
+      "Micronesia, Federated States of",
+      "Nauru",
+      "Niue",
+      "Palau",
+      "Samoa",
+      "Solomon Islands",
+      "Tokelau",
+      "Tonga",
+      "Tuvalu",
+      "Vanuatu"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 241,
+    "name": "Tokelau",
+    "totals": {
+      "required": 352962433.99,
+      "available": 295477069.0,
+      "spent": 185650982.95
+    },
+    "project_count": 1469,
+    "has_framework": true
+  },
+  "BLZ": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Anguilla (United Kingdom)",
+      "Antigua and Barbuda",
+      "Aruba",
+      "Bahamas",
+      "Barbados",
+      "Belize",
+      "Bermuda",
+      "Cayman Islands",
+      "Cura\u00e7ao",
+      "Dominica",
+      "Grenada",
+      "Guyana",
+      "Jamaica",
+      "Montserrat",
+      "Saint Kitts and Nevis",
+      "Saint Lucia",
+      "Saint Vincent and the Grenadines",
+      "Sint Maarten (Dutch part)",
+      "Suriname",
+      "Trinidad and Tobago",
+      "Turks and Caicos Islands",
+      "Virgin Islands, British"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 252,
+    "name": "Belize",
+    "totals": {
+      "required": 220023664.02,
+      "available": 187669359.0,
+      "spent": 100248207.02
+    },
+    "project_count": 737,
+    "has_framework": true
+  },
+  "BRB": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Anguilla (United Kingdom)",
+      "Antigua and Barbuda",
+      "Aruba",
+      "Bahamas",
+      "Barbados",
+      "Belize",
+      "Bermuda",
+      "Cayman Islands",
+      "Cura\u00e7ao",
+      "Dominica",
+      "Grenada",
+      "Guyana",
+      "Jamaica",
+      "Montserrat",
+      "Saint Kitts and Nevis",
+      "Saint Lucia",
+      "Saint Vincent and the Grenadines",
+      "Sint Maarten (Dutch part)",
+      "Suriname",
+      "Trinidad and Tobago",
+      "Turks and Caicos Islands",
+      "Virgin Islands, British"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 252,
+    "name": "Barbados",
+    "totals": {
+      "required": 220023664.02,
+      "available": 187669359.0,
+      "spent": 100248207.02
+    },
+    "project_count": 737,
+    "has_framework": true
+  },
+  "FJI": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Cook Islands",
+      "Fiji",
+      "Kiribati",
+      "Marshall Islands",
+      "Micronesia, Federated States of",
+      "Nauru",
+      "Niue",
+      "Palau",
+      "Samoa",
+      "Solomon Islands",
+      "Tokelau",
+      "Tonga",
+      "Tuvalu",
+      "Vanuatu"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 241,
+    "name": "Fiji",
+    "totals": {
+      "required": 352962433.99,
+      "available": 295477069.0,
+      "spent": 185650982.95
+    },
+    "project_count": 1469,
+    "has_framework": true
+  },
+  "SLB": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Cook Islands",
+      "Fiji",
+      "Kiribati",
+      "Marshall Islands",
+      "Micronesia, Federated States of",
+      "Nauru",
+      "Niue",
+      "Palau",
+      "Samoa",
+      "Solomon Islands",
+      "Tokelau",
+      "Tonga",
+      "Tuvalu",
+      "Vanuatu"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 241,
+    "name": "Solomon Islands",
+    "totals": {
+      "required": 352962433.99,
+      "available": 295477069.0,
+      "spent": 185650982.95
+    },
+    "project_count": 1469,
+    "has_framework": true
+  },
+  "TON": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Cook Islands",
+      "Fiji",
+      "Kiribati",
+      "Marshall Islands",
+      "Micronesia, Federated States of",
+      "Nauru",
+      "Niue",
+      "Palau",
+      "Samoa",
+      "Solomon Islands",
+      "Tokelau",
+      "Tonga",
+      "Tuvalu",
+      "Vanuatu"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 241,
+    "name": "Tonga",
+    "totals": {
+      "required": 352962433.99,
+      "available": 295477069.0,
+      "spent": 185650982.95
+    },
+    "project_count": 1469,
+    "has_framework": true
+  },
+  "TUV": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Cook Islands",
+      "Fiji",
+      "Kiribati",
+      "Marshall Islands",
+      "Micronesia, Federated States of",
+      "Nauru",
+      "Niue",
+      "Palau",
+      "Samoa",
+      "Solomon Islands",
+      "Tokelau",
+      "Tonga",
+      "Tuvalu",
+      "Vanuatu"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 241,
+    "name": "Tuvalu",
+    "totals": {
+      "required": 352962433.99,
+      "available": 295477069.0,
+      "spent": 185650982.95
+    },
+    "project_count": 1469,
+    "has_framework": true
+  },
+  "VUT": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Cook Islands",
+      "Fiji",
+      "Kiribati",
+      "Marshall Islands",
+      "Micronesia, Federated States of",
+      "Nauru",
+      "Niue",
+      "Palau",
+      "Samoa",
+      "Solomon Islands",
+      "Tokelau",
+      "Tonga",
+      "Tuvalu",
+      "Vanuatu"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 241,
+    "name": "Vanuatu",
+    "totals": {
+      "required": 352962433.99,
+      "available": 295477069.0,
+      "spent": 185650982.95
+    },
+    "project_count": 1469,
+    "has_framework": true
+  },
+  "GUY": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Anguilla (United Kingdom)",
+      "Antigua and Barbuda",
+      "Aruba",
+      "Bahamas",
+      "Barbados",
+      "Belize",
+      "Bermuda",
+      "Cayman Islands",
+      "Cura\u00e7ao",
+      "Dominica",
+      "Grenada",
+      "Guyana",
+      "Jamaica",
+      "Montserrat",
+      "Saint Kitts and Nevis",
+      "Saint Lucia",
+      "Saint Vincent and the Grenadines",
+      "Sint Maarten (Dutch part)",
+      "Suriname",
+      "Trinidad and Tobago",
+      "Turks and Caicos Islands",
+      "Virgin Islands, British"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 252,
+    "name": "Guyana",
+    "totals": {
+      "required": 220023664.02,
+      "available": 187669359.0,
+      "spent": 100248207.02
+    },
+    "project_count": 737,
+    "has_framework": true
+  },
+  "JAM": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Anguilla (United Kingdom)",
+      "Antigua and Barbuda",
+      "Aruba",
+      "Bahamas",
+      "Barbados",
+      "Belize",
+      "Bermuda",
+      "Cayman Islands",
+      "Cura\u00e7ao",
+      "Dominica",
+      "Grenada",
+      "Guyana",
+      "Jamaica",
+      "Montserrat",
+      "Saint Kitts and Nevis",
+      "Saint Lucia",
+      "Saint Vincent and the Grenadines",
+      "Sint Maarten (Dutch part)",
+      "Suriname",
+      "Trinidad and Tobago",
+      "Turks and Caicos Islands",
+      "Virgin Islands, British"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 252,
+    "name": "Jamaica",
+    "totals": {
+      "required": 220023664.02,
+      "available": 187669359.0,
+      "spent": 100248207.02
+    },
+    "project_count": 737,
+    "has_framework": true
+  },
+  "SUR": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Anguilla (United Kingdom)",
+      "Antigua and Barbuda",
+      "Aruba",
+      "Bahamas",
+      "Barbados",
+      "Belize",
+      "Bermuda",
+      "Cayman Islands",
+      "Cura\u00e7ao",
+      "Dominica",
+      "Grenada",
+      "Guyana",
+      "Jamaica",
+      "Montserrat",
+      "Saint Kitts and Nevis",
+      "Saint Lucia",
+      "Saint Vincent and the Grenadines",
+      "Sint Maarten (Dutch part)",
+      "Suriname",
+      "Trinidad and Tobago",
+      "Turks and Caicos Islands",
+      "Virgin Islands, British"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 252,
+    "name": "Suriname",
+    "totals": {
+      "required": 220023664.02,
+      "available": 187669359.0,
+      "spent": 100248207.02
+    },
+    "project_count": 737,
+    "has_framework": true
+  },
+  "TTO": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Anguilla (United Kingdom)",
+      "Antigua and Barbuda",
+      "Aruba",
+      "Bahamas",
+      "Barbados",
+      "Belize",
+      "Bermuda",
+      "Cayman Islands",
+      "Cura\u00e7ao",
+      "Dominica",
+      "Grenada",
+      "Guyana",
+      "Jamaica",
+      "Montserrat",
+      "Saint Kitts and Nevis",
+      "Saint Lucia",
+      "Saint Vincent and the Grenadines",
+      "Sint Maarten (Dutch part)",
+      "Suriname",
+      "Trinidad and Tobago",
+      "Turks and Caicos Islands",
+      "Virgin Islands, British"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 252,
+    "name": "Trinidad and Tobago",
+    "totals": {
+      "required": 220023664.02,
+      "available": 187669359.0,
+      "spent": 100248207.02
+    },
+    "project_count": 737,
+    "has_framework": true
+  },
+  "SXM": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Anguilla (United Kingdom)",
+      "Antigua and Barbuda",
+      "Aruba",
+      "Bahamas",
+      "Barbados",
+      "Belize",
+      "Bermuda",
+      "Cayman Islands",
+      "Cura\u00e7ao",
+      "Dominica",
+      "Grenada",
+      "Guyana",
+      "Jamaica",
+      "Montserrat",
+      "Saint Kitts and Nevis",
+      "Saint Lucia",
+      "Saint Vincent and the Grenadines",
+      "Sint Maarten (Dutch part)",
+      "Suriname",
+      "Trinidad and Tobago",
+      "Turks and Caicos Islands",
+      "Virgin Islands, British"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 252,
+    "name": "Sint Maarten (Dutch part)",
+    "totals": {
+      "required": 220023664.02,
+      "available": 187669359.0,
+      "spent": 100248207.02
+    },
+    "project_count": 737,
+    "has_framework": true
+  },
+  "COD": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Congo, The Democratic Republic of the"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 251,
+    "name": "Congo, The Democratic Republic of the",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "PSE": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "occupied Palestinian territory"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 233,
+    "name": "occupied Palestinian territory",
+    "totals": {
+      "required": 620000,
+      "available": 420000,
+      "spent": 0
+    },
+    "project_count": 3,
+    "has_framework": true
+  },
+  "XKX": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Kosovo"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 230,
+    "name": "Kosovo",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "SLV": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "El Salvador"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 228,
+    "name": "El Salvador",
+    "totals": {
+      "required": 148016823.99,
+      "available": 126893110.99,
+      "spent": 104492150.01
+    },
+    "project_count": 210,
+    "has_framework": true
+  },
+  "AGO": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Angola"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 221,
+    "name": "Angola",
+    "totals": {
+      "required": 132410663.99,
+      "available": 102755256.01,
+      "spent": 77435604.99
+    },
+    "project_count": 101,
+    "has_framework": true
+  },
+  "ALB": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Albania"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 220,
+    "name": "Albania",
+    "totals": {
+      "required": 82921503.0,
+      "available": 76235526.99,
+      "spent": 68097972.0
+    },
+    "project_count": 200,
+    "has_framework": true
+  },
+  "ARG": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Argentina"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 217,
+    "name": "Argentina",
+    "totals": {
+      "required": 476720420.98,
+      "available": 428494428.98,
+      "spent": 366538974.99
+    },
+    "project_count": 125,
+    "has_framework": true
+  },
+  "ARM": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Armenia"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 216,
+    "name": "Armenia",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "AZE": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Azerbaijan"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 212,
+    "name": "Azerbaijan",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "BDI": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Burundi"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 211,
+    "name": "Burundi",
+    "totals": {
+      "required": 238785270.0,
+      "available": 203887929.0,
+      "spent": 173783806.0
+    },
+    "project_count": 188,
+    "has_framework": true
+  },
+  "BEN": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Benin"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 209,
+    "name": "Benin",
+    "totals": {
+      "required": 203064773.98,
+      "available": 159757791.02,
+      "spent": 103676723.0
+    },
+    "project_count": 99,
+    "has_framework": true
+  },
+  "BFA": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Burkina Faso"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 208,
+    "name": "Burkina Faso",
+    "totals": {
+      "required": 370562719.98,
+      "available": 285359706.97,
+      "spent": 238246944.98
+    },
+    "project_count": 739,
+    "has_framework": true
+  },
+  "BGD": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Bangladesh"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 207,
+    "name": "Bangladesh",
+    "totals": {
+      "required": 292622778.01,
+      "available": 245466239.03,
+      "spent": 210176773.0
+    },
+    "project_count": 174,
+    "has_framework": true
+  },
+  "BHR": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Bahrain"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 205,
+    "name": "Bahrain",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "BIH": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Bosnia and Herzegovina"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 203,
+    "name": "Bosnia and Herzegovina",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "BLR": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Belarus"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 202,
+    "name": "Belarus",
+    "totals": {
+      "required": 30959454.99,
+      "available": 23122378.99,
+      "spent": 20848764.99
+    },
+    "project_count": 109,
+    "has_framework": true
+  },
+  "BOL": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Bolivia, Plurinational State of"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 199,
+    "name": "Bolivia, Plurinational State of",
+    "totals": {
+      "required": 66423332.01,
+      "available": 55788649.01,
+      "spent": 52270379.01
+    },
+    "project_count": 258,
+    "has_framework": true
+  },
+  "BRA": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Brazil"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 198,
+    "name": "Brazil",
+    "totals": {
+      "required": 209453158.0,
+      "available": 185379300.99,
+      "spent": 168609805.99
+    },
+    "project_count": 361,
+    "has_framework": true
+  },
+  "BTN": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Bhutan"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 195,
+    "name": "Bhutan",
+    "totals": {
+      "required": 29921061.0,
+      "available": 29422917.0,
+      "spent": 25838312.02
+    },
+    "project_count": 92,
+    "has_framework": true
+  },
+  "BWA": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Botswana"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 193,
+    "name": "Botswana",
+    "totals": {
+      "required": 14333242.0,
+      "available": 12308694.0,
+      "spent": 10483023.0
+    },
+    "project_count": 119,
+    "has_framework": true
+  },
+  "CAF": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Central African Republic"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 192,
+    "name": "Central African Republic",
+    "totals": {
+      "required": 446808478.0,
+      "available": 295387736.0,
+      "spent": 204384969.01
+    },
+    "project_count": 132,
+    "has_framework": true
+  },
+  "CHL": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Chile"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 190,
+    "name": "Chile",
+    "totals": {
+      "required": 109228552.01,
+      "available": 48656323.99,
+      "spent": 45052089.01
+    },
+    "project_count": 232,
+    "has_framework": true
+  },
+  "CIV": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "C\u00f4te d'Ivoire"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 189,
+    "name": "C\u00f4te d'Ivoire",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "CMR": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Cameroon"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 188,
+    "name": "Cameroon",
+    "totals": {
+      "required": 405528045.98,
+      "available": 261986701.0,
+      "spent": 7315452.0
+    },
+    "project_count": 255,
+    "has_framework": true
+  },
+  "COG": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Congo"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 187,
+    "name": "Congo",
+    "totals": {
+      "required": 117825028.99,
+      "available": 69801655.01,
+      "spent": 0
+    },
+    "project_count": 85,
+    "has_framework": true
+  },
+  "COL": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Colombia"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 186,
+    "name": "Colombia",
+    "totals": {
+      "required": 523227750.01,
+      "available": 231249504.0,
+      "spent": 97893041.02
+    },
+    "project_count": 187,
+    "has_framework": true
+  },
+  "COM": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Comoros"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 185,
+    "name": "Comoros",
+    "totals": {
+      "required": 667536,
+      "available": 667536,
+      "spent": 374580
+    },
+    "project_count": 11,
+    "has_framework": true
+  },
+  "CRI": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Costa Rica"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 184,
+    "name": "Costa Rica",
+    "totals": {
+      "required": 103605999.0,
+      "available": 78548365.0,
+      "spent": 60166095.99
+    },
+    "project_count": 254,
+    "has_framework": true
+  },
+  "CUB": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Cuba"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 183,
+    "name": "Cuba",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "DOM": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Dominican Republic"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 178,
+    "name": "Dominican Republic",
+    "totals": {
+      "required": 67594623.0,
+      "available": 67031845.01,
+      "spent": 61264307.99
+    },
+    "project_count": 168,
+    "has_framework": true
+  },
+  "DZA": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Algeria"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 177,
+    "name": "Algeria",
+    "totals": {
+      "required": 18461807.98,
+      "available": 15198838.99,
+      "spent": 13780179.0
+    },
+    "project_count": 114,
+    "has_framework": true
+  },
+  "ECU": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Ecuador"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 176,
+    "name": "Ecuador",
+    "totals": {
+      "required": 290336290.01,
+      "available": 207313076.02,
+      "spent": 176011733.71
+    },
+    "project_count": 276,
+    "has_framework": true
+  },
+  "EGY": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Egypt"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 175,
+    "name": "Egypt",
+    "totals": {
+      "required": 269132334.0,
+      "available": 238646216.99,
+      "spent": 173282011.01
+    },
+    "project_count": 298,
+    "has_framework": true
+  },
+  "ERI": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Eritrea"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 174,
+    "name": "Eritrea",
+    "totals": {
+      "required": 85409716.0,
+      "available": 58527548.99,
+      "spent": 38915875.0
+    },
+    "project_count": 190,
+    "has_framework": true
+  },
+  "ETH": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Ethiopia"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 170,
+    "name": "Ethiopia",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "GAB": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Gabon"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 166,
+    "name": "Gabon",
+    "totals": {
+      "required": 17577064.99,
+      "available": 16909319.0,
+      "spent": 15004673.99
+    },
+    "project_count": 121,
+    "has_framework": true
+  },
+  "GEO": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Georgia"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 165,
+    "name": "Georgia",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "GIN": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Guinea"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 162,
+    "name": "Guinea",
+    "totals": {
+      "required": 172410684.99,
+      "available": 134856176.02,
+      "spent": 103159805.01
+    },
+    "project_count": 73,
+    "has_framework": true
+  },
+  "GMB": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Gambia"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 161,
+    "name": "Gambia",
+    "totals": {
+      "required": 46444604.0,
+      "available": 31873983.0,
+      "spent": 13545659.0
+    },
+    "project_count": 190,
+    "has_framework": true
+  },
+  "GNB": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Guinea-Bissau"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 160,
+    "name": "Guinea-Bissau",
+    "totals": {
+      "required": 67275879.01,
+      "available": 59562971.01,
+      "spent": 44782946.02
+    },
+    "project_count": 74,
+    "has_framework": true
+  },
+  "GNQ": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Equatorial Guinea"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 159,
+    "name": "Equatorial Guinea",
+    "totals": {
+      "required": 39997359.0,
+      "available": 22772292,
+      "spent": 15463646.01
+    },
+    "project_count": 127,
+    "has_framework": true
+  },
+  "GTM": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Guatemala"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 155,
+    "name": "Guatemala",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "HND": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Honduras"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 151,
+    "name": "Honduras",
+    "totals": {
+      "required": 234078143.99,
+      "available": 192926877.0,
+      "spent": 152083913.99
+    },
+    "project_count": 170,
+    "has_framework": true
+  },
+  "HTI": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Haiti"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 149,
+    "name": "Haiti",
+    "totals": {
+      "required": 615097314.0,
+      "available": 485011316.0,
+      "spent": 269290893.0
+    },
+    "project_count": 173,
+    "has_framework": true
+  },
+  "IDN": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Indonesia"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 147,
+    "name": "Indonesia",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "IND": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "India"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 146,
+    "name": "India",
+    "totals": {
+      "required": 288197764.01,
+      "available": 259676526.01,
+      "spent": 206889981.99
+    },
+    "project_count": 128,
+    "has_framework": true
+  },
+  "IRN": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Iran, Islamic Republic of"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 144,
+    "name": "Iran, Islamic Republic of",
+    "totals": {
+      "required": 39098880.0,
+      "available": 26264413.01,
+      "spent": 23310122.0
+    },
+    "project_count": 158,
+    "has_framework": true
+  },
+  "IRQ": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Iraq"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 143,
+    "name": "Iraq",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "KEN": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Kenya"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 135,
+    "name": "Kenya",
+    "totals": {
+      "required": 1035223959.01,
+      "available": 664406011.01,
+      "spent": 528618722.99
+    },
+    "project_count": 119,
+    "has_framework": true
+  },
+  "KGZ": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Kyrgyzstan"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 134,
+    "name": "Kyrgyzstan",
+    "totals": {
+      "required": 75020016.99,
+      "available": 66882473.01,
+      "spent": 57287683.01
+    },
+    "project_count": 193,
+    "has_framework": true
+  },
+  "KHM": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Cambodia"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 133,
+    "name": "Cambodia",
+    "totals": {
+      "required": 133032435.02,
+      "available": 122419553.0,
+      "spent": 106202353.01
+    },
+    "project_count": 249,
+    "has_framework": true
+  },
+  "LAO": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Lao People's Democratic Republic"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 129,
+    "name": "Lao People's Democratic Republic",
+    "totals": {
+      "required": 131501217.0,
+      "available": 112887586.98,
+      "spent": 69667453.0
+    },
+    "project_count": 154,
+    "has_framework": true
+  },
+  "LBN": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Lebanon"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 128,
+    "name": "Lebanon",
+    "totals": {
+      "required": 1866731882.0,
+      "available": 882282214.97,
+      "spent": 566434829.0
+    },
+    "project_count": 321,
+    "has_framework": true
+  },
+  "LBR": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Liberia"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 127,
+    "name": "Liberia",
+    "totals": {
+      "required": 132312503.0,
+      "available": 101547215.0,
+      "spent": 75016672.0
+    },
+    "project_count": 129,
+    "has_framework": true
+  },
+  "LBY": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Libya"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 126,
+    "name": "Libya",
+    "totals": {
+      "required": 245192462.0,
+      "available": 152655165.0,
+      "spent": 112385684.02
+    },
+    "project_count": 267,
+    "has_framework": true
+  },
+  "LKA": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Sri Lanka"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 123,
+    "name": "Sri Lanka",
+    "totals": {
+      "required": 111888731.99,
+      "available": 95958718.99,
+      "spent": 81293866.98
+    },
+    "project_count": 204,
+    "has_framework": true
+  },
+  "LSO": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Lesotho"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 122,
+    "name": "Lesotho",
+    "totals": {
+      "required": 28117822.0,
+      "available": 17744597.0,
+      "spent": 13667832.01
+    },
+    "project_count": 172,
+    "has_framework": true
+  },
+  "MDA": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Moldova, Republic of"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 116,
+    "name": "Moldova, Republic of",
+    "totals": {
+      "required": 180283212.0,
+      "available": 173678383.0,
+      "spent": 169791135.98
+    },
+    "project_count": 245,
+    "has_framework": true
+  },
+  "MDG": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Madagascar"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 115,
+    "name": "Madagascar",
+    "totals": {
+      "required": 321439971.01,
+      "available": 285233789.01,
+      "spent": 208971929.0
+    },
+    "project_count": 188,
+    "has_framework": true
+  },
+  "MDV": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Maldives"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 114,
+    "name": "Maldives",
+    "totals": {
+      "required": 65860454.0,
+      "available": 54208828.0,
+      "spent": 36766250.99
+    },
+    "project_count": 101,
+    "has_framework": true
+  },
+  "MEX": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Mexico"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 113,
+    "name": "Mexico",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "MLI": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Mali"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 111,
+    "name": "Mali",
+    "totals": {
+      "required": 724178555.99,
+      "available": 563447827.0,
+      "spent": 106551580.0
+    },
+    "project_count": 274,
+    "has_framework": true
+  },
+  "MNE": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Montenegro"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 108,
+    "name": "Montenegro",
+    "totals": {
+      "required": 24137664.01,
+      "available": 21864916.02,
+      "spent": 17721097.01
+    },
+    "project_count": 153,
+    "has_framework": true
+  },
+  "MNG": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Mongolia"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 107,
+    "name": "Mongolia",
+    "totals": {
+      "required": 54830579.99,
+      "available": 52497863.99,
+      "spent": 44764887.99
+    },
+    "project_count": 142,
+    "has_framework": true
+  },
+  "MRT": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Mauritania"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 106,
+    "name": "Mauritania",
+    "totals": {
+      "required": 131022824.0,
+      "available": 99026645.99,
+      "spent": 72288430.99
+    },
+    "project_count": 52,
+    "has_framework": true
+  },
+  "MUS": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Mauritius"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 105,
+    "name": "Mauritius",
+    "totals": {
+      "required": 8099137.01,
+      "available": 7316150.01,
+      "spent": 4833600.01
+    },
+    "project_count": 84,
+    "has_framework": true
+  },
+  "SYC": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Seychelles"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 54,
+    "name": "Seychelles",
+    "totals": {
+      "required": 8531309.0,
+      "available": 5278903.0,
+      "spent": 4471409.0
+    },
+    "project_count": 78,
+    "has_framework": true
+  },
+  "NAM": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Namibia"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 104,
+    "name": "Namibia",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "NER": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Niger"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 102,
+    "name": "Niger",
+    "totals": {
+      "required": 482651370.99,
+      "available": 368515983.01,
+      "spent": 243257981.99
+    },
+    "project_count": 82,
+    "has_framework": true
+  },
+  "NPL": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Nepal"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 96,
+    "name": "Nepal",
+    "totals": {
+      "required": 158144296.0,
+      "available": 137032230.01,
+      "spent": 111330641.0
+    },
+    "project_count": 270,
+    "has_framework": true
+  },
+  "PAK": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Pakistan"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 92,
+    "name": "Pakistan",
+    "totals": {
+      "required": 1266082199.0,
+      "available": 921033527.99,
+      "spent": 641589535.01
+    },
+    "project_count": 125,
+    "has_framework": true
+  },
+  "PAN": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Panama"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 91,
+    "name": "Panama",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "PER": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Peru"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 89,
+    "name": "Peru",
+    "totals": {
+      "required": 219544854.99,
+      "available": 183193860.99,
+      "spent": 20333952.0
+    },
+    "project_count": 255,
+    "has_framework": true
+  },
+  "PHL": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Philippines"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 88,
+    "name": "Philippines",
+    "totals": {
+      "required": 181719404.99,
+      "available": 163857833.0,
+      "spent": 143850624.0
+    },
+    "project_count": 179,
+    "has_framework": true
+  },
+  "PNG": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Papua New Guinea"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 86,
+    "name": "Papua New Guinea",
+    "totals": {
+      "required": 216570251.02,
+      "available": 133935568.01,
+      "spent": 81887665.01
+    },
+    "project_count": 211,
+    "has_framework": true
+  },
+  "PRY": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Paraguay"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 81,
+    "name": "Paraguay",
+    "totals": {
+      "required": 109366924.0,
+      "available": 100905546.99,
+      "spent": 70391874.0
+    },
+    "project_count": 152,
+    "has_framework": true
+  },
+  "RWA": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Rwanda"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 75,
+    "name": "Rwanda",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "SAU": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Saudi Arabia"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 74,
+    "name": "Saudi Arabia",
+    "totals": {
+      "required": 90499577.98,
+      "available": 80668127.99,
+      "spent": 78416185.01
+    },
+    "project_count": 81,
+    "has_framework": true
+  },
+  "SDN": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Sudan"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 73,
+    "name": "Sudan",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "SEN": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Senegal"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 72,
+    "name": "Senegal",
+    "totals": {
+      "required": 91571088.99,
+      "available": 91458749.0,
+      "spent": 62415061.01
+    },
+    "project_count": 39,
+    "has_framework": true
+  },
+  "SLE": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Sierra Leone"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 66,
+    "name": "Sierra Leone",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "SOM": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Somalia"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 63,
+    "name": "Somalia",
+    "totals": {
+      "required": 1595541977.02,
+      "available": 1007609594.01,
+      "spent": 623320321.99
+    },
+    "project_count": 298,
+    "has_framework": true
+  },
+  "SRB": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Serbia"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 62,
+    "name": "Serbia",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "SSD": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "South Sudan"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 61,
+    "name": "South Sudan",
+    "totals": {
+      "required": 1010950685.01,
+      "available": 506439660.02,
+      "spent": 289489867.01
+    },
+    "project_count": 202,
+    "has_framework": true
+  },
+  "STP": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "S\u00e3o Tom\u00e9 and Pr\u00edncipe"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 60,
+    "name": "S\u00e3o Tom\u00e9 and Pr\u00edncipe",
+    "totals": {
+      "required": 27575548.02,
+      "available": 24259967.01,
+      "spent": 19001076.0
+    },
+    "project_count": 108,
+    "has_framework": true
+  },
+  "SWZ": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Eswatini"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 55,
+    "name": "Eswatini",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "SYR": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Syrian Arab Republic"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 53,
+    "name": "Syrian Arab Republic",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "TCD": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Chad"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 52,
+    "name": "Chad",
+    "totals": {
+      "required": 888686768.01,
+      "available": 391846911.01,
+      "spent": 286433164.0
+    },
+    "project_count": 394,
+    "has_framework": true
+  },
+  "TGO": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Togo"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 51,
+    "name": "Togo",
+    "totals": {
+      "required": 74693611.0,
+      "available": 53870764.99,
+      "spent": 32996521.99
+    },
+    "project_count": 83,
+    "has_framework": true
+  },
+  "THA": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Thailand"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 50,
+    "name": "Thailand",
+    "totals": {
+      "required": 141424392.01,
+      "available": 95175774.01,
+      "spent": 83251576.99
+    },
+    "project_count": 122,
+    "has_framework": true
+  },
+  "TJK": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Tajikistan"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 49,
+    "name": "Tajikistan",
+    "totals": {
+      "required": 105892024.02,
+      "available": 101366198.0,
+      "spent": 74234442.01
+    },
+    "project_count": 158,
+    "has_framework": true
+  },
+  "TKM": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Turkmenistan"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 47,
+    "name": "Turkmenistan",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "TLS": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Timor-Leste"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 46,
+    "name": "Timor-Leste",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "TUR": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Turkiye"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 43,
+    "name": "Turkiye",
+    "totals": {
+      "required": 498436322.0,
+      "available": 320668201.0,
+      "spent": 256831506.99
+    },
+    "project_count": 255,
+    "has_framework": true
+  },
+  "URY": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Uruguay"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 41,
+    "name": "Uruguay",
+    "totals": {
+      "required": 170307354.98,
+      "available": 166510288.98,
+      "spent": 164221486.99
+    },
+    "project_count": 186,
+    "has_framework": true
+  },
+  "VEN": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Venezuela, Bolivarian Republic of"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 40,
+    "name": "Venezuela, Bolivarian Republic of",
+    "totals": {
+      "required": 319578165.98,
+      "available": 167791041.0,
+      "spent": 138003350.99
+    },
+    "project_count": 191,
+    "has_framework": true
+  },
+  "VNM": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Viet Nam"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 37,
+    "name": "Viet Nam",
+    "totals": {
+      "required": 111698981.01,
+      "available": 93523245.01,
+      "spent": 84513741.02
+    },
+    "project_count": 193,
+    "has_framework": true
+  },
+  "TZA": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Tanzania, United Republic of"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 36,
+    "name": "Tanzania, United Republic of",
+    "totals": {
+      "required": 358758577.01,
+      "available": 218551245.97,
+      "spent": 134232613.98
+    },
+    "project_count": 553,
+    "has_framework": true
+  },
+  "UKR": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Ukraine"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 35,
+    "name": "Ukraine",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "UZB": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Uzbekistan"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 34,
+    "name": "Uzbekistan",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "YEM": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Yemen"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 33,
+    "name": "Yemen",
+    "totals": {
+      "required": 2093315937.01,
+      "available": 1158428587.01,
+      "spent": 770744250.0
+    },
+    "project_count": 49,
+    "has_framework": true
+  },
+  "ZAF": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "South Africa"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 32,
+    "name": "South Africa",
+    "totals": {
+      "required": 5315884.01,
+      "available": 5215884.01,
+      "spent": 1080487.99
+    },
+    "project_count": 17,
+    "has_framework": true
+  },
+  "MOZ": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Mozambique"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 31,
+    "name": "Mozambique",
+    "totals": {
+      "required": 666801487.04,
+      "available": 573995851.02,
+      "spent": 431130812.01
+    },
+    "project_count": 271,
+    "has_framework": true
+  },
+  "ZMB": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Zambia"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 30,
+    "name": "Zambia",
+    "totals": {
+      "required": 448986969.03,
+      "available": 233199983.01,
+      "spent": 88039435.99
+    },
+    "project_count": 119,
+    "has_framework": true
+  },
+  "TUN": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Tunisia"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 29,
+    "name": "Tunisia",
+    "totals": {
+      "required": 194914188.99,
+      "available": 161303070.98,
+      "spent": 77334741.0
+    },
+    "project_count": 207,
+    "has_framework": true
+  },
+  "CPV": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Cabo Verde"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 28,
+    "name": "Cabo Verde",
+    "totals": {
+      "required": 18562878.0,
+      "available": 16882640.0,
+      "spent": 12960177.0
+    },
+    "project_count": 143,
+    "has_framework": true
+  },
+  "MWI": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Malawi"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 27,
+    "name": "Malawi",
+    "totals": {
+      "required": 528628124.99,
+      "available": 355852476.99,
+      "spent": 187161820.98
+    },
+    "project_count": 46,
+    "has_framework": true
+  },
+  "MYS": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Brunei Darussalam",
+      "Malaysia",
+      "Singapore"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 26,
+    "name": "Malaysia",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "BRN": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Brunei Darussalam",
+      "Malaysia",
+      "Singapore"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 26,
+    "name": "Brunei Darussalam",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "SGP": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "workspace",
+    "workspace_countries": [
+      "Brunei Darussalam",
+      "Malaysia",
+      "Singapore"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 26,
+    "name": "Singapore",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "CHN": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "China"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 24,
+    "name": "China",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "MAR": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Morocco"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 23,
+    "name": "Morocco",
+    "totals": {
+      "required": 74666039.0,
+      "available": 71238532.99,
+      "spent": 53140816.98
+    },
+    "project_count": 171,
+    "has_framework": true
+  },
+  "NGA": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Nigeria"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 22,
+    "name": "Nigeria",
+    "totals": {
+      "required": 767332134.99,
+      "available": 474886568.01,
+      "spent": 358752544.99
+    },
+    "project_count": 305,
+    "has_framework": true
+  },
+  "AFG": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Afghanistan"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 21,
+    "name": "Afghanistan",
+    "totals": {
+      "required": 3281813856.0,
+      "available": 1594246313.01,
+      "spent": 1336140805.99
+    },
+    "project_count": 166,
+    "has_framework": true
+  },
+  "GHA": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Ghana"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 20,
+    "name": "Ghana",
+    "totals": {
+      "required": 182199771.03,
+      "available": 153632241.02,
+      "spent": 99267897.02
+    },
+    "project_count": 380,
+    "has_framework": true
+  },
+  "MKD": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "North Macedonia, Republic of"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 19,
+    "name": "North Macedonia, Republic of",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "KAZ": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Kazakhstan"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 18,
+    "name": "Kazakhstan",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "UGA": {
+    "year": 2024,
+    "period_status": "unverified",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Uganda"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 15,
+    "name": "Uganda",
+    "totals": {
+      "required": 0,
+      "available": 0,
+      "spent": 0
+    },
+    "project_count": 0,
+    "has_framework": true
+  },
+  "ZWE": {
+    "year": 2024,
+    "period_status": "year_filtered",
+    "geographic_scope": "country",
+    "workspace_countries": [
+      "Zimbabwe"
+    ],
+    "projects_year": 2024,
+    "framework_year": 2024,
+    "workspace_id": 14,
+    "name": "Zimbabwe",
+    "totals": {
+      "required": 478353779.0,
+      "available": 382693705.99,
+      "spent": 318064777.99
+    },
+    "project_count": 192,
+    "has_framework": true
+  }
+}

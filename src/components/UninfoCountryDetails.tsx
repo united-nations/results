@@ -1,100 +1,50 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { typography } from "@un-eosg/ui/typography";
 import { Button } from "@un-eosg/ui/components/button";
-import { DetailSection } from "@un-eosg/ui/components/detail-panel";
-import type { FrameworkNode, UninfoCountry, UninfoMetrics } from "@/lib/uninfo";
-import { withBasePath } from "@/lib/paths";
+import {
+  FinancialPanelHeading,
+  FinancialPanelGoalBadge,
+} from "@un-eosg/ui/components/financial-panel-parts";
+import { ResourceFundingBar } from "@un-eosg/ui/components/resource-funding-bar";
+import { ResultsFramework } from "@un-eosg/ui/components/results-framework";
+import { ResourceActivityList } from "@un-eosg/ui/components/resource-activity-list";
+import { Tooltip } from "@un-eosg/ui/components/tooltip";
+import { ExternalLink } from "@un-eosg/ui/components/external-link";
+import { usePublicJson } from "@/hooks/usePublicJson";
+import type { UninfoCountry, UninfoManifest } from "@/lib/uninfo";
 
-const dollars = new Intl.NumberFormat("en", {
-  style: "currency",
-  currency: "USD",
-  maximumFractionDigits: 0,
-});
+const resourceLabels = {
+  required: "Required resources",
+  available: "Available resources",
+  spent: "Expenditure",
+};
+const frameworkLabels = {
+  ...resourceLabels,
+  levels: ["Strategic priority", "Outcome", "Output"],
+};
 
-function Resources({ metrics }: { metrics: UninfoMetrics }) {
-  return (
-    <dl className="grid grid-cols-1 gap-2 py-2 sm:grid-cols-3">
-      {(
-        [
-          ["Required", metrics.required],
-          ["Available", metrics.available],
-          ["Expenditure", metrics.spent],
-        ] as const
-      ).map(([label, value]) => (
-        <div key={label}>
-          <dt className={typography.caption}>{label}</dt>
-          <dd className={typography.numeric}>{dollars.format(value)}</dd>
-        </div>
-      ))}
-    </dl>
-  );
-}
-
-const levels = ["Strategic priority", "Outcome", "Output"];
-
-function FrameworkBranch({
-  node,
-  level = 0,
+export function UninfoCountryDetails({
+  code,
+  year,
+  goals,
 }: {
-  node: FrameworkNode;
-  level?: number;
+  code: string;
+  year: number;
+  goals: UninfoManifest["goals"];
 }) {
-  return (
-    <details className="my-2 rounded border border-border p-3">
-      <summary className={`${typography.body} cursor-pointer font-medium`}>
-        <span className={`${typography.caption} mr-2`}>
-          {levels[level]} {node.code}
-        </span>
-        {node.name}
-      </summary>
-      {node.description && (
-        <p className={`${typography.body} mt-3 whitespace-pre-line`}>
-          {node.description}
-        </p>
-      )}
-      <Resources metrics={node} />
-      {node.children?.map((child) => (
-        <FrameworkBranch key={child.id} node={child} level={level + 1} />
-      ))}
-    </details>
+  const {
+    data: country,
+    failed,
+    retry,
+  } = usePublicJson<UninfoCountry>(
+    `/data/uninfo/${year}/countries/${code}.json`,
   );
-}
-
-export function UninfoCountryDetails({ code }: { code: string }) {
-  const [country, setCountry] = useState<UninfoCountry>();
-  const [failed, setFailed] = useState(false);
-  const [attempt, setAttempt] = useState(0);
-
-  useEffect(() => {
-    const request = new AbortController();
-    fetch(withBasePath(`/data/uninfo-countries/${code}.json`), {
-      signal: request.signal,
-    })
-      .then((response) => {
-        if (!response.ok) throw new Error("Could not load country data");
-        return response.json() as Promise<UninfoCountry>;
-      })
-      .then(setCountry)
-      .catch(() => {
-        if (!request.signal.aborted) setFailed(true);
-      });
-    return () => request.abort();
-  }, [code, attempt]);
-
   if (failed)
     return (
       <div role="alert">
         <p className={typography.body}>Country data could not be loaded.</p>
-        <Button
-          onClick={() => {
-            setFailed(false);
-            setAttempt(attempt + 1);
-          }}
-        >
-          Try again
-        </Button>
+        <Button onClick={retry}>Try again</Button>
       </div>
     );
   if (!country)
@@ -104,86 +54,133 @@ export function UninfoCountryDetails({ code }: { code: string }) {
       </p>
     );
 
+  const sdgs = Object.entries(country.sdgs).sort(
+    ([a], [b]) => Number(a) - Number(b),
+  );
+  const maximum = Math.max(
+    1,
+    ...sdgs.flatMap(([, metrics]) => [
+      metrics.required,
+      metrics.available,
+      metrics.spent,
+    ]),
+  );
   return (
-    <>
-      {country.geographic_scope === "workspace" && (
-        <p className={typography.body}>
-          Shared workspace covering {country.workspace_countries.join(", ")}.
-          Resources and framework entries cover this entire workspace.
-        </p>
-      )}
-      <DetailSection heading="Results framework">
-        <p className={`${typography.caption} mb-3`}>
-          {country.framework_year
-            ? `Financial observations filtered to ${country.framework_year}.`
-            : "The financial reporting period for this framework is unverified in the retained snapshot."}{" "}
-          Resources at parent and child levels overlap.
-        </p>
-        {country.framework?.length ? (
-          country.framework.map((node) => (
-            <FrameworkBranch key={node.id} node={node} />
-          ))
-        ) : (
-          <p>No results framework was reported in this snapshot.</p>
-        )}
-      </DetailSection>
-      <DetailSection heading="Resources by Sustainable Development Goal">
-        <p className={typography.caption}>
-          {country.year
-            ? `Financial year ${country.year}.`
-            : "Financial reporting period unverified."}{" "}
-          Amounts in US dollars.
-        </p>
-        <Resources metrics={country.totals} />
-        <details>
-          <summary className="cursor-pointer py-2">View SDG breakdown</summary>
-          {Object.entries(country.sdgs).map(([sdg, metrics]) => (
-            <div key={sdg} className="border-t border-border py-2">
-              <h4 className={typography.body}>
-                {sdg === "unclassified"
-                  ? "Not classified by SDG"
-                  : `SDG ${sdg}`}
-              </h4>
-              <Resources metrics={metrics} />
-            </div>
-          ))}
-        </details>
-      </DetailSection>
-      {country.projects.length > 0 && (
-        <DetailSection heading="Sub-outputs and activities">
+    <div className="space-y-6">
+      <div>
+        <FinancialPanelHeading className="mb-1">
+          UNSDG Cooperation Framework financials
+        </FinancialPanelHeading>
+        {country.geographic_scope === "workspace" && (
           <p className={typography.caption}>
-            {country.projects_year
-              ? `Financial year ${country.projects_year}.`
-              : "Financial reporting period unverified."}{" "}
-            Activities may be reported under several agencies.
+            Shared workspace covering {country.workspace_countries.join(", ")}.
           </p>
-          <details>
-            <summary className="cursor-pointer py-2">View activities</summary>
-            <ul className="divide-y divide-border">
-              {country.projects.map((project) => (
-                <li key={project.row_key} className="py-3">
-                  <details>
-                    <summary className="cursor-pointer">
-                      {project.agency} · {project.name}
-                    </summary>
-                    {project.description && (
-                      <p className="my-2 whitespace-pre-line">
-                        {project.description}
-                      </p>
-                    )}
-                    {project.start && (
-                      <p className={typography.caption}>
-                        {project.start} – {project.end ?? "End date unreported"}
-                      </p>
-                    )}
-                    <Resources metrics={project} />
-                  </details>
-                </li>
-              ))}
-            </ul>
-          </details>
-        </DetailSection>
+        )}
+        <ExternalLink
+          href={`https://uninfo.org/v2/location/${country.workspace_id}/programming/analysis/sdgs`}
+          className={`${typography.caption} my-2 inline-flex text-un-blue-text underline underline-offset-2`}
+        >
+          View on UN INFO
+        </ExternalLink>
+        {sdgs.length > 0 ? (
+          <>
+            <FinancialPanelHeading subheading className="mb-2">
+              Overall
+            </FinancialPanelHeading>
+            <ResourceFundingBar {...country.totals} labels={resourceLabels} />
+            <FinancialPanelHeading subheading className="mt-4 mb-2">
+              By SDG
+            </FinancialPanelHeading>
+            <div className="space-y-2">
+              {sdgs.map(([id, metrics]) => {
+                const goal = goals[id];
+                const label = goal?.name ?? "Not classified by SDG";
+                const color = goal?.color ?? "var(--color-neutral-control)";
+                const width =
+                  (Math.max(
+                    0,
+                    metrics.required,
+                    metrics.available,
+                    metrics.spent,
+                  ) /
+                    maximum) *
+                  100;
+                return (
+                  <Tooltip
+                    key={id}
+                    width={340}
+                    content={
+                      <div className="space-y-2">
+                        <p className={typography.body}>{label}</p>
+                        <ResourceFundingBar
+                          {...metrics}
+                          labels={resourceLabels}
+                          color={color}
+                          compact
+                        />
+                      </div>
+                    }
+                  >
+                    <div className="flex items-center gap-2" tabIndex={0}>
+                      <span
+                        className={`${typography.caption} w-24 shrink-0 truncate text-foreground`}
+                        title={label}
+                      >
+                        {label}
+                      </span>
+                      {goal && (
+                        <FinancialPanelGoalBadge label={id} color={color} />
+                      )}
+                      <span className="min-w-0 flex-1">
+                        <span className="block" style={{ width: `${width}%` }}>
+                          <ResourceFundingBar
+                            {...metrics}
+                            labels={resourceLabels}
+                            color={color}
+                            showLabels={false}
+                          />
+                        </span>
+                      </span>
+                    </div>
+                  </Tooltip>
+                );
+              })}
+            </div>
+          </>
+        ) : (
+          <p className={typography.meta}>
+            No financial observations reported for {year}.
+          </p>
+        )}
+      </div>
+      <section aria-label="Results framework">
+        <FinancialPanelHeading className="mb-3">
+          Results Framework
+        </FinancialPanelHeading>
+        {country.framework?.length ? (
+          <ResultsFramework
+            framework={country.framework}
+            labels={frameworkLabels}
+          />
+        ) : (
+          <p className={typography.meta}>
+            No published results framework available for {year}.
+          </p>
+        )}
+      </section>
+      {country.projects.length > 0 && (
+        <section aria-label="Projects">
+          <FinancialPanelHeading subheading className="mb-2">
+            Projects (
+            {new Set(country.projects.map((project) => project.id)).size})
+          </FinancialPanelHeading>
+          <ResourceActivityList
+            activities={country.projects}
+            resourceLabels={resourceLabels}
+            showAllLabel={`Show all ${country.projects.length} agency-project rows`}
+          />
+        </section>
       )}
-    </>
+    </div>
   );
 }

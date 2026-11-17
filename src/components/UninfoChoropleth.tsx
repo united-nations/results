@@ -66,7 +66,7 @@ export function UninfoChoropleth({
     () =>
       map?.features.flatMap(({ properties }) => {
         const country = countries[properties.ISO3];
-        return country
+        return country?.has_framework
           ? [
               {
                 id: properties.featureId,
@@ -95,7 +95,7 @@ export function UninfoChoropleth({
           data={data}
           mapData={map}
           mapProperty="featureId"
-          ariaLabel="Countries and areas with UN INFO data"
+          ariaLabel="Countries with available results frameworks"
           height={height}
           mapProjection="equalEarth"
           scale={1.15}

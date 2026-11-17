@@ -1,0 +1,5805 @@
+{
+  "unclassified": {
+    "year": 2023,
+    "color": null,
+    "name": "Not classified by SDG",
+    "totals": {
+      "required": 207281695,
+      "available": 65355513,
+      "spent": 26986824
+    },
+    "countries": {
+      "SLV": {
+        "required": 70561,
+        "available": 70561,
+        "spent": 55561
+      },
+      "CMR": {
+        "required": 3776721,
+        "available": 595896,
+        "spent": 0
+      },
+      "COG": {
+        "required": 60000,
+        "available": 60000,
+        "spent": 0
+      },
+      "LBN": {
+        "required": 145574884,
+        "available": 8812886,
+        "spent": 0
+      },
+      "LBY": {
+        "required": 35000,
+        "available": 35000,
+        "spent": 35000
+      },
+      "MLI": {
+        "required": 11669094,
+        "available": 10475711,
+        "spent": 0
+      }
+    },
+    "top_underfunded": [
+      "LBN",
+      "CMR",
+      "MLI",
+      "SLV",
+      "COG",
+      "LBY"
+    ]
+  },
+  "1": {
+    "year": 2023,
+    "color": "#e5243b",
+    "name": "No Poverty",
+    "totals": {
+      "required": 3753309660.06,
+      "available": 2920967070.67,
+      "spent": 1915879709.07
+    },
+    "countries": {
+      "PSE": {
+        "required": 22311220.42,
+        "available": 18073161.08,
+        "spent": 0
+      },
+      "SLV": {
+        "required": 3765193.32,
+        "available": 3095143.58,
+        "spent": 2494136.58
+      },
+      "ALB": {
+        "required": 3883905,
+        "available": 3107238.33,
+        "spent": 2695274.33
+      },
+      "ARG": {
+        "required": 11675223.5,
+        "available": 11149610.5,
+        "spent": 7901120.17
+      },
+      "BDI": {
+        "required": 30765541.33,
+        "available": 11049510.33,
+        "spent": 8350080.33
+      },
+      "BEN": {
+        "required": 24951721.9,
+        "available": 21995338.7,
+        "spent": 19160843.86
+      },
+      "BFA": {
+        "required": 30888591.57,
+        "available": 23589633.57,
+        "spent": 13657518.6
+      },
+      "BGD": {
+        "required": 20373585.17,
+        "available": 14178448.75,
+        "spent": 11107894.09
+      },
+      "BLR": {
+        "required": 496357.5,
+        "available": 420163.5,
+        "spent": 381145.5
+      },
+      "BOL": {
+        "required": 2412960.25,
+        "available": 2375676.25,
+        "spent": 2279727.25
+      },
+      "BRA": {
+        "required": 15487929.9,
+        "available": 10590384.23,
+        "spent": 9199186.82
+      },
+      "BWA": {
+        "required": 1279238.77,
+        "available": 744204.7,
+        "spent": 558720.52
+      },
+      "CAF": {
+        "required": 21030795.2,
+        "available": 4310626.2,
+        "spent": 1933745.4
+      },
+      "CHL": {
+        "required": 39298478,
+        "available": 11751264,
+        "spent": 10708838.67
+      },
+      "CMR": {
+        "required": 9491587.5,
+        "available": 4369417,
+        "spent": 0
+      },
+      "COG": {
+        "required": 6359332.0,
+        "available": 566220,
+        "spent": 0
+      },
+      "CRI": {
+        "required": 16085348.92,
+        "available": 10042322.92,
+        "spent": 7232367.92
+      },
+      "DOM": {
+        "required": 5696903.25,
+        "available": 5484883.58,
+        "spent": 5252306.75
+      },
+      "DZA": {
+        "required": 252196.33,
+        "available": 166196.33,
+        "spent": 120223.5
+      },
+      "ECU": {
+        "required": 48998813.5,
+        "available": 29956020.6,
+        "spent": 25774547.2
+      },
+      "EGY": {
+        "required": 22508393.6,
+        "available": 20261723.59,
+        "spent": 17235162.14
+      },
+      "ERI": {
+        "required": 4692192.33,
+        "available": 4425158.33,
+        "spent": 2935825.17
+      },
+      "GAB": {
+        "required": 1721922,
+        "available": 1728547,
+        "spent": 1579963
+      },
+      "GNB": {
+        "required": 8306467.04,
+        "available": 7385755.6,
+        "spent": 4748291.95
+      },
+      "HND": {
+        "required": 16501275.08,
+        "available": 15465103.75,
+        "spent": 13322735.75
+      },
+      "HTI": {
+        "required": 19281274.24,
+        "available": 7592574.24,
+        "spent": 6990973.07
+      },
+      "IND": {
+        "required": 9193204.0,
+        "available": 7318572.67,
+        "spent": 6032643.13
+      },
+      "IRN": {
+        "required": 2403231.51,
+        "available": 894481.51,
+        "spent": 835628.51
+      },
+      "KEN": {
+        "required": 76965189.88,
+        "available": 48198880.88,
+        "spent": 40406915.25
+      },
+      "KGZ": {
+        "required": 8413651.25,
+        "available": 6085928.77,
+        "spent": 6043916.43
+      },
+      "LAO": {
+        "required": 4806978.67,
+        "available": 4995814.0,
+        "spent": 2298451.17
+      },
+      "LBN": {
+        "required": 356826458.38,
+        "available": 91290987.8,
+        "spent": 85063730.96
+      },
+      "LBR": {
+        "required": 9332098.67,
+        "available": 9767727.17,
+        "spent": 5390253.67
+      },
+      "LBY": {
+        "required": 13324143.41,
+        "available": 10492901.62,
+        "spent": 7758005.87
+      },
+      "LKA": {
+        "required": 34632485.83,
+        "available": 33704401.17,
+        "spent": 33016121.83
+      },
+      "MDA": {
+        "required": 34332970.25,
+        "available": 24436720.25,
+        "spent": 23248624.65
+      },
+      "MDV": {
+        "required": 19583421.67,
+        "available": 1297874.33,
+        "spent": 821343.67
+      },
+      "MLI": {
+        "required": 39102384.33,
+        "available": 38994051,
+        "spent": 0
+      },
+      "MNE": {
+        "required": 1520253.25,
+        "available": 1513246.92,
+        "spent": 1400090.42
+      },
+      "MNG": {
+        "required": 1048741.5,
+        "available": 788741.5,
+        "spent": 786934.5
+      },
+      "NPL": {
+        "required": 4712236.53,
+        "available": 5097249.77,
+        "spent": 4613156.33
+      },
+      "PAK": {
+        "required": 67744962.02,
+        "available": 47132556.71,
+        "spent": 31159776.09
+      },
+      "PER": {
+        "required": 40346319.0,
+        "available": 29400468.17,
+        "spent": 463516.5
+      },
+      "PRY": {
+        "required": 3917317.75,
+        "available": 5453538.88,
+        "spent": 4534083.51
+      },
+      "SAU": {
+        "required": 204210.5,
+        "available": 15000,
+        "spent": 15000
+      },
+      "SOM": {
+        "required": 262594065.74,
+        "available": 236098821.57,
+        "spent": 208852464.23
+      },
+      "SSD": {
+        "required": 14911813.5,
+        "available": 12335243,
+        "spent": 9117391
+      },
+      "STP": {
+        "required": 2042747.67,
+        "available": 1271733.33,
+        "spent": 1214400
+      },
+      "TGO": {
+        "required": 2074085.83,
+        "available": 2104058.5,
+        "spent": 1861885.5
+      },
+      "THA": {
+        "required": 8560241.4,
+        "available": 6260718.93,
+        "spent": 5204043.0
+      },
+      "TJK": {
+        "required": 6409466.33,
+        "available": 5393493.33,
+        "spent": 4505564.42
+      },
+      "TUR": {
+        "required": 40181157.33,
+        "available": 27895989.5,
+        "spent": 16337401.3
+      },
+      "URY": {
+        "required": 1762060.67,
+        "available": 1762060.67,
+        "spent": 1648133.67
+      },
+      "VEN": {
+        "required": 18727903.08,
+        "available": 6131835.17,
+        "spent": 4350380.17
+      },
+      "VNM": {
+        "required": 12235353.67,
+        "available": 12283930.17,
+        "spent": 9170806.17
+      },
+      "TZA": {
+        "required": 17324601.66,
+        "available": 8210378.92,
+        "spent": 6044080
+      },
+      "YEM": {
+        "required": 431132374.33,
+        "available": 249903867.33,
+        "spent": 181615052.33
+      },
+      "MOZ": {
+        "required": 109676510.01,
+        "available": 99519222.05,
+        "spent": 71771071.49
+      },
+      "ZMB": {
+        "required": 9093360,
+        "available": 0,
+        "spent": 0
+      },
+      "TUN": {
+        "required": 50202417.54,
+        "available": 50166417.54,
+        "spent": 49190495.75
+      },
+      "CPV": {
+        "required": 1152535.02,
+        "available": 972785.02,
+        "spent": 643960.74
+      },
+      "MAR": {
+        "required": 8693194.2,
+        "available": 8257429.37,
+        "spent": 7266140.3
+      },
+      "NGA": {
+        "required": 22028430.33,
+        "available": 17016330.33,
+        "spent": 15552816.33
+      },
+      "AFG": {
+        "required": 126226110.62,
+        "available": 96036055.78,
+        "spent": 57166652.62
+      },
+      "GHA": {
+        "required": 18225223.29,
+        "available": 17610790.68,
+        "spent": 8708788.7
+      },
+      "ZWE": {
+        "required": 67076537.48,
+        "available": 41463903.02,
+        "spent": 29470642.03
+      }
+    },
+    "top_underfunded": [
+      "LBN",
+      "YEM",
+      "AFG",
+      "KEN",
+      "CHL",
+      "SOM",
+      "ZWE",
+      "PAK",
+      "BDI",
+      "ECU"
+    ]
+  },
+  "2": {
+    "year": 2023,
+    "color": "#e5b735",
+    "name": "Zero Hunger",
+    "totals": {
+      "required": 10115208615.56,
+      "available": 6440598894.82,
+      "spent": 4666885775.78
+    },
+    "countries": {
+      "PSE": {
+        "required": 9025487.25,
+        "available": 5964855.08,
+        "spent": 0
+      },
+      "SLV": {
+        "required": 8803822.82,
+        "available": 8803822.82,
+        "spent": 8690703.82
+      },
+      "ALB": {
+        "required": 281500,
+        "available": 281500,
+        "spent": 201335
+      },
+      "ARG": {
+        "required": 82709294.17,
+        "available": 113179350.67,
+        "spent": 107715732.17
+      },
+      "BDI": {
+        "required": 242402097.33,
+        "available": 32449895.33,
+        "spent": 32449895.33
+      },
+      "BEN": {
+        "required": 11413093.9,
+        "available": 10891312.7,
+        "spent": 9785303.37
+      },
+      "BFA": {
+        "required": 478476364.55,
+        "available": 314435081.05,
+        "spent": 191944069.6
+      },
+      "BGD": {
+        "required": 20194216.67,
+        "available": 15916663.75,
+        "spent": 14207087.08
+      },
+      "BLR": {
+        "required": 71706.5,
+        "available": 71706.5,
+        "spent": 66509.5
+      },
+      "BOL": {
+        "required": 6209282.59,
+        "available": 6209281.59,
+        "spent": 6113332.59
+      },
+      "BRA": {
+        "required": 16625833.83,
+        "available": 14061382.17,
+        "spent": 11901824.67
+      },
+      "BWA": {
+        "required": 845115.42,
+        "available": 863419.84,
+        "spent": 669152.82
+      },
+      "CAF": {
+        "required": 160620438.2,
+        "available": 25759656.2,
+        "spent": 23486243.4
+      },
+      "CHL": {
+        "required": 1268729.83,
+        "available": 1008172.83,
+        "spent": 890770.17
+      },
+      "CMR": {
+        "required": 8259773,
+        "available": 1467300,
+        "spent": 0
+      },
+      "COG": {
+        "required": 2702381.33,
+        "available": 2784005.92,
+        "spent": 0
+      },
+      "CRI": {
+        "required": 324899.67,
+        "available": 324899.67,
+        "spent": 324899.67
+      },
+      "DOM": {
+        "required": 3727862.83,
+        "available": 3726478.17,
+        "spent": 3699631.5
+      },
+      "DZA": {
+        "required": 771852.67,
+        "available": 771852.67,
+        "spent": 347500
+      },
+      "ECU": {
+        "required": 28244973.78,
+        "available": 22044077.23,
+        "spent": 20721055.23
+      },
+      "EGY": {
+        "required": 77333155.3,
+        "available": 55711747.73,
+        "spent": 50194738.69
+      },
+      "ERI": {
+        "required": 5001635.83,
+        "available": 5274108.33,
+        "spent": 3599772.17
+      },
+      "GAB": {
+        "required": 995194.5,
+        "available": 670094.5,
+        "spent": 657194.5
+      },
+      "GNB": {
+        "required": 18285449.06,
+        "available": 13700349.35,
+        "spent": 7174955.43
+      },
+      "HND": {
+        "required": 66116555.53,
+        "available": 34149531.2,
+        "spent": 32102110.7
+      },
+      "HTI": {
+        "required": 267953472,
+        "available": 186213712.93,
+        "spent": 149809916.43
+      },
+      "IND": {
+        "required": 30989050.5,
+        "available": 29281185.25,
+        "spent": 22375548.17
+      },
+      "IRN": {
+        "required": 2111388.1,
+        "available": 718054.76,
+        "spent": 690554.76
+      },
+      "KEN": {
+        "required": 356009763.33,
+        "available": 319474130.83,
+        "spent": 281889221.5
+      },
+      "KGZ": {
+        "required": 7251131.86,
+        "available": 4799158.94,
+        "spent": 4587109.6
+      },
+      "LAO": {
+        "required": 19128291.5,
+        "available": 18582379.83,
+        "spent": 12048218.67
+      },
+      "LBN": {
+        "required": 1062931904.5,
+        "available": 317479595.5,
+        "spent": 250466987
+      },
+      "LBR": {
+        "required": 64786252.33,
+        "available": 26288931.5,
+        "spent": 14239692.83
+      },
+      "LBY": {
+        "required": 20672896.51,
+        "available": 11664685.18,
+        "spent": 9453355.83
+      },
+      "LKA": {
+        "required": 96345124.17,
+        "available": 64873198.17,
+        "spent": 63633101.83
+      },
+      "MDA": {
+        "required": 33782965,
+        "available": 25874084,
+        "spent": 24597744
+      },
+      "MDV": {
+        "required": 1811771.33,
+        "available": 1316507.5,
+        "spent": 638744
+      },
+      "MLI": {
+        "required": 9005066,
+        "available": 5179864,
+        "spent": 0
+      },
+      "MNE": {
+        "required": 368580.75,
+        "available": 368580.75,
+        "spent": 314604.75
+      },
+      "MNG": {
+        "required": 1520554.5,
+        "available": 1485554.5,
+        "spent": 1461214.5
+      },
+      "NER": {
+        "required": 30000000,
+        "available": 30000000,
+        "spent": 30000000
+      },
+      "NPL": {
+        "required": 18114133.03,
+        "available": 17403504.43,
+        "spent": 13452786.33
+      },
+      "PAK": {
+        "required": 190914234.19,
+        "available": 220304843.71,
+        "spent": 57879500.26
+      },
+      "PER": {
+        "required": 33659904.83,
+        "available": 31251729.83,
+        "spent": 5900187
+      },
+      "PRY": {
+        "required": 8680319.51,
+        "available": 8602819.51,
+        "spent": 2179159.76
+      },
+      "SAU": {
+        "required": 9075000,
+        "available": 9006666.67,
+        "spent": 9006666.67
+      },
+      "SOM": {
+        "required": 1336382928.32,
+        "available": 916231867.99,
+        "spent": 691445676.75
+      },
+      "SSD": {
+        "required": 510860789.17,
+        "available": 269811169.17,
+        "spent": 236265179
+      },
+      "STP": {
+        "required": 5594142.13,
+        "available": 3488470.55,
+        "spent": 2166463.72
+      },
+      "TGO": {
+        "required": 24647863.5,
+        "available": 8119387.5,
+        "spent": 7087194.17
+      },
+      "THA": {
+        "required": 4010356.5,
+        "available": 2343270.03,
+        "spent": 1416640.43
+      },
+      "TJK": {
+        "required": 20897345,
+        "available": 20101605,
+        "spent": 17565660
+      },
+      "TUR": {
+        "required": 22316493.0,
+        "available": 12740158.5,
+        "spent": 2808960.63
+      },
+      "URY": {
+        "required": 723478,
+        "available": 403478.5,
+        "spent": 7098
+      },
+      "VEN": {
+        "required": 126404863.5,
+        "available": 84645822,
+        "spent": 40517147.33
+      },
+      "VNM": {
+        "required": 3956832.17,
+        "available": 3459015.17,
+        "spent": 3361711.17
+      },
+      "TZA": {
+        "required": 95837971.07,
+        "available": 76102636,
+        "spent": 31560797.5
+      },
+      "YEM": {
+        "required": 605957114.67,
+        "available": 283358755.33,
+        "spent": 180568879.33
+      },
+      "MOZ": {
+        "required": 81942915.48,
+        "available": 73054274.18,
+        "spent": 62313327.24
+      },
+      "ZMB": {
+        "required": 4384500,
+        "available": 0,
+        "spent": 0
+      },
+      "TUN": {
+        "required": 6668534.04,
+        "available": 6668691.04,
+        "spent": 4159206.75
+      },
+      "CPV": {
+        "required": 1282225.86,
+        "available": 1246961.52,
+        "spent": 1103317.74
+      },
+      "MAR": {
+        "required": 3312711.83,
+        "available": 3326260.17,
+        "spent": 2904320.83
+      },
+      "NGA": {
+        "required": 60648842.67,
+        "available": 54326743,
+        "spent": 44504815
+      },
+      "AFG": {
+        "required": 168077901.46,
+        "available": 99501614.45,
+        "spent": 57701224.05
+      },
+      "GHA": {
+        "required": 12984184.47,
+        "available": 14436613.86,
+        "spent": 9567842.23
+      },
+      "ZWE": {
+        "required": 63988045.9,
+        "available": 38596397.27,
+        "spent": 27522139.95
+      }
+    },
+    "top_underfunded": [
+      "LBN",
+      "SOM",
+      "YEM",
+      "SSD",
+      "BDI",
+      "BFA",
+      "CAF",
+      "HTI",
+      "AFG",
+      "VEN"
+    ]
+  },
+  "3": {
+    "year": 2023,
+    "color": "#4c9f38",
+    "name": "Good Health and Well-being",
+    "totals": {
+      "required": 5495680399.01,
+      "available": 4797133027.46,
+      "spent": 3534875290.71
+    },
+    "countries": {
+      "PSE": {
+        "required": 49797257.83,
+        "available": 38731768.33,
+        "spent": 0
+      },
+      "SLV": {
+        "required": 9344579.8,
+        "available": 9351930.3,
+        "spent": 6797194.96
+      },
+      "ALB": {
+        "required": 3968819.67,
+        "available": 2557657,
+        "spent": 2472336.67
+      },
+      "ARG": {
+        "required": 117681430.67,
+        "available": 116170884.33,
+        "spent": 107686752.33
+      },
+      "BDI": {
+        "required": 41877599.33,
+        "available": 29491491.83,
+        "spent": 7511132.83
+      },
+      "BEN": {
+        "required": 28579199.33,
+        "available": 21337809.0,
+        "spent": 14149664.66
+      },
+      "BFA": {
+        "required": 52643020.5,
+        "available": 26171838.5,
+        "spent": 25616653
+      },
+      "BGD": {
+        "required": 117920892.67,
+        "available": 99069015,
+        "spent": 89961915.33
+      },
+      "BLR": {
+        "required": 8054080.45,
+        "available": 7135764.45,
+        "spent": 7093131.12
+      },
+      "BOL": {
+        "required": 14883305.03,
+        "available": 14883305.03,
+        "spent": 14883305.03
+      },
+      "BRA": {
+        "required": 10187551.83,
+        "available": 10115684.83,
+        "spent": 9230569.68
+      },
+      "BWA": {
+        "required": 3162902.12,
+        "available": 2984485.62,
+        "spent": 2728109.95
+      },
+      "CAF": {
+        "required": 63328383.33,
+        "available": 17448586.33,
+        "spent": 17256086.33
+      },
+      "CHL": {
+        "required": 1257127.5,
+        "available": 1232820.5,
+        "spent": 1167127.5
+      },
+      "CMR": {
+        "required": 28049319,
+        "available": 1342300,
+        "spent": 0
+      },
+      "COG": {
+        "required": 7500,
+        "available": 266221,
+        "spent": 0
+      },
+      "CRI": {
+        "required": 561382.5,
+        "available": 560932.5,
+        "spent": 544468.25
+      },
+      "DOM": {
+        "required": 2751751.17,
+        "available": 3006504.67,
+        "spent": 2458839.67
+      },
+      "DZA": {
+        "required": 16558094.33,
+        "available": 16202426.25,
+        "spent": 15252269.25
+      },
+      "ECU": {
+        "required": 29506192.33,
+        "available": 20318028.25,
+        "spent": 19945123.17
+      },
+      "EGY": {
+        "required": 25796070.33,
+        "available": 26655258.6,
+        "spent": 25537250.1
+      },
+      "ERI": {
+        "required": 16767260.5,
+        "available": 7175774,
+        "spent": 3653239
+      },
+      "GAB": {
+        "required": 6874075.67,
+        "available": 6333529.67,
+        "spent": 6197118.33
+      },
+      "GNB": {
+        "required": 24933444.63,
+        "available": 28996209.42,
+        "spent": 25069531.67
+      },
+      "HND": {
+        "required": 28860500.5,
+        "available": 29966423,
+        "spent": 28389656.5
+      },
+      "HTI": {
+        "required": 36956706.91,
+        "available": 35414788.24,
+        "spent": 31560024.32
+      },
+      "IND": {
+        "required": 113492125.5,
+        "available": 104866196.5,
+        "spent": 91943799.83
+      },
+      "IRN": {
+        "required": 13386379.85,
+        "available": 19759064.81,
+        "spent": 17931439.81
+      },
+      "KEN": {
+        "required": 110005974.07,
+        "available": 76550921.95,
+        "spent": 71798912.43
+      },
+      "KGZ": {
+        "required": 6995859.94,
+        "available": 6620584.33,
+        "spent": 6486421.33
+      },
+      "LAO": {
+        "required": 22112990.58,
+        "available": 18500437.42,
+        "spent": 17651676.58
+      },
+      "LBN": {
+        "required": 168061388.96,
+        "available": 106294896.46,
+        "spent": 100571768.71
+      },
+      "LBR": {
+        "required": 29262901.33,
+        "available": 21767862.17,
+        "spent": 13570200.83
+      },
+      "LBY": {
+        "required": 43715276.83,
+        "available": 21786129.8,
+        "spent": 16131492.98
+      },
+      "LKA": {
+        "required": 27610302.75,
+        "available": 27385310.5,
+        "spent": 22481360.5
+      },
+      "MDA": {
+        "required": 28791363.67,
+        "available": 25298069.67,
+        "spent": 25029740.73
+      },
+      "MDV": {
+        "required": 3926561.25,
+        "available": 3280047.42,
+        "spent": 2827364.58
+      },
+      "MLI": {
+        "required": 27834508.67,
+        "available": 12604878.0,
+        "spent": 0
+      },
+      "MNE": {
+        "required": 2183741.33,
+        "available": 2252733,
+        "spent": 1802451.33
+      },
+      "MNG": {
+        "required": 11820831,
+        "available": 11785832,
+        "spent": 10806948
+      },
+      "NPL": {
+        "required": 12508673.58,
+        "available": 11330957.58,
+        "spent": 10827442.75
+      },
+      "PAK": {
+        "required": 425873126.45,
+        "available": 268609976.98,
+        "spent": 220561407.98
+      },
+      "PER": {
+        "required": 11605496.17,
+        "available": 10054836.17,
+        "spent": 778021
+      },
+      "PRY": {
+        "required": 1575975.38,
+        "available": 1645587.43,
+        "spent": 740204.9
+      },
+      "SAU": {
+        "required": 692083.33,
+        "available": 338645.33,
+        "spent": 327063.83
+      },
+      "SOM": {
+        "required": 124207763.37,
+        "available": 77751697.37,
+        "spent": 54948688
+      },
+      "SSD": {
+        "required": 154629772,
+        "available": 129695914,
+        "spent": 120354851
+      },
+      "STP": {
+        "required": 11184977.17,
+        "available": 11062937.42,
+        "spent": 10992827.25
+      },
+      "TGO": {
+        "required": 6732512.33,
+        "available": 8605670.33,
+        "spent": 7121597.67
+      },
+      "THA": {
+        "required": 26473014.9,
+        "available": 23526077.64,
+        "spent": 20520303.43
+      },
+      "TJK": {
+        "required": 27810814.17,
+        "available": 24882578.33,
+        "spent": 21908814.92
+      },
+      "TUR": {
+        "required": 23273596.42,
+        "available": 18172675.42,
+        "spent": 14316579.58
+      },
+      "URY": {
+        "required": 2205203.17,
+        "available": 2205203.17,
+        "spent": 1768353.58
+      },
+      "VEN": {
+        "required": 80345205.75,
+        "available": 51528622.5,
+        "spent": 47475406
+      },
+      "VNM": {
+        "required": 31437047,
+        "available": 30302828.5,
+        "spent": 24503108
+      },
+      "TZA": {
+        "required": 24041461.74,
+        "available": 14427511.83,
+        "spent": 8764539.92
+      },
+      "YEM": {
+        "required": 307322919,
+        "available": 193655511.67,
+        "spent": 133262442.67
+      },
+      "MOZ": {
+        "required": 62912277.5,
+        "available": 116144408.25,
+        "spent": 113480556.25
+      },
+      "ZMB": {
+        "required": 18051002,
+        "available": 43440,
+        "spent": 0
+      },
+      "TUN": {
+        "required": 2163933.29,
+        "available": 1983636.29,
+        "spent": 1120360.5
+      },
+      "CPV": {
+        "required": 2255022.83,
+        "available": 2172425.17,
+        "spent": 2103667.83
+      },
+      "MAR": {
+        "required": 10177906.83,
+        "available": 8929336.33,
+        "spent": 8717315.67
+      },
+      "NGA": {
+        "required": 261276271,
+        "available": 190723037.5,
+        "spent": 146237394.83
+      },
+      "AFG": {
+        "required": 371024807.21,
+        "available": 326570226.88,
+        "spent": 223443918.97
+      },
+      "GHA": {
+        "required": 35957451.11,
+        "available": 34164208.53,
+        "spent": 28964742.22
+      },
+      "ZWE": {
+        "required": 210901618.0,
+        "available": 210435965.92,
+        "spent": 205598329.83
+      }
+    },
+    "top_underfunded": [
+      "PAK",
+      "YEM",
+      "NGA",
+      "LBN",
+      "SOM",
+      "CAF",
+      "AFG",
+      "KEN",
+      "VEN",
+      "CMR"
+    ]
+  },
+  "4": {
+    "year": 2023,
+    "color": "#c5192d",
+    "name": "Quality Education",
+    "totals": {
+      "required": 2652200810.99,
+      "available": 1934446070.31,
+      "spent": 1402115862.05
+    },
+    "countries": {
+      "PSE": {
+        "required": 29286788.33,
+        "available": 16772338.33,
+        "spent": 0
+      },
+      "SLV": {
+        "required": 8422388.88,
+        "available": 9231565.8,
+        "spent": 7637627.97
+      },
+      "ALB": {
+        "required": 38135613,
+        "available": 37357828,
+        "spent": 26033186.5
+      },
+      "ARG": {
+        "required": 61711643.83,
+        "available": 58958401.5,
+        "spent": 54894665.5
+      },
+      "BDI": {
+        "required": 38368312,
+        "available": 7619310.5,
+        "spent": 7552000
+      },
+      "BEN": {
+        "required": 59077632.0,
+        "available": 56139587.5,
+        "spent": 49020695.33
+      },
+      "BFA": {
+        "required": 29022542.83,
+        "available": 24018932.83,
+        "spent": 22481722.83
+      },
+      "BGD": {
+        "required": 31866054,
+        "available": 30519234,
+        "spent": 30356706
+      },
+      "BLR": {
+        "required": 2170287.83,
+        "available": 1620573.83,
+        "spent": 1581555.83
+      },
+      "BOL": {
+        "required": 873746.53,
+        "available": 873746.53,
+        "spent": 873746.53
+      },
+      "BRA": {
+        "required": 22634699.21,
+        "available": 20412471.02,
+        "spent": 18552531.27
+      },
+      "BWA": {
+        "required": 866063.33,
+        "available": 787720.33,
+        "spent": 350006.33
+      },
+      "CAF": {
+        "required": 31316200,
+        "available": 18225412.5,
+        "spent": 11578482.5
+      },
+      "CHL": {
+        "required": 1735049.25,
+        "available": 1554668.25,
+        "spent": 1311593.92
+      },
+      "CMR": {
+        "required": 34284594,
+        "available": 3494300,
+        "spent": 0
+      },
+      "COG": {
+        "required": 478000,
+        "available": 460500,
+        "spent": 0
+      },
+      "CRI": {
+        "required": 197705.33,
+        "available": 160338.67,
+        "spent": 98295.67
+      },
+      "DOM": {
+        "required": 17354301.07,
+        "available": 17350967.73,
+        "spent": 17307978.73
+      },
+      "DZA": {
+        "required": 2958933.83,
+        "available": 2323939.5,
+        "spent": 1239214.33
+      },
+      "ECU": {
+        "required": 20738991.67,
+        "available": 6016816.33,
+        "spent": 5706467
+      },
+      "EGY": {
+        "required": 28851581.59,
+        "available": 18276067.2,
+        "spent": 15672745.91
+      },
+      "ERI": {
+        "required": 27601955,
+        "available": 6138766,
+        "spent": 6098965
+      },
+      "GAB": {
+        "required": 774895.83,
+        "available": 774895.83,
+        "spent": 702841.83
+      },
+      "GNB": {
+        "required": 4958016.83,
+        "available": 3483715.83,
+        "spent": 1943535.17
+      },
+      "HND": {
+        "required": 2812176.33,
+        "available": 2092620.33,
+        "spent": 1997108.33
+      },
+      "HTI": {
+        "required": 25773810.08,
+        "available": 17422191.25,
+        "spent": 7166980.25
+      },
+      "IND": {
+        "required": 17555733.33,
+        "available": 12972051.33,
+        "spent": 12806685.3
+      },
+      "IRN": {
+        "required": 938786.42,
+        "available": 838203.08,
+        "spent": 809830.08
+      },
+      "KEN": {
+        "required": 28684517.5,
+        "available": 25009804,
+        "spent": 23585021.5
+      },
+      "KGZ": {
+        "required": 2488283.98,
+        "available": 2344355.04,
+        "spent": 2339355.04
+      },
+      "LAO": {
+        "required": 12418950.5,
+        "available": 12225210,
+        "spent": 10300133.5
+      },
+      "LBN": {
+        "required": 280685318.55,
+        "available": 134398968.21,
+        "spent": 127544614.71
+      },
+      "LBR": {
+        "required": 15437172.33,
+        "available": 11456995.5,
+        "spent": 6324750.33
+      },
+      "LBY": {
+        "required": 24425469.13,
+        "available": 13558332.77,
+        "spent": 8108635.6
+      },
+      "LKA": {
+        "required": 2014743.5,
+        "available": 2443574.5,
+        "spent": 2385270.83
+      },
+      "MDA": {
+        "required": 4210535.17,
+        "available": 3640234.5,
+        "spent": 3377171.4
+      },
+      "MDV": {
+        "required": 1296171.5,
+        "available": 860548.5,
+        "spent": 653191.5
+      },
+      "MLI": {
+        "required": 31292782.5,
+        "available": 8423156,
+        "spent": 0
+      },
+      "MNE": {
+        "required": 1832677.33,
+        "available": 1572993.0,
+        "spent": 1034164.53
+      },
+      "MNG": {
+        "required": 2615699,
+        "available": 2185833,
+        "spent": 2185722
+      },
+      "NPL": {
+        "required": 7441230.08,
+        "available": 7415284.92,
+        "spent": 5932258.92
+      },
+      "PAK": {
+        "required": 110549013.02,
+        "available": 69567183.55,
+        "spent": 66207673.02
+      },
+      "PER": {
+        "required": 8918244.67,
+        "available": 8536882.67,
+        "spent": 974013
+      },
+      "PRY": {
+        "required": 2418714.45,
+        "available": 2428965.17,
+        "spent": 2265427.55
+      },
+      "SAU": {
+        "required": 3819009,
+        "available": 560675.67,
+        "spent": 530675.67
+      },
+      "SOM": {
+        "required": 49386200.33,
+        "available": 43932028.33,
+        "spent": 32611979.83
+      },
+      "SSD": {
+        "required": 119347983,
+        "available": 39256967.5,
+        "spent": 39256967.5
+      },
+      "STP": {
+        "required": 1119262.64,
+        "available": 1118012.64,
+        "spent": 1070347.64
+      },
+      "TGO": {
+        "required": 3556518.67,
+        "available": 2938305.67,
+        "spent": 2165645.67
+      },
+      "THA": {
+        "required": 8073300.9,
+        "available": 5379798.1,
+        "spent": 4964384.5
+      },
+      "TJK": {
+        "required": 9413995,
+        "available": 9413995,
+        "spent": 8164941
+      },
+      "TUR": {
+        "required": 86836347.0,
+        "available": 71074391.33,
+        "spent": 61952614.83
+      },
+      "URY": {
+        "required": 1029214.08,
+        "available": 1029214.08,
+        "spent": 983161.5
+      },
+      "VEN": {
+        "required": 13571298,
+        "available": 5487506,
+        "spent": 911000
+      },
+      "VNM": {
+        "required": 4820675,
+        "available": 4259119,
+        "spent": 2671832
+      },
+      "TZA": {
+        "required": 25909959.83,
+        "available": 10485703.17,
+        "spent": 6034017.67
+      },
+      "YEM": {
+        "required": 156687391,
+        "available": 58523147.67,
+        "spent": 47408488.67
+      },
+      "MOZ": {
+        "required": 33312170.67,
+        "available": 32269679.67,
+        "spent": 31321224.33
+      },
+      "ZMB": {
+        "required": 1461500,
+        "available": 0,
+        "spent": 0
+      },
+      "TUN": {
+        "required": 5563002.93,
+        "available": 5521995.13,
+        "spent": 5134938.13
+      },
+      "CPV": {
+        "required": 1624689.5,
+        "available": 1616489.5,
+        "spent": 1289792
+      },
+      "MAR": {
+        "required": 3601807,
+        "available": 2543273.17,
+        "spent": 2267631.83
+      },
+      "NGA": {
+        "required": 60044357.17,
+        "available": 23773658.17,
+        "spent": 20279988.17
+      },
+      "AFG": {
+        "required": 203978633.29,
+        "available": 131829997.38,
+        "spent": 68592216.29
+      },
+      "GHA": {
+        "required": 12670131.48,
+        "available": 8139767.57,
+        "spent": 6621255.13
+      },
+      "ZWE": {
+        "required": 14163989.5,
+        "available": 13379021,
+        "spent": 12499472.5
+      }
+    },
+    "top_underfunded": [
+      "LBN",
+      "YEM",
+      "SSD",
+      "AFG",
+      "PAK",
+      "NGA",
+      "CMR",
+      "BDI",
+      "MLI",
+      "ERI"
+    ]
+  },
+  "5": {
+    "year": 2023,
+    "color": "#ff3a21",
+    "name": "Gender Equality",
+    "totals": {
+      "required": 1985677838.56,
+      "available": 2173114766.26,
+      "spent": 1332752782.79
+    },
+    "countries": {
+      "PSE": {
+        "required": 17967202.53,
+        "available": 11254306.13,
+        "spent": 0
+      },
+      "SLV": {
+        "required": 13040062.3,
+        "available": 12337422.9,
+        "spent": 11627741.81
+      },
+      "ALB": {
+        "required": 5745486.48,
+        "available": 3732986.48,
+        "spent": 3419631.88
+      },
+      "ARG": {
+        "required": 15935070.67,
+        "available": 52456358.5,
+        "spent": 51958681
+      },
+      "BDI": {
+        "required": 7729147.17,
+        "available": 3026427.67,
+        "spent": 2508387.67
+      },
+      "BEN": {
+        "required": 9475019.84,
+        "available": 7800909.33,
+        "spent": 2991131.33
+      },
+      "BFA": {
+        "required": 8780957.17,
+        "available": 7275474.67,
+        "spent": 5080884.17
+      },
+      "BGD": {
+        "required": 17727429.42,
+        "available": 11490804.84,
+        "spent": 9767978.17
+      },
+      "BLR": {
+        "required": 693411.33,
+        "available": 674053.5,
+        "spent": 573135.17
+      },
+      "BOL": {
+        "required": 4895156.28,
+        "available": 4808510.28,
+        "spent": 4697734.28
+      },
+      "BRA": {
+        "required": 13483458.77,
+        "available": 8124631.3,
+        "spent": 7428245.72
+      },
+      "BWA": {
+        "required": 4591653.62,
+        "available": 3484729.45,
+        "spent": 2071074.7
+      },
+      "CAF": {
+        "required": 60930520.03,
+        "available": 53601863.53,
+        "spent": 51416047.73
+      },
+      "CHL": {
+        "required": 5368463,
+        "available": 3658137,
+        "spent": 3406066
+      },
+      "CMR": {
+        "required": 11182355.5,
+        "available": 6516417,
+        "spent": 0
+      },
+      "COG": {
+        "required": 511483.33,
+        "available": 241333.33,
+        "spent": 0
+      },
+      "CRI": {
+        "required": 5014746.83,
+        "available": 5014296.83,
+        "spent": 4822598.83
+      },
+      "DOM": {
+        "required": 2059939.9,
+        "available": 2425912.07,
+        "spent": 2241592.73
+      },
+      "DZA": {
+        "required": 77416.67,
+        "available": 78766.67,
+        "spent": 29600
+      },
+      "ECU": {
+        "required": 34716111.45,
+        "available": 17903327.1,
+        "spent": 17034189.45
+      },
+      "EGY": {
+        "required": 57488327.8,
+        "available": 44807395.3,
+        "spent": 40214814.68
+      },
+      "ERI": {
+        "required": 665092,
+        "available": 599483.5,
+        "spent": 575483.5
+      },
+      "GAB": {
+        "required": 216965.0,
+        "available": 205715.0,
+        "spent": 175514.0
+      },
+      "GNB": {
+        "required": 1787579.88,
+        "available": 1646388.93,
+        "spent": 1140859.45
+      },
+      "HND": {
+        "required": 8962463.62,
+        "available": 9061912.32,
+        "spent": 8262628.48
+      },
+      "HTI": {
+        "required": 37728540.32,
+        "available": 28606278.15,
+        "spent": 13769713.57
+      },
+      "IND": {
+        "required": 21034017.33,
+        "available": 18346528.08,
+        "spent": 16475943.13
+      },
+      "IRN": {
+        "required": 834594.83,
+        "available": 630228.17,
+        "spent": 620228.17
+      },
+      "KEN": {
+        "required": 101306148.14,
+        "available": 88670801.0,
+        "spent": 78908620.53
+      },
+      "KGZ": {
+        "required": 9927493.51,
+        "available": 8793084.09,
+        "spent": 8453397.59
+      },
+      "LAO": {
+        "required": 3497575.92,
+        "available": 4246812.08,
+        "spent": 3169548.75
+      },
+      "LBN": {
+        "required": 72538454.55,
+        "available": 39622828.88,
+        "spent": 36117422.38
+      },
+      "LBR": {
+        "required": 10397098.17,
+        "available": 9958474.83,
+        "spent": 7554855.17
+      },
+      "LBY": {
+        "required": 31299301.38,
+        "available": 20925799.21,
+        "spent": 14136039.67
+      },
+      "LKA": {
+        "required": 2730036.58,
+        "available": 2777675.33,
+        "spent": 2638128.42
+      },
+      "MDA": {
+        "required": 16876047.78,
+        "available": 15797129.28,
+        "spent": 15456506.45
+      },
+      "MDV": {
+        "required": 4301690.5,
+        "available": 3791234.67,
+        "spent": 2240861.67
+      },
+      "MLI": {
+        "required": 26229298.83,
+        "available": 11588469.66,
+        "spent": 0
+      },
+      "MNE": {
+        "required": 1091244.5,
+        "available": 1020372.5,
+        "spent": 975083.7
+      },
+      "MNG": {
+        "required": 5822186.17,
+        "available": 5489186.17,
+        "spent": 4433705.17
+      },
+      "NPL": {
+        "required": 12716687.62,
+        "available": 12122724.85,
+        "spent": 9468843.25
+      },
+      "PAK": {
+        "required": 121018926.19,
+        "available": 59374574.38,
+        "spent": 41974772.59
+      },
+      "PER": {
+        "required": 11800195.67,
+        "available": 6995683.67,
+        "spent": 0
+      },
+      "PRY": {
+        "required": 2171969.63,
+        "available": 2057423.77,
+        "spent": 1437940.81
+      },
+      "SAU": {
+        "required": 17366975.67,
+        "available": 12046975.67,
+        "spent": 5873891.5
+      },
+      "SOM": {
+        "required": 38641385.75,
+        "available": 27974814.67,
+        "spent": 17639138.82
+      },
+      "SSD": {
+        "required": 38576725.34,
+        "available": 14128328.33,
+        "spent": 8362326.67
+      },
+      "STP": {
+        "required": 1097352.97,
+        "available": 869088.3,
+        "spent": 809589.64
+      },
+      "TGO": {
+        "required": 2243092,
+        "available": 2235156,
+        "spent": 1846482
+      },
+      "THA": {
+        "required": 22499593.77,
+        "available": 15380039.77,
+        "spent": 14190305.73
+      },
+      "TJK": {
+        "required": 8008017.0,
+        "available": 7906979.67,
+        "spent": 6569561.67
+      },
+      "TUR": {
+        "required": 60021967.0,
+        "available": 49827731.0,
+        "spent": 37722595.13
+      },
+      "URY": {
+        "required": 2114959.75,
+        "available": 2091572.42,
+        "spent": 1957759.83
+      },
+      "VEN": {
+        "required": 15976247.25,
+        "available": 4487010.5,
+        "spent": 4437605.5
+      },
+      "VNM": {
+        "required": 10892347.67,
+        "available": 10000511.67,
+        "spent": 8162355.17
+      },
+      "TZA": {
+        "required": 23394378.66,
+        "available": 11621709.92,
+        "spent": 7759127.75
+      },
+      "YEM": {
+        "required": 25790503.33,
+        "available": 21055003.33,
+        "spent": 14316984.5
+      },
+      "MOZ": {
+        "required": 45301215.41,
+        "available": 36894385.32,
+        "spent": 30128108.69
+      },
+      "TUN": {
+        "required": 11543493.75,
+        "available": 10488588.99,
+        "spent": 9087301.6
+      },
+      "CPV": {
+        "required": 658260.02,
+        "available": 578810.02,
+        "spent": 511498.74
+      },
+      "MAR": {
+        "required": 14152189.62,
+        "available": 13576382.62,
+        "spent": 12462865.55
+      },
+      "NGA": {
+        "required": 17506838.0,
+        "available": 11728942.66,
+        "spent": 9513854.67
+      },
+      "AFG": {
+        "required": 135318432.29,
+        "available": 122190660.54,
+        "spent": 80106122.02
+      },
+      "GHA": {
+        "required": 15179477.07,
+        "available": 11971632.46,
+        "spent": 9729864.54
+      },
+      "ZWE": {
+        "required": 62137981.58,
+        "available": 38172221.53,
+        "spent": 26677944.73
+      }
+    },
+    "top_underfunded": [
+      "PAK",
+      "LBN",
+      "SSD",
+      "ZWE",
+      "ECU",
+      "MLI",
+      "AFG",
+      "EGY",
+      "KEN",
+      "TZA"
+    ]
+  },
+  "6": {
+    "year": 2023,
+    "color": "#26bde2",
+    "name": "Clean Water and Sanitation",
+    "totals": {
+      "required": 1471422549.57,
+      "available": 1106733346.69,
+      "spent": 705232073.14
+    },
+    "countries": {
+      "PSE": {
+        "required": 16982356,
+        "available": 8038656,
+        "spent": 0
+      },
+      "SLV": {
+        "required": 621086.42,
+        "available": 621086.42,
+        "spent": 621086.42
+      },
+      "ALB": {
+        "required": 6833.33,
+        "available": 6833.33,
+        "spent": 6833.33
+      },
+      "ARG": {
+        "required": 17958129.5,
+        "available": 17454526,
+        "spent": 16959263.5
+      },
+      "BDI": {
+        "required": 3119000,
+        "available": 1305665,
+        "spent": 1305665
+      },
+      "BEN": {
+        "required": 5398138.33,
+        "available": 4918707.5,
+        "spent": 4605031.33
+      },
+      "BFA": {
+        "required": 67213220,
+        "available": 14708405,
+        "spent": 8409373
+      },
+      "BGD": {
+        "required": 19717182,
+        "available": 15040157.25,
+        "spent": 9918477.75
+      },
+      "BLR": {
+        "required": 0,
+        "available": 0,
+        "spent": 0
+      },
+      "BOL": {
+        "required": 725295.83,
+        "available": 725295.83,
+        "spent": 725295.83
+      },
+      "BRA": {
+        "required": 4619946.22,
+        "available": 3974779.22,
+        "spent": 3633874.72
+      },
+      "CAF": {
+        "required": 36268078,
+        "available": 16776576,
+        "spent": 15053980
+      },
+      "CHL": {
+        "required": 3786163,
+        "available": 3786163,
+        "spent": 3786163
+      },
+      "CMR": {
+        "required": 6560300,
+        "available": 1456354.33,
+        "spent": 0
+      },
+      "COG": {
+        "required": 677760,
+        "available": 493877.25,
+        "spent": 0
+      },
+      "CRI": {
+        "required": 1001958.08,
+        "available": 991958.08,
+        "spent": 989647.17
+      },
+      "DOM": {
+        "required": 433621.83,
+        "available": 433621.83,
+        "spent": 422186.67
+      },
+      "DZA": {
+        "required": 219983.67,
+        "available": 184798.92,
+        "spent": 31948.92
+      },
+      "ECU": {
+        "required": 5263631.75,
+        "available": 1858478.75,
+        "spent": 1858478.75
+      },
+      "EGY": {
+        "required": 2410574.67,
+        "available": 1694562.6,
+        "spent": 1097817.68
+      },
+      "ERI": {
+        "required": 4121748,
+        "available": 2800579.5,
+        "spent": 2393962.5
+      },
+      "GAB": {
+        "required": 81768,
+        "available": 81768,
+        "spent": 81018
+      },
+      "GNB": {
+        "required": 823204.55,
+        "available": 794657.33,
+        "spent": 794482.33
+      },
+      "HND": {
+        "required": 4484652.17,
+        "available": 3474821.67,
+        "spent": 2960641.17
+      },
+      "HTI": {
+        "required": 7702915.33,
+        "available": 6921872.6,
+        "spent": 3151245.35
+      },
+      "IND": {
+        "required": 13791187,
+        "available": 11736562,
+        "spent": 11736562
+      },
+      "IRN": {
+        "required": 1119000,
+        "available": 549000,
+        "spent": 473700
+      },
+      "KEN": {
+        "required": 21522359.5,
+        "available": 14536676.27,
+        "spent": 14291350.83
+      },
+      "KGZ": {
+        "required": 773878.96,
+        "available": 465925.86,
+        "spent": 463425.86
+      },
+      "LAO": {
+        "required": 3710631.75,
+        "available": 3934745.75,
+        "spent": 3736941.75
+      },
+      "LBN": {
+        "required": 121382616.8,
+        "available": 72337468.96,
+        "spent": 62931070.21
+      },
+      "LBR": {
+        "required": 522227,
+        "available": 522227,
+        "spent": 492227
+      },
+      "LBY": {
+        "required": 17232029.53,
+        "available": 13278301.28,
+        "spent": 7932954.62
+      },
+      "LKA": {
+        "required": 8315034.75,
+        "available": 8425077.5,
+        "spent": 7357184
+      },
+      "MDA": {
+        "required": 1194452.2,
+        "available": 1104452.2,
+        "spent": 1091952.2
+      },
+      "MDV": {
+        "required": 483288.25,
+        "available": 416621.58,
+        "spent": 126621.58
+      },
+      "MLI": {
+        "required": 10075765,
+        "available": 5709747,
+        "spent": 0
+      },
+      "MNE": {
+        "required": 3333.33,
+        "available": 3333.33,
+        "spent": 3333.33
+      },
+      "MNG": {
+        "required": 620346.33,
+        "available": 620345.33,
+        "spent": 620345.33
+      },
+      "NPL": {
+        "required": 2803000,
+        "available": 2798499,
+        "spent": 2381925
+      },
+      "PAK": {
+        "required": 100274652,
+        "available": 52367867,
+        "spent": 30963305
+      },
+      "PER": {
+        "required": 13124559.83,
+        "available": 13124559.83,
+        "spent": 0
+      },
+      "PRY": {
+        "required": 423386.8,
+        "available": 566526.97,
+        "spent": 538990.47
+      },
+      "SAU": {
+        "required": 5038446.67,
+        "available": 5038446.67,
+        "spent": 3479973.33
+      },
+      "SOM": {
+        "required": 89253408.83,
+        "available": 46012348.83,
+        "spent": 45365704
+      },
+      "SSD": {
+        "required": 18253276,
+        "available": 5760506.5,
+        "spent": 5086782.5
+      },
+      "STP": {
+        "required": 41000,
+        "available": 20000,
+        "spent": 20000
+      },
+      "TGO": {
+        "required": 2972500,
+        "available": 3243647,
+        "spent": 747983
+      },
+      "THA": {
+        "required": 225040.86,
+        "available": 225040.86,
+        "spent": 217860.33
+      },
+      "TJK": {
+        "required": 1903878,
+        "available": 1716201,
+        "spent": 1381593
+      },
+      "TUR": {
+        "required": 33864849.83,
+        "available": 33864849.83,
+        "spent": 20261516.5
+      },
+      "URY": {
+        "required": 290679.5,
+        "available": 282922,
+        "spent": 282922
+      },
+      "VEN": {
+        "required": 65708233.33,
+        "available": 9456323.33,
+        "spent": 8371077
+      },
+      "VNM": {
+        "required": 2133456.17,
+        "available": 2260997.17,
+        "spent": 1694030.5
+      },
+      "TZA": {
+        "required": 15515281.24,
+        "available": 5043448,
+        "spent": 3807097
+      },
+      "YEM": {
+        "required": 44110105,
+        "available": 44110105,
+        "spent": 30321136.33
+      },
+      "MOZ": {
+        "required": 35934520.22,
+        "available": 29554937.47,
+        "spent": 27210149.17
+      },
+      "TUN": {
+        "required": 2045793.17,
+        "available": 2045794.17,
+        "spent": 2044794.17
+      },
+      "CPV": {
+        "required": 241959.33,
+        "available": 239695,
+        "spent": 129103.93
+      },
+      "MAR": {
+        "required": 770903.53,
+        "available": 770903.53,
+        "spent": 382581.13
+      },
+      "NGA": {
+        "required": 24124660.5,
+        "available": 18162826.33,
+        "spent": 17780124
+      },
+      "AFG": {
+        "required": 85366765.12,
+        "available": 36820899.41,
+        "spent": 29741903.32
+      },
+      "GHA": {
+        "required": 7691741.84,
+        "available": 5889738.15,
+        "spent": 4446277.4
+      },
+      "ZWE": {
+        "required": 18436736.5,
+        "available": 17394295.7,
+        "spent": 15774170.8
+      }
+    },
+    "top_underfunded": [
+      "VEN",
+      "BFA",
+      "LBN",
+      "AFG",
+      "PAK",
+      "SOM",
+      "CAF",
+      "SSD",
+      "TZA",
+      "PSE"
+    ]
+  },
+  "7": {
+    "year": 2023,
+    "color": "#fcc30b",
+    "name": "Affordable and Clean Energy",
+    "totals": {
+      "required": 349655516.21,
+      "available": 272419929.98,
+      "spent": 168520999.55
+    },
+    "countries": {
+      "PSE": {
+        "required": 3049885.2,
+        "available": 1541777.3,
+        "spent": 0
+      },
+      "SLV": {
+        "required": 456553.5,
+        "available": 456553.5,
+        "spent": 208637.83
+      },
+      "ALB": {
+        "required": 60000,
+        "available": 60000,
+        "spent": 60000
+      },
+      "ARG": {
+        "required": 112501,
+        "available": 20000.5,
+        "spent": 20000.5
+      },
+      "BDI": {
+        "required": 4300000,
+        "available": 3376000,
+        "spent": 0
+      },
+      "BEN": {
+        "required": 2107509.5,
+        "available": 2107509.5,
+        "spent": 857509.5
+      },
+      "BFA": {
+        "required": 488839,
+        "available": 402395,
+        "spent": 381784
+      },
+      "BGD": {
+        "required": 2826561,
+        "available": 1599825,
+        "spent": 1599825
+      },
+      "BLR": {
+        "required": 155269.33,
+        "available": 145269.33,
+        "spent": 139019.33
+      },
+      "BOL": {
+        "required": 436814.33,
+        "available": 436814.33,
+        "spent": 436814.33
+      },
+      "BRA": {
+        "required": 417999.25,
+        "available": 642944.25,
+        "spent": 385180
+      },
+      "BWA": {
+        "required": 49500,
+        "available": 49500,
+        "spent": 49500
+      },
+      "CAF": {
+        "required": 5917000,
+        "available": 3000000,
+        "spent": 2494938
+      },
+      "CHL": {
+        "required": 1626461,
+        "available": 1626461,
+        "spent": 1250000
+      },
+      "CMR": {
+        "required": 2720555,
+        "available": 2320398,
+        "spent": 0
+      },
+      "COG": {
+        "required": 0,
+        "available": 18906.25,
+        "spent": 0
+      },
+      "CRI": {
+        "required": 936010,
+        "available": 936010,
+        "spent": 936010
+      },
+      "DOM": {
+        "required": 45884,
+        "available": 45884,
+        "spent": 38126
+      },
+      "DZA": {
+        "required": 156988.67,
+        "available": 156988.67,
+        "spent": 0
+      },
+      "ECU": {
+        "required": 107371,
+        "available": 107371,
+        "spent": 82607.5
+      },
+      "EGY": {
+        "required": 4574693.2,
+        "available": 4646355.87,
+        "spent": 3919312.45
+      },
+      "ERI": {
+        "required": 31290000,
+        "available": 630000,
+        "spent": 527700
+      },
+      "GNB": {
+        "required": 162539.93,
+        "available": 70789.43,
+        "spent": 70789.43
+      },
+      "HND": {
+        "required": 37389,
+        "available": 37389,
+        "spent": 37389
+      },
+      "HTI": {
+        "required": 1228644.5,
+        "available": 1228644.5,
+        "spent": 1228644.5
+      },
+      "IND": {
+        "required": 6493998,
+        "available": 10377980,
+        "spent": 4739407
+      },
+      "IRN": {
+        "required": 310586.17,
+        "available": 292252.63,
+        "spent": 270727.3
+      },
+      "KGZ": {
+        "required": 119714.29,
+        "available": 119714.29,
+        "spent": 112214.29
+      },
+      "LAO": {
+        "required": 57133.5,
+        "available": 90460,
+        "spent": 47025
+      },
+      "LBN": {
+        "required": 6835883.42,
+        "available": 6414737.92,
+        "spent": 3949182
+      },
+      "LBR": {
+        "required": 1826536.67,
+        "available": 1683203.33,
+        "spent": 871460
+      },
+      "LBY": {
+        "required": 500000,
+        "available": 275400,
+        "spent": 275334
+      },
+      "LKA": {
+        "required": 4480,
+        "available": 4480,
+        "spent": 4480
+      },
+      "MDA": {
+        "required": 8319966.12,
+        "available": 8319966.12,
+        "spent": 8308299.45
+      },
+      "MDV": {
+        "required": 823500,
+        "available": 823500,
+        "spent": 290982
+      },
+      "MNE": {
+        "required": 19399.5,
+        "available": 19399.5,
+        "spent": 19323.5
+      },
+      "MNG": {
+        "required": 752529,
+        "available": 752529,
+        "spent": 752529
+      },
+      "NPL": {
+        "required": 2035421,
+        "available": 2035421,
+        "spent": 1829187
+      },
+      "PAK": {
+        "required": 8311148.57,
+        "available": 4795543.07,
+        "spent": 291521.21
+      },
+      "PER": {
+        "required": 0,
+        "available": 0,
+        "spent": 0
+      },
+      "PRY": {
+        "required": 1879.4,
+        "available": 1879.4,
+        "spent": 1879.4
+      },
+      "SAU": {
+        "required": 1533333.33,
+        "available": 1533333.33,
+        "spent": 1522617.33
+      },
+      "SOM": {
+        "required": 718880.54,
+        "available": 718880.54,
+        "spent": 187420.25
+      },
+      "STP": {
+        "required": 1546589.8,
+        "available": 794589.8,
+        "spent": 444589.8
+      },
+      "TGO": {
+        "required": 795000,
+        "available": 795000,
+        "spent": 795000
+      },
+      "THA": {
+        "required": 969455.45,
+        "available": 968996.57,
+        "spent": 948515.2
+      },
+      "TJK": {
+        "required": 219565,
+        "available": 219565,
+        "spent": 124601
+      },
+      "TUR": {
+        "required": 1614900.33,
+        "available": 1714900.33,
+        "spent": 534517.83
+      },
+      "URY": {
+        "required": 3245975,
+        "available": 3235559,
+        "spent": 2885559
+      },
+      "VEN": {
+        "required": 8233.33,
+        "available": 8233.33,
+        "spent": 8233.33
+      },
+      "VNM": {
+        "required": 424717,
+        "available": 368862,
+        "spent": 357362
+      },
+      "TZA": {
+        "required": 11968731.33,
+        "available": 9091847.83,
+        "spent": 3260374.5
+      },
+      "YEM": {
+        "required": 23791666.67,
+        "available": 23791666.67,
+        "spent": 13254280.33
+      },
+      "MOZ": {
+        "required": 1821516.75,
+        "available": 2287864,
+        "spent": 1631450.75
+      },
+      "TUN": {
+        "required": 1082569.27,
+        "available": 1034689.77,
+        "spent": 980379.77
+      },
+      "CPV": {
+        "required": 565675.17,
+        "available": 275882.17,
+        "spent": 183770.17
+      },
+      "MAR": {
+        "required": 1872453.45,
+        "available": 1872453.45,
+        "spent": 743372.05
+      },
+      "NGA": {
+        "required": 498333.33,
+        "available": 325202.33,
+        "spent": 206500
+      },
+      "AFG": {
+        "required": 1779996.5,
+        "available": 5812583,
+        "spent": 251395
+      },
+      "GHA": {
+        "required": 277905,
+        "available": 277905,
+        "spent": 154530
+      },
+      "ZWE": {
+        "required": 999608.08,
+        "available": 981259.58,
+        "spent": 610555.18
+      }
+    },
+    "top_underfunded": [
+      "ERI",
+      "PAK",
+      "CAF",
+      "TZA",
+      "PSE",
+      "BGD",
+      "BDI",
+      "STP",
+      "LBN",
+      "CMR"
+    ]
+  },
+  "8": {
+    "year": 2023,
+    "color": "#a21942",
+    "name": "Decent Jobs and Economic Growth",
+    "totals": {
+      "required": 1108682431.31,
+      "available": 903367522.72,
+      "spent": 560932412.19
+    },
+    "countries": {
+      "PSE": {
+        "required": 16044169.28,
+        "available": 9733363.38,
+        "spent": 0
+      },
+      "SLV": {
+        "required": 8137372.48,
+        "available": 7996384.65,
+        "spent": 5607579.24
+      },
+      "ALB": {
+        "required": 3498112.14,
+        "available": 2750327.14,
+        "spent": 2003416.22
+      },
+      "ARG": {
+        "required": 22072482,
+        "available": 63710150.17,
+        "spent": 16981898.67
+      },
+      "BDI": {
+        "required": 10815042.67,
+        "available": 3314853.17,
+        "spent": 247542.67
+      },
+      "BEN": {
+        "required": 6549942.07,
+        "available": 6343078.2,
+        "spent": 5938393.37
+      },
+      "BFA": {
+        "required": 7025098.22,
+        "available": 6936187.72,
+        "spent": 4196661.43
+      },
+      "BGD": {
+        "required": 23471482.42,
+        "available": 18374214.33,
+        "spent": 15720503.84
+      },
+      "BLR": {
+        "required": 1439189.45,
+        "available": 1315689.45,
+        "spent": 1275219.45
+      },
+      "BOL": {
+        "required": 1879172.62,
+        "available": 1879172.62,
+        "spent": 1871458.37
+      },
+      "BRA": {
+        "required": 10828067.7,
+        "available": 9987050.7,
+        "spent": 9395035.38
+      },
+      "BWA": {
+        "required": 1385934.61,
+        "available": 1011218.04,
+        "spent": 860938.1
+      },
+      "CAF": {
+        "required": 8958235.87,
+        "available": 4532394.87,
+        "spent": 4471368.73
+      },
+      "CHL": {
+        "required": 3675445.75,
+        "available": 2379093.75,
+        "spent": 2125765.75
+      },
+      "CMR": {
+        "required": 1981300,
+        "available": 1342300,
+        "spent": 0
+      },
+      "COG": {
+        "required": 9316524.34,
+        "available": 3194616.92,
+        "spent": 0
+      },
+      "CRI": {
+        "required": 1724612.83,
+        "available": 1362306.17,
+        "spent": 1026659.25
+      },
+      "DOM": {
+        "required": 3072546.82,
+        "available": 3792547.15,
+        "spent": 2907602.15
+      },
+      "DZA": {
+        "required": 3962575.08,
+        "available": 2488741.75,
+        "spent": 1376834.33
+      },
+      "ECU": {
+        "required": 28838081.27,
+        "available": 8434452.77,
+        "spent": 7950526.68
+      },
+      "EGY": {
+        "required": 18577512.3,
+        "available": 15981648.3,
+        "spent": 9484972.34
+      },
+      "ERI": {
+        "required": 726000,
+        "available": 111089,
+        "spent": 111089
+      },
+      "GAB": {
+        "required": 912896.67,
+        "available": 911396.67,
+        "spent": 816772.17
+      },
+      "GNB": {
+        "required": 1122022.91,
+        "available": 1061901.68,
+        "spent": 850646.2
+      },
+      "HND": {
+        "required": 5237792.92,
+        "available": 4488992.25,
+        "spent": 3982629.75
+      },
+      "HTI": {
+        "required": 14423761.57,
+        "available": 4308679.74,
+        "spent": 4011951.4
+      },
+      "IND": {
+        "required": 11775448.33,
+        "available": 13127521.33,
+        "spent": 5829321.47
+      },
+      "IRN": {
+        "required": 2935250.67,
+        "available": 1674417.33,
+        "spent": 611902.33
+      },
+      "KEN": {
+        "required": 8988954.9,
+        "available": 8003850.62,
+        "spent": 6192572.76
+      },
+      "KGZ": {
+        "required": 3031921.36,
+        "available": 2503680.27,
+        "spent": 2376680.27
+      },
+      "LAO": {
+        "required": 5536761,
+        "available": 1802594.33,
+        "spent": 310800.17
+      },
+      "LBN": {
+        "required": 32312217.71,
+        "available": 24960072.96,
+        "spent": 19062453.96
+      },
+      "LBR": {
+        "required": 1556666.67,
+        "available": 1601833.33,
+        "spent": 1518500
+      },
+      "LBY": {
+        "required": 9983268.21,
+        "available": 6583044.42,
+        "spent": 4055853.47
+      },
+      "LKA": {
+        "required": 13155285.83,
+        "available": 7356996.67,
+        "spent": 5970184.25
+      },
+      "MDA": {
+        "required": 7054226.27,
+        "available": 6827226.27,
+        "spent": 6507222.5
+      },
+      "MDV": {
+        "required": 687348.5,
+        "available": 560348.5,
+        "spent": 406682
+      },
+      "MLI": {
+        "required": 985397.0,
+        "available": 871230.33,
+        "spent": 0
+      },
+      "MNE": {
+        "required": 1559581.25,
+        "available": 1409409.25,
+        "spent": 1149941.75
+      },
+      "MNG": {
+        "required": 4348418.67,
+        "available": 4047418.67,
+        "spent": 3656894.67
+      },
+      "NPL": {
+        "required": 7377938.25,
+        "available": 5094355.75,
+        "spent": 2851078.92
+      },
+      "PAK": {
+        "required": 76753434.36,
+        "available": 51331662.38,
+        "spent": 34803060.09
+      },
+      "PER": {
+        "required": 28518854.67,
+        "available": 13531646.34,
+        "spent": 62634
+      },
+      "PRY": {
+        "required": 1618031.59,
+        "available": 1565238.83,
+        "spent": 1283672.16
+      },
+      "SAU": {
+        "required": 10829083.67,
+        "available": 3979083.67,
+        "spent": 649031.67
+      },
+      "SOM": {
+        "required": 6361701.79,
+        "available": 6273606.29,
+        "spent": 2552208.1
+      },
+      "SSD": {
+        "required": 18586142.67,
+        "available": 17588502.67,
+        "spent": 6128461.5
+      },
+      "STP": {
+        "required": 2101975.97,
+        "available": 1901975.97,
+        "spent": 1400825.97
+      },
+      "TGO": {
+        "required": 5431415.17,
+        "available": 5446474.5,
+        "spent": 851248.17
+      },
+      "THA": {
+        "required": 18569218.72,
+        "available": 12682418.92,
+        "spent": 12285231.6
+      },
+      "TJK": {
+        "required": 5037810.17,
+        "available": 5025310.17,
+        "spent": 3926703.08
+      },
+      "TUR": {
+        "required": 43704624.75,
+        "available": 41235529.75,
+        "spent": 16127861.05
+      },
+      "URY": {
+        "required": 487388.92,
+        "available": 94082.92,
+        "spent": 94082.92
+      },
+      "VEN": {
+        "required": 1353815.33,
+        "available": 734091.67,
+        "spent": 582290.33
+      },
+      "VNM": {
+        "required": 11204947.5,
+        "available": 8570566.5,
+        "spent": 7946788.0
+      },
+      "TZA": {
+        "required": 18512782.99,
+        "available": 11606893.58,
+        "spent": 6701277.92
+      },
+      "YEM": {
+        "required": 44303327.33,
+        "available": 38681625.33,
+        "spent": 22353380.83
+      },
+      "MOZ": {
+        "required": 20970424.96,
+        "available": 16706558.71,
+        "spent": 15392009.82
+      },
+      "TUN": {
+        "required": 10612481.44,
+        "available": 9569633.04,
+        "spent": 3832978.25
+      },
+      "CPV": {
+        "required": 903986.69,
+        "available": 796686.69,
+        "spent": 604982.9
+      },
+      "MAR": {
+        "required": 3764429.53,
+        "available": 2981142.7,
+        "spent": 2379953.13
+      },
+      "NGA": {
+        "required": 11543184.17,
+        "available": 11410142.17,
+        "spent": 10693057.67
+      },
+      "AFG": {
+        "required": 111079814,
+        "available": 50470936.04,
+        "spent": 41077679.56
+      },
+      "GHA": {
+        "required": 21886565.95,
+        "available": 20714247.18,
+        "spent": 12819006.29
+      },
+      "ZWE": {
+        "required": 2165891.4,
+        "available": 2030840.9,
+        "spent": 1652292
+      }
+    },
+    "top_underfunded": [
+      "AFG",
+      "PAK",
+      "ECU",
+      "PER",
+      "HTI",
+      "BDI",
+      "LBN",
+      "TZA",
+      "SAU",
+      "PSE"
+    ]
+  },
+  "9": {
+    "year": 2023,
+    "color": "#fd6925",
+    "name": "Industry, Innovation and Infrastructure",
+    "totals": {
+      "required": 632667812.27,
+      "available": 641903565.57,
+      "spent": 395200913.61
+    },
+    "countries": {
+      "PSE": {
+        "required": 2132093.53,
+        "available": 1209818.97,
+        "spent": 0
+      },
+      "SLV": {
+        "required": 1921248.67,
+        "available": 1921248.67,
+        "spent": 662112.33
+      },
+      "ALB": {
+        "required": 12105217.14,
+        "available": 12105217.14,
+        "spent": 6694801.38
+      },
+      "ARG": {
+        "required": 3485500,
+        "available": 50000000,
+        "spent": 4280598.5
+      },
+      "BDI": {
+        "required": 805000,
+        "available": 632000,
+        "spent": 0
+      },
+      "BEN": {
+        "required": 997188.17,
+        "available": 828021.5,
+        "spent": 602561.67
+      },
+      "BFA": {
+        "required": 4348111.33,
+        "available": 2184489.33,
+        "spent": 1526714.83
+      },
+      "BGD": {
+        "required": 3461756,
+        "available": 1171477,
+        "spent": 660620
+      },
+      "BLR": {
+        "required": 2858040.79,
+        "available": 2857040.79,
+        "spent": 2648789.79
+      },
+      "BOL": {
+        "required": 685117.67,
+        "available": 623915.67,
+        "spent": 242736.33
+      },
+      "BRA": {
+        "required": 4647318.88,
+        "available": 5187113.88,
+        "spent": 4212961.3
+      },
+      "BWA": {
+        "required": 277077.18,
+        "available": 194560.61,
+        "spent": 167400.01
+      },
+      "CAF": {
+        "required": 25630428.87,
+        "available": 23882027.87,
+        "spent": 23653788.73
+      },
+      "CHL": {
+        "required": 246803.92,
+        "available": 246803.92,
+        "spent": 246803.92
+      },
+      "CMR": {
+        "required": 21153500,
+        "available": 20673500,
+        "spent": 0
+      },
+      "COG": {
+        "required": 326111,
+        "available": 125808.5,
+        "spent": 0
+      },
+      "CRI": {
+        "required": 12545367,
+        "available": 12545367,
+        "spent": 12545367
+      },
+      "DOM": {
+        "required": 605173.58,
+        "available": 601840.25,
+        "spent": 548993.25
+      },
+      "DZA": {
+        "required": 579691.08,
+        "available": 578291.08,
+        "spent": 138545
+      },
+      "ECU": {
+        "required": 1705170.15,
+        "available": 1151151.75,
+        "spent": 793397.18
+      },
+      "EGY": {
+        "required": 4252405.7,
+        "available": 3705033.37,
+        "spent": 3180815.03
+      },
+      "ERI": {
+        "required": 47610,
+        "available": 53610,
+        "spent": 52892
+      },
+      "GAB": {
+        "required": 35598.33,
+        "available": 8133.33,
+        "spent": 3441.08
+      },
+      "GNB": {
+        "required": 2114689.31,
+        "available": 1903853.1,
+        "spent": 1849053.1
+      },
+      "HND": {
+        "required": 3249098.67,
+        "available": 1934622.67,
+        "spent": 717574.67
+      },
+      "HTI": {
+        "required": 7007343.67,
+        "available": 7007343.67,
+        "spent": 5967072.67
+      },
+      "IND": {
+        "required": 2414968,
+        "available": 2414968,
+        "spent": 880944
+      },
+      "IRN": {
+        "required": 919987.93,
+        "available": 759987.93,
+        "spent": 167487.93
+      },
+      "KEN": {
+        "required": 6134652.9,
+        "available": 3100542.12,
+        "spent": 2705418.93
+      },
+      "KGZ": {
+        "required": 1589700.38,
+        "available": 1137884.9,
+        "spent": 1119584.9
+      },
+      "LAO": {
+        "required": 2218538,
+        "available": 2251864.5,
+        "spent": 1654932
+      },
+      "LBN": {
+        "required": 7317097.33,
+        "available": 8544052.33,
+        "spent": 2261269
+      },
+      "LBY": {
+        "required": 972202.38,
+        "available": 610856.33,
+        "spent": 114409
+      },
+      "LKA": {
+        "required": 2891029.5,
+        "available": 2756168,
+        "spent": 2331942.33
+      },
+      "MDA": {
+        "required": 3982763,
+        "available": 3982763,
+        "spent": 3898679.33
+      },
+      "MDV": {
+        "required": 3458650,
+        "available": 3221500,
+        "spent": 297144
+      },
+      "MNE": {
+        "required": 456996.33,
+        "available": 456996.33,
+        "spent": 453652.03
+      },
+      "MNG": {
+        "required": 7983433.5,
+        "available": 7882933.5,
+        "spent": 7306107.5
+      },
+      "NPL": {
+        "required": 252670,
+        "available": 246503.33,
+        "spent": 133621.5
+      },
+      "PAK": {
+        "required": 8005187.57,
+        "available": 5669424.07,
+        "spent": 4492929.61
+      },
+      "PER": {
+        "required": 68965,
+        "available": 68965,
+        "spent": 66880
+      },
+      "PRY": {
+        "required": 3965422.03,
+        "available": 4137439.2,
+        "spent": 4062454.2
+      },
+      "SAU": {
+        "required": 35845833.33,
+        "available": 17562500,
+        "spent": 2436967.83
+      },
+      "SOM": {
+        "required": 2809789.29,
+        "available": 2731789.29,
+        "spent": 2112750
+      },
+      "SSD": {
+        "required": 75307242,
+        "available": 74907242,
+        "spent": 71444517
+      },
+      "STP": {
+        "required": 215736.33,
+        "available": 215736.33,
+        "spent": 196410.67
+      },
+      "TGO": {
+        "required": 1306441.17,
+        "available": 997774.5,
+        "spent": 453764.67
+      },
+      "THA": {
+        "required": 1368917.31,
+        "available": 1116771.63,
+        "spent": 1073692.8
+      },
+      "TJK": {
+        "required": 1721463,
+        "available": 899867.5,
+        "spent": 552239.5
+      },
+      "TUR": {
+        "required": 2150389.58,
+        "available": 3564132.75,
+        "spent": 2076000.75
+      },
+      "URY": {
+        "required": 1111750,
+        "available": 1111750,
+        "spent": 1111750
+      },
+      "VEN": {
+        "required": 1504254.33,
+        "available": 1124876.33,
+        "spent": 973181
+      },
+      "VNM": {
+        "required": 6827122.83,
+        "available": 6300530.83,
+        "spent": 4697678.83
+      },
+      "TZA": {
+        "required": 8289334.82,
+        "available": 5213832.08,
+        "spent": 4075552.75
+      },
+      "YEM": {
+        "required": 39290966.67,
+        "available": 39290966.67,
+        "spent": 23033889.33
+      },
+      "MOZ": {
+        "required": 7920305.99,
+        "available": 8417031.24,
+        "spent": 3897241.11
+      },
+      "TUN": {
+        "required": 1830961.85,
+        "available": 1706228.05,
+        "spent": 1693496.55
+      },
+      "CPV": {
+        "required": 174771.86,
+        "available": 166771.86,
+        "spent": 102914.57
+      },
+      "MAR": {
+        "required": 1209863.92,
+        "available": 1082863.92,
+        "spent": 660815.25
+      },
+      "NGA": {
+        "required": 1713629.33,
+        "available": 1438687.33,
+        "spent": 1336405.33
+      },
+      "AFG": {
+        "required": 14138332.83,
+        "available": 14566979.21,
+        "spent": 8714274.53
+      },
+      "GHA": {
+        "required": 17140459.34,
+        "available": 17095674.56,
+        "spent": 5103800.4
+      },
+      "ZWE": {
+        "required": 6271599.73,
+        "available": 5562660.48,
+        "spent": 4979086.33
+      }
+    },
+    "top_underfunded": [
+      "SAU",
+      "TZA",
+      "KEN",
+      "PAK",
+      "BGD",
+      "BFA",
+      "CAF",
+      "HND",
+      "PSE",
+      "TJK"
+    ]
+  },
+  "10": {
+    "year": 2023,
+    "color": "#dd1367",
+    "name": "Reduced Inequalities",
+    "totals": {
+      "required": 1240829970.62,
+      "available": 999059603.04,
+      "spent": 752535728.33
+    },
+    "countries": {
+      "PSE": {
+        "required": 3558673.75,
+        "available": 1845731.92,
+        "spent": 0
+      },
+      "SLV": {
+        "required": 40749182.28,
+        "available": 36005755.8,
+        "spent": 34404785.38
+      },
+      "ALB": {
+        "required": 4313959.67,
+        "available": 4365293.0,
+        "spent": 2874958.33
+      },
+      "ARG": {
+        "required": 49543152.33,
+        "available": 40417915,
+        "spent": 35570612.17
+      },
+      "BDI": {
+        "required": 1183542.67,
+        "available": 961475.67,
+        "spent": 394165.17
+      },
+      "BEN": {
+        "required": 1158854.83,
+        "available": 988309.83,
+        "spent": 742850.0
+      },
+      "BFA": {
+        "required": 723208.67,
+        "available": 885825.17,
+        "spent": 779539.5
+      },
+      "BGD": {
+        "required": 6804004.5,
+        "available": 7807743.83,
+        "spent": 5297853.75
+      },
+      "BLR": {
+        "required": 4493789.62,
+        "available": 3378049.95,
+        "spent": 3308626.95
+      },
+      "BOL": {
+        "required": 1471519.03,
+        "available": 1459850.03,
+        "spent": 1446111.03
+      },
+      "BRA": {
+        "required": 17261011.71,
+        "available": 12684367.71,
+        "spent": 12089896.88
+      },
+      "BWA": {
+        "required": 736114.02,
+        "available": 551015.29,
+        "spent": 383613.34
+      },
+      "CAF": {
+        "required": 1241895,
+        "available": 1141895,
+        "spent": 424095
+      },
+      "CHL": {
+        "required": 6789083.67,
+        "available": 1909553.67,
+        "spent": 1884572.67
+      },
+      "CMR": {
+        "required": 1912200,
+        "available": 1342300,
+        "spent": 0
+      },
+      "COG": {
+        "required": 525833.33,
+        "available": 20333.33,
+        "spent": 0
+      },
+      "CRI": {
+        "required": 23929467.67,
+        "available": 17767416.67,
+        "spent": 13402272.17
+      },
+      "DOM": {
+        "required": 4700356.98,
+        "available": 4693190.98,
+        "spent": 4633914.65
+      },
+      "DZA": {
+        "required": 522933.33,
+        "available": 464600,
+        "spent": 388869.67
+      },
+      "ECU": {
+        "required": 40121316.22,
+        "available": 32328325.33,
+        "spent": 23205214.17
+      },
+      "EGY": {
+        "required": 12804740.33,
+        "available": 12744739.33,
+        "spent": 11512772.5
+      },
+      "ERI": {
+        "required": 1241650,
+        "available": 1605698,
+        "spent": 997916
+      },
+      "GAB": {
+        "required": 614537.33,
+        "available": 324451.33,
+        "spent": 312781.75
+      },
+      "GNB": {
+        "required": 550164.43,
+        "available": 550164.43,
+        "spent": 481246.43
+      },
+      "HND": {
+        "required": 14486576.25,
+        "available": 12358068.28,
+        "spent": 10109149.78
+      },
+      "HTI": {
+        "required": 12446463.58,
+        "available": 8270008.25,
+        "spent": 6781670.25
+      },
+      "IND": {
+        "required": 16109289.17,
+        "available": 11261930.83,
+        "spent": 10607849.47
+      },
+      "IRN": {
+        "required": 278277.08,
+        "available": 303693.75,
+        "spent": 302068.75
+      },
+      "KEN": {
+        "required": 47163959.22,
+        "available": 43729588.5,
+        "spent": 39562809.78
+      },
+      "KGZ": {
+        "required": 3873009.43,
+        "available": 1863578.7,
+        "spent": 1706380.2
+      },
+      "LAO": {
+        "required": 1890123.67,
+        "available": 1891579.67,
+        "spent": 1369722
+      },
+      "LBN": {
+        "required": 43492477.33,
+        "available": 38498429.42,
+        "spent": 32156579.42
+      },
+      "LBR": {
+        "required": 288033.33,
+        "available": 264700,
+        "spent": 231366.67
+      },
+      "LBY": {
+        "required": 19405879.75,
+        "available": 11884136.37,
+        "spent": 5307172.5
+      },
+      "LKA": {
+        "required": 5267794.67,
+        "available": 3953367,
+        "spent": 3602446.75
+      },
+      "MDA": {
+        "required": 5888227.0,
+        "available": 5460593.5,
+        "spent": 5150651.23
+      },
+      "MDV": {
+        "required": 427609,
+        "available": 417913,
+        "spent": 362246.5
+      },
+      "MLI": {
+        "required": 3093751.0,
+        "available": 2979584.33,
+        "spent": 0
+      },
+      "MNE": {
+        "required": 1774203.83,
+        "available": 1492843.83,
+        "spent": 1429492.33
+      },
+      "MNG": {
+        "required": 323005,
+        "available": 247005,
+        "spent": 226355
+      },
+      "NPL": {
+        "required": 2658136.83,
+        "available": 2014285,
+        "spent": 1531384.33
+      },
+      "PAK": {
+        "required": 23320365.12,
+        "available": 20472983.14,
+        "spent": 19052789.97
+      },
+      "PER": {
+        "required": 84668894.33,
+        "available": 76006608.5,
+        "spent": 0
+      },
+      "PRY": {
+        "required": 3889441.95,
+        "available": 4981975.75,
+        "spent": 3729432.21
+      },
+      "SAU": {
+        "required": 824349.5,
+        "available": 607939,
+        "spent": 570739
+      },
+      "SOM": {
+        "required": 16455402.08,
+        "available": 12651887.0,
+        "spent": 6970308.77
+      },
+      "SSD": {
+        "required": 6222529.83,
+        "available": 4680849.83,
+        "spent": 2834699.17
+      },
+      "STP": {
+        "required": 1197991.67,
+        "available": 1151206.84,
+        "spent": 1108749.83
+      },
+      "TGO": {
+        "required": 901820,
+        "available": 872320,
+        "spent": 584465
+      },
+      "THA": {
+        "required": 17670972.13,
+        "available": 12597519.79,
+        "spent": 12032223.92
+      },
+      "TJK": {
+        "required": 2745040.67,
+        "available": 2683040.67,
+        "spent": 2191963.58
+      },
+      "TUR": {
+        "required": 59369478.17,
+        "available": 28183220.84,
+        "spent": 23231467.83
+      },
+      "URY": {
+        "required": 2999084.25,
+        "available": 2999084.25,
+        "spent": 2977805.0
+      },
+      "VEN": {
+        "required": 1453937.58,
+        "available": 294220.92,
+        "spent": 294061.67
+      },
+      "VNM": {
+        "required": 55202.67,
+        "available": 55202.67,
+        "spent": 46796.67
+      },
+      "TZA": {
+        "required": 29268248.5,
+        "available": 22619159.33,
+        "spent": 22288824.67
+      },
+      "YEM": {
+        "required": 7876836.67,
+        "available": 5066666.67,
+        "spent": 4913403.33
+      },
+      "MOZ": {
+        "required": 48094913.92,
+        "available": 44848379.25,
+        "spent": 35324986
+      },
+      "TUN": {
+        "required": 3582989.67,
+        "available": 2971273.93,
+        "spent": 2031657.6
+      },
+      "CPV": {
+        "required": 446598.33,
+        "available": 421398.33,
+        "spent": 164929
+      },
+      "MAR": {
+        "required": 7925055.67,
+        "available": 7061033.0,
+        "spent": 6651925.33
+      },
+      "NGA": {
+        "required": 9948163.33,
+        "available": 5019055.33,
+        "spent": 4010196.0
+      },
+      "AFG": {
+        "required": 34526753.96,
+        "available": 30619463.5,
+        "spent": 15590288.75
+      },
+      "GHA": {
+        "required": 8900987.24,
+        "available": 6792247.3,
+        "spent": 6143691.7
+      },
+      "ZWE": {
+        "required": 3337230.5,
+        "available": 2738793.67,
+        "spent": 1015236.17
+      }
+    },
+    "top_underfunded": [
+      "TUR",
+      "ARG",
+      "PER",
+      "ECU",
+      "LBY",
+      "TZA",
+      "CRI",
+      "THA",
+      "LBN",
+      "NGA"
+    ]
+  },
+  "11": {
+    "year": 2023,
+    "color": "#fd9d24",
+    "name": "Sustainable Cities and Communities",
+    "totals": {
+      "required": 1067331112.36,
+      "available": 874520265.91,
+      "spent": 612642302.71
+    },
+    "countries": {
+      "PSE": {
+        "required": 20640416.5,
+        "available": 13796298.5,
+        "spent": 0
+      },
+      "SLV": {
+        "required": 1411059.21,
+        "available": 1120478.96,
+        "spent": 794326.8
+      },
+      "ALB": {
+        "required": 2986828.67,
+        "available": 2750162.0,
+        "spent": 1885703.33
+      },
+      "ARG": {
+        "required": 25440778.83,
+        "available": 25265355.17,
+        "spent": 17175035.17
+      },
+      "BDI": {
+        "required": 9060000,
+        "available": 2605178.5,
+        "spent": 2176590
+      },
+      "BEN": {
+        "required": 75000,
+        "available": 75000,
+        "spent": 0
+      },
+      "BFA": {
+        "required": 19206090.5,
+        "available": 19206090.5,
+        "spent": 18527642.5
+      },
+      "BGD": {
+        "required": 4492408.42,
+        "available": 3045724.92,
+        "spent": 1324864.17
+      },
+      "BLR": {
+        "required": 38952.67,
+        "available": 38952.67,
+        "spent": 33702.67
+      },
+      "BOL": {
+        "required": 228711.92,
+        "available": 228711.92,
+        "spent": 220997.67
+      },
+      "BRA": {
+        "required": 11794756.47,
+        "available": 11978292.67,
+        "spent": 5234869.25
+      },
+      "BWA": {
+        "required": 573750,
+        "available": 80694,
+        "spent": 70694
+      },
+      "CAF": {
+        "required": 1000000,
+        "available": 800000,
+        "spent": 750000
+      },
+      "CHL": {
+        "required": 332498.42,
+        "available": 292498.42,
+        "spent": 292498.42
+      },
+      "CMR": {
+        "required": 41500,
+        "available": 0,
+        "spent": 0
+      },
+      "COG": {
+        "required": 8544413.34,
+        "available": 2746412.17,
+        "spent": 0
+      },
+      "CRI": {
+        "required": 1076019.33,
+        "available": 1028452.67,
+        "spent": 1028452.67
+      },
+      "DOM": {
+        "required": 235415.07,
+        "available": 235415.07,
+        "spent": 126611.07
+      },
+      "DZA": {
+        "required": 79333.33,
+        "available": 60000,
+        "spent": 0
+      },
+      "ECU": {
+        "required": 2354017.8,
+        "available": 2452104.35,
+        "spent": 2159392.85
+      },
+      "EGY": {
+        "required": 8322021.33,
+        "available": 7422962.67,
+        "spent": 3076501
+      },
+      "GAB": {
+        "required": 150633.33,
+        "available": 149133.33,
+        "spent": 114133.33
+      },
+      "GNB": {
+        "required": 345452.9,
+        "available": 614955.5,
+        "spent": 469022.35
+      },
+      "HND": {
+        "required": 97460.2,
+        "available": 317050.4,
+        "spent": 317050.4
+      },
+      "HTI": {
+        "required": 14959983.92,
+        "available": 13654022.58,
+        "spent": 6451839.67
+      },
+      "IND": {
+        "required": 1080354.83,
+        "available": 718151.33,
+        "spent": 236444
+      },
+      "IRN": {
+        "required": 874767.76,
+        "available": 747464.43,
+        "spent": 715236.43
+      },
+      "KEN": {
+        "required": 25204076.85,
+        "available": 17877763.43,
+        "spent": 15602494.35
+      },
+      "KGZ": {
+        "required": 2184636.62,
+        "available": 1915632.33,
+        "spent": 1737265.66
+      },
+      "LAO": {
+        "required": 4128763.08,
+        "available": 3643124.08,
+        "spent": 3331464.25
+      },
+      "LBN": {
+        "required": 76477888.3,
+        "available": 54137221.96,
+        "spent": 33805512.55
+      },
+      "LBR": {
+        "required": 2602968.17,
+        "available": 3329357.67,
+        "spent": 2131207.17
+      },
+      "LBY": {
+        "required": 1926068.5,
+        "available": 1171068.5,
+        "spent": 355568.5
+      },
+      "LKA": {
+        "required": 115028,
+        "available": 115028,
+        "spent": 113851
+      },
+      "MDA": {
+        "required": 5014172.92,
+        "available": 4982922.92,
+        "spent": 4958756.25
+      },
+      "MDV": {
+        "required": 2377454.92,
+        "available": 1970454.92,
+        "spent": 503043.25
+      },
+      "MLI": {
+        "required": 208333.33,
+        "available": 100000,
+        "spent": 0
+      },
+      "MNE": {
+        "required": 483814.83,
+        "available": 464481.5,
+        "spent": 341649.5
+      },
+      "MNG": {
+        "required": 391294,
+        "available": 391293,
+        "spent": 391293
+      },
+      "NPL": {
+        "required": 6059101.7,
+        "available": 5724772.43,
+        "spent": 4880127.33
+      },
+      "PAK": {
+        "required": 5451635.67,
+        "available": 3703462.67,
+        "spent": 3608385.33
+      },
+      "PER": {
+        "required": 18109574.17,
+        "available": 14895958.67,
+        "spent": 8000
+      },
+      "PRY": {
+        "required": 747237.41,
+        "available": 745570.74,
+        "spent": 705570.74
+      },
+      "SAU": {
+        "required": 29688689.67,
+        "available": 18105356.33,
+        "spent": 4743648.33
+      },
+      "SOM": {
+        "required": 8419716.65,
+        "available": 8426075.65,
+        "spent": 3842998.3
+      },
+      "STP": {
+        "required": 22500,
+        "available": 22500,
+        "spent": 20000
+      },
+      "THA": {
+        "required": 1029436.44,
+        "available": 1023783.78,
+        "spent": 808208.92
+      },
+      "TJK": {
+        "required": 250885.17,
+        "available": 230385.17,
+        "spent": 111436.5
+      },
+      "TUR": {
+        "required": 2025834.5,
+        "available": 994737.5,
+        "spent": 854737.5
+      },
+      "URY": {
+        "required": 10412126.17,
+        "available": 10399154.83,
+        "spent": 10399154.83
+      },
+      "VEN": {
+        "required": 3190940.67,
+        "available": 707410.67,
+        "spent": 707210.67
+      },
+      "VNM": {
+        "required": 3560085.33,
+        "available": 3427486.83,
+        "spent": 3121950.0
+      },
+      "TZA": {
+        "required": 13417851.33,
+        "available": 1890475,
+        "spent": 1445916.75
+      },
+      "YEM": {
+        "required": 41015966.67,
+        "available": 41015966.67,
+        "spent": 24948937.33
+      },
+      "MOZ": {
+        "required": 44163962.42,
+        "available": 39013740.7,
+        "spent": 31529755.61
+      },
+      "TUN": {
+        "required": 2192265.93,
+        "available": 1721810.27,
+        "spent": 1419561.43
+      },
+      "CPV": {
+        "required": 221287,
+        "available": 221287,
+        "spent": 162662
+      },
+      "MAR": {
+        "required": 1859065.33,
+        "available": 1859065.33,
+        "spent": 771309.33
+      },
+      "NGA": {
+        "required": 3906648.17,
+        "available": 1775349.67,
+        "spent": 1263162.33
+      },
+      "AFG": {
+        "required": 26315098.46,
+        "available": 29273502.46,
+        "spent": 28622688.79
+      },
+      "GHA": {
+        "required": 3088879.58,
+        "available": 2712717.46,
+        "spent": 1911858.46
+      },
+      "ZWE": {
+        "required": 1334018.5,
+        "available": 974629.7,
+        "spent": 624202.3
+      }
+    },
+    "top_underfunded": [
+      "LBN",
+      "SAU",
+      "TZA",
+      "KEN",
+      "PSE",
+      "BDI",
+      "COG",
+      "MOZ",
+      "PER",
+      "VEN"
+    ]
+  },
+  "12": {
+    "year": 2023,
+    "color": "#c9992d",
+    "name": "Responsible Consumption and Production",
+    "totals": {
+      "required": 217079640.11,
+      "available": 155601423.48,
+      "spent": 98389205.33
+    },
+    "countries": {
+      "PSE": {
+        "required": 2199694.67,
+        "available": 1476361.33,
+        "spent": 0
+      },
+      "SLV": {
+        "required": 1625384.33,
+        "available": 2238289.83,
+        "spent": 2220433.5
+      },
+      "ALB": {
+        "required": 113912.14,
+        "available": 113912.14,
+        "spent": 109729.71
+      },
+      "ARG": {
+        "required": 3651859.83,
+        "available": 2674560.17,
+        "spent": 1262006.33
+      },
+      "BDI": {
+        "required": 17570000,
+        "available": 3500000,
+        "spent": 0
+      },
+      "BFA": {
+        "required": 967913.17,
+        "available": 967913.17,
+        "spent": 499966.67
+      },
+      "BGD": {
+        "required": 6365400,
+        "available": 6070993,
+        "spent": 3128503
+      },
+      "BLR": {
+        "required": 2044977.29,
+        "available": 2044977.29,
+        "spent": 2005959.29
+      },
+      "BOL": {
+        "required": 913232.42,
+        "available": 903530.42,
+        "spent": 514831.83
+      },
+      "BRA": {
+        "required": 9179427.52,
+        "available": 6659228.52,
+        "spent": 6490751.02
+      },
+      "BWA": {
+        "required": 97000,
+        "available": 35000,
+        "spent": 35000
+      },
+      "CAF": {
+        "required": 1695500,
+        "available": 1560000,
+        "spent": 1560000
+      },
+      "CHL": {
+        "required": 633586,
+        "available": 633586,
+        "spent": 501913
+      },
+      "CMR": {
+        "required": 233910,
+        "available": 187756,
+        "spent": 0
+      },
+      "COG": {
+        "required": 326111,
+        "available": 21111,
+        "spent": 0
+      },
+      "CRI": {
+        "required": 892387.75,
+        "available": 892387.75,
+        "spent": 891308.83
+      },
+      "DOM": {
+        "required": 1208809.5,
+        "available": 1208809.5,
+        "spent": 1087456.5
+      },
+      "DZA": {
+        "required": 2349720.83,
+        "available": 1787036.08,
+        "spent": 471433.75
+      },
+      "ECU": {
+        "required": 3649468.28,
+        "available": 2916217.88,
+        "spent": 2205464.28
+      },
+      "EGY": {
+        "required": 3598595.43,
+        "available": 3051223.1,
+        "spent": 2223777.14
+      },
+      "GAB": {
+        "required": 34965,
+        "available": 7500,
+        "spent": 2807.75
+      },
+      "GNB": {
+        "required": 407648.42,
+        "available": 407648.42,
+        "spent": 407648.42
+      },
+      "HTI": {
+        "required": 1157800,
+        "available": 394590.6,
+        "spent": 394390.6
+      },
+      "IND": {
+        "required": 660805,
+        "available": 1709871.75,
+        "spent": 1386235.5
+      },
+      "IRN": {
+        "required": 695434.5,
+        "available": 695434.3,
+        "spent": 210419.3
+      },
+      "KEN": {
+        "required": 10247017.94,
+        "available": 10443268.33,
+        "spent": 7581520.27
+      },
+      "KGZ": {
+        "required": 1435986.29,
+        "available": 1434736.29,
+        "spent": 1064920.12
+      },
+      "LAO": {
+        "required": 531009.67,
+        "available": 388007,
+        "spent": 237761
+      },
+      "LBN": {
+        "required": 3653065.17,
+        "available": 3918988.17,
+        "spent": 1120577.33
+      },
+      "LBR": {
+        "required": 1185110,
+        "available": 1144009,
+        "spent": 617797
+      },
+      "LBY": {
+        "required": 360000,
+        "available": 112350,
+        "spent": 64311.6
+      },
+      "LKA": {
+        "required": 1599788,
+        "available": 1464926.5,
+        "spent": 1163987.5
+      },
+      "MDA": {
+        "required": 255576.67,
+        "available": 150576.67,
+        "spent": 146466.17
+      },
+      "MDV": {
+        "required": 3838716,
+        "available": 1697049.33,
+        "spent": 843333.33
+      },
+      "MNE": {
+        "required": 107600,
+        "available": 93500,
+        "spent": 90500.2
+      },
+      "MNG": {
+        "required": 95750,
+        "available": 95750,
+        "spent": 71800
+      },
+      "NPL": {
+        "required": 150459.33,
+        "available": 144292.67,
+        "spent": 132877.17
+      },
+      "PAK": {
+        "required": 4336310.67,
+        "available": 3061377.67,
+        "spent": 2444176.33
+      },
+      "PER": {
+        "required": 2799506.67,
+        "available": 2799506.67,
+        "spent": 0
+      },
+      "PRY": {
+        "required": 2040980.65,
+        "available": 1258902.65,
+        "spent": 1146402.65
+      },
+      "SAU": {
+        "required": 3081090.67,
+        "available": 3081090.67,
+        "spent": 1522617.33
+      },
+      "SOM": {
+        "required": 553575.67,
+        "available": 396464,
+        "spent": 324809.8
+      },
+      "STP": {
+        "required": 782239.67,
+        "available": 780573,
+        "spent": 720520
+      },
+      "TGO": {
+        "required": 66666.67,
+        "available": 51666.67,
+        "spent": 51666.67
+      },
+      "THA": {
+        "required": 1502281.47,
+        "available": 1483655.93,
+        "spent": 1420288.7
+      },
+      "TJK": {
+        "required": 718311.5,
+        "available": 718311.5,
+        "spent": 396931.5
+      },
+      "TUR": {
+        "required": 5200210.08,
+        "available": 1453611.42,
+        "spent": 1264771.88
+      },
+      "URY": {
+        "required": 454090,
+        "available": 404090,
+        "spent": 404090
+      },
+      "VNM": {
+        "required": 421192.67,
+        "available": 398864.67,
+        "spent": 142214.67
+      },
+      "TZA": {
+        "required": 991666.67,
+        "available": 422500,
+        "spent": 239925
+      },
+      "MOZ": {
+        "required": 3038625.64,
+        "available": 2194875.64,
+        "spent": 1944904.21
+      },
+      "ZMB": {
+        "required": 109482,
+        "available": 109482,
+        "spent": 0
+      },
+      "TUN": {
+        "required": 523907.1,
+        "available": 523907.1,
+        "spent": 523907.1
+      },
+      "CPV": {
+        "required": 601869,
+        "available": 319604.67,
+        "spent": 266847.77
+      },
+      "MAR": {
+        "required": 985833.33,
+        "available": 985833.33,
+        "spent": 827424
+      },
+      "NGA": {
+        "required": 663271.33,
+        "available": 663271.33,
+        "spent": 635251.33
+      },
+      "AFG": {
+        "required": 30835000,
+        "available": 4688396.45,
+        "spent": 4346692.2
+      },
+      "GHA": {
+        "required": 3067005.53,
+        "available": 4102927.03,
+        "spent": 1590753.9
+      },
+      "ZWE": {
+        "required": 154310,
+        "available": 154310,
+        "spent": 136498.5
+      }
+    },
+    "top_underfunded": [
+      "AFG",
+      "BDI",
+      "TUR",
+      "BRA",
+      "MDV",
+      "PAK",
+      "ARG",
+      "MOZ",
+      "PRY",
+      "HTI"
+    ]
+  },
+  "13": {
+    "year": 2023,
+    "color": "#3f7e44",
+    "name": "Climate Action",
+    "totals": {
+      "required": 862633196.34,
+      "available": 688257939.93,
+      "spent": 418358763.28
+    },
+    "countries": {
+      "PSE": {
+        "required": 6472859.7,
+        "available": 3860994.63,
+        "spent": 0
+      },
+      "SLV": {
+        "required": 7240490.07,
+        "available": 7264298.07,
+        "spent": 6121526.73
+      },
+      "ALB": {
+        "required": 7623737.81,
+        "available": 7457071.14,
+        "spent": 4738723.38
+      },
+      "ARG": {
+        "required": 5672926.5,
+        "available": 11921738.5,
+        "spent": 9740884.5
+      },
+      "BDI": {
+        "required": 2250000,
+        "available": 1010515.5,
+        "spent": 281927
+      },
+      "BEN": {
+        "required": 10420379.23,
+        "available": 7396771.7,
+        "spent": 4842681.7
+      },
+      "BFA": {
+        "required": 7152465.38,
+        "available": 7170755.38,
+        "spent": 4426030.6
+      },
+      "BGD": {
+        "required": 30420023,
+        "available": 26945121.33,
+        "spent": 16607172.0
+      },
+      "BLR": {
+        "required": 202173.33,
+        "available": 202173.33,
+        "spent": 197173.33
+      },
+      "BOL": {
+        "required": 4092601.59,
+        "available": 3931399.09,
+        "spent": 3518319.75
+      },
+      "BRA": {
+        "required": 4865197.95,
+        "available": 3294482.6,
+        "spent": 2901735.6
+      },
+      "BWA": {
+        "required": 400104.14,
+        "available": 222587.57,
+        "spent": 195426.97
+      },
+      "CHL": {
+        "required": 12684947,
+        "available": 12402197,
+        "spent": 11780447
+      },
+      "CMR": {
+        "required": 4891965,
+        "available": 4489500,
+        "spent": 0
+      },
+      "COG": {
+        "required": 5737500,
+        "available": 5717500,
+        "spent": 0
+      },
+      "CRI": {
+        "required": 4510198.75,
+        "available": 4496298.75,
+        "spent": 4433659.58
+      },
+      "DOM": {
+        "required": 2057462.17,
+        "available": 2056077.17,
+        "spent": 1846080
+      },
+      "DZA": {
+        "required": 366353.08,
+        "available": 358019.75,
+        "spent": 316440.17
+      },
+      "ECU": {
+        "required": 6268908.12,
+        "available": 5512657.72,
+        "spent": 4768336.78
+      },
+      "EGY": {
+        "required": 15129784.51,
+        "available": 13905179.78,
+        "spent": 10404040.41
+      },
+      "ERI": {
+        "required": 3399500,
+        "available": 1349250,
+        "spent": 115000
+      },
+      "GAB": {
+        "required": 4657257.83,
+        "available": 2103818.83,
+        "spent": 1036209.58
+      },
+      "GNB": {
+        "required": 2033322.13,
+        "available": 1914236.42,
+        "spent": 1579999.67
+      },
+      "HND": {
+        "required": 2741608.5,
+        "available": 2460122,
+        "spent": 1955287.5
+      },
+      "HTI": {
+        "required": 6100859.83,
+        "available": 4526036.93,
+        "spent": 2533201.93
+      },
+      "IND": {
+        "required": 6290360,
+        "available": 6282076.25,
+        "spent": 2218769
+      },
+      "IRN": {
+        "required": 1655589.26,
+        "available": 1174952.4,
+        "spent": 651604.06
+      },
+      "KEN": {
+        "required": 21575335.12,
+        "available": 16927818.63,
+        "spent": 13120608.95
+      },
+      "KGZ": {
+        "required": 4567536.71,
+        "available": 3965735.41,
+        "spent": 3163122.08
+      },
+      "LAO": {
+        "required": 8766536.0,
+        "available": 8754413.83,
+        "spent": 6241330.67
+      },
+      "LBN": {
+        "required": 2867166.67,
+        "available": 1397056,
+        "spent": 711054.67
+      },
+      "LBR": {
+        "required": 413576.5,
+        "available": 428576.5,
+        "spent": 67988.5
+      },
+      "LBY": {
+        "required": 6063502.5,
+        "available": 3344584.33,
+        "spent": 479610.33
+      },
+      "LKA": {
+        "required": 3680430.25,
+        "available": 4172445,
+        "spent": 3540814.75
+      },
+      "MDA": {
+        "required": 648814.67,
+        "available": 642564.67,
+        "spent": 632564.67
+      },
+      "MDV": {
+        "required": 4114094.58,
+        "available": 3846594.58,
+        "spent": 436308.25
+      },
+      "MLI": {
+        "required": 244776.33,
+        "available": 132811,
+        "spent": 0
+      },
+      "MNE": {
+        "required": 2234590.75,
+        "available": 2176700.42,
+        "spent": 1881055.42
+      },
+      "MNG": {
+        "required": 5588580.67,
+        "available": 5588580.67,
+        "spent": 4799535.67
+      },
+      "NER": {
+        "required": 400000,
+        "available": 400000,
+        "spent": 400000
+      },
+      "NPL": {
+        "required": 8691303.2,
+        "available": 8474119.77,
+        "spent": 5352653.83
+      },
+      "PAK": {
+        "required": 6627110,
+        "available": 6192248,
+        "spent": 5318423
+      },
+      "PER": {
+        "required": 17627156.84,
+        "available": 17563510.67,
+        "spent": 13516.5
+      },
+      "PRY": {
+        "required": 6216513.23,
+        "available": 8904889.9,
+        "spent": 6510990.4
+      },
+      "SAU": {
+        "required": 2300000,
+        "available": 2060000,
+        "spent": 2060000
+      },
+      "SOM": {
+        "required": 48607875.62,
+        "available": 6557136.95,
+        "spent": 4890777.68
+      },
+      "SSD": {
+        "required": 46102117.17,
+        "available": 18498892.67,
+        "spent": 5375000
+      },
+      "STP": {
+        "required": 2879064.67,
+        "available": 2434851.75,
+        "spent": 2230776.75
+      },
+      "TGO": {
+        "required": 2089924,
+        "available": 2089924,
+        "spent": 2088424
+      },
+      "THA": {
+        "required": 7270247.64,
+        "available": 4776545.43,
+        "spent": 2520102.03
+      },
+      "TJK": {
+        "required": 3502477.0,
+        "available": 2855574.0,
+        "spent": 1988263.33
+      },
+      "TUR": {
+        "required": 5290659.5,
+        "available": 5197537.17,
+        "spent": 2569020.33
+      },
+      "URY": {
+        "required": 3023369,
+        "available": 2610386.67,
+        "spent": 1938459.67
+      },
+      "VEN": {
+        "required": 1327959.83,
+        "available": 1687609.83,
+        "spent": 1316571.33
+      },
+      "VNM": {
+        "required": 7823381.67,
+        "available": 7240173.67,
+        "spent": 4152526.67
+      },
+      "TZA": {
+        "required": 10950286.5,
+        "available": 5194157.17,
+        "spent": 2772622.08
+      },
+      "YEM": {
+        "required": 12240392,
+        "available": 7225000,
+        "spent": 3000394
+      },
+      "MOZ": {
+        "required": 11252361.5,
+        "available": 11564199.87,
+        "spent": 9932270.27
+      },
+      "ZMB": {
+        "required": 1739743,
+        "available": 1739743,
+        "spent": 0
+      },
+      "TUN": {
+        "required": 4155226.65,
+        "available": 4077439.49,
+        "spent": 3258225.2
+      },
+      "CPV": {
+        "required": 1617045.67,
+        "available": 1268988.33,
+        "spent": 1083352.43
+      },
+      "MAR": {
+        "required": 2000883.25,
+        "available": 2000883.25,
+        "spent": 782127.25
+      },
+      "NGA": {
+        "required": 14861453.33,
+        "available": 13330791.33,
+        "spent": 8327009.33
+      },
+      "AFG": {
+        "required": 14281609.54,
+        "available": 1684503.38,
+        "spent": 1281542.04
+      },
+      "GHA": {
+        "required": 11435245.16,
+        "available": 8970557.83,
+        "spent": 6505520.92
+      },
+      "ZWE": {
+        "required": 10107379.65,
+        "available": 10104000.65,
+        "spent": 9402657
+      }
+    },
+    "top_underfunded": [
+      "SOM",
+      "SSD",
+      "AFG",
+      "TZA",
+      "YEM",
+      "KEN",
+      "BGD",
+      "BEN",
+      "LBY",
+      "PSE"
+    ]
+  },
+  "14": {
+    "year": 2023,
+    "color": "#0a97d9",
+    "name": "Life Below Water",
+    "totals": {
+      "required": 202108195.73,
+      "available": 115419627.32,
+      "spent": 66411015.58
+    },
+    "countries": {
+      "ARG": {
+        "required": 1603757.5,
+        "available": 3598957.5,
+        "spent": 2254054.5
+      },
+      "BFA": {
+        "required": 5000,
+        "available": 5000,
+        "spent": 5000
+      },
+      "BGD": {
+        "required": 1877400,
+        "available": 402502.17,
+        "spent": 395765.17
+      },
+      "BRA": {
+        "required": 246188.63,
+        "available": 246188.63,
+        "spent": 246188.63
+      },
+      "BWA": {
+        "required": 160770.5,
+        "available": 160770.5,
+        "spent": 42881.5
+      },
+      "CHL": {
+        "required": 129718.5,
+        "available": 129718.5,
+        "spent": 100175
+      },
+      "CMR": {
+        "required": 500000,
+        "available": 500000,
+        "spent": 0
+      },
+      "COG": {
+        "required": 5737500,
+        "available": 5717500,
+        "spent": 0
+      },
+      "CRI": {
+        "required": 285542.83,
+        "available": 285542.83,
+        "spent": 285542.83
+      },
+      "DOM": {
+        "required": 374598,
+        "available": 374598,
+        "spent": 285287
+      },
+      "DZA": {
+        "required": 22000,
+        "available": 22000,
+        "spent": 21641
+      },
+      "ECU": {
+        "required": 2884938.65,
+        "available": 1610428.05,
+        "spent": 846060.05
+      },
+      "EGY": {
+        "required": 1353492.67,
+        "available": 1353492.67,
+        "spent": 799657.83
+      },
+      "ERI": {
+        "required": 13210529,
+        "available": 13210526,
+        "spent": 2629416
+      },
+      "GAB": {
+        "required": 118652.67,
+        "available": 118652.67,
+        "spent": 101986
+      },
+      "GNB": {
+        "required": 200681.75,
+        "available": 200681.75,
+        "spent": 200681.75
+      },
+      "HTI": {
+        "required": 794678.33,
+        "available": 303431.33,
+        "spent": 240931.33
+      },
+      "IRN": {
+        "required": 35971.33,
+        "available": 35971.33,
+        "spent": 35971.33
+      },
+      "KEN": {
+        "required": 4666819.9,
+        "available": 3188938.4,
+        "spent": 2502721.9
+      },
+      "LBN": {
+        "required": 616666.67,
+        "available": 441666.67,
+        "spent": 258333.33
+      },
+      "LBR": {
+        "required": 69115356,
+        "available": 3226495,
+        "spent": 665544
+      },
+      "LBY": {
+        "required": 375000,
+        "available": 125000,
+        "spent": 20949
+      },
+      "LKA": {
+        "required": 1558776.5,
+        "available": 1557881,
+        "spent": 1523855
+      },
+      "MLI": {
+        "required": 3632,
+        "available": 0,
+        "spent": 0
+      },
+      "PAK": {
+        "required": 5508151.17,
+        "available": 3954511.33,
+        "spent": 1809999.5
+      },
+      "PER": {
+        "required": 1206577.5,
+        "available": 1206577.5,
+        "spent": 0
+      },
+      "SAU": {
+        "required": 2100000,
+        "available": 2050000,
+        "spent": 2050000
+      },
+      "SOM": {
+        "required": 2276714.29,
+        "available": 2458964.29,
+        "spent": 2260833.33
+      },
+      "STP": {
+        "required": 122500,
+        "available": 72500,
+        "spent": 72500
+      },
+      "THA": {
+        "required": 1887826.58,
+        "available": 1505191.71,
+        "spent": 838159.33
+      },
+      "TUR": {
+        "required": 1805720.17,
+        "available": 2286811.83,
+        "spent": 1367815.67
+      },
+      "URY": {
+        "required": 900893.83,
+        "available": 893136.33,
+        "spent": 893136.33
+      },
+      "VNM": {
+        "required": 641782.5,
+        "available": 813401,
+        "spent": 813401
+      },
+      "TZA": {
+        "required": 1720286.67,
+        "available": 1720286.67,
+        "spent": 786941.67
+      },
+      "MOZ": {
+        "required": 1750000,
+        "available": 906250,
+        "spent": 850757
+      },
+      "TUN": {
+        "required": 334899.99,
+        "available": 334899.99,
+        "spent": 253348.1
+      },
+      "CPV": {
+        "required": 1281306.86,
+        "available": 1281306.86,
+        "spent": 568573.67
+      },
+      "MAR": {
+        "required": 666458.33,
+        "available": 666458.33,
+        "spent": 636666.67
+      },
+      "NGA": {
+        "required": 1395032.5,
+        "available": 1395032.5,
+        "spent": 669900.5
+      },
+      "AFG": {
+        "required": 12500000,
+        "available": 617396,
+        "spent": 617396
+      },
+      "GHA": {
+        "required": 1171008.2,
+        "available": 1171008.2,
+        "spent": 989365.4
+      },
+      "ZWE": {
+        "required": 45000,
+        "available": 45000,
+        "spent": 27188.5
+      }
+    },
+    "top_underfunded": [
+      "LBR",
+      "AFG",
+      "PAK",
+      "KEN",
+      "BGD",
+      "ECU",
+      "MOZ",
+      "HTI",
+      "THA",
+      "LBY"
+    ]
+  },
+  "15": {
+    "year": 2023,
+    "color": "#56c02b",
+    "name": "Life on Land",
+    "totals": {
+      "required": 478094384.86,
+      "available": 396432318.09,
+      "spent": 231419515.07
+    },
+    "countries": {
+      "PSE": {
+        "required": 1096965,
+        "available": 846965,
+        "spent": 0
+      },
+      "SLV": {
+        "required": 1280340.75,
+        "available": 1280340.75,
+        "spent": 639042.42
+      },
+      "ALB": {
+        "required": 46769.14,
+        "available": 46769.14,
+        "spent": 45186.71
+      },
+      "ARG": {
+        "required": 3351654.5,
+        "available": 5344987.83,
+        "spent": 2338910.5
+      },
+      "BEN": {
+        "required": 4687332.23,
+        "available": 4498610.7,
+        "spent": 3758890.53
+      },
+      "BFA": {
+        "required": 3645171.45,
+        "available": 3644421.45,
+        "spent": 2449948.94
+      },
+      "BGD": {
+        "required": 2027400,
+        "available": 483002.17,
+        "spent": 476265.17
+      },
+      "BLR": {
+        "required": 15037.95,
+        "available": 15037.95,
+        "spent": 15037.95
+      },
+      "BOL": {
+        "required": 1119503.0,
+        "available": 1014503.0,
+        "spent": 997003.0
+      },
+      "BRA": {
+        "required": 5614017.13,
+        "available": 5474121.33,
+        "spent": 5211777.33
+      },
+      "BWA": {
+        "required": 544474.17,
+        "available": 538427.17,
+        "spent": 288965.99
+      },
+      "CAF": {
+        "required": 1542689,
+        "available": 987689,
+        "spent": 987689
+      },
+      "CHL": {
+        "required": 1533191.5,
+        "available": 1533191.5,
+        "spent": 1458455
+      },
+      "CMR": {
+        "required": 5765000,
+        "available": 2847500,
+        "spent": 0
+      },
+      "CRI": {
+        "required": 3355180.42,
+        "available": 3345180.42,
+        "spent": 3343513.75
+      },
+      "DOM": {
+        "required": 899500.17,
+        "available": 899500.17,
+        "spent": 877607.67
+      },
+      "DZA": {
+        "required": 864230.42,
+        "available": 841545.67,
+        "spent": 424588.25
+      },
+      "ECU": {
+        "required": 4581969.12,
+        "available": 3827187.47,
+        "spent": 3105579.28
+      },
+      "EGY": {
+        "required": 1753333.33,
+        "available": 1664291,
+        "spent": 917737.92
+      },
+      "ERI": {
+        "required": 10665479.33,
+        "available": 6392583.83,
+        "spent": 4521388.17
+      },
+      "GAB": {
+        "required": 2075750.83,
+        "available": 959993.83,
+        "spent": 363885.33
+      },
+      "HTI": {
+        "required": 5280845.9,
+        "available": 3299185.5,
+        "spent": 1201971.5
+      },
+      "IND": {
+        "required": 34096767,
+        "available": 34088767,
+        "spent": 257340
+      },
+      "IRN": {
+        "required": 1669753.1,
+        "available": 1076419.76,
+        "spent": 463071.43
+      },
+      "KEN": {
+        "required": 2656603.0,
+        "available": 2277913.67,
+        "spent": 1896779.33
+      },
+      "KGZ": {
+        "required": 3772823.51,
+        "available": 3437308.66,
+        "spent": 2555192.49
+      },
+      "LAO": {
+        "required": 2536099.5,
+        "available": 2485054,
+        "spent": 1255574.5
+      },
+      "LBN": {
+        "required": 2566666.67,
+        "available": 3194556,
+        "spent": 2375544.33
+      },
+      "LBR": {
+        "required": 648347,
+        "available": 370268,
+        "spent": 97923
+      },
+      "LBY": {
+        "required": 375000,
+        "available": 125000,
+        "spent": 20949
+      },
+      "LKA": {
+        "required": 631511,
+        "available": 631511,
+        "spent": 181718
+      },
+      "MDA": {
+        "required": 173955.67,
+        "available": 173955.67,
+        "spent": 173955.67
+      },
+      "MDV": {
+        "required": 63000,
+        "available": 63000,
+        "spent": 63000
+      },
+      "MLI": {
+        "required": 3632,
+        "available": 0,
+        "spent": 0
+      },
+      "MNE": {
+        "required": 408000,
+        "available": 408000,
+        "spent": 156287
+      },
+      "MNG": {
+        "required": 3998585.67,
+        "available": 3993585.67,
+        "spent": 3823047.67
+      },
+      "NPL": {
+        "required": 4225867.33,
+        "available": 4191763.33,
+        "spent": 1225398.83
+      },
+      "PAK": {
+        "required": 28659590,
+        "available": 28209590,
+        "spent": 25085071
+      },
+      "PER": {
+        "required": 7927447.5,
+        "available": 7864350.83,
+        "spent": 0
+      },
+      "PRY": {
+        "required": 2287323.83,
+        "available": 5098513.5,
+        "spent": 4918884.5
+      },
+      "SAU": {
+        "required": 5623475,
+        "available": 5573475,
+        "spent": 5573475
+      },
+      "SOM": {
+        "required": 46037343.58,
+        "available": 3968245.92,
+        "spent": 2584872.58
+      },
+      "STP": {
+        "required": 461666.67,
+        "available": 485000,
+        "spent": 485000
+      },
+      "TGO": {
+        "required": 2348719.5,
+        "available": 2348719.5,
+        "spent": 2213719.5
+      },
+      "THA": {
+        "required": 1914494.83,
+        "available": 1776472.96,
+        "spent": 1029324.92
+      },
+      "TJK": {
+        "required": 171950.5,
+        "available": 143047.5,
+        "spent": 143047.5
+      },
+      "TUR": {
+        "required": 2771325.67,
+        "available": 2390322.67,
+        "spent": 717951.33
+      },
+      "URY": {
+        "required": 2094827.83,
+        "available": 2044828.83,
+        "spent": 1812714.83
+      },
+      "VEN": {
+        "required": 1708293,
+        "available": 1708293,
+        "spent": 861848.17
+      },
+      "VNM": {
+        "required": 3960597.67,
+        "available": 4300535.67,
+        "spent": 3895549.17
+      },
+      "TZA": {
+        "required": 8834294.67,
+        "available": 5364389.17,
+        "spent": 3778625.83
+      },
+      "YEM": {
+        "required": 1200000,
+        "available": 0,
+        "spent": 0
+      },
+      "MOZ": {
+        "required": 617602.44,
+        "available": 617602.44,
+        "spent": 374101.21
+      },
+      "ZMB": {
+        "required": 905821,
+        "available": 905821,
+        "spent": 0
+      },
+      "TUN": {
+        "required": 340832.7,
+        "available": 340832.7,
+        "spent": 293995.1
+      },
+      "CPV": {
+        "required": 386830.67,
+        "available": 384566.33,
+        "spent": 288931.93
+      },
+      "MAR": {
+        "required": 936902.67,
+        "available": 936902.67,
+        "spent": 566371.33
+      },
+      "NGA": {
+        "required": 279233.5,
+        "available": 276733.5,
+        "spent": 245712.5
+      },
+      "AFG": {
+        "required": 79645294.12,
+        "available": 38672630.7,
+        "spent": 21743960.18
+      },
+      "GHA": {
+        "required": 5800745.55,
+        "available": 3422894.21,
+        "spent": 2961140.92
+      },
+      "ZWE": {
+        "required": 45000,
+        "available": 45000,
+        "spent": 27188.5
+      }
+    },
+    "top_underfunded": [
+      "SOM",
+      "AFG",
+      "ERI",
+      "TZA",
+      "CMR",
+      "GHA",
+      "HTI",
+      "BGD",
+      "YEM",
+      "GAB"
+    ]
+  },
+  "16": {
+    "year": 2023,
+    "color": "#00689d",
+    "name": "Peace and Justice - Strong Institutions",
+    "totals": {
+      "required": 2765356078.49,
+      "available": 2027473804.4,
+      "spent": 1620691941.71
+    },
+    "countries": {
+      "PSE": {
+        "required": 26995479,
+        "available": 17408209.67,
+        "spent": 0
+      },
+      "SLV": {
+        "required": 8186722.8,
+        "available": 7597555.32,
+        "spent": 6008124.07
+      },
+      "ALB": {
+        "required": 9481525.33,
+        "available": 7270037.67,
+        "spent": 5907349.67
+      },
+      "ARG": {
+        "required": 23973406.83,
+        "available": 139747018,
+        "spent": 136432832.67
+      },
+      "BDI": {
+        "required": 4042557.5,
+        "available": 316162.5,
+        "spent": 248122.5
+      },
+      "BEN": {
+        "required": 19078021.67,
+        "available": 6163512.33,
+        "spent": 3967013.83
+      },
+      "BFA": {
+        "required": 15489330.34,
+        "available": 10567242.34,
+        "spent": 7655238.83
+      },
+      "BGD": {
+        "required": 14337947.75,
+        "available": 11173642.67,
+        "spent": 7716503.5
+      },
+      "BLR": {
+        "required": 453054.5,
+        "available": 479150,
+        "spent": 421727
+      },
+      "BOL": {
+        "required": 5590578.42,
+        "available": 5122461.92,
+        "spent": 5033568.67
+      },
+      "BRA": {
+        "required": 31077969.16,
+        "available": 30048001.11,
+        "spent": 27564171.18
+      },
+      "BWA": {
+        "required": 767304.09,
+        "available": 697721.43,
+        "spent": 577203.16
+      },
+      "CAF": {
+        "required": 78284742.83,
+        "available": 54547853.83,
+        "spent": 49949297.83
+      },
+      "CHL": {
+        "required": 973550.17,
+        "available": 518550.17,
+        "spent": 497042.5
+      },
+      "CMR": {
+        "required": 100000,
+        "available": 11333.33,
+        "spent": 0
+      },
+      "COG": {
+        "required": 1055833.33,
+        "available": 110333.33,
+        "spent": 0
+      },
+      "CRI": {
+        "required": 541920.17,
+        "available": 532020.17,
+        "spent": 407289.67
+      },
+      "DOM": {
+        "required": 22140909.5,
+        "available": 22060098.5,
+        "spent": 21966847.5
+      },
+      "DZA": {
+        "required": 4049415,
+        "available": 3108526,
+        "spent": 1979337.5
+      },
+      "ECU": {
+        "required": 13155194,
+        "available": 7704493.83,
+        "spent": 7545679.67
+      },
+      "EGY": {
+        "required": 18497470.33,
+        "available": 17769414.33,
+        "spent": 14427634
+      },
+      "ERI": {
+        "required": 1740483.5,
+        "available": 1052166.5,
+        "spent": 635301
+      },
+      "GAB": {
+        "required": 184568,
+        "available": 184568,
+        "spent": 167576.33
+      },
+      "GNB": {
+        "required": 13559611.98,
+        "available": 11811710.58,
+        "spent": 8793947.43
+      },
+      "HND": {
+        "required": 32539166.37,
+        "available": 33954060.57,
+        "spent": 32901825.23
+      },
+      "HTI": {
+        "required": 49224677.24,
+        "available": 24108939.4,
+        "spent": 10730596.57
+      },
+      "IND": {
+        "required": 13498568.0,
+        "available": 8863559.34,
+        "spent": 8695020.67
+      },
+      "IRN": {
+        "required": 577696.33,
+        "available": 364596.17,
+        "spent": 354596.17
+      },
+      "KEN": {
+        "required": 11923922.87,
+        "available": 9057206.34,
+        "spent": 7557103.43
+      },
+      "KGZ": {
+        "required": 8941288.62,
+        "available": 6360299.62,
+        "spent": 6082799.62
+      },
+      "LAO": {
+        "required": 11262495.5,
+        "available": 11310774.33,
+        "spent": 9706457.33
+      },
+      "LBN": {
+        "required": 180013311.67,
+        "available": 161842159.17,
+        "spent": 117136026.83
+      },
+      "LBR": {
+        "required": 9962913.83,
+        "available": 9817864,
+        "spent": 7888770.83
+      },
+      "LBY": {
+        "required": 37534180.47,
+        "available": 33240066.85,
+        "spent": 16187020.2
+      },
+      "LKA": {
+        "required": 15895853.67,
+        "available": 14464618.17,
+        "spent": 11746511.5
+      },
+      "MDA": {
+        "required": 15280619.63,
+        "available": 10407916.97,
+        "spent": 7095533.97
+      },
+      "MDV": {
+        "required": 3551191.5,
+        "available": 2155430.67,
+        "spent": 1934718.67
+      },
+      "MLI": {
+        "required": 1005333.33,
+        "available": 888166.66,
+        "spent": 0
+      },
+      "MNE": {
+        "required": 5657809.67,
+        "available": 5383633.33,
+        "spent": 4340014.67
+      },
+      "MNG": {
+        "required": 1234090,
+        "available": 1202976,
+        "spent": 1070483
+      },
+      "NER": {
+        "required": 400000,
+        "available": 400000,
+        "spent": 400000
+      },
+      "NPL": {
+        "required": 7051890.83,
+        "available": 7003295.5,
+        "spent": 5894966.67
+      },
+      "PAK": {
+        "required": 39849156.83,
+        "available": 17482957.33,
+        "spent": 11702330.83
+      },
+      "PER": {
+        "required": 23894829.67,
+        "available": 19226952.67,
+        "spent": 7267480
+      },
+      "PRY": {
+        "required": 6466799.05,
+        "available": 15729762.18,
+        "spent": 14307600.23
+      },
+      "SAU": {
+        "required": 10355632.0,
+        "available": 10043327.33,
+        "spent": 4277428.33
+      },
+      "SOM": {
+        "required": 85371854.08,
+        "available": 72634164.5,
+        "spent": 57805445.42
+      },
+      "SSD": {
+        "required": 25900833.34,
+        "available": 19606136.33,
+        "spent": 9673736.67
+      },
+      "STP": {
+        "required": 973657.17,
+        "available": 964666.17,
+        "spent": 825150.5
+      },
+      "TGO": {
+        "required": 2243041.33,
+        "available": 1648345,
+        "spent": 1077155.17
+      },
+      "THA": {
+        "required": 10558619.0,
+        "available": 7476489.53,
+        "spent": 6724704.07
+      },
+      "TJK": {
+        "required": 10859964.5,
+        "available": 10635462.67,
+        "spent": 7516654.67
+      },
+      "TUR": {
+        "required": 71603278,
+        "available": 34713891.0,
+        "spent": 29180632.33
+      },
+      "URY": {
+        "required": 4791189,
+        "available": 4511893,
+        "spent": 4504383
+      },
+      "VEN": {
+        "required": 29646757,
+        "available": 12441575.75,
+        "spent": 8484068.5
+      },
+      "VNM": {
+        "required": 6661466.17,
+        "available": 6755060.17,
+        "spent": 5571455.67
+      },
+      "TZA": {
+        "required": 32765935.34,
+        "available": 13004225.33,
+        "spent": 9670921.0
+      },
+      "YEM": {
+        "required": 198788616.67,
+        "available": 167504483.67,
+        "spent": 146574272
+      },
+      "MOZ": {
+        "required": 28753923.44,
+        "available": 33107464.31,
+        "spent": 26114689.63
+      },
+      "ZMB": {
+        "required": 50000,
+        "available": 0,
+        "spent": 0
+      },
+      "TUN": {
+        "required": 7284226.88,
+        "available": 4760382.45,
+        "spent": 3265574.02
+      },
+      "CPV": {
+        "required": 4156187.67,
+        "available": 2616938.33,
+        "spent": 2532937.5
+      },
+      "MAR": {
+        "required": 6162378.33,
+        "available": 5056818.33,
+        "spent": 2611565.83
+      },
+      "NGA": {
+        "required": 78864995.33,
+        "available": 70188920.83,
+        "spent": 46432153.33
+      },
+      "AFG": {
+        "required": 16896212.96,
+        "available": 20839237.83,
+        "spent": 16032797.42
+      },
+      "GHA": {
+        "required": 15428162.26,
+        "available": 13350119.81,
+        "spent": 10377278.31
+      },
+      "ZWE": {
+        "required": 6698126.33,
+        "available": 6729436,
+        "spent": 5852027.33
+      }
+    },
+    "top_underfunded": [
+      "TUR",
+      "YEM",
+      "HTI",
+      "CAF",
+      "PAK",
+      "TZA",
+      "LBN",
+      "VEN",
+      "BEN",
+      "SOM"
+    ]
+  },
+  "17": {
+    "year": 2023,
+    "color": "#19486a",
+    "name": "Partnerships for the Goals",
+    "totals": {
+      "required": 1159383318.47,
+      "available": 848202121.39,
+      "spent": 521603919.11
+    },
+    "countries": {
+      "PSE": {
+        "required": 330000,
+        "available": 163333.33,
+        "spent": 0
+      },
+      "SLV": {
+        "required": 5086936.38,
+        "available": 4744262.65,
+        "spent": 4268048.15
+      },
+      "ALB": {
+        "required": 3585821.48,
+        "available": 2320821.48,
+        "spent": 871533.55
+      },
+      "ARG": {
+        "required": 2170805.33,
+        "available": 1429040.67,
+        "spent": 263456.83
+      },
+      "BDI": {
+        "required": 187500,
+        "available": 185919,
+        "spent": 118608.5
+      },
+      "BEN": {
+        "required": 5506566,
+        "available": 4352735.5,
+        "spent": 4054007.5
+      },
+      "BFA": {
+        "required": 411470125.33,
+        "available": 276201975.33,
+        "spent": 160144402.5
+      },
+      "BGD": {
+        "required": 1125083,
+        "available": 1081785,
+        "spent": 1014128
+      },
+      "BLR": {
+        "required": 598136.45,
+        "available": 569588.45,
+        "spent": 519937.12
+      },
+      "BOL": {
+        "required": 802963.5,
+        "available": 802963.5,
+        "spent": 802963.5
+      },
+      "BRA": {
+        "required": 13629653.81,
+        "available": 13342823.81,
+        "spent": 12474731.55
+      },
+      "BWA": {
+        "required": 1404185.02,
+        "available": 1178798.45,
+        "spent": 924281.6
+      },
+      "CAF": {
+        "required": 3298920.67,
+        "available": 3223920.67,
+        "spent": 3188587.33
+      },
+      "CHL": {
+        "required": 1565987.5,
+        "available": 619987.5,
+        "spent": 357856.5
+      },
+      "CMR": {
+        "required": 662465,
+        "available": 511333.33,
+        "spent": 0
+      },
+      "COG": {
+        "required": 293000,
+        "available": 30500,
+        "spent": 0
+      },
+      "CRI": {
+        "required": 496418.92,
+        "available": 496418.92,
+        "spent": 463595.75
+      },
+      "DOM": {
+        "required": 755364.17,
+        "available": 755364.17,
+        "spent": 743368.17
+      },
+      "DZA": {
+        "required": 993935.67,
+        "available": 852435.67,
+        "spent": 489506.33
+      },
+      "ECU": {
+        "required": 1683636.92,
+        "available": 1655823.58,
+        "spent": 1538059.75
+      },
+      "EGY": {
+        "required": 2907929.58,
+        "available": 2687429.58,
+        "spent": 1679680.17
+      },
+      "ERI": {
+        "required": 3945962.5,
+        "available": 3910836,
+        "spent": 2495507.5
+      },
+      "GAB": {
+        "required": 215163,
+        "available": 181300,
+        "spent": 169911
+      },
+      "GNB": {
+        "required": 281734.25,
+        "available": 281734.25,
+        "spent": 281734.25
+      },
+      "HND": {
+        "required": 35758474.87,
+        "available": 27116291.57,
+        "spent": 26963059.73
+      },
+      "HTI": {
+        "required": 10253625.57,
+        "available": 2210656.07,
+        "spent": 1985821.57
+      },
+      "IND": {
+        "required": 245769,
+        "available": 206602.33,
+        "spent": 164070.33
+      },
+      "IRN": {
+        "required": 1068039.17,
+        "available": 1054705.63,
+        "spent": 549690.63
+      },
+      "KEN": {
+        "required": 10983025.87,
+        "available": 7711228.02,
+        "spent": 6264450.26
+      },
+      "KGZ": {
+        "required": 2880789.3,
+        "available": 2592906.52,
+        "spent": 2370406.52
+      },
+      "LAO": {
+        "required": 4478124.17,
+        "available": 4397401.17,
+        "spent": 4050807.67
+      },
+      "LBN": {
+        "required": 4665609.33,
+        "available": 3511640.58,
+        "spent": 2248685.58
+      },
+      "LBY": {
+        "required": 4029871.38,
+        "available": 2083489.33,
+        "spent": 528332.83
+      },
+      "LKA": {
+        "required": 2082559,
+        "available": 2081663.5,
+        "spent": 2044612.5
+      },
+      "MDA": {
+        "required": 2025572,
+        "available": 1310575.33,
+        "spent": 1210575.33
+      },
+      "MDV": {
+        "required": 784148,
+        "available": 666148,
+        "spent": 624681
+      },
+      "MLI": {
+        "required": 957666.67,
+        "available": 850500.0,
+        "spent": 0
+      },
+      "MNE": {
+        "required": 597043.33,
+        "available": 506932.33,
+        "spent": 393864.53
+      },
+      "MNG": {
+        "required": 2362892,
+        "available": 2362892,
+        "spent": 2348742
+      },
+      "NPL": {
+        "required": 3467379.67,
+        "available": 2993589.67,
+        "spent": 2511376.83
+      },
+      "PAK": {
+        "required": 22590041.17,
+        "available": 10721253.0,
+        "spent": 6933295.17
+      },
+      "PER": {
+        "required": 10057182.5,
+        "available": 8085253.83,
+        "spent": 51763
+      },
+      "PRY": {
+        "required": 2206346.31,
+        "available": 2370375.12,
+        "spent": 2188884.5
+      },
+      "SAU": {
+        "required": 6342011.67,
+        "available": 5843573.67,
+        "spent": 271992.17
+      },
+      "SOM": {
+        "required": 7109810.08,
+        "available": 6208926.83,
+        "spent": 5573749.13
+      },
+      "SSD": {
+        "required": 1210945,
+        "available": 1160945,
+        "spent": 1135945
+      },
+      "STP": {
+        "required": 1344689.5,
+        "available": 1261459.92,
+        "spent": 1226246.25
+      },
+      "TGO": {
+        "required": 2204772.83,
+        "available": 1906498.83,
+        "spent": 1607620.83
+      },
+      "THA": {
+        "required": 4465300.1,
+        "available": 3842002.43,
+        "spent": 3286207.09
+      },
+      "TJK": {
+        "required": 6060004,
+        "available": 4505599.5,
+        "spent": 3740648.33
+      },
+      "TUR": {
+        "required": 24501873.17,
+        "available": 23298315.17,
+        "spent": 12845651.5
+      },
+      "URY": {
+        "required": 3450799.83,
+        "available": 3060953.33,
+        "spent": 2874753.83
+      },
+      "VEN": {
+        "required": 142673,
+        "available": 229757,
+        "spent": 142673
+      },
+      "VNM": {
+        "required": 610929.33,
+        "available": 477665.33,
+        "spent": 477215.33
+      },
+      "TZA": {
+        "required": 4991033,
+        "available": 2024268,
+        "spent": 891677
+      },
+      "YEM": {
+        "required": 50000,
+        "available": 20000,
+        "spent": 9250
+      },
+      "MOZ": {
+        "required": 47081148.64,
+        "available": 53942033.89,
+        "spent": 27724213.21
+      },
+      "TUN": {
+        "required": 2188761.82,
+        "available": 1996818.08,
+        "spent": 1345337.98
+      },
+      "CPV": {
+        "required": 1004684.52,
+        "available": 728851.19,
+        "spent": 641927.07
+      },
+      "MAR": {
+        "required": 7511303.17,
+        "available": 7495886.5,
+        "spent": 5806407.5
+      },
+      "NGA": {
+        "required": 4387565,
+        "available": 1664314.67,
+        "spent": 1452944.67
+      },
+      "AFG": {
+        "required": 7530464.62,
+        "available": 6064451,
+        "spent": 4555259.25
+      },
+      "GHA": {
+        "required": 10843828.91,
+        "available": 6687540.17,
+        "spent": 4695091.48
+      },
+      "ZWE": {
+        "required": 2022395.83,
+        "available": 1315926.58,
+        "spent": 883322.33
+      }
+    },
+    "top_underfunded": [
+      "BFA",
+      "PAK",
+      "HND",
+      "HTI",
+      "GHA",
+      "KEN",
+      "TZA",
+      "NGA",
+      "PER",
+      "LBY"
+    ]
+  }
+}

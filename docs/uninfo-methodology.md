@@ -1,25 +1,52 @@
-# UNINFO processing
+# UN INFO processing
 
-UNINFO Cooperation Framework resources remain separate from CEB and Secretariat
-finances. The retained snapshot has country SDG queries for 2024 where verified;
-unverified periods, shared-workspace geography, and missing project/framework
-query periods retain their existing qualifications in the exports and interface.
-Refreshing these exports does not fetch or update the underlying source snapshot.
+The fetcher runs in this repository and retrieves published Cooperation Frameworks
+and UNDAFs alongside financial observations for 2022–2026. Each year's
+`period-provenance.json` records the query year and retrieval time. The live
+refresh was run here on 17 November 2026, replacing the initial imported snapshot.
 
-## SDG groups and overall resources
+## Framework and financial coverage
 
-Country **Overall** resources sum every reported group in that country's SDG
-response, including the group whose source SDG ID is null. That group is exported
-as `unclassified` and displayed as **Not classified by SDG**. It is a reported
-classification gap, not a calculated balance or an allocation to any numbered
-goal. An absent group remains absent; an explicitly reported zero group remains
-present. Signed observations are retained.
+The map highlights countries with a published results framework active in the
+selected year. Coverage comes from `POST /plan/public/search` with plan types
+3 and 7 and the selected year, followed by the published strategic priority,
+outcome, and output entities from `POST /plan/public/entity/search`.
+Countries inherit their workspace's framework, including shared regional plans.
 
-The global SDG export preserves the global source response independently,
-including its own null-ID group where reported. It does not calculate a global
-amount from country sums. Country comparisons include only verified 2024
-country observations and exclude shared-workspace totals, so they need not sum
-to global observations.
+Financial observations come from the separate finance overview endpoint.
+Frameworks with empty financial responses remain available on the map.
+
+| Year | Countries with published frameworks | Countries with financial observations | Frameworks with no financial observations |
+| ---- | ----------------------------------- | ------------------------------------- | ----------------------------------------- |
+| 2022 | 130                                 | 54                                    | 76                                        |
+| 2023 | 153                                 | 103                                   | 50                                        |
+| 2024 | 155                                 | 122                                   | 33                                        |
+| 2025 | 155                                 | 130                                   | 25                                        |
+| 2026 | 147                                 | 146                                   | 1                                         |
+
+Every country with financial observations also has a published framework in this
+refresh. The old copied snapshot highlighted 127 countries for 2024 using
+financial availability. The API's current published frameworks cover 155
+countries and areas for that year. Regional frameworks include Caribbean and
+Pacific countries with empty financial responses. Published plan records and
+financial observations can also change between retrieval dates.
+
+The map and country picker use `has_framework`. The legend therefore reads
+“countries with available results frameworks”. Each year's `coverage.json`
+records both sets and their differences. Tests verify every published entity ID,
+parent, country, and basemap join for all five years.
+
+The shared year selector updates the map, legend, country financial observations,
+framework, and activities together. The default is 2025, the latest completed
+calendar year at retrieval. The selector also includes the current year 2026.
+
+## SDG groups and resources
+
+Country overall resources sum all source SDG groups, including the null-ID
+group exported as `unclassified`. Explicit zero values and signed adjustments
+are retained. Global observations retain their independent API response.
+Country totals cover their source workspace. Shared workspace entries display
+the member countries. Parent and child framework financial observations overlap.
 
 ## Results framework identity
 
@@ -28,8 +55,9 @@ Display codes can repeat under different parents and never establish duplicate
 identity. Dated descriptions of the same source ID count once when their parent,
 code, and financial observations agree; the description with the latest end date
 is retained. Conflicting amounts or parent relationships fail export for review.
-Every retained outcome and output must link to its reported parent at the
-preceding level; orphaned IDs fail export rather than silently disappearing.
+Linked outcomes and outputs retain their reported parent at the preceding
+level. Published root outcomes and outputs retain their null parent. Missing
+parent IDs fail export.
 Parent and child financial amounts describe overlapping hierarchy levels and
 must not be summed together.
 
@@ -37,43 +65,48 @@ Regression checks in `python/tests/test_uninfo_integrity.py` compare every
 exported framework identity and parent with the retained raw snapshot, and check
 country and global SDG amounts independently against their own source responses.
 
-## Import and refresh in Results
+## Fetch and process in Results
 
-The retained raw snapshot and processing code were copied from the local
-`open/` checkout at commit `d61db4a2038d27b96e7ce0854cbfdafe485f365e`.
-The index has 127 countries and areas with framework data. Nine Pacific entries
-share workspace 241 and its financial observations. The map highlights
-availability and lets users open each country's entry, including shared
-workspaces. Both `/system/` and the existing `/un-system/` page expose the map.
-
-Run these commands from the repository root. Python 3.13 and uv are sufficient.
-The requirements file pins country-converter and constrains pandas to its
-compatible 2.x series.
+Run from the repository root with Python 3.13 and uv. The requirements file pins
+country-converter and constrains pandas to its compatible 2.x series.
 
 ```sh
-# Regenerate public JSON from the retained raw snapshot.
-uv run --no-project --python 3.13 --with-requirements python/uninfo-requirements.txt python python/10-export_uninfo_json.py
-
-# Fetch a fresh 2024 snapshot, then regenerate public JSON.
+# Fetch live data for all supported years, then process it.
 uv run --no-project --python 3.13 --with-requirements python/uninfo-requirements.txt python python/08-fetch_uninfo.py
 uv run --no-project --python 3.13 --with-requirements python/uninfo-requirements.txt python python/10-export_uninfo_json.py
 
-# Check source identity, hierarchy, and financial consistency.
+# Refresh selected years with a bounded number of concurrent queries.
+uv run --no-project --python 3.13 --with-requirements python/uninfo-requirements.txt python python/08-fetch_uninfo.py --years 2024 2025 --workers 8
+
+# Validate all exported framework identities, coverage and source financials.
 uv run --no-project --python 3.13 --with-requirements python/uninfo-requirements.txt python -m unittest discover -s python/tests -p test_uninfo_integrity.py
 ```
 
-The fetcher queries 2024 explicitly, makes fresh requests on every run, and
-collects the complete response set before replacing raw files. It records
-verified query periods in `data/uninfo/raw/period-provenance.json` after a
-successful refresh. That file is absent from the imported snapshot, so its
-project, framework, and global financial query periods remain unverified.
-Country SDG periods retain their source qualifications.
+The fetcher paginates searches, retries transient HTTP errors, and fetches shared
+workspace observations once per year. It completes requests for every selected
+year in temporary storage before publishing the refreshed raw files.
 
-The exporter preserves full framework and activity names and descriptions.
-It writes `public/data/uninfo-countries-index.json`, individual files under
-`public/data/uninfo-countries/`, and `public/data/uninfo-sdgs.json`. The
-country files load when a country opens. The frontend reads bundled public
-JSON and supports GitHub Pages subpaths.
+Raw files live under `data/uninfo/raw/<year>/`. The exporter writes
+`public/data/uninfo/<year>/uninfo-countries-index.json`, country detail files
+under `countries/`, `uninfo-sdgs.json`, and `coverage.json`.
+`public/data/uninfo/manifest.json` lists available years, the default year and
+official SDG labels and colors from the API. The frontend loads the selected
+year's index and country data using GitHub Pages base paths.
+
+## Shared UI components
+
+The country sidebar uses the same `FinancialDetailPanel`,
+`FinancialPanelYearSelector`, heading hierarchy, drawer proportions, funding
+bars, compact expandable results tree and project cards as `open/`.
+
+Reusable drawer behavior, resource bars, results framework trees and activity
+cards are implemented in `@un-eosg/ui`. Shared UI commit
+`bf8dae738c674160eacbadd09429284b37be431e` is on the local
+`codex/uninfo-results-components` branch in the shared UI repository.
+The app installs its package from `vendor/un-eosg-ui-bf8dae7.tgz` through pnpm.
+The packaged dependency makes installation reproducible while publication of the
+shared UI branch awaits authorization. Storybook examples and registry entries
+live in the shared library source.
 
 ## Public API investigation on 17 November 2026
 
@@ -114,8 +147,7 @@ verified path for country-specific indicator records. The administrative
 Other available leads include framework-cycle dates, means-of-verification form
 definitions, SDG links, milestone planned/actual dates and comments, and
 assessment disaggregation by designed category, agency, location, or partner
-where populated. The live results endpoints were investigated separately from
-the retained financial snapshot displayed on the map.
+where populated. The map uses the live year-filtered framework and finance refresh described above.
 
 The API documentation and the public portal's API calls supplied the endpoint
 references. [UN INFO API documentation](https://api.uninfo.org/docs),

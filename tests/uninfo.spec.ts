@@ -1,44 +1,54 @@
 import { test, expect } from "@playwright/test";
 import { readFileSync } from "node:fs";
 
+const manifest = JSON.parse(
+  readFileSync("public/data/uninfo/manifest.json", "utf8"),
+);
+const year = manifest.default_year as number;
 const countries = JSON.parse(
-  readFileSync("public/data/uninfo-countries-index.json", "utf8"),
-) as Record<string, { name: string }>;
+  readFileSync(
+    `public/data/uninfo/${year}/uninfo-countries-index.json`,
+    "utf8",
+  ),
+) as Record<string, { name: string; has_framework: boolean }>;
 const world = JSON.parse(
   readFileSync("public/data/world-map.geojson", "utf8"),
 ) as {
   features: { properties: { ISO3: string } }[];
 };
 
-test("UN INFO highlights every country feature and opens results from the map", async ({
+test("map highlights exactly the countries with published frameworks", async ({
   page,
 }) => {
   await page.goto("/system/");
-  await expect(
-    page.getByRole("heading", { name: "Country Results Frameworks" }),
-  ).toBeVisible();
-  const map = page.getByTestId("uninfo-map");
-  const highlighted = map.locator("svg > g > g:has(> path[fill])");
-  const coveredFeatures = world.features.filter(
-    (feature) => countries[feature.properties.ISO3],
+  const covered = world.features.filter(
+    ({ properties }) => countries[properties.ISO3]?.has_framework,
   );
-  await expect(highlighted).toHaveCount(coveredFeatures.length);
-  const firstCode = coveredFeatures[0].properties.ISO3;
+  const highlighted = page
+    .getByTestId("uninfo-map")
+    .locator("svg > g > g:has(> path[fill])");
+  await expect(highlighted).toHaveCount(covered.length);
+  await expect(
+    page.getByText("155 countries with available results frameworks"),
+  ).toBeVisible();
   await highlighted.first().dispatchEvent("click");
   const dialog = page.getByRole("dialog", {
-    name: countries[firstCode].name,
+    name: countries[covered[0].properties.ISO3].name,
     exact: true,
   });
   await expect(
-    dialog.getByRole("heading", { name: "Results framework", exact: true }),
+    dialog.getByRole("heading", { name: "Results Framework", exact: true }),
   ).toBeVisible();
   await dialog.getByRole("button", { name: "Close country results" }).click();
   await expect(
     page.getByRole("button", { name: "Choose a country or area" }),
   ).toBeFocused();
+  await expect(
+    page.getByText(/retained snapshot|unverified|imported from open/i),
+  ).toHaveCount(0);
 });
 
-test("country picker opens full framework hierarchy with reporting-period qualification", async ({
+test("shared year controls change coverage and the open country panel together", async ({
   page,
 }) => {
   await page.goto("/un-system/");
@@ -49,36 +59,52 @@ test("country picker opens full framework hierarchy with reporting-period qualif
   await page.getByRole("button", { name: "Afghanistan", exact: true }).click();
   const dialog = page.getByRole("dialog", { name: "Afghanistan", exact: true });
   await expect(
-    dialog.getByText(
-      "The financial reporting period for this framework is unverified",
-      { exact: false },
-    ),
+    dialog.getByRole("heading", { name: "Overall", exact: true }),
   ).toBeVisible();
-  const strategicPriority = dialog.locator("details").first();
-  await strategicPriority.locator("> summary").click();
+  const priority = dialog.getByRole("button", {
+    name: /Strategic priority.*Sustained Essential Services/,
+  });
+  await priority.click();
+  const outcome = dialog
+    .getByRole("button", { name: /Outcome.*By the end of 2027/ })
+    .first();
+  await expect(outcome).toBeVisible();
+  await outcome.click();
   await expect(
-    strategicPriority.locator("details > summary").first(),
-  ).toContainText("Outcome");
-  await strategicPriority.locator("details > summary").first().click();
+    dialog.getByRole("button", { name: /Output/ }).first(),
+  ).toBeVisible();
+  await dialog
+    .getByRole("button", { name: "Select year", exact: true })
+    .click();
+  await page.getByRole("button", { name: "2022", exact: true }).click();
   await expect(
-    strategicPriority.locator("details details > summary").first(),
-  ).toContainText("Output");
+    dialog.getByRole("heading", { name: "Results Framework", exact: true }),
+  ).toBeVisible();
+  await dialog.getByRole("button", { name: "Close country results" }).click();
   await expect(
-    dialog.getByText("Financial year 2024.", { exact: false }),
+    page.getByText("130 countries with available results frameworks"),
+  ).toBeVisible();
+  await page.getByRole("button", { name: "Select year", exact: true }).click();
+  await page.getByRole("button", { name: "2026", exact: true }).click();
+  await expect(
+    page.getByText("147 countries with available results frameworks"),
   ).toBeVisible();
 });
 
-test("shared workspace qualifies resources and country fetch can be retried", async ({
+test("shared workspace shows the shared resource view and country fetch can retry", async ({
   page,
 }) => {
   await page.goto("/system/");
   let fail = true;
-  await page.route("**/data/uninfo-countries/COK.json", async (route) => {
-    if (fail) {
-      fail = false;
-      await route.fulfill({ status: 503, body: "unavailable" });
-    } else await route.continue();
-  });
+  await page.route(
+    `**/data/uninfo/${year}/countries/COK.json`,
+    async (route) => {
+      if (fail) {
+        fail = false;
+        await route.fulfill({ status: 503, body: "unavailable" });
+      } else await route.continue();
+    },
+  );
   await page.getByRole("button", { name: "Choose a country or area" }).click();
   await page
     .getByRole("searchbox", { name: "Search countries or areas" })
@@ -93,11 +119,20 @@ test("shared workspace qualifies resources and country fetch can be retried", as
   await expect(dialog.getByText(/Shared workspace covering/)).toContainText(
     "Samoa",
   );
+  await expect(dialog.locator("[data-resource]").first()).toBeVisible();
 });
 
-test("country picker works on mobile when the basemap fails", async ({
+test("mobile picker opens a framework without finances when the basemap fails", async ({
   page,
 }) => {
+  const code = Object.keys(countries).find((code) => {
+    const country = JSON.parse(
+      readFileSync(`public/data/uninfo/${year}/countries/${code}.json`, "utf8"),
+    );
+    return (
+      countries[code].has_framework && Object.keys(country.sdgs).length === 0
+    );
+  })!;
   await page.setViewportSize({ width: 390, height: 844 });
   await page.route("**/data/world-map.geojson", (route) =>
     route.fulfill({ status: 503, body: "unavailable" }),
@@ -109,13 +144,19 @@ test("country picker works on mobile when the basemap fails", async ({
   await page.getByRole("button", { name: "Choose a country or area" }).click();
   await page
     .getByRole("searchbox", { name: "Search countries or areas" })
-    .fill("Bahrain");
-  await page.getByRole("button", { name: "Bahrain", exact: true }).click();
-  const dialog = page.getByRole("dialog", { name: "Bahrain", exact: true });
+    .fill(countries[code].name);
+  await page
+    .getByRole("button", { name: countries[code].name, exact: true })
+    .click();
+  const dialog = page.getByRole("dialog", {
+    name: countries[code].name,
+    exact: true,
+  });
   await expect(
-    dialog
-      .getByText("Financial reporting period unverified.", { exact: false })
-      .first(),
+    dialog.getByText(`No financial observations reported for ${year}.`),
+  ).toBeVisible();
+  await expect(
+    dialog.getByRole("heading", { name: "Results Framework", exact: true }),
   ).toBeVisible();
   expect(
     await page.evaluate(() => document.documentElement.scrollWidth),
