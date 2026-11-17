@@ -11149,7 +11149,7 @@ export const DataRUS = [
     SpecificResultOrder: 28,
     COVID_Related: "no",
     Target: "not applicable",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC1.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=19"
   },
@@ -11171,7 +11171,7 @@ export const DataRUS = [
     SpecificResultOrder: 14,
     COVID_Related: "no",
     Target: "Target not met",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC2.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=20"
   },
@@ -11193,7 +11193,7 @@ export const DataRUS = [
     SpecificResultOrder: 10,
     COVID_Related: "no",
     Target: "Target not met",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC3.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=20"
   },
@@ -11215,7 +11215,7 @@ export const DataRUS = [
     SpecificResultOrder: 10,
     COVID_Related: "no",
     Target: "not applicable",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC4.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=21"
   },
@@ -11259,7 +11259,7 @@ export const DataRUS = [
     SpecificResultOrder: 26,
     COVID_Related: "no",
     Target: "Target met",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC6.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=26"
   },
@@ -11281,7 +11281,7 @@ export const DataRUS = [
     SpecificResultOrder: 5,
     COVID_Related: "no",
     Target: "Target met",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC7.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=27"
   },
@@ -11303,7 +11303,7 @@ export const DataRUS = [
     SpecificResultOrder: 5,
     COVID_Related: "no",
     Target: "not applicable",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC8.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=27"
   },
@@ -11347,7 +11347,7 @@ export const DataRUS = [
     SpecificResultOrder: 9,
     COVID_Related: "no",
     Target: "Target met",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC10.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=31"
   },
@@ -11369,7 +11369,7 @@ export const DataRUS = [
     SpecificResultOrder: 9,
     COVID_Related: "no",
     Target: "Target met",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC11.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=32"
   },
@@ -11391,7 +11391,7 @@ export const DataRUS = [
     SpecificResultOrder: 9,
     COVID_Related: "no",
     Target: "not applicable",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC12.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=33"
   },
@@ -11435,7 +11435,7 @@ export const DataRUS = [
     SpecificResultOrder: 7,
     COVID_Related: "no",
     Target: "Target met",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC14.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=37"
   },
@@ -11457,7 +11457,7 @@ export const DataRUS = [
     SpecificResultOrder: 7,
     COVID_Related: "no",
     Target: "Target met",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC15.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=38"
   },
@@ -11479,7 +11479,7 @@ export const DataRUS = [
     SpecificResultOrder: 7,
     COVID_Related: "no",
     Target: "not applicable",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC16.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=38"
   },
@@ -11501,7 +11501,7 @@ export const DataRUS = [
     SpecificResultOrder: 7,
     COVID_Related: "no",
     Target: "not applicable",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC17.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=41"
   },
@@ -11523,7 +11523,7 @@ export const DataRUS = [
     SpecificResultOrder: 6,
     COVID_Related: "no",
     Target: "Target met",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC18.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=42"
   },
@@ -11545,7 +11545,7 @@ export const DataRUS = [
     SpecificResultOrder: 27,
     COVID_Related: "no",
     Target: "Target met",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC19.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=43"
   },
@@ -11567,7 +11567,7 @@ export const DataRUS = [
     SpecificResultOrder: 9,
     COVID_Related: "no",
     Target: "not applicable",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC20.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=43"
   },
@@ -11611,7 +11611,7 @@ export const DataRUS = [
     SpecificResultOrder: 27,
     COVID_Related: "no",
     Target: "Target exceeded",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC22.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=47"
   },
@@ -11633,7 +11633,7 @@ export const DataRUS = [
     SpecificResultOrder: 7,
     COVID_Related: "no",
     Target: "Target not met",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC23.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=48"
   },
@@ -11655,7 +11655,7 @@ export const DataRUS = [
     SpecificResultOrder: 6,
     COVID_Related: "no",
     Target: "not applicable",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC24.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=49"
   },
@@ -11677,7 +11677,7 @@ export const DataRUS = [
     SpecificResultOrder: 13,
     COVID_Related: "no",
     Target: "not applicable",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC25.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=52"
   },
@@ -11699,7 +11699,7 @@ export const DataRUS = [
     SpecificResultOrder: 13,
     COVID_Related: "no",
     Target: "Target met",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC26.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=53"
   },
@@ -11721,7 +11721,7 @@ export const DataRUS = [
     SpecificResultOrder: 24,
     COVID_Related: "no",
     Target: "Target exceeded",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC27.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=54"
   },
@@ -11743,7 +11743,7 @@ export const DataRUS = [
     SpecificResultOrder: 13,
     COVID_Related: "no",
     Target: "not applicable",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC28.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=55"
   },
@@ -11765,7 +11765,7 @@ export const DataRUS = [
     SpecificResultOrder: 14,
     COVID_Related: "no",
     Target: "not applicable",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC29.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=58"
   },
@@ -11787,7 +11787,7 @@ export const DataRUS = [
     SpecificResultOrder: 14,
     COVID_Related: "no",
     Target: "Target met",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC30.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=59"
   },
@@ -11809,7 +11809,7 @@ export const DataRUS = [
     SpecificResultOrder: 14,
     COVID_Related: "no",
     Target: "Target met",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC31.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=59"
   },
@@ -11831,7 +11831,7 @@ export const DataRUS = [
     SpecificResultOrder: 13,
     COVID_Related: "no",
     Target: "not applicable",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC32.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=60"
   },
@@ -11853,7 +11853,7 @@ export const DataRUS = [
     SpecificResultOrder: 5,
     COVID_Related: "no",
     Target: "not applicable",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC33.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=63"
   },
@@ -11875,7 +11875,7 @@ export const DataRUS = [
     SpecificResultOrder: 5,
     COVID_Related: "no",
     Target: "Target met",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC34.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=64"
   },
@@ -11897,7 +11897,7 @@ export const DataRUS = [
     SpecificResultOrder: 8,
     COVID_Related: "no",
     Target: "Target exceeded",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC35.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=65"
   },
@@ -11919,7 +11919,7 @@ export const DataRUS = [
     SpecificResultOrder: 5,
     COVID_Related: "no",
     Target: "not applicable",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC36.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=65"
   },
@@ -11941,7 +11941,7 @@ export const DataRUS = [
     SpecificResultOrder: 28,
     COVID_Related: "no",
     Target: "not applicable",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC37.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=69"
   },
@@ -11963,7 +11963,7 @@ export const DataRUS = [
     SpecificResultOrder: 28,
     COVID_Related: "no",
     Target: "Target met",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC38.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=70"
   },
@@ -11985,7 +11985,7 @@ export const DataRUS = [
     SpecificResultOrder: 27,
     COVID_Related: "no",
     Target: "Target met",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC39.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=71"
   },
@@ -12007,7 +12007,7 @@ export const DataRUS = [
     SpecificResultOrder: 28,
     COVID_Related: "no",
     Target: "not applicable",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC40.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=71"
   },
@@ -12117,7 +12117,7 @@ export const DataRUS = [
     SpecificResultOrder: 14,
     COVID_Related: "no",
     Target: "not applicable",
-    ISO2: "AG,BS,BD,BZ,CU,DM,DO,GD,GY,HT,JM,KN,LC,VC,SR,TT",
+    ISO2: "AG,BS,BB,BZ,CU,DM,DO,GD,GY,HT,JM,KN,LC,VC,SR,TT",
     Image: "21ECLAC45.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=79"
   },
@@ -12139,7 +12139,7 @@ export const DataRUS = [
     SpecificResultOrder: 26,
     COVID_Related: "no",
     Target: "Target met",
-    ISO2: "AG,BS,BD,BZ,CU,DM,DO,GD,GY,HT,JM,KN,LC,VC,SR,TT",
+    ISO2: "AG,BS,BB,BZ,CU,DM,DO,GD,GY,HT,JM,KN,LC,VC,SR,TT",
     Image: "21ECLAC46.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=80"
   },
@@ -12161,7 +12161,7 @@ export const DataRUS = [
     SpecificResultOrder: 5,
     COVID_Related: "no",
     Target: "Target met",
-    ISO2: "AG,BS,BD,BZ,CU,DM,DO,GD,GY,HT,JM,KN,LC,VC,SR,TT",
+    ISO2: "AG,BS,BB,BZ,CU,DM,DO,GD,GY,HT,JM,KN,LC,VC,SR,TT",
     Image: "21ECLAC47.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=81"
   },
@@ -12183,7 +12183,7 @@ export const DataRUS = [
     SpecificResultOrder: 29,
     COVID_Related: "no",
     Target: "not applicable",
-    ISO2: "AG,BS,BD,BZ,CU,DM,DO,GD,GY,HT,JM,KN,LC,VC,SR,TT",
+    ISO2: "AG,BS,BB,BZ,CU,DM,DO,GD,GY,HT,JM,KN,LC,VC,SR,TT",
     Image: "21ECLAC48.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=81"
   },
@@ -12205,7 +12205,7 @@ export const DataRUS = [
     SpecificResultOrder: 29,
     COVID_Related: "no",
     Target: "not applicable",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC49.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=85"
   },
@@ -12227,7 +12227,7 @@ export const DataRUS = [
     SpecificResultOrder: 8,
     COVID_Related: "no",
     Target: "Target met",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC50.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=86"
   },
@@ -12249,7 +12249,7 @@ export const DataRUS = [
     SpecificResultOrder: 8,
     COVID_Related: "no",
     Target: "Target met",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC51.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=87"
   },
@@ -12271,7 +12271,7 @@ export const DataRUS = [
     SpecificResultOrder: 9,
     COVID_Related: "no",
     Target: "not applicable",
-    ISO2: "AG,AR,BS,BD,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
+    ISO2: "AG,AR,BS,BB,BZ,BO,BR,CA,CL,CO,CR,CU,DM,DO,EC,SV,FR,DE,GD,GT,GY,HT,HN,IT,JM,JP,MX,NL,NI,NO,PA,PY,PE,PT,PI,KR,KN,LC,VC,ES,EI,SR,TT,TR,GB,US,UY,VE,AI,AW,BM,VG,KY,CW,GP,GF,MQ,MS,PR,SX,TC,VI",
     Image: "21ECLAC52.jpg",
     URL: "https://documents.un.org/api/symbol/access?s=a/81/6(Sect.21)&l=ru#page=87"
   },
