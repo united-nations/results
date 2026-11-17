@@ -134,7 +134,9 @@ for (const [section, items] of relationships) {
 
 const financeAliases = {
   "Ethics Office": "EO",
+  UNEO: "EO",
   "RC system": "RCS",
+  RCS: "RCS",
   "SEA Coordinator": "OSC-SEA",
   "SRSG-CAAC": "OSRSG-CAAC",
   "SRSG-SVC": "OSRSG-SVC",
