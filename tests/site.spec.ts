@@ -145,11 +145,21 @@ test("locations distinguish local, multi-location, and global results", async ({
   );
   const map = page.getByTestId("results-location-map");
   const countries = map.locator("svg path:not([style*='--color-muted'])");
-  await expect(countries.first()).toHaveCSS("fill", "rgb(0, 158, 219)");
-  const fills = await countries.evaluateAll((paths) => [
-    ...new Set(paths.map((path) => getComputedStyle(path).fill)),
+  const legend = map.getByRole("list", {
+    name: "Most specific results by location",
+  });
+  await expect(legend.getByRole("listitem")).toHaveText([
+    "Global only",
+    "Across multiple locations",
+    "Country-specific",
   ]);
-  expect(fills).toHaveLength(1);
+  await expect
+    .poll(() =>
+      countries.evaluateAll((paths) =>
+        [...new Set(paths.map((path) => getComputedStyle(path).fill))].sort(),
+      ),
+    )
+    .toEqual(["rgb(0, 158, 219)", "rgb(0, 73, 135)", "rgb(197, 223, 239)"]);
 
   const point = await countries.evaluateAll((paths) => {
     for (const path of paths) {
@@ -183,6 +193,12 @@ test("locations distinguish local, multi-location, and global results", async ({
   await expect(
     globalOnly.getByRole("heading", { name: /Country-specific/ }),
   ).toHaveCount(0);
+  await globalOnly
+    .getByRole("heading", { name: "Global", exact: true })
+    .click();
+  await expect(
+    globalOnly.getByRole("heading", { level: 3 }).first(),
+  ).toBeVisible();
   await closeLocation.click();
 
   const picker = page.getByRole("button", { name: "Choose a country or area" });
@@ -220,13 +236,19 @@ test("locations distinguish local, multi-location, and global results", async ({
     .getByRole("heading", { name: "Country-specific", exact: true })
     .locator("../..");
   await expect(
+    countrySpecific.getByRole("heading", {
+      level: 3,
+      name: /Department of Peace Operations/,
+    }),
+  ).toBeVisible();
+  await expect(
     countrySpecific.getByRole("button", {
       name: /Progress in the implementation of the 2018 Revitalized Agreement/,
     }),
   ).toBeVisible();
 });
 
-test("locations group reviewed country lists without repeating their coverage", async ({
+test("shared location results are grouped by entity with their own coverage", async ({
   page,
 }) => {
   await page.goto("/locations/");
@@ -237,33 +259,30 @@ test("locations group reviewed country lists without repeating their coverage", 
       name: "Across multiple locations",
     })
     .locator("../..");
-  const commission = multiLocation.getByRole("heading", {
-    name: "ECLAC members and associate members",
-  });
-  const caribbean = multiLocation.getByRole("heading", {
-    name: "ECLAC Caribbean subregion",
-  });
   await expect(multiLocation.locator("summary").first()).toContainText(
     "44 results",
   );
-  await expect(commission.locator("..")).toContainText("40 results");
-  await expect(caribbean.locator("..")).toContainText("4 results");
-  const group = commission.locator("../..");
-  await expect(group.getByRole("button")).toHaveCount(0);
-  await commission.click();
-  await expect(
-    group.getByRole("heading", {
-      level: 4,
+  const group = multiLocation.locator("section").filter({
+    has: page.getByRole("heading", {
+      level: 3,
       name: /Economic Commission for Latin America and the Caribbean/,
     }),
-  ).toBeVisible();
-  await expect(group.getByRole("button")).toHaveCount(40);
-  const coverage = group.getByText("60 tagged countries and areas", {
-    exact: true,
   });
-  await expect(coverage).toHaveCount(1);
+  await expect(group).toHaveCount(1);
+  await expect(group.getByRole("button")).toHaveCount(44);
+  await expect(
+    multiLocation.getByRole("heading", { name: /ECLAC Caribbean subregion/ }),
+  ).toHaveCount(0);
+  const coverage = group
+    .getByText("60 tagged countries and areas", {
+      exact: true,
+    })
+    .first();
+  await expect(coverage).toHaveClass(/\btext-muted-foreground\b/);
   await coverage.click();
-  await expect(group.getByText(/Barbados, Belize, Bermuda/)).toBeVisible();
+  await expect(
+    coverage.locator("..").getByText(/Barbados, Belize, Bermuda/),
+  ).toBeVisible();
   await expect(group.getByText(/Bangladesh/)).toHaveCount(0);
   await group.getByRole("button").first().click();
   await expect(

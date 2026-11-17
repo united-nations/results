@@ -1,10 +1,24 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { typography } from "@un-eosg/ui/typography";
 import { ChoroplethMap } from "@undp/data-viz/ChoroplethMap";
 import { MapInteraction } from "@/components/MapInteraction";
 import { useViewportMapHeight } from "@/hooks/useViewportMapHeight";
 import { withBasePath } from "@/lib/paths";
+import type { LocationCoverage } from "@/lib/result-location-coverage";
+
+const coverageStyles = {
+  "global-only": { label: "Global only", color: "var(--color-un-blue-tint)" },
+  "multi-location": {
+    label: "Across multiple locations",
+    color: "var(--color-un-blue)",
+  },
+  "country-specific": {
+    label: "Country-specific",
+    color: "var(--color-un-blue-shade)",
+  },
+};
 
 type MapFeature = {
   type: "Feature";
@@ -19,17 +33,17 @@ type WorldMap = {
 
 type CoverageDatum = {
   id: string;
-  x: "covered";
+  x: LocationCoverage;
   data: { code: string; name: string };
 };
 
 export function LocationChoropleth({
-  coveredCodes,
+  coverage,
   hasGlobal,
   getAreaName,
   onSelect,
 }: {
-  coveredCodes: ReadonlySet<string>;
+  coverage: ReadonlyMap<string, LocationCoverage>;
   hasGlobal: boolean;
   getAreaName: (code: string) => string;
   onSelect: (code: string) => void;
@@ -69,20 +83,23 @@ export function LocationChoropleth({
     };
   }, [worldMap]);
 
-  const coverage = useMemo<CoverageDatum[]>(
+  const chartData = useMemo<CoverageDatum[]>(
     () =>
-      map?.features.flatMap(({ properties: { ISO2: code, featureId } }) =>
-        /^[A-Z]{2}$/.test(code) && (hasGlobal || coveredCodes.has(code))
+      map?.features.flatMap(({ properties: { ISO2: code, featureId } }) => {
+        if (!/^[A-Z]{2}$/.test(code)) return [];
+        const kind =
+          coverage.get(code) ?? (hasGlobal ? "global-only" : undefined);
+        return kind
           ? [
               {
                 id: featureId,
-                x: "covered",
+                x: kind,
                 data: { code, name: getAreaName(code) },
               },
             ]
-          : [],
-      ) ?? [],
-    [map, coveredCodes, hasGlobal, getAreaName],
+          : [];
+      }) ?? [],
+    [map, coverage, hasGlobal, getAreaName],
   );
 
   if (!map)
@@ -97,9 +114,24 @@ export function LocationChoropleth({
       data-testid="results-location-map"
       className="result-location-map relative w-full bg-background"
     >
+      <ul
+        aria-label="Most specific results by location"
+        className={`${typography.caption} flex flex-wrap gap-x-4 gap-y-2`}
+      >
+        {Object.values(coverageStyles).map(({ label, color }) => (
+          <li className="flex items-center gap-2" key={label}>
+            <span
+              aria-hidden
+              className="size-3 shrink-0 rounded-sm border border-border"
+              style={{ backgroundColor: color }}
+            />
+            {label}
+          </li>
+        ))}
+      </ul>
       <MapInteraction>
         <ChoroplethMap
-          data={coverage}
+          data={chartData}
           mapData={map}
           mapProperty="featureId"
           ariaLabel="Map of countries and areas with Secretariat results"
@@ -112,14 +144,18 @@ export function LocationChoropleth({
           mapBorderColor="var(--color-background)"
           mapNoDataColor="var(--color-muted)"
           scaleType="categorical"
-          colorDomain={["covered"]}
-          colors={["var(--color-un-blue)"]}
+          colorDomain={Object.keys(coverageStyles)}
+          colors={Object.values(coverageStyles).map(({ color }) => color)}
           padding="0px"
           isWorldMap
           showColorScale={false}
           footNote=""
           resetSelectionOnDoubleClick={false}
-          tooltip={(point: CoverageDatum) => point.data.name}
+          tooltip={(point: CoverageDatum) => (
+            <span className={typography.body}>
+              {point.data.name} · {coverageStyles[point.x].label}
+            </span>
+          )}
           onSeriesMouseClick={(point: CoverageDatum | undefined) => {
             if (point) onSelect(point.data.code);
           }}
