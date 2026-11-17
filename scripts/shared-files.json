@@ -31,6 +31,5 @@
   "python/data_prep.py",
   "docs/github-pages.md",
   "docs/data-preparation.md",
-  "data/example.csv",
-  "public/data/data.json"
+  "data/example.csv"
 ]
