@@ -8,6 +8,7 @@ import {
   TableRow,
 } from "@un-eosg/ui/components/data-table";
 import { typography } from "@un-eosg/ui/typography";
+import { formatBudgetHeading } from "@/lib/budget-text";
 import type { Status, TimePoint, TimeSeries } from "@/lib/budget-time-series";
 
 const colors = [
@@ -110,7 +111,7 @@ export function BudgetTimeChart({
                     className="inline-block h-0.5 w-4"
                     style={{ backgroundColor: color(name) }}
                   />
-                  {name || "Other series"}
+                  {formatBudgetHeading(name) || "Other series"}
                 </li>
               ))}
             </ul>
@@ -150,7 +151,9 @@ export function BudgetTimeChart({
                   item.points.map((point) => (
                     <TableRow key={`${seriesIndex}-${point.year}`}>
                       <TableCell>{point.period}</TableCell>
-                      <TableCell>{metricName(item.name) || "—"}</TableCell>
+                      <TableCell>
+                        {formatBudgetHeading(metricName(item.name)) || "—"}
+                      </TableCell>
                       <TableCell>{statusLabel[point.status]}</TableCell>
                       <TableCell numeric>
                         {detailNumber.format(point.value)}
@@ -265,7 +268,7 @@ export function BudgetTimeChart({
                 >
                   <title>
                     {[
-                      metricName(item.name),
+                      formatBudgetHeading(metricName(item.name)),
                       point.period,
                       statusLabel[point.status],
                       detailNumber.format(point.value) + suffix,

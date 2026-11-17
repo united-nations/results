@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
-import { ExternalLink } from "@un-eosg/ui/components/external-link";
-import { typography } from "@un-eosg/ui/typography";
 import { PriorityDirectory } from "@/components/PriorityDirectory";
-import { SiteShell } from "@/components/SiteShell";
+import { SecretariatPage } from "@/components/SecretariatPage";
 import { getEntityDescription } from "@/lib/entity-descriptions";
 import { withBasePath } from "@/lib/paths";
 import {
   type BudgetEntity,
-  budgetEdition,
   budgetEntities,
+  budgetEdition,
   entityHref,
 } from "@/lib/programme-budget";
 
@@ -124,20 +122,8 @@ const directory = [
 
 export default function UNSecretariat() {
   return (
-    <SiteShell>
-      <h1 className={typography.pageTitle}>UN Secretariat Results</h1>
-      <p className={`${typography.prose} mt-4 max-w-2xl`}>
-        Explore what each entity plans to achieve and what it reported
-        achieving. The results come from the{" "}
-        <ExternalLink
-          href="https://www.un.org/en/ga/fifth/81/ppb2027.shtml"
-          className="text-un-blue-text underline underline-offset-4"
-        >
-          {budgetEdition} proposed programme budget
-        </ExternalLink>
-        .
-      </p>
-      <PriorityDirectory groups={directory} />
-    </SiteShell>
+    <SecretariatPage activeHref="/">
+      <PriorityDirectory groups={directory} edition={budgetEdition} />
+    </SecretariatPage>
   );
 }

@@ -10,11 +10,13 @@ export function SiteChrome({
   account,
   navigation,
   homeHref,
+  activeHref,
 }: {
   children: React.ReactNode;
   account?: React.ReactNode;
   navigation?: readonly { href: string; label: string }[];
   homeHref?: string;
+  activeHref?: string;
 }) {
   return (
     <>
@@ -24,7 +26,11 @@ export function SiteChrome({
       >
         Skip to main content
       </a>
-      <SiteHeader navigation={navigation} homeHref={homeHref}>
+      <SiteHeader
+        navigation={navigation}
+        homeHref={homeHref}
+        activeHref={activeHref}
+      >
         {account}
       </SiteHeader>
       <main

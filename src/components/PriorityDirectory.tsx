@@ -1,7 +1,10 @@
 "use client";
 
 import { useId, useState } from "react";
-import { ChevronRight, Minus, Plus } from "lucide-react";
+import { ChevronRight } from "lucide-react";
+import { ResultSearchMatches } from "@/components/ResultSearchMatches";
+import { normalizeSearchText, searchTerms } from "@/lib/search-text";
+import { ResultsExpander } from "@/components/ResultsExpander";
 import { Button } from "@un-eosg/ui/components/button";
 import { SearchInput } from "@un-eosg/ui/components/search-input";
 import { typography } from "@un-eosg/ui/typography";
@@ -23,12 +26,6 @@ type PriorityGroup = EntityGroup & {
   officialName?: string;
   clusters?: EntityGroup[];
 };
-
-const normalize = (value: string) =>
-  value
-    .normalize("NFKD")
-    .replace(/\p{Diacritic}/gu, "")
-    .toLowerCase();
 
 function EntityRow({ entity }: { entity: DirectoryEntity }) {
   const descriptionId = useId();
@@ -94,7 +91,9 @@ function EntityList({ entities }: { entities: DirectoryEntity[] }) {
             aria-controls={remainingId}
             onClick={() => setShowAll(!showAll)}
           >
-            {showAll ? "Show fewer" : `Show ${remaining.length} more`}
+            {showAll
+              ? "Show fewer"
+              : `Show ${remaining.length} more ${remaining.length === 1 ? "entity" : "entities"}`}
           </Button>
           <ul
             id={remainingId}
@@ -112,13 +111,19 @@ function EntityList({ entities }: { entities: DirectoryEntity[] }) {
   );
 }
 
-export function PriorityDirectory({ groups }: { groups: PriorityGroup[] }) {
+export function PriorityDirectory({
+  groups,
+  edition,
+}: {
+  groups: PriorityGroup[];
+  edition: number;
+}) {
   const [query, setQuery] = useState("");
-  const terms = normalize(query).trim().split(/\s+/).filter(Boolean);
+  const terms = searchTerms(query);
   const searching = terms.length > 0;
   function filterEntities({ name, entities }: EntityGroup) {
     return entities.filter((entity) => {
-      const text = normalize(
+      const text = normalizeSearchText(
         `${name} ${entity.name} ${entity.code ?? ""} ${entity.description}`,
       );
       return terms.every((term) => text.includes(term));
@@ -148,8 +153,8 @@ export function PriorityDirectory({ groups }: { groups: PriorityGroup[] }) {
     <div className="mt-7">
       <div className="max-w-md">
         <SearchInput
-          aria-label="Search priority areas or entities"
-          placeholder="Search priority areas or entities"
+          aria-label="Search entities, priority areas or results"
+          placeholder="Search entities, priority areas or results"
           variant="border-bottom"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
@@ -157,31 +162,33 @@ export function PriorityDirectory({ groups }: { groups: PriorityGroup[] }) {
           onClear={() => setQuery("")}
         />
       </div>
+      <ResultSearchMatches
+        query={query}
+        edition={edition}
+        defaultOpen={visible.length === 0}
+      />
       <p aria-live="polite" className="sr-only">
-        {visible.length} matching groups
+        {visible.length} matching priority{" "}
+        {visible.length === 1 ? "area" : "areas"}
       </p>
       {visible.length > 0 ? (
         <div className="mt-6 space-y-1.5">
           {visible.map((group) => (
             <section key={group.name}>
-              <details
+              <ResultsExpander
                 key={searching ? query : ""}
-                open={searching}
-                className="group/priority"
+                title={group.headline ?? group.name}
+                headingLevel={2}
+                count={
+                  group.entities.length +
+                  (group.clusters?.reduce(
+                    (count, cluster) => count + cluster.entities.length,
+                    0,
+                  ) ?? 0)
+                }
+                countUnit="entity"
+                defaultOpen={searching}
               >
-                <summary className="flex cursor-pointer items-center justify-between gap-3 bg-un-blue-surface px-3 py-2 transition-colors group-open/priority:bg-accent hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset">
-                  <h2 className="text-base font-medium group-open/priority:text-un-blue-text-aaa">
-                    {group.headline ?? group.name}
-                  </h2>
-                  <Plus
-                    className="size-4 shrink-0 text-un-blue-text-aaa group-open/priority:hidden"
-                    aria-hidden
-                  />
-                  <Minus
-                    className="hidden size-4 shrink-0 text-un-blue-text-aaa group-open/priority:block"
-                    aria-hidden
-                  />
-                </summary>
                 {group.officialName && (
                   <p className={`${typography.meta} px-3 pt-2 pb-1`}>
                     {group.officialName}
@@ -189,26 +196,20 @@ export function PriorityDirectory({ groups }: { groups: PriorityGroup[] }) {
                 )}
                 <EntityList entities={group.entities} />
                 {group.clusters?.map((cluster) => (
-                  <details
-                    key={cluster.name}
-                    open={searching}
-                    className="group/cluster mt-1"
-                  >
-                    <summary className="flex cursor-pointer items-center justify-between gap-3 bg-un-blue-surface py-1.5 ps-5 pe-3 transition-colors group-open/cluster:bg-accent hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset">
-                      <h3 className="text-sm font-medium">{cluster.name}</h3>
-                      <Plus
-                        className="size-4 shrink-0 text-un-blue-text-aaa group-open/cluster:hidden"
-                        aria-hidden
-                      />
-                      <Minus
-                        className="hidden size-4 shrink-0 text-un-blue-text-aaa group-open/cluster:block"
-                        aria-hidden
-                      />
-                    </summary>
-                    <EntityList entities={cluster.entities} />
-                  </details>
+                  <div key={cluster.name} className="ms-3 mt-1">
+                    <ResultsExpander
+                      title={cluster.name}
+                      headingLevel={3}
+                      count={cluster.entities.length}
+                      countUnit="entity"
+                      defaultOpen={searching}
+                      nested
+                    >
+                      <EntityList entities={cluster.entities} />
+                    </ResultsExpander>
+                  </div>
                 ))}
-              </details>
+              </ResultsExpander>
             </section>
           ))}
         </div>

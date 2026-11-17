@@ -56,3 +56,10 @@
 html {
   scrollbar-gutter: stable;
 }
+
+@media (any-pointer: coarse) {
+  .result-location-map .zoom-buttons button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}

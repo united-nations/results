@@ -1,4 +1,275 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, type Page } from "@playwright/test";
+
+test("beneficiaries open programme budget results by entity", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const tabs = page.getByRole("navigation", {
+    name: "Browse Secretariat results",
+  });
+  await expect(
+    tabs.getByRole("link", { name: "Entities and priority areas" }),
+  ).toHaveAttribute("aria-current", "page");
+  await tabs.getByRole("link", { name: "Beneficiaries" }).click();
+  await expect(
+    tabs.getByRole("link", { name: "Beneficiaries" }),
+  ).toHaveAttribute("aria-current", "page");
+  const heading = page.getByRole("heading", {
+    name: "Women and girls",
+    exact: true,
+  });
+  const beneficiary = page.locator("details").filter({ has: heading });
+  await expect(beneficiary.locator("summary").first()).toContainText(
+    "41 results",
+  );
+  await heading.click();
+  const result = beneficiary.getByRole("button", {
+    name: /Strengthened national ownership to prevent conflict-related sexual violence/,
+  });
+  await result.click();
+  const sidebar = page.getByRole("dialog", {
+    name: /Strengthened national ownership/,
+  });
+  await expect(
+    sidebar.getByText(/Since 2022, in response to allegations/),
+  ).toBeVisible();
+  await expect(
+    sidebar.getByRole("link", { name: /View budget document/ }),
+  ).toHaveAttribute("target", "_blank");
+  await sidebar.getByRole("button", { name: "Close result" }).click();
+  await expect(result).toBeFocused();
+
+  const oceanConference =
+    "Accelerated progress for Sustainable Development Goal 14 through the third United Nations Ocean Conference";
+  await page.getByRole("heading", { name: "Climate and environment" }).click();
+  await page
+    .getByRole("button", { name: oceanConference, exact: true })
+    .click();
+  const oceanSidebar = page.getByRole("dialog", { name: oceanConference });
+  await expect(
+    oceanSidebar.getByText("Programme budget result", { exact: true }),
+  ).toBeVisible();
+  await expect(oceanSidebar.getByText("Result 1", { exact: true })).toHaveCount(
+    0,
+  );
+
+  await page.goto("/entities/desa/9-sp-3/");
+  await expect(
+    page.getByRole("button", { name: `Result 1 ${oceanConference}` }),
+  ).toBeVisible();
+});
+
+test("Member States opens nested beneficiary categories", async ({ page }) => {
+  await page.goto("/beneficiaries/");
+  await expect(page.getByRole("heading", { level: 2 })).toHaveText([
+    "Refugees, minorities and other groups in vulnerable situations",
+    "Women and girls",
+    "Youth",
+    "Member States",
+    "Public administration",
+    "Climate and environment",
+    "Enabling services",
+    "Private sector, including micro, small and medium-sized enterprises",
+    "International community",
+  ]);
+  const parent = page.getByRole("heading", {
+    name: "Member States",
+    exact: true,
+  });
+  const region = page.getByRole("heading", {
+    name: "Member States in Africa",
+    exact: true,
+  });
+  await expect(region).toBeHidden();
+  await expect(parent.locator("..")).toContainText("271 results");
+  await parent.click();
+  await expect(region.locator("..")).toContainText("77 results");
+  const regionGroup = region.locator("../..");
+  await expect(regionGroup.getByRole("button").first()).toBeHidden();
+  await region.click();
+  await expect(
+    regionGroup.getByRole("heading", { level: 4 }).first(),
+  ).toBeVisible();
+  await expect(regionGroup.getByRole("button").first()).toBeVisible();
+});
+
+async function chooseLocation(page: Page, name: string) {
+  await page.getByRole("button", { name: "Choose a country or area" }).click();
+  await page.getByPlaceholder("Search...").fill(name);
+  await page.getByRole("button", { name, exact: true }).press("Enter");
+}
+
+test("both Secretariat directories search untagged programme budget results", async ({
+  page,
+}) => {
+  const resultName =
+    /Afghans retain access to dialogue and coordinated assistance/;
+  for (const { path, label, query } of [
+    {
+      path: "/beneficiaries/",
+      label: "Search all results",
+      query:
+        "amid heightened human rights, political, civic and economic constraints",
+    },
+    {
+      path: "/",
+      label: "Search entities, priority areas or results",
+      query: "Afghans retain access to dialogue",
+    },
+  ]) {
+    await page.goto(path);
+    const search = page.getByRole("searchbox", { name: label });
+    await search.fill(query);
+    const result = page.getByRole("button", { name: resultName });
+    await expect(result).toContainText("2025 programme performance");
+    await result.click();
+    const panel = page.getByRole("dialog", { name: resultName });
+    await expect(panel.getByText("2025 programme performance")).toBeVisible();
+    await expect(panel.getByText(/amid heightened human rights/)).toBeVisible();
+    await panel.getByRole("button", { name: "Close result" }).click();
+    await search.clear();
+    await expect(result).toBeHidden();
+  }
+});
+
+test("locations distinguish local, multi-location, and global results", async ({
+  page,
+}) => {
+  await page.goto("/locations/");
+  const tabs = page.getByRole("navigation", {
+    name: "Browse Secretariat results",
+  });
+  await expect(tabs.getByRole("link", { name: "Locations" })).toHaveAttribute(
+    "aria-current",
+    "page",
+  );
+  const map = page.getByTestId("results-location-map");
+  const countries = map.locator("svg path:not([style*='--color-muted'])");
+  await expect(countries.first()).toHaveCSS("fill", "rgb(0, 158, 219)");
+  const fills = await countries.evaluateAll((paths) => [
+    ...new Set(paths.map((path) => getComputedStyle(path).fill)),
+  ]);
+  expect(fills).toHaveLength(1);
+
+  const point = await countries.evaluateAll((paths) => {
+    for (const path of paths) {
+      if (!(path instanceof SVGPathElement)) continue;
+      const box = path.getBBox();
+      const matrix = path.getScreenCTM();
+      if (!matrix || box.width < 8 || box.height < 8) continue;
+      const center = new DOMPoint(
+        box.x + box.width / 2,
+        box.y + box.height / 2,
+      );
+      const screen = center.matrixTransform(matrix);
+      if (document.elementFromPoint(screen.x, screen.y) === path)
+        return { x: screen.x, y: screen.y };
+    }
+  });
+  expect(point).toBeDefined();
+  await page.mouse.click(point!.x, point!.y);
+  const closeLocation = page.getByRole("button", { name: "Close location" });
+  await expect(closeLocation).toBeVisible();
+  await closeLocation.click();
+
+  await chooseLocation(page, "Greenland");
+  const globalOnly = page.getByRole("dialog", {
+    name: "Greenland",
+    exact: true,
+  });
+  await expect(
+    globalOnly.getByRole("heading", { name: /Global/ }),
+  ).toBeVisible();
+  await expect(
+    globalOnly.getByRole("heading", { name: /Country-specific/ }),
+  ).toHaveCount(0);
+  await closeLocation.click();
+
+  const picker = page.getByRole("button", { name: "Choose a country or area" });
+  await chooseLocation(page, "Ukraine");
+  const sidebar = page.getByRole("dialog", { name: "Ukraine", exact: true });
+  await expect(
+    sidebar.getByText("Country-specific", { exact: false }),
+  ).toBeVisible();
+  await expect(
+    sidebar.getByText("Across multiple locations", { exact: false }),
+  ).toBeVisible();
+  await expect(
+    sidebar.getByText(/Central African Republic.*Colombia.*Ukraine/).first(),
+  ).toBeVisible();
+  await expect(
+    sidebar.locator("summary").filter({ hasText: /^Global/ }),
+  ).toBeVisible();
+  const result = sidebar.getByRole("button", {
+    name: /Strengthened national ownership to prevent conflict-related sexual violence/,
+  });
+  await result.click();
+  const detail = page.getByRole("dialog", {
+    name: /Strengthened national ownership/,
+  });
+  await expect(
+    detail.getByText(/Since 2022, in response to allegations/),
+  ).toBeVisible();
+  await detail.getByRole("button", { name: "Close result" }).click();
+  await expect(sidebar).toBeVisible();
+  await sidebar.getByRole("button", { name: "Close location" }).click();
+  await expect(picker).toBeFocused();
+
+  await chooseLocation(page, "South Sudan");
+  const countrySpecific = page
+    .getByRole("heading", { name: "Country-specific", exact: true })
+    .locator("../..");
+  await expect(
+    countrySpecific.getByRole("button", {
+      name: /Progress in the implementation of the 2018 Revitalized Agreement/,
+    }),
+  ).toBeVisible();
+});
+
+test("locations group reviewed country lists without repeating their coverage", async ({
+  page,
+}) => {
+  await page.goto("/locations/");
+  await chooseLocation(page, "Barbados");
+  const sidebar = page.getByRole("dialog", { name: "Barbados", exact: true });
+  const multiLocation = sidebar
+    .getByRole("heading", {
+      name: "Across multiple locations",
+    })
+    .locator("../..");
+  const commission = multiLocation.getByRole("heading", {
+    name: "ECLAC members and associate members",
+  });
+  const caribbean = multiLocation.getByRole("heading", {
+    name: "ECLAC Caribbean subregion",
+  });
+  await expect(multiLocation.locator("summary").first()).toContainText(
+    "44 results",
+  );
+  await expect(commission.locator("..")).toContainText("40 results");
+  await expect(caribbean.locator("..")).toContainText("4 results");
+  const group = commission.locator("../..");
+  await expect(group.getByRole("button")).toHaveCount(0);
+  await commission.click();
+  await expect(
+    group.getByRole("heading", {
+      level: 4,
+      name: /Economic Commission for Latin America and the Caribbean/,
+    }),
+  ).toBeVisible();
+  await expect(group.getByRole("button")).toHaveCount(40);
+  const coverage = group.getByText("60 tagged countries and areas", {
+    exact: true,
+  });
+  await expect(coverage).toHaveCount(1);
+  await coverage.click();
+  await expect(group.getByText(/Barbados, Belize, Bermuda/)).toBeVisible();
+  await expect(group.getByText(/Bangladesh/)).toHaveCount(0);
+  await group.getByRole("button").first().click();
+  await expect(
+    page.getByRole("button", { name: "Close result" }),
+  ).toBeVisible();
+});
 
 test("sticky subprogramme navigation meets the site header", async ({
   page,
@@ -55,7 +326,7 @@ test("Peace and Security clusters are collapsed and searchable", async ({
     ).toBeVisible();
   }
 
-  const more = priority.getByRole("button", { name: "Show 4 more" });
+  const more = priority.getByRole("button", { name: "Show 4 more entities" });
   await expect(more).toHaveAttribute("aria-expanded", "false");
   await more.click();
   await expect(priority.getByRole("link")).toHaveCount(9);
@@ -94,7 +365,7 @@ test("Peace and Security clusters are collapsed and searchable", async ({
   await expect(cyprus).toBeHidden();
 
   const search = page.getByRole("searchbox", {
-    name: "Search priority areas or entities",
+    name: "Search entities, priority areas or results",
   });
   await search.fill("build trust and pursue a negotiated settlement");
   await expect(cyprus).toBeVisible();
@@ -131,7 +402,7 @@ test("public pages share navigation, branded footer and keyboard skip link", asy
   );
   await expect(budgetSource).toHaveAttribute("target", "_blank");
   const directorySearch = page.getByRole("searchbox", {
-    name: "Search priority areas or entities",
+    name: "Search entities, priority areas or results",
   });
   await expect(
     page.locator("main section > details > summary > h2"),
@@ -207,7 +478,7 @@ test("public pages share navigation, branded footer and keyboard skip link", asy
   await page
     .locator("section")
     .filter({ has: effectiveFunctioning })
-    .getByRole("button", { name: "Show 13 more" })
+    .getByRole("button", { name: "Show 13 more entities" })
     .click();
   await page
     .getByRole("link", {

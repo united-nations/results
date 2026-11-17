@@ -4,3 +4,5 @@ allowBuilds:
 # serve currently pins a vulnerable compression release.
 overrides:
   compression: ^1.8.2
+  # Match Open UN's map dependency without its unused XLSX export.
+  "@undp/data-viz@2.2.3>xlsx": "-"

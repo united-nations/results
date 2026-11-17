@@ -1,10 +1,49 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { test } from "node:test";
+import { DataENG } from "../data/oict/DataENG.js";
 
 const { entities } = JSON.parse(
   readFileSync(new URL("../data/ppb-2027.json", import.meta.url), "utf8"),
 );
+
+test("each OICT card has one tagged result from the same budget context", () => {
+  const tags = JSON.parse(
+    readFileSync(
+      new URL("../data/oict-result-tags-2027.json", import.meta.url),
+    ),
+  );
+  assert.deepEqual(
+    tags.map(({ id }) => id),
+    DataENG.map(({ ID }) => ID),
+  );
+  assert.equal(
+    new Set(
+      tags.map(({ entity, symbol, kind, title }) =>
+        [entity, symbol, kind, title].join("|"),
+      ),
+    ).size,
+    tags.length,
+  );
+  for (const tag of tags) {
+    const { overview, subprogrammes } = entities.find(
+      ({ id }) => id === tag.entity,
+    );
+    const sections = [
+      ...overview,
+      ...subprogrammes.flatMap(({ sections }) => sections),
+    ];
+    const result = sections
+      .filter(({ symbol }) => symbol === tag.symbol)
+      .flatMap((section) => section[tag.kind])
+      .filter(({ title }) => title === tag.title);
+    assert.equal(result.length, 1, `OICT card ${tag.id}`);
+    assert.equal(
+      tag.kind,
+      DataENG[tag.id].Type === 2025 ? "performance" : "planned",
+    );
+  }
+});
 
 test("each directory entry has a description with its own budget citation", () => {
   const descriptions = JSON.parse(

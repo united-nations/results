@@ -4,6 +4,17 @@ export type BudgetTextBlock =
   | { kind: "paragraph" | "heading"; text: string }
   | { kind: "list"; items: ListItem[] };
 
+export function formatBudgetHeading(heading: string) {
+  return heading.replace(
+    /^([\s\p{Ps}\p{Pi}"']*)(\p{Ll})([\p{L}\p{M}\p{Pd}'’]*)/u,
+    (word, opening: string, first: string, rest: string) =>
+      // Preserve stylized names such as e-deleGATE when they start a heading.
+      /[\p{Lu}\p{Lt}]/u.test(rest)
+        ? word
+        : `${opening}${first.toUpperCase()}${rest}`,
+  );
+}
+
 const paragraphNumber =
   /^(?:\d{1,3}[A-Z]?(?:\.(?:[IVXLCDM]+|\d+))*\.\d+\.?|\d{1,3}\.)\s+(?=[\p{Lu}“‘"'(])/u;
 const listMarker = /^\(([a-z]|[ivxlcdm]{2,})\)\s+/i;

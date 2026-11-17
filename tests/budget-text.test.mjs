@@ -1,6 +1,26 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { formatBudgetText } from "../src/lib/budget-text.ts";
+import {
+  formatBudgetHeading,
+  formatBudgetText,
+} from "../src/lib/budget-text.ts";
+
+test("budget headings capitalize the opening word and retain source casing elsewhere", () => {
+  assert.equal(
+    formatBudgetHeading("strengthened support for the UN and Member States"),
+    "Strengthened support for the UN and Member States",
+  );
+  assert.equal(
+    formatBudgetHeading("“évaluation des progrès”"),
+    "“Évaluation des progrès”",
+  );
+  assert.equal(
+    formatBudgetHeading("e-deleGATE is available"),
+    "e-deleGATE is available",
+  );
+  assert.equal(formatBudgetHeading("SDG reporting"), "SDG reporting");
+  assert.equal(formatBudgetHeading("2027 targets"), "2027 targets");
+});
 
 test("budget paragraph prefixes become prose and lettered strategies keep nested bullets", () => {
   const result = formatBudgetText([

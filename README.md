@@ -31,19 +31,16 @@ paragraph number or heading.
 Where a subsequent UN decision changed a mandate, add its official source as
 an update.
 
-With the Programme Budget Data and Open UN checkouts alongside this one and
-Python 3 available, run:
+With the Programme Budget Data and Open UN checkouts alongside this one, prepare
+the 2027 results export in Programme Budget Data and run:
 
 ```bash
-python3 scripts/read-chart-annotations.py \
-  ../programme-budget-data/data/downloads/ppb2027 \
-  > /tmp/ppb-2027-chart-annotations.json
-
+results_export=../programme-budget-data/data/processed/ppb2027/results-export
 node scripts/import-programme-budget.mjs \
-  ../programme-budget-data/apps/portal/public/data \
-  ../open/data/references/programme-budget-data-ppb-entities/2027.json \
+  "$results_export/portal-data" \
+  "$results_export/entity-overlay-2027.json" \
   ../open/public/data/secretariat-overview-2025.json \
-  /tmp/ppb-2027-chart-annotations.json
+  "$results_export/chart-annotations-2027.json"
 ```
 
 The importer checks that the entity overlay matches the budget exports and records
@@ -52,6 +49,16 @@ percentages from the Word charts. Review any unmapped entities or strategies
 reported during the import. The original OICT dashboard exports are preserved
 in `data/oict/` for reference. The results pages use the proposed programme
 budget snapshot.
+
+After refreshing the budget snapshot, run `node scripts/match-oict-results.mjs`
+to rebuild the beneficiary and location links. The script matches on document,
+result type, and title, with reviewed exceptions for shortened and revised
+titles. Unmatched OICT entries are reported separately. Locations use the UNDP
+choropleth map and country names from Open UN. The bundled [UNDP basemap](https://github.com/UNDP-Data/dv-country-geojson)
+is distributed under its [MIT license](public/data/world-map.LICENSE.txt).
+To rebuild the location lookup as well, pass the Open UN
+`public/data/geographic-expenses-2025.json` export and an ISO 3166-1 JSON file
+from the `iso-codes` package as the two arguments.
 
 ## Checks and publishing
 

@@ -9,7 +9,7 @@ import {
 import { typography } from "@un-eosg/ui/typography";
 import { BudgetTimeChart } from "@/components/BudgetTimeChart";
 import { measureTimeSeries } from "@/lib/budget-time-series";
-import { formatBudgetText } from "@/lib/budget-text";
+import { formatBudgetHeading, formatBudgetText } from "@/lib/budget-text";
 import type { BudgetResult } from "@/lib/programme-budget";
 
 export function BudgetProse({ paragraphs }: { paragraphs: string[] }) {
@@ -19,7 +19,7 @@ export function BudgetProse({ paragraphs }: { paragraphs: string[] }) {
         if (block.kind === "heading") {
           return (
             <h4 key={index} className={typography.subTitle}>
-              {block.text}
+              {formatBudgetHeading(block.text)}
             </h4>
           );
         }
@@ -111,6 +111,7 @@ export function BudgetMeasures({ measures }: { measures: Measure[] }) {
   return (
     <div className="space-y-5">
       {[...groups].map(([label, entries]) => {
+        const heading = formatBudgetHeading(label);
         const ordered = entries.toSorted(
           (a, b) => a.year - b.year || a.type.localeCompare(b.type),
         );
@@ -121,11 +122,11 @@ export function BudgetMeasures({ measures }: { measures: Measure[] }) {
         return (
           <section key={label} className="space-y-3 border-t pt-4">
             {label && (groups.size > 1 || !/^Table\s/i.test(label)) && (
-              <h4 className={typography.subTitle}>{label}</h4>
+              <h4 className={typography.subTitle}>{heading}</h4>
             )}
             {chart ? (
               <BudgetTimeChart
-                label={label || "Performance over time"}
+                label={heading || "Performance over time"}
                 {...chart}
               />
             ) : numeric ? (

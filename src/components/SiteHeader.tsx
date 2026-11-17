@@ -10,10 +10,12 @@ export function SiteHeader({
   children,
   navigation = siteConfig.navigation,
   homeHref = "/",
+  activeHref,
 }: {
   children?: React.ReactNode;
   navigation?: readonly { href: string; label: string }[];
   homeHref?: string;
+  activeHref?: string;
 }) {
   const wrapper = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -49,7 +51,9 @@ export function SiteHeader({
           label: item.label,
           href: withBasePath(item.href),
         }))}
-        activeHref={withBasePath(pathname.replace(/\/$/, "") || "/")}
+        activeHref={withBasePath(
+          activeHref ?? (pathname.replace(/\/$/, "") || "/"),
+        )}
         mobileMenuLabel="Open navigation menu"
         emblemPlacement="outboard"
         transparency="low"
