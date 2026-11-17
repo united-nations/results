@@ -38,6 +38,11 @@ export type BudgetSubprogramme = {
   sections: BudgetContent[];
 };
 
+export type BudgetResultContext = {
+  entity: { id: string; name: string; code: string | null };
+  subprogramme?: { id: string; number: number; name: string };
+};
+
 export type BudgetEntity = {
   id: string;
   code: string | null;

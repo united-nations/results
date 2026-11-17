@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
+import Link from "next/link";
 import * as Dialog from "@radix-ui/react-dialog";
 import { ChevronRight } from "lucide-react";
 import { ExternalLink } from "@un-eosg/ui/components/external-link";
@@ -8,6 +9,7 @@ import { typography } from "@un-eosg/ui/typography";
 import { SidecarContent } from "@/components/SidecarContent";
 import { formatBudgetHeading } from "@/lib/budget-text";
 import { cn } from "@/lib/utils";
+import type { BudgetResultContext } from "@/lib/programme-budget";
 
 export function ResultSidecar({
   title,
@@ -15,6 +17,7 @@ export function ResultSidecar({
   eyebrow,
   source,
   supportingText,
+  context,
   children,
 }: {
   title: string;
@@ -22,6 +25,7 @@ export function ResultSidecar({
   eyebrow?: string;
   source: string;
   supportingText?: string;
+  context?: BudgetResultContext;
   children: ReactNode;
 }) {
   const [open, setOpen] = useState(false);
@@ -60,15 +64,42 @@ export function ResultSidecar({
         closeLabel="Close result"
         onClose={() => setOpen(false)}
         headerMetadata={
-          <ExternalLink
-            href={source}
-            className={cn(
-              typography.caption,
-              "text-un-blue-text underline underline-offset-4",
+          <div className="space-y-2">
+            {context && (
+              <nav
+                aria-label="Result context"
+                className={`${typography.body} flex flex-col items-start gap-1`}
+              >
+                <Link
+                  href={`/entities/${context.entity.id}/`}
+                  className="text-un-blue-text underline underline-offset-4"
+                >
+                  {context.entity.code &&
+                  context.entity.code !== context.entity.name
+                    ? `${context.entity.code} · ${context.entity.name}`
+                    : context.entity.name}
+                </Link>
+                {context.subprogramme && (
+                  <Link
+                    href={`/entities/${context.entity.id}/${context.subprogramme.id}/`}
+                    className="text-un-blue-text underline underline-offset-4"
+                  >
+                    Subprogramme {context.subprogramme.number} ·{" "}
+                    {context.subprogramme.name}
+                  </Link>
+                )}
+              </nav>
             )}
-          >
-            View budget document
-          </ExternalLink>
+            <ExternalLink
+              href={source}
+              className={cn(
+                typography.caption,
+                "text-un-blue-text underline underline-offset-4",
+              )}
+            >
+              View budget document
+            </ExternalLink>
+          </div>
         }
       >
         {children}

@@ -15,8 +15,8 @@ export function useResultSearch(query: string, scope?: BudgetScope) {
   useEffect(() => {
     if (!active || index) return;
     const request = new AbortController();
-    // Version 2 adds the location metadata needed for scoped searches.
-    fetch(withBasePath("/data/results/search.json?v=2"), {
+    // Version 3 adds entity and subprogramme context links.
+    fetch(withBasePath("/data/results/search.json?v=3"), {
       signal: request.signal,
     })
       .then((response) => {

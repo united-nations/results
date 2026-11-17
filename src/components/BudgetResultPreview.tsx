@@ -75,6 +75,7 @@ export function BudgetResultPreview({
         source={summary.source}
         supportingText={supportingText}
         eyebrow={eyebrow}
+        context={summary.context}
       >
         <Details summary={summary} edition={edition} />
       </ResultSidecar>

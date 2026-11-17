@@ -1,12 +1,13 @@
 import { createHash } from "node:crypto";
 import type { BudgetResultLocation } from "./budget-scope";
-import { budgetEntities } from "./programme-budget";
+import { budgetEntities, type BudgetResultContext } from "./programme-budget";
 
 export type BudgetResultReference = {
   id: string;
   entity: string;
   title: string;
   source: string;
+  context: BudgetResultContext;
 };
 
 export type SearchableBudgetResult = BudgetResultReference & {
@@ -26,17 +27,19 @@ export const indexedBudgetResults = new Map(
           section,
           subprogramme: undefined,
           subprogrammeId: undefined,
+          subprogrammeNumber: undefined,
         })),
         ...subprogrammes.flatMap((programme) =>
           programme.sections.map((section) => ({
             section,
             subprogramme: programme.name,
             subprogrammeId: programme.id,
+            subprogrammeNumber: programme.number,
           })),
         ),
       ];
       const entries = sections.flatMap(
-        ({ section, subprogramme, subprogrammeId }) =>
+        ({ section, subprogramme, subprogrammeId, subprogrammeNumber }) =>
           (["performance", "planned"] as const).flatMap((kind) =>
             section[kind].map((result) => ({
               reference: {
@@ -55,6 +58,20 @@ export const indexedBudgetResults = new Map(
                 entity,
                 title: result.title || "Performance measures",
                 source: section.source,
+                context: {
+                  entity: { id: entity, name, code },
+                  ...(subprogrammeId &&
+                  subprogrammeNumber !== undefined &&
+                  subprogramme
+                    ? {
+                        subprogramme: {
+                          id: subprogrammeId,
+                          number: subprogrammeNumber,
+                          name: subprogramme,
+                        },
+                      }
+                    : {}),
+                },
               },
               organization: code && code !== name ? `${code} · ${name}` : name,
               subprogramme,

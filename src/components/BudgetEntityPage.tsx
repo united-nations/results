@@ -12,6 +12,7 @@ import {
   type BudgetContent,
   type BudgetEntity,
   type BudgetResult,
+  type BudgetResultContext,
   type BudgetSubprogramme,
   budgetEdition,
   entityHref,
@@ -21,9 +22,11 @@ import { cn } from "@/lib/utils";
 function ResultsList({
   results,
   source,
+  context,
 }: {
   results: BudgetResult[];
   source: string;
+  context: BudgetResultContext;
 }) {
   return (
     <ul className="divide-y overflow-hidden rounded-lg border">
@@ -33,6 +36,7 @@ function ResultsList({
             title={result.title || "Performance measures"}
             label={result.label}
             source={source}
+            context={context}
           >
             <BudgetResultDetails
               result={result}
@@ -50,10 +54,12 @@ function ContentSections({
   content,
   heading,
   subprogramme,
+  context,
 }: {
   content: BudgetContent;
   heading?: string;
   subprogramme: boolean;
+  context: BudgetResultContext;
 }) {
   const SectionHeading = subprogramme ? "h3" : "h2";
   const BlockHeading = heading ? (subprogramme ? "h4" : "h3") : SectionHeading;
@@ -97,7 +103,11 @@ function ContentSections({
           <BlockHeading className={blockStyle}>
             Programme performance in {budgetEdition - 2}
           </BlockHeading>
-          <ResultsList results={content.performance} source={content.source} />
+          <ResultsList
+            results={content.performance}
+            source={content.source}
+            context={context}
+          />
         </div>
       )}
       {content.planned.length > 0 && (
@@ -105,7 +115,11 @@ function ContentSections({
           <BlockHeading className={blockStyle}>
             Planned results for {budgetEdition}
           </BlockHeading>
-          <ResultsList results={content.planned} source={content.source} />
+          <ResultsList
+            results={content.planned}
+            source={content.source}
+            context={context}
+          />
         </div>
       )}
       <ExternalLink
@@ -226,6 +240,18 @@ export function BudgetEntityPage({
             key={index}
             content={section}
             subprogramme={Boolean(selected)}
+            context={{
+              entity: { id: entity.id, code: entity.code, name: entity.name },
+              ...(selected
+                ? {
+                    subprogramme: {
+                      id: selected.id,
+                      number: selected.number,
+                      name: selected.name,
+                    },
+                  }
+                : {}),
+            }}
             heading={
               section.name && section.name !== entity.name
                 ? section.name

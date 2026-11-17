@@ -36,6 +36,13 @@ test("beneficiaries open programme budget results by entity", async ({
   await expect(
     sidebar.getByRole("link", { name: /View budget document/ }),
   ).toHaveAttribute("target", "_blank");
+  await expect(
+    sidebar
+      .getByRole("navigation", { name: "Result context" })
+      .getByRole("link", {
+        name: /Office of the Special Representative.*Sexual Violence in Conflict/,
+      }),
+  ).toHaveAttribute("href", "/entities/osrsg-svc/");
   await sidebar.getByRole("button", { name: "Close result" }).click();
   await expect(result).toBeFocused();
 
@@ -53,7 +60,21 @@ test("beneficiaries open programme budget results by entity", async ({
     0,
   );
 
-  await page.goto("/entities/desa/9-sp-3/");
+  const context = oceanSidebar.getByRole("navigation", {
+    name: "Result context",
+  });
+  await expect(
+    context.getByRole("link", {
+      name: /DESA · Department of Economic and Social Affairs/,
+    }),
+  ).toHaveAttribute("href", "/entities/desa/");
+  const subprogramme = context.getByRole("link", {
+    name: "Subprogramme 3 · Sustainable development",
+    exact: true,
+  });
+  await expect(subprogramme).toHaveAttribute("href", "/entities/desa/9-sp-3/");
+  await subprogramme.click();
+  await expect(page).toHaveURL(/\/entities\/desa\/9-sp-3\/?$/);
   await expect(
     page.getByRole("button", { name: `Result 1 ${oceanConference}` }),
   ).toBeVisible();
