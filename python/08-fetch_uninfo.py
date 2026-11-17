@@ -1,10 +1,10 @@
-"""Fetch published UN INFO frameworks and year-filtered financial observations."""
+"""Fetch published UN INFO plans, their results frameworks and full-plan finances."""
 import argparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime, timezone
 import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
+from datetime import datetime, timezone
 import threading
 
 import requests
@@ -13,7 +13,7 @@ from urllib3.util.retry import Retry
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = "https://api.uninfo.org/v1.0"
-RAW = ROOT / "data/uninfo/raw"
+RAW = ROOT / "data/uninfo/plans/raw"
 THREAD = threading.local()
 
 
@@ -40,104 +40,89 @@ def search(path, body):
         page += 1
 
 
-def finance(plan_ids, year, grouping):
-    # workspaceIds silently selects the newest plan, even for historical
-    # financeYears. Bind every query to the published plans active that year.
-    params = [("planIds", plan_id) for plan_id in plan_ids]
-    params.append(("financeYears", year))
+def finance(plan_id, grouping):
+    # Explicit plan IDs avoid the API's newest-workspace-plan default.
+    # Omitting financeYears requests all reported finances for this plan.
+    params = [("planIds", plan_id)]
     params.extend(("grouping", value) for value in grouping)
-    rows = request("GET", "planEntity/finance/overview", params=params)
-    if not isinstance(rows, list):
-        raise ValueError(f"Expected finance observations for plans {plan_ids}, year {year}")
-    return rows
+    result = request("GET", "planEntity/finance/overview", params=params)
+    if not isinstance(result, list):
+        raise ValueError(f"Expected financial observations for plan {plan_id}")
+    return result
 
 
-def fetch_year(year, workspaces, workers):
-    plans = search("plan/public/search", {
-        "year": year, "planTypeIds": [3, 7], "limit": 300,
-        "exclude": ["assessments", "planDocuments", "planSubmissions", "planSurveys", "planRisks"],
-    })
-    if not plans:
-        raise ValueError(f"No published plans returned for {year}")
-    entities = search("plan/public/entity/search", {
-        "planIds": [plan["id"] for plan in plans],
-        "coreentityTypeIds": [10, 5, 8], "limit": 1000,
-    })
-    plans_by_workspace = {}
-    for plan in plans:
-        plans_by_workspace.setdefault(plan["workspaceId"], []).append(plan["id"])
-    global_sdgs = finance([plan["id"] for plan in plans], year, ["sdg"])
-    observations = {}
-    groups = {"sdgs": ["sdg"], "projects": ["agency", "planEntity:SOU"],
-              "sp": ["planEntity:SP"], "oc": ["planEntity:OC"], "ou": ["planEntity:OU"]}
-    with ThreadPoolExecutor(max_workers=workers) as pool:
-        tasks = {
-            pool.submit(finance, plan_ids, year, grouping): (workspace, name)
-            for workspace, plan_ids in plans_by_workspace.items() for name, grouping in groups.items()
-        }
-        for completed, task in enumerate(as_completed(tasks), 1):
-            workspace, name = tasks[task]
-            observations.setdefault(workspace, {})[name] = task.result()
-            if completed % 100 == 0 or completed == len(tasks):
-                print(f"{year}: fetched {completed}/{len(tasks)} workspace queries", flush=True)
 
-    country_workspaces = {}
-    # Prefer the workspace with a published framework for this year when a
-    # country belongs to several workspaces.
-    active = {plan["workspaceId"] for plan in plans}
-    for workspace in sorted(workspaces, key=lambda ws: ws["id"] in active):
-        for country in workspace["countries"]:
-            country_workspaces[country["name"]] = workspace["id"]
-    country_sdgs = {}
-    projects = {}
-    frameworks = {}
-    for country, workspace in country_workspaces.items():
-        values = observations.get(workspace, {name: [] for name in groups})
-        country_sdgs[country] = {
-            "workspace_id": workspace, "sdgs": values["sdgs"], "has_year_data": bool(values["sdgs"]),
-        }
-        projects[country] = values["projects"]
-        frameworks[country] = {level: values[level] for level in ("sp", "oc", "ou")}
+def framework_entity(entity):
+    """Retain source identity and full hierarchy text without embedded related records."""
+    version = entity["planEntityVersion"]
     return {
-        "workspaces.json": country_workspaces,
-        "global_sdgs.json": global_sdgs,
-        "countries_sdgs.json": country_sdgs,
-        "projects_by_country.json": projects,
-        "frameworks_by_country.json": frameworks,
-        "public_plans.json": plans,
-        "public_framework_entities.json": entities,
-        "period-provenance.json": {
-            "year": year, "projects_year": year, "framework_year": year, "global_sdgs_year": year,
-            "retrieved_at": datetime.now(timezone.utc).isoformat(),
-            "finance_plan_ids": sorted(plan["id"] for plan in plans),
+        "id": entity["id"],
+        "parentId": entity["parentId"],
+        "planId": entity["planId"],
+        "entityPrototypeId": entity["entityPrototypeId"],
+        "planEntityVersion": {
+            key: version.get(key)
+            for key in ("name", "code", "description", "startDate", "endDate")
         },
     }
 
-
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--years", type=int, nargs="+", default=list(range(2022, 2027)))
     parser.add_argument("--workers", type=int, default=8)
     args = parser.parse_args()
-    workspaces = [row for row in search("workspace/search", {"limit": 300}) if row["countries"]]
-    print(f"Fetching {len(workspaces)} country workspaces for {args.years}", flush=True)
+    plans = search("plan/public/search", {
+        "planTypeIds": [3, 7], "limit": 300,
+        "exclude": ["assessments", "planDocuments", "planSubmissions", "planSurveys", "planRisks"],
+    })
+    if not plans:
+        raise ValueError("No published frameworks returned")
+    entities = search("plan/public/entity/search", {
+        "planIds": [plan["id"] for plan in plans],
+        "coreentityTypeIds": [10, 5, 8], "limit": 1000,
+        "exclude": ["parent", "locations", "planEntitySdgs"],
+    })
+    entities = [framework_entity(entity) for entity in entities]
+    workspaces = search("workspace/search", {"limit": 300})
+    populated = {entity["planId"] for entity in entities}
+    groups = {"projects": ["agency", "planEntity:SOU"], "sp": ["planEntity:SP"],
+              "oc": ["planEntity:OC"], "ou": ["planEntity:OU"]}
+    observations = {}
+    print(f"Fetching full-plan finances for {len(populated)} published frameworks", flush=True)
+    with ThreadPoolExecutor(max_workers=args.workers) as pool:
+        tasks = {
+            pool.submit(finance, plan_id, grouping): (plan_id, name)
+            for plan_id in sorted(populated) for name, grouping in groups.items()
+        }
+        for completed, task in enumerate(as_completed(tasks), 1):
+            plan_id, name = tasks[task]
+            observations.setdefault(str(plan_id), {})[name] = task.result()
+            if completed % 100 == 0 or completed == len(tasks):
+                print(f"Fetched {completed}/{len(tasks)} financial queries", flush=True)
+    snapshot = {
+        "public_plans.json": plans,
+        "public_framework_entities.json": entities,
+        "workspaces.json": [
+            {"id": workspace["id"], "name": workspace["name"], "countries": [
+                {"iso3": country["iso3"], "name": country["name"]}
+                for country in workspace.get("countries", [])
+            ]}
+            for workspace in workspaces
+        ],
+        "plan_finances.json": observations,
+        "provenance.json": {
+            "retrieved_at": datetime.now(timezone.utc).isoformat(),
+            "finance_scope": "all_reported_years_for_explicit_plan",
+            "finance_plan_ids": sorted(populated),
+        },
+    }
     RAW.mkdir(parents=True, exist_ok=True)
-    # Keep completed year requests resumable without mixing observations in
-    # published raw snapshots. Existing year directories are replaced only
-    # after every requested year has been fetched successfully.
-    with TemporaryDirectory(prefix=".refresh-", dir=RAW) as temporary:
+    with TemporaryDirectory(prefix=".refresh-", dir=RAW.parent) as temporary:
         staging = Path(temporary)
-        for year in sorted(set(args.years)):
-            folder = staging / str(year)
-            folder.mkdir()
-            for name, payload in fetch_year(year, workspaces, args.workers).items():
-                (folder / name).write_text(json.dumps(payload, ensure_ascii=False))
-        for folder in staging.iterdir():
-            destination = RAW / folder.name
-            destination.mkdir(exist_ok=True)
-            for source in folder.iterdir():
-                source.replace(destination / source.name)
-    print("Completed live UN INFO refresh.", flush=True)
+        for name, payload in snapshot.items():
+            (staging / name).write_text(json.dumps(payload, ensure_ascii=False))
+        for source in staging.iterdir():
+            source.replace(RAW / source.name)
+    print("Completed live plan-based UN INFO refresh.", flush=True)
 
 
 if __name__ == "__main__":

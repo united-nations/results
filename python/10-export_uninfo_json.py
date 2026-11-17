@@ -1,20 +1,12 @@
-"""Export UNINFO Cooperation Framework data to JSON for frontend."""
+"""Export plan-based UN INFO results frameworks for the frontend."""
 import json
 from pathlib import Path
 from collections import defaultdict
-import country_converter as coco
+from tempfile import TemporaryDirectory
 
 ROOT = Path(__file__).resolve().parents[1]
-RAW = ROOT / "data/uninfo/raw"
-OUT = ROOT / "public/data"
-COUNTRIES_DIR = OUT / "uninfo-countries"
-cc = coco.CountryConverter()
-UNCLASSIFIED_SDG = "unclassified"
-UNCLASSIFIED_SDG_LABEL = "Not classified by SDG"
-
-def get_iso3(country: str) -> str | None:
-    result = cc.convert(country, to="ISO3", not_found=None)
-    return result[0] if isinstance(result, list) else result
+RAW = ROOT / "data/uninfo/plans/raw"
+OUT = ROOT / "public/data/uninfo/plans"
 
 def extract_metrics(item: dict) -> dict:
     metrics = {m["metricName"]: m["total"] for m in item.get("metrics", [])}
@@ -23,64 +15,6 @@ def extract_metrics(item: dict) -> dict:
         "available": round(metrics.get("Total Available Resources", 0), 2),
         "spent": round(metrics.get("Total Expenditure", 0), 2),
     }
-
-def build_sdg_metrics(rows: list[dict]) -> dict[str, dict]:
-    """Retain every reported SDG group, including the source's null-ID group."""
-    groups = {}
-    for row in rows:
-        sdg = row.get("id")
-        if sdg is not None and (type(sdg) is not int or not 1 <= sdg <= 17):
-            raise ValueError(f"Unexpected UNINFO SDG ID: {sdg!r}")
-        key = UNCLASSIFIED_SDG if sdg is None else str(sdg)
-        if key in groups:
-            raise ValueError(f"Duplicate UNINFO SDG group: {key}")
-        groups[key] = extract_metrics(row)
-    return groups
-
-def load_raw():
-    frameworks_path = RAW / "frameworks_by_country.json"
-    provenance_path = RAW / "period-provenance.json"
-    plans_path = RAW / "public_plans.json"
-    entities_path = RAW / "public_framework_entities.json"
-    return {
-        "provenance": json.loads(provenance_path.read_text()) if provenance_path.exists() else {},
-        "public_plans": json.loads(plans_path.read_text()) if plans_path.exists() else None,
-        "public_entities": json.loads(entities_path.read_text()) if entities_path.exists() else [],
-        "workspaces": json.loads((RAW / "workspaces.json").read_text()),
-        "global_sdgs": json.loads((RAW / "global_sdgs.json").read_text()),
-        "countries_sdgs": json.loads((RAW / "countries_sdgs.json").read_text()),
-        "projects": json.loads((RAW / "projects_by_country.json").read_text()),
-        "frameworks": json.loads(frameworks_path.read_text()) if frameworks_path.exists() else {},
-    }
-
-def build_projects_by_country(data: dict) -> dict[str, list]:
-    """Build projects list grouped by ISO3 code."""
-    by_country = defaultdict(list)
-    for country, agencies in data["projects"].items():
-        iso3 = get_iso3(country)
-        if not iso3 or not isinstance(agencies, list): continue
-        for agency_index, agency in enumerate(agencies):
-            abbr = agency.get("abbreviation", "")
-            for project_index, proj in enumerate(agency.get("planEntities", [])):
-                m = extract_metrics(proj)
-                sdg = proj["sdgs"][0].get("id") if proj.get("sdgs") else None
-                by_country[iso3].append({
-                    "id": proj.get("id"),
-                    "row_key": f"{proj.get('id')}:{agency.get('id', abbr)}:{agency_index}:{project_index}",
-                    "agency": abbr,
-                    "sdg": sdg,
-                    "code": proj.get("code", ""),
-                    "name": proj.get("name", ""),
-                    "description": (proj.get("description") or "") or None,
-                    "start": proj.get("startDate"),
-                    "end": proj.get("endDate"),
-                    "outcome": (proj.get("parentName") or "") or None,
-                    **m,
-                })
-    # Sort each country's projects by required descending
-    for iso3 in by_country:
-        by_country[iso3].sort(key=lambda x: -x["required"])
-    return dict(by_country)
 
 def build_framework_tree(fw: dict, allow_roots: bool = False) -> list[dict] | None:
     """Build nested framework tree from SP/OC/OU data."""
@@ -173,214 +107,115 @@ def build_framework_tree(fw: dict, allow_roots: bool = False) -> list[dict] | No
         tree.extend(fmt_item(ou) for ou in ous if ou.get("parentId") is None)
     return tree if tree else None
 
-def published_frameworks(data: dict) -> dict:
-    """Use published hierarchy IDs, including entries without financial records."""
-    plans = {plan["id"]: plan for plan in data["public_plans"]}
+def build_plan_framework(plan, entities, finances):
     levels = {
         prototype["id"]: {10: "sp", 5: "oc", 8: "ou"}.get(prototype["coreentityTypeId"])
-        for plan in plans.values() for prototype in plan.get("entityPrototypes", [])
+        for prototype in plan.get("entityPrototypes", [])
     }
-    by_workspace = defaultdict(list)
-    for entity in data["public_entities"]:
+    metrics = {}
+    for level in ("sp", "oc", "ou"):
+        for row in finances.get(level, []):
+            previous = metrics.get(row["id"])
+            if previous is not None and extract_metrics({"metrics": previous}) != extract_metrics(row):
+                raise ValueError(f"Conflicting financial observations for node {row['id']}")
+            metrics[row["id"]] = row.get("metrics", [])
+    framework = {level: [] for level in ("sp", "oc", "ou")}
+    for entity in entities:
         level = levels.get(entity["entityPrototypeId"])
-        if level:
-            by_workspace[plans[entity["planId"]]["workspaceId"]].append((level, entity))
-    result = {}
-    for country, workspace in data["workspaces"].items():
-        rows = by_workspace.get(workspace, [])
+        if not level:
+            continue
+        version = entity["planEntityVersion"]
+        framework[level].append({
+            "id": entity["id"], "parentId": entity["parentId"],
+            "code": version.get("code") or "", "name": version.get("name") or "",
+            "description": version.get("description") or "",
+            "endDate": version.get("endDate"),
+            "metrics": metrics.get(entity["id"], []),
+            "has_financial_data": entity["id"] in metrics,
+        })
+    return build_framework_tree(framework, allow_roots=True)
+
+
+def build_projects(agencies):
+    projects = []
+    for agency_index, agency in enumerate(agencies):
+        for project_index, project in enumerate(agency.get("planEntities", [])):
+            projects.append({
+                "id": project.get("id"),
+                "row_key": f"{project.get('id')}:{agency.get('id')}:{agency_index}:{project_index}",
+                "agency": agency.get("abbreviation") or "",
+                "code": project.get("code") or "",
+                "name": project.get("name") or "",
+                "description": project.get("description"),
+                "outcome": project.get("parentName"),
+                "start": project.get("startDate"), "end": project.get("endDate"),
+                **extract_metrics(project),
+            })
+    return sorted(projects, key=lambda row: -row["required"])
+
+
+def plan_summary(plan):
+    version = plan["planVersion"]
+    return {
+        "id": plan["id"], "workspace_id": plan["workspaceId"],
+        "name": version.get("name") or "",
+        "start": version.get("startDate"), "end": version.get("endDate"),
+    }
+
+
+def export_snapshot(raw=RAW, output=OUT):
+    plans = json.loads((raw / "public_plans.json").read_text())
+    entities = json.loads((raw / "public_framework_entities.json").read_text())
+    finances = json.loads((raw / "plan_finances.json").read_text())
+    workspaces = {
+        workspace["id"]: workspace for workspace in json.loads((raw / "workspaces.json").read_text())
+    }
+    entities_by_plan = defaultdict(list)
+    for entity in entities:
+        entities_by_plan[entity["planId"]].append(entity)
+    countries = {}
+    summaries = {}
+    payloads = {}
+    for plan in plans:
+        rows = entities_by_plan.get(plan["id"], [])
         if not rows:
             continue
-        financial_rows = data["frameworks"].get(country, {})
-        metrics = {}
-        for group in financial_rows.values():
-            for row in group:
-                previous = metrics.get(row["id"])
-                if previous is not None and extract_metrics({"metrics": previous}) != extract_metrics(row):
-                    raise ValueError(f"Conflicting financial observations for UN INFO node {row['id']}")
-                metrics[row["id"]] = row.get("metrics", [])
-        framework = {level: [] for level in ("sp", "oc", "ou")}
-        for level, entity in rows:
-            version = entity["planEntityVersion"]
-            framework[level].append({
-                "id": entity["id"], "parentId": entity["parentId"],
-                "code": version.get("code") or "",
-                "name": version.get("name") or "",
-                "description": version.get("description") or "",
-                "endDate": version.get("endDate"),
-                "metrics": metrics.get(entity["id"], []),
-                "has_financial_data": entity["id"] in metrics,
-            })
-        result[country] = framework
-    return result
-
-
-def export_per_country(data: dict) -> dict:
-    """Export per-country files with SDG breakdown, projects, and framework."""
-    COUNTRIES_DIR.mkdir(parents=True, exist_ok=True)
-
-    # Build projects lookup
-    projects_by_country = build_projects_by_country(data)
-
-    # Build framework lookup by country name
-    frameworks_by_country = {}
-    frameworks = (published_frameworks(data) if data.get("public_plans") is not None
-                  else data.get("frameworks", {}))
-    for country, fw in frameworks.items():
-        iso3 = get_iso3(country)
-        if iso3:
-            frameworks_by_country[iso3] = build_framework_tree(fw, allow_roots=data.get("public_plans") is not None)
-
-    # Build country data with SDGs, projects, and framework
-    countries_index = {}
-    workspace_countries = defaultdict(list)
-    for name, workspace in data["workspaces"].items():
-        workspace_countries[workspace].append(name)
-    provenance_path = RAW / "period-provenance.json"
-    provenance = json.loads(provenance_path.read_text()) if provenance_path.exists() else {}
-    year = provenance.get("year", 2024)
-    total_projects = 0
-    framework_count = 0
-
-    for country, info in data["countries_sdgs"].items():
-        iso3 = get_iso3(country)
-        if not iso3: continue
-
-        ws_id = info["workspace_id"]
-        sdgs = build_sdg_metrics(info.get("sdgs", []))
-        totals = {key: round(sum(metrics[key] for metrics in sdgs.values()), 2)
-                  for key in ("required", "available", "spent")}
-
-        projects = projects_by_country.get(iso3, [])
-        framework = frameworks_by_country.get(iso3)
-
-        # Skip countries with no data
-        if not sdgs and not projects and not framework:
+        observations = finances[str(plan["id"])]
+        framework = build_plan_framework(plan, rows, observations)
+        if not framework:
             continue
-
-        scope = {
-            "year": year if provenance.get("year") or info.get("has_year_data") else None,
-            "period_status": "year_filtered" if info.get("has_year_data") else "unverified",
-            "geographic_scope": "workspace" if len(workspace_countries[ws_id]) > 1 else "country",
-            "workspace_countries": sorted(workspace_countries[ws_id]),
-            "projects_year": provenance.get("projects_year"),
-            "framework_year": provenance.get("framework_year"),
+        summary = plan_summary(plan)
+        workspace = workspaces[plan["workspaceId"]]
+        summaries[str(plan["id"])] = summary
+        payloads[plan["id"]] = {
+            **summary,
+            "workspace_countries": sorted(country["name"] for country in workspace["countries"]),
+            "framework": framework,
+            "projects": build_projects(observations.get("projects", [])),
         }
-        country_data = {
-            **scope,
-            "workspace_id": ws_id,
-            "name": country,
-            "totals": {k: round(v, 2) for k, v in totals.items()},
-            "sdgs": sdgs,
-            "projects": projects,
-        }
-        if framework:
-            country_data["framework"] = framework
-            framework_count += 1
-
-        # Write per-country file
-        (COUNTRIES_DIR / f"{iso3}.json").write_text(json.dumps(country_data))
-
-        # Store in index (without projects/framework for smaller index file)
-        countries_index[iso3] = {
-            **scope,
-            "workspace_id": ws_id,
-            "name": country,
-            "totals": country_data["totals"],
-            "project_count": len({p["id"] for p in projects}),
-            "has_framework": framework is not None,
-        }
-        total_projects += len(projects)
-
-    # Write index file (for quick lookups without loading full data)
-    (OUT / "uninfo-countries-index.json").write_text(json.dumps(countries_index, indent=2))
-
-    print(f"uninfo-countries/: {len(countries_index)} country files")
-    print(f"uninfo-countries-index.json: index with {len(countries_index)} countries")
-    print(f"Total projects: {total_projects:,}")
-    print(f"Countries with framework: {framework_count}")
-    return countries_index
-
-def export_sdgs(data: dict, countries_index: dict) -> dict:
-    """Export per-SDG data with country breakdown."""
-    # Need to load SDG data from country files
-    result = {}
-    global_metrics = build_sdg_metrics(data["global_sdgs"])
-    for sdg in data["global_sdgs"]:
-        sdg_id = UNCLASSIFIED_SDG if sdg.get("id") is None else str(sdg["id"])
-        m = global_metrics[sdg_id]
-
-        # Build country breakdown by reading from country files
-        country_breakdown = {}
-        for iso3 in countries_index:
-            country_file = COUNTRIES_DIR / f"{iso3}.json"
-            if country_file.exists():
-                cdata = json.loads(country_file.read_text())
-                if cdata.get("year") == data.get("provenance", {}).get("year", 2024) and cdata.get("geographic_scope") == "country" and sdg_id in cdata.get("sdgs", {}):
-                    country_breakdown[iso3] = cdata["sdgs"][sdg_id]
-
-        # Top underfunded = highest gap (required - available)
-        gaps = [(iso3, c["required"] - c["available"]) for iso3, c in country_breakdown.items()]
-        top_underfunded = [iso3 for iso3, _ in sorted(gaps, key=lambda x: -x[1])[:10]]
-
-        provenance_path = RAW / "period-provenance.json"
-        provenance = json.loads(provenance_path.read_text()) if provenance_path.exists() else {}
-        result[sdg_id] = {
-            "year": provenance.get("global_sdgs_year"),
-            "color": (sdg.get("properties") or {}).get("color", {}).get("hex"),
-            "name": (UNCLASSIFIED_SDG_LABEL if sdg_id == UNCLASSIFIED_SDG
-                     else sdg.get("short", sdg.get("name", ""))),
-            "totals": m,
-            "countries": country_breakdown,
-            "top_underfunded": top_underfunded,
-        }
-
-    (OUT / "uninfo-sdgs.json").write_text(json.dumps(result, indent=2))
-    print(f"uninfo-sdgs.json: {len(result)} SDGs")
-    return result
-
-def export_year():
-    data = load_raw()
-    countries_index = export_per_country(data)
-    export_sdgs(data, countries_index)
-    published = {iso for iso, row in countries_index.items() if row["has_framework"]}
-    financial = {
-        iso for iso in countries_index
-        if (json.loads((COUNTRIES_DIR / f"{iso}.json").read_text())["sdgs"]
-            or json.loads((COUNTRIES_DIR / f"{iso}.json").read_text())["projects"])
-    }
-    coverage = {
-        "year": data["provenance"].get("year"),
-        "framework_countries": sorted(published),
-        "financial_countries": sorted(financial),
-        "framework_only": sorted(published - financial),
-        "financial_only": sorted(financial - published),
-        "retrieved_at": data["provenance"].get("retrieved_at"),
-    }
-    (OUT / "coverage.json").write_text(json.dumps(coverage, indent=2))
-    print(f"Coverage: {len(published)} with frameworks, {len(financial)} with finances", flush=True)
-    return coverage
+        for country in workspace["countries"]:
+            iso3 = country["iso3"]
+            entry = countries.setdefault(iso3, {"name": country["name"], "plan_ids": []})
+            entry["plan_ids"].append(plan["id"])
+    for country in countries.values():
+        country["plan_ids"] = sorted(set(country["plan_ids"]), key=lambda plan_id: (
+            summaries[str(plan_id)]["start"] or "",
+            summaries[str(plan_id)]["end"] or "",
+            plan_id,
+        ), reverse=True)
+        country["latest_plan_id"] = country["plan_ids"][0]
+    manifest = {"countries": countries, "plans": summaries}
+    output.mkdir(parents=True, exist_ok=True)
+    with TemporaryDirectory(prefix=".export-", dir=output.parent) as temporary:
+        staging = Path(temporary)
+        for plan_id, payload in payloads.items():
+            (staging / f"{plan_id}.json").write_text(json.dumps(payload, ensure_ascii=False))
+        (staging / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2))
+        for source in staging.iterdir():
+            source.replace(output / source.name)
+    print(f"Exported {len(payloads)} plans for {len(countries)} countries and areas.", flush=True)
+    return manifest
 
 
 if __name__ == "__main__":
-    raw_root = RAW
-    output_root = OUT / "uninfo"
-    folders = sorted(folder for folder in raw_root.iterdir() if folder.name.isdigit())
-    if not folders:
-        raise SystemExit("Run python/08-fetch_uninfo.py before exporting.")
-    years = []
-    for folder in folders:
-        RAW = folder
-        OUT = output_root / folder.name
-        COUNTRIES_DIR = OUT / "countries"
-        print(f"Exporting UN INFO {folder.name}", flush=True)
-        export_year()
-        years.append(int(folder.name))
-    from datetime import datetime
-    completed_years = [year for year in years if year < datetime.now().year]
-    goals = {
-        str(row["id"]): {"name": row.get("short") or row.get("name"),
-                         "color": (row.get("properties") or {}).get("color", {}).get("hex")}
-        for row in json.loads((RAW / "global_sdgs.json").read_text()) if row["id"] is not None
-    }
-    manifest = {"years": years, "default_year": max(completed_years or years), "goals": goals}
-    (output_root / "manifest.json").write_text(json.dumps(manifest, indent=2))
+    export_snapshot()

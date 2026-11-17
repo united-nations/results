@@ -66,7 +66,7 @@ export function UninfoChoropleth({
     () =>
       map?.features.flatMap(({ properties }) => {
         const country = countries[properties.ISO3];
-        return country?.has_framework
+        return country
           ? [
               {
                 id: properties.featureId,

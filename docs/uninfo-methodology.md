@@ -1,124 +1,71 @@
 # UN INFO processing
 
-The fetcher runs in this repository and retrieves published Cooperation Frameworks
-and UNDAFs alongside financial observations for 2022–2026. Each year's
-`period-provenance.json` records the query year and retrieval time. The live
-refresh was run here on 17 November 2026, replacing the initial imported snapshot.
+The country map lists every country or area with a published Cooperation Framework
+or UNDAF results hierarchy. Opening a country selects its latest published plan,
+ordered by its actual start date, end date and source plan ID. The sidebar offers
+that country's available plan spans using the shared period selector.
 
-## Framework and financial coverage
+## Plan periods and finances
 
-The map highlights countries with a published results framework active in the
-selected year. Coverage comes from `POST /plan/public/search` with plan types
-3 and 7 and the selected year, followed by the published strategic priority,
-outcome, and output entities from `POST /plan/public/entity/search`.
-Countries inherit their workspace's framework, including shared regional plans.
+Framework periods vary by country. Ethiopia's published plans span July 2020–June
+2025 and July 2025–June 2030. Kenya has a July 2022–June 2027 plan, while Nepal's
+2023–2027 plan uses calendar years. Mid-year dates remain visible in selector
+labels. If two published source plans have the same date span, their IDs
+disambiguate the options.
 
-Financial observations come from the separate finance overview endpoint.
-Every query passes explicit `planIds` from the published plans active in the
-selected year, together with `financeYears`. The API's `workspaceIds` parameter
-implicitly selects the newest framework cycle. Using it for an older financial
-year can produce an empty response while the historical plan has reported money.
-For example, Ethiopia's 2024 observations belong to plan 794 (2020–2025), while
-workspace 170 defaults to plan 2693 (2025–2030).
+Financial requests use explicit `planIds` and include all reported financial
+years for the selected plan. The API's `workspaceIds` parameter otherwise
+selects its newest plan, which can hide an older plan's financial observations.
+Each framework row shows available resources in USD. Tooltips show required,
+available and expenditure figures. Parent and child hierarchy finances overlap.
 
-Framework rows show available resources in USD beside their funding bars.
-Tooltips retain required, available and expenditure amounts. Expanded branches
-show their children immediately, followed by the full source description.
-Frameworks with empty financial responses remain available on the map.
+The sidebar presents the results hierarchy. Fully uppercase source
+titles display in title case. Expanded items show full descriptions before
+child items, aligned with the parent title text. Numbered badges show their
+strategic priority, outcome or output type. Shared workspace member
+countries are identified in the sidebar.
 
-| Year | Countries with published frameworks | Countries with financial observations | Frameworks with no financial observations |
-| ---- | ----------------------------------- | ------------------------------------- | ----------------------------------------- |
-| 2022 | 130                                 | 122                                   | 8                                         |
-| 2023 | 153                                 | 148                                   | 5                                         |
-| 2024 | 155                                 | 154                                   | 1                                         |
-| 2025 | 155                                 | 154                                   | 1                                         |
-| 2026 | 147                                 | 146                                   | 1                                         |
+## Fetch and process
 
-Every country with financial observations also has a published framework in this
-refresh. The old copied snapshot highlighted 127 countries for 2024 using
-financial availability. The API's current published frameworks cover 155
-countries and areas for that year, including members of shared Caribbean and
-Pacific frameworks. Selecting explicit active plan IDs restores financial
-observations for 32 additional country entries in 2024 compared with the earlier
-workspace-only refresh. Syria has a published framework with an empty 2024
-financial response. Published records can change between retrieval dates.
-
-The map and country picker use `has_framework`. The legend therefore reads
-“countries with available results frameworks”. Each year's `coverage.json`
-records both sets and their differences. Tests verify every published entity ID,
-parent, country, and basemap join for all five years.
-
-The shared year selector updates the map, legend, country financial observations,
-framework, and activities together. The default is 2025, the latest completed
-calendar year at retrieval. The selector also includes the current year 2026.
-
-## SDG groups and resources
-
-Country overall resources sum all source SDG groups, including the null-ID
-group exported as `unclassified`. Explicit zero values and signed adjustments
-are retained. Global observations retain their independent API response.
-Country totals cover their source workspace. Shared workspace entries display
-the member countries. Parent and child framework financial observations overlap.
-
-## Results framework identity
-
-Strategic priorities, outcomes, and outputs use the API's stable source IDs.
-Display codes can repeat under different parents and never establish duplicate
-identity. Dated descriptions of the same source ID count once when their parent,
-code, and financial observations agree; the description with the latest end date
-is retained. Conflicting amounts or parent relationships fail export for review.
-Linked outcomes and outputs retain their reported parent at the preceding
-level. Published root outcomes and outputs retain their null parent. Missing
-parent IDs fail export.
-Parent and child financial amounts describe overlapping hierarchy levels and
-must not be summed together.
-
-Regression checks in `python/tests/test_uninfo_integrity.py` compare every
-exported framework identity and parent with the retained raw snapshot, and check
-country and global SDG amounts independently against their own source responses.
-
-## Fetch and process in Results
-
-Run from the repository root with Python 3.13 and uv. The requirements file pins
-country-converter and constrains pandas to its compatible 2.x series.
+Run these commands from the repository root with Python 3.13 and uv.
 
 ```sh
-# Fetch live data for all supported years, then process it.
 uv run --no-project --python 3.13 --with-requirements python/uninfo-requirements.txt python python/08-fetch_uninfo.py
 uv run --no-project --python 3.13 --with-requirements python/uninfo-requirements.txt python python/10-export_uninfo_json.py
-
-# Refresh selected years with a bounded number of concurrent queries.
-uv run --no-project --python 3.13 --with-requirements python/uninfo-requirements.txt python python/08-fetch_uninfo.py --years 2024 2025 --workers 8
-
-# Validate all exported framework identities, coverage and source financials.
 uv run --no-project --python 3.13 --with-requirements python/uninfo-requirements.txt python -m unittest discover -s python/tests -p test_uninfo_integrity.py
 ```
 
-The fetcher paginates searches, retries transient HTTP errors, and fetches shared
-workspace observations once per year. It completes requests for every selected
-year in temporary storage before publishing the refreshed raw files.
+The fetcher retrieves all public plan records, their strategic priorities,
+outcomes and outputs, source workspace countries and full-plan financial
+observations. It paginates searches and retries transient request failures.
+All requests complete before the new raw snapshot is published.
 
-Raw files live under `data/uninfo/raw/<year>/`. The exporter writes
-`public/data/uninfo/<year>/uninfo-countries-index.json`, country detail files
-under `countries/`, `uninfo-sdgs.json`, and `coverage.json`.
-`public/data/uninfo/manifest.json` lists available years, the default year and
-official SDG labels and colors from the API. The frontend loads the selected
-year's index and country data using GitHub Pages base paths.
+The source snapshot in `data/uninfo/plans/raw/` retains framework IDs, parent
+and plan links, complete titles, descriptions and dates, plus financial responses.
+The exporter writes one payload per
+source plan in `public/data/uninfo/plans/<id>.json` and creates
+`public/data/uninfo/plans/manifest.json` with country membership, available
+plans and the latest plan IDs. Countries sharing a framework read the same
+plan payload. Previous year-indexed files remain historical snapshots.
+The current interface and import scripts use the plan-based dataset.
 
-## Shared UI components
+Source IDs establish framework identity. Duplicate dated descriptions of a source
+ID retain the latest end date when parents, codes and financial observations
+agree. Conflicting amounts and orphaned parents fail export. Published root
+outcomes and outputs retain their null parent and actual level. Regression
+checks verify every exported identity, description, parent, finance join and
+country-to-plan relationship, including its basemap representation.
 
-The country sidebar uses the same `FinancialDetailPanel`,
-`FinancialPanelYearSelector`, heading hierarchy, drawer proportions, funding
-bars, compact expandable results tree and project cards as `open/`.
+## Shared UI
 
-Reusable drawer behavior, resource bars, results framework trees and activity
-cards are implemented in `@un-eosg/ui`. Shared UI commit
-`a0274f8f304c1b3a0158f51a40f73bf6f0458ff6` is on the local
-`codex/uninfo-results-components` branch in the shared UI repository.
-The app installs its package from `vendor/un-eosg-ui-a0274f8.tgz` through pnpm.
-The packaged dependency makes installation reproducible while publication of the
-shared UI branch awaits authorization. Storybook examples and registry entries
-live in the shared library source.
+The sidebar uses `FinancialDetailPanel`, the shared
+`FinancialPanelPeriodSelector`, drawer controls, framework funding bars and
+activity cards from `@un-eosg/ui`. The existing year-selector API delegates to
+the same selector. Its background uses Results' neutral `secondary` token.
+
+The reusable components are published on the shared UI repository's `main`
+branch. Results pins the published Git commit through pnpm. Shared component
+source, Storybook examples and registry entries live in that library.
 
 ## Public API investigation on 17 November 2026
 

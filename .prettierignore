@@ -13,3 +13,6 @@ test-results
 data/oict/
 data/ppb-2027.json
 data/oict-result-tags-2027.json
+
+# Preserve compact UN INFO API snapshots.
+data/uninfo/

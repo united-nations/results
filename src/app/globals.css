@@ -12,8 +12,8 @@
   --popover-foreground: var(--foreground);
   --primary: var(--color-un-blue-shade);
   --primary-foreground: var(--color-un-white);
-  --secondary: var(--color-un-blue-tint-50);
-  --secondary-foreground: var(--color-un-blue-text);
+  --secondary: var(--color-neutral-surface);
+  --secondary-foreground: var(--foreground);
   --muted: var(--color-neutral-surface);
   --muted-foreground: var(--color-neutral-text);
   --accent: var(--color-un-blue-tint-50);

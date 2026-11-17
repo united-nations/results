@@ -1,0 +1,2720 @@
+{
+  "countries": {
+    "SDN": {
+      "name": "Sudan",
+      "plan_ids": [
+        3625,
+        2103,
+        1952,
+        870
+      ],
+      "latest_plan_id": 3625
+    },
+    "GTM": {
+      "name": "Guatemala",
+      "plan_ids": [
+        2697,
+        820
+      ],
+      "latest_plan_id": 2697
+    },
+    "UKR": {
+      "name": "Ukraine",
+      "plan_ids": [
+        2694,
+        1520,
+        854
+      ],
+      "latest_plan_id": 2694
+    },
+    "ETH": {
+      "name": "Ethiopia",
+      "plan_ids": [
+        2693,
+        794
+      ],
+      "latest_plan_id": 2693
+    },
+    "UZB": {
+      "name": "Uzbekistan",
+      "plan_ids": [
+        2688,
+        1036,
+        855
+      ],
+      "latest_plan_id": 2688
+    },
+    "UGA": {
+      "name": "Uganda",
+      "plan_ids": [
+        2686,
+        814
+      ],
+      "latest_plan_id": 2686
+    },
+    "TKM": {
+      "name": "Turkmenistan",
+      "plan_ids": [
+        2685,
+        816,
+        853
+      ],
+      "latest_plan_id": 2685
+    },
+    "TLS": {
+      "name": "Timor-Leste",
+      "plan_ids": [
+        2682,
+        762
+      ],
+      "latest_plan_id": 2682
+    },
+    "SRB": {
+      "name": "Serbia",
+      "plan_ids": [
+        2678,
+        822
+      ],
+      "latest_plan_id": 2678
+    },
+    "PAN": {
+      "name": "Panama",
+      "plan_ids": [
+        2677,
+        812
+      ],
+      "latest_plan_id": 2677
+    },
+    "MKD": {
+      "name": "North Macedonia, Republic of",
+      "plan_ids": [
+        2676,
+        773
+      ],
+      "latest_plan_id": 2676
+    },
+    "MEX": {
+      "name": "Mexico",
+      "plan_ids": [
+        2675,
+        792
+      ],
+      "latest_plan_id": 2675
+    },
+    "MYS": {
+      "name": "Malaysia",
+      "plan_ids": [
+        2674,
+        1038
+      ],
+      "latest_plan_id": 2674
+    },
+    "BRN": {
+      "name": "Brunei Darussalam",
+      "plan_ids": [
+        2674,
+        1038
+      ],
+      "latest_plan_id": 2674
+    },
+    "SGP": {
+      "name": "Singapore",
+      "plan_ids": [
+        2674,
+        1038
+      ],
+      "latest_plan_id": 2674
+    },
+    "XKX": {
+      "name": "Kosovo",
+      "plan_ids": [
+        2672,
+        795
+      ],
+      "latest_plan_id": 2672
+    },
+    "KAZ": {
+      "name": "Kazakhstan",
+      "plan_ids": [
+        2671,
+        813
+      ],
+      "latest_plan_id": 2671
+    },
+    "IDN": {
+      "name": "Indonesia",
+      "plan_ids": [
+        2670,
+        1018,
+        834
+      ],
+      "latest_plan_id": 2670
+    },
+    "GEO": {
+      "name": "Georgia",
+      "plan_ids": [
+        2669,
+        774
+      ],
+      "latest_plan_id": 2669
+    },
+    "SWZ": {
+      "name": "Eswatini",
+      "plan_ids": [
+        2668,
+        791
+      ],
+      "latest_plan_id": 2668
+    },
+    "CUB": {
+      "name": "Cuba",
+      "plan_ids": [
+        2666,
+        1025
+      ],
+      "latest_plan_id": 2666
+    },
+    "CIV": {
+      "name": "Côte d'Ivoire",
+      "plan_ids": [
+        2665,
+        1030,
+        831
+      ],
+      "latest_plan_id": 2665
+    },
+    "CHN": {
+      "name": "China",
+      "plan_ids": [
+        2664,
+        1033
+      ],
+      "latest_plan_id": 2664
+    },
+    "BIH": {
+      "name": "Bosnia and Herzegovina",
+      "plan_ids": [
+        2662,
+        836
+      ],
+      "latest_plan_id": 2662
+    },
+    "AZE": {
+      "name": "Azerbaijan",
+      "plan_ids": [
+        2660,
+        1190,
+        825
+      ],
+      "latest_plan_id": 2660
+    },
+    "ARM": {
+      "name": "Armenia",
+      "plan_ids": [
+        2659,
+        818
+      ],
+      "latest_plan_id": 2659
+    },
+    "SYC": {
+      "name": "Seychelles",
+      "plan_ids": [
+        2245,
+        2244
+      ],
+      "latest_plan_id": 2245
+    },
+    "MUS": {
+      "name": "Mauritius",
+      "plan_ids": [
+        2244
+      ],
+      "latest_plan_id": 2244
+    },
+    "SLE": {
+      "name": "Sierra Leone",
+      "plan_ids": [
+        2114,
+        1026
+      ],
+      "latest_plan_id": 2114
+    },
+    "RWA": {
+      "name": "Rwanda",
+      "plan_ids": [
+        2113,
+        844
+      ],
+      "latest_plan_id": 2113
+    },
+    "NAM": {
+      "name": "Namibia",
+      "plan_ids": [
+        2111,
+        867
+      ],
+      "latest_plan_id": 2111
+    },
+    "IRQ": {
+      "name": "Iraq",
+      "plan_ids": [
+        2108,
+        803
+      ],
+      "latest_plan_id": 2108
+    },
+    "DJI": {
+      "name": "Djibouti",
+      "plan_ids": [
+        2107
+      ],
+      "latest_plan_id": 2107
+    },
+    "COD": {
+      "name": "Congo, The Democratic Republic of the",
+      "plan_ids": [
+        2106,
+        789
+      ],
+      "latest_plan_id": 2106
+    },
+    "BHR": {
+      "name": "Bahrain",
+      "plan_ids": [
+        2104,
+        1021
+      ],
+      "latest_plan_id": 2104
+    },
+    "SEN": {
+      "name": "Senegal",
+      "plan_ids": [
+        2102,
+        845
+      ],
+      "latest_plan_id": 2102
+    },
+    "PHL": {
+      "name": "Philippines",
+      "plan_ids": [
+        2101,
+        1056
+      ],
+      "latest_plan_id": 2101
+    },
+    "MRT": {
+      "name": "Mauritania",
+      "plan_ids": [
+        2099,
+        1058
+      ],
+      "latest_plan_id": 2099
+    },
+    "MWI": {
+      "name": "Malawi",
+      "plan_ids": [
+        2098,
+        778
+      ],
+      "latest_plan_id": 2098
+    },
+    "MDG": {
+      "name": "Madagascar",
+      "plan_ids": [
+        2097,
+        1195
+      ],
+      "latest_plan_id": 2097
+    },
+    "LSO": {
+      "name": "Lesotho",
+      "plan_ids": [
+        2096,
+        759
+      ],
+      "latest_plan_id": 2096
+    },
+    "GIN": {
+      "name": "Guinea",
+      "plan_ids": [
+        2095,
+        833
+      ],
+      "latest_plan_id": 2095
+    },
+    "GNQ": {
+      "name": "Equatorial Guinea",
+      "plan_ids": [
+        2094,
+        883
+      ],
+      "latest_plan_id": 2094
+    },
+    "COL": {
+      "name": "Colombia",
+      "plan_ids": [
+        2093,
+        797
+      ],
+      "latest_plan_id": 2093
+    },
+    "TCD": {
+      "name": "Chad",
+      "plan_ids": [
+        2092,
+        864
+      ],
+      "latest_plan_id": 2092
+    },
+    "KHM": {
+      "name": "Cambodia",
+      "plan_ids": [
+        2091,
+        873
+      ],
+      "latest_plan_id": 2091
+    },
+    "BFA": {
+      "name": "Burkina Faso",
+      "plan_ids": [
+        2090
+      ],
+      "latest_plan_id": 2090
+    },
+    "BTN": {
+      "name": "Bhutan",
+      "plan_ids": [
+        2089,
+        823
+      ],
+      "latest_plan_id": 2089
+    },
+    "AGO": {
+      "name": "Angola",
+      "plan_ids": [
+        2088,
+        790
+      ],
+      "latest_plan_id": 2088
+    },
+    "TGO": {
+      "name": "Togo",
+      "plan_ids": [
+        1953,
+        848
+      ],
+      "latest_plan_id": 1953
+    },
+    "BEN": {
+      "name": "Benin",
+      "plan_ids": [
+        1947,
+        827
+      ],
+      "latest_plan_id": 1947
+    },
+    "AFG": {
+      "name": "Afghanistan",
+      "plan_ids": [
+        1945,
+        1487
+      ],
+      "latest_plan_id": 1945
+    },
+    "NER": {
+      "name": "Niger",
+      "plan_ids": [
+        1540
+      ],
+      "latest_plan_id": 1540
+    },
+    "NPL": {
+      "name": "Nepal",
+      "plan_ids": [
+        1539
+      ],
+      "latest_plan_id": 1539
+    },
+    "IND": {
+      "name": "India",
+      "plan_ids": [
+        1538,
+        866
+      ],
+      "latest_plan_id": 1538
+    },
+    "BOL": {
+      "name": "Bolivia, Plurinational State of",
+      "plan_ids": [
+        1536,
+        1189
+      ],
+      "latest_plan_id": 1536
+    },
+    "BDI": {
+      "name": "Burundi",
+      "plan_ids": [
+        1535,
+        828
+      ],
+      "latest_plan_id": 1535
+    },
+    "HTI": {
+      "name": "Haiti",
+      "plan_ids": [
+        1534,
+        847
+      ],
+      "latest_plan_id": 1534
+    },
+    "VEN": {
+      "name": "Venezuela, Bolivarian Republic of",
+      "plan_ids": [
+        1533,
+        1198
+      ],
+      "latest_plan_id": 1533
+    },
+    "GMB": {
+      "name": "Gambia",
+      "plan_ids": [
+        1532,
+        769
+      ],
+      "latest_plan_id": 1532
+    },
+    "IRN": {
+      "name": "Iran, Islamic Republic of",
+      "plan_ids": [
+        1530,
+        1040
+      ],
+      "latest_plan_id": 1530
+    },
+    "NGA": {
+      "name": "Nigeria",
+      "plan_ids": [
+        1529,
+        843
+      ],
+      "latest_plan_id": 1529
+    },
+    "STP": {
+      "name": "São Tomé and Príncipe",
+      "plan_ids": [
+        1528
+      ],
+      "latest_plan_id": 1528
+    },
+    "LKA": {
+      "name": "Sri Lanka",
+      "plan_ids": [
+        1527,
+        861
+      ],
+      "latest_plan_id": 1527
+    },
+    "PNG": {
+      "name": "Papua New Guinea",
+      "plan_ids": [
+        1526,
+        851
+      ],
+      "latest_plan_id": 1526
+    },
+    "GHA": {
+      "name": "Ghana",
+      "plan_ids": [
+        1525,
+        796
+      ],
+      "latest_plan_id": 1525
+    },
+    "GAB": {
+      "name": "Gabon",
+      "plan_ids": [
+        1524,
+        832
+      ],
+      "latest_plan_id": 1524
+    },
+    "CAF": {
+      "name": "Central African Republic",
+      "plan_ids": [
+        1523,
+        865
+      ],
+      "latest_plan_id": 1523
+    },
+    "CHL": {
+      "name": "Chile",
+      "plan_ids": [
+        1522,
+        1032
+      ],
+      "latest_plan_id": 1522
+    },
+    "EGY": {
+      "name": "Egypt",
+      "plan_ids": [
+        1521,
+        821
+      ],
+      "latest_plan_id": 1521
+    },
+    "PSE": {
+      "name": "occupied Palestinian territory",
+      "plan_ids": [
+        1518
+      ],
+      "latest_plan_id": 1518
+    },
+    "WSM": {
+      "name": "Samoa",
+      "plan_ids": [
+        1517
+      ],
+      "latest_plan_id": 1517
+    },
+    "FJI": {
+      "name": "Fiji",
+      "plan_ids": [
+        1517
+      ],
+      "latest_plan_id": 1517
+    },
+    "FSM": {
+      "name": "Micronesia, Federated States of",
+      "plan_ids": [
+        1517
+      ],
+      "latest_plan_id": 1517
+    },
+    "PLW": {
+      "name": "Palau",
+      "plan_ids": [
+        1517
+      ],
+      "latest_plan_id": 1517
+    },
+    "MHL": {
+      "name": "Marshall Islands",
+      "plan_ids": [
+        1517
+      ],
+      "latest_plan_id": 1517
+    },
+    "KIR": {
+      "name": "Kiribati",
+      "plan_ids": [
+        1517
+      ],
+      "latest_plan_id": 1517
+    },
+    "NRU": {
+      "name": "Nauru",
+      "plan_ids": [
+        1517
+      ],
+      "latest_plan_id": 1517
+    },
+    "SLB": {
+      "name": "Solomon Islands",
+      "plan_ids": [
+        1517
+      ],
+      "latest_plan_id": 1517
+    },
+    "TON": {
+      "name": "Tonga",
+      "plan_ids": [
+        1517
+      ],
+      "latest_plan_id": 1517
+    },
+    "TUV": {
+      "name": "Tuvalu",
+      "plan_ids": [
+        1517
+      ],
+      "latest_plan_id": 1517
+    },
+    "VUT": {
+      "name": "Vanuatu",
+      "plan_ids": [
+        1517
+      ],
+      "latest_plan_id": 1517
+    },
+    "NIU": {
+      "name": "Niue",
+      "plan_ids": [
+        1517
+      ],
+      "latest_plan_id": 1517
+    },
+    "TKL": {
+      "name": "Tokelau",
+      "plan_ids": [
+        1517
+      ],
+      "latest_plan_id": 1517
+    },
+    "COK": {
+      "name": "Cook Islands",
+      "plan_ids": [
+        1517
+      ],
+      "latest_plan_id": 1517
+    },
+    "TJK": {
+      "name": "Tajikistan",
+      "plan_ids": [
+        1516,
+        874
+      ],
+      "latest_plan_id": 1516
+    },
+    "MDA": {
+      "name": "Moldova, Republic of",
+      "plan_ids": [
+        1515,
+        841
+      ],
+      "latest_plan_id": 1515
+    },
+    "KGZ": {
+      "name": "Kyrgyzstan",
+      "plan_ids": [
+        1514,
+        863
+      ],
+      "latest_plan_id": 1514
+    },
+    "DOM": {
+      "name": "Dominican Republic",
+      "plan_ids": [
+        1513,
+        810
+      ],
+      "latest_plan_id": 1513
+    },
+    "CRI": {
+      "name": "Costa Rica",
+      "plan_ids": [
+        1512,
+        846
+      ],
+      "latest_plan_id": 1512
+    },
+    "CPV": {
+      "name": "Cabo Verde",
+      "plan_ids": [
+        1511,
+        837
+      ],
+      "latest_plan_id": 1511
+    },
+    "BRA": {
+      "name": "Brazil",
+      "plan_ids": [
+        1510,
+        1478
+      ],
+      "latest_plan_id": 1510
+    },
+    "DZA": {
+      "name": "Algeria",
+      "plan_ids": [
+        1509
+      ],
+      "latest_plan_id": 1509
+    },
+    "ZMB": {
+      "name": "Zambia",
+      "plan_ids": [
+        1508
+      ],
+      "latest_plan_id": 1508
+    },
+    "COM": {
+      "name": "Comoros",
+      "plan_ids": [
+        1507,
+        830
+      ],
+      "latest_plan_id": 1507
+    },
+    "MNE": {
+      "name": "Montenegro",
+      "plan_ids": [
+        1506,
+        849
+      ],
+      "latest_plan_id": 1506
+    },
+    "MAR": {
+      "name": "Morocco",
+      "plan_ids": [
+        1505,
+        872
+      ],
+      "latest_plan_id": 1505
+    },
+    "MNG": {
+      "name": "Mongolia",
+      "plan_ids": [
+        1504,
+        840
+      ],
+      "latest_plan_id": 1504
+    },
+    "LBY": {
+      "name": "Libya",
+      "plan_ids": [
+        1503
+      ],
+      "latest_plan_id": 1503
+    },
+    "ECU": {
+      "name": "Ecuador",
+      "plan_ids": [
+        1501
+      ],
+      "latest_plan_id": 1501
+    },
+    "PAK": {
+      "name": "Pakistan",
+      "plan_ids": [
+        1499,
+        850
+      ],
+      "latest_plan_id": 1499
+    },
+    "SSD": {
+      "name": "South Sudan",
+      "plan_ids": [
+        1498,
+        869
+      ],
+      "latest_plan_id": 1498
+    },
+    "SAU": {
+      "name": "Saudi Arabia",
+      "plan_ids": [
+        1497
+      ],
+      "latest_plan_id": 1497
+    },
+    "LBN": {
+      "name": "Lebanon",
+      "plan_ids": [
+        1496
+      ],
+      "latest_plan_id": 1496
+    },
+    "TZA": {
+      "name": "Tanzania, United Republic of",
+      "plan_ids": [
+        1491,
+        852
+      ],
+      "latest_plan_id": 1491
+    },
+    "VNM": {
+      "name": "Viet Nam",
+      "plan_ids": [
+        1490,
+        856
+      ],
+      "latest_plan_id": 1490
+    },
+    "KEN": {
+      "name": "Kenya",
+      "plan_ids": [
+        1488,
+        838
+      ],
+      "latest_plan_id": 1488
+    },
+    "ERI": {
+      "name": "Eritrea",
+      "plan_ids": [
+        1486
+      ],
+      "latest_plan_id": 1486
+    },
+    "YEM": {
+      "name": "Yemen",
+      "plan_ids": [
+        1485
+      ],
+      "latest_plan_id": 1485
+    },
+    "BGD": {
+      "name": "Bangladesh",
+      "plan_ids": [
+        1483
+      ],
+      "latest_plan_id": 1483
+    },
+    "ZWE": {
+      "name": "Zimbabwe",
+      "plan_ids": [
+        1482
+      ],
+      "latest_plan_id": 1482
+    },
+    "BWA": {
+      "name": "Botswana",
+      "plan_ids": [
+        1481,
+        1019
+      ],
+      "latest_plan_id": 1481
+    },
+    "MOZ": {
+      "name": "Mozambique",
+      "plan_ids": [
+        1203,
+        842
+      ],
+      "latest_plan_id": 1203
+    },
+    "CMR": {
+      "name": "Cameroon",
+      "plan_ids": [
+        1200,
+        829
+      ],
+      "latest_plan_id": 1200
+    },
+    "SLV": {
+      "name": "El Salvador",
+      "plan_ids": [
+        1199
+      ],
+      "latest_plan_id": 1199
+    },
+    "PER": {
+      "name": "Peru",
+      "plan_ids": [
+        1196
+      ],
+      "latest_plan_id": 1196
+    },
+    "SUR": {
+      "name": "Suriname",
+      "plan_ids": [
+        1193,
+        1031
+      ],
+      "latest_plan_id": 1193
+    },
+    "GUY": {
+      "name": "Guyana",
+      "plan_ids": [
+        1193,
+        1031
+      ],
+      "latest_plan_id": 1193
+    },
+    "BLZ": {
+      "name": "Belize",
+      "plan_ids": [
+        1193,
+        1031
+      ],
+      "latest_plan_id": 1193
+    },
+    "BRB": {
+      "name": "Barbados",
+      "plan_ids": [
+        1193,
+        1031
+      ],
+      "latest_plan_id": 1193
+    },
+    "AIA": {
+      "name": "Anguilla (United Kingdom)",
+      "plan_ids": [
+        1193,
+        1031
+      ],
+      "latest_plan_id": 1193
+    },
+    "ATG": {
+      "name": "Antigua and Barbuda",
+      "plan_ids": [
+        1193,
+        1031
+      ],
+      "latest_plan_id": 1193
+    },
+    "VGB": {
+      "name": "Virgin Islands, British",
+      "plan_ids": [
+        1193,
+        1031
+      ],
+      "latest_plan_id": 1193
+    },
+    "DMA": {
+      "name": "Dominica",
+      "plan_ids": [
+        1193,
+        1031
+      ],
+      "latest_plan_id": 1193
+    },
+    "GRD": {
+      "name": "Grenada",
+      "plan_ids": [
+        1193,
+        1031
+      ],
+      "latest_plan_id": 1193
+    },
+    "MSR": {
+      "name": "Montserrat",
+      "plan_ids": [
+        1193,
+        1031
+      ],
+      "latest_plan_id": 1193
+    },
+    "KNA": {
+      "name": "Saint Kitts and Nevis",
+      "plan_ids": [
+        1193,
+        1031
+      ],
+      "latest_plan_id": 1193
+    },
+    "LCA": {
+      "name": "Saint Lucia",
+      "plan_ids": [
+        1193,
+        1031
+      ],
+      "latest_plan_id": 1193
+    },
+    "VCT": {
+      "name": "Saint Vincent and the Grenadines",
+      "plan_ids": [
+        1193,
+        1031
+      ],
+      "latest_plan_id": 1193
+    },
+    "TTO": {
+      "name": "Trinidad and Tobago",
+      "plan_ids": [
+        1193,
+        1031
+      ],
+      "latest_plan_id": 1193
+    },
+    "ABW": {
+      "name": "Aruba",
+      "plan_ids": [
+        1193,
+        1031
+      ],
+      "latest_plan_id": 1193
+    },
+    "CUW": {
+      "name": "Curaçao",
+      "plan_ids": [
+        1193,
+        1031
+      ],
+      "latest_plan_id": 1193
+    },
+    "SXM": {
+      "name": "Sint Maarten (Dutch part)",
+      "plan_ids": [
+        1193,
+        1031
+      ],
+      "latest_plan_id": 1193
+    },
+    "JAM": {
+      "name": "Jamaica",
+      "plan_ids": [
+        1193,
+        1031
+      ],
+      "latest_plan_id": 1193
+    },
+    "BHS": {
+      "name": "Bahamas",
+      "plan_ids": [
+        1193,
+        1031
+      ],
+      "latest_plan_id": 1193
+    },
+    "BMU": {
+      "name": "Bermuda",
+      "plan_ids": [
+        1193,
+        1031
+      ],
+      "latest_plan_id": 1193
+    },
+    "CYM": {
+      "name": "Cayman Islands",
+      "plan_ids": [
+        1193,
+        1031
+      ],
+      "latest_plan_id": 1193
+    },
+    "TCA": {
+      "name": "Turks and Caicos Islands",
+      "plan_ids": [
+        1193,
+        1031
+      ],
+      "latest_plan_id": 1193
+    },
+    "THA": {
+      "name": "Thailand",
+      "plan_ids": [
+        1148
+      ],
+      "latest_plan_id": 1148
+    },
+    "LAO": {
+      "name": "Lao People's Democratic Republic",
+      "plan_ids": [
+        1059,
+        839
+      ],
+      "latest_plan_id": 1059
+    },
+    "GNB": {
+      "name": "Guinea-Bissau",
+      "plan_ids": [
+        1037,
+        858
+      ],
+      "latest_plan_id": 1037
+    },
+    "URY": {
+      "name": "Uruguay",
+      "plan_ids": [
+        1035
+      ],
+      "latest_plan_id": 1035
+    },
+    "MLI": {
+      "name": "Mali",
+      "plan_ids": [
+        1024
+      ],
+      "latest_plan_id": 1024
+    },
+    "BLR": {
+      "name": "Belarus",
+      "plan_ids": [
+        882,
+        826
+      ],
+      "latest_plan_id": 882
+    },
+    "HND": {
+      "name": "Honduras",
+      "plan_ids": [
+        876
+      ],
+      "latest_plan_id": 876
+    },
+    "MDV": {
+      "name": "Maldives",
+      "plan_ids": [
+        875
+      ],
+      "latest_plan_id": 875
+    },
+    "ALB": {
+      "name": "Albania",
+      "plan_ids": [
+        862,
+        824
+      ],
+      "latest_plan_id": 862
+    },
+    "JOR": {
+      "name": "Jordan",
+      "plan_ids": [
+        835
+      ],
+      "latest_plan_id": 835
+    },
+    "ZAF": {
+      "name": "South Africa",
+      "plan_ids": [
+        817
+      ],
+      "latest_plan_id": 817
+    },
+    "TUN": {
+      "name": "Tunisia",
+      "plan_ids": [
+        815
+      ],
+      "latest_plan_id": 815
+    },
+    "LBR": {
+      "name": "Liberia",
+      "plan_ids": [
+        802
+      ],
+      "latest_plan_id": 802
+    },
+    "COG": {
+      "name": "Congo",
+      "plan_ids": [
+        800
+      ],
+      "latest_plan_id": 800
+    },
+    "PRY": {
+      "name": "Paraguay",
+      "plan_ids": [
+        780
+      ],
+      "latest_plan_id": 780
+    },
+    "ARG": {
+      "name": "Argentina",
+      "plan_ids": [
+        777
+      ],
+      "latest_plan_id": 777
+    },
+    "SOM": {
+      "name": "Somalia",
+      "plan_ids": [
+        776
+      ],
+      "latest_plan_id": 776
+    },
+    "SYR": {
+      "name": "Syrian Arab Republic",
+      "plan_ids": [
+        771
+      ],
+      "latest_plan_id": 771
+    },
+    "TUR": {
+      "name": "Turkiye",
+      "plan_ids": [
+        768
+      ],
+      "latest_plan_id": 768
+    }
+  },
+  "plans": {
+    "3625": {
+      "id": 3625,
+      "workspace_id": 73,
+      "name": "Interim Cooperation Framework - ICF 2026-2028",
+      "start": "2026-01-01",
+      "end": "2028-12-31"
+    },
+    "2697": {
+      "id": 2697,
+      "workspace_id": 155,
+      "name": "United Nations Sustainable Development Cooperation Framework (2026-2030)",
+      "start": "2026-01-01",
+      "end": "2030-12-31"
+    },
+    "2694": {
+      "id": 2694,
+      "workspace_id": 35,
+      "name": "United Nations Sustainable Development Cooperation Framework (2025-2029)",
+      "start": "2025-01-01",
+      "end": "2029-12-31"
+    },
+    "2693": {
+      "id": 2693,
+      "workspace_id": 170,
+      "name": "United Nations Sustainable Development Cooperation Framework (2025-2030)",
+      "start": "2025-07-01",
+      "end": "2030-06-30"
+    },
+    "2688": {
+      "id": 2688,
+      "workspace_id": 34,
+      "name": "United Nations Sustainable Development Cooperation Framework (2026-2030)",
+      "start": "2026-01-01",
+      "end": "2030-12-31"
+    },
+    "2686": {
+      "id": 2686,
+      "workspace_id": 15,
+      "name": "United Nations Sustainable Development Cooperation Framework (2026-2030)",
+      "start": "2026-01-01",
+      "end": "2030-12-31"
+    },
+    "2685": {
+      "id": 2685,
+      "workspace_id": 47,
+      "name": "United Nations Sustainable Development Cooperation Framework (2026-2030)",
+      "start": "2026-01-01",
+      "end": "2030-12-31"
+    },
+    "2682": {
+      "id": 2682,
+      "workspace_id": 46,
+      "name": "United Nations Sustainable Development Cooperation Framework (2026-2030)",
+      "start": "2026-01-01",
+      "end": "2030-12-31"
+    },
+    "2678": {
+      "id": 2678,
+      "workspace_id": 62,
+      "name": "United Nations Sustainable Development Cooperation Framework (2026-2030)",
+      "start": "2026-01-01",
+      "end": "2030-12-31"
+    },
+    "2677": {
+      "id": 2677,
+      "workspace_id": 91,
+      "name": "United Nations Sustainable Development Cooperation Framework (2026-2030)",
+      "start": "2026-01-01",
+      "end": "2030-12-31"
+    },
+    "2676": {
+      "id": 2676,
+      "workspace_id": 19,
+      "name": "United Nations Sustainable Development Cooperation Framework (2026-2030)",
+      "start": "2026-01-01",
+      "end": "2030-12-31"
+    },
+    "2675": {
+      "id": 2675,
+      "workspace_id": 113,
+      "name": "United Nations Sustainable Development Cooperation Framework (2026-2031)",
+      "start": "2026-01-01",
+      "end": "2031-12-31"
+    },
+    "2674": {
+      "id": 2674,
+      "workspace_id": 26,
+      "name": "United Nations Sustainable Development Cooperation Framework (2026-2030)",
+      "start": "2026-01-01",
+      "end": "2030-12-31"
+    },
+    "2672": {
+      "id": 2672,
+      "workspace_id": 230,
+      "name": "United Nations Sustainable Development Cooperation Framework (2026-2030)",
+      "start": "2026-01-01",
+      "end": "2030-12-31"
+    },
+    "2671": {
+      "id": 2671,
+      "workspace_id": 18,
+      "name": "United Nations Sustainable Development Cooperation Framework (2026-2030)",
+      "start": "2026-01-01",
+      "end": "2030-12-31"
+    },
+    "2670": {
+      "id": 2670,
+      "workspace_id": 147,
+      "name": "United Nations Sustainable Development Cooperation Framework (2026-2030)",
+      "start": "2026-01-01",
+      "end": "2030-12-31"
+    },
+    "2669": {
+      "id": 2669,
+      "workspace_id": 165,
+      "name": "United Nations Sustainable Development Cooperation Framework (2026-2030)",
+      "start": "2026-01-01",
+      "end": "2030-12-31"
+    },
+    "2668": {
+      "id": 2668,
+      "workspace_id": 55,
+      "name": "United Nations Sustainable Development Cooperation Framework (2026-2030)",
+      "start": "2026-01-01",
+      "end": "2030-12-31"
+    },
+    "2666": {
+      "id": 2666,
+      "workspace_id": 183,
+      "name": "United Nations Sustainable Development Cooperation Framework (2026-2030)",
+      "start": "2026-01-01",
+      "end": "2030-12-31"
+    },
+    "2665": {
+      "id": 2665,
+      "workspace_id": 189,
+      "name": "United Nations Sustainable Development Cooperation Framework (2026-2030)",
+      "start": "2026-01-01",
+      "end": "2030-12-31"
+    },
+    "2664": {
+      "id": 2664,
+      "workspace_id": 24,
+      "name": "United Nations Sustainable Development Cooperation Framework (2026-2030)",
+      "start": "2026-01-01",
+      "end": "2030-12-31"
+    },
+    "2662": {
+      "id": 2662,
+      "workspace_id": 203,
+      "name": "United Nations Sustainable Development Cooperation Framework (2026-2030)",
+      "start": "2026-01-01",
+      "end": "2030-12-31"
+    },
+    "2660": {
+      "id": 2660,
+      "workspace_id": 212,
+      "name": "United Nations Sustainable Development Cooperation Framework (2026-2030)",
+      "start": "2026-01-01",
+      "end": "2030-12-31"
+    },
+    "2659": {
+      "id": 2659,
+      "workspace_id": 216,
+      "name": "United Nations Sustainable Development Cooperation Framework (2026-2030)",
+      "start": "2026-01-01",
+      "end": "2030-12-31"
+    },
+    "2245": {
+      "id": 2245,
+      "workspace_id": 54,
+      "name": "United Nations Sustainable Development Cooperation Framework (2024-2028)",
+      "start": "2024-01-01",
+      "end": "2028-12-31"
+    },
+    "2244": {
+      "id": 2244,
+      "workspace_id": 105,
+      "name": "United Nations Sustainable Development Cooperation Framework (2024-2028)",
+      "start": "2024-01-01",
+      "end": "2028-12-31"
+    },
+    "2114": {
+      "id": 2114,
+      "workspace_id": 66,
+      "name": "United Nations Sustainable Development Cooperation Framework (2025-2030)",
+      "start": "2025-01-01",
+      "end": "2030-12-31"
+    },
+    "2113": {
+      "id": 2113,
+      "workspace_id": 75,
+      "name": "United Nations Sustainable Development Cooperation Framework (2025-2029)",
+      "start": "2025-01-01",
+      "end": "2029-12-31"
+    },
+    "2111": {
+      "id": 2111,
+      "workspace_id": 104,
+      "name": "United Nations Sustainable Development Cooperation Framework (2025-2029)",
+      "start": "2025-01-01",
+      "end": "2029-12-31"
+    },
+    "2108": {
+      "id": 2108,
+      "workspace_id": 143,
+      "name": "United Nations Sustainable Development Cooperation Framework (2025-2029)",
+      "start": "2025-01-01",
+      "end": "2029-12-31"
+    },
+    "2107": {
+      "id": 2107,
+      "workspace_id": 180,
+      "name": "United Nations Sustainable Development Cooperation Framework (2025-2030)",
+      "start": "2025-01-01",
+      "end": "2030-12-31"
+    },
+    "2106": {
+      "id": 2106,
+      "workspace_id": 251,
+      "name": "United Nations Sustainable Development Cooperation Framework (2025-2029)",
+      "start": "2025-01-01",
+      "end": "2029-12-31"
+    },
+    "2104": {
+      "id": 2104,
+      "workspace_id": 205,
+      "name": "United Nations Sustainable Development Cooperation Framework (2025-2029)",
+      "start": "2025-01-01",
+      "end": "2029-12-31"
+    },
+    "2103": {
+      "id": 2103,
+      "workspace_id": 73,
+      "name": "UN Sudan Common Approach Result Framework 2024 to 2025",
+      "start": "2024-01-01",
+      "end": "2025-12-31"
+    },
+    "2102": {
+      "id": 2102,
+      "workspace_id": 72,
+      "name": "United Nations Sustainable Development Cooperation Framework (2024-2028)",
+      "start": "2024-01-01",
+      "end": "2028-12-31"
+    },
+    "2101": {
+      "id": 2101,
+      "workspace_id": 88,
+      "name": "United Nations Sustainable Development Cooperation Framework (2024-2028)",
+      "start": "2024-01-01",
+      "end": "2028-12-31"
+    },
+    "2099": {
+      "id": 2099,
+      "workspace_id": 106,
+      "name": "United Nations Sustainable Development Cooperation Framework (2024-2027)",
+      "start": "2024-01-01",
+      "end": "2027-12-31"
+    },
+    "2098": {
+      "id": 2098,
+      "workspace_id": 27,
+      "name": "United Nations Sustainable Development Cooperation Framework (2024-2028)",
+      "start": "2024-01-01",
+      "end": "2028-12-31"
+    },
+    "2097": {
+      "id": 2097,
+      "workspace_id": 115,
+      "name": "Plan-cadre de Coopération des Nations Unies pour le Développement Durable 2024-2028",
+      "start": "2024-01-01",
+      "end": "2028-12-31"
+    },
+    "2096": {
+      "id": 2096,
+      "workspace_id": 122,
+      "name": "United Nations Sustainable Development Cooperation Framework (2024-2028)",
+      "start": "2024-01-01",
+      "end": "2028-12-31"
+    },
+    "2095": {
+      "id": 2095,
+      "workspace_id": 162,
+      "name": "United Nations Sustainable Development Cooperation Framework (2024-2028)",
+      "start": "2024-01-01",
+      "end": "2028-12-31"
+    },
+    "2094": {
+      "id": 2094,
+      "workspace_id": 159,
+      "name": "United Nations Sustainable Development Cooperation Framework (2024-2028)",
+      "start": "2024-01-01",
+      "end": "2028-12-31"
+    },
+    "2093": {
+      "id": 2093,
+      "workspace_id": 186,
+      "name": "United Nations Sustainable Development Cooperation Framework (2024-2027)",
+      "start": "2024-01-01",
+      "end": "2027-12-31"
+    },
+    "2092": {
+      "id": 2092,
+      "workspace_id": 52,
+      "name": "United Nations Sustainable Development Cooperation Framework (2024-2026)",
+      "start": "2024-01-01",
+      "end": "2026-12-31"
+    },
+    "2091": {
+      "id": 2091,
+      "workspace_id": 133,
+      "name": "United Nations Sustainable Development Cooperation Framework (2024-2028)",
+      "start": "2024-01-01",
+      "end": "2028-12-31"
+    },
+    "2090": {
+      "id": 2090,
+      "workspace_id": 208,
+      "name": "United Nations Sustainable Development Cooperation Framework (2023-2026)",
+      "start": "2023-01-01",
+      "end": "2026-12-31"
+    },
+    "2089": {
+      "id": 2089,
+      "workspace_id": 195,
+      "name": "United Nations Sustainable Development Cooperation Framework (2024-2028)",
+      "start": "2024-01-01",
+      "end": "2028-12-31"
+    },
+    "2088": {
+      "id": 2088,
+      "workspace_id": 221,
+      "name": "United Nations Sustainable Development Cooperation Framework (2024-2028)",
+      "start": "2024-01-01",
+      "end": "2028-12-31"
+    },
+    "1953": {
+      "id": 1953,
+      "workspace_id": 51,
+      "name": "CADRE DE COOPERATION POUR LE DEVELOPPEMENT DURABLE 2023-2026",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1952": {
+      "id": 1952,
+      "workspace_id": 73,
+      "name": "UN Sudan Common Approach Result Framework for 2022–2023",
+      "start": "2022-01-01",
+      "end": "2023-12-31"
+    },
+    "1947": {
+      "id": 1947,
+      "workspace_id": 209,
+      "name": "UNSDCF 2023 - 2027",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1945": {
+      "id": 1945,
+      "workspace_id": 21,
+      "name": "United Nations Strategic Framework for Afghanistan",
+      "start": "2023-07-01",
+      "end": "2027-12-31"
+    },
+    "1540": {
+      "id": 1540,
+      "workspace_id": 102,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1539": {
+      "id": 1539,
+      "workspace_id": 96,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1538": {
+      "id": 1538,
+      "workspace_id": 146,
+      "name": "United Nations Sustainable Development Cooperation Framework 2023-2027",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1536": {
+      "id": 1536,
+      "workspace_id": 199,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1535": {
+      "id": 1535,
+      "workspace_id": 211,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1534": {
+      "id": 1534,
+      "workspace_id": 149,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2028-12-31"
+    },
+    "1533": {
+      "id": 1533,
+      "workspace_id": 40,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1532": {
+      "id": 1532,
+      "workspace_id": 161,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2024-01-01",
+      "end": "2028-12-31"
+    },
+    "1530": {
+      "id": 1530,
+      "workspace_id": 144,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1529": {
+      "id": 1529,
+      "workspace_id": 22,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1528": {
+      "id": 1528,
+      "workspace_id": 60,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1527": {
+      "id": 1527,
+      "workspace_id": 123,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1526": {
+      "id": 1526,
+      "workspace_id": 86,
+      "name": "United Nations Sustainable Development Cooperation Framework 2024 - 2028",
+      "start": "2024-01-01",
+      "end": "2028-12-31"
+    },
+    "1525": {
+      "id": 1525,
+      "workspace_id": 20,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2026-12-31"
+    },
+    "1524": {
+      "id": 1524,
+      "workspace_id": 166,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1523": {
+      "id": 1523,
+      "workspace_id": 192,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2029-12-31"
+    },
+    "1522": {
+      "id": 1522,
+      "workspace_id": 190,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2026-12-31"
+    },
+    "1521": {
+      "id": 1521,
+      "workspace_id": 175,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1520": {
+      "id": 1520,
+      "workspace_id": 35,
+      "name": "United Nations Transitional Framework",
+      "start": "2022-10-01",
+      "end": "2024-12-31"
+    },
+    "1518": {
+      "id": 1518,
+      "workspace_id": 233,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2025-12-31"
+    },
+    "1517": {
+      "id": 1517,
+      "workspace_id": 241,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1516": {
+      "id": 1516,
+      "workspace_id": 49,
+      "name": "United Nations Sustainable Development Cooperation Framework 2023 - 2026",
+      "start": "2023-01-01",
+      "end": "2026-12-31"
+    },
+    "1515": {
+      "id": 1515,
+      "workspace_id": 116,
+      "name": "United Nations Sustainable Development Cooperation Framework 2023 – 2027",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1514": {
+      "id": 1514,
+      "workspace_id": 134,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1513": {
+      "id": 1513,
+      "workspace_id": 178,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1512": {
+      "id": 1512,
+      "workspace_id": 184,
+      "name": "United Nations Sustainable Development Cooperation Framework 2023-2027",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1511": {
+      "id": 1511,
+      "workspace_id": 28,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1510": {
+      "id": 1510,
+      "workspace_id": 198,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1509": {
+      "id": 1509,
+      "workspace_id": 177,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1508": {
+      "id": 1508,
+      "workspace_id": 30,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1507": {
+      "id": 1507,
+      "workspace_id": 185,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2022-01-01",
+      "end": "2026-12-31"
+    },
+    "1506": {
+      "id": 1506,
+      "workspace_id": 108,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1505": {
+      "id": 1505,
+      "workspace_id": 23,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1504": {
+      "id": 1504,
+      "workspace_id": 107,
+      "name": "UNSDCF 2023 - 2027",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1503": {
+      "id": 1503,
+      "workspace_id": 126,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1501": {
+      "id": 1501,
+      "workspace_id": 176,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2022-01-01",
+      "end": "2026-12-31"
+    },
+    "1499": {
+      "id": 1499,
+      "workspace_id": 92,
+      "name": "UNSDCF 2023 - 2029",
+      "start": "2023-01-01",
+      "end": "2029-12-31"
+    },
+    "1498": {
+      "id": 1498,
+      "workspace_id": 61,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1497": {
+      "id": 1497,
+      "workspace_id": 74,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2022-01-01",
+      "end": "2026-12-31"
+    },
+    "1496": {
+      "id": 1496,
+      "workspace_id": 128,
+      "name": "United Nations Sustainable Development Cooperation Framework 2023 - 2026",
+      "start": "2023-01-01",
+      "end": "2027-12-31"
+    },
+    "1491": {
+      "id": 1491,
+      "workspace_id": 36,
+      "name": "United Nations Sustainable Development Cooperation Framework 2022 - 2027",
+      "start": "2022-07-01",
+      "end": "2027-06-30"
+    },
+    "1490": {
+      "id": 1490,
+      "workspace_id": 37,
+      "name": "Viet Nam’s One Strategic Framework for Sustainable Development Cooperation 2022-2026",
+      "start": "2022-01-01",
+      "end": "2026-12-31"
+    },
+    "1488": {
+      "id": 1488,
+      "workspace_id": 135,
+      "name": "United Nations Sustainable Development Cooperation Framework 2022 - 2027",
+      "start": "2022-07-01",
+      "end": "2027-06-30"
+    },
+    "1487": {
+      "id": 1487,
+      "workspace_id": 21,
+      "name": "Transitional Engagement Framework (TEF)",
+      "start": "2022-01-01",
+      "end": "2023-06-30"
+    },
+    "1486": {
+      "id": 1486,
+      "workspace_id": 174,
+      "name": "UNSDCF 2022 - 2026",
+      "start": "2022-01-01",
+      "end": "2026-12-31"
+    },
+    "1485": {
+      "id": 1485,
+      "workspace_id": 33,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2022-01-01",
+      "end": "2026-12-31"
+    },
+    "1483": {
+      "id": 1483,
+      "workspace_id": 207,
+      "name": "United Nations Sustainable Development Cooperation Framework 2022 - 2027",
+      "start": "2022-01-01",
+      "end": "2027-12-31"
+    },
+    "1482": {
+      "id": 1482,
+      "workspace_id": 14,
+      "name": "UNSDCF 2022 - 2026",
+      "start": "2022-01-01",
+      "end": "2026-12-31"
+    },
+    "1481": {
+      "id": 1481,
+      "workspace_id": 193,
+      "name": "UNSDCF 2022-2026",
+      "start": "2022-01-01",
+      "end": "2026-12-31"
+    },
+    "1478": {
+      "id": 1478,
+      "workspace_id": 198,
+      "name": "United Nations Development Assistance Framework",
+      "start": "2017-01-01",
+      "end": "2022-12-31"
+    },
+    "1203": {
+      "id": 1203,
+      "workspace_id": 31,
+      "name": "United Nations Sustainable Development Cooperation Framework (UNSDCF) 2022-2026",
+      "start": "2022-01-01",
+      "end": "2026-12-31"
+    },
+    "1200": {
+      "id": 1200,
+      "workspace_id": 188,
+      "name": "UNSDCF 2022 – 2026",
+      "start": "2022-01-01",
+      "end": "2026-12-31"
+    },
+    "1199": {
+      "id": 1199,
+      "workspace_id": 228,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2022-01-01",
+      "end": "2026-12-31"
+    },
+    "1198": {
+      "id": 1198,
+      "workspace_id": 40,
+      "name": "United Nations Development Assistance Framework",
+      "start": "2015-01-01",
+      "end": "2022-12-31"
+    },
+    "1196": {
+      "id": 1196,
+      "workspace_id": 89,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2022-01-01",
+      "end": "2026-12-31"
+    },
+    "1195": {
+      "id": 1195,
+      "workspace_id": 115,
+      "name": "Plan-cadre de Coopération des Nations Unies pour le Développement Durable 2021-2023",
+      "start": "2021-01-01",
+      "end": "2023-12-31"
+    },
+    "1193": {
+      "id": 1193,
+      "workspace_id": 252,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2022-01-01",
+      "end": "2026-12-31"
+    },
+    "1190": {
+      "id": 1190,
+      "workspace_id": 212,
+      "name": "United Nations Sustainable Development Cooperation Framework (UNSDCF)",
+      "start": "2021-01-01",
+      "end": "2025-12-31"
+    },
+    "1189": {
+      "id": 1189,
+      "workspace_id": 199,
+      "name": "UNDAF 2018 - 2022",
+      "start": "2018-01-01",
+      "end": "2022-12-31"
+    },
+    "1148": {
+      "id": 1148,
+      "workspace_id": 50,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2022-01-01",
+      "end": "2026-12-31"
+    },
+    "1059": {
+      "id": 1059,
+      "workspace_id": 129,
+      "name": "UNSDCF 2022 - 2026",
+      "start": "2022-01-01",
+      "end": "2026-12-31"
+    },
+    "1058": {
+      "id": 1058,
+      "workspace_id": 106,
+      "name": "Cadre de Partenariat pour le Développement Durable 2018-2023",
+      "start": "2018-01-01",
+      "end": "2023-12-31"
+    },
+    "1056": {
+      "id": 1056,
+      "workspace_id": 88,
+      "name": "UN Socioeconomic and Peacebuilding Framework for COVID-19 Recovery in the Philippines 2020-2023",
+      "start": "2019-01-01",
+      "end": "2023-12-31"
+    },
+    "1040": {
+      "id": 1040,
+      "workspace_id": 144,
+      "name": "UNDAF 2017 - 2022",
+      "start": "2017-01-01",
+      "end": "2022-12-31"
+    },
+    "1038": {
+      "id": 1038,
+      "workspace_id": 26,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2021-01-01",
+      "end": "2025-12-31"
+    },
+    "1037": {
+      "id": 1037,
+      "workspace_id": 160,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2022-01-01",
+      "end": "2027-12-31"
+    },
+    "1036": {
+      "id": 1036,
+      "workspace_id": 34,
+      "name": "United Nations Sustainable Development Cooperation Framework 2021-2025",
+      "start": "2021-01-01",
+      "end": "2025-12-31"
+    },
+    "1035": {
+      "id": 1035,
+      "workspace_id": 41,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2021-01-01",
+      "end": "2025-12-31"
+    },
+    "1033": {
+      "id": 1033,
+      "workspace_id": 24,
+      "name": "UNSDCF 2021 - 2025",
+      "start": "2021-01-01",
+      "end": "2025-12-31"
+    },
+    "1032": {
+      "id": 1032,
+      "workspace_id": 190,
+      "name": "Marco de Cooperación 2019-2022",
+      "start": "2019-01-01",
+      "end": "2022-12-31"
+    },
+    "1031": {
+      "id": 1031,
+      "workspace_id": 252,
+      "name": "2017-2021 MSDF",
+      "start": "2017-01-01",
+      "end": "2021-12-31"
+    },
+    "1030": {
+      "id": 1030,
+      "workspace_id": 189,
+      "name": "CADRE DE COOPÉRATION DES NATIONS UNIES POUR LE DÉVELOPPEMENT DURABLE CÔTE D’IVOIRE 2021 - 2025",
+      "start": "2021-01-01",
+      "end": "2025-12-31"
+    },
+    "1026": {
+      "id": 1026,
+      "workspace_id": 66,
+      "name": "UNSDCF SIERRA LEONE (2020-2024)",
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "1025": {
+      "id": 1025,
+      "workspace_id": 183,
+      "name": "United Nations Sustainable Development Cooperation Framework (2020 - 2025)",
+      "start": "2020-01-01",
+      "end": "2025-12-31"
+    },
+    "1024": {
+      "id": 1024,
+      "workspace_id": 111,
+      "name": "Cadre De Cooperation Des Nations Unies Pour Le Developpment Durable (UNSDCF 2020 - 2026)",
+      "start": "2020-01-01",
+      "end": "2026-12-31"
+    },
+    "1021": {
+      "id": 1021,
+      "workspace_id": 205,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2018-01-01",
+      "end": "2024-12-31"
+    },
+    "1019": {
+      "id": 1019,
+      "workspace_id": 193,
+      "name": " UNSDF 2017- 2021",
+      "start": "2017-01-01",
+      "end": "2021-12-31"
+    },
+    "1018": {
+      "id": 1018,
+      "workspace_id": 147,
+      "name": "UNSDCF 2021-2025",
+      "start": "2021-01-01",
+      "end": "2025-12-31"
+    },
+    "883": {
+      "id": 883,
+      "workspace_id": 159,
+      "name": "Marco de Asistencia de las Naciones Unidas para el Desarrollo (MANUD) de Guinea Ecuatorial",
+      "start": "2019-01-01",
+      "end": "2023-12-31"
+    },
+    "882": {
+      "id": 882,
+      "workspace_id": 202,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2021-01-01",
+      "end": "2025-12-31"
+    },
+    "876": {
+      "id": 876,
+      "workspace_id": 151,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2022-01-01",
+      "end": "2026-12-31"
+    },
+    "875": {
+      "id": 875,
+      "workspace_id": 114,
+      "name": "United Nations Sustainable Development Cooperation Framework 2022 - 2026",
+      "start": "2022-01-01",
+      "end": "2026-12-31"
+    },
+    "874": {
+      "id": 874,
+      "workspace_id": 49,
+      "name": "UNDAF 2016 - 2022",
+      "start": "2016-01-01",
+      "end": "2022-12-31"
+    },
+    "873": {
+      "id": 873,
+      "workspace_id": 133,
+      "name": "Cambodia United Development Assistance Framework 2019-2023",
+      "start": "2019-01-01",
+      "end": "2023-12-31"
+    },
+    "872": {
+      "id": 872,
+      "workspace_id": 23,
+      "name": "United Nations Development Assistance Framework",
+      "start": "2017-01-01",
+      "end": "2022-12-31"
+    },
+    "870": {
+      "id": 870,
+      "workspace_id": 73,
+      "name": "UNDAF 2018 - 2021",
+      "start": "2018-01-01",
+      "end": "2021-12-31"
+    },
+    "869": {
+      "id": 869,
+      "workspace_id": 61,
+      "name": "UNCF 2019 - 2022",
+      "start": "2019-01-01",
+      "end": "2022-12-31"
+    },
+    "867": {
+      "id": 867,
+      "workspace_id": 104,
+      "name": "United Nations Partnership Framework 2019-2024",
+      "start": "2019-01-01",
+      "end": "2024-12-31"
+    },
+    "866": {
+      "id": 866,
+      "workspace_id": 146,
+      "name": "United Nations Development Assistance Framework",
+      "start": "2018-01-01",
+      "end": "2022-12-31"
+    },
+    "865": {
+      "id": 865,
+      "workspace_id": 192,
+      "name": "United Nations Development Assistance Framework",
+      "start": "2018-01-01",
+      "end": "2022-12-31"
+    },
+    "864": {
+      "id": 864,
+      "workspace_id": 52,
+      "name": "United Nations Development Assistance Framework",
+      "start": "2017-01-01",
+      "end": "2023-12-31"
+    },
+    "863": {
+      "id": 863,
+      "workspace_id": 134,
+      "name": "United Nations Development Assistance Framework",
+      "start": "2018-01-01",
+      "end": "2022-12-31"
+    },
+    "862": {
+      "id": 862,
+      "workspace_id": 220,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2022-01-01",
+      "end": "2026-12-31"
+    },
+    "861": {
+      "id": 861,
+      "workspace_id": 123,
+      "name": "UNSDF 2018 - 2022",
+      "start": "2018-01-01",
+      "end": "2022-12-31"
+    },
+    "858": {
+      "id": 858,
+      "workspace_id": 160,
+      "name": "United Nations Development Assistance Framework",
+      "start": "2016-01-01",
+      "end": "2021-12-31"
+    },
+    "856": {
+      "id": 856,
+      "workspace_id": 37,
+      "name": "Viet Nam One Strategic Plan 2017-2021 (OSP)",
+      "start": "2017-01-01",
+      "end": "2021-12-31"
+    },
+    "855": {
+      "id": 855,
+      "workspace_id": 34,
+      "name": "UNDAF 2016-2020",
+      "start": "2016-01-01",
+      "end": "2020-12-31"
+    },
+    "854": {
+      "id": 854,
+      "workspace_id": 35,
+      "name": "UNPF 2018-2022",
+      "start": "2018-01-01",
+      "end": "2022-12-31"
+    },
+    "853": {
+      "id": 853,
+      "workspace_id": 47,
+      "name": "Turkmenistan - United Nations Partnership Framework for Development 2016-2020",
+      "start": "2016-01-01",
+      "end": "2020-12-31"
+    },
+    "852": {
+      "id": 852,
+      "workspace_id": 36,
+      "name": "UNDAP 2016-2022",
+      "start": "2016-07-01",
+      "end": "2022-06-30"
+    },
+    "851": {
+      "id": 851,
+      "workspace_id": 86,
+      "name": "Papua New Guinea United Nations Development Assistance Framework 2018 - 2023",
+      "start": "2018-01-01",
+      "end": "2023-12-31"
+    },
+    "850": {
+      "id": 850,
+      "workspace_id": 92,
+      "name": "UNDAF/OP III (2018-2022)",
+      "start": "2018-01-01",
+      "end": "2022-12-31"
+    },
+    "849": {
+      "id": 849,
+      "workspace_id": 108,
+      "name": "UNDAF 2017-2022",
+      "start": "2017-01-01",
+      "end": "2022-12-31"
+    },
+    "848": {
+      "id": 848,
+      "workspace_id": 51,
+      "name": "UNDAF 2019 - 2022",
+      "start": "2019-01-01",
+      "end": "2022-12-31"
+    },
+    "847": {
+      "id": 847,
+      "workspace_id": 149,
+      "name": "Cadre de Développement Durable 2017-2021",
+      "start": "2017-01-01",
+      "end": "2021-12-31"
+    },
+    "846": {
+      "id": 846,
+      "workspace_id": 184,
+      "name": "MANUD 2018-2022",
+      "start": "2018-01-01",
+      "end": "2022-12-31"
+    },
+    "845": {
+      "id": 845,
+      "workspace_id": 72,
+      "name": "PLAN CADRE DES NATIONS UNIES POUR L'ASSISTANCE AU DEVELOPPEMENT (PNUAD 2019-2023)",
+      "start": "2019-01-01",
+      "end": "2023-12-31"
+    },
+    "844": {
+      "id": 844,
+      "workspace_id": 75,
+      "name": "United Nations Sustainable Development Cooperation Framework 2018-2024",
+      "start": "2018-07-01",
+      "end": "2024-12-31"
+    },
+    "843": {
+      "id": 843,
+      "workspace_id": 22,
+      "name": "United Nations Sustainable Development Partnership Framework (2018-2022)",
+      "start": "2018-01-01",
+      "end": "2022-12-31"
+    },
+    "842": {
+      "id": 842,
+      "workspace_id": 31,
+      "name": "United Nations Development Assistance Framework 2017-2021",
+      "start": "2017-01-01",
+      "end": "2021-12-31"
+    },
+    "841": {
+      "id": 841,
+      "workspace_id": 116,
+      "name": "Republic of Moldova - United Nations Partnership Framework for Sustainable Development  2018-2022",
+      "start": "2018-01-01",
+      "end": "2022-12-31"
+    },
+    "840": {
+      "id": 840,
+      "workspace_id": 107,
+      "name": "UNDAF 2017-2022",
+      "start": "2017-01-01",
+      "end": "2022-12-31"
+    },
+    "839": {
+      "id": 839,
+      "workspace_id": 129,
+      "name": "UNPF 2017-2021",
+      "start": "2017-01-01",
+      "end": "2021-12-31"
+    },
+    "838": {
+      "id": 838,
+      "workspace_id": 135,
+      "name": "UNITED NATIONS DEVELOPMENT ASSISTANCE FRAMEWORK (UNDAF) 2018-2022",
+      "start": "2018-07-01",
+      "end": "2022-06-30"
+    },
+    "837": {
+      "id": 837,
+      "workspace_id": 28,
+      "name": "UNDAF Cabo Verde 2018-2022",
+      "start": "2018-01-01",
+      "end": "2022-12-31"
+    },
+    "836": {
+      "id": 836,
+      "workspace_id": 203,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2021-01-01",
+      "end": "2025-12-31"
+    },
+    "835": {
+      "id": 835,
+      "workspace_id": 137,
+      "name": "United Nations Sustainable Development Framework (UNSDF) 2018-2022",
+      "start": "2018-01-01",
+      "end": "2022-12-31"
+    },
+    "834": {
+      "id": 834,
+      "workspace_id": 147,
+      "name": "UNPDF 2016-2020",
+      "start": "2016-01-01",
+      "end": "2020-12-31"
+    },
+    "833": {
+      "id": 833,
+      "workspace_id": 162,
+      "name": "PLAN CADRE DES NATIONS UNIES POUR L’AIDE AU DEVELOPPEMENT - (PNUAD GUINEE) 2018-2023",
+      "start": "2018-01-01",
+      "end": "2023-12-31"
+    },
+    "832": {
+      "id": 832,
+      "workspace_id": 166,
+      "name": "Gabon UNDAF 2018-2022",
+      "start": "2018-01-01",
+      "end": "2022-12-31"
+    },
+    "831": {
+      "id": 831,
+      "workspace_id": 189,
+      "name": "Cadre Programmatique Unique des Nations Unies pour l'assistance au Développement 2017-2020",
+      "start": "2017-01-01",
+      "end": "2020-12-31"
+    },
+    "830": {
+      "id": 830,
+      "workspace_id": 185,
+      "name": "UNDAF Révisé 2015-2021",
+      "start": "2015-01-01",
+      "end": "2021-12-31"
+    },
+    "829": {
+      "id": 829,
+      "workspace_id": 188,
+      "name": "UNDAF 2018-2021",
+      "start": "2018-01-01",
+      "end": "2021-12-31"
+    },
+    "828": {
+      "id": 828,
+      "workspace_id": 211,
+      "name": "Plan Cadre des Nations Unies pour l'Aide au Développement du Burundi, UNDAF 2019-2022",
+      "start": "2019-01-01",
+      "end": "2022-12-31"
+    },
+    "827": {
+      "id": 827,
+      "workspace_id": 209,
+      "name": "UNDAF Benin 2019 - 2022",
+      "start": "2019-01-01",
+      "end": "2022-12-31"
+    },
+    "826": {
+      "id": 826,
+      "workspace_id": 202,
+      "name": "UNDAF for the Republic of Belarus",
+      "start": "2016-01-01",
+      "end": "2020-12-31"
+    },
+    "825": {
+      "id": 825,
+      "workspace_id": 212,
+      "name": "UN Azerbaijan Partnership Framework (UNAPF)",
+      "start": "2016-01-01",
+      "end": "2020-12-31"
+    },
+    "824": {
+      "id": 824,
+      "workspace_id": 220,
+      "name": "Government of Albania and UN Programme of Cooperation for Sustainable Development 2017-2021",
+      "start": "2017-01-01",
+      "end": "2021-12-31"
+    },
+    "823": {
+      "id": 823,
+      "workspace_id": 195,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2019-01-01",
+      "end": "2023-12-31"
+    },
+    "822": {
+      "id": 822,
+      "workspace_id": 62,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2021-01-01",
+      "end": "2025-12-31"
+    },
+    "821": {
+      "id": 821,
+      "workspace_id": 175,
+      "name": "United Nations Development Assistance Framework (2018-2022)",
+      "start": "2018-01-01",
+      "end": "2022-12-31"
+    },
+    "820": {
+      "id": 820,
+      "workspace_id": 155,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2021-01-01",
+      "end": "2025-12-31"
+    },
+    "818": {
+      "id": 818,
+      "workspace_id": 216,
+      "name": "UNITED NATIONS SUSTAINABLE DEVELOPMENT COOPERATION FRAMEWORK FOR ARMENIA",
+      "start": "2021-01-01",
+      "end": "2025-12-31"
+    },
+    "817": {
+      "id": 817,
+      "workspace_id": 32,
+      "name": "UNSDCF - SOUTH AFRICA 2020-2025",
+      "start": "2020-01-01",
+      "end": "2025-12-31"
+    },
+    "816": {
+      "id": 816,
+      "workspace_id": 47,
+      "name": "Turkmenistan UNSDCF 2021 - 2025",
+      "start": "2021-01-01",
+      "end": "2025-12-31"
+    },
+    "815": {
+      "id": 815,
+      "workspace_id": 29,
+      "name": "Tunisia - Plan cadre des Nations Unies pour l'aide au développement 2021 – 2026",
+      "start": "2021-01-01",
+      "end": "2026-12-31"
+    },
+    "814": {
+      "id": 814,
+      "workspace_id": 15,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2021-01-01",
+      "end": "2025-12-31"
+    },
+    "813": {
+      "id": 813,
+      "workspace_id": 18,
+      "name": "UN Sustainable Development Cooperation Framework 2021-2025",
+      "start": "2021-01-01",
+      "end": "2025-12-31"
+    },
+    "812": {
+      "id": 812,
+      "workspace_id": 91,
+      "name": "UNSDCF PANAMA 2021-2025: MARCO DE COOPERACION DE LAS NACIONES UNIDAS PARA EL DESARROLLO SOSTENIBLE",
+      "start": "2021-01-01",
+      "end": "2025-12-31"
+    },
+    "810": {
+      "id": 810,
+      "workspace_id": 178,
+      "name": "United Nations Development Assistance Framework",
+      "start": "2018-01-01",
+      "end": "2022-12-31"
+    },
+    "803": {
+      "id": 803,
+      "workspace_id": 143,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "802": {
+      "id": 802,
+      "workspace_id": 127,
+      "name": "UNITED NATIONS SUSTAINABLE DEVELOPMENT COOPERATION FRAMEWORK (2020-2025) ",
+      "start": "2020-01-01",
+      "end": "2025-12-31"
+    },
+    "800": {
+      "id": 800,
+      "workspace_id": 187,
+      "name": "PLAN-CADRE DU SYSTEME DES NATIONS UNIES POUR L‘AIDE AU DEVELOPPEMENT 2020 - 2026",
+      "start": "2020-01-01",
+      "end": "2026-12-31"
+    },
+    "797": {
+      "id": 797,
+      "workspace_id": 186,
+      "name": "MARCO DE COOPERACIÓN DE LAS NACIONES UNIDAS PARA EL DESARROLLO SOSTENIBLE COLOMBIA 2020 - 2023",
+      "start": "2020-01-01",
+      "end": "2023-12-31"
+    },
+    "796": {
+      "id": 796,
+      "workspace_id": 20,
+      "name": "United Nations Sustainable Development Partnership",
+      "start": "2018-01-01",
+      "end": "2022-12-31"
+    },
+    "795": {
+      "id": 795,
+      "workspace_id": 230,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2021-01-01",
+      "end": "2025-12-31"
+    },
+    "794": {
+      "id": 794,
+      "workspace_id": 170,
+      "name": "UNITED NATIONS SUSTAINABLE DEVELOPMENT COOPERATION FRAMEWORK 2020 - 2025",
+      "start": "2020-07-01",
+      "end": "2025-06-30"
+    },
+    "792": {
+      "id": 792,
+      "workspace_id": 113,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2020-01-01",
+      "end": "2025-12-31"
+    },
+    "791": {
+      "id": 791,
+      "workspace_id": 55,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2021-01-01",
+      "end": "2025-12-31"
+    },
+    "790": {
+      "id": 790,
+      "workspace_id": 221,
+      "name": "United Nations Sustainable Development Cooperation Framework (2020-2023)",
+      "start": "2020-01-01",
+      "end": "2023-12-31"
+    },
+    "789": {
+      "id": 789,
+      "workspace_id": 251,
+      "name": "PLAN CADRE DE COOPÉRATION DES NATIONS UNIES POUR LE DÉVELOPPEMENT DURABLE",
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "780": {
+      "id": 780,
+      "workspace_id": 81,
+      "name": "Marco de Cooperación para el Desarrollo Sostenible 2020 - 2024 entre la República del Paraguay y la Organización de las Naciones Unidas",
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "778": {
+      "id": 778,
+      "workspace_id": 27,
+      "name": "United Nations Development Assistance Framework",
+      "start": "2019-01-01",
+      "end": "2023-12-31"
+    },
+    "777": {
+      "id": 777,
+      "workspace_id": 217,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2021-01-01",
+      "end": "2025-12-31"
+    },
+    "776": {
+      "id": 776,
+      "workspace_id": 63,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2021-01-01",
+      "end": "2025-12-31"
+    },
+    "774": {
+      "id": 774,
+      "workspace_id": 165,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2021-01-01",
+      "end": "2025-12-31"
+    },
+    "773": {
+      "id": 773,
+      "workspace_id": 19,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2021-01-01",
+      "end": "2025-12-31"
+    },
+    "771": {
+      "id": 771,
+      "workspace_id": 53,
+      "name": "United Nations Strategic Framework",
+      "start": "2022-01-01",
+      "end": "2026-12-31"
+    },
+    "769": {
+      "id": 769,
+      "workspace_id": 161,
+      "name": "United Nations Development Assistance Framework",
+      "start": "2017-01-01",
+      "end": "2023-12-31"
+    },
+    "768": {
+      "id": 768,
+      "workspace_id": 43,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2021-01-01",
+      "end": "2025-12-31"
+    },
+    "762": {
+      "id": 762,
+      "workspace_id": 46,
+      "name": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2021-01-01",
+      "end": "2025-12-31"
+    },
+    "759": {
+      "id": 759,
+      "workspace_id": 122,
+      "name": "United Nations Development Assistance Framework",
+      "start": "2019-01-01",
+      "end": "2023-12-31"
+    }
+  }
+}

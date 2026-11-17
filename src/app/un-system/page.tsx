@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { typography } from "@un-eosg/ui/typography";
 import { CountryResultsFrameworks } from "@/components/CountryResultsFrameworks";
-import manifest from "../../../public/data/uninfo/manifest.json";
+import manifest from "../../../public/data/uninfo/plans/manifest.json";
 import { SiteShell } from "@/components/SiteShell";
 
 export const metadata: Metadata = { title: "UN System" };
