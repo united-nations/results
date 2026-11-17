@@ -11,6 +11,10 @@ spec = importlib.util.spec_from_file_location('uninfo_export', ROOT / 'python/10
 exporter = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(exporter)
 
+fetch_spec = importlib.util.spec_from_file_location('uninfo_fetch', ROOT / 'python/08-fetch_uninfo.py')
+fetcher = importlib.util.module_from_spec(fetch_spec)
+fetch_spec.loader.exec_module(fetcher)
+
 METRICS = {'required': 'Total Required Resources', 'available': 'Total Available Resources',
            'spent': 'Total Expenditure'}
 
@@ -32,6 +36,31 @@ def source_metrics(item):
 
 
 class UninfoIntegrityTests(unittest.TestCase):
+    def test_historical_finances_bind_to_explicit_plans(self):
+        # workspaceIds would silently select Ethiopia's newer 2025-2030 plan.
+        with patch.object(fetcher, 'request', return_value=[]) as request:
+            fetcher.finance([794], 2024, ['sdg'])
+        params = request.call_args.kwargs['params']
+        self.assertIn(('planIds', 794), params)
+        self.assertIn(('financeYears', 2024), params)
+        self.assertNotIn('workspaceIds', dict(params))
+
+    def test_ethiopia_2024_keeps_historical_framework_financials(self):
+        country = json.loads((ROOT / 'public/data/uninfo/2024/countries/ETH.json').read_text())
+        self.assertEqual(country['year'], 2024)
+        self.assertGreater(country['totals']['available'], 1_000_000_000)
+        self.assertGreater(country['totals']['spent'], 900_000_000)
+        for item, _ in walk(country['framework']):
+            if item['level'] == 0:
+                self.assertTrue(item['has_financial_data'])
+        raw = ROOT / 'data/uninfo/raw/2024'
+        plans = json.loads((raw / 'public_plans.json').read_text())
+        provenance = json.loads((raw / 'period-provenance.json').read_text())
+        self.assertIn(794, provenance['finance_plan_ids'])
+        self.assertNotIn(2693, [
+            plan['id'] for plan in plans if plan['workspaceId'] == country['workspace_id']
+        ])
+
     def test_repeated_display_codes_under_distinct_parents_keep_every_identity(self):
         data = {'sp': [node(1), node(2, code='2')],
                 'oc': [node(3, parent=1), node(4, parent=2)],
@@ -119,17 +148,29 @@ class UninfoIntegrityTests(unittest.TestCase):
             public = ROOT / f'public/data/uninfo/{year}'
             entities = json.loads((raw / 'public_framework_entities.json').read_text())
             plans = json.loads((raw / 'public_plans.json').read_text())
+            financials = json.loads((raw / 'frameworks_by_country.json').read_text())
+            provenance = json.loads((raw / 'period-provenance.json').read_text())
+            self.assertEqual(set(provenance['finance_plan_ids']), {plan['id'] for plan in plans})
             workspaces = json.loads((raw / 'workspaces.json').read_text())
             plan_workspaces = {plan['id']: plan['workspaceId'] for plan in plans}
             index = json.loads((public / 'uninfo-countries-index.json').read_text())
             expected_coverage = set()
             for iso, entry in index.items():
-                expected = {
-                    row['id']: row for row in entities
-                    if plan_workspaces[row['planId']] == workspaces[entry['name']]
-                }
+                expected = {}
+                for row in entities:
+                    if plan_workspaces[row['planId']] != workspaces[entry['name']]:
+                        continue
+                    previous = expected.get(row['id'])
+                    end = row['planEntityVersion'].get('endDate') or ''
+                    previous_end = (previous or {}).get('planEntityVersion', {}).get('endDate') or ''
+                    if previous is None or end > previous_end:
+                        expected[row['id']] = row
                 country = json.loads((public / 'countries' / f'{iso}.json').read_text())
                 actual = list(walk(country.get('framework', [])))
+                source_finances = {
+                    item['id']: item for rows in financials.get(entry['name'], {}).values()
+                    for item in rows
+                }
                 with self.subTest(year=year, country=iso):
                     self.assertEqual({row['id'] for row, _ in actual}, set(expected))
                     self.assertEqual(len(actual), len(expected))
@@ -137,6 +178,13 @@ class UninfoIntegrityTests(unittest.TestCase):
                     self.assertEqual(entry['year'], year)
                     for row, parent in actual:
                         self.assertEqual(parent, expected[row['id']]['parentId'])
+                        self.assertEqual(row['name'], expected[row['id']]['planEntityVersion']['name'])
+                        self.assertEqual(row['has_financial_data'], row['id'] in source_finances)
+                        if row['id'] in source_finances:
+                            self.assertEqual(
+                                {key: row[key] for key in METRICS},
+                                source_metrics(source_finances[row['id']]),
+                            )
                 if expected:
                     expected_coverage.add(iso)
             coverage = json.loads((public / 'coverage.json').read_text())

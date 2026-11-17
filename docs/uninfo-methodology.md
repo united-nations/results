@@ -14,22 +14,34 @@ outcome, and output entities from `POST /plan/public/entity/search`.
 Countries inherit their workspace's framework, including shared regional plans.
 
 Financial observations come from the separate finance overview endpoint.
+Every query passes explicit `planIds` from the published plans active in the
+selected year, together with `financeYears`. The API's `workspaceIds` parameter
+implicitly selects the newest framework cycle. Using it for an older financial
+year can produce an empty response while the historical plan has reported money.
+For example, Ethiopia's 2024 observations belong to plan 794 (2020–2025), while
+workspace 170 defaults to plan 2693 (2025–2030).
+
+Framework rows show available resources in USD beside their funding bars.
+Tooltips retain required, available and expenditure amounts. Expanded branches
+show their children immediately, followed by the full source description.
 Frameworks with empty financial responses remain available on the map.
 
 | Year | Countries with published frameworks | Countries with financial observations | Frameworks with no financial observations |
 | ---- | ----------------------------------- | ------------------------------------- | ----------------------------------------- |
-| 2022 | 130                                 | 54                                    | 76                                        |
-| 2023 | 153                                 | 103                                   | 50                                        |
-| 2024 | 155                                 | 122                                   | 33                                        |
-| 2025 | 155                                 | 130                                   | 25                                        |
+| 2022 | 130                                 | 122                                   | 8                                         |
+| 2023 | 153                                 | 148                                   | 5                                         |
+| 2024 | 155                                 | 154                                   | 1                                         |
+| 2025 | 155                                 | 154                                   | 1                                         |
 | 2026 | 147                                 | 146                                   | 1                                         |
 
 Every country with financial observations also has a published framework in this
 refresh. The old copied snapshot highlighted 127 countries for 2024 using
 financial availability. The API's current published frameworks cover 155
-countries and areas for that year. Regional frameworks include Caribbean and
-Pacific countries with empty financial responses. Published plan records and
-financial observations can also change between retrieval dates.
+countries and areas for that year, including members of shared Caribbean and
+Pacific frameworks. Selecting explicit active plan IDs restores financial
+observations for 32 additional country entries in 2024 compared with the earlier
+workspace-only refresh. Syria has a published framework with an empty 2024
+financial response. Published records can change between retrieval dates.
 
 The map and country picker use `has_framework`. The legend therefore reads
 “countries with available results frameworks”. Each year's `coverage.json`
@@ -101,9 +113,9 @@ bars, compact expandable results tree and project cards as `open/`.
 
 Reusable drawer behavior, resource bars, results framework trees and activity
 cards are implemented in `@un-eosg/ui`. Shared UI commit
-`bf8dae738c674160eacbadd09429284b37be431e` is on the local
+`a0274f8f304c1b3a0158f51a40f73bf6f0458ff6` is on the local
 `codex/uninfo-results-components` branch in the shared UI repository.
-The app installs its package from `vendor/un-eosg-ui-bf8dae7.tgz` through pnpm.
+The app installs its package from `vendor/un-eosg-ui-a0274f8.tgz` through pnpm.
 The packaged dependency makes installation reproducible while publication of the
 shared UI branch awaits authorization. Storybook examples and registry entries
 live in the shared library source.

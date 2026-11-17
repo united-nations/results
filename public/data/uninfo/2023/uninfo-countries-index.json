@@ -1329,7 +1329,7 @@
   },
   "COD": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Congo, The Democratic Republic of the"
@@ -1339,11 +1339,11 @@
     "workspace_id": 251,
     "name": "Congo, The Democratic Republic of the",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 1529963707.02,
+      "available": 693867125.0,
+      "spent": 614893964.01
     },
-    "project_count": 0,
+    "project_count": 214,
     "has_framework": true
   },
   "PSE": {
@@ -1367,7 +1367,7 @@
   },
   "XKX": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Kosovo"
@@ -1377,11 +1377,11 @@
     "workspace_id": 230,
     "name": "Kosovo",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 18104018.0,
+      "available": 17457948.01,
+      "spent": 2108229.0
     },
-    "project_count": 0,
+    "project_count": 57,
     "has_framework": true
   },
   "SLV": {
@@ -1405,7 +1405,7 @@
   },
   "AGO": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Angola"
@@ -1415,11 +1415,11 @@
     "workspace_id": 221,
     "name": "Angola",
     "totals": {
-      "required": 0,
-      "available": 0,
+      "required": 33864434,
+      "available": 44997990,
       "spent": 0
     },
-    "project_count": 0,
+    "project_count": 263,
     "has_framework": true
   },
   "ALB": {
@@ -1462,7 +1462,7 @@
   },
   "ARM": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Armenia"
@@ -1472,16 +1472,16 @@
     "workspace_id": 216,
     "name": "Armenia",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 55209370.02,
+      "available": 44656418.01,
+      "spent": 42901259.02
     },
-    "project_count": 0,
+    "project_count": 136,
     "has_framework": true
   },
   "AZE": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Azerbaijan"
@@ -1491,11 +1491,11 @@
     "workspace_id": 212,
     "name": "Azerbaijan",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 42385094.98,
+      "available": 38873678.98,
+      "spent": 35379164.01
     },
-    "project_count": 0,
+    "project_count": 146,
     "has_framework": true
   },
   "BDI": {
@@ -1576,7 +1576,7 @@
   },
   "BHR": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Bahrain"
@@ -1586,16 +1586,16 @@
     "workspace_id": 205,
     "name": "Bahrain",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 12638061.0,
+      "available": 5667263.01,
+      "spent": 4549942.98
     },
-    "project_count": 0,
+    "project_count": 60,
     "has_framework": true
   },
   "BIH": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Bosnia and Herzegovina"
@@ -1605,11 +1605,11 @@
     "workspace_id": 203,
     "name": "Bosnia and Herzegovina",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 106779046.01,
+      "available": 98771796.0,
+      "spent": 92075827.01
     },
-    "project_count": 0,
+    "project_count": 162,
     "has_framework": true
   },
   "BLR": {
@@ -1671,7 +1671,7 @@
   },
   "BTN": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Bhutan"
@@ -1681,11 +1681,11 @@
     "workspace_id": 195,
     "name": "Bhutan",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 28815345.0,
+      "available": 29763039.0,
+      "spent": 16140338.01
     },
-    "project_count": 0,
+    "project_count": 217,
     "has_framework": true
   },
   "BWA": {
@@ -1747,7 +1747,7 @@
   },
   "CIV": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "C\u00f4te d'Ivoire"
@@ -1757,11 +1757,11 @@
     "workspace_id": 189,
     "name": "C\u00f4te d'Ivoire",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 174251078.98,
+      "available": 146962133.99,
+      "spent": 104992872.02
     },
-    "project_count": 0,
+    "project_count": 241,
     "has_framework": true
   },
   "CMR": {
@@ -1804,7 +1804,7 @@
   },
   "COL": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Colombia"
@@ -1814,11 +1814,11 @@
     "workspace_id": 186,
     "name": "Colombia",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 12945554.99,
+      "available": 12876040.99,
+      "spent": 12506524.99
     },
-    "project_count": 0,
+    "project_count": 67,
     "has_framework": true
   },
   "COM": {
@@ -1861,7 +1861,7 @@
   },
   "CUB": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Cuba"
@@ -1871,11 +1871,11 @@
     "workspace_id": 183,
     "name": "Cuba",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 98964573.99,
+      "available": 91226340.0,
+      "spent": 59161094.99
     },
-    "project_count": 0,
+    "project_count": 206,
     "has_framework": true
   },
   "DOM": {
@@ -1975,7 +1975,7 @@
   },
   "ETH": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Ethiopia"
@@ -1985,11 +1985,11 @@
     "workspace_id": 170,
     "name": "Ethiopia",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 2803447086.0,
+      "available": 1303608398.99,
+      "spent": 1235471544.99
     },
-    "project_count": 0,
+    "project_count": 236,
     "has_framework": true
   },
   "GAB": {
@@ -2013,7 +2013,7 @@
   },
   "GEO": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Georgia"
@@ -2023,16 +2023,16 @@
     "workspace_id": 165,
     "name": "Georgia",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 64441787.0,
+      "available": 61767480.0,
+      "spent": 57496817.99
     },
-    "project_count": 0,
+    "project_count": 221,
     "has_framework": true
   },
   "GIN": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Guinea"
@@ -2042,16 +2042,16 @@
     "workspace_id": 162,
     "name": "Guinea",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 116997794.98,
+      "available": 112729180.99,
+      "spent": 57849731.98
     },
-    "project_count": 0,
+    "project_count": 176,
     "has_framework": true
   },
   "GMB": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Gambia"
@@ -2061,11 +2061,11 @@
     "workspace_id": 161,
     "name": "Gambia",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 28818583.0,
+      "available": 27738947.99,
+      "spent": 3570722.0
     },
-    "project_count": 0,
+    "project_count": 340,
     "has_framework": true
   },
   "GNB": {
@@ -2108,7 +2108,7 @@
   },
   "GTM": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Guatemala"
@@ -2118,11 +2118,11 @@
     "workspace_id": 155,
     "name": "Guatemala",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 300557720.02,
+      "available": 274481839.0,
+      "spent": 223569974.01
     },
-    "project_count": 0,
+    "project_count": 184,
     "has_framework": true
   },
   "HND": {
@@ -2165,7 +2165,7 @@
   },
   "IDN": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Indonesia"
@@ -2175,11 +2175,11 @@
     "workspace_id": 147,
     "name": "Indonesia",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 308175323.0,
+      "available": 289447231.01,
+      "spent": 241734316.01
     },
-    "project_count": 0,
+    "project_count": 285,
     "has_framework": true
   },
   "IND": {
@@ -2222,7 +2222,7 @@
   },
   "IRQ": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Iraq"
@@ -2232,11 +2232,11 @@
     "workspace_id": 143,
     "name": "Iraq",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 844158278.0,
+      "available": 582967090.0,
+      "spent": 500445583.0
     },
-    "project_count": 0,
+    "project_count": 437,
     "has_framework": true
   },
   "KEN": {
@@ -2279,7 +2279,7 @@
   },
   "KHM": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Cambodia"
@@ -2289,11 +2289,11 @@
     "workspace_id": 133,
     "name": "Cambodia",
     "totals": {
-      "required": 0,
-      "available": 0,
+      "required": 83439531.0,
+      "available": 71820997.0,
       "spent": 0
     },
-    "project_count": 0,
+    "project_count": 221,
     "has_framework": true
   },
   "LAO": {
@@ -2393,7 +2393,7 @@
   },
   "LSO": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Lesotho"
@@ -2403,11 +2403,11 @@
     "workspace_id": 122,
     "name": "Lesotho",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 77268818.99,
+      "available": 44625140.99,
+      "spent": 40756532.99
     },
-    "project_count": 0,
+    "project_count": 148,
     "has_framework": true
   },
   "MDA": {
@@ -2431,7 +2431,7 @@
   },
   "MDG": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Madagascar"
@@ -2441,11 +2441,11 @@
     "workspace_id": 115,
     "name": "Madagascar",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 204602482.99,
+      "available": 166923499.98,
+      "spent": 139292408.01
     },
-    "project_count": 0,
+    "project_count": 243,
     "has_framework": true
   },
   "MDV": {
@@ -2469,7 +2469,7 @@
   },
   "MEX": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Mexico"
@@ -2479,11 +2479,11 @@
     "workspace_id": 113,
     "name": "Mexico",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 198150659.99,
+      "available": 155516204.0,
+      "spent": 148098032.0
     },
-    "project_count": 0,
+    "project_count": 205,
     "has_framework": true
   },
   "MLI": {
@@ -2545,7 +2545,7 @@
   },
   "MRT": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Mauritania"
@@ -2555,16 +2555,16 @@
     "workspace_id": 106,
     "name": "Mauritania",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 173055239.99,
+      "available": 135178232.99,
+      "spent": 84913097.0
     },
-    "project_count": 0,
+    "project_count": 221,
     "has_framework": true
   },
   "NAM": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Namibia"
@@ -2574,11 +2574,11 @@
     "workspace_id": 104,
     "name": "Namibia",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 15738754.99,
+      "available": 17910476.98,
+      "spent": 15873438.98
     },
-    "project_count": 0,
+    "project_count": 78,
     "has_framework": true
   },
   "NER": {
@@ -2640,7 +2640,7 @@
   },
   "PAN": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Panama"
@@ -2650,11 +2650,11 @@
     "workspace_id": 91,
     "name": "Panama",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 80945938.02,
+      "available": 78818108.99,
+      "spent": 78136308.99
     },
-    "project_count": 0,
+    "project_count": 117,
     "has_framework": true
   },
   "PER": {
@@ -2678,7 +2678,7 @@
   },
   "PHL": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Philippines"
@@ -2688,16 +2688,16 @@
     "workspace_id": 88,
     "name": "Philippines",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 197663741.03,
+      "available": 163830270.01,
+      "spent": 120837696.99
     },
-    "project_count": 0,
+    "project_count": 171,
     "has_framework": true
   },
   "PNG": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Papua New Guinea"
@@ -2707,11 +2707,11 @@
     "workspace_id": 86,
     "name": "Papua New Guinea",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 152270294.99,
+      "available": 128632468.0,
+      "spent": 96208008.01
     },
-    "project_count": 0,
+    "project_count": 159,
     "has_framework": true
   },
   "PRY": {
@@ -2735,7 +2735,7 @@
   },
   "RWA": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Rwanda"
@@ -2745,11 +2745,11 @@
     "workspace_id": 75,
     "name": "Rwanda",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 414850865.01,
+      "available": 100990353.02,
+      "spent": 96790409.01
     },
-    "project_count": 0,
+    "project_count": 84,
     "has_framework": true
   },
   "SAU": {
@@ -2773,7 +2773,7 @@
   },
   "SDN": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Sudan"
@@ -2783,16 +2783,16 @@
     "workspace_id": 73,
     "name": "Sudan",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 944387422,
+      "available": 713863639,
+      "spent": 236395288
     },
-    "project_count": 0,
+    "project_count": 50,
     "has_framework": true
   },
   "SEN": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Senegal"
@@ -2802,16 +2802,16 @@
     "workspace_id": 72,
     "name": "Senegal",
     "totals": {
-      "required": 0,
-      "available": 0,
+      "required": 2884288.0,
+      "available": 3870288.0,
       "spent": 0
     },
-    "project_count": 0,
+    "project_count": 14,
     "has_framework": true
   },
   "SLE": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Sierra Leone"
@@ -2821,11 +2821,11 @@
     "workspace_id": 66,
     "name": "Sierra Leone",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 113448720.0,
+      "available": 104426384.0,
+      "spent": 87326641.01
     },
-    "project_count": 0,
+    "project_count": 120,
     "has_framework": true
   },
   "SOM": {
@@ -2849,7 +2849,7 @@
   },
   "SRB": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Serbia"
@@ -2859,11 +2859,11 @@
     "workspace_id": 62,
     "name": "Serbia",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 101865776.99,
+      "available": 101865731.99,
+      "spent": 79282235.0
     },
-    "project_count": 0,
+    "project_count": 175,
     "has_framework": true
   },
   "SSD": {
@@ -2944,7 +2944,7 @@
   },
   "TCD": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Chad"
@@ -2954,11 +2954,11 @@
     "workspace_id": 52,
     "name": "Chad",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 443816313.02,
+      "available": 198164380.01,
+      "spent": 245608088.01
     },
-    "project_count": 0,
+    "project_count": 172,
     "has_framework": true
   },
   "TGO": {
@@ -3020,7 +3020,7 @@
   },
   "TKM": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Turkmenistan"
@@ -3030,16 +3030,16 @@
     "workspace_id": 47,
     "name": "Turkmenistan",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 94525861.01,
+      "available": 92345191.02,
+      "spent": 79736257.98
     },
-    "project_count": 0,
+    "project_count": 200,
     "has_framework": true
   },
   "TLS": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Timor-Leste"
@@ -3049,11 +3049,11 @@
     "workspace_id": 46,
     "name": "Timor-Leste",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 83660385.99,
+      "available": 53272517.99,
+      "spent": 40874065.0
     },
-    "project_count": 0,
+    "project_count": 86,
     "has_framework": true
   },
   "TUR": {
@@ -3153,7 +3153,7 @@
   },
   "UKR": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Ukraine"
@@ -3163,16 +3163,16 @@
     "workspace_id": 35,
     "name": "Ukraine",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 1184124268.01,
+      "available": 756241992.99,
+      "spent": 501204108.99
     },
-    "project_count": 0,
+    "project_count": 250,
     "has_framework": true
   },
   "UZB": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Uzbekistan"
@@ -3182,11 +3182,11 @@
     "workspace_id": 34,
     "name": "Uzbekistan",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 93540550.01,
+      "available": 71082860.0,
+      "spent": 64405641.0
     },
-    "project_count": 0,
+    "project_count": 271,
     "has_framework": true
   },
   "YEM": {
@@ -3305,7 +3305,7 @@
   },
   "MWI": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Malawi"
@@ -3315,16 +3315,16 @@
     "workspace_id": 27,
     "name": "Malawi",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 241280557.01,
+      "available": 170542620.0,
+      "spent": 121492997.0
     },
-    "project_count": 0,
+    "project_count": 109,
     "has_framework": true
   },
   "MYS": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "workspace",
     "workspace_countries": [
       "Brunei Darussalam",
@@ -3336,16 +3336,16 @@
     "workspace_id": 26,
     "name": "Malaysia",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 54970915.0,
+      "available": 61638418.0,
+      "spent": 54284776.99
     },
-    "project_count": 0,
+    "project_count": 190,
     "has_framework": true
   },
   "BRN": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "workspace",
     "workspace_countries": [
       "Brunei Darussalam",
@@ -3357,16 +3357,16 @@
     "workspace_id": 26,
     "name": "Brunei Darussalam",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 54970915.0,
+      "available": 61638418.0,
+      "spent": 54284776.99
     },
-    "project_count": 0,
+    "project_count": 190,
     "has_framework": true
   },
   "SGP": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "workspace",
     "workspace_countries": [
       "Brunei Darussalam",
@@ -3378,16 +3378,16 @@
     "workspace_id": 26,
     "name": "Singapore",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 54970915.0,
+      "available": 61638418.0,
+      "spent": 54284776.99
     },
-    "project_count": 0,
+    "project_count": 190,
     "has_framework": true
   },
   "CHN": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "China"
@@ -3397,11 +3397,11 @@
     "workspace_id": 24,
     "name": "China",
     "totals": {
-      "required": 0,
-      "available": 0,
+      "required": 185949522.0,
+      "available": 180000198.0,
       "spent": 0
     },
-    "project_count": 0,
+    "project_count": 197,
     "has_framework": true
   },
   "MAR": {
@@ -3454,11 +3454,11 @@
     "workspace_id": 21,
     "name": "Afghanistan",
     "totals": {
-      "required": 1439521226.98,
-      "available": 1016259534.01,
-      "spent": 659586010.99
+      "required": 1451647433.98,
+      "available": 3905129084.01,
+      "spent": 1855826285.02
     },
-    "project_count": 160,
+    "project_count": 320,
     "has_framework": true
   },
   "GHA": {
@@ -3482,7 +3482,7 @@
   },
   "MKD": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "North Macedonia, Republic of"
@@ -3492,16 +3492,16 @@
     "workspace_id": 19,
     "name": "North Macedonia, Republic of",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 35040751.01,
+      "available": 32430887.0,
+      "spent": 30612083.0
     },
-    "project_count": 0,
+    "project_count": 161,
     "has_framework": true
   },
   "KAZ": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Kazakhstan"
@@ -3511,16 +3511,16 @@
     "workspace_id": 18,
     "name": "Kazakhstan",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 38652881.99,
+      "available": 35183211.01,
+      "spent": 29738284.0
     },
-    "project_count": 0,
+    "project_count": 278,
     "has_framework": true
   },
   "UGA": {
     "year": 2023,
-    "period_status": "unverified",
+    "period_status": "year_filtered",
     "geographic_scope": "country",
     "workspace_countries": [
       "Uganda"
@@ -3530,11 +3530,11 @@
     "workspace_id": 15,
     "name": "Uganda",
     "totals": {
-      "required": 0,
-      "available": 0,
-      "spent": 0
+      "required": 493253753.0,
+      "available": 729387081.99,
+      "spent": 213512280.98
     },
-    "project_count": 0,
+    "project_count": 95,
     "has_framework": true
   },
   "ZWE": {

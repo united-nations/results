@@ -40,12 +40,15 @@ def search(path, body):
         page += 1
 
 
-def finance(workspace, year, grouping):
-    params = [("workspaceIds", workspace), ("financeYears", year)]
+def finance(plan_ids, year, grouping):
+    # workspaceIds silently selects the newest plan, even for historical
+    # financeYears. Bind every query to the published plans active that year.
+    params = [("planIds", plan_id) for plan_id in plan_ids]
+    params.append(("financeYears", year))
     params.extend(("grouping", value) for value in grouping)
     rows = request("GET", "planEntity/finance/overview", params=params)
     if not isinstance(rows, list):
-        raise ValueError(f"Expected finance observations for workspace {workspace}, year {year}")
+        raise ValueError(f"Expected finance observations for plans {plan_ids}, year {year}")
     return rows
 
 
@@ -60,15 +63,17 @@ def fetch_year(year, workspaces, workers):
         "planIds": [plan["id"] for plan in plans],
         "coreentityTypeIds": [10, 5, 8], "limit": 1000,
     })
-    global_sdgs = request("GET", "planEntity/finance/overview",
-                          params={"financeYears": year, "grouping": "sdg"})
+    plans_by_workspace = {}
+    for plan in plans:
+        plans_by_workspace.setdefault(plan["workspaceId"], []).append(plan["id"])
+    global_sdgs = finance([plan["id"] for plan in plans], year, ["sdg"])
     observations = {}
     groups = {"sdgs": ["sdg"], "projects": ["agency", "planEntity:SOU"],
               "sp": ["planEntity:SP"], "oc": ["planEntity:OC"], "ou": ["planEntity:OU"]}
     with ThreadPoolExecutor(max_workers=workers) as pool:
         tasks = {
-            pool.submit(finance, ws["id"], year, grouping): (ws["id"], name)
-            for ws in workspaces for name, grouping in groups.items()
+            pool.submit(finance, plan_ids, year, grouping): (workspace, name)
+            for workspace, plan_ids in plans_by_workspace.items() for name, grouping in groups.items()
         }
         for completed, task in enumerate(as_completed(tasks), 1):
             workspace, name = tasks[task]
@@ -87,7 +92,7 @@ def fetch_year(year, workspaces, workers):
     projects = {}
     frameworks = {}
     for country, workspace in country_workspaces.items():
-        values = observations[workspace]
+        values = observations.get(workspace, {name: [] for name in groups})
         country_sdgs[country] = {
             "workspace_id": workspace, "sdgs": values["sdgs"], "has_year_data": bool(values["sdgs"]),
         }
@@ -104,6 +109,7 @@ def fetch_year(year, workspaces, workers):
         "period-provenance.json": {
             "year": year, "projects_year": year, "framework_year": year, "global_sdgs_year": year,
             "retrieved_at": datetime.now(timezone.utc).isoformat(),
+            "finance_plan_ids": sorted(plan["id"] for plan in plans),
         },
     }
 

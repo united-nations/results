@@ -46,6 +46,11 @@
         "available": 47962605.43,
         "spent": 42172456.13
       },
+      "XKX": {
+        "required": 1434532,
+        "available": 1434532,
+        "spent": 1308452.0
+      },
       "SLV": {
         "required": 7510407.4,
         "available": 3182814.67,
@@ -65,6 +70,16 @@
         "required": 5783392.5,
         "available": 2398256,
         "spent": 683414.67
+      },
+      "ARM": {
+        "required": 6197525.33,
+        "available": 5179095.08,
+        "spent": 4516356.17
+      },
+      "AZE": {
+        "required": 1812166.67,
+        "available": 1812166.67,
+        "spent": 251666.67
       },
       "BDI": {
         "required": 54989894,
@@ -90,6 +105,11 @@
         "required": 214664.5,
         "available": 175764.5,
         "spent": 165764.5
+      },
+      "BIH": {
+        "required": 7489259.67,
+        "available": 6436623,
+        "spent": 5905225.67
       },
       "BLR": {
         "required": 534443.75,
@@ -126,6 +146,11 @@
         "available": 3522039.25,
         "spent": 0
       },
+      "CIV": {
+        "required": 17221596.9,
+        "available": 16313456.4,
+        "spent": 13779082.49
+      },
       "CMR": {
         "required": 2648553.52,
         "available": 2214119.77,
@@ -145,6 +170,11 @@
         "required": 16701761.92,
         "available": 4622446.75,
         "spent": 4606713.42
+      },
+      "CUB": {
+        "required": 605862.07,
+        "available": 596695.4,
+        "spent": 570960.73
       },
       "DJI": {
         "required": 11490040.83,
@@ -177,14 +207,19 @@
         "spent": 3743704.67
       },
       "ETH": {
-        "required": 18429179.0,
-        "available": 17576845.67,
-        "spent": 11787506.49
+        "required": 82477457.03,
+        "available": 59892025.88,
+        "spent": 37676837.23
       },
       "GAB": {
         "required": 590929.5,
         "available": 388888.5,
         "spent": 343300.83
+      },
+      "GEO": {
+        "required": 5745963.58,
+        "available": 5320762.58,
+        "spent": 3388277.08
       },
       "GIN": {
         "required": 5627853.75,
@@ -206,6 +241,11 @@
         "available": 1017446.5,
         "spent": 570668.5
       },
+      "GTM": {
+        "required": 20086955.09,
+        "available": 19456955.09,
+        "spent": 0
+      },
       "HND": {
         "required": 13490229.42,
         "available": 11328270.92,
@@ -215,6 +255,11 @@
         "required": 6743267.93,
         "available": 5973456.93,
         "spent": 5318141.77
+      },
+      "IDN": {
+        "required": 9571832,
+        "available": 8407240,
+        "spent": 1628759.41
       },
       "IND": {
         "required": 14635906.8,
@@ -291,6 +336,11 @@
         "available": 644689.67,
         "spent": 132988.5
       },
+      "MEX": {
+        "required": 12327389.83,
+        "available": 5275035.33,
+        "spent": 4934150.78
+      },
       "MLI": {
         "required": 26794660,
         "available": 11597123,
@@ -341,6 +391,11 @@
         "available": 21887848.94,
         "spent": 19442532.57
       },
+      "PAN": {
+        "required": 8259061.46,
+        "available": 7642716.27,
+        "spent": 4738709.19
+      },
       "PER": {
         "required": 15552518.75,
         "available": 6449439.75,
@@ -366,6 +421,11 @@
         "available": 229265.33,
         "spent": 194265.33
       },
+      "SDN": {
+        "required": 46828582.33,
+        "available": 31842200.08,
+        "spent": 22506406.67
+      },
       "SEN": {
         "required": 36233551.0,
         "available": 29876240.25,
@@ -381,6 +441,11 @@
         "available": 67482169.92,
         "spent": 0
       },
+      "SRB": {
+        "required": 430935.6,
+        "available": 430935.6,
+        "spent": 0
+      },
       "SSD": {
         "required": 8073094,
         "available": 7856656,
@@ -390,6 +455,11 @@
         "required": 5365268.4,
         "available": 4806406.38,
         "spent": 3434879.55
+      },
+      "SWZ": {
+        "required": 1299339.5,
+        "available": 807494.5,
+        "spent": 0
       },
       "SYR": {
         "required": 207530203.33,
@@ -415,6 +485,16 @@
         "required": 7217048.47,
         "available": 7198298.47,
         "spent": 4624294.62
+      },
+      "TKM": {
+        "required": 665020.11,
+        "available": 584020.11,
+        "spent": 160124.45
+      },
+      "TLS": {
+        "required": 4337971,
+        "available": 4211318,
+        "spent": 3322300.5
       },
       "TUR": {
         "required": 28273614.58,
@@ -446,6 +526,11 @@
         "available": 66114737.16,
         "spent": 49879233.05
       },
+      "UZB": {
+        "required": 4811062.03,
+        "available": 2990533.37,
+        "spent": 2089893.98
+      },
       "YEM": {
         "required": 86200409.5,
         "available": 44031132,
@@ -476,6 +561,11 @@
         "available": 42096885.27,
         "spent": 33670452.91
       },
+      "CHN": {
+        "required": 32032851.64,
+        "available": 32032851.64,
+        "spent": 0
+      },
       "MAR": {
         "required": 9301039.2,
         "available": 9047156.2,
@@ -495,6 +585,21 @@
         "required": 11759805.13,
         "available": 9905094.19,
         "spent": 7987674.17
+      },
+      "MKD": {
+        "required": 1583849.5,
+        "available": 1512704.17,
+        "spent": 1512703.5
+      },
+      "KAZ": {
+        "required": 1796172.25,
+        "available": 1714409.25,
+        "spent": 1430150.83
+      },
+      "UGA": {
+        "required": 22359048.33,
+        "available": 20644595.83,
+        "spent": 12105021.83
       },
       "ZWE": {
         "required": 83269190.67,
@@ -530,6 +635,11 @@
         "available": 141977321.17,
         "spent": 129767174.58
       },
+      "XKX": {
+        "required": 219641.83,
+        "available": 219641.83,
+        "spent": 210663.33
+      },
       "SLV": {
         "required": 6505419.48,
         "available": 5970258.48,
@@ -549,6 +659,16 @@
         "required": 71847309.0,
         "available": 68927139.83,
         "spent": 68017117.5
+      },
+      "ARM": {
+        "required": 10349775.5,
+        "available": 8059820.58,
+        "spent": 5944852.92
+      },
+      "AZE": {
+        "required": 1087855.8,
+        "available": 956785,
+        "spent": 699000
       },
       "BDI": {
         "required": 79588102,
@@ -574,6 +694,11 @@
         "required": 910325.33,
         "available": 267938.67,
         "spent": 267938.67
+      },
+      "BIH": {
+        "required": 8010843.08,
+        "available": 4599450.83,
+        "spent": 4555072.17
       },
       "BLR": {
         "required": 234000,
@@ -610,6 +735,11 @@
         "available": 334426.75,
         "spent": 0
       },
+      "CIV": {
+        "required": 29326783,
+        "available": 25758598.5,
+        "spent": 22344817
+      },
       "CMR": {
         "required": 1300874.33,
         "available": 1201809.83,
@@ -624,6 +754,11 @@
         "required": 599421.33,
         "available": 189421.33,
         "spent": 186184.67
+      },
+      "CUB": {
+        "required": 59918248.92,
+        "available": 49844138.42,
+        "spent": 45712250.17
       },
       "DJI": {
         "required": 32150431,
@@ -656,14 +791,19 @@
         "spent": 7201719.67
       },
       "ETH": {
-        "required": 36343642.03,
-        "available": 29000736.87,
-        "spent": 14231379.7
+        "required": 541433654.99,
+        "available": 436511221.68,
+        "spent": 225877266.51
       },
       "GAB": {
         "required": 197306.5,
         "available": 197306.5,
         "spent": 197306.5
+      },
+      "GEO": {
+        "required": 6244148.83,
+        "available": 6090025.83,
+        "spent": 4560230.5
       },
       "GIN": {
         "required": 28361877.68,
@@ -685,6 +825,11 @@
         "available": 1033455,
         "spent": 784413
       },
+      "GTM": {
+        "required": 37038893.58,
+        "available": 12545809.58,
+        "spent": 49462
+      },
       "HND": {
         "required": 31564857.4,
         "available": 30774003.4,
@@ -694,6 +839,11 @@
         "required": 310170144.65,
         "available": 309761094.65,
         "spent": 168929443.48
+      },
+      "IDN": {
+        "required": 9722523.1,
+        "available": 8697316.1,
+        "spent": 5473357.46
       },
       "IND": {
         "required": 41947210,
@@ -770,6 +920,11 @@
         "available": 859520.5,
         "spent": 423533.5
       },
+      "MEX": {
+        "required": 15616912.53,
+        "available": 10933136.03,
+        "spent": 9787043.23
+      },
       "MLI": {
         "required": 134120370.83,
         "available": 78002321.83,
@@ -820,6 +975,11 @@
         "available": 131124347.17,
         "spent": 124685671.64
       },
+      "PAN": {
+        "required": 629538.1,
+        "available": 547180.95,
+        "spent": 462886.63
+      },
       "PER": {
         "required": 458573.67,
         "available": 419390.67,
@@ -845,6 +1005,11 @@
         "available": 7445748.83,
         "spent": 7435034.5
       },
+      "SDN": {
+        "required": 599586462.25,
+        "available": 141547023.5,
+        "spent": 92437471.75
+      },
       "SEN": {
         "required": 25832920.83,
         "available": 18532085.5,
@@ -860,6 +1025,11 @@
         "available": 293485099.58,
         "spent": 0
       },
+      "SRB": {
+        "required": 137212.05,
+        "available": 137212.05,
+        "spent": 0
+      },
       "SSD": {
         "required": 317256596.5,
         "available": 244762553.5,
@@ -869,6 +1039,11 @@
         "required": 4116891.17,
         "available": 3603748.17,
         "spent": 3384889.67
+      },
+      "SWZ": {
+        "required": 1824014.5,
+        "available": 1355669.5,
+        "spent": 0
       },
       "SYR": {
         "required": 553141923.0,
@@ -894,6 +1069,16 @@
         "required": 14361749.5,
         "available": 14208045.5,
         "spent": 9321287.5
+      },
+      "TKM": {
+        "required": 416559.95,
+        "available": 416559.95,
+        "spent": 310367.61
+      },
+      "TLS": {
+        "required": 6003010,
+        "available": 3224420.5,
+        "spent": 2812495.5
       },
       "TUR": {
         "required": 18120158.5,
@@ -925,6 +1110,11 @@
         "available": 56556586.33,
         "spent": 38301882.33
       },
+      "UZB": {
+        "required": 3767957.61,
+        "available": 3704321.61,
+        "spent": 2142175.97
+      },
       "YEM": {
         "required": 84866543.5,
         "available": 42697267,
@@ -955,6 +1145,11 @@
         "available": 22901687.85,
         "spent": 16711514.77
       },
+      "CHN": {
+        "required": 19173976.83,
+        "available": 19021449.83,
+        "spent": 0
+      },
       "MAR": {
         "required": 1876413.33,
         "available": 1858413.33,
@@ -975,6 +1170,21 @@
         "available": 10994994.19,
         "spent": 9872373.0
       },
+      "MKD": {
+        "required": 1987373.5,
+        "available": 1900768.5,
+        "spent": 1900768.5
+      },
+      "KAZ": {
+        "required": 4233651.5,
+        "available": 4233651.5,
+        "spent": 2387222.33
+      },
+      "UGA": {
+        "required": 143521092.5,
+        "available": 128731986.5,
+        "spent": 104693962.5
+      },
       "ZWE": {
         "required": 57711506.33,
         "available": 20261684,
@@ -984,14 +1194,14 @@
     "top_underfunded": [
       "SOM",
       "LBN",
+      "SDN",
       "COD",
       "TCD",
       "AFG",
       "NGA",
+      "ETH",
       "SYR",
-      "SSD",
-      "BFA",
-      "MLI"
+      "SSD"
     ]
   },
   "3": {
@@ -1008,6 +1218,11 @@
         "required": 173605128.5,
         "available": 129309455,
         "spent": 112944365
+      },
+      "XKX": {
+        "required": 1517120.83,
+        "available": 1513116.83,
+        "spent": 1513116.83
       },
       "SLV": {
         "required": 5182339.65,
@@ -1028,6 +1243,16 @@
         "required": 97442777.83,
         "available": 95413615.83,
         "spent": 79996442.17
+      },
+      "ARM": {
+        "required": 2573450,
+        "available": 2166619,
+        "spent": 2046717
+      },
+      "AZE": {
+        "required": 2638597,
+        "available": 1145327,
+        "spent": 203500
       },
       "BDI": {
         "required": 102144120.5,
@@ -1053,6 +1278,11 @@
         "required": 833167.33,
         "available": 197218.17,
         "spent": 21384.83
+      },
+      "BIH": {
+        "required": 7440828.0,
+        "available": 3569389.17,
+        "spent": 3564942
       },
       "BLR": {
         "required": 1153911.0,
@@ -1089,6 +1319,11 @@
         "available": 464500,
         "spent": 13650
       },
+      "CIV": {
+        "required": 47596218.74,
+        "available": 39278654.4,
+        "spent": 35203328.07
+      },
       "CMR": {
         "required": 1229146.17,
         "available": 45083.33,
@@ -1108,6 +1343,11 @@
         "required": 826428.33,
         "available": 827170.83,
         "spent": 723562.33
+      },
+      "CUB": {
+        "required": 24018392,
+        "available": 23968693.67,
+        "spent": 12230179.67
       },
       "DJI": {
         "required": 10398008.17,
@@ -1140,14 +1380,19 @@
         "spent": 2112041.67
       },
       "ETH": {
-        "required": 91688948.27,
-        "available": 78834341.27,
-        "spent": 34488796.13
+        "required": 397483457.51,
+        "available": 314906998.02,
+        "spent": 160092950.22
       },
       "GAB": {
         "required": 6471127.5,
         "available": 5746770.5,
         "spent": 5306268
+      },
+      "GEO": {
+        "required": 4900679.33,
+        "available": 3603169.83,
+        "spent": 2870373.83
       },
       "GIN": {
         "required": 33564164.18,
@@ -1169,6 +1414,11 @@
         "available": 13298965.5,
         "spent": 11455647.5
       },
+      "GTM": {
+        "required": 119047310,
+        "available": 15449601.83,
+        "spent": 18000
+      },
       "HND": {
         "required": 49946075.42,
         "available": 49022220.92,
@@ -1178,6 +1428,11 @@
         "required": 27184276.83,
         "available": 23930855.83,
         "spent": 18160252.67
+      },
+      "IDN": {
+        "required": 50720132.37,
+        "available": 48212912.37,
+        "spent": 32283559.05
       },
       "IND": {
         "required": 82536016.5,
@@ -1254,6 +1509,11 @@
         "available": 1715029.67,
         "spent": 780683.5
       },
+      "MEX": {
+        "required": 15813765.73,
+        "available": 14353155.9,
+        "spent": 13527185.94
+      },
       "MLI": {
         "required": 173570438.83,
         "available": 144389746.5,
@@ -1304,6 +1564,11 @@
         "available": 293538807.6,
         "spent": 289142133.14
       },
+      "PAN": {
+        "required": 658040.67,
+        "available": 523040.67,
+        "spent": 508810.67
+      },
       "PER": {
         "required": 27038520.17,
         "available": 25128517.17,
@@ -1329,6 +1594,11 @@
         "available": 2442662.58,
         "spent": 2208590.58
       },
+      "SDN": {
+        "required": 921360853.17,
+        "available": 146222491.33,
+        "spent": 102684749.17
+      },
       "SEN": {
         "required": 7406779,
         "available": 6063495.25,
@@ -1344,6 +1614,11 @@
         "available": 11604399.33,
         "spent": 0
       },
+      "SRB": {
+        "required": 11614890.67,
+        "available": 11614890.67,
+        "spent": 0
+      },
       "SSD": {
         "required": 144407640,
         "available": 107749107,
@@ -1353,6 +1628,11 @@
         "required": 5846428.65,
         "available": 5702653.96,
         "spent": 4872288.46
+      },
+      "SWZ": {
+        "required": 811641,
+        "available": 670273,
+        "spent": 0
       },
       "SYR": {
         "required": 109833362.83,
@@ -1378,6 +1658,16 @@
         "required": 19214938.63,
         "available": 18375355.3,
         "spent": 16600616.28
+      },
+      "TKM": {
+        "required": 66972702.78,
+        "available": 66952702.78,
+        "spent": 66698552.78
+      },
+      "TLS": {
+        "required": 15386761,
+        "available": 13220238,
+        "spent": 7574817
       },
       "TUR": {
         "required": 4610916.25,
@@ -1409,6 +1699,11 @@
         "available": 135474411.25,
         "spent": 100967066.64
       },
+      "UZB": {
+        "required": 42167321.86,
+        "available": 27745282.86,
+        "spent": 20083896.24
+      },
       "YEM": {
         "required": 8290800.75,
         "available": 8290800.75,
@@ -1439,6 +1734,11 @@
         "available": 45409053.0,
         "spent": 34028910.37
       },
+      "CHN": {
+        "required": 10118459.0,
+        "available": 10013459.0,
+        "spent": 0
+      },
       "MAR": {
         "required": 8434913,
         "available": 6842435.17,
@@ -1459,6 +1759,21 @@
         "available": 21965641.52,
         "spent": 19491529.67
       },
+      "MKD": {
+        "required": 8269696.0,
+        "available": 4467930.0,
+        "spent": 4346796.67
+      },
+      "KAZ": {
+        "required": 16419943.1,
+        "available": 14248104.69,
+        "spent": 13530327.02
+      },
+      "UGA": {
+        "required": 28149721.34,
+        "available": 24564629.33,
+        "spent": 22052378.33
+      },
       "ZWE": {
         "required": 203767501.33,
         "available": 165094348.0,
@@ -1466,16 +1781,16 @@
       }
     },
     "top_underfunded": [
+      "SDN",
       "UKR",
       "AFG",
       "TCD",
+      "GTM",
+      "ETH",
       "LBN",
       "SYR",
       "KEN",
-      "VEN",
-      "COD",
-      "NGA",
-      "ZWE"
+      "VEN"
     ]
   },
   "4": {
@@ -1492,6 +1807,11 @@
         "required": 43475420.5,
         "available": 30315171.5,
         "spent": 24660651.75
+      },
+      "XKX": {
+        "required": 4116692.17,
+        "available": 4112616.5,
+        "spent": 4014720.5
       },
       "SLV": {
         "required": 14818902.67,
@@ -1512,6 +1832,16 @@
         "required": 29883306.17,
         "available": 29882424.5,
         "spent": 21868535.33
+      },
+      "ARM": {
+        "required": 5437503.67,
+        "available": 4386035.25,
+        "spent": 3752534.75
+      },
+      "AZE": {
+        "required": 1001470,
+        "available": 870470,
+        "spent": 0
       },
       "BDI": {
         "required": 26633970.08,
@@ -1537,6 +1867,11 @@
         "required": 2255437.42,
         "available": 696579.42,
         "spent": 696579.42
+      },
+      "BIH": {
+        "required": 7393342.5,
+        "available": 4288046,
+        "spent": 4130560.5
       },
       "BLR": {
         "required": 1169138.75,
@@ -1573,6 +1908,11 @@
         "available": 2557837.58,
         "spent": 55097.25
       },
+      "CIV": {
+        "required": 26123310.17,
+        "available": 21071284.83,
+        "spent": 17175938
+      },
       "CMR": {
         "required": 20180433.5,
         "available": 616302,
@@ -1587,6 +1927,11 @@
         "required": 112750.25,
         "available": 109383.58,
         "spent": 108650.25
+      },
+      "CUB": {
+        "required": 912165.76,
+        "available": 912165.26,
+        "spent": 665015.83
       },
       "DJI": {
         "required": 14487916.33,
@@ -1619,14 +1964,19 @@
         "spent": 4191745.33
       },
       "ETH": {
-        "required": 25043863.79,
-        "available": 14212475.79,
-        "spent": 2711846.29
+        "required": 178145786.2,
+        "available": 126581692.04,
+        "spent": 89253769.12
       },
       "GAB": {
         "required": 5166677,
         "available": 4976677,
         "spent": 4596478
+      },
+      "GEO": {
+        "required": 3620591.33,
+        "available": 2712071.67,
+        "spent": 2657578
       },
       "GIN": {
         "required": 3194748.35,
@@ -1648,6 +1998,11 @@
         "available": 520000,
         "spent": 520000
       },
+      "GTM": {
+        "required": 6275613.5,
+        "available": 6275613.5,
+        "spent": 0
+      },
       "HND": {
         "required": 26487091,
         "available": 24548575,
@@ -1657,6 +2012,11 @@
         "required": 10930318.38,
         "available": 10025318.38,
         "spent": 9736299.22
+      },
+      "IDN": {
+        "required": 4686090.57,
+        "available": 2510718.57,
+        "spent": 822872.37
       },
       "IND": {
         "required": 12594415.47,
@@ -1733,6 +2093,11 @@
         "available": 929572.5,
         "spent": 370498
       },
+      "MEX": {
+        "required": 24477812.93,
+        "available": 8152438.26,
+        "spent": 7516568.64
+      },
       "MLI": {
         "required": 28013845.17,
         "available": 20738641.83,
@@ -1783,6 +2148,11 @@
         "available": 62898175.07,
         "spent": 58056082.9
       },
+      "PAN": {
+        "required": 8201439.64,
+        "available": 7815706.31,
+        "spent": 5115879.48
+      },
       "PER": {
         "required": 3527709,
         "available": 1353306,
@@ -1808,6 +2178,11 @@
         "available": 2220886,
         "spent": 1109585.67
       },
+      "SDN": {
+        "required": 87083577.42,
+        "available": 60409105.17,
+        "spent": 58637971.92
+      },
       "SEN": {
         "required": 16997337.58,
         "available": 4543312.08,
@@ -1823,6 +2198,11 @@
         "available": 19119067.83,
         "spent": 0
       },
+      "SRB": {
+        "required": 4143264.3,
+        "available": 4123264.3,
+        "spent": 0
+      },
       "SSD": {
         "required": 58808569,
         "available": 23696196,
@@ -1832,6 +2212,11 @@
         "required": 1957210,
         "available": 1600329.5,
         "spent": 1600329.5
+      },
+      "SWZ": {
+        "required": 454177,
+        "available": 217111,
+        "spent": 0
       },
       "SYR": {
         "required": 63643997.66,
@@ -1857,6 +2242,16 @@
         "required": 13364264.33,
         "available": 13310714.33,
         "spent": 10822364.08
+      },
+      "TKM": {
+        "required": 878023.61,
+        "available": 878023.61,
+        "spent": 627683.11
+      },
+      "TLS": {
+        "required": 2717327,
+        "available": 2566327,
+        "spent": 2424515
       },
       "TUR": {
         "required": 54396237.17,
@@ -1888,6 +2283,11 @@
         "available": 48462668.29,
         "spent": 26791890.69
       },
+      "UZB": {
+        "required": 21433301.37,
+        "available": 18544168.03,
+        "spent": 15737372.42
+      },
       "YEM": {
         "required": 13151988.83,
         "available": 13151988.83,
@@ -1918,6 +2318,11 @@
         "available": 10973995.28,
         "spent": 9921283.32
       },
+      "CHN": {
+        "required": 7450628.14,
+        "available": 7450628.14,
+        "spent": 0
+      },
       "MAR": {
         "required": 3880710,
         "available": 2596001,
@@ -1938,6 +2343,21 @@
         "available": 5382069.67,
         "spent": 3711492.5
       },
+      "MKD": {
+        "required": 1951020.6,
+        "available": 1410168.97,
+        "spent": 1297302.5
+      },
+      "KAZ": {
+        "required": 4642029.83,
+        "available": 1980482.83,
+        "spent": 1938811.33
+      },
+      "UGA": {
+        "required": 21903873.67,
+        "available": 18636999,
+        "spent": 14056191.67
+      },
       "ZWE": {
         "required": 30240003.83,
         "available": 16727776.67,
@@ -1948,13 +2368,13 @@
       "UKR",
       "AFG",
       "CAF",
+      "ETH",
       "PAK",
       "LBN",
       "SSD",
       "VEN",
-      "TUR",
-      "CMR",
-      "SYR"
+      "SDN",
+      "TUR"
     ]
   },
   "5": {
@@ -1971,6 +2391,11 @@
         "required": 27706634.77,
         "available": 11118637.43,
         "spent": 5995843.8
+      },
+      "XKX": {
+        "required": 2947677.5,
+        "available": 2943394.5,
+        "spent": 2832829.17
       },
       "SLV": {
         "required": 20927315.83,
@@ -1991,6 +2416,16 @@
         "required": 9947782.33,
         "available": 9579079.33,
         "spent": 4672579.33
+      },
+      "ARM": {
+        "required": 5370029,
+        "available": 5090270.67,
+        "spent": 5060701.67
+      },
+      "AZE": {
+        "required": 1992588.67,
+        "available": 627588.67,
+        "spent": 56666.67
       },
       "BDI": {
         "required": 29274120.0,
@@ -2016,6 +2451,11 @@
         "required": 357439.42,
         "available": 312251.92,
         "spent": 187251.92
+      },
+      "BIH": {
+        "required": 8650534,
+        "available": 5211998.5,
+        "spent": 4680994.83
       },
       "BLR": {
         "required": 1189506.83,
@@ -2052,6 +2492,11 @@
         "available": 2400176.75,
         "spent": 5000
       },
+      "CIV": {
+        "required": 5595383.82,
+        "available": 5167808.32,
+        "spent": 3657437.32
+      },
       "CMR": {
         "required": 4535179.69,
         "available": 2155570.44,
@@ -2066,6 +2511,11 @@
         "required": 4724312.83,
         "available": 4698802.0,
         "spent": 4464694.5
+      },
+      "CUB": {
+        "required": 6030101.09,
+        "available": 5965562.76,
+        "spent": 5507079.58
       },
       "DJI": {
         "required": 3105056.83,
@@ -2098,14 +2548,19 @@
         "spent": 420637.0
       },
       "ETH": {
-        "required": 23111872.77,
-        "available": 18555395.6,
-        "spent": 10985301.69
+        "required": 55314866.56,
+        "available": 41858693.52,
+        "spent": 24185109.09
       },
       "GAB": {
         "required": 499294.33,
         "available": 441611.0,
         "spent": 402735
+      },
+      "GEO": {
+        "required": 10043789.58,
+        "available": 9261998.25,
+        "spent": 7766245.25
       },
       "GIN": {
         "required": 4391937.35,
@@ -2127,6 +2582,11 @@
         "available": 603145,
         "spent": 543145
       },
+      "GTM": {
+        "required": 6056862.83,
+        "available": 5384698.83,
+        "spent": 0
+      },
       "HND": {
         "required": 10858352.32,
         "available": 6887119.82,
@@ -2136,6 +2596,11 @@
         "required": 23577568.23,
         "available": 19856704.07,
         "spent": 12728710.57
+      },
+      "IDN": {
+        "required": 14086972.17,
+        "available": 11711067.67,
+        "spent": 5117932.83
       },
       "IND": {
         "required": 20757259.13,
@@ -2212,6 +2677,11 @@
         "available": 3805436,
         "spent": 303233.5
       },
+      "MEX": {
+        "required": 17564805.13,
+        "available": 14123014.13,
+        "spent": 12873961.46
+      },
       "MLI": {
         "required": 6997341.66,
         "available": 2851247.66,
@@ -2262,6 +2732,11 @@
         "available": 52468835.27,
         "spent": 47491671.74
       },
+      "PAN": {
+        "required": 18399224.82,
+        "available": 15558369.88,
+        "spent": 12816894.9
+      },
       "PER": {
         "required": 7017323.5,
         "available": 2841625.5,
@@ -2287,6 +2762,11 @@
         "available": 10742096.9,
         "spent": 9112296.73
       },
+      "SDN": {
+        "required": 42683336.67,
+        "available": 28233557.92,
+        "spent": 13245293.33
+      },
       "SEN": {
         "required": 13847712.42,
         "available": 9073825.17,
@@ -2302,6 +2782,11 @@
         "available": 14812109.58,
         "spent": 0
       },
+      "SRB": {
+        "required": 4937718.02,
+        "available": 4937718.02,
+        "spent": 0
+      },
       "SSD": {
         "required": 17770020.83,
         "available": 11995799.33,
@@ -2311,6 +2796,11 @@
         "required": 1150931.9,
         "available": 1080355.88,
         "spent": 937344.96
+      },
+      "SWZ": {
+        "required": 50000,
+        "available": 5572,
+        "spent": 0
       },
       "SYR": {
         "required": 113579977.17,
@@ -2336,6 +2826,16 @@
         "required": 6416269.97,
         "available": 6158509.63,
         "spent": 5320740.7
+      },
+      "TKM": {
+        "required": 13334829.44,
+        "available": 13253329.44,
+        "spent": 13133598.78
+      },
+      "TLS": {
+        "required": 3471210,
+        "available": 3447392,
+        "spent": 2884037.5
       },
       "TUR": {
         "required": 40263863.58,
@@ -2367,6 +2867,11 @@
         "available": 50626463.67,
         "spent": 36111734.5
       },
+      "UZB": {
+        "required": 4644500.7,
+        "available": 2868109.03,
+        "spent": 1878812.32
+      },
       "YEM": {
         "required": 10741930.75,
         "available": 10741930.75,
@@ -2397,6 +2902,11 @@
         "available": 9721263.16,
         "spent": 9051780.86
       },
+      "CHN": {
+        "required": 6175935.81,
+        "available": 6125935.81,
+        "spent": 0
+      },
       "MAR": {
         "required": 24167769.79,
         "available": 23960151.62,
@@ -2416,6 +2926,21 @@
         "required": 24177215.11,
         "available": 16607309,
         "spent": 12199546.83
+      },
+      "MKD": {
+        "required": 3408400.35,
+        "available": 3128585.55,
+        "spent": 3039021.75
+      },
+      "KAZ": {
+        "required": 2982908.83,
+        "available": 2703206.83,
+        "spent": 2615886
+      },
+      "UGA": {
+        "required": 16182293.0,
+        "available": 14353507.17,
+        "spent": 11348406.67
       },
       "ZWE": {
         "required": 53636608.88,
@@ -2466,6 +2991,16 @@
         "available": 5000000,
         "spent": 359632
       },
+      "ARM": {
+        "required": 1253920.25,
+        "available": 507479.25,
+        "spent": 408069
+      },
+      "AZE": {
+        "required": 232375.8,
+        "available": 101305,
+        "spent": 61000
+      },
       "BDI": {
         "required": 12919634.67,
         "available": 6078806.83,
@@ -2490,6 +3025,11 @@
         "required": 300641.5,
         "available": 300641.5,
         "spent": 283982.5
+      },
+      "BIH": {
+        "required": 6473615.75,
+        "available": 3389878,
+        "spent": 3389878
       },
       "BLR": {
         "required": 577016.67,
@@ -2521,6 +3061,11 @@
         "available": 0,
         "spent": 0
       },
+      "CIV": {
+        "required": 3708987.67,
+        "available": 3025663.92,
+        "spent": 2639418.58
+      },
       "CMR": {
         "required": 590708.52,
         "available": 52226.19,
@@ -2540,6 +3085,11 @@
         "required": 782185.08,
         "available": 782185.08,
         "spent": 748064.08
+      },
+      "CUB": {
+        "required": 1719036.25,
+        "available": 1519036.25,
+        "spent": 790366
       },
       "DJI": {
         "required": 9166097.83,
@@ -2572,14 +3122,19 @@
         "spent": 1445430
       },
       "ETH": {
-        "required": 4424058.5,
-        "available": 4230778.5,
-        "spent": 1703824
+        "required": 88446836.33,
+        "available": 67917097.02,
+        "spent": 34610692.69
       },
       "GAB": {
         "required": 69080,
         "available": 69080,
         "spent": 68580
+      },
+      "GEO": {
+        "required": 1235804,
+        "available": 1194187.33,
+        "spent": 1194187.33
       },
       "GIN": {
         "required": 10504508.43,
@@ -2596,6 +3151,11 @@
         "available": 1137658.58,
         "spent": 530639.11
       },
+      "GTM": {
+        "required": 705756.33,
+        "available": 648067.33,
+        "spent": 0
+      },
       "HND": {
         "required": 2817373.17,
         "available": 2315703.67,
@@ -2605,6 +3165,11 @@
         "required": 9859618.17,
         "available": 9579618.17,
         "spent": 5101244
+      },
+      "IDN": {
+        "required": 1402954.75,
+        "available": 725833.25,
+        "spent": 93796
       },
       "IND": {
         "required": 14679912,
@@ -2681,6 +3246,11 @@
         "available": 549597,
         "spent": 500000
       },
+      "MEX": {
+        "required": 1929676.15,
+        "available": 1052269.48,
+        "spent": 1022982.23
+      },
       "MLI": {
         "required": 10642543.5,
         "available": 3165535.17,
@@ -2726,6 +3296,11 @@
         "available": 44919195,
         "spent": 43254875
       },
+      "PAN": {
+        "required": 1796163.71,
+        "available": 1636890.86,
+        "spent": 1381954.14
+      },
       "PER": {
         "required": 273195.5,
         "available": 273195.5,
@@ -2751,6 +3326,11 @@
         "available": 4835313.67,
         "spent": 4361626
       },
+      "SDN": {
+        "required": 83539614,
+        "available": 59715511,
+        "spent": 54935777
+      },
       "SEN": {
         "required": 7068284,
         "available": 5424995.25,
@@ -2766,6 +3346,11 @@
         "available": 29344580.67,
         "spent": 0
       },
+      "SRB": {
+        "required": 440558.33,
+        "available": 440558.33,
+        "spent": 0
+      },
       "SSD": {
         "required": 5650539.5,
         "available": 3250539.5,
@@ -2775,6 +3360,11 @@
         "required": 1078272,
         "available": 913957,
         "spent": 336181
+      },
+      "SWZ": {
+        "required": 200000,
+        "available": 7134,
+        "spent": 0
       },
       "SYR": {
         "required": 48594418.42,
@@ -2800,6 +3390,16 @@
         "required": 6485749.92,
         "available": 6401095.92,
         "spent": 6197374.08
+      },
+      "TKM": {
+        "required": 612742.28,
+        "available": 612742.28,
+        "spent": 341928.28
+      },
+      "TLS": {
+        "required": 6049617,
+        "available": 6003261.5,
+        "spent": 1578920.5
       },
       "TUR": {
         "required": 948836,
@@ -2831,6 +3431,11 @@
         "available": 19644183.1,
         "spent": 14761531.7
       },
+      "UZB": {
+        "required": 1345082.27,
+        "available": 959946.27,
+        "spent": 959863.99
+      },
       "YEM": {
         "required": 13151988.83,
         "available": 13151988.83,
@@ -2861,6 +3466,11 @@
         "available": 9630841,
         "spent": 4517543
       },
+      "CHN": {
+        "required": 0,
+        "available": 0,
+        "spent": 0
+      },
       "MAR": {
         "required": 2863932.2,
         "available": 613932.2,
@@ -2881,6 +3491,21 @@
         "available": 3517436,
         "spent": 2218343
       },
+      "MKD": {
+        "required": 1522316.33,
+        "available": 1522316.33,
+        "spent": 1521183
+      },
+      "KAZ": {
+        "required": 159682.43,
+        "available": 157253.86,
+        "spent": 154089.69
+      },
+      "UGA": {
+        "required": 12044917,
+        "available": 8191108,
+        "spent": 7584672.5
+      },
       "ZWE": {
         "required": 12007452.5,
         "available": 5594730.25,
@@ -2892,12 +3517,12 @@
       "COD",
       "NGA",
       "SYR",
+      "SDN",
       "UKR",
+      "ETH",
       "KEN",
       "LBY",
-      "PAK",
-      "CAF",
-      "LBN"
+      "PAK"
     ]
   },
   "7": {
@@ -2914,6 +3539,11 @@
         "required": 3096730,
         "available": 1995417.5,
         "spent": 401025.75
+      },
+      "XKX": {
+        "required": 176841.5,
+        "available": 176841.5,
+        "spent": 166841.5
       },
       "SLV": {
         "required": 532306,
@@ -2934,6 +3564,16 @@
         "required": 2546934,
         "available": 2546934,
         "spent": 46934
+      },
+      "ARM": {
+        "required": 7496488,
+        "available": 6708185.67,
+        "spent": 6252812.75
+      },
+      "AZE": {
+        "required": 1605500,
+        "available": 5500,
+        "spent": 5500
       },
       "BDI": {
         "required": 9949666,
@@ -2959,6 +3599,11 @@
         "required": 445280.67,
         "available": 181972.67,
         "spent": 181972.67
+      },
+      "BIH": {
+        "required": 9926490.33,
+        "available": 8875738.67,
+        "spent": 8875738.67
       },
       "BLR": {
         "required": 10000,
@@ -3010,6 +3655,11 @@
         "available": 123566.5,
         "spent": 123566.5
       },
+      "CUB": {
+        "required": 3086178.83,
+        "available": 3086178.83,
+        "spent": 2877752
+      },
       "DJI": {
         "required": 20227607.67,
         "available": 1560807.67,
@@ -3041,9 +3691,14 @@
         "spent": 3504411
       },
       "ETH": {
-        "required": 612317,
-        "available": 594817,
-        "spent": 197335.5
+        "required": 22317564.83,
+        "available": 2574730.17,
+        "spent": 1132743.83
+      },
+      "GEO": {
+        "required": 68750,
+        "available": 68750,
+        "spent": 68750
       },
       "GIN": {
         "required": 6422136,
@@ -3065,6 +3720,11 @@
         "available": 147000,
         "spent": 112458
       },
+      "GTM": {
+        "required": 34734,
+        "available": 34734,
+        "spent": 0
+      },
       "HND": {
         "required": 68321,
         "available": 68321,
@@ -3074,6 +3734,11 @@
         "required": 1368155,
         "available": 1368155,
         "spent": 1368155
+      },
+      "IDN": {
+        "required": 3835272.75,
+        "available": 3826197.25,
+        "spent": 3184966.58
       },
       "IND": {
         "required": 11708173,
@@ -3150,6 +3815,11 @@
         "available": 250000,
         "spent": 250000
       },
+      "MEX": {
+        "required": 20383.4,
+        "available": 20383.4,
+        "spent": 20383.4
+      },
       "MLI": {
         "required": 31425,
         "available": 31425,
@@ -3200,6 +3870,11 @@
         "available": 1496377.07,
         "spent": 1463298.36
       },
+      "PAN": {
+        "required": 150000,
+        "available": 126750,
+        "spent": 126620.25
+      },
       "PER": {
         "required": 67695,
         "available": 67695,
@@ -3225,6 +3900,11 @@
         "available": 4533333.33,
         "spent": 4515794.83
       },
+      "SDN": {
+        "required": 55763872,
+        "available": 5599907,
+        "spent": 5599907
+      },
       "SEN": {
         "required": 1586505.0,
         "available": 1121685,
@@ -3240,10 +3920,20 @@
         "available": 3619614,
         "spent": 0
       },
+      "SRB": {
+        "required": 5489986,
+        "available": 5489986,
+        "spent": 0
+      },
       "STP": {
         "required": 3335497.42,
         "available": 3275497.42,
         "spent": 2152964.92
+      },
+      "SWZ": {
+        "required": 958596,
+        "available": 938396,
+        "spent": 0
       },
       "SYR": {
         "required": 2333333.33,
@@ -3269,6 +3959,11 @@
         "required": 83061.67,
         "available": 83061.67,
         "spent": 75502.67
+      },
+      "TKM": {
+        "required": 272589,
+        "available": 272589,
+        "spent": 174406.02
       },
       "TUR": {
         "required": 338895,
@@ -3300,6 +3995,11 @@
         "available": 85713071.08,
         "spent": 51772455.42
       },
+      "UZB": {
+        "required": 536972.86,
+        "available": 236972.86,
+        "spent": 235763.57
+      },
       "YEM": {
         "required": 13151988.83,
         "available": 13151988.83,
@@ -3330,6 +4030,11 @@
         "available": 841114.0,
         "spent": 705333.33
       },
+      "CHN": {
+        "required": 36666.67,
+        "available": 0,
+        "spent": 0
+      },
       "MAR": {
         "required": 1596243.53,
         "available": 1596243.53,
@@ -3350,6 +4055,21 @@
         "available": 32794.5,
         "spent": 32794.5
       },
+      "MKD": {
+        "required": 1506831.83,
+        "available": 1506831.83,
+        "spent": 1498331.83
+      },
+      "KAZ": {
+        "required": 57259,
+        "available": 56259,
+        "spent": 53094.83
+      },
+      "UGA": {
+        "required": 454899.33,
+        "available": 227899.33,
+        "spent": 82624.33
+      },
       "ZWE": {
         "required": 3319106.55,
         "available": 3314106.05,
@@ -3357,6 +4077,8 @@
       }
     },
     "top_underfunded": [
+      "SDN",
+      "ETH",
       "DJI",
       "TZA",
       "LKA",
@@ -3364,9 +4086,7 @@
       "UKR",
       "BDI",
       "LBN",
-      "MWI",
-      "GIN",
-      "COD"
+      "MWI"
     ]
   },
   "8": {
@@ -3383,6 +4103,11 @@
         "required": 22944070.27,
         "available": 5020447.77,
         "spent": 2675061.88
+      },
+      "XKX": {
+        "required": 2204959.67,
+        "available": 2200676.67,
+        "spent": 2125451.67
       },
       "SLV": {
         "required": 8869846.58,
@@ -3403,6 +4128,16 @@
         "required": 19912857.33,
         "available": 13228260.33,
         "spent": 4533698.83
+      },
+      "ARM": {
+        "required": 2573508.83,
+        "available": 2418508.83,
+        "spent": 1385235.83
+      },
+      "AZE": {
+        "required": 75000,
+        "available": 75000,
+        "spent": 65000
       },
       "BDI": {
         "required": 14347390.58,
@@ -3428,6 +4163,11 @@
         "required": 1473031.17,
         "available": 1073031.17,
         "spent": 1070531.17
+      },
+      "BIH": {
+        "required": 13104457.67,
+        "available": 9337278.83,
+        "spent": 8637510.67
       },
       "BLR": {
         "required": 1685551,
@@ -3464,6 +4204,11 @@
         "available": 2027463.25,
         "spent": 17772.75
       },
+      "CIV": {
+        "required": 11047489.49,
+        "available": 9509708.49,
+        "spent": 7028717.4
+      },
       "CMR": {
         "required": 3173603.36,
         "available": 2910324.27,
@@ -3483,6 +4228,11 @@
         "required": 2162876.5,
         "available": 1757776.5,
         "spent": 1512925.75
+      },
+      "CUB": {
+        "required": 1576507.26,
+        "available": 1499162.76,
+        "spent": 1238573.58
       },
       "DJI": {
         "required": 1506534,
@@ -3515,14 +4265,19 @@
         "spent": 1351542.67
       },
       "ETH": {
-        "required": 6451832.67,
-        "available": 6250166.0,
-        "spent": 2838241.49
+        "required": 150985921.98,
+        "available": 29380144.91,
+        "spent": 12716301.96
       },
       "GAB": {
         "required": 799201.33,
         "available": 789201.33,
         "spent": 730391.17
+      },
+      "GEO": {
+        "required": 5259421.42,
+        "available": 3229121.42,
+        "spent": 2969306.25
       },
       "GIN": {
         "required": 1975990.25,
@@ -3544,6 +4299,11 @@
         "available": 2426078,
         "spent": 2385829
       },
+      "GTM": {
+        "required": 9720259.67,
+        "available": 9720259.67,
+        "spent": 0
+      },
       "HND": {
         "required": 7282962.75,
         "available": 6391542.92,
@@ -3553,6 +4313,11 @@
         "required": 3888159.08,
         "available": 2630659.08,
         "spent": 2232374.92
+      },
+      "IDN": {
+        "required": 20073352.18,
+        "available": 15419874.85,
+        "spent": 314827.71
       },
       "IND": {
         "required": 14537687.97,
@@ -3629,6 +4394,11 @@
         "available": 944361,
         "spent": 558710.5
       },
+      "MEX": {
+        "required": 4602203.65,
+        "available": 3596118.65,
+        "spent": 3009526.23
+      },
       "MLI": {
         "required": 1893763.33,
         "available": 1893763.33,
@@ -3679,6 +4449,11 @@
         "available": 42144646.84,
         "spent": 37293163.47
       },
+      "PAN": {
+        "required": 8249167.19,
+        "available": 7945688.53,
+        "spent": 7768522.42
+      },
       "PER": {
         "required": 19296454.25,
         "available": 2962156.25,
@@ -3704,6 +4479,11 @@
         "available": 4028104.82,
         "spent": 2864642.48
       },
+      "SDN": {
+        "required": 17041926.67,
+        "available": 16991925.67,
+        "spent": 16991925.67
+      },
       "SEN": {
         "required": 16235089.33,
         "available": 10434579.58,
@@ -3719,6 +4499,11 @@
         "available": 6455575.92,
         "spent": 0
       },
+      "SRB": {
+        "required": 1295151.63,
+        "available": 1295151.63,
+        "spent": 0
+      },
       "SSD": {
         "required": 17199476,
         "available": 9260725,
@@ -3728,6 +4513,11 @@
         "required": 1795928.57,
         "available": 1683819.05,
         "spent": 1584892.05
+      },
+      "SWZ": {
+        "required": 1121064.5,
+        "available": 1021064.5,
+        "spent": 50000
       },
       "SYR": {
         "required": 65129741.58,
@@ -3753,6 +4543,16 @@
         "required": 7250965.5,
         "available": 7122338.5,
         "spent": 4880879.83
+      },
+      "TKM": {
+        "required": 3171452.28,
+        "available": 3171452.28,
+        "spent": 2924274.13
+      },
+      "TLS": {
+        "required": 66832,
+        "available": 66832,
+        "spent": 66832
       },
       "TUR": {
         "required": 29628791.87,
@@ -3784,6 +4584,11 @@
         "available": 25081060.57,
         "spent": 18578542.67
       },
+      "UZB": {
+        "required": 1141167.37,
+        "available": 1139500.7,
+        "spent": 1052008.18
+      },
       "YEM": {
         "required": 15715207.83,
         "available": 15715207.83,
@@ -3814,6 +4619,11 @@
         "available": 8348306.01,
         "spent": 7767380.07
       },
+      "CHN": {
+        "required": 2933406.31,
+        "available": 2928406.31,
+        "spent": 0
+      },
       "MAR": {
         "required": 8598368.62,
         "available": 7286684.62,
@@ -3834,6 +4644,21 @@
         "available": 15772876.19,
         "spent": 12806976
       },
+      "MKD": {
+        "required": 3628923.77,
+        "available": 3150404.03,
+        "spent": 3052632.03
+      },
+      "KAZ": {
+        "required": 2728716.5,
+        "available": 2597924.83,
+        "spent": 2360733
+      },
+      "UGA": {
+        "required": 5651063.33,
+        "available": 4576855.33,
+        "spent": 296105.67
+      },
       "ZWE": {
         "required": 2838851.88,
         "available": 2641704.88,
@@ -3841,6 +4666,7 @@
       }
     },
     "top_underfunded": [
+      "ETH",
       "AFG",
       "SYR",
       "PAK",
@@ -3849,8 +4675,7 @@
       "PER",
       "TUR",
       "ECU",
-      "KEN",
-      "THA"
+      "KEN"
     ]
   },
   "9": {
@@ -3867,6 +4692,11 @@
         "required": 19412738.6,
         "available": 3322832.1,
         "spent": 1790413.22
+      },
+      "XKX": {
+        "required": 2922979.33,
+        "available": 2922979.33,
+        "spent": 2922266
       },
       "SLV": {
         "required": 1408505.17,
@@ -3887,6 +4717,16 @@
         "required": 4315000,
         "available": 4311338.5,
         "spent": 1683003
+      },
+      "ARM": {
+        "required": 1955967.33,
+        "available": 1955967.33,
+        "spent": 1955967.33
+      },
+      "AZE": {
+        "required": 5500,
+        "available": 5500,
+        "spent": 3500
       },
       "BDI": {
         "required": 16759006.0,
@@ -3912,6 +4752,11 @@
         "required": 556666.67,
         "available": 326666.67,
         "spent": 326666.67
+      },
+      "BIH": {
+        "required": 1220031,
+        "available": 363796.5,
+        "spent": 299269.33
       },
       "BLR": {
         "required": 1098642,
@@ -3948,6 +4793,11 @@
         "available": 281749.33,
         "spent": 6772.75
       },
+      "CIV": {
+        "required": 9055110.57,
+        "available": 9009235.57,
+        "spent": 7486501.57
+      },
       "CMR": {
         "required": 667633.33,
         "available": 655333.33,
@@ -3962,6 +4812,11 @@
         "required": 6483611,
         "available": 6450277.67,
         "spent": 6349929
+      },
+      "CUB": {
+        "required": 657448.32,
+        "available": 607848.32,
+        "spent": 590774.73
       },
       "DJI": {
         "required": 155900,
@@ -3994,14 +4849,19 @@
         "spent": 62956
       },
       "ETH": {
-        "required": 4406779.62,
-        "available": 4265112.95,
-        "spent": 1594309.29
+        "required": 12664874.89,
+        "available": 12403784.83,
+        "spent": 5235437.68
       },
       "GAB": {
         "required": 25421.5,
         "available": 25421.5,
         "spent": 20268.5
+      },
+      "GEO": {
+        "required": 1715280.33,
+        "available": 1715280.33,
+        "spent": 1220562
       },
       "GIN": {
         "required": 6920473.5,
@@ -4023,6 +4883,11 @@
         "available": 5512541,
         "spent": 4421021
       },
+      "GTM": {
+        "required": 12029593.0,
+        "available": 166665.5,
+        "spent": 0
+      },
       "HND": {
         "required": 18013112,
         "available": 17609776.67,
@@ -4032,6 +4897,11 @@
         "required": 7908369.6,
         "available": 7908369.6,
         "spent": 7875036.27
+      },
+      "IDN": {
+        "required": 2643422.75,
+        "available": 2541452.92,
+        "spent": 2194989.83
       },
       "IND": {
         "required": 1709269,
@@ -4108,6 +4978,11 @@
         "available": 726000,
         "spent": 726000
       },
+      "MEX": {
+        "required": 12889452.48,
+        "available": 11643358.48,
+        "spent": 4231001.94
+      },
       "MNE": {
         "required": 1550319.6,
         "available": 1525319.6,
@@ -4153,6 +5028,11 @@
         "available": 3162998.67,
         "spent": 2745955.76
       },
+      "PAN": {
+        "required": 8572178.1,
+        "available": 8464027.9,
+        "spent": 8384613.62
+      },
       "PER": {
         "required": 435566.5,
         "available": 435566.5,
@@ -4178,6 +5058,11 @@
         "available": 6393119.5,
         "spent": 6103706.33
       },
+      "SDN": {
+        "required": 876000,
+        "available": 92191.17,
+        "spent": 75524.5
+      },
       "SEN": {
         "required": 1073264.67,
         "available": 47056.67,
@@ -4193,6 +5078,11 @@
         "available": 6827567.42,
         "spent": 0
       },
+      "SRB": {
+        "required": 5461641.33,
+        "available": 5461641.33,
+        "spent": 0
+      },
       "SSD": {
         "required": 34795981,
         "available": 34251250,
@@ -4202,6 +5092,11 @@
         "required": 518127.75,
         "available": 490569.5,
         "spent": 468620.83
+      },
+      "SWZ": {
+        "required": 218107,
+        "available": 196400,
+        "spent": 0
       },
       "SYR": {
         "required": 31735794.83,
@@ -4227,6 +5122,16 @@
         "required": 1159241.83,
         "available": 1157241.83,
         "spent": 891567.58
+      },
+      "TKM": {
+        "required": 279769,
+        "available": 279769,
+        "spent": 258176.67
+      },
+      "TLS": {
+        "required": 50000,
+        "available": 50000,
+        "spent": 50000
       },
       "TUR": {
         "required": 1757194.2,
@@ -4258,6 +5163,11 @@
         "available": 130445178.0,
         "spent": 98359808.0
       },
+      "UZB": {
+        "required": 3496001.83,
+        "available": 2553461.83,
+        "spent": 2281589
+      },
       "YEM": {
         "required": 21442789.58,
         "available": 21442789.58,
@@ -4288,6 +5198,11 @@
         "available": 13257130.49,
         "spent": 13172772.29
       },
+      "CHN": {
+        "required": 0,
+        "available": 0,
+        "spent": 0
+      },
       "MAR": {
         "required": 7429964,
         "available": 3853804,
@@ -4308,6 +5223,21 @@
         "available": 14173888.08,
         "spent": 12848712.58
       },
+      "MKD": {
+        "required": 799230.58,
+        "available": 799230.58,
+        "spent": 751410.25
+      },
+      "KAZ": {
+        "required": 663182.43,
+        "available": 639753.86,
+        "spent": 635545.19
+      },
+      "UGA": {
+        "required": 855000,
+        "available": 778000,
+        "spent": 378000
+      },
       "ZWE": {
         "required": 2135359.3,
         "available": 1417813.3,
@@ -4320,11 +5250,11 @@
       "COD",
       "CAF",
       "BDI",
+      "GTM",
       "LBN",
       "MWI",
       "KEN",
-      "MAR",
-      "AFG"
+      "MAR"
     ]
   },
   "10": {
@@ -4341,6 +5271,11 @@
         "required": 71631945.27,
         "available": 16341016.93,
         "spent": 16248385.8
+      },
+      "XKX": {
+        "required": 10352364.17,
+        "available": 9460082.5,
+        "spent": 9246394.17
       },
       "SLV": {
         "required": 12497517.75,
@@ -4361,6 +5296,16 @@
         "required": 10935564.67,
         "available": 3393010.83,
         "spent": 3270097.5
+      },
+      "ARM": {
+        "required": 3578572.75,
+        "available": 2597319.25,
+        "spent": 2452319.25
+      },
+      "AZE": {
+        "required": 361550.8,
+        "available": 0,
+        "spent": 0
       },
       "BDI": {
         "required": 42277351.58,
@@ -4386,6 +5331,11 @@
         "required": 148240.08,
         "available": 99078.42,
         "spent": 99078.42
+      },
+      "BIH": {
+        "required": 21414184.58,
+        "available": 8237669,
+        "spent": 8236713
       },
       "BLR": {
         "required": 2819672.17,
@@ -4422,6 +5372,11 @@
         "available": 2000,
         "spent": 0
       },
+      "CIV": {
+        "required": 7970334.67,
+        "available": 5830073.67,
+        "spent": 5820489.33
+      },
       "CMR": {
         "required": 1343131,
         "available": 202970.92,
@@ -4436,6 +5391,11 @@
         "required": 26562280.58,
         "available": 13580115.25,
         "spent": 12449443.75
+      },
+      "CUB": {
+        "required": 1070762.83,
+        "available": 1055429.5,
+        "spent": 808280.07
       },
       "DJI": {
         "required": 1406986.33,
@@ -4468,14 +5428,19 @@
         "spent": 288569
       },
       "ETH": {
-        "required": 4862381.02,
-        "available": 4510714.35,
-        "spent": 1893603.69
+        "required": 45163838.31,
+        "available": 39171725.81,
+        "spent": 34723651.73
       },
       "GAB": {
         "required": 641174.67,
         "available": 593747.33,
         "spent": 476930.5
+      },
+      "GEO": {
+        "required": 1146662.92,
+        "available": 1030338.25,
+        "spent": 658452.92
       },
       "GIN": {
         "required": 505812.25,
@@ -4497,6 +5462,11 @@
         "available": 256000,
         "spent": 255638
       },
+      "GTM": {
+        "required": 16654373.67,
+        "available": 16439709.67,
+        "spent": 0
+      },
       "HND": {
         "required": 14540090.58,
         "available": 11473829.75,
@@ -4506,6 +5476,11 @@
         "required": 6029891.68,
         "available": 4890286.02,
         "spent": 4313972.52
+      },
+      "IDN": {
+        "required": 35337750.63,
+        "available": 32688072.13,
+        "spent": 29958295.11
       },
       "IND": {
         "required": 5627553.13,
@@ -4582,6 +5557,11 @@
         "available": 1169822,
         "spent": 1081397.5
       },
+      "MEX": {
+        "required": 6612145.96,
+        "available": 4680607.63,
+        "spent": 3698513.21
+      },
       "MLI": {
         "required": 4606409.33,
         "available": 3927973.33,
@@ -4632,6 +5612,11 @@
         "available": 7495796.93,
         "spent": 5847280.31
       },
+      "PAN": {
+        "required": 14253056.78,
+        "available": 10886825.36,
+        "spent": 8252112.5
+      },
       "PER": {
         "required": 13699760.33,
         "available": 10844026.33,
@@ -4657,6 +5642,11 @@
         "available": 1424271.23,
         "spent": 1389271.23
       },
+      "SDN": {
+        "required": 28666495.42,
+        "available": 22691987.92,
+        "spent": 16594659.58
+      },
       "SEN": {
         "required": 12909417.75,
         "available": 11235317.92,
@@ -4672,6 +5662,11 @@
         "available": 5907021.92,
         "spent": 0
       },
+      "SRB": {
+        "required": 7432560.63,
+        "available": 7257560.63,
+        "spent": 0
+      },
       "SSD": {
         "required": 1851719.33,
         "available": 1747301.33,
@@ -4681,6 +5676,11 @@
         "required": 386339.57,
         "available": 327595.38,
         "spent": 315476.46
+      },
+      "SWZ": {
+        "required": 720000,
+        "available": 63000,
+        "spent": 50000
       },
       "SYR": {
         "required": 192117391.58,
@@ -4706,6 +5706,16 @@
         "required": 3658147.42,
         "available": 3650647.42,
         "spent": 3257852.5
+      },
+      "TKM": {
+        "required": 260976.61,
+        "available": 257643.28,
+        "spent": 176506.28
+      },
+      "TLS": {
+        "required": 400000,
+        "available": 350000,
+        "spent": 305645
       },
       "TUR": {
         "required": 46162486.08,
@@ -4737,6 +5747,11 @@
         "available": 39695780.77,
         "spent": 21197565.54
       },
+      "UZB": {
+        "required": 2654320.67,
+        "available": 2104516,
+        "spent": 1248415.7
+      },
       "MOZ": {
         "required": 17830047.86,
         "available": 12539528.25,
@@ -4762,6 +5777,11 @@
         "available": 17580496.02,
         "spent": 16150601.74
       },
+      "CHN": {
+        "required": 914860.14,
+        "available": 914860.14,
+        "spent": 0
+      },
       "MAR": {
         "required": 10701259.42,
         "available": 10403565.92,
@@ -4782,6 +5802,21 @@
         "available": 8774903.17,
         "spent": 7948208.33
       },
+      "MKD": {
+        "required": 2063437.42,
+        "available": 1320712.02,
+        "spent": 1118055.22
+      },
+      "KAZ": {
+        "required": 2540353.58,
+        "available": 2474568.08,
+        "spent": 1490874.33
+      },
+      "UGA": {
+        "required": 1569774.33,
+        "available": 1376191.5,
+        "spent": 480447.83
+      },
       "ZWE": {
         "required": 2575623.42,
         "available": 1461668.08,
@@ -4797,8 +5832,8 @@
       "TUR",
       "BDI",
       "AFG",
-      "CRI",
-      "MWI"
+      "BIH",
+      "CRI"
     ]
   },
   "11": {
@@ -4815,6 +5850,11 @@
         "required": 11566631.17,
         "available": 8633418.17,
         "spent": 6516498.08
+      },
+      "XKX": {
+        "required": 290940.33,
+        "available": 290940.33,
+        "spent": 248369.33
       },
       "SLV": {
         "required": 2692952.33,
@@ -4835,6 +5875,16 @@
         "required": 456380,
         "available": 456380,
         "spent": 456380
+      },
+      "ARM": {
+        "required": 330254.75,
+        "available": 330254.75,
+        "spent": 325254.75
+      },
+      "AZE": {
+        "required": 3860400,
+        "available": 230044,
+        "spent": 210177
       },
       "BDI": {
         "required": 5149219.67,
@@ -4860,6 +5910,11 @@
         "required": 637764.83,
         "available": 415093,
         "spent": 273434
+      },
+      "BIH": {
+        "required": 4135886.17,
+        "available": 4075462.67,
+        "spent": 3882287.33
       },
       "BOL": {
         "required": 569741.83,
@@ -4891,6 +5946,11 @@
         "available": 712344.25,
         "spent": 82072.25
       },
+      "CIV": {
+        "required": 725390.58,
+        "available": 725390.58,
+        "spent": 587809.58
+      },
       "CMR": {
         "required": 1068179.36,
         "available": 32142.86,
@@ -4910,6 +5970,11 @@
         "required": 1099422.0,
         "available": 1063380.33,
         "spent": 809200.58
+      },
+      "CUB": {
+        "required": 945127.83,
+        "available": 709694.49,
+        "spent": 455471.48
       },
       "DJI": {
         "required": 2146724.5,
@@ -4937,14 +6002,19 @@
         "spent": 1919876.92
       },
       "ETH": {
-        "required": 1738919.8,
-        "available": 1537919.8,
-        "spent": 756682.4
+        "required": 44224137.53,
+        "available": 12172961.87,
+        "spent": 3224338.92
       },
       "GAB": {
         "required": 983710.67,
         "available": 983710.67,
         "spent": 816777.17
+      },
+      "GEO": {
+        "required": 2113884.33,
+        "available": 2083083.33,
+        "spent": 1429167
       },
       "GIN": {
         "required": 6687875.75,
@@ -4961,6 +6031,11 @@
         "available": 77788,
         "spent": 47140.75
       },
+      "GTM": {
+        "required": 36537827.33,
+        "available": 36537827.33,
+        "spent": 0
+      },
       "HND": {
         "required": 261836.4,
         "available": 261836.4,
@@ -4970,6 +6045,11 @@
         "required": 11391065.8,
         "available": 10914315.8,
         "spent": 6370468.3
+      },
+      "IDN": {
+        "required": 774332.23,
+        "available": 765452.23,
+        "spent": 679117.95
       },
       "IND": {
         "required": 889867.83,
@@ -5046,6 +6126,11 @@
         "available": 1403022.67,
         "spent": 1299019
       },
+      "MEX": {
+        "required": 2939595.27,
+        "available": 1811838.43,
+        "spent": 601180.1
+      },
       "MLI": {
         "required": 1117797,
         "available": 537797,
@@ -5096,6 +6181,11 @@
         "available": 4479923.67,
         "spent": 4310078.33
       },
+      "PAN": {
+        "required": 10437420.31,
+        "available": 10300807.98,
+        "spent": 10175255.58
+      },
       "PER": {
         "required": 2097785,
         "available": 596211,
@@ -5121,6 +6211,11 @@
         "available": 9011592.9,
         "spent": 7689220.4
       },
+      "SDN": {
+        "required": 12850497.5,
+        "available": 9658286,
+        "spent": 2433424
+      },
       "SEN": {
         "required": 2675909.0,
         "available": 2367221,
@@ -5136,6 +6231,11 @@
         "available": 5183711.33,
         "spent": 0
       },
+      "SRB": {
+        "required": 3521270.17,
+        "available": 3521270.17,
+        "spent": 0
+      },
       "SSD": {
         "required": 250000,
         "available": 0,
@@ -5145,6 +6245,11 @@
         "required": 522500,
         "available": 435941.75,
         "spent": 392941.75
+      },
+      "SWZ": {
+        "required": 83192,
+        "available": 83192,
+        "spent": 0
       },
       "SYR": {
         "required": 102158474.33,
@@ -5165,6 +6270,16 @@
         "required": 472584.3,
         "available": 376213.63,
         "spent": 252655.45
+      },
+      "TKM": {
+        "required": 606539.33,
+        "available": 606539.33,
+        "spent": 518098.02
+      },
+      "TLS": {
+        "required": 2717381.5,
+        "available": 2717381.5,
+        "spent": 2030893
       },
       "TUR": {
         "required": 1299575.7,
@@ -5195,6 +6310,11 @@
         "required": 108394869.63,
         "available": 61341755.85,
         "spent": 38511726.2
+      },
+      "UZB": {
+        "required": 3377745.69,
+        "available": 3146754.02,
+        "spent": 2668603.74
       },
       "YEM": {
         "required": 17100941.58,
@@ -5231,6 +6351,11 @@
         "available": 121666.67,
         "spent": 83333.33
       },
+      "CHN": {
+        "required": 271889.14,
+        "available": 271889.14,
+        "spent": 0
+      },
       "MAR": {
         "required": 1617793.33,
         "available": 1617655.83,
@@ -5251,6 +6376,21 @@
         "available": 2734125.17,
         "spent": 2530921.67
       },
+      "MKD": {
+        "required": 2565580.58,
+        "available": 2482367.25,
+        "spent": 2191128.58
+      },
+      "KAZ": {
+        "required": 947868.18,
+        "available": 800308.11,
+        "spent": 368504.19
+      },
+      "UGA": {
+        "required": 7442661.17,
+        "available": 7207707.67,
+        "spent": 6261608.33
+      },
       "ZWE": {
         "required": 1257622.75,
         "available": 1125622.75,
@@ -5261,13 +6401,13 @@
       "SYR",
       "UKR",
       "LBN",
+      "ETH",
       "SOM",
       "NGA",
       "IRN",
       "TZA",
       "AFG",
-      "KEN",
-      "BDI"
+      "KEN"
     ]
   },
   "12": {
@@ -5280,6 +6420,11 @@
       "spent": 128561745.47
     },
     "countries": {
+      "XKX": {
+        "required": 94979,
+        "available": 79000,
+        "spent": 79000
+      },
       "SLV": {
         "required": 308365.17,
         "available": 308365.17,
@@ -5300,6 +6445,16 @@
         "available": 2874112.33,
         "spent": 631870.33
       },
+      "ARM": {
+        "required": 838172.58,
+        "available": 837480.08,
+        "spent": 792264.08
+      },
+      "AZE": {
+        "required": 7500,
+        "available": 7500,
+        "spent": 0
+      },
       "BDI": {
         "required": 833045.5,
         "available": 833045.5,
@@ -5319,6 +6474,11 @@
         "required": 155151.17,
         "available": 78327.5,
         "spent": 29994.17
+      },
+      "BIH": {
+        "required": 1743014.67,
+        "available": 1099682.67,
+        "spent": 967473.67
       },
       "BLR": {
         "required": 358948.75,
@@ -5355,6 +6515,11 @@
         "available": 953586,
         "spent": 0
       },
+      "CIV": {
+        "required": 897722.57,
+        "available": 889792.57,
+        "spent": 267788.57
+      },
       "CMR": {
         "required": 165991.86,
         "available": 7142.86,
@@ -5374,6 +6539,11 @@
         "required": 899024.5,
         "available": 899022.0,
         "spent": 896193.33
+      },
+      "CUB": {
+        "required": 1052756,
+        "available": 975411.5,
+        "spent": 968427.75
       },
       "DJI": {
         "required": 41666.67,
@@ -5406,14 +6576,19 @@
         "spent": 0
       },
       "ETH": {
-        "required": 5123780.77,
-        "available": 4372180.77,
-        "spent": 2167071.8
+        "required": 12247341.1,
+        "available": 10884636.96,
+        "spent": 4584692.32
       },
       "GAB": {
         "required": 52916,
         "available": 52916,
         "spent": 51763
+      },
+      "GEO": {
+        "required": 753333.83,
+        "available": 727455.33,
+        "spent": 717766
       },
       "GIN": {
         "required": 332963.5,
@@ -5430,6 +6605,11 @@
         "available": 468802.67,
         "spent": 427983.08
       },
+      "GTM": {
+        "required": 93775575.17,
+        "available": 2108908.5,
+        "spent": 0
+      },
       "HND": {
         "required": 100233.25,
         "available": 100233.25,
@@ -5439,6 +6619,11 @@
         "required": 982691.32,
         "available": 982691.32,
         "spent": 971338.82
+      },
+      "IDN": {
+        "required": 4821724.5,
+        "available": 4821724.5,
+        "spent": 2807285.36
       },
       "IND": {
         "required": 1965016,
@@ -5510,6 +6695,11 @@
         "available": 801660,
         "spent": 519000
       },
+      "MEX": {
+        "required": 1877822.25,
+        "available": 1083547.25,
+        "spent": 521560.5
+      },
       "MNE": {
         "required": 221111.33,
         "available": 221111.33,
@@ -5555,6 +6745,11 @@
         "available": 5641257.67,
         "spent": 5190471.33
       },
+      "PAN": {
+        "required": 511300,
+        "available": 316300,
+        "spent": 316300
+      },
       "PER": {
         "required": 85574.75,
         "available": 85574.75,
@@ -5575,6 +6770,11 @@
         "available": 2682112.92,
         "spent": 2519645.25
       },
+      "SDN": {
+        "required": 38907610,
+        "available": 35770501.5,
+        "spent": 26109237
+      },
       "SLE": {
         "required": 268333.33,
         "available": 205833.33,
@@ -5585,10 +6785,20 @@
         "available": 905290,
         "spent": 0
       },
+      "SRB": {
+        "required": 12708278.08,
+        "available": 12708278.08,
+        "spent": 0
+      },
       "STP": {
         "required": 34597.57,
         "available": 34454.71,
         "spent": 34285.71
+      },
+      "SWZ": {
+        "required": 409110,
+        "available": 409110,
+        "spent": 0
       },
       "SYR": {
         "required": 5000000,
@@ -5615,6 +6825,11 @@
         "available": 660369,
         "spent": 612352.92
       },
+      "TKM": {
+        "required": 559740.17,
+        "available": 559740.17,
+        "spent": 375875.17
+      },
       "TUR": {
         "required": 1208075.83,
         "available": 559153.5,
@@ -5639,6 +6854,11 @@
         "required": 2923503.17,
         "available": 1467104.83,
         "spent": 1204986.83
+      },
+      "UZB": {
+        "required": 666052.86,
+        "available": 666052.86,
+        "spent": 665970.57
       },
       "ZAF": {
         "required": 14002.5,
@@ -5670,6 +6890,11 @@
         "available": 168871.25,
         "spent": 168871.25
       },
+      "CHN": {
+        "required": 3670992.17,
+        "available": 3634325.5,
+        "spent": 0
+      },
       "MAR": {
         "required": 3383275,
         "available": 1131275,
@@ -5690,6 +6915,21 @@
         "available": 2093247.11,
         "spent": 1983284.58
       },
+      "MKD": {
+        "required": 61666.67,
+        "available": 44166.67,
+        "spent": 44166.67
+      },
+      "KAZ": {
+        "required": 1705108.43,
+        "available": 1702679.86,
+        "spent": 8187.86
+      },
+      "UGA": {
+        "required": 45833.33,
+        "available": 45833.33,
+        "spent": 45833.33
+      },
       "ZWE": {
         "required": 1300218.67,
         "available": 133552,
@@ -5697,16 +6937,16 @@
       }
     },
     "top_underfunded": [
+      "GTM",
       "AFG",
       "COL",
       "TCD",
       "PHL",
+      "SDN",
       "MDV",
       "KEN",
       "SYR",
-      "MAR",
-      "ARG",
-      "UKR"
+      "MAR"
     ]
   },
   "13": {
@@ -5723,6 +6963,11 @@
         "required": 27402549.33,
         "available": 17969425.5,
         "spent": 14618522.67
+      },
+      "XKX": {
+        "required": 1706016.5,
+        "available": 1112179.5,
+        "spent": 973154
       },
       "SLV": {
         "required": 7635459.58,
@@ -5743,6 +6988,16 @@
         "required": 8554428,
         "available": 7376511.5,
         "spent": 7131528.5
+      },
+      "ARM": {
+        "required": 2116387.25,
+        "available": 2044820.42,
+        "spent": 1708793.42
+      },
+      "AZE": {
+        "required": 1048941.13,
+        "available": 717870.33,
+        "spent": 17333.33
       },
       "BDI": {
         "required": 10460978.66,
@@ -5768,6 +7023,11 @@
         "required": 378913.33,
         "available": 362913.33,
         "spent": 297921
+      },
+      "BIH": {
+        "required": 3900115.67,
+        "available": 2849364,
+        "spent": 2520831.83
       },
       "BLR": {
         "required": 59166,
@@ -5799,6 +7059,11 @@
         "available": 12441031.67,
         "spent": 3575
       },
+      "CIV": {
+        "required": 4284790.67,
+        "available": 3826476.25,
+        "spent": 1878366.67
+      },
       "CMR": {
         "required": 23284830,
         "available": 3471686,
@@ -5818,6 +7083,11 @@
         "required": 11010834.33,
         "available": 10990832.33,
         "spent": 10838069.67
+      },
+      "CUB": {
+        "required": 8036890.42,
+        "available": 7687435.58,
+        "spent": 5264977.17
       },
       "DJI": {
         "required": 1936201.5,
@@ -5850,14 +7120,19 @@
         "spent": 500050
       },
       "ETH": {
-        "required": 11182479.1,
-        "available": 9719045.77,
-        "spent": 5033317.23
+        "required": 20266214.9,
+        "available": 17978254.02,
+        "spent": 8605117.42
       },
       "GAB": {
         "required": 2780606,
         "available": 2780606,
         "spent": 2311478
+      },
+      "GEO": {
+        "required": 11668909.17,
+        "available": 11360909.17,
+        "spent": 3674999
       },
       "GIN": {
         "required": 238786.75,
@@ -5879,6 +7154,11 @@
         "available": 991690,
         "spent": 877712
       },
+      "GTM": {
+        "required": 24233268.08,
+        "available": 24233268.08,
+        "spent": 0
+      },
       "HND": {
         "required": 1924981.17,
         "available": 1549390.67,
@@ -5888,6 +7168,11 @@
         "required": 3813732.4,
         "available": 3138732.4,
         "spent": 3117648.07
+      },
+      "IDN": {
+        "required": 10250046.17,
+        "available": 7545999.17,
+        "spent": 3412841.11
       },
       "IND": {
         "required": 4349806.5,
@@ -5964,6 +7249,11 @@
         "available": 11020151,
         "spent": 3214192
       },
+      "MEX": {
+        "required": 12418467.97,
+        "available": 11748982.63,
+        "spent": 9698874.38
+      },
       "MLI": {
         "required": 6430630.34,
         "available": 2909596.34,
@@ -6014,6 +7304,11 @@
         "available": 20251050,
         "spent": 15732685
       },
+      "PAN": {
+        "required": 6912837.73,
+        "available": 6651049.87,
+        "spent": 5578333.91
+      },
       "PER": {
         "required": 1105601.25,
         "available": 1105601.25,
@@ -6039,6 +7334,11 @@
         "available": 1750962.33,
         "spent": 1750962.33
       },
+      "SDN": {
+        "required": 280202.5,
+        "available": 116869.17,
+        "spent": 80202.5
+      },
       "SEN": {
         "required": 13102719.0,
         "available": 10441047.25,
@@ -6052,6 +7352,11 @@
       "SOM": {
         "required": 15069922.17,
         "available": 14108744.67,
+        "spent": 0
+      },
+      "SRB": {
+        "required": 18358445.13,
+        "available": 18358445.13,
         "spent": 0
       },
       "SSD": {
@@ -6089,6 +7394,16 @@
         "available": 5008345.55,
         "spent": 3146491.03
       },
+      "TKM": {
+        "required": 1667687.33,
+        "available": 1587440.33,
+        "spent": 1140549.18
+      },
+      "TLS": {
+        "required": 8449976.5,
+        "available": 7902973.5,
+        "spent": 3790059.5
+      },
       "TUR": {
         "required": 6847200.03,
         "available": 5424487.7,
@@ -6118,6 +7433,11 @@
         "required": 6849016.67,
         "available": 2436478.5,
         "spent": 1428706.5
+      },
+      "UZB": {
+        "required": 4326494.61,
+        "available": 4266608.61,
+        "spent": 3524724.07
       },
       "YEM": {
         "required": 4500000,
@@ -6154,6 +7474,11 @@
         "available": 14788402.58,
         "spent": 9531419.78
       },
+      "CHN": {
+        "required": 1409281.33,
+        "available": 1372614.67,
+        "spent": 0
+      },
       "MAR": {
         "required": 2329424,
         "available": 2329424,
@@ -6174,6 +7499,21 @@
         "available": 8899886.75,
         "spent": 4648425.58
       },
+      "MKD": {
+        "required": 3299298,
+        "available": 2641633,
+        "spent": 2533132.33
+      },
+      "KAZ": {
+        "required": 14564324.18,
+        "available": 3767765.11,
+        "spent": 3013293.69
+      },
+      "UGA": {
+        "required": 2368521.92,
+        "available": 2346351.92,
+        "spent": 906079.83
+      },
       "ZWE": {
         "required": 7423830.22,
         "available": 3171512.3,
@@ -6186,11 +7526,11 @@
       "PAK",
       "SYR",
       "TZA",
+      "KAZ",
       "COD",
       "VEN",
       "LBY",
-      "MDG",
-      "KEN"
+      "MDG"
     ]
   },
   "14": {
@@ -6243,6 +7583,11 @@
         "available": 208938.5,
         "spent": 208938.5
       },
+      "BIH": {
+        "required": 25000,
+        "available": 25000,
+        "spent": 25000
+      },
       "BRA": {
         "required": 3060994.83,
         "available": 2929119.5,
@@ -6258,6 +7603,11 @@
         "available": 1808383.33,
         "spent": 0
       },
+      "CIV": {
+        "required": 2323775,
+        "available": 2196384,
+        "spent": 2135009
+      },
       "COL": {
         "required": 126578,
         "available": 126578,
@@ -6272,6 +7622,11 @@
         "required": 392583.33,
         "available": 392583.33,
         "spent": 392583.33
+      },
+      "CUB": {
+        "required": 491507.58,
+        "available": 491507.58,
+        "spent": 291632.17
       },
       "DJI": {
         "required": 0,
@@ -6303,6 +7658,16 @@
         "available": 3645585,
         "spent": 2558170
       },
+      "ETH": {
+        "required": 990896.12,
+        "available": 990896.12,
+        "spent": 14007.12
+      },
+      "GEO": {
+        "required": 117000,
+        "available": 117000,
+        "spent": 117000
+      },
       "GIN": {
         "required": 17125,
         "available": 10875,
@@ -6318,10 +7683,20 @@
         "available": 63000,
         "spent": 46252
       },
+      "GTM": {
+        "required": 140333.33,
+        "available": 140333.33,
+        "spent": 0
+      },
       "HTI": {
         "required": 250000,
         "available": 250000,
         "spent": 228915.67
+      },
+      "IDN": {
+        "required": 19276741,
+        "available": 19187270,
+        "spent": 7239717.75
       },
       "IRN": {
         "required": 422000,
@@ -6378,6 +7753,11 @@
         "available": 950000,
         "spent": 750000
       },
+      "MEX": {
+        "required": 2564678.5,
+        "available": 2564678.5,
+        "spent": 1460156.5
+      },
       "MNE": {
         "required": 28500,
         "available": 28500,
@@ -6408,6 +7788,11 @@
         "available": 2501482.5,
         "spent": 2217548.67
       },
+      "PAN": {
+        "required": 1368700.31,
+        "available": 1240162.46,
+        "spent": 1090089.99
+      },
       "PER": {
         "required": 210426.33,
         "available": 210426.33,
@@ -6428,6 +7813,11 @@
         "available": 1746962.33,
         "spent": 1746962.33
       },
+      "SDN": {
+        "required": 600000,
+        "available": 600000,
+        "spent": 600000
+      },
       "SLE": {
         "required": 50000,
         "available": 50000,
@@ -6436,6 +7826,11 @@
       "SOM": {
         "required": 6508891.83,
         "available": 5853772.5,
+        "spent": 0
+      },
+      "SRB": {
+        "required": 12500,
+        "available": 12500,
         "spent": 0
       },
       "STP": {
@@ -6452,6 +7847,16 @@
         "required": 2212502.92,
         "available": 1379952.58,
         "spent": 803389.88
+      },
+      "TKM": {
+        "required": 150431.83,
+        "available": 150431.83,
+        "spent": 75758.83
+      },
+      "TLS": {
+        "required": 216500,
+        "available": 216500,
+        "spent": 166500
       },
       "TUR": {
         "required": 374608,
@@ -6498,6 +7903,11 @@
         "available": 2760741.17,
         "spent": 1526049.58
       },
+      "CHN": {
+        "required": 0,
+        "available": 0,
+        "spent": 0
+      },
       "MAR": {
         "required": 3420923,
         "available": 1170923,
@@ -6517,6 +7927,16 @@
         "required": 561720.11,
         "available": 561720.11,
         "spent": 559577.25
+      },
+      "MKD": {
+        "required": 1580000,
+        "available": 1580000,
+        "spent": 1580000
+      },
+      "KAZ": {
+        "required": 73260,
+        "available": 73260,
+        "spent": 65882
       }
     },
     "top_underfunded": [
@@ -6547,6 +7967,11 @@
         "available": 5490400.5,
         "spent": 5203471
       },
+      "XKX": {
+        "required": 240259,
+        "available": 240259,
+        "spent": 224259
+      },
       "SLV": {
         "required": 1490304.4,
         "available": 1490304.4,
@@ -6566,6 +7991,16 @@
         "required": 5621168.25,
         "available": 3069547.92,
         "spent": 1172471.42
+      },
+      "ARM": {
+        "required": 1035394.5,
+        "available": 1035394.5,
+        "spent": 820380.5
+      },
+      "AZE": {
+        "required": 697196.33,
+        "available": 697196.33,
+        "spent": 364833.33
       },
       "BDI": {
         "required": 5065698,
@@ -6591,6 +8026,11 @@
         "required": 110641.5,
         "available": 100641.5,
         "spent": 83982.5
+      },
+      "BIH": {
+        "required": 694863.33,
+        "available": 694863.33,
+        "spent": 691757.83
       },
       "BLR": {
         "required": 577016.67,
@@ -6627,6 +8067,11 @@
         "available": 2706139.33,
         "spent": 0
       },
+      "CIV": {
+        "required": 3808048.08,
+        "available": 3791062.33,
+        "spent": 1574892.5
+      },
       "CMR": {
         "required": 616302,
         "available": 616302,
@@ -6646,6 +8091,11 @@
         "required": 2648885.08,
         "available": 2648885.08,
         "spent": 2640527.42
+      },
+      "CUB": {
+        "required": 3578311.67,
+        "available": 3328857.33,
+        "spent": 1514571.5
       },
       "DJI": {
         "required": 1086592,
@@ -6678,14 +8128,19 @@
         "spent": 929435
       },
       "ETH": {
-        "required": 4436971.05,
-        "available": 3818767.05,
-        "spent": 2026202.09
+        "required": 13267537.85,
+        "available": 12038229.7,
+        "spent": 4146870.4
       },
       "GAB": {
         "required": 1590236.5,
         "available": 1590236.5,
         "spent": 1367676
+      },
+      "GEO": {
+        "required": 317078,
+        "available": 317078,
+        "spent": 317078
       },
       "GIN": {
         "required": 6192634.25,
@@ -6707,6 +8162,11 @@
         "available": 749514,
         "spent": 653099
       },
+      "GTM": {
+        "required": 8539865.75,
+        "available": 8525814.75,
+        "spent": 0
+      },
       "HND": {
         "required": 630832,
         "available": 515645,
@@ -6716,6 +8176,11 @@
         "required": 1952500.73,
         "available": 1888450.73,
         "spent": 1540860.73
+      },
+      "IDN": {
+        "required": 3960220,
+        "available": 3456823.5,
+        "spent": 2244752.78
       },
       "IND": {
         "required": 25727446,
@@ -6782,6 +8247,11 @@
         "available": 6460348.25,
         "spent": 4905166.25
       },
+      "MEX": {
+        "required": 12604817.43,
+        "available": 7658760.43,
+        "spent": 6240813.6
+      },
       "MLI": {
         "required": 2761073.67,
         "available": 431573.67,
@@ -6832,6 +8302,11 @@
         "available": 10639602,
         "spent": 10083567.5
       },
+      "PAN": {
+        "required": 1942026.73,
+        "available": 1790238.87,
+        "spent": 1497204.41
+      },
       "PER": {
         "required": 565574.33,
         "available": 565574.33,
@@ -6857,6 +8332,11 @@
         "available": 5250462.33,
         "spent": 4890887.83
       },
+      "SDN": {
+        "required": 18290476,
+        "available": 6053733.67,
+        "spent": 5925745.33
+      },
       "SEN": {
         "required": 6509522.0,
         "available": 5725639,
@@ -6872,6 +8352,11 @@
         "available": 6144813.83,
         "spent": 0
       },
+      "SRB": {
+        "required": 678794.25,
+        "available": 678794.25,
+        "spent": 0
+      },
       "SSD": {
         "required": 1855304,
         "available": 1855304,
@@ -6881,6 +8366,11 @@
         "required": 585999,
         "available": 585999,
         "spent": 572992.5
+      },
+      "SWZ": {
+        "required": 1712170,
+        "available": 1712170,
+        "spent": 0
       },
       "TCD": {
         "required": 817274.8,
@@ -6901,6 +8391,16 @@
         "required": 569602.42,
         "available": 569602.42,
         "spent": 560289.92
+      },
+      "TKM": {
+        "required": 772607.67,
+        "available": 772607.67,
+        "spent": 424458.0
+      },
+      "TLS": {
+        "required": 390000,
+        "available": 370000,
+        "spent": 234667
       },
       "TUR": {
         "required": 4111966.2,
@@ -6932,6 +8432,11 @@
         "available": 2396536.5,
         "spent": 2293083.17
       },
+      "UZB": {
+        "required": 813262.75,
+        "available": 761460.08,
+        "spent": 758850.58
+      },
       "MOZ": {
         "required": 1123683.05,
         "available": 1102359.05,
@@ -6952,6 +8457,11 @@
         "available": 439173,
         "spent": 257577.25
       },
+      "CHN": {
+        "required": 6087554.5,
+        "available": 5419554.5,
+        "spent": 0
+      },
       "MAR": {
         "required": 3092262,
         "available": 2012346,
@@ -6971,19 +8481,34 @@
         "required": 4120174.86,
         "available": 4026841.52,
         "spent": 2012992.33
+      },
+      "MKD": {
+        "required": 1609546.83,
+        "available": 999879.5,
+        "spent": 384879.5
+      },
+      "KAZ": {
+        "required": 4772055.67,
+        "available": 4765808.33,
+        "spent": 1538331.17
+      },
+      "UGA": {
+        "required": 838855.92,
+        "available": 838855.92,
+        "spent": 206916.67
       }
     },
     "top_underfunded": [
       "AFG",
+      "SDN",
       "PAK",
       "TGO",
+      "MEX",
       "IND",
       "TZA",
       "UKR",
       "MDG",
-      "ARG",
-      "MLI",
-      "ERI"
+      "ARG"
     ]
   },
   "16": {
@@ -7000,6 +8525,11 @@
         "required": 111628635.83,
         "available": 27913431,
         "spent": 12526853.25
+      },
+      "XKX": {
+        "required": 10529948.83,
+        "available": 5652841.17,
+        "spent": 5449324.17
       },
       "SLV": {
         "required": 4122840.82,
@@ -7020,6 +8550,16 @@
         "required": 223068650.58,
         "available": 222487827.58,
         "spent": 156943186.75
+      },
+      "ARM": {
+        "required": 10545000,
+        "available": 9677097.92,
+        "spent": 9280808.17
+      },
+      "AZE": {
+        "required": 1714351,
+        "available": 1019351,
+        "spent": 120000
       },
       "BDI": {
         "required": 42012431.5,
@@ -7045,6 +8585,11 @@
         "required": 4398450,
         "available": 248350,
         "spent": 248350
+      },
+      "BIH": {
+        "required": 29749071.42,
+        "available": 20896348.67,
+        "spent": 20124261.67
       },
       "BLR": {
         "required": 229021.5,
@@ -7081,6 +8626,11 @@
         "available": 205000,
         "spent": 0
       },
+      "CIV": {
+        "required": 9706937.5,
+        "available": 8814384.58,
+        "spent": 6841514.33
+      },
       "CMR": {
         "required": 1956578.69,
         "available": 1428859.52,
@@ -7095,6 +8645,11 @@
         "required": 574587.83,
         "available": 564912.83,
         "spent": 439738.83
+      },
+      "CUB": {
+        "required": 751259.34,
+        "available": 720021.01,
+        "spent": 466878.25
       },
       "DJI": {
         "required": 5144335,
@@ -7127,14 +8682,19 @@
         "spent": 51117
       },
       "ETH": {
-        "required": 102295952.85,
-        "available": 98974023.85,
-        "spent": 59219958.5
+        "required": 121253070.42,
+        "available": 109771396.42,
+        "spent": 67286497.52
       },
       "GAB": {
         "required": 2169682,
         "available": 2109754.67,
         "spent": 1887357.33
+      },
+      "GEO": {
+        "required": 8021285.33,
+        "available": 7039563.33,
+        "spent": 6455583.5
       },
       "GIN": {
         "required": 2845126.5,
@@ -7156,6 +8716,11 @@
         "available": 538590,
         "spent": 486515
       },
+      "GTM": {
+        "required": 113097268.33,
+        "available": 20839437.67,
+        "spent": 905212
+      },
       "HND": {
         "required": 94257507.15,
         "available": 86917266.15,
@@ -7165,6 +8730,11 @@
         "required": 30209795.38,
         "available": 28213349.22,
         "spent": 26259018.22
+      },
+      "IDN": {
+        "required": 3278607.5,
+        "available": 2719684.5,
+        "spent": 1082909.25
       },
       "IND": {
         "required": 3555983.33,
@@ -7241,6 +8811,11 @@
         "available": 1298383,
         "spent": 1180783
       },
+      "MEX": {
+        "required": 47587573.53,
+        "available": 15712058.7,
+        "spent": 14791754.08
+      },
       "MLI": {
         "required": 7936240.34,
         "available": 4708236.34,
@@ -7291,6 +8866,11 @@
         "available": 20112665.83,
         "spent": 16127370
       },
+      "PAN": {
+        "required": 7081034.36,
+        "available": 4904052.94,
+        "spent": 4833716.7
+      },
       "PER": {
         "required": 10442527.33,
         "available": 6578197.33,
@@ -7316,6 +8896,11 @@
         "available": 8157662.33,
         "spent": 7508716.17
       },
+      "SDN": {
+        "required": 19645810.58,
+        "available": 13231257.75,
+        "spent": 10541178.75
+      },
       "SEN": {
         "required": 9049761.75,
         "available": 7577280.42,
@@ -7331,6 +8916,11 @@
         "available": 73358985.75,
         "spent": 0
       },
+      "SRB": {
+        "required": 25927812.5,
+        "available": 25927812.5,
+        "spent": 0
+      },
       "SSD": {
         "required": 10352520.83,
         "available": 6417382.33,
@@ -7340,6 +8930,11 @@
         "required": 2097288.24,
         "available": 1584487.3,
         "spent": 1400609.71
+      },
+      "SWZ": {
+        "required": 400577,
+        "available": 340377,
+        "spent": 0
       },
       "SYR": {
         "required": 144280388.42,
@@ -7365,6 +8960,16 @@
         "required": 6028476.67,
         "available": 5780970,
         "spent": 5070216.83
+      },
+      "TKM": {
+        "required": 1472864.11,
+        "available": 1392030.78,
+        "spent": 1363162.11
+      },
+      "TLS": {
+        "required": 3481746,
+        "available": 2513396,
+        "spent": 2380428.5
       },
       "TUR": {
         "required": 63237284.33,
@@ -7396,6 +9001,11 @@
         "available": 124246343.42,
         "spent": 90757154.08
       },
+      "UZB": {
+        "required": 7537025.2,
+        "available": 5802474.53,
+        "spent": 4313674.75
+      },
       "YEM": {
         "required": 14860000,
         "available": 14860000,
@@ -7426,6 +9036,11 @@
         "available": 4926003.94,
         "spent": 4547264.62
       },
+      "CHN": {
+        "required": 1861789,
+        "available": 1861789,
+        "spent": 0
+      },
       "MAR": {
         "required": 4443801.67,
         "available": 3836239.5,
@@ -7446,6 +9061,21 @@
         "available": 9233646.17,
         "spent": 8331897.5
       },
+      "MKD": {
+        "required": 4761176.43,
+        "available": 3808579.8,
+        "spent": 3688051.67
+      },
+      "KAZ": {
+        "required": 5918118.76,
+        "available": 5602712.52,
+        "spent": 4849291.19
+      },
+      "UGA": {
+        "required": 12811429.42,
+        "available": 12406444.25,
+        "spent": 6097371.83
+      },
       "ZWE": {
         "required": 4086131.17,
         "available": 2478743.33,
@@ -7454,15 +9084,15 @@
     },
     "top_underfunded": [
       "SYR",
+      "GTM",
       "COD",
       "LBN",
       "TUR",
+      "MEX",
       "TZA",
       "COL",
       "BDI",
-      "AFG",
-      "CAF",
-      "PAK"
+      "AFG"
     ]
   },
   "17": {
@@ -7479,6 +9109,11 @@
         "required": 77608563.33,
         "available": 989471,
         "spent": 842601.92
+      },
+      "XKX": {
+        "required": 2339601.33,
+        "available": 1892749.33,
+        "spent": 1844343.33
       },
       "SLV": {
         "required": 1111214.5,
@@ -7499,6 +9134,16 @@
         "required": 554553.75,
         "available": 288715.75,
         "spent": 256989.42
+      },
+      "ARM": {
+        "required": 1678173.25,
+        "available": 422974.42,
+        "spent": 344495.42
+      },
+      "AZE": {
+        "required": 356570.8,
+        "available": 225500,
+        "spent": 10000
       },
       "BDI": {
         "required": 12054924.25,
@@ -7524,6 +9169,11 @@
         "required": 1719778.58,
         "available": 569781.08,
         "spent": 444781.08
+      },
+      "BIH": {
+        "required": 13402556.17,
+        "available": 8195553.17,
+        "spent": 8085200.83
       },
       "BLR": {
         "required": 797492.92,
@@ -7560,6 +9210,11 @@
         "available": 110452.5,
         "spent": 0
       },
+      "CIV": {
+        "required": 687743.57,
+        "available": 554157.57,
+        "spent": 480225.57
+      },
       "CMR": {
         "required": 866166.67,
         "available": 670916.67,
@@ -7579,6 +9234,11 @@
         "required": 607540.58,
         "available": 604040.58,
         "spent": 430463.58
+      },
+      "CUB": {
+        "required": 3409393.83,
+        "available": 2900484.33,
+        "spent": 2202756.32
       },
       "DJI": {
         "required": 2883678.33,
@@ -7611,14 +9271,19 @@
         "spent": 1446416
       },
       "ETH": {
-        "required": 5128731.77,
-        "available": 4300527.77,
-        "spent": 2251701.73
+        "required": 13960432.43,
+        "available": 11372838.03,
+        "spent": 7687207.23
       },
       "GAB": {
         "required": 243554.5,
         "available": 81054.5,
         "spent": 67319
+      },
+      "GEO": {
+        "required": 460236,
+        "available": 435818.33,
+        "spent": 314624.33
       },
       "GIN": {
         "required": 7818100.5,
@@ -7640,6 +9305,11 @@
         "available": 1347260,
         "spent": 1347260
       },
+      "GTM": {
+        "required": 3736140.33,
+        "available": 3736140.33,
+        "spent": 0
+      },
       "HND": {
         "required": 27618713.98,
         "available": 27315865.48,
@@ -7649,6 +9319,11 @@
         "required": 3508093.8,
         "available": 2635593.8,
         "spent": 2606088.8
+      },
+      "IDN": {
+        "required": 4979276.33,
+        "available": 4521485,
+        "spent": 3503707.44
       },
       "IND": {
         "required": 1304377.33,
@@ -7720,6 +9395,11 @@
         "available": 316982,
         "spent": 75959
       },
+      "MEX": {
+        "required": 34814875.27,
+        "available": 34791044.77,
+        "spent": 32638604.77
+      },
       "MLI": {
         "required": 5382875,
         "available": 3524875,
@@ -7770,6 +9450,11 @@
         "available": 15634332.77,
         "spent": 13276176.27
       },
+      "PAN": {
+        "required": 5822238.1,
+        "available": 5672197.16,
+        "spent": 5408863.62
+      },
       "PER": {
         "required": 4527817.33,
         "available": 4527817.33,
@@ -7795,6 +9480,11 @@
         "available": 7132505.65,
         "spent": 6774069.98
       },
+      "SDN": {
+        "required": 14613794.5,
+        "available": 5235377.17,
+        "spent": 5163738.83
+      },
       "SEN": {
         "required": 5103491.67,
         "available": 2482991.67,
@@ -7810,6 +9500,11 @@
         "available": 10703520.75,
         "spent": 0
       },
+      "SRB": {
+        "required": 167785.3,
+        "available": 167785.3,
+        "spent": 0
+      },
       "SSD": {
         "required": 1572000,
         "available": 1024015,
@@ -7819,6 +9514,11 @@
         "required": 659263.33,
         "available": 631667.58,
         "spent": 562969.33
+      },
+      "SWZ": {
+        "required": 16064.5,
+        "available": 16064.5,
+        "spent": 0
       },
       "SYR": {
         "required": 109597628.67,
@@ -7844,6 +9544,16 @@
         "required": 4152623.17,
         "available": 4081811.83,
         "spent": 2789295
+      },
+      "TKM": {
+        "required": 1790706.5,
+        "available": 1787373.17,
+        "spent": 977601.6
+      },
+      "TLS": {
+        "required": 1559269,
+        "available": 473605,
+        "spent": 391726
       },
       "TUR": {
         "required": 9934401.67,
@@ -7875,6 +9585,11 @@
         "available": 64082298.17,
         "spent": 55823103.67
       },
+      "UZB": {
+        "required": 2792573.33,
+        "available": 1392781.33,
+        "spent": 571252.92
+      },
       "MOZ": {
         "required": 94907759.42,
         "available": 91837450.42,
@@ -7900,6 +9615,11 @@
         "available": 15943183.52,
         "spent": 13809429.36
       },
+      "CHN": {
+        "required": 2364583.31,
+        "available": 2212056.31,
+        "spent": 0
+      },
       "MAR": {
         "required": 12772601.92,
         "available": 12698486.08,
@@ -7920,6 +9640,21 @@
         "available": 8221822.67,
         "spent": 6094505.5
       },
+      "MKD": {
+        "required": 814301.6,
+        "available": 783230.8,
+        "spent": 768224
+      },
+      "KAZ": {
+        "required": 510792.33,
+        "available": 510792.33,
+        "spent": 448792.33
+      },
+      "UGA": {
+        "required": 2012166.42,
+        "available": 1839552.92,
+        "spent": 1545280.67
+      },
       "ZWE": {
         "required": 3550760.5,
         "available": 1681286.5,
@@ -7931,12 +9666,12 @@
       "SYR",
       "COD",
       "MWI",
+      "SDN",
       "KEN",
+      "BIH",
       "BFA",
       "LBN",
-      "GHA",
-      "SLE",
-      "PAK"
+      "GHA"
     ]
   }
 }

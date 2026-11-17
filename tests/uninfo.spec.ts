@@ -162,3 +162,45 @@ test("mobile picker opens a framework without finances when the basemap fails", 
     await page.evaluate(() => document.documentElement.scrollWidth),
   ).toBeLessThanOrEqual(390);
 });
+
+test("Ethiopia 2024 has historical funding, visible row amounts and full narrative", async ({
+  page,
+}) => {
+  const country = JSON.parse(
+    readFileSync("public/data/uninfo/2024/countries/ETH.json", "utf8"),
+  );
+  await page.goto("/system/");
+  await page.getByRole("button", { name: "Select year", exact: true }).click();
+  await page.getByRole("button", { name: "2024", exact: true }).click();
+  await page.getByRole("button", { name: "Choose a country or area" }).click();
+  await page
+    .getByRole("searchbox", { name: "Search countries or areas" })
+    .fill("Ethiopia");
+  await page.getByRole("button", { name: "Ethiopia", exact: true }).click();
+  const dialog = page.getByRole("dialog", { name: "Ethiopia", exact: true });
+  await expect(
+    dialog.getByRole("heading", { name: "Overall", exact: true }),
+  ).toBeVisible();
+  await expect(dialog.getByText(/No financial observations/)).toHaveCount(0);
+  const framework = dialog.getByRole("region", {
+    name: "Results framework",
+    exact: true,
+  });
+  await expect(
+    framework.getByText("Available resources (USD)", { exact: true }),
+  ).toBeVisible();
+  const priority = framework.getByRole("button").first();
+  await expect(
+    priority.locator('[aria-label^="Available resources"]'),
+  ).toBeVisible();
+  await expect(
+    priority.locator('[aria-label^="Available resources"]'),
+  ).toHaveText(/\$[\d.]+[MBK]?/);
+  await priority.click();
+  await expect(
+    framework.getByRole("button", { name: /Outcome/ }).first(),
+  ).toBeVisible();
+  await expect(
+    framework.getByText(country.framework[0].description, { exact: true }),
+  ).toBeVisible();
+});

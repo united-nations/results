@@ -154,7 +154,14 @@ export function UninfoCountryDetails({
         )}
       </div>
       <section aria-label="Results framework">
-        <FinancialPanelHeading className="mb-3">
+        <FinancialPanelHeading
+          className="mb-3"
+          controls={
+            <span className={typography.caption}>
+              Available resources (USD)
+            </span>
+          }
+        >
           Results Framework
         </FinancialPanelHeading>
         {country.framework?.length ? (
