@@ -1,0 +1,54 @@
+.card {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 1px solid color-mix(in srgb, var(--tile-color) 50%, var(--background));
+  border-radius: 5px;
+  background: var(--background);
+  color: var(--foreground);
+  cursor: pointer;
+  text-align: left;
+}
+.card:hover {
+  border-color: var(--tile-color);
+  background: color-mix(in srgb, var(--tile-color) 8%, var(--background));
+}
+.card:focus-visible {
+  outline: 2px solid var(--tile-color);
+  outline-offset: 2px;
+}
+.card:disabled {
+  cursor: default;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  text-align: left;
+}
+.footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-top: auto;
+  width: 100%;
+}
+.thumbnail {
+  display: block;
+  width: 112px;
+  max-width: 100%;
+  height: 32px;
+  pointer-events: none;
+}
+.thumbnail svg {
+  display: block;
+  width: 100%;
+  height: 32px;
+  margin: 0;
+}

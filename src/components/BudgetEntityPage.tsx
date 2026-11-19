@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { SecondaryHeader } from "@un-eosg/ui/components/secondary-header";
 import { typography } from "@un-eosg/ui/typography";
+import { budgetEntityWithReferences } from "@/lib/budget-result-index";
 import { BudgetOverviewContent } from "@/components/BudgetOverviewContent";
 import { SiteShell } from "@/components/SiteShell";
 import {
@@ -19,6 +20,7 @@ export function BudgetEntityPage({
   entity: BudgetEntity;
   selected?: BudgetSubprogramme;
 }) {
+  const identifiedEntity = budgetEntityWithReferences(entity);
   const path = entityHref(entity.id);
   const tabs = entity.subprogrammes.map((subprogramme) => ({
     href: entityHref(entity.id, subprogramme.id),
@@ -67,8 +69,14 @@ export function BudgetEntityPage({
           </div>
         )}
         <BudgetOverviewContent
-          entity={entity}
-          selected={selected}
+          entity={identifiedEntity}
+          selected={
+            selected
+              ? identifiedEntity.subprogrammes.find(
+                  (programme) => programme.id === selected.id,
+                )
+              : undefined
+          }
           edition={budgetEdition}
         />
       </div>

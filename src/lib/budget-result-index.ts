@@ -1,5 +1,10 @@
 import { createHash } from "node:crypto";
-import { budgetEntities, type BudgetResultContext } from "./programme-budget";
+import {
+  budgetEntities,
+  type BudgetContent,
+  type BudgetEntity,
+  type BudgetResultContext,
+} from "./programme-budget";
 
 export type BudgetResultReference = {
   id: string;
@@ -87,3 +92,32 @@ export const indexedBudgetResults = new Map(
     })
     .filter(([, entries]) => entries.length),
 );
+
+export function budgetEntityWithReferences(entity: BudgetEntity) {
+  const ids = new Map(
+    (indexedBudgetResults.get(entity.id) ?? []).map(({ result, reference }) => [
+      result,
+      reference.id,
+    ]),
+  );
+  const sections = (contents: BudgetContent[]) =>
+    contents.map((content) => ({
+      ...content,
+      performance: content.performance.map((result) => ({
+        ...result,
+        referenceId: ids.get(result),
+      })),
+      planned: content.planned.map((result) => ({
+        ...result,
+        referenceId: ids.get(result),
+      })),
+    }));
+  return {
+    ...entity,
+    overview: sections(entity.overview),
+    subprogrammes: entity.subprogrammes.map((programme) => ({
+      ...programme,
+      sections: sections(programme.sections),
+    })),
+  };
+}

@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
+import { typography } from "@un-eosg/ui/typography";
 import { X } from "lucide-react";
 import { DetailPanel } from "@un-eosg/ui/components/detail-panel";
 import { DetailPanelControls } from "@un-eosg/ui/components/detail-panel-controls";
@@ -39,7 +40,7 @@ export function SidecarContent({
           eyebrow={eyebrow}
           title={
             <Dialog.Title asChild>
-              <span>{title}</span>
+              <span className={typography.cardTitle}>{title}</span>
             </Dialog.Title>
           }
           headerMetadata={headerMetadata}
@@ -53,7 +54,7 @@ export function SidecarContent({
             />
           }
         >
-          <div className="space-y-5">{children}</div>
+          <div className="space-y-8 text-base">{children}</div>
         </DetailPanel>
       </Dialog.Content>
     </Dialog.Portal>

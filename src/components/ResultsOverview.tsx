@@ -3,6 +3,7 @@
 import {
   type CSSProperties,
   useCallback,
+  useDeferredValue,
   useEffect,
   useId,
   useLayoutEffect,
@@ -13,13 +14,14 @@ import {
 import { typography } from "@un-eosg/ui/typography";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import { Button } from "@un-eosg/ui/components/button";
-import { SegmentedControl } from "@un-eosg/ui/components/segmented-control";
+import { ResultViewToggle } from "@/components/ResultViewToggle";
 import { Maximize2, Minimize2 } from "lucide-react";
-import { ResultThumbnail } from "@/components/ResultThumbnail";
-import type { ResultThumbnailData } from "@/lib/result-thumbnail";
-import { priorityAreaColors } from "@/lib/priority-area-colors";
+import { ResultCard, ResultCardContent } from "@/components/ResultCard";
+import {
+  priorityAreaColors,
+  priorityAreaAnchor,
+} from "@/lib/priority-area-colors";
 import { beneficiaryColors } from "@/lib/beneficiary-colors";
-import { formatBudgetHeading } from "@/lib/budget-text";
 import styles from "./ResultsOverview.module.css";
 import { BudgetResultPreview } from "@/components/BudgetResultPreview";
 import { BudgetOverviewSidebar } from "@/components/BudgetOverviewSidebar";
@@ -27,18 +29,15 @@ import {
   OverviewFocusProvider,
   useCurrentOverviewFocus,
 } from "@/components/OverviewFocus";
-import type { BudgetResultReference } from "@/lib/budget-result-index";
+import { ResultsExplorerControls } from "@/components/ResultsExplorerControls";
+import {
+  emptyExplorerFilters,
+  filterExplorerResults,
+  type ExplorerResult,
+  type ExplorerOptions,
+} from "@/lib/result-explorer";
 
-type OverviewResult = {
-  id: string;
-  reference: BudgetResultReference;
-  title: string;
-  organization: string;
-  priority: string;
-  beneficiaries: string[];
-  groupColor?: string;
-  thumbnail?: ResultThumbnailData;
-};
+type OverviewResult = ExplorerResult;
 
 const gap = 3;
 const groupGap = 8;
@@ -98,29 +97,6 @@ function ExpandCue({ expanded }: { expanded: boolean }) {
   );
 }
 
-function ResultCardContent({
-  result,
-  contentRef,
-}: {
-  result: OverviewResult;
-  contentRef?: (element: HTMLSpanElement | null) => void;
-}) {
-  return (
-    <span className={styles.cardContent} ref={contentRef}>
-      <span className={`${resultTypography.result} break-words`}>
-        {result.title}
-      </span>
-      {result.thumbnail && (
-        <span className={styles.cardFooter}>
-          <span className={styles.decoration} aria-hidden="true">
-            <ResultThumbnail data={result.thumbnail} />
-          </span>
-        </span>
-      )}
-    </span>
-  );
-}
-
 function ResultTile({
   result,
   edition,
@@ -133,7 +109,7 @@ function ResultTile({
 }: {
   result: OverviewResult;
   edition: number;
-  position: { x: number; y: number; width?: number; height?: number };
+  position?: { x: number; y: number; width?: number; height?: number };
   readable?: boolean;
   previewWidth: number;
   contentRef: (id: string, element: HTMLSpanElement | null) => void;
@@ -142,36 +118,44 @@ function ResultTile({
 }) {
   return (
     <li
-      className={styles.tile}
+      className={`${styles.tile} ${position ? "" : styles.flatTile}`}
       data-readable={readable}
       data-entity-id={result.reference.entity}
       data-muted={muted}
       data-highlighted={highlighted}
       inert={muted}
-      style={{
-        transform: `translate(${position.x}px, ${position.y}px)`,
-        width: position.width,
-        height: position.height,
-      }}
+      style={
+        position
+          ? {
+              transform: `translate(${position.x}px, ${position.y}px)`,
+              width: position.width,
+              height: position.height,
+            }
+          : undefined
+      }
     >
       <BudgetResultPreview
         summary={result.reference}
         focusGroup={result.priority}
         edition={edition}
         trigger={
-          <button
-            type="button"
-            className={styles.trigger}
-            disabled={muted}
-            aria-label={`${result.organization}: ${result.title}`}
-          >
-            {readable && (
-              <ResultCardContent
-                result={result}
-                contentRef={(element) => contentRef(result.id, element)}
-              />
-            )}
-          </button>
+          readable ? (
+            <ResultCard
+              resultTitle={result.title}
+              thumbnail={result.thumbnail}
+              color={result.groupColor ?? priorityAreaColors[result.priority]}
+              contentRef={(element) => contentRef(result.id, element)}
+              disabled={muted}
+              aria-label={`${result.organization}: ${result.title}`}
+            />
+          ) : (
+            <button
+              type="button"
+              className={styles.trigger}
+              disabled={muted}
+              aria-label={`${result.organization}: ${result.title}`}
+            />
+          )
         }
         renderTrigger={(trigger) =>
           readable || muted ? (
@@ -196,7 +180,10 @@ function ResultTile({
                       } as CSSProperties
                     }
                   >
-                    <ResultCardContent result={result} />
+                    <ResultCardContent
+                      title={result.title}
+                      thumbnail={result.thumbnail}
+                    />
                   </Tooltip.Content>
                 </Tooltip.Portal>
               </Tooltip.Root>
@@ -214,20 +201,44 @@ type ResultsOverviewProps = {
   entityObjectives: Record<string, string>;
   subprogrammeObjectives: Record<string, string>;
   initialGrouping?: "priority" | "beneficiary";
+  filterOptions: ExplorerOptions;
 };
 
 export function ResultsOverview(props: ResultsOverviewProps) {
-  const [grouping, setGrouping] = useState(props.initialGrouping ?? "priority");
+  const [grouping, setGrouping] = useState<string>(
+    props.initialGrouping ?? "priority",
+  );
+  const [navigationVersion, setNavigationVersion] = useState(0);
+  const navigateToPriority = useCallback((priority: string) => {
+    setGrouping("priority");
+    setNavigationVersion((version) => version + 1);
+    const anchor = priorityAreaAnchor(priority);
+    window.history.replaceState(window.history.state, "", `#${anchor}`);
+    // Wait for the priority groups to mount before following their anchor.
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => {
+        document.getElementById(anchor)?.scrollIntoView({ block: "start" });
+      }),
+    );
+  }, []);
+  const [query, setQuery] = useState("");
+  const [filters, setFilters] = useState(emptyExplorerFilters);
+  const [readable, setReadable] = useState(true);
+  const deferredQuery = useDeferredValue(query);
+  const filtered = useMemo(
+    () => filterExplorerResults(props.results, filters, deferredQuery),
+    [props.results, filters, deferredQuery],
+  );
   const results = useMemo(
     () =>
-      grouping === "priority"
-        ? props.results
-        : props.results
+      grouping !== "beneficiary"
+        ? filtered
+        : filtered
             .flatMap((result) =>
               [
                 ...new Set(
                   result.beneficiaries.length
-                    ? result.beneficiaries.map(formatBudgetHeading)
+                    ? result.beneficiaries
                     : ["Unclassified"],
                 ),
               ].map((beneficiary) => ({
@@ -237,35 +248,118 @@ export function ResultsOverview(props: ResultsOverviewProps) {
                   beneficiaryColors[beneficiary] ?? "var(--color-dusty-gray)",
               })),
             )
-            .sort((a, b) => {
-              const order = Object.keys(beneficiaryColors);
-              return order.indexOf(a.priority) - order.indexOf(b.priority);
-            }),
-    [props.results, grouping],
+            .sort(
+              (a, b) =>
+                Object.keys(beneficiaryColors).indexOf(a.priority) -
+                Object.keys(beneficiaryColors).indexOf(b.priority),
+            ),
+    [filtered, grouping],
   );
+  const clear = () => {
+    setQuery("");
+    setFilters(emptyExplorerFilters);
+  };
+  const viewKey = JSON.stringify([grouping, filters, deferredQuery]);
   return (
-    <OverviewFocusProvider>
-      <div className="mt-5 [&_label>span]:text-sm [&_label>span]:text-foreground">
-        <SegmentedControl
-          label="Group results by"
-          options={[
-            { value: "priority", label: "Group by priority area" },
-            { value: "beneficiary", label: "Group by beneficiary" },
-          ]}
-          value={grouping}
-          onValueChange={(value) =>
-            setGrouping(value === "beneficiary" ? "beneficiary" : "priority")
-          }
+    <OverviewFocusProvider
+      key={navigationVersion}
+      navigateToPriority={navigateToPriority}
+    >
+      <ResultsExplorerControls
+        results={props.results}
+        options={props.filterOptions}
+        filters={filters}
+        query={query}
+        onQueryChange={setQuery}
+        onFiltersChange={setFilters}
+        onClear={clear}
+        count={filtered.length}
+        grouping={grouping}
+        onGroupingChange={setGrouping}
+      >
+        {grouping === "none" && (
+          <ResultViewToggle readable={readable} onChange={setReadable} />
+        )}
+      </ResultsExplorerControls>
+      {filtered.length === 0 ? (
+        <div className="py-12">
+          <p className={typography.prose} role="status">
+            No results match your search and filters.
+          </p>
+          <Button
+            className="mt-3 text-foreground"
+            variant="link"
+            onClick={clear}
+          >
+            Clear search and filters
+          </Button>
+        </div>
+      ) : grouping === "none" ? (
+        <UngroupedResults
+          key={viewKey}
+          results={filtered}
+          edition={props.edition}
+          readable={readable}
         />
-      </div>
-      <ResultsOverviewContent
-        key={grouping}
-        {...props}
-        results={results}
-        sizingResults={props.results}
-        beneficiaryMode={grouping === "beneficiary"}
-      />
+      ) : (
+        <ResultsOverviewContent
+          key={viewKey}
+          {...props}
+          results={results}
+          sizingResults={props.results}
+          beneficiaryMode={grouping === "beneficiary"}
+        />
+      )}
     </OverviewFocusProvider>
+  );
+}
+
+const ignoreContentRef = () => {};
+
+function UngroupedResults({
+  results,
+  edition,
+  readable,
+}: {
+  results: ExplorerResult[];
+  edition: number;
+  readable: boolean;
+}) {
+  const focus = useCurrentOverviewFocus();
+  const visibleTarget =
+    !focus ||
+    focus.kind !== "result" ||
+    results.some((result) => result.id === focus.resultId);
+  const matches = (result: ExplorerResult) => {
+    if (!focus) return true;
+    if (result.reference.entity !== focus.entityId) return false;
+    if (focus.kind === "result" && visibleTarget)
+      return result.id === focus.resultId;
+    return (
+      !focus.subprogrammeId ||
+      result.reference.context.subprogramme?.id === focus.subprogrammeId
+    );
+  };
+  return (
+    <ul
+      aria-label="All matching results"
+      className={`${styles.flatGrid} ${readable ? styles.readableGrid : styles.compactGrid}`}
+    >
+      {results.map((result) => (
+        <ResultTile
+          key={result.id}
+          result={{ ...result, groupColor: "var(--muted-foreground)" }}
+          edition={edition}
+          readable={readable}
+          previewWidth={280}
+          contentRef={ignoreContentRef}
+          muted={!matches(result)}
+          highlighted={Boolean(
+            focus?.kind === "result" && visibleTarget && matches(result),
+          )}
+        />
+      ))}
+    </ul>
   );
 }
 
@@ -313,6 +407,11 @@ function ResultsOverviewContent({
     if (!selectedPriority || detailFocus) return;
     const collapseOutside = (event: MouseEvent) => {
       if (!(event.target instanceof Element)) return;
+      if (event.target.closest("[data-explorer-controls]")) {
+        setSelectedEntity(null);
+        setSelectedPriority(null);
+        return;
+      }
       const priority = event.target.closest<HTMLElement>(
         "[data-priority-area]",
       );
@@ -442,7 +541,7 @@ function ResultsOverviewContent({
       if (!width) return;
       const availableHeight = Math.max(80, window.innerHeight - top - 24);
       let tile = 28;
-      for (; tile > 2; tile -= 0.5) {
+      for (; tile > 6; tile -= 0.5) {
         const totalHeight = sizingGroups.reduce(
           (height, [priority, entries]) =>
             height +
@@ -722,6 +821,7 @@ function ResultsOverviewContent({
         return (
           <section
             key={priority}
+            id={!beneficiaryMode ? priorityAreaAnchor(priority) : undefined}
             aria-labelledby={headingId}
             className={styles.group}
             data-expanded={expanded}

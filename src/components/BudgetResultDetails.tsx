@@ -1,26 +1,20 @@
-import { ExternalLink } from "@un-eosg/ui/components/external-link";
 import { typography } from "@un-eosg/ui/typography";
 import { BudgetMeasures, BudgetProse } from "@/components/BudgetNarrative";
 import { BudgetTimeChart } from "@/components/BudgetTimeChart";
 import { formatBudgetHeading } from "@/lib/budget-text";
 import { figureTimeSeries } from "@/lib/budget-time-series";
 import type { BudgetResult } from "@/lib/programme-budget";
-import { cn } from "@/lib/utils";
 
 export function BudgetResultDetails({
   result,
-  source,
   edition,
 }: {
   result: BudgetResult;
-  source: string;
   edition: number;
 }) {
   return (
     <>
-      {result.narrative && (
-        <BudgetProse paragraphs={[result.narrative]} compact />
-      )}
+      {result.narrative && <BudgetProse paragraphs={[result.narrative]} />}
       {result.measures.length > 0 && (
         <BudgetMeasures measures={result.measures} />
       )}
@@ -43,17 +37,6 @@ export function BudgetResultDetails({
                 percent={percent}
               />
             ))}
-            <ExternalLink
-              className={cn(
-                typography.caption,
-                "inline-block text-un-blue-text underline underline-offset-4",
-              )}
-              href={figure.source ?? source}
-            >
-              {figure.label
-                ? `View ${figure.label.toLowerCase()} in the budget document`
-                : "View figure in the budget document"}
-            </ExternalLink>
           </section>
         );
       })}

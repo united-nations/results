@@ -105,7 +105,6 @@ function QualitativeTimeline({ measures }: { measures: Measure[] }) {
               isMissing(value) ? "No value reported." : value,
             )}
             headingLevel={4}
-            compact
           />
         </li>
       ))}

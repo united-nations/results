@@ -13,3 +13,10 @@ export const priorityAreaColors: Record<string, string> = {
   "Development of Africa": "var(--color-trout)",
   "Drug control, crime prevention and combating terrorism": "#9a6b2f",
 };
+
+export function priorityAreaAnchor(name: string) {
+  return `priority-${name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "")}`;
+}

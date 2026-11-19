@@ -153,6 +153,22 @@ test("shared location results are grouped by entity with their own coverage", as
     coverage.locator("..").getByText(/Barbados, Belize, Bermuda/),
   ).toBeVisible();
   await expect(group.getByText(/Bangladesh/)).toHaveCount(0);
+  await expect
+    .poll(() =>
+      group.locator(":scope > ul > li").evaluateAll((items) =>
+        items.every((item) => {
+          const bottom = item.getBoundingClientRect().bottom;
+          const content = [
+            ...item.children,
+            item.querySelector("button"),
+          ].filter(Boolean) as Element[];
+          return content.every(
+            (child) => child.getBoundingClientRect().bottom <= bottom + 1,
+          );
+        }),
+      ),
+    )
+    .toBe(true);
   await group.getByRole("button").first().click();
   await expect(
     page.getByRole("button", { name: "Close result" }),

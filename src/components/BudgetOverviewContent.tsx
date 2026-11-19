@@ -3,8 +3,7 @@ import { ChevronRight } from "lucide-react";
 import { ExternalLink } from "@un-eosg/ui/components/external-link";
 import { typography } from "@un-eosg/ui/typography";
 import { BudgetProse } from "@/components/BudgetNarrative";
-import { BudgetResultDetails } from "@/components/BudgetResultDetails";
-import { ResultSidecar } from "@/components/ResultSidecar";
+import { BudgetResultPreview } from "@/components/BudgetResultPreview";
 import type {
   BudgetContent,
   BudgetEntity,
@@ -26,22 +25,21 @@ function ResultsList({
   edition: number;
 }) {
   return (
-    <ul className="divide-y overflow-hidden rounded-lg border">
+    <ul className="grid auto-rows-fr gap-3 sm:grid-cols-2">
       {results.map((result, index) => (
         <li key={index}>
-          <ResultSidecar
-            resultId={result.referenceId}
-            title={result.title || "Performance measures"}
-            label={result.label}
-            source={source}
-            context={context}
-          >
-            <BudgetResultDetails
-              result={result}
-              source={source}
-              edition={edition}
-            />
-          </ResultSidecar>
+          <BudgetResultPreview
+            summary={{
+              id:
+                result.referenceId ?? JSON.stringify([context, source, result]),
+              entity: context.entity.id,
+              title: result.title || "Performance measures",
+              source,
+              context,
+            }}
+            edition={edition}
+            initialResult={result}
+          />
         </li>
       ))}
     </ul>
@@ -124,15 +122,6 @@ function ContentSections({
           />
         </div>
       )}
-      <ExternalLink
-        href={content.source}
-        className={cn(
-          typography.caption,
-          "inline-block text-un-blue-text underline underline-offset-4",
-        )}
-      >
-        {content.symbol}
-      </ExternalLink>
     </section>
   );
 }
@@ -224,6 +213,22 @@ export function BudgetOverviewContent({
           }
         />
       ))}
+      <footer aria-label="Sources" className="space-y-3 border-t pt-6">
+        <h2 className={typography.subTitle}>Sources</h2>
+        {[
+          ...new Map(
+            content.map((section) => [section.source, section]),
+          ).values(),
+        ].map((section) => (
+          <ExternalLink
+            key={section.source}
+            href={section.source}
+            className={`${typography.body} block underline underline-offset-4`}
+          >
+            View budget document ({section.symbol})
+          </ExternalLink>
+        ))}
+      </footer>
     </>
   );
 }

@@ -23,11 +23,18 @@ export type OverviewFocus = {
 
 const FocusContext = createContext<{
   active: OverviewFocus | null;
+  navigateToPriority?: (priority: string) => void;
   setLayer: (id: string, scope: OverviewFocus) => void;
   removeLayer: (id: string) => void;
 } | null>(null);
 
-export function OverviewFocusProvider({ children }: { children: ReactNode }) {
+export function OverviewFocusProvider({
+  children,
+  navigateToPriority,
+}: {
+  children: ReactNode;
+  navigateToPriority?: (priority: string) => void;
+}) {
   const [layers, setLayers] = useState<{ id: string; scope: OverviewFocus }[]>(
     [],
   );
@@ -42,12 +49,21 @@ export function OverviewFocusProvider({ children }: { children: ReactNode }) {
     setLayers((current) => current.filter((layer) => layer.id !== id));
   }, []);
   const value = useMemo(
-    () => ({ active: layers.at(-1)?.scope ?? null, setLayer, removeLayer }),
-    [layers, setLayer, removeLayer],
+    () => ({
+      active: layers.at(-1)?.scope ?? null,
+      setLayer,
+      removeLayer,
+      navigateToPriority,
+    }),
+    [layers, setLayer, removeLayer, navigateToPriority],
   );
   return (
     <FocusContext.Provider value={value}>{children}</FocusContext.Provider>
   );
+}
+
+export function usePriorityNavigation() {
+  return useContext(FocusContext)?.navigateToPriority;
 }
 
 export function useCurrentOverviewFocus() {

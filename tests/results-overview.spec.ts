@@ -1,5 +1,16 @@
 import { readFileSync } from "node:fs";
 import { test, expect, type Locator, type Page } from "@playwright/test";
+async function selectGrouping(page: Page, value: string) {
+  const labels: Record<string, string> = {
+    priority: "Group by priority area",
+    beneficiary: "Group by beneficiary",
+    none: "No grouping",
+  };
+  await page.getByRole("button", { name: /^Grouping:/ }).click();
+  await page
+    .getByRole("menuitemradio", { name: labels[value], exact: true })
+    .click();
+}
 
 const snapshot = JSON.parse(
   readFileSync(new URL("../data/ppb-2027.json", import.meta.url), "utf8"),
@@ -97,8 +108,8 @@ test("grouping includes every result and keeps tile size stable across lenses", 
   await page.goto("/");
   await expect(page.locator("li[data-readable]")).toHaveCount(totalResults);
   await expect(
-    page.getByRole("radio", { name: "Group by priority area" }),
-  ).toBeChecked();
+    page.getByRole("button", { name: /^Grouping:/ }),
+  ).toHaveAttribute("data-grouping", "priority");
   await settleTiles(page);
   const priorityTile = page.locator("li[data-readable]").first();
   await expect
@@ -111,7 +122,7 @@ test("grouping includes every result and keeps tile size stable across lenses", 
     height: element.getBoundingClientRect().height,
     color: getComputedStyle(element).borderColor,
   }));
-  await page.getByText("Group by beneficiary", { exact: true }).click();
+  await selectGrouping(page, "beneficiary");
   const additionalMemberships = tags.reduce(
     (total, row) => total + Math.max(0, new Set(row.beneficiaries).size - 1),
     0,
@@ -234,8 +245,8 @@ test("beneficiary slices identify partial entity and subprogramme coverage", asy
 }) => {
   await page.goto("/beneficiaries/");
   await expect(
-    page.getByRole("radio", { name: "Group by beneficiary" }),
-  ).toBeChecked();
+    page.getByRole("button", { name: /^Grouping:/ }),
+  ).toHaveAttribute("data-grouping", "beneficiary");
   const priority = await expandGroup(page, "Climate and environment");
   const desa = entityGroup(priority, "desa");
   const shown = tags.filter(
@@ -317,17 +328,12 @@ test("muted areas do not preview or activate during the dismissal click", async 
   const active = await expandGroup(page, economicPriority);
   const muted = group(page, operationsPriority);
   await expect(muted).toHaveAttribute("inert", "");
-  const choice = page.getByText("Group by beneficiary", { exact: true });
-  await choice.click();
-  await expect(active).toHaveAttribute("data-expanded", "false");
-  await expect(
-    page.getByRole("radio", { name: "Group by priority area" }),
-  ).toBeChecked();
+  const bounds = await muted.boundingBox();
+  await page.mouse.move(bounds!.x + 12, bounds!.y + 12);
   await expect(page.getByRole("tooltip")).toHaveCount(0);
-  await choice.click();
-  await expect(
-    page.getByRole("radio", { name: "Group by beneficiary" }),
-  ).toBeChecked();
+  await page.mouse.click(bounds!.x + 12, bounds!.y + 12);
+  await expect(active).toHaveAttribute("data-expanded", "false");
+  await expect(muted).toHaveAttribute("data-expanded", "false");
 });
 
 test("mobile entity headings wrap without card collisions or horizontal overflow", async ({
@@ -352,21 +358,18 @@ test("mobile entity headings wrap without card collisions or horizontal overflow
     .toBe(true);
 });
 
-test("keyboard activation outside the current focus dismisses before switching groups", async ({
+test("global grouping controls work on the first keyboard activation while zoomed", async ({
   page,
 }) => {
   await page.goto("/");
   const priority = await expandGroup(page, economicPriority);
   await expandEntity(priority, "desa");
-  const beneficiary = page.getByRole("radio", { name: "Group by beneficiary" });
+  const beneficiary = page.getByRole("button", { name: /^Grouping:/ });
   await beneficiary.focus();
-  await page.keyboard.press("Space");
-  await expect(priority).toHaveAttribute("data-expanded", "false");
-  await expect(
-    page.getByRole("radio", { name: "Group by priority area" }),
-  ).toBeChecked();
-  await page.keyboard.press("Space");
-  await expect(beneficiary).toBeChecked();
+  await page.keyboard.press("Enter");
+  await page.keyboard.press("ArrowDown");
+  await page.keyboard.press("Enter");
+  await expect(beneficiary).toHaveAttribute("data-grouping", "beneficiary");
 });
 
 test("a nested result sidebar highlights one exact result when titles are duplicated", async ({

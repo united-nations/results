@@ -1,78 +1,220 @@
 "use client";
 
-import { useEffect, useState, type ReactElement, type ReactNode } from "react";
+import Link from "next/link";
+import { type CSSProperties, type ReactElement, type ReactNode } from "react";
+import { ArrowUpRight } from "lucide-react";
+import { ExternalLink } from "@un-eosg/ui/components/external-link";
 import { typography } from "@un-eosg/ui/typography";
 import { BudgetResultDetails } from "@/components/BudgetResultDetails";
 import { ResultSidecar } from "@/components/ResultSidecar";
-import { withBasePath } from "@/lib/paths";
+import { usePriorityNavigation } from "@/components/OverviewFocus";
+import { ResultCard } from "@/components/ResultCard";
+import { usePublicJson } from "@/hooks/usePublicJson";
+import {
+  overviewResultEntries,
+  type BudgetOverviewData,
+} from "@/lib/budget-overview";
+import {
+  priorityAreaAnchor,
+  priorityAreaColors,
+} from "@/lib/priority-area-colors";
+import { resultThumbnail } from "@/lib/result-thumbnail";
+import { formatBudgetHeading } from "@/lib/budget-text";
 import type { BudgetResult } from "@/lib/programme-budget";
 import type { BudgetResultReference } from "@/lib/budget-result-index";
+
+function ContextLink({
+  href,
+  label,
+  title,
+}: {
+  href: string;
+  label: string;
+  title: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="group rounded-md border bg-muted/40 p-4 text-foreground hover:border-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+    >
+      <span className={`${typography.meta} mb-1 block text-foreground`}>
+        {label}
+      </span>
+      <span
+        className={`${typography.subTitle} flex items-start justify-between gap-3`}
+      >
+        <span>{title}</span>
+        <ArrowUpRight className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
+      </span>
+    </Link>
+  );
+}
 
 function Details({
   summary,
   edition,
+  initialResult,
 }: {
   summary: BudgetResultReference;
   edition: number;
+  initialResult?: BudgetResult;
 }) {
-  const [result, setResult] = useState<BudgetResult>();
-  const [failed, setFailed] = useState(false);
-  useEffect(() => {
-    const request = new AbortController();
-    fetch(withBasePath(`/data/results/${summary.entity}/results.json`), {
-      signal: request.signal,
+  const navigateToPriority = usePriorityNavigation();
+  const { data, failed, retry } = usePublicJson<BudgetOverviewData>(
+    `/data/entities/${summary.entity}/overview.json`,
+  );
+  const entries = data ? overviewResultEntries(data.entity) : [];
+  const result =
+    initialResult ??
+    entries.find((entry) => entry.summary.id === summary.id)?.result;
+  const context = summary.context;
+  const programme = context.subprogramme;
+  const parentHref = `/entities/${summary.entity}/${programme ? `${programme.id}/` : ""}`;
+  const color =
+    priorityAreaColors[data?.entity.mainPriority ?? ""] ?? "var(--primary)";
+  const related = entries
+    .filter((entry) => {
+      if (entry.summary.id === summary.id) return false;
+      if (!entry.summary.context.subprogramme && programme) return false;
+      return (
+        !programme || entry.summary.context.subprogramme?.id === programme.id
+      );
     })
-      .then((response) => {
-        if (!response.ok) throw new Error("Could not load result");
-        return response.json() as Promise<Record<string, BudgetResult>>;
-      })
-      .then((results) => {
-        const match = results[summary.id];
-        if (!match) throw new Error("Result is missing");
-        if (!request.signal.aborted) setResult(match);
-      })
-      .catch(() => {
-        if (!request.signal.aborted) setFailed(true);
-      });
-    return () => request.abort();
-  }, [summary.entity, summary.id]);
-
-  if (failed || !result) {
-    return (
-      <p className={typography.meta} role="status">
-        {failed
-          ? "The result details could not be loaded."
-          : "Loading result details…"}
-      </p>
-    );
-  }
+    .slice(0, 4);
   return (
-    <BudgetResultDetails
-      result={result}
-      source={summary.source}
-      edition={edition}
-    />
+    <div
+      className="space-y-8"
+      style={{ "--tile-color": color } as CSSProperties}
+    >
+      <nav aria-label="Result context" className="grid gap-3 sm:grid-cols-2">
+        <ContextLink
+          href={`/entities/${summary.entity}/`}
+          label="Entity"
+          title={context.entity.name}
+        />
+        {programme && (
+          <ContextLink
+            href={parentHref}
+            label={`Subprogramme ${programme.number}`}
+            title={programme.name}
+          />
+        )}
+        {data?.entity.mainPriority && (
+          <Link
+            href={`/#${priorityAreaAnchor(data.entity.mainPriority)}`}
+            onClick={(event) => {
+              if (
+                !navigateToPriority ||
+                event.metaKey ||
+                event.ctrlKey ||
+                event.shiftKey ||
+                event.altKey
+              )
+                return;
+              event.preventDefault();
+              navigateToPriority(data.entity.mainPriority!);
+            }}
+            className={`${typography.body} underline underline-offset-4 sm:col-span-2`}
+          >
+            Priority area: {data.entity.mainPriority}
+          </Link>
+        )}
+      </nav>
+      {result ? (
+        <BudgetResultDetails result={result} edition={edition} />
+      ) : (
+        <div role="status" className={typography.prose}>
+          {failed ? (
+            <p>
+              The result could not be loaded.{" "}
+              <button
+                type="button"
+                className="underline underline-offset-4"
+                onClick={retry}
+              >
+                Try again
+              </button>
+            </p>
+          ) : (
+            <p>Loading result details…</p>
+          )}
+        </div>
+      )}
+      {related.length > 0 && (
+        <section
+          aria-label="Related results"
+          className="space-y-4 border-t pt-6"
+        >
+          <h2 className={typography.sectionTitle}>
+            {programme
+              ? "Other results in this subprogramme"
+              : "Other results from this entity"}
+          </h2>
+          <ul className="grid auto-rows-fr gap-3 sm:grid-cols-2">
+            {related.map((entry) => (
+              <li key={entry.summary.id}>
+                <BudgetResultPreview
+                  summary={entry.summary}
+                  edition={edition}
+                  initialResult={entry.result}
+                  cardColor={color}
+                />
+              </li>
+            ))}
+          </ul>
+          <Link
+            href={parentHref}
+            className={`${typography.body} inline-flex items-center gap-2 underline underline-offset-4`}
+          >
+            View all {programme ? "subprogramme" : "entity"} results
+            <ArrowUpRight className="size-4" aria-hidden="true" />
+          </Link>
+        </section>
+      )}
+      <footer aria-label="Sources" className="space-y-3 border-t pt-6">
+        <h2 className={typography.subTitle}>Sources</h2>
+        {result?.figures.map((figure, index) => (
+          <ExternalLink
+            key={index}
+            href={figure.source ?? summary.source}
+            className={`${typography.body} block underline underline-offset-4`}
+          >
+            {figure.label
+              ? `View ${figure.label.toLowerCase()} in the budget document`
+              : "View figure in the budget document"}
+          </ExternalLink>
+        ))}
+        <ExternalLink
+          href={summary.source}
+          className={`${typography.body} inline-block underline underline-offset-4`}
+        >
+          View budget document
+        </ExternalLink>
+      </footer>
+    </div>
   );
 }
 
 export function BudgetResultPreview({
   summary,
   edition,
-  supportingText,
   eyebrow,
   children,
   trigger,
   renderTrigger,
   focusGroup,
+  initialResult,
+  cardColor,
 }: {
   summary: BudgetResultReference;
   edition: number;
-  supportingText?: string;
   eyebrow?: string;
   children?: ReactNode;
   trigger?: ReactElement;
   renderTrigger?: (trigger: ReactElement) => ReactNode;
   focusGroup?: string;
+  initialResult?: BudgetResult;
+  cardColor?: string;
 }) {
   return (
     <>
@@ -81,13 +223,28 @@ export function BudgetResultPreview({
         focusGroup={focusGroup}
         title={summary.title}
         source={summary.source}
-        supportingText={supportingText}
         eyebrow={eyebrow}
         context={summary.context}
-        trigger={trigger}
+        trigger={
+          trigger ?? (
+            <ResultCard
+              resultTitle={formatBudgetHeading(summary.title)}
+              thumbnail={
+                initialResult
+                  ? resultThumbnail(initialResult, edition)
+                  : undefined
+              }
+              color={cardColor}
+            />
+          )
+        }
         renderTrigger={renderTrigger}
       >
-        <Details summary={summary} edition={edition} />
+        <Details
+          summary={summary}
+          edition={edition}
+          initialResult={initialResult}
+        />
       </ResultSidecar>
       {children}
     </>

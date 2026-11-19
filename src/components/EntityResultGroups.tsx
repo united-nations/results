@@ -39,12 +39,13 @@ export function EntityResultGroups({
             )}
             {entity.name !== entity.code && entity.name}
           </Heading>
-          <ul className="divide-y">
+          <ul className="grid gap-3 p-3 sm:grid-cols-2">
             {results.map((summary) => (
-              <li key={summary.id}>
-                <BudgetResultPreview summary={summary} edition={edition}>
-                  {renderAfterResult?.(summary)}
-                </BudgetResultPreview>
+              <li key={summary.id} className="flex min-w-0 flex-col gap-2">
+                <div className="min-h-0 flex-1">
+                  <BudgetResultPreview summary={summary} edition={edition} />
+                </div>
+                {renderAfterResult?.(summary)}
               </li>
             ))}
           </ul>

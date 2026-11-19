@@ -1,0 +1,36 @@
+.filterDisclosure {
+  display: grid;
+  grid-template-rows: 0fr;
+  margin-top: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    grid-template-rows 260ms ease,
+    margin-top 260ms ease,
+    opacity 180ms ease,
+    visibility 0s linear 260ms;
+}
+
+.filterDisclosure[data-open="true"] {
+  grid-template-rows: 1fr;
+  margin-top: 6px;
+  opacity: 1;
+  visibility: visible;
+  transition:
+    grid-template-rows 260ms ease,
+    margin-top 260ms ease,
+    opacity 180ms ease,
+    visibility 0s;
+}
+
+.filterClip {
+  min-height: 0;
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .filterDisclosure,
+  .filterDisclosure[data-open="true"] {
+    transition: none;
+  }
+}

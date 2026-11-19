@@ -2,7 +2,7 @@
 
 # UN Results
 
-- **UN Secretariat:** Explore programme-budget results as a grid grouped by priority area or beneficiary. Expand groups into entities and subprogrammes, preview results, and open official objectives, strategies and full result content in sidebars. The locations map remains available at `/locations/`.
+- **UN Secretariat:** Explore programme-budget results as a grid grouped by priority area or beneficiary, or as an ungrouped grid. Expand groups into entities and subprogrammes, preview results, and open official objectives, strategies and full result content in sidebars. The locations map remains available at `/locations/`.
 - **UN System:** TBD.
 
 ## Run locally
@@ -27,6 +27,24 @@ funding sources.
 Beneficiary grouping uses `data/oict-result-tags-2027.json`. A result with two
 beneficiaries appears in both groups; group counts must not be summed as a unique
 total. Results without imported beneficiary tags remain in an Unclassified group.
+
+Search and filters apply before grouping. Search matches result content, entity and
+subprogramme names, priority areas, beneficiaries and location names. Priority area, beneficiary,
+location and budget-structure filters combine with OR within each filter and AND
+across filters. Global coverage is separate from country tags. The ungrouped view
+shows each matching result once, using neutral compact tiles or readable cards. Switching
+grouping preserves search and filters. The budget filter follows the part, section,
+entity, subprogramme and component hierarchy; selecting a parent includes its
+descendant results.
+
+Search suggestions offer matching categories alongside a free-text option. Enter
+keeps free-text search unless a suggestion is highlighted with the arrow keys.
+Selecting a category adds that filter, clears the query and preserves grouping.
+Removable filter chips remain visible when the filter panel is collapsed.
+
+Result sidebars show entity and subprogramme context links, related results from
+the same subprogramme (or entity), and budget-document sources at the bottom.
+Overview pages, sidebars and hover previews share the same minimal result card.
 
 Entity and subprogramme overview text uses the objectives and strategies in the
 programme budget snapshot. Keep this official source text intact when refreshing
