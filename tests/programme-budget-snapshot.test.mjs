@@ -107,3 +107,110 @@ test("entities with several priorities have one main spending priority", () => {
     }
   }
 });
+
+test("paired source tables stay with their printed reported and planned results", () => {
+  const entity = entities.find((entity) => entity.id === "asm-aqmt");
+  const performance = entity.overview
+    .flatMap((section) => section.performance)
+    .find(
+      (result) =>
+        result.title === "Enhanced analysis to follow an evolving threat",
+    );
+  const planned = entity.overview
+    .flatMap((section) => section.planned)
+    .find(
+      (result) =>
+        result.title === "Strengthened analysis to follow an evolving threat",
+    );
+  assert.ok(performance.measures.length);
+  assert.ok(planned.measures.length);
+  assert.ok(
+    performance.measures.every((measure) => measure.label === "Table 45"),
+  );
+  assert.ok(planned.measures.every((measure) => measure.label === "Table 46"));
+});
+
+test("ECA component objectives, strategies and citations retain their separate printed owners", () => {
+  const entity = entities.find((entity) => entity.id === "eca");
+  const programme = entity.subprogrammes.find(
+    (programme) => programme.number === 7,
+  );
+  for (const [region, paragraph, page] of [
+    ["North", "18.99", 45],
+    ["West", "18.112", 50],
+    ["Central", "18.125", 54],
+    ["Eastern", "18.138", 59],
+    ["Southern", "18.152", 64],
+  ]) {
+    const section = programme.sections.find(
+      (section) =>
+        section.name === `Subregional activities in ${region} Africa`,
+    );
+    assert.ok(section, region);
+    assert.equal(section.objectives.length, 1);
+    assert.ok(section.objectives[0].length < 600);
+    assert.doesNotMatch(
+      section.objectives[0],
+      /To contribute to the objective/,
+    );
+    assert.equal(section.strategy.length, 1);
+    assert.ok(section.strategy[0].startsWith(paragraph));
+    assert.ok(section.source.endsWith(`#page=${page}`));
+  }
+  assert.ok(
+    programme.sections.every(
+      (section) => section.component || section.strategy.length === 0,
+    ),
+  );
+});
+
+test("refreshed result figures have explicit titles and source-bound extraction provenance", () => {
+  const snapshot = JSON.parse(
+    readFileSync(new URL("../data/ppb-2027.json", import.meta.url), "utf8"),
+  );
+  assert.equal(snapshot.extraction.producerCodeState, "clean");
+  assert.match(snapshot.extraction.producerGitHead, /^[a-f0-9]{40}$/);
+  assert.ok(
+    snapshot.extraction.inputs.some((input) => input.path.endsWith(".docx")),
+  );
+  assert.ok(
+    snapshot.extraction.inputs.some((input) =>
+      input.path.endsWith("spm-catalogue.json"),
+    ),
+  );
+  for (const entity of entities) {
+    for (const section of [
+      ...entity.overview,
+      ...entity.subprogrammes.flatMap((programme) => programme.sections),
+    ]) {
+      for (const result of [...section.performance, ...section.planned]) {
+        if (result.figures.length)
+          assert.ok(
+            result.title.trim(),
+            `${entity.id}: untitled figure result`,
+          );
+      }
+    }
+  }
+});
+
+test("historical performance annex subprogrammes retain their printed page anchors", () => {
+  for (const [entityId, programmeId, page] of [
+    ["oda", "4-sp-4", 30],
+    ["oda", "4-sp-5", 31],
+    ["un-habitat", "15-sp-3", 30],
+    ["un-habitat", "15-sp-4", 32],
+  ]) {
+    const entity = entities.find((entity) => entity.id === entityId);
+    const programme = entity?.subprogrammes.find(
+      (programme) => programme.id === programmeId,
+    );
+    assert.ok(programme, `${entityId}: ${programmeId}`);
+    assert.ok(
+      programme.sections.some((section) =>
+        section.source.endsWith(`#page=${page}`),
+      ),
+      `${entityId}: ${programmeId} historical page ${page}`,
+    );
+  }
+});

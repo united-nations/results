@@ -26,21 +26,53 @@ function sourceStatus(label: string): Status {
   return "unlabelled";
 }
 
+type FigureSeries = BudgetResult["figures"][number]["series"][number];
+
+function figurePointsForDisplay(series: FigureSeries, reportedThrough: number) {
+  const { name, points } = series;
+  if (
+    /^dividers?$/i.test(name.trim()) ||
+    (/^(?:x|#REF!)$/i.test(name.trim()) &&
+      points.every((point) => !periodStart.test(point.category.trim())))
+  )
+    return [];
+  return points.filter(({ category }) => {
+    const match = periodStart.exec(category.trim());
+    if (!match) return true;
+    const start = Number(match[1]);
+    const fiscal = match[2] !== undefined;
+    // An invalid or unknown period remains visible as source data. It must not
+    // be converted to a date merely to decide whether to hide it.
+    if (fiscal && Number(match[2]) !== (start + 1) % 100) return true;
+    const categoryStatus = sourceStatus(category);
+    const status =
+      categoryStatus === "unlabelled" ? sourceStatus(name) : categoryStatus;
+    return status !== "actual" || start + Number(fiscal) <= reportedThrough;
+  });
+}
+
+/** Raw-category fallback rows follow the same visibility policy as charts. */
+export function figureDisplayRows(
+  figure: BudgetResult["figures"][number],
+  reportedThrough: number,
+) {
+  return figure.series.flatMap((series) =>
+    figurePointsForDisplay(series, reportedThrough).map((point) => ({
+      series: series.name,
+      ...(series.percent ? { percent: true } : {}),
+      ...point,
+    })),
+  );
+}
+
 export function figureTimeSeries(
   figure: BudgetResult["figures"][number],
   reportedThrough: number,
 ): TimeSeries[] | undefined {
   const output: TimeSeries[] = [];
-  for (const { name, percent, points } of figure.series) {
-    // A series called "X" can hold actual values. Only skip it when the
-    // source gives it non-period coordinates (e.g. a vertical divider at 5.5).
-    if (
-      /^dividers?$/i.test(name.trim()) ||
-      (/^(?:x|#REF!)$/i.test(name.trim()) &&
-        points.every((point) => !periodStart.test(point.category.trim())))
-    )
-      continue;
-
+  for (const source of figure.series) {
+    const { name, percent } = source;
+    const points = figurePointsForDisplay(source, reportedThrough);
     const series: TimePoint[] = [];
     for (const { category, value } of points) {
       const match = periodStart.exec(category.trim());
@@ -51,10 +83,6 @@ export function figureTimeSeries(
       const categoryStatus = sourceStatus(category);
       const status =
         categoryStatus === "unlabelled" ? sourceStatus(name) : categoryStatus;
-      // The edition's actuals stop in the performance year. Chart caches can
-      // still contain zeros or totals under an "actual" series for later years.
-      if (status === "actual" && start + Number(fiscal) > reportedThrough)
-        continue;
       series.push({
         year: start + (fiscal ? 0.5 : 0),
         period: fiscal ? `${start}/${match[2]}` : match[1],

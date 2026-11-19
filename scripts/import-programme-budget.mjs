@@ -1,4 +1,9 @@
 import assert from "node:assert/strict";
+import {
+  objectiveSource,
+  unitHeadingSource,
+} from "./lib/programme-budget-sources.mjs";
+import { verifyResultsExport } from "./lib/results-export.mjs";
 import { createHash } from "node:crypto";
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
@@ -11,9 +16,18 @@ if (!portalData || !identityFile || !expensesFile || !annotationsFile) {
   );
 }
 const edition = 2027;
-const hashes = {};
+const provenance = verifyResultsExport(
+  portalData,
+  identityFile,
+  annotationsFile,
+  edition,
+);
+const hashes = { results_export_manifest: provenance.sha256 };
 function read(path, label) {
-  const bytes = readFileSync(path);
+  const bytes =
+    label === "open_un_financial_overview"
+      ? readFileSync(path)
+      : provenance.readInput(path);
   hashes[label] = createHash("sha256").update(bytes).digest("hex");
   return JSON.parse(bytes);
 }
@@ -200,6 +214,8 @@ for (const row of outline.filter((row) => row.node_kind === "heading")) {
 const outlineByPosition = new Map(
   outline.map((row) => [`${row.symbol}|${row.position}`, row]),
 );
+
+const outlineBySymbol = Map.groupBy(outline, (row) => row.symbol);
 
 const unitKey = (row) =>
   JSON.stringify([
@@ -487,13 +503,8 @@ for (const { row, objectives: objectiveTexts, results } of units.values()) {
   const key = `${row.symbol}|${nameKey(row.unit_name)}`;
   const headings = headingFor.get(key) ?? [];
   const referenced =
-    headings
-      .filter((item) => item.page != null)
-      .find(
-        (item) =>
-          item.unit_path === "Programme of work" ||
-          item.block_type === "heading-sub",
-      ) ?? headings.find((item) => item.page != null);
+    objectiveSource(outlineBySymbol.get(row.symbol) ?? [], objectiveTexts) ??
+    unitHeadingSource(headings);
   const parent =
     row.unit_type === "subprogramme" && /^\d+$/.test(row.unit_no)
       ? { number: Number(row.unit_no), name: row.unit_name }
@@ -629,6 +640,7 @@ assert.equal(
 const snapshot = {
   edition,
   priorityYear: expenses.meta.year,
+  extraction: provenance.manifest,
   hashes,
   priorities,
   budgetSections,

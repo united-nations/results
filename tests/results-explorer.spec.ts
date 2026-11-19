@@ -1,5 +1,27 @@
+import { readFileSync } from "node:fs";
 import { openOictResult } from "./open-result";
 import { test, expect, type Page } from "@playwright/test";
+const snapshot = JSON.parse(
+  readFileSync(new URL("../data/ppb-2027.json", import.meta.url), "utf8"),
+);
+const totalResults = snapshot.entities
+  .flatMap(
+    (entity: {
+      overview: { performance: unknown[]; planned: unknown[] }[];
+      subprogrammes: {
+        sections: { performance: unknown[]; planned: unknown[] }[];
+      }[];
+    }) => [
+      ...entity.overview,
+      ...entity.subprogrammes.flatMap((programme) => programme.sections),
+    ],
+  )
+  .reduce(
+    (total: number, section: { performance: unknown[]; planned: unknown[] }) =>
+      total + section.performance.length + section.planned.length,
+    0,
+  );
+
 async function selectGrouping(page: Page, value: string) {
   const labels: Record<string, string> = {
     priority: "Group by priority area",
@@ -20,7 +42,7 @@ test("search survives grouping changes, ungrouped cards are unique, and empty se
   await search.fill("connectivity");
   const tiles = page.locator("li[data-readable]");
   await expect.poll(() => tiles.count()).toBeGreaterThan(0);
-  await expect.poll(() => tiles.count()).toBeLessThan(922);
+  await expect.poll(() => tiles.count()).toBeLessThan(totalResults);
   const count = await tiles.count();
   await selectGrouping(page, "none");
   await expect(tiles).toHaveCount(count);
@@ -38,7 +60,7 @@ test("search survives grouping changes, ungrouped cards are unique, and empty se
     page.getByText("No results match your search and filters."),
   ).toBeVisible();
   await page.getByRole("button", { name: "Clear search and filters" }).click();
-  await expect(tiles).toHaveCount(922);
+  await expect(tiles).toHaveCount(totalResults);
 });
 
 test("location filter works while expanded and persists across grouping", async ({
@@ -55,7 +77,7 @@ test("location filter works while expanded and persists across grouping", async 
   await page.keyboard.press("Escape");
   const tiles = page.locator("li[data-readable]");
   await expect.poll(() => tiles.count()).toBeGreaterThan(0);
-  await expect.poll(() => tiles.count()).toBeLessThan(922);
+  await expect.poll(() => tiles.count()).toBeLessThan(totalResults);
   const count = await tiles.count();
   const filtersToggle = page.getByRole("button", {
     name: "Filters (1)",
@@ -73,7 +95,7 @@ test("location filter works while expanded and persists across grouping", async 
     }),
   ).toBeVisible();
   await page.getByRole("button", { name: "Clear all", exact: true }).click();
-  await expect(tiles).toHaveCount(922);
+  await expect(tiles).toHaveCount(totalResults);
 });
 
 test("result sidebar shows related cards, context navigation and sources", async ({
@@ -164,7 +186,7 @@ test("ungrouped compact tiles are visible and neutral, and the budget filter ret
     .locator("..")
     .click();
   const tiles = page.locator('li[data-readable="false"]');
-  await expect(tiles).toHaveCount(922);
+  await expect(tiles).toHaveCount(totalResults);
   const colors = await tiles.evaluateAll((nodes) =>
     nodes.map((node) => {
       const style = getComputedStyle(node);
@@ -252,7 +274,7 @@ test("ungrouped compact tiles are visible and neutral, and the budget filter ret
     .check();
   await page.keyboard.press("Escape");
   await expect.poll(() => tiles.count()).toBeGreaterThan(0);
-  await expect.poll(() => tiles.count()).toBeLessThan(922);
+  await expect.poll(() => tiles.count()).toBeLessThan(totalResults);
 });
 
 test("grouping dropdown preserves page scrolling and filters animate without losing selections", async ({

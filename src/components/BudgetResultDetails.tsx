@@ -1,5 +1,6 @@
 import { typography } from "@un-eosg/ui/typography";
 import { BudgetMeasures, BudgetProse } from "@/components/BudgetNarrative";
+import { BudgetFigureTable } from "@/components/BudgetFigureTable";
 import { BudgetTimeChart } from "@/components/BudgetTimeChart";
 import { formatBudgetHeading } from "@/lib/budget-text";
 import { figureTimeSeries } from "@/lib/budget-time-series";
@@ -29,14 +30,22 @@ export function BudgetResultDetails({
             <h3 className={typography.subTitle}>
               {title || "Performance measure"}
             </h3>
-            {[...byUnit].map(([percent, items]) => (
-              <BudgetTimeChart
-                key={String(percent)}
-                label={title || "Performance over time"}
-                series={items}
-                percent={percent}
+            {series ? (
+              [...byUnit].map(([percent, items]) => (
+                <BudgetTimeChart
+                  key={String(percent)}
+                  label={title || "Performance over time"}
+                  series={items}
+                  percent={percent}
+                />
+              ))
+            ) : (
+              <BudgetFigureTable
+                figure={figure}
+                reportedThrough={edition - 2}
+                label={title || "Performance measure"}
               />
-            ))}
+            )}
           </section>
         );
       })}

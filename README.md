@@ -62,10 +62,32 @@ programme budget snapshot. Keep this official source text intact when refreshing
 the export; do not add separately written entity summaries.
 
 With the Programme Budget Data and Open UN checkouts alongside this one, prepare
-the 2027 results export in Programme Budget Data and run:
+the 2027 results export in Programme Budget Data from committed extraction code:
 
 ```bash
-results_export=../programme-budget-data/data/processed/ppb2027/results-export
+cd ../programme-budget-data
+uv run python scripts/build_results_export.py \
+  --edition 2027 \
+  --financial-input data/processed/financial/2027.json \
+  --output data/processed/ppb2027/results-export-verified --replace
+uv run python -m pipeline.verify.results_attribution \
+  --published-data-dir data/processed/ppb2027/results-export-verified/portal-data
+cd ../results
+```
+
+For a one-time replacement of a dedicated pre-manifest bundle, also pass
+`--replace-legacy`. If the old folder contains unrelated assets, choose a new
+output directory rather than deleting them. The builder reparses the selected official Word documents
+into isolated intermediates and leaves financial assets unchanged. It rejects
+source changes during the build. The importer verifies every bundle checksum
+and reads a consistent captured copy; development exports made from uncommitted
+extractor code are rejected. The snapshot retains the export manifest and source
+fingerprints under `extraction`.
+
+Then import the verified bundle:
+
+```bash
+results_export=../programme-budget-data/data/processed/ppb2027/results-export-verified
 node scripts/import-programme-budget.mjs \
   "$results_export/portal-data" \
   "$results_export/entity-overlay-2027.json" \
