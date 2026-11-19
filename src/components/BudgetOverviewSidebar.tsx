@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Link from "next/link";
+import { useEffect, useState, type ReactElement } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@un-eosg/ui/components/button";
@@ -24,12 +23,14 @@ export function BudgetOverviewSidebar({
   subprogrammeId,
   disabled = false,
   label = "Learn more.",
+  trigger,
 }: {
   entityId: string;
   title: string;
   subprogrammeId?: string;
   disabled?: boolean;
   label?: string;
+  trigger?: ReactElement;
 }) {
   const [open, setOpen] = useState(false);
   const [data, setData] = useState<OverviewData>();
@@ -76,15 +77,17 @@ export function BudgetOverviewSidebar({
       }}
     >
       <Dialog.Trigger asChild>
-        <Button
-          variant="link"
-          size="sm"
-          disabled={disabled}
-          className="pointer-events-auto inline h-auto shrink-0 rounded-none p-0 align-baseline text-sm leading-[inherit] text-foreground underline underline-offset-4"
-          aria-label={`${label} ${title}`}
-        >
-          {label}
-        </Button>
+        {trigger ?? (
+          <Button
+            variant="link"
+            size="sm"
+            disabled={disabled}
+            className="pointer-events-auto inline h-auto shrink-0 rounded-none p-0 align-baseline text-sm leading-[inherit] text-foreground underline underline-offset-4"
+            aria-label={`${label} ${title}`}
+          >
+            {label}
+          </Button>
+        )}
       </Dialog.Trigger>
       <SidecarContent
         title={formatBudgetHeading(
@@ -97,16 +100,6 @@ export function BudgetOverviewSidebar({
         }
         closeLabel="Close overview"
         onClose={() => setOpen(false)}
-        headerMetadata={
-          data && (
-            <Link
-              className={`${typography.meta} text-un-blue-text underline underline-offset-4`}
-              href={`/entities/${entityId}/${selectedId ? `${selectedId}/` : ""}`}
-            >
-              Open full overview page
-            </Link>
-          )
-        }
       >
         {!data ? (
           <p className={typography.meta} role="status">

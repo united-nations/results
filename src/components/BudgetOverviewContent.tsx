@@ -1,4 +1,9 @@
-import Link from "next/link";
+import { PriorityAreaSidebar } from "@/components/PriorityAreaSidebar";
+import { BudgetOverviewSidebar } from "@/components/BudgetOverviewSidebar";
+import {
+  ContextCardContent,
+  contextCardClassName,
+} from "@/components/ContextCard";
 import { ChevronRight } from "lucide-react";
 import { ExternalLink } from "@un-eosg/ui/components/external-link";
 import { typography } from "@un-eosg/ui/typography";
@@ -135,7 +140,7 @@ export function BudgetOverviewContent({
   entity: BudgetEntity;
   selected?: BudgetSubprogramme;
   edition: number;
-  onSelectSubprogramme?: (id: string) => void;
+  onSelectSubprogramme: (id: string) => void;
 }) {
   const content = selected
     ? selected.sections.toSorted(
@@ -166,22 +171,13 @@ export function BudgetOverviewContent({
               const className = `${typography.body} flex w-full items-center gap-3 px-4 py-3 text-left hover:bg-muted`;
               return (
                 <li key={programme.id}>
-                  {onSelectSubprogramme ? (
-                    <button
-                      type="button"
-                      className={className}
-                      onClick={() => onSelectSubprogramme(programme.id)}
-                    >
-                      {label}
-                    </button>
-                  ) : (
-                    <Link
-                      className={className}
-                      href={`/entities/${entity.id}/${programme.id}/`}
-                    >
-                      {label}
-                    </Link>
-                  )}
+                  <button
+                    type="button"
+                    className={className}
+                    onClick={() => onSelectSubprogramme(programme.id)}
+                  >
+                    {label}
+                  </button>
                 </li>
               );
             })}
@@ -213,6 +209,41 @@ export function BudgetOverviewContent({
           }
         />
       ))}
+      {(entity.mainPriority || selected) && (
+        <nav
+          aria-label="Overview context"
+          className="flex items-stretch gap-3 *:max-w-1/2"
+        >
+          {entity.mainPriority && (
+            <PriorityAreaSidebar
+              priority={entity.mainPriority}
+              trigger={
+                <button
+                  type="button"
+                  className={contextCardClassName}
+                  aria-label={`Priority area: ${entity.mainPriority}`}
+                >
+                  <ContextCardContent
+                    label="Priority area"
+                    title={entity.mainPriority}
+                  />
+                </button>
+              }
+            />
+          )}
+          {selected && (
+            <BudgetOverviewSidebar
+              entityId={entity.id}
+              title={entity.name}
+              trigger={
+                <button type="button" className={contextCardClassName}>
+                  <ContextCardContent label="Entity" title={entity.name} />
+                </button>
+              }
+            />
+          )}
+        </nav>
+      )}
       <footer aria-label="Sources" className="space-y-3 border-t pt-6">
         <h2 className={typography.subTitle}>Sources</h2>
         {[

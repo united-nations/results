@@ -1,12 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { type CSSProperties, type ReactElement, type ReactNode } from "react";
-import { ArrowUpRight } from "lucide-react";
 import { ExternalLink } from "@un-eosg/ui/components/external-link";
 import { typography } from "@un-eosg/ui/typography";
 import { BudgetResultDetails } from "@/components/BudgetResultDetails";
 import { ResultSidecar } from "@/components/ResultSidecar";
+import { BudgetOverviewSidebar } from "@/components/BudgetOverviewSidebar";
 import { PriorityAreaSidebar } from "@/components/PriorityAreaSidebar";
 import {
   ContextCardContent,
@@ -23,22 +22,6 @@ import { resultThumbnail } from "@/lib/result-thumbnail";
 import { formatBudgetHeading } from "@/lib/budget-text";
 import type { BudgetResult } from "@/lib/programme-budget";
 import type { BudgetResultReference } from "@/lib/budget-result-index";
-
-function ContextLink({
-  href,
-  label,
-  title,
-}: {
-  href: string;
-  label: string;
-  title: string;
-}) {
-  return (
-    <Link href={href} className={contextCardClassName}>
-      <ContextCardContent label={label} title={title} />
-    </Link>
-  );
-}
 
 function Details({
   summary,
@@ -58,7 +41,6 @@ function Details({
     entries.find((entry) => entry.summary.id === summary.id)?.result;
   const context = summary.context;
   const programme = context.subprogramme;
-  const parentHref = `/entities/${summary.entity}/${programme ? `${programme.id}/` : ""}`;
   const color =
     priorityAreaColors[data?.entity.mainPriority ?? ""] ?? "var(--primary)";
   const related = entries
@@ -75,37 +57,6 @@ function Details({
       className="space-y-8"
       style={{ "--tile-color": color } as CSSProperties}
     >
-      <nav aria-label="Result context" className="grid gap-3 sm:grid-cols-2">
-        <ContextLink
-          href={`/entities/${summary.entity}/`}
-          label="Entity"
-          title={context.entity.name}
-        />
-        {programme && (
-          <ContextLink
-            href={parentHref}
-            label={`Subprogramme ${programme.number}`}
-            title={programme.name}
-          />
-        )}
-        {data?.entity.mainPriority && (
-          <PriorityAreaSidebar
-            priority={data.entity.mainPriority}
-            trigger={
-              <button
-                type="button"
-                aria-label={`Priority area: ${data.entity.mainPriority}`}
-                className={`${contextCardClassName} sm:col-span-2`}
-              >
-                <ContextCardContent
-                  label="Priority area"
-                  title={data.entity.mainPriority}
-                />
-              </button>
-            }
-          />
-        )}
-      </nav>
       {result ? (
         <BudgetResultDetails result={result} edition={edition} />
       ) : (
@@ -148,15 +99,54 @@ function Details({
               </li>
             ))}
           </ul>
-          <Link
-            href={parentHref}
-            className={`${typography.body} inline-flex items-center gap-2 underline underline-offset-4`}
-          >
-            View all {programme ? "subprogramme" : "entity"} results
-            <ArrowUpRight className="size-4" aria-hidden="true" />
-          </Link>
         </section>
       )}
+      <nav
+        aria-label="Result context"
+        className="flex items-stretch gap-3 *:max-w-1/2"
+      >
+        {data?.entity.mainPriority && (
+          <PriorityAreaSidebar
+            priority={data.entity.mainPriority}
+            trigger={
+              <button
+                type="button"
+                aria-label={`Priority area: ${data.entity.mainPriority}`}
+                className={contextCardClassName}
+              >
+                <ContextCardContent
+                  label="Priority area"
+                  title={data.entity.mainPriority}
+                />
+              </button>
+            }
+          />
+        )}
+        <BudgetOverviewSidebar
+          entityId={summary.entity}
+          title={context.entity.name}
+          trigger={
+            <button type="button" className={contextCardClassName}>
+              <ContextCardContent label="Entity" title={context.entity.name} />
+            </button>
+          }
+        />
+        {programme && (
+          <BudgetOverviewSidebar
+            entityId={summary.entity}
+            subprogrammeId={programme.id}
+            title={programme.name}
+            trigger={
+              <button type="button" className={contextCardClassName}>
+                <ContextCardContent
+                  label={`Subprogramme ${programme.number}`}
+                  title={programme.name}
+                />
+              </button>
+            }
+          />
+        )}
+      </nav>
       <footer aria-label="Sources" className="space-y-3 border-t pt-6">
         <h2 className={typography.subTitle}>Sources</h2>
         {result?.figures.map((figure, index) => (

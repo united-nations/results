@@ -1,5 +1,6 @@
 "use client";
 
+import scrollStyles from "./DetailPanelScroll.module.css";
 import type { ReactNode } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { typography } from "@un-eosg/ui/typography";
@@ -32,11 +33,14 @@ export function SidecarContent({
         className={`fixed inset-0 z-50 ${overviewFocus ? "bg-black/20" : "bg-black/40"} motion-safe:data-[state=open]:animate-in motion-safe:data-[state=open]:fade-in-0`}
       />
       <Dialog.Content
+        data-detail-drawer=""
         aria-describedby={undefined}
         onCloseAutoFocus={onCloseAutoFocus}
-        className="fixed inset-y-0 end-0 z-50 w-full border-s bg-background shadow-lg motion-safe:data-[state=open]:animate-in motion-safe:data-[state=open]:slide-in-from-right sm:max-w-2xl lg:max-w-3xl"
+        className="fixed inset-y-0 end-0 z-50 w-full overflow-y-auto overscroll-contain border-s bg-background shadow-lg motion-safe:data-[state=open]:animate-in motion-safe:data-[state=open]:slide-in-from-right sm:max-w-2xl lg:max-w-3xl"
       >
         <DetailPanel
+          className={scrollStyles.panel}
+          bodyClassName={scrollStyles.body}
           eyebrow={eyebrow}
           title={
             <Dialog.Title asChild>

@@ -279,7 +279,7 @@
 }
 .compactGrid {
   --tile-size: 28px;
-  grid-template-columns: repeat(auto-fill, minmax(28px, 1fr));
+  grid-template-columns: repeat(auto-fill, 28px);
   gap: 3px;
 }
 .flatTile {

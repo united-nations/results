@@ -41,7 +41,6 @@ import {
 type OverviewResult = ExplorerResult;
 
 const gap = 3;
-const groupGap = 8;
 // Shared UI tiers keep the hierarchy consistent at every zoom level.
 const resultTypography = {
   priority: typography.subTitle,
@@ -57,26 +56,6 @@ const resultTypography = {
 const labelHeight = 40;
 const groupInset = 18;
 const groupPaddingHeight = 14;
-
-function groupLayout(
-  count: number,
-  tile: number,
-  availableWidth: number,
-  headingHeight = labelHeight,
-) {
-  const columns = Math.max(
-    1,
-    Math.floor((availableWidth - groupInset + gap) / (tile + gap)),
-  );
-  return {
-    columns,
-    height:
-      groupPaddingHeight +
-      headingHeight +
-      Math.ceil(count / columns) * (tile + gap) -
-      gap,
-  };
-}
 
 function resultCardWidth(contentWidth: number) {
   const columns = Math.max(1, Math.floor((contentWidth - 16 + 10) / 230));
@@ -450,11 +429,7 @@ function ResultsOverviewContent({
     () => [...Map.groupBy(results, (result) => result.priority)],
     [results],
   );
-  const sizingGroups = useMemo(
-    () => [...Map.groupBy(sizingResults, (result) => result.priority)],
-    [sizingResults],
-  );
-  const [layout, setLayout] = useState({ tile: 12, width: 900 });
+  const [layout, setLayout] = useState({ tile: 28, width: 900 });
 
   useLayoutEffect(() => {
     const measure = () => {
@@ -526,31 +501,9 @@ function ResultsOverviewContent({
     if (!element) return;
 
     const resize = () => {
-      const { top, width } = element.getBoundingClientRect();
+      const { width } = element.getBoundingClientRect();
       if (!width) return;
-      const availableHeight = Math.max(80, window.innerHeight - top - 24);
-      let tile = 28;
-      for (; tile > 6; tile -= 0.5) {
-        const totalHeight = sizingGroups.reduce(
-          (height, [priority, entries]) =>
-            height +
-            groupLayout(
-              entries.length,
-              tile,
-              width,
-              Math.max(
-                labelHeight,
-                Math.ceil(
-                  priority.length / Math.max(1, (width - groupInset - 110) / 8),
-                ) *
-                  24 +
-                  8,
-              ),
-            ).height,
-          Math.max(0, sizingGroups.length - 1) * groupGap,
-        );
-        if (totalHeight <= availableHeight) break;
-      }
+      const tile = 28;
       setLayout((current) =>
         current.tile === tile && current.width === width
           ? current
@@ -574,7 +527,7 @@ function ResultsOverviewContent({
       observer.disconnect();
       window.removeEventListener("resize", resize);
     };
-  }, [sizingGroups]);
+  }, []);
 
   return (
     <div

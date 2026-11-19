@@ -1,3 +1,4 @@
+import { openOictResult } from "./open-result";
 import { test, expect, type Page } from "@playwright/test";
 async function selectGrouping(page: Page, value: string) {
   const labels: Record<string, string> = {
@@ -75,22 +76,17 @@ test("location filter works while expanded and persists across grouping", async 
   await expect(tiles).toHaveCount(922);
 });
 
-test("result sidebar puts context first, related shared cards next, and sources last", async ({
+test("result sidebar shows related cards, context navigation and sources", async ({
   page,
 }) => {
-  await page.goto("/entities/oict/29c-sp-2/");
-  await page
-    .getByRole("button", {
-      name: /More reliable and stable connectivity for delegates and staff/,
-    })
-    .click();
+  await openOictResult(page);
   const panel = page.getByRole("dialog");
   await expect(
     panel.getByRole("navigation", { name: "Result context" }),
   ).toBeVisible();
   await expect(
-    panel.getByRole("link", { name: /Entity Office of Information/ }),
-  ).toHaveAttribute("href", "/entities/oict/");
+    panel.getByRole("button", { name: /Entity Office of Information/ }),
+  ).toBeVisible();
   const related = panel.getByRole("region", { name: "Related results" });
   await expect(related.getByRole("button").first()).toBeVisible();
   await expect(

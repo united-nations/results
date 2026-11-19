@@ -1,3 +1,4 @@
+import { openOictResult } from "./open-result";
 import { readFileSync } from "node:fs";
 import { test, expect } from "@playwright/test";
 
@@ -69,15 +70,8 @@ test("all nine priority sidebars retain official text, edition, sources and area
   }
 });
 
-test("priority context box also opens on a standalone entity result page", async ({
-  page,
-}) => {
-  await page.goto("/entities/oict/29c-sp-2/");
-  await page
-    .getByRole("button", {
-      name: /More reliable and stable connectivity for delegates and staff/,
-    })
-    .click();
+test("priority context box opens from a result sidebar", async ({ page }) => {
+  await openOictResult(page);
   const result = page.getByRole("dialog");
   const box = result.getByRole("button", { name: /^Priority area:/ });
   await expect(box).toHaveClass(/rounded-md/);

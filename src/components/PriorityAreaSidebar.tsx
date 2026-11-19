@@ -5,6 +5,12 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { Button } from "@un-eosg/ui/components/button";
 import { ExternalLink } from "@un-eosg/ui/components/external-link";
 import { typography } from "@un-eosg/ui/typography";
+import { BudgetOverviewSidebar } from "@/components/BudgetOverviewSidebar";
+import {
+  ContextCardContent,
+  contextCardClassName,
+} from "@/components/ContextCard";
+import { usePublicJson } from "@/hooks/usePublicJson";
 import { SidecarContent } from "@/components/SidecarContent";
 import {
   useCurrentOverviewFocus,
@@ -14,6 +20,50 @@ import {
   priorityAreaIntroduction,
   priorityAreaReport,
 } from "@/lib/priority-area-context";
+
+function PriorityEntities({ priority }: { priority: string }) {
+  const { data, failed, retry } = usePublicJson<
+    { id: string; name: string; priority: string | null }[]
+  >("/data/priority-entities.json");
+  const entities = data
+    ?.filter((entity) => entity.priority === priority)
+    .toSorted((a, b) => a.name.localeCompare(b.name));
+  return (
+    <section aria-label="Entities in this priority area" className="space-y-3">
+      <h2 className={typography.sectionTitle}>Entities</h2>
+      {!entities ? (
+        <p role="status">
+          {failed ? (
+            <>
+              Entities could not be loaded.{" "}
+              <button type="button" className="underline" onClick={retry}>
+                Try again
+              </button>
+            </>
+          ) : (
+            "Loading entities…"
+          )}
+        </p>
+      ) : (
+        <ul className="grid grid-cols-2 gap-3">
+          {entities.map((entity) => (
+            <li key={entity.id} className="flex min-w-0">
+              <BudgetOverviewSidebar
+                entityId={entity.id}
+                title={entity.name}
+                trigger={
+                  <button type="button" className={contextCardClassName}>
+                    <ContextCardContent label="Entity" title={entity.name} />
+                  </button>
+                }
+              />
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+  );
+}
 
 export function PriorityAreaSidebar({
   priority,
@@ -72,6 +122,7 @@ export function PriorityAreaSidebar({
             ))}
           </section>
         ))}
+        <PriorityEntities priority={priority} />
         <footer aria-label="Sources" className="space-y-3 border-t pt-6">
           <h2 className={typography.subTitle}>Source</h2>
           <p className={typography.body}>{priorityAreaReport.reportTitle}</p>

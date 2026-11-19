@@ -65,7 +65,3 @@ const entitiesById = new Map(
 export function findBudgetEntity(id: string) {
   return entitiesById.get(id);
 }
-
-export function entityHref(id: string, subprogramme?: string) {
-  return `/entities/${id}/${subprogramme ? `${subprogramme}/` : ""}`;
-}

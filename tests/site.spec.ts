@@ -1,3 +1,4 @@
+import { openOictResult } from "./open-result";
 import { test, expect, type Page } from "@playwright/test";
 
 async function chooseLocation(page: Page, name: string) {
@@ -175,32 +176,6 @@ test("shared location results are grouped by entity with their own coverage", as
   ).toBeVisible();
 });
 
-test("sticky subprogramme navigation meets the site header", async ({
-  page,
-}) => {
-  await page.goto("/entities/desa/9-sp-1/");
-  await expect(
-    page.getByRole("link", { name: "All priority areas" }),
-  ).toHaveAttribute("href", "/");
-  const navigation = page.getByRole("navigation", { name: "Subprogrammes" });
-
-  for (const width of [820, 1600, 390]) {
-    await page.setViewportSize({ width, height: 720 });
-    await page.evaluate(() => window.scrollTo(0, 700));
-    await expect
-      .poll(() =>
-        navigation.evaluate((nav) => {
-          const header = document.querySelector("header")!;
-          return Math.abs(
-            nav.getBoundingClientRect().top -
-              header.getBoundingClientRect().bottom,
-          );
-        }),
-      )
-      .toBeLessThan(1);
-  }
-});
-
 test("public pages share navigation, branded footer and keyboard skip link", async ({
   page,
 }) => {
@@ -240,14 +215,10 @@ test("public pages share navigation, branded footer and keyboard skip link", asy
   ).toBe(true);
 });
 
-test("entity pages retain official objectives, result figures and citations", async ({
+test("result sidebars retain official figures and citations", async ({
   page,
 }) => {
-  await page.goto("/entities/oict/29c-sp-2/");
-  const result = page.getByRole("button", {
-    name: /More reliable and stable connectivity for delegates and staff/,
-  });
-  await result.click();
+  const result = await openOictResult(page);
   const sidebar = page.getByRole("dialog", {
     name: /More reliable and stable connectivity/,
   });

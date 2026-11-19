@@ -1,5 +1,6 @@
 "use client";
 
+import scrollStyles from "./DetailPanelScroll.module.css";
 import dynamic from "next/dynamic";
 import { useRef, useState } from "react";
 import { X } from "lucide-react";
@@ -149,12 +150,13 @@ export function CountryResultsFrameworks({
           onClose={() => setSelected(undefined)}
           restoreFocusRef={picker}
           swipeToClose
-          className="overflow-hidden sm:w-2/3 sm:min-w-100 md:w-1/2 lg:w-1/3 lg:min-w-125"
+          className="overflow-y-auto sm:w-2/3 sm:min-w-100 md:w-1/2 lg:w-1/3 lg:min-w-125"
         >
           <FinancialDetailPanel
             title={<DrawerTitle>{country.name}</DrawerTitle>}
             titleId="uninfo-country-title"
-            className="sm:w-full"
+            className={`${scrollStyles.panel} sm:w-full`}
+            contentClassName={scrollStyles.body}
             controls={
               <>
                 <FinancialPanelPeriodSelector

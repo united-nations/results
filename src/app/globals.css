@@ -63,3 +63,9 @@ html {
     min-height: 44px;
   }
 }
+
+/* Modal drawers own the scrollbar; release the page's reserved gutter. */
+html:has([data-detail-drawer]) {
+  overflow: hidden;
+  scrollbar-gutter: auto;
+}
