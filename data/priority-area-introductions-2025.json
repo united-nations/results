@@ -1,0 +1,182 @@
+{
+  "reportYear": 2025,
+  "reportTitle": "Report of the Secretary-General on the Work of the Organization 2025",
+  "source": "https://www.un.org/sites/un2.un.org/files/sg_annual_report_2025_en.pdf",
+  "inspectedCopy": "https://malaysia.un.org/sites/default/files/2025-09/sg_annual_report_2025_en.pdf",
+  "sourceSha256": "06c02b3a1f770a6e4cdb2e3c16ffee30477573372c2fc512fcb336a31c7e99cd",
+  "areas": [
+    {
+      "priority": "Promotion of sustained economic growth and sustainable development",
+      "pdfPage": 11,
+      "sections": [
+        {
+          "heading": "Context",
+          "paragraphs": [
+            "With just five years until 2030, progress towards the achievement of the Sustainable Development Goals is too slow and has been impeded by persistent inequalities, mounting debt, trade tensions, conflict and climate disruptions. The promise of leaving no one behind is not yet fulfilled. Gender equality remains elusive in all domains, including economic rights, participation and access to new technologies and political representation."
+          ],
+          "printedPage": 20
+        },
+        {
+          "heading": "Our goals",
+          "paragraphs": [
+            "Despite the challenging global context, the Organization, along with its partners, remains steadfast in supporting efforts towards achieving the Goals. Building on renewed momentum from the Pact for the Future, United Nations country teams, led by resident coordinators, are enhancing country-level support in line with national priorities."
+          ],
+          "printedPage": 21
+        }
+      ]
+    },
+    {
+      "priority": "Maintenance of international peace and security",
+      "pdfPage": 19,
+      "sections": [
+        {
+          "heading": "Context",
+          "paragraphs": [
+            "Multilateral peace and security efforts are under unprecedented and significant strain. Conflicts impose severe human and economic costs, while increasing geopolitical tensions foster uncertainty and hinder multilateral efforts. By adopting the Pact for the Future, Member States reaffirmed their commitment to the Charter of the United Nations and to improving global governance for a just, secure and sustainable world. In implementing the Pact, the Organization is reviewing the future of all forms of United Nations peace operations, to assess how our future peace and security efforts can adapt to evolving needs."
+          ],
+          "printedPage": 36
+        },
+        {
+          "heading": "Our goals",
+          "paragraphs": [
+            "We support Member States in advancing international peace and security, guided by the Charter and the mandates of the General Assembly and the Security Council. Leveraging all the diplomatic tools of the Charter and the Secretary-General’s good offices, we assist Governments in responding to political crises and in preventing, managing and resolving conflicts. We promote the full, equal and meaningful participation of women and young people in political and peace processes. The prevention of genocide and other atrocity crimes, conflict-related sexual violence, violations of children’s rights in armed conflict and sexual exploitation and abuse remains central to our work."
+          ],
+          "printedPage": 37
+        }
+      ]
+    },
+    {
+      "priority": "Development of Africa",
+      "pdfPage": 26,
+      "sections": [
+        {
+          "heading": "Context",
+          "paragraphs": [
+            "Africa stands at a defining moment, with great prospects for growth, ready to overcome the challenges of climate and energy crises, debt, conflict and limited aid flows. These future prospects are built on youth-driven innovation, ambitious national growth plans, stable financing and bold leadership. The 2030 Agenda and Agenda 2063: The Africa We Want remain guiding lights on this path and supporting that vision is an urgent priority for the United Nations."
+          ],
+          "printedPage": 50
+        },
+        {
+          "heading": "Our goals",
+          "paragraphs": [
+            "Our engagement in sustainable development plans for Africa is focused on providing support for economic transformation, peace and stability, closing the digital divide, enabling food security, access to equitable finance, education, digital skills, job creation, the transition to renewable energy and climate resilience. Working in partnership with the African Union, regional economic communities, the resident coordinator system and Member States, we are breaking down silos between social, economic, peacebuilding and environmental development to achieve the Goals."
+          ],
+          "printedPage": 51
+        }
+      ]
+    },
+    {
+      "priority": "Promotion and protection of human rights",
+      "pdfPage": 30,
+      "sections": [
+        {
+          "heading": "Context",
+          "paragraphs": [
+            "The United Nations continues to be guided by the vision that human rights are a driving force for solutions to the many global challenges we face. In 2024, we helped to protect vulnerable populations in many settings, supporting Member States in turning principles into tangible improvements in people’s lives."
+          ],
+          "printedPage": 58
+        },
+        {
+          "heading": "Our goals",
+          "paragraphs": [
+            "We support international human rights mechanisms and the mainstreaming of human rights within peace and security and development; we also uphold the principles of equality and non-discrimination, participation and accountability. The Pact for the Future and the Secretary-General’s call to action for human rights reinforce the role of human rights across the Organization."
+          ],
+          "printedPage": 59
+        }
+      ]
+    },
+    {
+      "priority": "Effective coordination of humanitarian assistance efforts",
+      "pdfPage": 34,
+      "sections": [
+        {
+          "heading": "Context",
+          "paragraphs": [
+            "The humanitarian system was stretched beyond limit in 2024. Intensifying conflicts affected the lives of millions and threatened human security. In the warmest year ever recorded, climate-related disasters devastated communities worldwide. Violations of international humanitarian and human rights law continued with impunity. Attacks on civilians, humanitarian workers, medical personnel, hospitals, schools and infrastructure increased and often prevented humanitarian organizations from reaching people in need. The year was the deadliest on record for aid workers, with 373 killed."
+          ],
+          "printedPage": 66
+        },
+        {
+          "heading": "Our goals",
+          "paragraphs": [
+            "Alongside our partners, we coordinate neutral, impartial and independent humanitarian responses to the world’s worst crises. We alleviate human suffering and provide timely and life-saving assistance and protection. We promote adherence to humanitarian principles and respect for international humanitarian and human rights law. We focus on advancing anticipatory, evidence-based and cost-efficient early action and rapid responses to crises. We also convene Governments, partners and communities to reduce disaster risk and losses."
+          ],
+          "printedPage": 67
+        }
+      ]
+    },
+    {
+      "priority": "Promotion of international justice and law",
+      "pdfPage": 40,
+      "sections": [
+        {
+          "heading": "Context",
+          "paragraphs": [
+            "The purposes and principles of the United Nations are enshrined in the first two Articles of its Charter, which include the maintenance of international peace and security and the peaceful settlement of disputes in conformity with the principles of justice and international law. Those principles are the foundation upon which the international community cooperates."
+          ],
+          "printedPage": 78
+        },
+        {
+          "heading": "Our goals",
+          "paragraphs": [
+            "The United Nations promotes justice and international law through its actions and mandates, including those related to international trade, oceans and the law of the sea, treaties and international agreements, peace operations, international tribunals and other international accountability mechanisms and sanctions. In addition, the International Court of Justice, the principal judicial organ of the United Nations, settles legal disputes submitted by States and provides advisory opinions on legal questions."
+          ],
+          "printedPage": 79
+        }
+      ]
+    },
+    {
+      "priority": "Disarmament",
+      "pdfPage": 43,
+      "sections": [
+        {
+          "heading": "Context",
+          "paragraphs": [
+            "Civilians continue to suffer from armed conflict amid escalating global tensions. The threat of nuclear weapons and other weapons of mass destruction persists, while military spending rises and conventional arms, especially illicit small arms and light weapons, increasingly proliferate. Rapid technological advances add to these security challenges."
+          ],
+          "printedPage": 84
+        },
+        {
+          "heading": "Our goals",
+          "paragraphs": [
+            "Our work enables international negotiations and practical disarmament efforts on the ground towards: eliminating nuclear weapons; upholding the prohibition of other weapons of mass destruction; regulating conventional weapons; responding to the challenges of emerging weapons technologies; and promoting regional disarmament and public engagement."
+          ],
+          "printedPage": 85
+        }
+      ]
+    },
+    {
+      "priority": "Drug control, crime prevention and combating terrorism",
+      "pdfPage": 47,
+      "sections": [
+        {
+          "heading": "Context",
+          "paragraphs": [
+            "Transnational organized crime and terrorism continue to pose significant challenges to international peace and security, affecting the security and resilience of communities, eroding social cohesion and threatening fundamental human rights. While the growth in Internet connectivity drives progress, cybercrime has also become a pressing global concern."
+          ],
+          "printedPage": 92
+        },
+        {
+          "heading": "Our goals",
+          "paragraphs": [
+            "The United Nations is committed to making the world safer from drugs and crime, and to pursuing a future free from terrorism. Our work supports Governments in combating these threats through prevention, criminal justice responses and international cooperation. We assist in setting and implementing international standards and norms, as well as in ensuring compliance with obligations in international instruments on drugs, corruption, transnational organized crime and terrorism."
+          ],
+          "printedPage": 92
+        }
+      ]
+    },
+    {
+      "priority": "Effective functioning of the organization",
+      "pdfPage": 51,
+      "sections": [
+        {
+          "heading": "Our work and our people",
+          "paragraphs": [
+            "Over 35,000 United Nations Secretariat staff members serve across 459 duty stations worldwide. The Secretariat strives to uphold the highest standards of integrity and ethical conduct, efficient management of resources and effective delivery on mandates."
+          ],
+          "printedPage": 100
+        }
+      ]
+    }
+  ]
+}

@@ -42,9 +42,20 @@ keeps free-text search unless a suggestion is highlighted with the arrow keys.
 Selecting a category adds that filter, clears the query and preserves grouping.
 Removable filter chips remain visible when the filter panel is collapsed.
 
-Result sidebars show entity and subprogramme context links, related results from
+Result sidebars show entity, subprogramme and priority-area context cards, related results from
 the same subprogramme (or entity), and budget-document sources at the bottom.
 Overview pages, sidebars and hover previews share the same minimal result card.
+
+Priority-area sidebars use the official 2025 annual report's opening Context and
+Our goals passages; effective functioning uses Our work and our people. The
+extracted text, printed page numbers, PDF spread pages, source URLs and inspected
+PDF hash are stored in `data/priority-area-introductions-2025.json`. PDF line breaks
+are normalized to spaces; the source wording and section headings are retained.
+The sidebars identify the report edition and link to the inspected UN-hosted PDF.
+Priority-area context cards open the same sidebar as the overview Learn more links,
+preserving the current grouping and returning to the source result when closed.
+These passages provide annual-report context and do not change financial priority
+assignments or budget results.
 
 Entity and subprogramme overview text uses the objectives and strategies in the
 programme budget snapshot. Keep this official source text intact when refreshing

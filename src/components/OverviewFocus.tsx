@@ -12,29 +12,27 @@ import {
 } from "react";
 
 export type OverviewFocus = {
-  kind: "entity" | "subprogramme" | "result";
-  entityId: string;
   groupId?: string;
   subprogrammeId?: string;
   resultId?: string;
   title?: string;
   source?: string;
-};
+} & (
+  | { kind: "priority"; priority: string; entityId?: never }
+  | {
+      kind: "entity" | "subprogramme" | "result";
+      entityId: string;
+      priority?: never;
+    }
+);
 
 const FocusContext = createContext<{
   active: OverviewFocus | null;
-  navigateToPriority?: (priority: string) => void;
   setLayer: (id: string, scope: OverviewFocus) => void;
   removeLayer: (id: string) => void;
 } | null>(null);
 
-export function OverviewFocusProvider({
-  children,
-  navigateToPriority,
-}: {
-  children: ReactNode;
-  navigateToPriority?: (priority: string) => void;
-}) {
+export function OverviewFocusProvider({ children }: { children: ReactNode }) {
   const [layers, setLayers] = useState<{ id: string; scope: OverviewFocus }[]>(
     [],
   );
@@ -53,17 +51,12 @@ export function OverviewFocusProvider({
       active: layers.at(-1)?.scope ?? null,
       setLayer,
       removeLayer,
-      navigateToPriority,
     }),
-    [layers, setLayer, removeLayer, navigateToPriority],
+    [layers, setLayer, removeLayer],
   );
   return (
     <FocusContext.Provider value={value}>{children}</FocusContext.Provider>
   );
-}
-
-export function usePriorityNavigation() {
-  return useContext(FocusContext)?.navigateToPriority;
 }
 
 export function useCurrentOverviewFocus() {
@@ -75,14 +68,23 @@ export function useOverviewFocus(scope: OverviewFocus | null, open: boolean) {
   const id = useId();
   const setLayer = context?.setLayer;
   const removeLayer = context?.removeLayer;
-  const { kind, entityId, groupId, subprogrammeId, resultId, title, source } =
-    scope ?? {};
+  const {
+    kind,
+    priority,
+    entityId,
+    groupId,
+    subprogrammeId,
+    resultId,
+    title,
+    source,
+  } = scope ?? {};
   useEffect(() => {
-    if (!open || !kind || !entityId || !setLayer || !removeLayer) return;
+    if (!open || !kind || !setLayer || !removeLayer) return;
+    if (kind === "priority" ? !priority : !entityId) return;
     setLayer(id, {
-      kind,
-      entityId,
-      groupId,
+      ...(kind === "priority"
+        ? { kind, priority: priority!, groupId }
+        : { kind, entityId: entityId!, groupId }),
       subprogrammeId,
       resultId,
       title,
@@ -95,6 +97,7 @@ export function useOverviewFocus(scope: OverviewFocus | null, open: boolean) {
     setLayer,
     removeLayer,
     kind,
+    priority,
     entityId,
     groupId,
     subprogrammeId,

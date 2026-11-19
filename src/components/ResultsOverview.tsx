@@ -24,6 +24,7 @@ import {
 import { beneficiaryColors } from "@/lib/beneficiary-colors";
 import styles from "./ResultsOverview.module.css";
 import { BudgetResultPreview } from "@/components/BudgetResultPreview";
+import { PriorityAreaSidebar } from "@/components/PriorityAreaSidebar";
 import { BudgetOverviewSidebar } from "@/components/BudgetOverviewSidebar";
 import {
   OverviewFocusProvider,
@@ -208,19 +209,6 @@ export function ResultsOverview(props: ResultsOverviewProps) {
   const [grouping, setGrouping] = useState<string>(
     props.initialGrouping ?? "priority",
   );
-  const [navigationVersion, setNavigationVersion] = useState(0);
-  const navigateToPriority = useCallback((priority: string) => {
-    setGrouping("priority");
-    setNavigationVersion((version) => version + 1);
-    const anchor = priorityAreaAnchor(priority);
-    window.history.replaceState(window.history.state, "", `#${anchor}`);
-    // Wait for the priority groups to mount before following their anchor.
-    requestAnimationFrame(() =>
-      requestAnimationFrame(() => {
-        document.getElementById(anchor)?.scrollIntoView({ block: "start" });
-      }),
-    );
-  }, []);
   const [query, setQuery] = useState("");
   const [filters, setFilters] = useState(emptyExplorerFilters);
   const [readable, setReadable] = useState(true);
@@ -261,10 +249,7 @@ export function ResultsOverview(props: ResultsOverviewProps) {
   };
   const viewKey = JSON.stringify([grouping, filters, deferredQuery]);
   return (
-    <OverviewFocusProvider
-      key={navigationVersion}
-      navigateToPriority={navigateToPriority}
-    >
+    <OverviewFocusProvider>
       <ResultsExplorerControls
         results={props.results}
         options={props.filterOptions}
@@ -332,6 +317,7 @@ function UngroupedResults({
     results.some((result) => result.id === focus.resultId);
   const matches = (result: ExplorerResult) => {
     if (!focus) return true;
+    if (focus.kind === "priority") return result.priority === focus.priority;
     if (result.reference.entity !== focus.entityId) return false;
     if (focus.kind === "result" && visibleTarget)
       return result.id === focus.resultId;
@@ -433,8 +419,11 @@ function ResultsOverviewContent({
   const focusedPriority = detailFocus
     ? (detailFocus.groupId ??
       selectedPriority ??
-      results.find((result) => result.reference.entity === detailFocus.entityId)
-        ?.priority ??
+      (detailFocus.kind === "priority"
+        ? detailFocus.priority
+        : results.find(
+            (result) => result.reference.entity === detailFocus.entityId,
+          )?.priority) ??
       selectedPriority)
     : selectedPriority;
   const description = useRef<HTMLParagraphElement>(null);
@@ -602,10 +591,13 @@ function ResultsOverviewContent({
         const mutedPriority =
           focusedPriority !== null && focusedPriority !== priority;
         const focusedEntity =
-          detailFocus?.entityId ?? (expanded ? selectedEntity : null);
+          detailFocus?.kind === "priority"
+            ? null
+            : (detailFocus?.entityId ?? (expanded ? selectedEntity : null));
         const detailHasVisibleTarget =
           !detailFocus ||
           detailFocus.kind === "entity" ||
+          detailFocus.kind === "priority" ||
           entries.some((result) => {
             if (result.reference.entity !== detailFocus.entityId) return false;
             if (detailFocus.kind === "subprogramme")
@@ -621,7 +613,7 @@ function ResultsOverviewContent({
         const matchesFocus = (result: OverviewResult) => {
           if (focusedEntity && result.reference.entity !== focusedEntity)
             return false;
-          if (!detailFocus) return true;
+          if (!detailFocus || detailFocus.kind === "priority") return true;
           // A full overview can open a result outside this beneficiary slice.
           // Keep its entity in focus rather than dimming every visible result.
           if (!detailHasVisibleTarget) return true;
@@ -865,10 +857,18 @@ function ResultsOverviewContent({
                 else headings.current.delete(priorityHeadingKey);
               }}
             >
-              <span
-                className={`${styles.priorityTitle} ${expanded ? resultTypography.priorityExpanded : resultTypography.priority}`}
-              >
-                {priority}
+              <span className="flex min-w-0 flex-1 flex-col items-start gap-1">
+                <span
+                  className={`${styles.priorityTitle} ${expanded ? resultTypography.priorityExpanded : resultTypography.priority}`}
+                >
+                  {priority}
+                </span>
+                {expanded && !beneficiaryMode && (
+                  <PriorityAreaSidebar
+                    priority={priority}
+                    disabled={Boolean(focusedEntity)}
+                  />
+                )}
               </span>
               <Button
                 variant="ghost"

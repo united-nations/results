@@ -7,17 +7,18 @@ import { ExternalLink } from "@un-eosg/ui/components/external-link";
 import { typography } from "@un-eosg/ui/typography";
 import { BudgetResultDetails } from "@/components/BudgetResultDetails";
 import { ResultSidecar } from "@/components/ResultSidecar";
-import { usePriorityNavigation } from "@/components/OverviewFocus";
+import { PriorityAreaSidebar } from "@/components/PriorityAreaSidebar";
+import {
+  ContextCardContent,
+  contextCardClassName,
+} from "@/components/ContextCard";
 import { ResultCard } from "@/components/ResultCard";
 import { usePublicJson } from "@/hooks/usePublicJson";
 import {
   overviewResultEntries,
   type BudgetOverviewData,
 } from "@/lib/budget-overview";
-import {
-  priorityAreaAnchor,
-  priorityAreaColors,
-} from "@/lib/priority-area-colors";
+import { priorityAreaColors } from "@/lib/priority-area-colors";
 import { resultThumbnail } from "@/lib/result-thumbnail";
 import { formatBudgetHeading } from "@/lib/budget-text";
 import type { BudgetResult } from "@/lib/programme-budget";
@@ -33,19 +34,8 @@ function ContextLink({
   title: string;
 }) {
   return (
-    <Link
-      href={href}
-      className="group rounded-md border bg-muted/40 p-4 text-foreground hover:border-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-    >
-      <span className={`${typography.meta} mb-1 block text-foreground`}>
-        {label}
-      </span>
-      <span
-        className={`${typography.subTitle} flex items-start justify-between gap-3`}
-      >
-        <span>{title}</span>
-        <ArrowUpRight className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
-      </span>
+    <Link href={href} className={contextCardClassName}>
+      <ContextCardContent label={label} title={title} />
     </Link>
   );
 }
@@ -59,7 +49,6 @@ function Details({
   edition: number;
   initialResult?: BudgetResult;
 }) {
-  const navigateToPriority = usePriorityNavigation();
   const { data, failed, retry } = usePublicJson<BudgetOverviewData>(
     `/data/entities/${summary.entity}/overview.json`,
   );
@@ -100,24 +89,21 @@ function Details({
           />
         )}
         {data?.entity.mainPriority && (
-          <Link
-            href={`/#${priorityAreaAnchor(data.entity.mainPriority)}`}
-            onClick={(event) => {
-              if (
-                !navigateToPriority ||
-                event.metaKey ||
-                event.ctrlKey ||
-                event.shiftKey ||
-                event.altKey
-              )
-                return;
-              event.preventDefault();
-              navigateToPriority(data.entity.mainPriority!);
-            }}
-            className={`${typography.body} underline underline-offset-4 sm:col-span-2`}
-          >
-            Priority area: {data.entity.mainPriority}
-          </Link>
+          <PriorityAreaSidebar
+            priority={data.entity.mainPriority}
+            trigger={
+              <button
+                type="button"
+                aria-label={`Priority area: ${data.entity.mainPriority}`}
+                className={`${contextCardClassName} sm:col-span-2`}
+              >
+                <ContextCardContent
+                  label="Priority area"
+                  title={data.entity.mainPriority}
+                />
+              </button>
+            }
+          />
         )}
       </nav>
       {result ? (

@@ -106,36 +106,55 @@ test("result sidebar puts context first, related shared cards next, and sources 
   ).toBe(true);
 });
 
-test("priority context links switch grouping and dismiss the sidebar", async ({
+test("priority context boxes open a nested sidebar and preserve beneficiary grouping", async ({
   page,
 }) => {
   await page.goto("/beneficiaries/");
-  await page
-    .getByRole("combobox", { name: "Search all results" })
-    .fill("connectivity");
+  const search = page.getByRole("combobox", { name: "Search all results" });
+  await search.fill("connectivity");
   await expect
     .poll(() => page.locator("li[data-readable]").count())
     .toBeLessThan(100);
-  await page
-    .getByRole("combobox", { name: "Search all results" })
-    .press("Escape");
-  await expect(
-    page.getByRole("combobox", { name: "Search all results" }),
-  ).toHaveValue("connectivity");
+  await search.press("Escape");
   await page.locator("li[data-readable]").first().getByRole("button").click();
-  const panel = page.getByRole("dialog");
-  await panel.getByRole("link", { name: /^Priority area:/ }).click();
-  await expect(panel).toHaveCount(0);
+  const resultPanel = page.getByRole("dialog");
+  const priorityBox = resultPanel.getByRole("button", {
+    name: /^Priority area:/,
+  });
+  await expect(priorityBox).toBeVisible();
+  const priority = (await priorityBox.getAttribute("aria-label"))!.replace(
+    "Priority area: ",
+    "",
+  );
+  const sourceGroup = await page
+    .locator('section[data-priority-area][data-focused="true"]')
+    .getAttribute("data-priority-area");
+  await priorityBox.click();
+  const priorityPanel = page.getByRole("dialog", {
+    name: priority,
+    exact: true,
+  });
+  await expect(
+    priorityPanel.getByRole("heading", { name: "Context", exact: true }),
+  ).toBeVisible();
+  await expect(page.locator("[data-grouping]")).toHaveAttribute(
+    "data-grouping",
+    "beneficiary",
+  );
+  await expect(
+    page.locator('section[data-priority-area][data-focused="true"]'),
+  ).toHaveAttribute("data-priority-area", sourceGroup!);
+  await priorityPanel
+    .getByRole("button", { name: "Close priority area", exact: true })
+    .click();
+  await expect(priorityBox).toBeFocused();
+  await resultPanel
+    .getByRole("button", { name: "Close result", exact: true })
+    .click();
+  await expect(search).toHaveValue("connectivity");
   await expect(
     page.getByRole("button", { name: /^Grouping:/ }),
-  ).toHaveAttribute("data-grouping", "priority");
-  await expect(page).toHaveURL(/#priority-/);
-  await expect(
-    page.locator(await page.evaluate(() => location.hash)),
-  ).toBeVisible();
-  await expect(
-    page.getByRole("combobox", { name: "Search all results" }),
-  ).toHaveValue("connectivity");
+  ).toHaveAttribute("data-grouping", "beneficiary");
 });
 
 test("ungrouped compact tiles are visible and neutral, and the budget filter retains its hierarchy", async ({

@@ -68,7 +68,9 @@ async function expandEntity(section: Locator, id: string) {
 async function settleTiles(page: Page) {
   // Exercise a client action before measuring the server-rendered tiny tiles.
   const section = page.locator("section[data-priority-area]").first();
-  const toggle = section.locator("h2").getByRole("button");
+  const toggle = section
+    .locator("h2")
+    .getByRole("button", { name: /^(Expand|Collapse) / });
   await toggle.click();
   await expect(section).toHaveAttribute("data-expanded", "true");
   await toggle.click();
