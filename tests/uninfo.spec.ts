@@ -20,6 +20,50 @@ async function openCountry(page: Page, name: string) {
   return page.getByRole("dialog", { name, exact: true });
 }
 
+test("entity documents are grouped by System Chart category", async ({
+  page,
+}) => {
+  await page.goto("/system/");
+  await page
+    .getByRole("link", { name: "Browse entity reports and plans" })
+    .click();
+  await expect(page).toHaveURL(/\/system\/#entity-documents$/);
+
+  const directory = page.getByRole("region", {
+    name: "Entity reports and plans",
+  });
+  const funds = directory.getByRole("list", {
+    name: "Funds and Programmes",
+    exact: true,
+  });
+  const wfp = funds
+    .getByRole("listitem")
+    .filter({ hasText: "World Food Programme (WFP)" });
+  await expect(wfp.getByRole("link")).toHaveCount(3);
+  await expect(
+    wfp.getByRole("link", {
+      name: "Strategic plan for World Food Programme (WFP)",
+    }),
+  ).toHaveAttribute(
+    "href",
+    "https://executiveboard.wfp.org/document_download/WFP-0000132205",
+  );
+
+  const secretariat = directory.getByRole("list", {
+    name: "Secretariat",
+    exact: true,
+  });
+  const dco = secretariat
+    .getByRole("listitem")
+    .filter({ hasText: "Development Coordination Office (DCO)" });
+  await expect(dco.getByRole("link")).toHaveCount(1);
+  await expect(
+    dco.getByRole("link", {
+      name: "Reports for Development Coordination Office (DCO)",
+    }),
+  ).toBeVisible();
+});
+
 test("map has no year selector and opens the latest plan for each country", async ({
   page,
 }) => {

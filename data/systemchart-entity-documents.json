@@ -1,0 +1,860 @@
+{
+  "source": "https://github.com/UN-EOSG-Analytics/un-system-chart-navigator/blob/6e81bdb571f28526c36e9d4bf2680ecff2e94d9e/public/un-entities.json",
+  "sourceLastUpdated": "2026-06-19",
+  "categories": [
+    {
+      "name": "Funds and Programmes",
+      "entities": [
+        {
+          "code": "UNCDF",
+          "name": "United Nations Capital Development Fund (UNCDF)",
+          "reports": null,
+          "strategicPlan": "https://www.uncdf.org/article/3208/making-finance-work-for-inclusion-uncdf-presents-new-four-year-strategic-framework-to-its-board",
+          "resultsFramework": null
+        },
+        {
+          "code": "UNICEF",
+          "name": "United Nations Children's Fund (UNICEF)",
+          "reports": "https://www.unicef.org/topics/annual-report",
+          "strategicPlan": "https://www.unicef.org/executiveboard/documents/unicef-strategic-plan-2026-2029-draft-review-as-2025",
+          "resultsFramework": "https://www.unicef.org/executiveboard/media/32061/file/2025-29-Add1-SP-2026-2029-IRRF-EN-2025-07-21.pdf"
+        },
+        {
+          "code": "UNDP",
+          "name": "United Nations Development Programme (UNDP)",
+          "reports": "https://annualreport.undp.org/",
+          "strategicPlan": "https://strategicplan.undp.org/",
+          "resultsFramework": "https://rolhr.undp.org/annualreport/2023/results-framework.html"
+        },
+        {
+          "code": "UNEP",
+          "name": "United Nations Environment Programme (UNEP)",
+          "reports": "https://www.unep.org/annualreport/2021/index.php",
+          "strategicPlan": "https://wedocs.unep.org/bitstream/handle/20.500.11822/42683/medium_term_strategy_2022.pdf?sequence=1&isAllowed=y",
+          "resultsFramework": null
+        },
+        {
+          "code": "UN-Habitat",
+          "name": "United Nations Human Settlements Programme (UN-Habitat)",
+          "reports": "https://unhabitat.org/knowledge/research-and-publications",
+          "strategicPlan": "https://unhabitat.org/about-us/our-strategy",
+          "resultsFramework": "https://unhabitat.org/sites/default/files/2025/02/briefing_on_monitoring_of_strategic_plan_2026-2029.pdf"
+        },
+        {
+          "code": "UNFPA",
+          "name": "United Nations Population Fund (UNFPA)",
+          "reports": "https://www.unfpa.org/annual-report",
+          "strategicPlan": "https://www.unfpa.org/sites/default/files/board-documents/DP.FPA_.2025.9%20-%20Strategic%20Plan%202026-2029%20-%20Annex%201%20-%20IRRF%20-%20FINAL%20-%2018Jul25.pdf",
+          "resultsFramework": "https://www.unfpa.org/results-based-management-unfpa"
+        },
+        {
+          "code": "UNV",
+          "name": "United Nations Volunteers (UNV)",
+          "reports": "https://www.unv.org/annual-reports",
+          "strategicPlan": "https://www.unv.org/publications/unv-strategic-framework-2022-2025",
+          "resultsFramework": "https://www.unv.org/sites/default/files/UNV%20Strategic%20Framework%202022-2025.pdf"
+        },
+        {
+          "code": "WFP",
+          "name": "World Food Programme (WFP)",
+          "reports": "https://www.wfp.org/publications?f%5B0%5D=publication_type%3A2149",
+          "strategicPlan": "https://executiveboard.wfp.org/document_download/WFP-0000132205",
+          "resultsFramework": "https://www.wfp.org/publications/corporate-results-framework-2022-2025"
+        }
+      ]
+    },
+    {
+      "name": "Intergovernmental and Expert Bodies",
+      "entities": [
+        {
+          "code": "ICSC",
+          "name": "International Civil Service Commission (ICSC)",
+          "reports": "https://icsc.un.org/Home/Library",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "JIU",
+          "name": "Joint Inspection Unit (JIU)",
+          "reports": "https://www.unjiu.org/content/reports",
+          "strategicPlan": "https://www.unjiu.org/content/strategic-framework",
+          "resultsFramework": null
+        }
+      ]
+    },
+    {
+      "name": "International Court of Justice",
+      "entities": [
+        {
+          "code": "ICJ",
+          "name": "International Court of Justice (ICJ)",
+          "reports": "https://www.icj-cij.org/en/publications",
+          "strategicPlan": null,
+          "resultsFramework": null
+        }
+      ]
+    },
+    {
+      "name": "Other Bodies and Committees",
+      "entities": [
+        {
+          "code": "UN-GGIM",
+          "name": "Committee of Experts on Global Geospatial Information Management (UN-GGIM)",
+          "reports": "https://ggim.un.org/meetings/Sessions/",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "UNAIDS PCB",
+          "name": "Joint United Nations Programme on HIV/AIDS Programme Coordinating Board (UNAIDS PCB)",
+          "reports": "https://www.unaids.org/en/topics/resources/publications",
+          "strategicPlan": "https://www.unaids.org/sites/default/files/media_asset/global-AIDS-strategy-2021-2026_en.pdf",
+          "resultsFramework": null
+        },
+        {
+          "code": "UNGEGN",
+          "name": "United Nations Group of Experts on Geographical Names (UNGEGN)",
+          "reports": "https://unstats.un.org/unsd/ungegn/sessions/",
+          "strategicPlan": "https://unstats.un.org/unsd/ungegn/sessions/2nd_session_2021/documents/UNGEGN_Strategic_Plan_final_5May2021.pdf",
+          "resultsFramework": null
+        }
+      ]
+    },
+    {
+      "name": "Other Entities",
+      "entities": [
+        {
+          "code": "ITC",
+          "name": "International Trade Centre (ITC)",
+          "reports": "https://intracen.org/about-us/governance/corporate-documents/itc-annual-report",
+          "strategicPlan": "https://www.intracen.org/about-us/governance/corporate-documents/itc-strategic-plan",
+          "resultsFramework": null
+        },
+        {
+          "code": "UNHCR",
+          "name": "Office of the United Nations High Commissioner for Refugees (UNHCR)",
+          "reports": "https://www.unhcr.org/cgi-bin/texis/vtx/search?page=&comid=3b4f07fd4&cid=49aea93a20&scid=49aea93a16&keywords=UNHCR%20Annual%20Reports%20General%20Assembly",
+          "strategicPlan": "https://www.unhcr.org/sites/default/files/2025-06/UNHCR%20Strategic%20Directions%202022--2026.pdf",
+          "resultsFramework": "https://www.unhcr.org/media/unhcrs-results-areas"
+        },
+        {
+          "code": "UNCTAD",
+          "name": "United Nations Conference on Trade and Development (UNCTAD)",
+          "reports": "https://unctad.org/publications-search?Operator=and&keys=annual",
+          "strategicPlan": "https://unctad.org/dmfas/our_Strategic_Plan",
+          "resultsFramework": null
+        },
+        {
+          "code": "UN-Women",
+          "name": "United Nations Entity for Gender Equality and the Empowerment of Women (UN-Women)",
+          "reports": "https://www.unwomen.org/en/digital-library/annual-report",
+          "strategicPlan": "https://www.unwomen.org/sites/default/files/2022-05/UN%20Women%20SP%20IRRF%202022-2025.pdf",
+          "resultsFramework": "https://www.unwomen.org/sites/default/files/2025-10/un-women-strategic-plan-2026-2029-integrated-results-and-resources-framework-en.pdf"
+        },
+        {
+          "code": "UNOPS",
+          "name": "United Nations Office for Project Services (UNOPS)",
+          "reports": "https://www.unops.org/about/governance/executive-board/executive-board-documents",
+          "strategicPlan": "https://docs.un.org/en/DP/OPS/2025/9",
+          "resultsFramework": null
+        },
+        {
+          "code": "UNRWA",
+          "name": "United Nations Relief and Works Agency for Palestine Refugees in the Near East (UNRWA)",
+          "reports": "https://www.unrwa.org/tags/annual-report",
+          "strategicPlan": "https://www.unrwa.org/resources/strategy-policy",
+          "resultsFramework": "https://www.unrwa.org/resources/strategy-policy"
+        }
+      ]
+    },
+    {
+      "name": "Other Mechanisms",
+      "entities": [
+        {
+          "code": "IIMM",
+          "name": "Independent Investigative Mechanism for Myanmar (IIMM)",
+          "reports": "https://iimm.un.org/en/annual-reports",
+          "strategicPlan": "https://iimm.un.org/strategic-plan",
+          "resultsFramework": null
+        },
+        {
+          "code": "IIIM",
+          "name": "International, Impartial and Independent Mechanism to Assist in the Investigation and Prosecution of Persons Responsible for the Most Serious Crimes under International Law Committed in the Syrian Arab Republic since March 2011 (IIIM)",
+          "reports": "https://iiim.un.org/documents/reports-to-general-assembly/",
+          "strategicPlan": null,
+          "resultsFramework": null
+        }
+      ]
+    },
+    {
+      "name": "Peacekeeping Operations",
+      "entities": [
+        {
+          "code": "UNDOF",
+          "name": "United Nations Disengagement Observer Force (UNDOF)",
+          "reports": "https://undof.unmissions.org/reports-statements",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "UNMIK",
+          "name": "United Nations Interim Administration Mission in Kosovo (UNMIK)",
+          "reports": "https://unmik.unmissions.org/sg-reports",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "UNIFIL",
+          "name": "United Nations Interim Force in Lebanon (UNIFIL)",
+          "reports": "https://unifil.unmissions.org/unifil-documents",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "UNISFA",
+          "name": "United Nations Interim Security Force for Abyei (UNISFA)",
+          "reports": "https://digitallibrary.un.org/search?ln=en&cc=Reports&p=%22UN+Interim+Security+Force+for+Abyei%22+OR+UNISFA&f=&action_search=Search&rm=&ln=en&sf=year&so=d&rg=50&c=Reports&c=&of=hb&fti=0&fti=0",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "UNMOGIP",
+          "name": "United Nations Military Observer Group in India and Pakistan (UNMOGIP)",
+          "reports": "https://unmogip.unmissions.org/reports",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "MINURSO",
+          "name": "United Nations Mission for the Referendum in Western Sahara (MINURSO)",
+          "reports": "https://minurso.unmissions.org/secretary-general-reports",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "UNMISS",
+          "name": "United Nations Mission in South Sudan (UNMISS)",
+          "reports": "https://unmiss.unmissions.org/documents",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "MINUSCA",
+          "name": "United Nations Multidimensional Integrated Stabilization Mission in the Central African Republic (MINUSCA)",
+          "reports": "https://minusca.unmissions.org/en/reports-secretary-general",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "MONUSCO",
+          "name": "United Nations Organization Stabilization Mission in the Democratic Republic of the Congo (MONUSCO)",
+          "reports": "https://monusco.unmissions.org/en/reports-secretary-general-0",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "UNFICYP",
+          "name": "United Nations Peacekeeping Force in Cyprus (UNFICYP)",
+          "reports": "https://www.securitycouncilreport.org/un-documents/cyprus/",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "UNTSO",
+          "name": "United Nations Truce Supervision Organization (UNTSO)",
+          "reports": "https://untso.unmissions.org/documents",
+          "strategicPlan": null,
+          "resultsFramework": null
+        }
+      ]
+    },
+    {
+      "name": "Regional Commissions",
+      "entities": [
+        {
+          "code": "ESCAP",
+          "name": "Economic and Social Commission for Asia and the Pacific (ESCAP)",
+          "reports": "https://www.unescap.org/resources?f%5B0%5D=field_resource_type_new%3A9052",
+          "strategicPlan": "https://www.unescap.org/sites/default/d8files/event-documents/80_21_2400174_E_2.pdf",
+          "resultsFramework": null
+        },
+        {
+          "code": "ESCWA",
+          "name": "Economic and Social Commission for Western Asia (ESCWA)",
+          "reports": "https://archive.unescwa.org/recurring-publication-identifier/escwa-annual-report",
+          "strategicPlan": "https://www.unescwa.org/about/strategy",
+          "resultsFramework": "https://www.unescwa.org/about/strategy"
+        },
+        {
+          "code": "ECA",
+          "name": "Economic Commission for Africa (ECA)",
+          "reports": "https://repository.uneca.org/search?spc.page=1&scope=&f.entityType=Publication,equals&f.flagshipPublication=Economic%20Report%20on%20Africa,equals&f.dateIssued.min=2025",
+          "strategicPlan": "https://www.uneca.org/medium-term-programme-framework-%282022%E2%80%932025%29",
+          "resultsFramework": null
+        },
+        {
+          "code": "ECE",
+          "name": "Economic Commission for Europe (ECE)",
+          "reports": "https://unece.org/unece-content/publications?f%5B0%5D=subprogramme%3A446",
+          "strategicPlan": "https://unece.org/environment-policy/public-participation/strategic-plan-2022-2030",
+          "resultsFramework": "https://unece.org/evaluation-policy-0"
+        },
+        {
+          "code": "ECLAC",
+          "name": "Economic Commission for Latin America and the Caribbean (ECLAC)",
+          "reports": "https://www.cepal.org/en/publications",
+          "strategicPlan": "https://caribbean.eclac.org/publications/strategic-plan-2015-2025?utm_source=chatgpt.com",
+          "resultsFramework": "https://repositorio.cepal.org/server/api/core/bitstreams/ea965022-4466-4d5c-ae96-063cbcff30f0/content"
+        }
+      ]
+    },
+    {
+      "name": "Related Organizations",
+      "entities": [
+        {
+          "code": "IAEA",
+          "name": "International Atomic Energy Agency (IAEA)",
+          "reports": "https://www.iaea.org/Publications/Reports",
+          "strategicPlan": "https://www.iaea.org/about/overview/medium-term-strategy",
+          "resultsFramework": null
+        },
+        {
+          "code": "ICC",
+          "name": "International Criminal Court (ICC)",
+          "reports": "https://www.icc-cpi.int/resource-library/reports",
+          "strategicPlan": "https://www.icc-cpi.int/sites/default/files/2023-08/2023-strategic-plan-icc-v.2.pdf",
+          "resultsFramework": null
+        },
+        {
+          "code": "IOM",
+          "name": "International Organization for Migration (IOM)",
+          "reports": "https://governingbodies.iom.int/",
+          "strategicPlan": "https://www.iom.int/iom-strategic-plan-2024-2028",
+          "resultsFramework": "https://www.iom.int/iom-strategic-results-framework-srf"
+        },
+        {
+          "code": "ISA",
+          "name": "International Seabed Authority (ISA)",
+          "reports": "https://www.isa.org.jm/publications",
+          "strategicPlan": "https://www.isa.org.jm/strategic-plan/",
+          "resultsFramework": null
+        },
+        {
+          "code": "ITLOS",
+          "name": "International Tribunal for the Law of the Sea (ITLOS)",
+          "reports": "https://www.itlos.org/en/main/the-tribunal/annual-reports/",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "OPCW",
+          "name": "Organisation for the Prohibition of Chemical Weapons (OPCW)",
+          "reports": "https://www.opcw.org/resources/documents/annual-reports",
+          "strategicPlan": "https://www.opcw.org/sites/default/files/documents/2023/08/EC-104_S-1_C-28_S-1_EN.pdf",
+          "resultsFramework": null
+        },
+        {
+          "code": "CTBTO",
+          "name": "Preparatory Commission for the Comprehensive Nuclear-Test-Ban Treaty Organization (CTBTO)",
+          "reports": "https://www.ctbto.org/publications/annual-reports/",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "WTO",
+          "name": "World Trade Organization (WTO)",
+          "reports": "https://www.wto.org/english/res_e/reser_e/annual_report_e.htm",
+          "strategicPlan": "https://www.wto.org/english/thewto_e/secretariat_strategy2030_e.htm",
+          "resultsFramework": null
+        }
+      ]
+    },
+    {
+      "name": "Research and Training",
+      "entities": [
+        {
+          "code": "UNIDIR",
+          "name": "United Nations Institute for Disarmament Research (UNIDIR)",
+          "reports": "https://unidir.org/report-of-the-director",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "UNITAR",
+          "name": "United Nations Institute for Training and Research (UNITAR)",
+          "reports": "https://unitar.org/about/unitar/governance/board-trustees/board-reports",
+          "strategicPlan": "https://unitar.org/sites/default/files/media/publication/doc/UNITAR_Strategic%20Framework_2022-2025.pdf",
+          "resultsFramework": "https://unitar.org/results-evidence-learning/results-reports-and-other-reports"
+        },
+        {
+          "code": "UNICRI",
+          "name": "United Nations Interregional Crime and Justice Research Institute (UNICRI)",
+          "reports": null,
+          "strategicPlan": "https://unicri.org/sites/default/files/2020-07/UNICRI_AI_CentreStrategicPlan.pdf",
+          "resultsFramework": null
+        },
+        {
+          "code": "UNRISD",
+          "name": "United Nations Research Institute for Social Development (UNRISD)",
+          "reports": null,
+          "strategicPlan": "https://cdn.unrisd.org/assets/legacy-files/301-info-files/4A1D94EBE95DA31A802586D8004198E8/UNRISD-Strategy-2021-2025.pdf",
+          "resultsFramework": null
+        },
+        {
+          "code": "UNSSC",
+          "name": "United Nations System Staff College (UNSSC)",
+          "reports": "https://www.unssc.org/about-unssc/",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "UNU",
+          "name": "United Nations University (UNU)",
+          "reports": "https://unu.edu/about/annual-reports",
+          "strategicPlan": "https://unu.edu/sites/default/files/2024-06/UNU-Strategy_2025-2029.pdf",
+          "resultsFramework": null
+        }
+      ]
+    },
+    {
+      "name": "Secretariat",
+      "entities": [
+        {
+          "code": "DESA",
+          "name": "Department of Economic and Social Affairs (DESA)",
+          "reports": "https://desapublications.un.org/?keywords=un+desa+annual+highlights&sort_by=date&sort_order=DESC",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "DMSPC",
+          "name": "Department of Management Strategy, Policy and Compliance (DMSPC)",
+          "reports": "https://reform.un.org/content/management-reform",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "DOS",
+          "name": "Department of Operational Support (DOS)",
+          "reports": "https://operationalsupport.un.org/en/reports-and-resolutions",
+          "strategicPlan": "https://operationalsupport.un.org/strategic-foundations",
+          "resultsFramework": "https://operationalsupport.un.org/en/performance-overview"
+        },
+        {
+          "code": "DPO",
+          "name": "Department of Peace Operations (DPO)",
+          "reports": "https://peacekeeping.un.org/en/reports",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "DPPA",
+          "name": "Department of Political and Peacebuilding Affairs (DPPA)",
+          "reports": "https://dppa.un.org/en/reports-and-policy-documents",
+          "strategicPlan": "https://dppa.un.org/en/dppa-strategic-plan-2023-2026-updated",
+          "resultsFramework": "https://dppa.un.org/en/2023-2026-results-framework"
+        },
+        {
+          "code": "DCO",
+          "name": "Development Coordination Office (DCO)",
+          "reports": "https://unsdg.un.org/resources/unsdg-chair-reports",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "ODET",
+          "name": "Office for Digital and Emerging Technologies (ODET)",
+          "reports": "https://www.un.org/digital-emerging-technologies/content/news",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "ODA",
+          "name": "Office for Disarmament Affairs (ODA)",
+          "reports": "https://www.un.org/disarmament/publications/yearbook/",
+          "strategicPlan": "https://disarmament.unoda.org/unoda-strategic-plan-2021-2025/",
+          "resultsFramework": null
+        },
+        {
+          "code": "OOSA",
+          "name": "Office for Outer Space Affairs (OOSA)",
+          "reports": "https://www.unoosa.org/oosa/en/aboutus/annual-reports.html",
+          "strategicPlan": "https://www.unoosa.org/res/oosadoc/data/documents/2024/stspace/stspace88_0_html/st_space-088E.pdf",
+          "resultsFramework": null
+        },
+        {
+          "code": "OCHA",
+          "name": "Office for the Coordination of Humanitarian Affairs (OCHA)",
+          "reports": "https://www.unocha.org/about-us/publications/core-publications",
+          "strategicPlan": "https://www.unocha.org/publications/report/world/ochas-strategic-plan-2023-2026-transforming-humanitarian-coordination",
+          "resultsFramework": "https://www.unocha.org/publications"
+        },
+        {
+          "code": "OAJ",
+          "name": "Office of Administration of Justice (OAJ)",
+          "reports": "https://www.un.org/en/internaljustice/oaj/activity-reports.shtml",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "OCT",
+          "name": "Office of Counter-Terrorism (OCT)",
+          "reports": "https://www.un.org/counterterrorism/un-documents",
+          "strategicPlan": "https://www.un.org/counterterrorism/sites/www.un.org.counterterrorism/files/unoct_strategic_plan_results_framework_2022-25.pdf",
+          "resultsFramework": null
+        },
+        {
+          "code": "ODPP",
+          "name": "Office of Data Protection and Privacy (ODPP)",
+          "reports": "https://policy.un.org/en/information-and-technology/data-protection",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "OICT",
+          "name": "Office of Information and Communications Technology (OICT)",
+          "reports": "https://www.un.org/annualreport/",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "OIOS",
+          "name": "Office of Internal Oversight Services (OIOS)",
+          "reports": "https://oios.un.org/annual-reports",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "OLA",
+          "name": "Office of Legal Affairs (OLA)",
+          "reports": "https://legal.un.org/ola/publications.aspx",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "OHCHR",
+          "name": "Office of the United Nations High Commissioner for Human Rights (OHCHR)",
+          "reports": "https://www.ohchr.org/en/publications?field_content_category_target_id[177]=177",
+          "strategicPlan": "https://www.ohchr.org/en/publications/management-plan/un-human-rights-management-plan-2022-2023",
+          "resultsFramework": "https://www.ohchr.org/en/about-us/evaluation-un-human-rights"
+        },
+        {
+          "code": "Ethics Office",
+          "name": "United Nations Ethics Office (Ethics Office)",
+          "reports": "https://www.un.org/en/ethics/overview/documents-resources.shtml",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "UNGC",
+          "name": "United Nations Global Compact (UNGC)",
+          "reports": "https://unglobalcompact.org/library",
+          "strategicPlan": "https://unglobalcompact.org/what-is-gc/strategy",
+          "resultsFramework": null
+        },
+        {
+          "code": "UNOG",
+          "name": "United Nations Office at Geneva (UNOG)",
+          "reports": "https://sites.ungeneva.org/annualreport/2021/",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "UNDRR",
+          "name": "United Nations Office for Disaster Risk Reduction (UNDRR)",
+          "reports": "https://www.undrr.org/publications?text=Annual%20Report",
+          "strategicPlan": "https://www.undrr.org/media/49267/download",
+          "resultsFramework": null
+        },
+        {
+          "code": "UNODC",
+          "name": "United Nations Office on Drugs and Crime (UNODC)",
+          "reports": "https://www.unodc.org/unodc/en/about-unodc/annual-report.html",
+          "strategicPlan": "https://www.unodc.org/unodc/en/strategy/index.html",
+          "resultsFramework": "https://www.unodc.org/unodc/en/evaluation/reports.html"
+        },
+        {
+          "code": "SWEO",
+          "name": "United Nations Sustainable Development Group System-Wide Evaluation Office (SWEO)",
+          "reports": "https://www.un.org/system-wide-evaluation-office/en/document-library",
+          "strategicPlan": null,
+          "resultsFramework": null
+        }
+      ]
+    },
+    {
+      "name": "Special Advisers, Representatives, Advocates and Envoys",
+      "entities": [
+        {
+          "code": "UN-OHRLLS",
+          "name": "Office of the High Representative for the Least Developed Countries, Landlocked Developing Countries and Small Island Developing States (UN-OHRLLS)",
+          "reports": "https://www.un.org/ohrlls/content/resources",
+          "strategicPlan": "https://www.un.org/ohrlls/sites/www.un.org.ohrlls/files/dpoa_roadmap_2024_draft.pdf",
+          "resultsFramework": "https://open.unwomen.org/en/global-results/overview"
+        },
+        {
+          "code": "OSAA",
+          "name": "Office of the Special Adviser on Africa (OSAA)",
+          "reports": "https://www.un.org/osaa/content/reports-and-publications",
+          "strategicPlan": "https://www.un.org/osaa/content/osaa-strategic-agenda",
+          "resultsFramework": null
+        },
+        {
+          "code": "SRSG-CAAC",
+          "name": "Office of the Special Representative of the Secretary-General for Children and Armed Conflict (SRSG-CAAC)",
+          "reports": "https://childrenandarmedconflict.un.org/virtual-library/?wpv-document-type%5B%5D=annual-reports&wpv_aux_current_post_id=2680&wpv_aux_parent_post_id=2680&wpv_view_count=110467",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "SRSG-SVC",
+          "name": "Office of the Special Representative of the Secretary-General on Sexual Violence in Conflict (SRSG-SVC)",
+          "reports": "https://www.un.org/sexualviolenceinconflict/digital-library/reports/",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "SRSG-VAC",
+          "name": "Office of the Special Representative of the Secretary-General on Violence against Children (SRSG-VAC)",
+          "reports": "https://violenceagainstchildren.un.org/en/publications?search_api_fulltext=",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "UNOMS",
+          "name": "Office of the United Nations Ombudsman and Mediation Services (UNOMS)",
+          "reports": "https://www.un.org/ombudsman/resources/annual-reports",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "OSC-SEA",
+          "name": "Office of the United Nations Special Coordinator on Improving the United Nations Response to Sexual Exploitation and Abuse (OSC-SEA)",
+          "reports": "https://www.un.org/preventing-sexual-exploitation-and-abuse/content/secretary-generals-reports",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "OVRA",
+          "name": "Office of the Victims' Rights Advocate (OVRA)",
+          "reports": "https://www.un.org/preventing-sexual-exploitation-and-abuse/content/annual-reports-victims-rights-advocate",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "UN Youth",
+          "name": "United Nations Youth Office (UN Youth)",
+          "reports": "https://www.un.org/youthaffairs/en/youth2030/progress-report",
+          "strategicPlan": null,
+          "resultsFramework": null
+        }
+      ]
+    },
+    {
+      "name": "Special Political Missions and Other Political Presences",
+      "entities": [
+        {
+          "code": "OSESG-SYRIA",
+          "name": "Office of the Special Envoy of the Secretary-General for Syria (OSESG-SYRIA)",
+          "reports": "https://specialenvoysyria.unmissions.org/security-council-briefings-text",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "SESG-GL",
+          "name": "Office of the Special Envoy of the Secretary-General for the Great Lakes Region (SESG-GL)",
+          "reports": "https://ungreatlakes.unmissions.org/secretary-generals-reports",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "OSESGY",
+          "name": "Office of the Special Envoy of the Secretary-General for Yemen (OSESGY)",
+          "reports": "https://osesgy.unmissions.org/briefings-security-council",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "UNSCOL",
+          "name": "Office of the United Nations Special Coordinator for Lebanon (UNSCOL)",
+          "reports": "https://unscol.unmissions.org/secretary-general-statements-relevant-lebanon",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "UNSCO",
+          "name": "Office of the United Nations Special Coordinator for the Middle East Peace Process (UNSCO)",
+          "reports": "https://unsco.unmissions.org/ahlc-socioeconomic-reports",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "UNAMA",
+          "name": "United Nations Assistance Mission in Afghanistan (UNAMA)",
+          "reports": "https://unama.unmissions.org/secretary-general-reports",
+          "strategicPlan": "https://unama.unmissions.org/sites/default/files/unsf_afghanistan_formatted_20230629.pdf",
+          "resultsFramework": null
+        },
+        {
+          "code": "BINUH",
+          "name": "United Nations Integrated Office in Haiti (BINUH)",
+          "reports": "https://binuh.unmissions.org/fr/rapports",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "UNOWAS",
+          "name": "United Nations Office for West Africa and the Sahel (UNOWAS)",
+          "reports": "https://unowas.unmissions.org/reports",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "UNOAU",
+          "name": "United Nations Office to the African Union (UNOAU)",
+          "reports": "https://unoau.unmissions.org/documents",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "UNRCCA",
+          "name": "United Nations Regional Centre for Preventive Diplomacy for Central Asia (UNRCCA)",
+          "reports": "https://unrcca.unmissions.org/reports",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "UNOCA",
+          "name": "United Nations Regional Office for Central Africa (UNOCA)",
+          "reports": "https://unoca.unmissions.org/rapports-du-s%C3%A9cr%C3%A9taire-g%C3%A9n%C3%A9ral",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "UNSMIL",
+          "name": "United Nations Support Mission in Libya (UNSMIL)",
+          "reports": "https://unsmil.unmissions.org/reports-secretary-general",
+          "strategicPlan": null,
+          "resultsFramework": "https://unsmil.unmissions.org/un-libya-results-report-2022"
+        },
+        {
+          "code": "UNVMC",
+          "name": "United Nations Verification Mission in Colombia (UNVMC)",
+          "reports": "https://colombia.unmissions.org/en/reports-secretary-general-0",
+          "strategicPlan": null,
+          "resultsFramework": null
+        }
+      ]
+    },
+    {
+      "name": "Specialized Agencies",
+      "entities": [
+        {
+          "code": "FAO",
+          "name": "Food and Agriculture Organization (FAO)",
+          "reports": "https://openknowledge.fao.org/home",
+          "strategicPlan": "https://www.fao.org/about/strategy-programme-budget/overview/FAO-Strategic-Framework/en",
+          "resultsFramework": "https://www.fao.org/about/strategy-programme-budget/overview/planning-monitoring-reporting/en"
+        },
+        {
+          "code": "ICAO",
+          "name": "International Civil Aviation Organization (ICAO)",
+          "reports": "https://www2023.icao.int/about-icao/Pages/annual-reports.aspx",
+          "strategicPlan": "https://www2023.icao.int/about-icao/Council/Pages/strategic-plan-2026-2050.aspx",
+          "resultsFramework": null
+        },
+        {
+          "code": "IFAD",
+          "name": "International Fund for Agricultural Development (IFAD)",
+          "reports": "https://www.ifad.org/pub/annual_report/list",
+          "strategicPlan": "https://www.ifad.org/en/w/corporate-documents/policies/ifad-strategic-framework-2016-20251",
+          "resultsFramework": "https://www.ifad.org/en/results-management-framework"
+        },
+        {
+          "code": "ILO",
+          "name": "International Labor Organization (ILO)",
+          "reports": "https://www.ilo.org/publications/annual-report-2024",
+          "strategicPlan": "https://www.ilo.org/resource/conference-paper/gb/352/ilo%E2%80%99s-strategic-plan-2026%E2%80%9329",
+          "resultsFramework": "https://www.ilo.org/about-ilo/how-ilo-works/results-based-management/evaluation-ilos-results-based-management-framework"
+        },
+        {
+          "code": "IMO",
+          "name": "International Maritime Organization (IMO)",
+          "reports": "https://www.imo.org/en/OurWork/TechnicalCooperation/Pages/Default.aspx",
+          "strategicPlan": "https://www.imo.org/en/about/strategy/pages/default.aspx",
+          "resultsFramework": null
+        },
+        {
+          "code": "IMF",
+          "name": "International Monetary Fund (IMF)",
+          "reports": "https://www.imf.org/en/publications/search#sort=relevancy",
+          "strategicPlan": "https://www.imf.org/en/Capacity-Development/strategy-policies",
+          "resultsFramework": null
+        },
+        {
+          "code": "ITU",
+          "name": "International Telecommunication Union (ITU)",
+          "reports": "https://www.itu.int/pub/S-CONF-AREP-2009/en",
+          "strategicPlan": "https://www.itu.int/en/council/planning/Pages/default.aspx",
+          "resultsFramework": null
+        },
+        {
+          "code": "UNESCO",
+          "name": "United Nations Educational, Scientific and Cultural Organization (UNESCO)",
+          "reports": "https://www.unesco.org/en/budget-strategy",
+          "strategicPlan": "https://unesdoc.unesco.org/ark:/48223/pf0000378083_eng",
+          "resultsFramework": null
+        },
+        {
+          "code": "UNIDO",
+          "name": "United Nations Industrial Development Organization (UNIDO)",
+          "reports": "https://www.unido.org/annualreport",
+          "strategicPlan": "https://www.unido.org/publications/key-policy-documents",
+          "resultsFramework": null
+        },
+        {
+          "code": "UPU",
+          "name": "Universal Postal Union (UPU)",
+          "reports": "https://www.upu.int/en/Universal-Postal-Union/About-UPU/Strategy",
+          "strategicPlan": "https://www.upu.int/en/universal-postal-union/about-upu/strategy",
+          "resultsFramework": "https://www.upu.int/en/universal-postal-union/about-upu/strategy#implementation-and-monitoring"
+        },
+        {
+          "code": "WORLD BANK GROUP",
+          "name": "World Bank Group (WORLD BANK GROUP)",
+          "reports": "https://www.worldbank.org/en/about/annual-report",
+          "strategicPlan": null,
+          "resultsFramework": null
+        },
+        {
+          "code": "WHO",
+          "name": "World Health Organization (WHO)",
+          "reports": "https://www.who.int/about/accountability/results",
+          "strategicPlan": "https://www.who.int/publications/i/item/9789240061545",
+          "resultsFramework": "https://www.who.int/publications/m/item/who-results-framework-delivering-a-measurable-impact-in-countries"
+        },
+        {
+          "code": "WIPO",
+          "name": "World Intellectual Property Organization (WIPO)",
+          "reports": "https://www.wipo.int/about-wipo/en/",
+          "strategicPlan": "https://www.wipo.int/en/web/about-wipo/budget/index",
+          "resultsFramework": "https://www.wipo.int/en/web/about-wipo/budget/index"
+        },
+        {
+          "code": "WMO",
+          "name": "World Meteorological Organization (WMO)",
+          "reports": "https://library.wmo.int/index.php?lvl=notice_display&id=5301#.XxG4WJ5KiUk",
+          "strategicPlan": "https://wmo.int/about-wmo/our-mandate",
+          "resultsFramework": "https://community.wmo.int/en/planning-and-monitoring/operational-planning"
+        },
+        {
+          "code": "UN Tourism",
+          "name": "World Tourism Organization (UN Tourism)",
+          "reports": "https://www.e-unwto.org/",
+          "strategicPlan": null,
+          "resultsFramework": null
+        }
+      ]
+    }
+  ]
+}

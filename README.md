@@ -3,7 +3,7 @@
 # UN Results
 
 - **UN Secretariat:** Explore programme-budget results as a grid grouped by priority area or beneficiary, or as an ungrouped grid. Expand groups into entities and subprogrammes, preview results, and open official objectives, strategies and full result content in sidebars. The locations map remains available at `/locations/`.
-- **UN System:** TBD.
+- **UN System:** Explore UN country results frameworks and browse entity reports, strategic plans and results frameworks by System Chart category at `/system/` (also `/un-system/`).
 
 ## Run locally
 
@@ -18,6 +18,13 @@ Open [localhost:3000](http://localhost:3000). For local site or analytics
 settings, copy `.env.example` to `.env.local`.
 
 ## Refresh the data
+
+The entity directory uses a one-time copy of the UN System Chart export in
+`data/systemchart-entity-documents.json`. The snapshot records the source and
+includes entities with at least one report, strategic plan or results framework
+link. Where the source has no category, the directory uses its principal-organ
+group. The UNHCR and WFP strategic plan fields each contained two concatenated
+URLs. The snapshot uses the official document URL from each field.
 
 The site builds from `data/ppb-2027.json`. Page content comes from the 2027
 proposed programme budget exports. Priority grouping assigns each entity to its
