@@ -1,0 +1,366 @@
+.groups {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 8px;
+}
+
+.group {
+  min-width: 0;
+  padding: 6px 8px;
+  border: 1px solid color-mix(in srgb, var(--tile-color) 22%, var(--background));
+  border-radius: 5px;
+  background: color-mix(in srgb, var(--tile-color) 3%, var(--background));
+  overflow: clip;
+  transition:
+    height 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 220ms ease,
+    filter 220ms ease,
+    border-color 220ms ease;
+}
+
+.group[data-muted="true"] {
+  opacity: 0.38;
+  filter: grayscale(0.85);
+}
+
+.group[data-focused="true"] {
+  border-color: color-mix(in srgb, var(--tile-color) 75%, var(--background));
+}
+
+.canvas {
+  position: relative;
+  transition: height 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.entityBand {
+  position: absolute;
+  inset-inline: 0;
+  border: 1px solid color-mix(in srgb, var(--tile-color) 18%, var(--background));
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--tile-color) 4%, var(--background));
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(5px);
+  transition:
+    opacity 180ms ease,
+    transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    top 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    height 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.entityTitle {
+  margin: 0;
+  padding: 7px;
+  line-height: 24px;
+  color: var(--foreground);
+}
+
+.entityHeading {
+  display: flex;
+  flex: 0 1 auto;
+  max-width: 100%;
+  min-width: 0;
+  height: auto;
+  min-height: 28px;
+  align-items: flex-start;
+  line-height: 24px;
+  justify-content: space-between;
+  padding: 0;
+  color: inherit;
+  pointer-events: auto;
+  transition:
+    height 420ms ease,
+    font-size 420ms ease;
+}
+
+.entityHeadingRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.entityIdentity {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  flex: 1;
+  min-width: 0;
+  gap: 4px 8px;
+}
+
+.entityBand[data-entity-expanded="true"] .entityHeading {
+  min-height: 36px;
+  line-height: 28px;
+}
+
+.entityDescription {
+  position: absolute;
+  inset-inline: 8px;
+  margin: 0;
+  line-height: 24px;
+  pointer-events: auto;
+}
+
+.subprogrammeBlock {
+  position: absolute;
+  inset-inline: 8px;
+  pointer-events: auto;
+}
+
+.subprogrammeTitle {
+  margin: 0;
+  line-height: 24px;
+  color: var(--foreground);
+}
+
+.group[data-expanded="true"] .entityBand {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 100ms;
+}
+
+.group[data-expanded="true"] .entityBand[data-muted="true"] {
+  opacity: 0.32;
+  transition-delay: 0ms;
+}
+
+.entityBand[data-focused="true"] {
+  border-color: color-mix(in srgb, var(--tile-color) 70%, var(--background));
+}
+
+.subprogrammeBlock {
+  transition: opacity 220ms ease;
+}
+
+.subprogrammeBlock[data-muted="true"] {
+  opacity: 0.35;
+}
+
+.subprogrammeBlock[data-focused="true"] {
+  outline: 2px solid
+    color-mix(in srgb, var(--tile-color) 70%, var(--background));
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.groupHeading {
+  display: flex;
+  width: 100%;
+  height: auto;
+  min-height: 40px;
+  justify-content: space-between;
+  margin-bottom: 0;
+  padding: 0 0 8px;
+  color: var(--foreground);
+  transition: height 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.group[data-expanded="true"] .groupHeading {
+  min-height: 64px;
+}
+
+.priorityTitle {
+  color: inherit;
+  min-width: 0;
+  text-align: left;
+  white-space: normal;
+  transition:
+    font-size 420ms ease,
+    line-height 420ms ease;
+}
+
+.expand {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 8px;
+  color: var(--muted-foreground);
+  font-weight: 600;
+}
+
+.expandIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--background);
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.group[data-expandable="true"],
+.entityBand[data-expandable="true"] {
+  cursor: zoom-in;
+}
+
+.group[data-expandable="true"] > .groupHeading button,
+.group[data-expandable="true"] > .groupHeading .expand,
+.entityBand[data-expandable="true"] .expand,
+.entityBand[data-expandable="true"] .entityHeadingRow > button {
+  cursor: zoom-in;
+}
+
+.group[data-expanded="true"] .entityBand {
+  pointer-events: auto;
+}
+
+.group[data-expandable="true"]:hover:not(:has(.tile:hover)),
+.entityBand[data-expandable="true"]:hover {
+  background: color-mix(in srgb, var(--tile-color) 9%, var(--background));
+  border-color: var(--tile-color);
+  box-shadow: inset 0 0 0 1px var(--tile-color);
+}
+
+.group[data-expandable="true"]:hover:not(:has(.tile:hover)) > h2 .expandIcon,
+.entityBand[data-expandable="true"]:hover .expandIcon {
+  border-color: var(--foreground);
+  background: var(--muted);
+}
+
+.tiles {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  pointer-events: none;
+}
+
+.tile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--tile-size);
+  height: var(--tile-size);
+  min-width: 0;
+  pointer-events: auto;
+  border: 1px solid color-mix(in srgb, var(--tile-color) 50%, var(--background));
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--tile-color) 12%, var(--background));
+  transition:
+    transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    width 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    height 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 220ms ease,
+    filter 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.tile[data-muted="true"] {
+  opacity: 0.25;
+  filter: grayscale(0.85);
+}
+
+.tile[data-highlighted="true"] {
+  border-color: var(--tile-color);
+  box-shadow: 0 0 0 2px var(--tile-color);
+}
+
+.tile[data-readable="true"] {
+  border-radius: 5px;
+  background: var(--background);
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  text-align: left;
+  animation: card-content-appear 240ms ease both;
+}
+
+.tile[data-readable="true"] .trigger {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-top: auto;
+  width: 100%;
+}
+
+@keyframes card-content-appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cardContent {
+    animation: none;
+  }
+  .group,
+  .canvas,
+  .groupHeading,
+  .priorityTitle,
+  .entityBand,
+  .entityHeading,
+  .subprogrammeBlock,
+  .tile {
+    transition: none;
+  }
+}
+
+.trigger {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+
+.tile:not([data-muted="true"]):has(.trigger:hover),
+.tile:not([data-muted="true"]):has(.trigger:focus-visible) {
+  border-color: var(--tile-color);
+  background: color-mix(in srgb, var(--tile-color) 28%, var(--background));
+}
+
+.trigger:focus-visible {
+  outline: 2px solid var(--tile-color);
+  outline-offset: 2px;
+}
+
+.preview {
+  z-index: 100;
+  max-width: calc(100vw - 32px);
+  border: 1px solid color-mix(in srgb, var(--tile-color) 50%, var(--background));
+  border-radius: 5px;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.decoration {
+  display: block;
+  width: 112px;
+  max-width: 100%;
+  height: 32px;
+  pointer-events: none;
+}
+
+.decoration svg {
+  display: block;
+  width: 100%;
+  height: 32px;
+  margin: 0;
+}

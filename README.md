@@ -2,7 +2,7 @@
 
 # UN Results
 
-- **UN Secretariat:** Explore the entities and subprogrammes in the proposed UN programme budget. The Secretariat directory groups entities by priority area and links to their objectives, strategies, past performance and planned results.
+- **UN Secretariat:** Explore programme-budget results as a grid grouped by priority area or beneficiary. Expand groups into entities and subprogrammes, preview results, and open official objectives, strategies and full result content in sidebars. The locations map remains available at `/locations/`.
 - **UN System:** TBD.
 
 ## Run locally
@@ -20,16 +20,17 @@ settings, copy `.env.example` to `.env.local`.
 ## Refresh the data
 
 The site builds from `data/ppb-2027.json`. Page content comes from the 2027
-proposed programme budget exports. The directory lists each entity under its
+proposed programme budget exports. Priority grouping assigns each entity to its
 largest spending priority in Open UN's 2025 financial reporting, summed across
 funding sources.
 
-The one-sentence directory descriptions are edited separately in
-`data/entity-descriptions-2027.json`. Keep one entry per entity or budget unit
-in the snapshot, with the programme budget document symbol and the supporting
-paragraph number or heading.
-Where a subsequent UN decision changed a mandate, add its official source as
-an update.
+Beneficiary grouping uses `data/oict-result-tags-2027.json`. A result with two
+beneficiaries appears in both groups; group counts must not be summed as a unique
+total. Results without imported beneficiary tags remain in an Unclassified group.
+
+Entity and subprogramme overview text uses the objectives and strategies in the
+programme budget snapshot. Keep this official source text intact when refreshing
+the export; do not add separately written entity summaries.
 
 With the Programme Budget Data and Open UN checkouts alongside this one, prepare
 the 2027 results export in Programme Budget Data and run:

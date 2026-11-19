@@ -139,15 +139,14 @@ test("shared-workspace plan data can be retried after a failed request", async (
   await page.goto("/system/");
   let fail = true;
   await page.route(`**/data/uninfo/plans/${planId}.json`, async (route) => {
-    if (fail) {
-      fail = false;
-      await route.fulfill({ status: 503, body: "unavailable" });
-    } else await route.continue();
+    if (fail) await route.fulfill({ status: 503, body: "unavailable" });
+    else await route.continue();
   });
   const dialog = await openCountry(page, "Cook Islands");
   await expect(dialog.getByRole("alert")).toContainText(
     "Plan data could not be loaded",
   );
+  fail = false;
   await dialog.getByRole("button", { name: "Try again" }).click();
   await expect(dialog.getByText(/Shared workspace covering/)).toContainText(
     "Samoa",

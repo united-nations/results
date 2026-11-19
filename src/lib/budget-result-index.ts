@@ -1,5 +1,4 @@
 import { createHash } from "node:crypto";
-import type { BudgetResultLocation } from "./budget-scope";
 import { budgetEntities, type BudgetResultContext } from "./programme-budget";
 
 export type BudgetResultReference = {
@@ -8,15 +7,6 @@ export type BudgetResultReference = {
   title: string;
   source: string;
   context: BudgetResultContext;
-};
-
-export type SearchableBudgetResult = BudgetResultReference & {
-  organization: string;
-  subprogramme?: string;
-  kind: "performance" | "planned";
-  year: number;
-  location: BudgetResultLocation;
-  text: string;
 };
 
 export const indexedBudgetResults = new Map(

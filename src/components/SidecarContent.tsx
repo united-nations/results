@@ -5,6 +5,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
 import { DetailPanel } from "@un-eosg/ui/components/detail-panel";
 import { DetailPanelControls } from "@un-eosg/ui/components/detail-panel-controls";
+import { useCurrentOverviewFocus } from "@/components/OverviewFocus";
 
 export function SidecarContent({
   title,
@@ -23,9 +24,12 @@ export function SidecarContent({
   onCloseAutoFocus?: (event: Event) => void;
   children: ReactNode;
 }) {
+  const overviewFocus = useCurrentOverviewFocus();
   return (
     <Dialog.Portal>
-      <Dialog.Overlay className="fixed inset-0 z-50 bg-black/40 motion-safe:data-[state=open]:animate-in motion-safe:data-[state=open]:fade-in-0" />
+      <Dialog.Overlay
+        className={`fixed inset-0 z-50 ${overviewFocus ? "bg-black/20" : "bg-black/40"} motion-safe:data-[state=open]:animate-in motion-safe:data-[state=open]:fade-in-0`}
+      />
       <Dialog.Content
         aria-describedby={undefined}
         onCloseAutoFocus={onCloseAutoFocus}

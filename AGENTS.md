@@ -11,8 +11,6 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 ## Template maintenance
 
 - Use pnpm; Node 24 is recommended. Run lint, typecheck, tests and build.
-- Keep the shared files in scripts/shared-files.json identical in main and
-  template-with-auth, and run check:sync against the companion branch.
 - Import shared UI components and typography from @un-eosg/ui. Use brand tokens
   through globals.css; check the UI catalogue before creating a composition.
 - Keep secrets and database access in server code. Never add runtime writes or

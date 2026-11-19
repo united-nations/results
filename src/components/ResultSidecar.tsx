@@ -1,12 +1,13 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { useState, type ReactElement, type ReactNode } from "react";
 import Link from "next/link";
 import * as Dialog from "@radix-ui/react-dialog";
 import { ChevronRight } from "lucide-react";
 import { ExternalLink } from "@un-eosg/ui/components/external-link";
 import { typography } from "@un-eosg/ui/typography";
 import { SidecarContent } from "@/components/SidecarContent";
+import { useOverviewFocus } from "@/components/OverviewFocus";
 import { formatBudgetHeading } from "@/lib/budget-text";
 import { cn } from "@/lib/utils";
 import type { BudgetResultContext } from "@/lib/programme-budget";
@@ -19,6 +20,10 @@ export function ResultSidecar({
   supportingText,
   context,
   children,
+  trigger,
+  renderTrigger,
+  resultId,
+  focusGroup,
 }: {
   title: string;
   label?: string;
@@ -27,12 +32,30 @@ export function ResultSidecar({
   supportingText?: string;
   context?: BudgetResultContext;
   children: ReactNode;
+  trigger?: ReactElement;
+  renderTrigger?: (trigger: ReactElement) => ReactNode;
+  resultId?: string;
+  focusGroup?: string;
 }) {
   const [open, setOpen] = useState(false);
+  useOverviewFocus(
+    context
+      ? {
+          kind: "result",
+          entityId: context.entity.id,
+          groupId: focusGroup,
+          subprogrammeId: context.subprogramme?.id,
+          resultId,
+          title,
+          source,
+        }
+      : null,
+    open,
+  );
   const heading = formatBudgetHeading(title);
-  return (
-    <Dialog.Root open={open} onOpenChange={setOpen}>
-      <Dialog.Trigger asChild>
+  const dialogTrigger = (
+    <Dialog.Trigger asChild>
+      {trigger ?? (
         <button
           type="button"
           className="flex w-full cursor-pointer items-center gap-3 px-4 py-3 text-left hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset"
@@ -57,7 +80,12 @@ export function ResultSidecar({
             aria-hidden
           />
         </button>
-      </Dialog.Trigger>
+      )}
+    </Dialog.Trigger>
+  );
+  return (
+    <Dialog.Root open={open} onOpenChange={setOpen}>
+      {renderTrigger ? renderTrigger(dialogTrigger) : dialogTrigger}
       <SidecarContent
         title={heading}
         eyebrow={eyebrow || label || "Programme budget result"}

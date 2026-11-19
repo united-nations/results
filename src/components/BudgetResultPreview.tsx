@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactElement, type ReactNode } from "react";
 import { typography } from "@un-eosg/ui/typography";
 import { BudgetResultDetails } from "@/components/BudgetResultDetails";
 import { ResultSidecar } from "@/components/ResultSidecar";
@@ -61,21 +61,31 @@ export function BudgetResultPreview({
   supportingText,
   eyebrow,
   children,
+  trigger,
+  renderTrigger,
+  focusGroup,
 }: {
   summary: BudgetResultReference;
   edition: number;
   supportingText?: string;
   eyebrow?: string;
   children?: ReactNode;
+  trigger?: ReactElement;
+  renderTrigger?: (trigger: ReactElement) => ReactNode;
+  focusGroup?: string;
 }) {
   return (
     <>
       <ResultSidecar
+        resultId={summary.id}
+        focusGroup={focusGroup}
         title={summary.title}
         source={summary.source}
         supportingText={supportingText}
         eyebrow={eyebrow}
         context={summary.context}
+        trigger={trigger}
+        renderTrigger={renderTrigger}
       >
         <Details summary={summary} edition={edition} />
       </ResultSidecar>

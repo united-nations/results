@@ -2,16 +2,16 @@
 
 ## Find the right file
 
-| What you want to change                  | File                                                         |
-| ---------------------------------------- | ------------------------------------------------------------ |
-| Website name, description and navigation | `src/lib/site-config.ts`                                     |
-| UN Secretariat homepage content          | `src/app/page.tsx`                                           |
-| UN System page content                   | `src/app/un-system/page.tsx`                                 |
-| Header options and account slot          | `src/components/SiteHeader.tsx`                              |
-| Footer options                           | `src/components/SiteFooter.tsx`                              |
-| Shared page width and spacing            | `src/lib/site-config.ts` and `src/components/SiteChrome.tsx` |
-| Theme imports and colour-token mappings  | `src/app/globals.css`                                        |
-| Browser metadata and font loading        | `src/app/layout.tsx`                                         |
+| What you want to change                  | File                                                                              |
+| ---------------------------------------- | --------------------------------------------------------------------------------- |
+| Website name, description and navigation | `src/lib/site-config.ts`                                                          |
+| UN Secretariat results data and layout   | `src/components/SecretariatOverview.tsx` and `src/components/ResultsOverview.tsx` |
+| UN System page content                   | `src/app/un-system/page.tsx`                                                      |
+| Header options and account slot          | `src/components/SiteHeader.tsx`                                                   |
+| Footer options                           | `src/components/SiteFooter.tsx`                                                   |
+| Shared page width and spacing            | `src/lib/site-config.ts` and `src/components/SiteChrome.tsx`                      |
+| Theme imports and colour-token mappings  | `src/app/globals.css`                                                             |
+| Browser metadata and font loading        | `src/app/layout.tsx`                                                              |
 
 The `name` setting controls the header descriptor and default browser title. `description` supplies default page metadata. Replace other example text directly in the page files. Keep secrets in `.env.local` or your hosting service's secret settings.
 
