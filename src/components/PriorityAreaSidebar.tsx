@@ -1,5 +1,6 @@
 "use client";
 
+import { groupEntities } from "@/lib/entity-presentation";
 import { useState, type ReactElement } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Button } from "@un-eosg/ui/components/button";
@@ -45,21 +46,41 @@ function PriorityEntities({ priority }: { priority: string }) {
           )}
         </p>
       ) : (
-        <ul className="grid grid-cols-2 gap-3">
-          {entities.map((entity) => (
-            <li key={entity.id} className="flex min-w-0">
-              <BudgetOverviewSidebar
-                entityId={entity.id}
-                title={entity.name}
-                trigger={
-                  <button type="button" className={contextCardClassName}>
-                    <ContextCardContent label="Entity" title={entity.name} />
-                  </button>
-                }
-              />
-            </li>
+        <div className="space-y-6">
+          {groupEntities(priority, entities).map((group) => (
+            <section
+              key={group.key}
+              data-entity-cluster={group.key}
+              className="space-y-3"
+            >
+              {group.label && (
+                <h3 className={typography.sectionTitle}>{group.label}</h3>
+              )}
+              <ul className="grid grid-cols-2 gap-3">
+                {group.entities.map((entity) => (
+                  <li
+                    key={entity.id}
+                    data-entity-id={entity.id}
+                    className="flex min-w-0"
+                  >
+                    <BudgetOverviewSidebar
+                      entityId={entity.id}
+                      title={entity.name}
+                      trigger={
+                        <button type="button" className={contextCardClassName}>
+                          <ContextCardContent
+                            label="Entity"
+                            title={entity.name}
+                          />
+                        </button>
+                      }
+                    />
+                  </li>
+                ))}
+              </ul>
+            </section>
           ))}
-        </ul>
+        </div>
       )}
     </section>
   );

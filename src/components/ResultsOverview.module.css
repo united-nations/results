@@ -336,3 +336,23 @@
   background: var(--background);
   color: var(--foreground);
 }
+
+.clusterTitle {
+  position: absolute;
+  inset-inline: 0;
+  margin: 0;
+  line-height: 24px;
+  transition:
+    top 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 220ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clusterTitle {
+    transition: none;
+  }
+}
+
+.clusterTitle[data-muted="true"] {
+  opacity: 0.35;
+}

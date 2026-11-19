@@ -2,6 +2,7 @@
 
 import {
   type CSSProperties,
+  type ReactNode,
   useCallback,
   useDeferredValue,
   useEffect,
@@ -11,6 +12,7 @@ import {
   useRef,
   useState,
 } from "react";
+import { groupEntities } from "@/lib/entity-presentation";
 import { typography } from "@un-eosg/ui/typography";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import { Button } from "@un-eosg/ui/components/button";
@@ -40,13 +42,37 @@ import {
 
 type OverviewResult = ExplorerResult;
 
+type SubprogrammeBlock = {
+  id: string;
+  title: string;
+  top: number;
+  objective: string;
+  count: number;
+  total: number;
+};
+type EntityBlock = {
+  entity: string;
+  clusterKey?: string;
+  label: string;
+  code: string | null;
+  top: number;
+  height: number;
+  expanded: boolean;
+  headingSpace: number;
+  headingKey: string;
+  description: string;
+  subgroups: SubprogrammeBlock[];
+  count: number;
+  total: number;
+};
+
 const gap = 3;
 // Shared UI tiers keep the hierarchy consistent at every zoom level.
 const resultTypography = {
   priority: typography.subTitle,
   priorityExpanded: typography.cardTitle,
   entity: typography.subTitle,
-  entityExpanded: typography.sectionTitle,
+  entityExpanded: `${typography.lead} font-semibold`,
   subprogramme: typography.subTitle,
   result: `${typography.body} font-normal`,
   description: typography.body,
@@ -406,7 +432,20 @@ function ResultsOverviewContent({
       selectedPriority)
     : selectedPriority;
   const description = useRef<HTMLParagraphElement>(null);
+  const registerDescription = useCallback(
+    (element: HTMLParagraphElement | null) => {
+      description.current = element;
+    },
+    [],
+  );
   const headings = useRef(new Map<string, HTMLElement>());
+  const registerHeading = useCallback(
+    (key: string, element: HTMLElement | null) => {
+      if (element) headings.current.set(key, element);
+      else headings.current.delete(key);
+    },
+    [],
+  );
   const cardContents = useRef(new Map<string, HTMLSpanElement>());
   const registerCardContent = useCallback(
     (id: string, element: HTMLSpanElement | null) => {
@@ -433,7 +472,17 @@ function ResultsOverviewContent({
 
   useLayoutEffect(() => {
     const measure = () => {
-      const measured = [...headings.current].map(
+      const clusterHeadings = [
+        ...(container.current?.querySelectorAll<HTMLElement>(
+          "[data-cluster-heading-key]",
+        ) ?? []),
+      ];
+      const measured = [
+        ...headings.current,
+        ...clusterHeadings.map(
+          (element) => [element.dataset.clusterHeadingKey!, element] as const,
+        ),
+      ].map(
         ([key, element]) =>
           [key, Math.ceil(element.getBoundingClientRect().height)] as const,
       );
@@ -475,6 +524,10 @@ function ResultsOverviewContent({
       observer.observe(element);
       for (const child of element.children) observer.observe(child);
     }
+    for (const element of container.current?.querySelectorAll<HTMLElement>(
+      "[data-cluster-heading-key]",
+    ) ?? [])
+      observer.observe(element);
     measure();
     return () => observer.disconnect();
   }, [selectedPriority, selectedEntity, layout.width]);
@@ -529,514 +582,549 @@ function ResultsOverviewContent({
     };
   }, []);
 
+  const groupElements: ReactNode[] = [];
+  for (const [index, [priority, entries]] of groups.entries()) {
+    const scopeLabel =
+      priority === "Unclassified"
+        ? "Results without a beneficiary tag"
+        : `Results tagged for ${priority}`;
+    const expanded = selectedPriority === priority;
+    const mutedPriority =
+      focusedPriority !== null && focusedPriority !== priority;
+    const focusedEntity =
+      detailFocus?.kind === "priority"
+        ? null
+        : (detailFocus?.entityId ?? (expanded ? selectedEntity : null));
+    const detailHasVisibleTarget =
+      !detailFocus ||
+      detailFocus.kind === "entity" ||
+      detailFocus.kind === "priority" ||
+      entries.some((result) => {
+        if (result.reference.entity !== detailFocus.entityId) return false;
+        if (detailFocus.kind === "subprogramme")
+          return (
+            result.reference.context.subprogramme?.id ===
+            detailFocus.subprogrammeId
+          );
+        return detailFocus.resultId
+          ? result.id === detailFocus.resultId
+          : result.reference.title === detailFocus.title &&
+              result.reference.source === detailFocus.source;
+      });
+    const matchesFocus = (result: OverviewResult) => {
+      if (focusedEntity && result.reference.entity !== focusedEntity)
+        return false;
+      if (!detailFocus || detailFocus.kind === "priority") return true;
+      // A full overview can open a result outside this beneficiary slice.
+      // Keep its entity in focus rather than dimming every visible result.
+      if (!detailHasVisibleTarget) return true;
+      if (detailFocus.kind === "result")
+        return detailFocus.resultId
+          ? result.id === detailFocus.resultId
+          : result.reference.title === detailFocus.title &&
+              result.reference.source === detailFocus.source;
+      return (
+        !detailFocus.subprogrammeId ||
+        result.reference.context.subprogramme?.id === detailFocus.subprogrammeId
+      );
+    };
+    const tile = expanded ? Math.max(36, layout.tile * 2) : layout.tile;
+    const contentWidth = Math.max(1, layout.width - groupInset);
+    const columns = Math.max(
+      1,
+      Math.floor((contentWidth + gap) / (tile + gap)),
+    );
+    const zoomTile = Math.max(36, layout.tile * 2);
+    const zoomColumns = Math.max(
+      1,
+      Math.floor((contentWidth - 16 + gap) / (zoomTile + gap)),
+    );
+    const entityGroups = groupEntities(
+      beneficiaryMode ? "" : priority,
+      [...Map.groupBy(entries, (result) => result.reference.entity)].map(
+        ([id, results]) => ({
+          id,
+          name: results[0].reference.context.entity.name,
+          results,
+        }),
+      ),
+    );
+    const entities = entityGroups.flatMap((group) =>
+      group.entities.map((entity, index) => ({
+        ...entity,
+        clusterKey: group.label ? group.key : undefined,
+        clusterLabel: index === 0 ? group.label : undefined,
+      })),
+    );
+    const orderedEntries = entities.flatMap((entity) => entity.results);
+    const clusterBlocks: {
+      key: string;
+      label: string;
+      top: number;
+      headingKey: string;
+    }[] = [];
+    const positions = new Map<
+      string,
+      { x: number; y: number; width?: number; height?: number }
+    >();
+    let cursor = 0;
+    const entityBlocks: EntityBlock[] = [];
+    for (const {
+      id: entity,
+      results: entityResults,
+      clusterKey,
+      clusterLabel,
+    } of entities) {
+      if (clusterLabel) {
+        const headingKey = `cluster:${priority}:${clusterKey}`;
+        clusterBlocks.push({
+          key: clusterKey!,
+          label: clusterLabel,
+          top: cursor,
+          headingKey,
+        });
+        cursor +=
+          (headingHeights[headingKey] ??
+            Math.ceil(clusterLabel.length / Math.max(1, contentWidth / 9)) *
+              24) + 16;
+      }
+      const entityExpanded = expanded && selectedEntity === entity;
+      const headingKey = `entity:${priority}:${entity}:${entityExpanded}`;
+      const entityName = entityResults[0].reference.context.entity.name;
+      const headingSpace =
+        (headingHeights[headingKey] ??
+          Math.max(
+            28,
+            Math.ceil(
+              (entityName.length + 12) /
+                Math.max(1, (contentWidth - 116) / (entityExpanded ? 10 : 8)),
+            ) * (entityExpanded ? 28 : 24),
+          ) + 14) + 8;
+      const entityDescription = entityObjectives[entity] ?? "";
+      const descriptionHeight =
+        descriptionHeights[entity] ??
+        Math.max(
+          24,
+          Math.ceil(
+            (entityDescription.length + 12) /
+              Math.max(1, (contentWidth - 32) / 8),
+          ) * 24,
+        );
+      const subgroups: SubprogrammeBlock[] = [];
+      let blockHeight: number;
+      if (entityExpanded) {
+        const cardGap = 10;
+        const cardColumns = Math.max(
+          1,
+          Math.floor((contentWidth - 16 + cardGap) / 230),
+        );
+        const cardWidth = resultCardWidth(contentWidth);
+        let innerY = headingSpace + descriptionHeight + 16;
+        for (const [subprogramme, programmeResults] of Map.groupBy(
+          entityResults,
+          (result) => result.reference.context.subprogramme?.id ?? "entity",
+        )) {
+          const programme = programmeResults[0].reference.context.subprogramme;
+          const programmeHeadingKey = `programme:${priority}:${entity}:${subprogramme}`;
+          const programmeTitle = programme
+            ? `Subprogramme ${programme.number} · ${programme.name}`
+            : entityResults.some(
+                  (result) => result.reference.context.subprogramme,
+                )
+              ? "Entity-level results"
+              : "Results";
+          const objective =
+            subprogrammeObjectives[`${entity}:${subprogramme}`] ?? "";
+          subgroups.push({
+            id: subprogramme,
+            title: programmeTitle,
+            top: innerY,
+            objective,
+            count: programmeResults.length,
+            total:
+              totals.subprogrammes.get(`${entity}:${subprogramme}`) ??
+              programmeResults.length,
+          });
+          innerY +=
+            (headingHeights[programmeHeadingKey] ??
+              Math.ceil(
+                programmeTitle.length / Math.max(1, (contentWidth - 16) / 8),
+              ) *
+                24 +
+                (programme
+                  ? Math.max(
+                      24,
+                      Math.ceil(
+                        (objective.length + 12) /
+                          Math.max(1, (contentWidth - 16) / 7),
+                      ) * 24,
+                    ) + 6
+                  : 0)) + 12;
+          for (
+            let offset = 0;
+            offset < programmeResults.length;
+            offset += cardColumns
+          ) {
+            const row = programmeResults.slice(offset, offset + cardColumns);
+            const heights = row.map((result) => {
+              const measured = cardSizes[result.id];
+              if (measured && Math.abs(measured.width - cardWidth) < 0.5)
+                return measured.height;
+              return (
+                Math.ceil(
+                  result.title.length / Math.max(1, (cardWidth - 24) / 7),
+                ) *
+                  23 +
+                (result.thumbnail ? 32 + 12 : 0) +
+                26
+              );
+            });
+            row.forEach((result, column) =>
+              positions.set(result.id, {
+                x: 8 + column * (cardWidth + cardGap),
+                y: cursor + innerY,
+                width: cardWidth,
+                height: Math.max(...heights),
+              }),
+            );
+            innerY += Math.max(...heights) + cardGap;
+          }
+          innerY += 12;
+        }
+        blockHeight = innerY + 8;
+      } else {
+        const tileHeight =
+          Math.ceil(entityResults.length / zoomColumns) * (zoomTile + gap) -
+          gap;
+        blockHeight = headingSpace + tileHeight + 8;
+        entityResults.forEach((result, index) =>
+          positions.set(result.id, {
+            x: 8 + (index % zoomColumns) * (zoomTile + gap),
+            y:
+              cursor +
+              headingSpace +
+              Math.floor(index / zoomColumns) * (zoomTile + gap),
+          }),
+        );
+      }
+      const block = {
+        entity,
+        clusterKey,
+        label: entityResults[0].reference.context.entity.name,
+        code: entityResults[0].reference.context.entity.code,
+        top: cursor,
+        height: blockHeight,
+        expanded: entityExpanded,
+        headingSpace,
+        headingKey,
+        description: entityDescription,
+        subgroups,
+        count: entityResults.length,
+        total: totals.entities.get(entity) ?? entityResults.length,
+      };
+      cursor += block.height + 12;
+      entityBlocks.push(block);
+    }
+    const bodyHeight = expanded
+      ? cursor - 12
+      : Math.ceil(entries.length / columns) * (tile + gap) - gap;
+    const priorityHeadingKey = `priority:${priority}:${expanded}`;
+    const height =
+      groupPaddingHeight +
+      (headingHeights[priorityHeadingKey] ?? (expanded ? 64 : labelHeight)) +
+      bodyHeight;
+    const contentId = `${overviewId}-group-${index}`;
+    const headingId = `${contentId}-heading`;
+    groupElements.push(
+      <section
+        key={priority}
+        id={!beneficiaryMode ? priorityAreaAnchor(priority) : undefined}
+        aria-labelledby={headingId}
+        className={styles.group}
+        data-expanded={expanded}
+        data-expandable={!expanded && !mutedPriority}
+        onClick={(event) => {
+          if (expanded || mutedPriority || !(event.target instanceof Element))
+            return;
+          if (
+            event.target.closest(
+              "button, a, input, select, textarea, [role=button], [data-entity-id]",
+            )
+          )
+            return;
+          setSelectedEntity(null);
+          setSelectedPriority(priority);
+        }}
+        data-priority-area={priority}
+        data-muted={mutedPriority}
+        data-focused={focusedPriority === priority}
+        inert={mutedPriority}
+        style={
+          {
+            height,
+            "--tile-size": `${tile}px`,
+            "--tile-color":
+              entries[0].groupColor ??
+              priorityAreaColors[priority] ??
+              "var(--color-dusty-gray)",
+          } as CSSProperties
+        }
+      >
+        <h2
+          id={headingId}
+          className={styles.groupHeading}
+          ref={(element) => {
+            registerHeading(priorityHeadingKey, element);
+          }}
+        >
+          <span className="flex min-w-0 flex-1 flex-col items-start gap-1">
+            <span
+              className={`${styles.priorityTitle} ${expanded ? resultTypography.priorityExpanded : resultTypography.priority}`}
+            >
+              {priority}
+            </span>
+            {expanded && !beneficiaryMode && (
+              <PriorityAreaSidebar
+                priority={priority}
+                disabled={Boolean(focusedEntity)}
+              />
+            )}
+          </span>
+          <Button
+            variant="ghost"
+            size="xs"
+            className="h-auto shrink-0 p-0 hover:bg-transparent"
+            disabled={Boolean(focusedEntity)}
+            aria-label={`${expanded ? "Collapse" : "Expand"} ${priority}`}
+            aria-expanded={expanded}
+            aria-controls={contentId}
+            onClick={() => {
+              setSelectedEntity(null);
+              setSelectedPriority(expanded ? null : priority);
+            }}
+          >
+            <ExpandCue expanded={expanded} />
+          </Button>
+        </h2>
+        <div
+          id={contentId}
+          className={styles.canvas}
+          style={{ height: bodyHeight }}
+        >
+          {expanded &&
+            clusterBlocks.map((cluster) => (
+              <h3
+                key={cluster.key}
+                data-entity-cluster={cluster.key}
+                data-muted={Boolean(
+                  focusedEntity &&
+                  !entityBlocks.some(
+                    (block) =>
+                      block.clusterKey === cluster.key &&
+                      block.entity === focusedEntity,
+                  ),
+                )}
+                className={`${styles.clusterTitle} ${typography.sectionTitle}`}
+                style={{ top: cluster.top }}
+                data-cluster-heading-key={cluster.headingKey}
+              >
+                {cluster.label}
+              </h3>
+            ))}
+          {entityBlocks.map((block) => (
+            <div
+              key={block.entity}
+              className={styles.entityBand}
+              data-entity-expanded={block.expanded}
+              data-expandable={
+                expanded &&
+                !block.expanded &&
+                (!focusedEntity || focusedEntity === block.entity)
+              }
+              onClick={(event) => {
+                if (
+                  !expanded ||
+                  block.expanded ||
+                  (focusedEntity && focusedEntity !== block.entity) ||
+                  !(event.target instanceof Element)
+                )
+                  return;
+                if (
+                  event.target.closest(
+                    "button, a, input, select, textarea, [role=button]",
+                  )
+                )
+                  return;
+                event.stopPropagation();
+                setSelectedEntity(block.entity);
+              }}
+              data-entity-id={block.entity}
+              data-muted={Boolean(
+                focusedEntity && focusedEntity !== block.entity,
+              )}
+              data-focused={focusedEntity === block.entity}
+              inert={Boolean(
+                !expanded || (focusedEntity && focusedEntity !== block.entity),
+              )}
+              style={{ top: block.top, height: block.height }}
+              aria-hidden={!expanded}
+            >
+              <h3
+                aria-level={block.clusterKey ? 4 : 3}
+                className={styles.entityTitle}
+                ref={(element) => {
+                  registerHeading(block.headingKey, element);
+                }}
+              >
+                <span className={styles.entityHeadingRow}>
+                  <span className={styles.entityIdentity}>
+                    <span
+                      className={`${styles.entityHeading} ${block.expanded ? resultTypography.entityExpanded : resultTypography.entity}`}
+                    >
+                      <span className="min-w-0 text-left whitespace-normal">
+                        {block.label}
+                        {block.code && block.code !== block.label && (
+                          <span className="ms-2 font-normal">{block.code}</span>
+                        )}
+                      </span>
+                    </span>
+                  </span>
+                  <Button
+                    variant="ghost"
+                    size="xs"
+                    disabled={!expanded}
+                    className="pointer-events-auto h-auto shrink-0 p-0 hover:bg-transparent"
+                    aria-expanded={block.expanded}
+                    aria-label={`${block.expanded ? "Collapse" : "Expand"} ${block.label}`}
+                    onClick={() =>
+                      setSelectedEntity(block.expanded ? null : block.entity)
+                    }
+                  >
+                    <ExpandCue expanded={block.expanded} />
+                  </Button>
+                </span>
+                {beneficiaryMode && (
+                  <span
+                    className={`${resultTypography.metadata} mt-1 block font-normal`}
+                  >
+                    {scopeLabel} · {block.count} of {block.total} results
+                  </span>
+                )}
+              </h3>
+              {block.expanded && (
+                <p
+                  ref={registerDescription}
+                  style={{ top: block.headingSpace }}
+                  className={`${resultTypography.description} ${styles.entityDescription}`}
+                >
+                  {block.description || "[TODO: Add entity objective text]"}{" "}
+                  <BudgetOverviewSidebar
+                    entityId={block.entity}
+                    title={block.label}
+                    label={
+                      beneficiaryMode
+                        ? "View all results for this entity."
+                        : undefined
+                    }
+                  />
+                </p>
+              )}
+              {block.subgroups.map((subgroup) => (
+                <div
+                  key={subgroup.id}
+                  ref={(element) => {
+                    const key = `programme:${priority}:${block.entity}:${subgroup.id}`;
+                    registerHeading(key, element);
+                  }}
+                  className={styles.subprogrammeBlock}
+                  data-focused={
+                    detailFocus?.entityId === block.entity &&
+                    detailFocus?.subprogrammeId === subgroup.id
+                  }
+                  data-muted={Boolean(
+                    detailFocus?.entityId === block.entity &&
+                    detailFocus.subprogrammeId &&
+                    detailFocus.subprogrammeId !== subgroup.id,
+                  )}
+                  style={{ top: subgroup.top }}
+                >
+                  <h4
+                    aria-level={block.clusterKey ? 5 : 4}
+                    className={`${resultTypography.subprogramme} ${styles.subprogrammeTitle}`}
+                  >
+                    {subgroup.title}
+                  </h4>
+                  {subgroup.id !== "entity" && (
+                    <p
+                      className={`${resultTypography.description} mt-1.5 leading-6`}
+                    >
+                      {subgroup.objective && <>{subgroup.objective} </>}
+                      <BudgetOverviewSidebar
+                        entityId={block.entity}
+                        title={subgroup.title}
+                        label={
+                          beneficiaryMode
+                            ? "View all results for this subprogramme."
+                            : undefined
+                        }
+                        subprogrammeId={
+                          subgroup.id === "entity" ? undefined : subgroup.id
+                        }
+                      />
+                    </p>
+                  )}
+                  {beneficiaryMode && subgroup.id !== "entity" && (
+                    <p
+                      className={`${resultTypography.metadata} mt-1 font-normal`}
+                    >
+                      {scopeLabel} · {subgroup.count} of {subgroup.total}{" "}
+                      results
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          ))}
+          <ul className={styles.tiles}>
+            {orderedEntries.map((result, index) => (
+              <ResultTile
+                key={result.id}
+                result={result}
+                edition={edition}
+                contentRef={registerCardContent}
+                previewWidth={resultCardWidth(contentWidth)}
+                muted={!mutedPriority && !matchesFocus(result)}
+                highlighted={
+                  !mutedPriority &&
+                  detailHasVisibleTarget &&
+                  detailFocus?.kind === "result" &&
+                  matchesFocus(result)
+                }
+                readable={
+                  expanded && selectedEntity === result.reference.entity
+                }
+                position={
+                  expanded
+                    ? positions.get(result.id)!
+                    : {
+                        x: (index % columns) * (tile + gap),
+                        y: Math.floor(index / columns) * (tile + gap),
+                      }
+                }
+              />
+            ))}
+          </ul>
+        </div>
+      </section>,
+    );
+  }
   return (
     <div
       ref={container}
       className={`${styles.groups} mt-5`}
       aria-label="All Secretariat results"
     >
-      {groups.map(([priority, entries], index) => {
-        const scopeLabel =
-          priority === "Unclassified"
-            ? "Results without a beneficiary tag"
-            : `Results tagged for ${priority}`;
-        const expanded = selectedPriority === priority;
-        const mutedPriority =
-          focusedPriority !== null && focusedPriority !== priority;
-        const focusedEntity =
-          detailFocus?.kind === "priority"
-            ? null
-            : (detailFocus?.entityId ?? (expanded ? selectedEntity : null));
-        const detailHasVisibleTarget =
-          !detailFocus ||
-          detailFocus.kind === "entity" ||
-          detailFocus.kind === "priority" ||
-          entries.some((result) => {
-            if (result.reference.entity !== detailFocus.entityId) return false;
-            if (detailFocus.kind === "subprogramme")
-              return (
-                result.reference.context.subprogramme?.id ===
-                detailFocus.subprogrammeId
-              );
-            return detailFocus.resultId
-              ? result.id === detailFocus.resultId
-              : result.reference.title === detailFocus.title &&
-                  result.reference.source === detailFocus.source;
-          });
-        const matchesFocus = (result: OverviewResult) => {
-          if (focusedEntity && result.reference.entity !== focusedEntity)
-            return false;
-          if (!detailFocus || detailFocus.kind === "priority") return true;
-          // A full overview can open a result outside this beneficiary slice.
-          // Keep its entity in focus rather than dimming every visible result.
-          if (!detailHasVisibleTarget) return true;
-          if (detailFocus.kind === "result")
-            return detailFocus.resultId
-              ? result.id === detailFocus.resultId
-              : result.reference.title === detailFocus.title &&
-                  result.reference.source === detailFocus.source;
-          return (
-            !detailFocus.subprogrammeId ||
-            result.reference.context.subprogramme?.id ===
-              detailFocus.subprogrammeId
-          );
-        };
-        const tile = expanded ? Math.max(36, layout.tile * 2) : layout.tile;
-        const contentWidth = Math.max(1, layout.width - groupInset);
-        const columns = Math.max(
-          1,
-          Math.floor((contentWidth + gap) / (tile + gap)),
-        );
-        const zoomTile = Math.max(36, layout.tile * 2);
-        const zoomColumns = Math.max(
-          1,
-          Math.floor((contentWidth - 16 + gap) / (zoomTile + gap)),
-        );
-        const entities = [
-          ...Map.groupBy(entries, (result) => result.reference.entity),
-        ];
-        const positions = new Map<
-          string,
-          { x: number; y: number; width?: number; height?: number }
-        >();
-        let cursor = 0;
-        const entityBlocks = entities.map(([entity, entityResults]) => {
-          const entityExpanded = expanded && selectedEntity === entity;
-          const headingKey = `entity:${priority}:${entity}:${entityExpanded}`;
-          const entityName = entityResults[0].reference.context.entity.name;
-          const headingSpace =
-            (headingHeights[headingKey] ??
-              Math.max(
-                28,
-                Math.ceil(
-                  (entityName.length + 12) /
-                    Math.max(
-                      1,
-                      (contentWidth - 116) / (entityExpanded ? 10 : 8),
-                    ),
-                ) * (entityExpanded ? 28 : 24),
-              ) + 14) + 8;
-          const entityDescription = entityObjectives[entity] ?? "";
-          const descriptionHeight =
-            descriptionHeights[entity] ??
-            Math.max(
-              24,
-              Math.ceil(
-                (entityDescription.length + 12) /
-                  Math.max(1, (contentWidth - 32) / 8),
-              ) * 24,
-            );
-          const subgroups: {
-            id: string;
-            title: string;
-            top: number;
-            objective: string;
-            count: number;
-            total: number;
-          }[] = [];
-          let blockHeight: number;
-          if (entityExpanded) {
-            const cardGap = 10;
-            const cardColumns = Math.max(
-              1,
-              Math.floor((contentWidth - 16 + cardGap) / 230),
-            );
-            const cardWidth = resultCardWidth(contentWidth);
-            let innerY = headingSpace + descriptionHeight + 16;
-            for (const [subprogramme, programmeResults] of Map.groupBy(
-              entityResults,
-              (result) => result.reference.context.subprogramme?.id ?? "entity",
-            )) {
-              const programme =
-                programmeResults[0].reference.context.subprogramme;
-              const programmeHeadingKey = `programme:${priority}:${entity}:${subprogramme}`;
-              const programmeTitle = programme
-                ? `Subprogramme ${programme.number} · ${programme.name}`
-                : entityResults.some(
-                      (result) => result.reference.context.subprogramme,
-                    )
-                  ? "Entity-level results"
-                  : "Results";
-              const objective =
-                subprogrammeObjectives[`${entity}:${subprogramme}`] ?? "";
-              subgroups.push({
-                id: subprogramme,
-                title: programmeTitle,
-                top: innerY,
-                objective,
-                count: programmeResults.length,
-                total:
-                  totals.subprogrammes.get(`${entity}:${subprogramme}`) ??
-                  programmeResults.length,
-              });
-              innerY +=
-                (headingHeights[programmeHeadingKey] ??
-                  Math.ceil(
-                    programmeTitle.length /
-                      Math.max(1, (contentWidth - 16) / 8),
-                  ) *
-                    24 +
-                    (programme
-                      ? Math.max(
-                          24,
-                          Math.ceil(
-                            (objective.length + 12) /
-                              Math.max(1, (contentWidth - 16) / 7),
-                          ) * 24,
-                        ) + 6
-                      : 0)) + 12;
-              for (
-                let offset = 0;
-                offset < programmeResults.length;
-                offset += cardColumns
-              ) {
-                const row = programmeResults.slice(
-                  offset,
-                  offset + cardColumns,
-                );
-                const heights = row.map((result) => {
-                  const measured = cardSizes[result.id];
-                  if (measured && Math.abs(measured.width - cardWidth) < 0.5)
-                    return measured.height;
-                  return (
-                    Math.ceil(
-                      result.title.length / Math.max(1, (cardWidth - 24) / 7),
-                    ) *
-                      23 +
-                    (result.thumbnail ? 32 + 12 : 0) +
-                    26
-                  );
-                });
-                row.forEach((result, column) =>
-                  positions.set(result.id, {
-                    x: 8 + column * (cardWidth + cardGap),
-                    y: cursor + innerY,
-                    width: cardWidth,
-                    height: Math.max(...heights),
-                  }),
-                );
-                innerY += Math.max(...heights) + cardGap;
-              }
-              innerY += 12;
-            }
-            blockHeight = innerY + 8;
-          } else {
-            const tileHeight =
-              Math.ceil(entityResults.length / zoomColumns) * (zoomTile + gap) -
-              gap;
-            blockHeight = headingSpace + tileHeight + 8;
-            entityResults.forEach((result, index) =>
-              positions.set(result.id, {
-                x: 8 + (index % zoomColumns) * (zoomTile + gap),
-                y:
-                  cursor +
-                  headingSpace +
-                  Math.floor(index / zoomColumns) * (zoomTile + gap),
-              }),
-            );
-          }
-          const block = {
-            entity,
-            label: entityResults[0].reference.context.entity.name,
-            code: entityResults[0].reference.context.entity.code,
-            top: cursor,
-            height: blockHeight,
-            expanded: entityExpanded,
-            headingSpace,
-            headingKey,
-            description: entityDescription,
-            subgroups,
-            count: entityResults.length,
-            total: totals.entities.get(entity) ?? entityResults.length,
-          };
-          cursor += block.height + 12;
-          return block;
-        });
-        const bodyHeight = expanded
-          ? cursor - 12
-          : Math.ceil(entries.length / columns) * (tile + gap) - gap;
-        const priorityHeadingKey = `priority:${priority}:${expanded}`;
-        const height =
-          groupPaddingHeight +
-          (headingHeights[priorityHeadingKey] ??
-            (expanded ? 64 : labelHeight)) +
-          bodyHeight;
-        const contentId = `${overviewId}-group-${index}`;
-        const headingId = `${contentId}-heading`;
-        return (
-          <section
-            key={priority}
-            id={!beneficiaryMode ? priorityAreaAnchor(priority) : undefined}
-            aria-labelledby={headingId}
-            className={styles.group}
-            data-expanded={expanded}
-            data-expandable={!expanded && !mutedPriority}
-            onClick={(event) => {
-              if (
-                expanded ||
-                mutedPriority ||
-                !(event.target instanceof Element)
-              )
-                return;
-              if (
-                event.target.closest(
-                  "button, a, input, select, textarea, [role=button], [data-entity-id]",
-                )
-              )
-                return;
-              setSelectedEntity(null);
-              setSelectedPriority(priority);
-            }}
-            data-priority-area={priority}
-            data-muted={mutedPriority}
-            data-focused={focusedPriority === priority}
-            inert={mutedPriority}
-            style={
-              {
-                height,
-                "--tile-size": `${tile}px`,
-                "--tile-color":
-                  entries[0].groupColor ??
-                  priorityAreaColors[priority] ??
-                  "var(--color-dusty-gray)",
-              } as CSSProperties
-            }
-          >
-            <h2
-              id={headingId}
-              className={styles.groupHeading}
-              ref={(element) => {
-                if (element) headings.current.set(priorityHeadingKey, element);
-                else headings.current.delete(priorityHeadingKey);
-              }}
-            >
-              <span className="flex min-w-0 flex-1 flex-col items-start gap-1">
-                <span
-                  className={`${styles.priorityTitle} ${expanded ? resultTypography.priorityExpanded : resultTypography.priority}`}
-                >
-                  {priority}
-                </span>
-                {expanded && !beneficiaryMode && (
-                  <PriorityAreaSidebar
-                    priority={priority}
-                    disabled={Boolean(focusedEntity)}
-                  />
-                )}
-              </span>
-              <Button
-                variant="ghost"
-                size="xs"
-                className="h-auto shrink-0 p-0 hover:bg-transparent"
-                disabled={Boolean(focusedEntity)}
-                aria-label={`${expanded ? "Collapse" : "Expand"} ${priority}`}
-                aria-expanded={expanded}
-                aria-controls={contentId}
-                onClick={() => {
-                  setSelectedEntity(null);
-                  setSelectedPriority(expanded ? null : priority);
-                }}
-              >
-                <ExpandCue expanded={expanded} />
-              </Button>
-            </h2>
-            <div
-              id={contentId}
-              className={styles.canvas}
-              style={{ height: bodyHeight }}
-            >
-              {entityBlocks.map((block) => (
-                <div
-                  key={block.entity}
-                  className={styles.entityBand}
-                  data-entity-expanded={block.expanded}
-                  data-expandable={
-                    expanded &&
-                    !block.expanded &&
-                    (!focusedEntity || focusedEntity === block.entity)
-                  }
-                  onClick={(event) => {
-                    if (
-                      !expanded ||
-                      block.expanded ||
-                      (focusedEntity && focusedEntity !== block.entity) ||
-                      !(event.target instanceof Element)
-                    )
-                      return;
-                    if (
-                      event.target.closest(
-                        "button, a, input, select, textarea, [role=button]",
-                      )
-                    )
-                      return;
-                    event.stopPropagation();
-                    setSelectedEntity(block.entity);
-                  }}
-                  data-entity-id={block.entity}
-                  data-muted={Boolean(
-                    focusedEntity && focusedEntity !== block.entity,
-                  )}
-                  data-focused={focusedEntity === block.entity}
-                  inert={Boolean(
-                    !expanded ||
-                    (focusedEntity && focusedEntity !== block.entity),
-                  )}
-                  style={{ top: block.top, height: block.height }}
-                  aria-hidden={!expanded}
-                >
-                  <h3
-                    className={styles.entityTitle}
-                    ref={(element) => {
-                      if (element)
-                        headings.current.set(block.headingKey, element);
-                      else headings.current.delete(block.headingKey);
-                    }}
-                  >
-                    <span className={styles.entityHeadingRow}>
-                      <span className={styles.entityIdentity}>
-                        <span
-                          className={`${styles.entityHeading} ${block.expanded ? resultTypography.entityExpanded : resultTypography.entity}`}
-                        >
-                          <span className="min-w-0 text-left whitespace-normal">
-                            {block.label}
-                            {block.code && block.code !== block.label && (
-                              <span className="ms-2 font-normal">
-                                {block.code}
-                              </span>
-                            )}
-                          </span>
-                        </span>
-                      </span>
-                      <Button
-                        variant="ghost"
-                        size="xs"
-                        disabled={!expanded}
-                        className="pointer-events-auto h-auto shrink-0 p-0 hover:bg-transparent"
-                        aria-expanded={block.expanded}
-                        aria-label={`${block.expanded ? "Collapse" : "Expand"} ${block.label}`}
-                        onClick={() =>
-                          setSelectedEntity(
-                            block.expanded ? null : block.entity,
-                          )
-                        }
-                      >
-                        <ExpandCue expanded={block.expanded} />
-                      </Button>
-                    </span>
-                    {beneficiaryMode && (
-                      <span
-                        className={`${resultTypography.metadata} mt-1 block font-normal`}
-                      >
-                        {scopeLabel} · {block.count} of {block.total} results
-                      </span>
-                    )}
-                  </h3>
-                  {block.expanded && (
-                    <p
-                      ref={description}
-                      style={{ top: block.headingSpace }}
-                      className={`${resultTypography.description} ${styles.entityDescription}`}
-                    >
-                      {block.description || "[TODO: Add entity objective text]"}{" "}
-                      <BudgetOverviewSidebar
-                        entityId={block.entity}
-                        title={block.label}
-                        label={
-                          beneficiaryMode
-                            ? "View all results for this entity."
-                            : undefined
-                        }
-                      />
-                    </p>
-                  )}
-                  {block.subgroups.map((subgroup) => (
-                    <div
-                      key={subgroup.id}
-                      ref={(element) => {
-                        const key = `programme:${priority}:${block.entity}:${subgroup.id}`;
-                        if (element) headings.current.set(key, element);
-                        else headings.current.delete(key);
-                      }}
-                      className={styles.subprogrammeBlock}
-                      data-focused={
-                        detailFocus?.entityId === block.entity &&
-                        detailFocus?.subprogrammeId === subgroup.id
-                      }
-                      data-muted={Boolean(
-                        detailFocus?.entityId === block.entity &&
-                        detailFocus.subprogrammeId &&
-                        detailFocus.subprogrammeId !== subgroup.id,
-                      )}
-                      style={{ top: subgroup.top }}
-                    >
-                      <h4
-                        className={`${resultTypography.subprogramme} ${styles.subprogrammeTitle}`}
-                      >
-                        {subgroup.title}
-                      </h4>
-                      {subgroup.id !== "entity" && (
-                        <p
-                          className={`${resultTypography.description} mt-1.5 leading-6`}
-                        >
-                          {subgroup.objective && <>{subgroup.objective} </>}
-                          <BudgetOverviewSidebar
-                            entityId={block.entity}
-                            title={subgroup.title}
-                            label={
-                              beneficiaryMode
-                                ? "View all results for this subprogramme."
-                                : undefined
-                            }
-                            subprogrammeId={
-                              subgroup.id === "entity" ? undefined : subgroup.id
-                            }
-                          />
-                        </p>
-                      )}
-                      {beneficiaryMode && subgroup.id !== "entity" && (
-                        <p
-                          className={`${resultTypography.metadata} mt-1 font-normal`}
-                        >
-                          {scopeLabel} · {subgroup.count} of {subgroup.total}{" "}
-                          results
-                        </p>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              ))}
-              <ul className={styles.tiles}>
-                {entries.map((result, index) => (
-                  <ResultTile
-                    key={result.id}
-                    result={result}
-                    edition={edition}
-                    contentRef={registerCardContent}
-                    previewWidth={resultCardWidth(contentWidth)}
-                    muted={!mutedPriority && !matchesFocus(result)}
-                    highlighted={
-                      !mutedPriority &&
-                      detailHasVisibleTarget &&
-                      detailFocus?.kind === "result" &&
-                      matchesFocus(result)
-                    }
-                    readable={
-                      expanded && selectedEntity === result.reference.entity
-                    }
-                    position={
-                      expanded
-                        ? positions.get(result.id)!
-                        : {
-                            x: (index % columns) * (tile + gap),
-                            y: Math.floor(index / columns) * (tile + gap),
-                          }
-                    }
-                  />
-                ))}
-              </ul>
-            </div>
-          </section>
-        );
-      })}
+      {groupElements}
     </div>
   );
 }
