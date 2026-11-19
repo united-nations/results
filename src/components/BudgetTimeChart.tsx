@@ -136,7 +136,7 @@ export function BudgetTimeChart({
             <summary
               className={cn(
                 typography.caption,
-                "w-fit cursor-pointer text-un-blue-text underline-offset-4 hover:underline",
+                "w-fit cursor-pointer text-un-blue-text underline-offset-4 hover:underline any-pointer-coarse:py-3",
               )}
             >
               View values
@@ -190,7 +190,7 @@ export function BudgetTimeChart({
               y={y(tick)}
               dy="0.32em"
               textAnchor="end"
-              className={`${typography.caption} fill-current tabular-nums`}
+              className={`${typography.caption} fill-current tabular-nums max-sm:text-base`}
             >
               {axisNumber.format(tick)}
               {suffix}
@@ -207,7 +207,18 @@ export function BudgetTimeChart({
               x={x(year)}
               y={baseline + 18}
               textAnchor="middle"
-              className={`${typography.caption} fill-current tabular-nums`}
+              className={cn(
+                typography.caption,
+                "fill-current tabular-nums max-sm:text-base",
+                first !== last && index === 0 && "max-sm:[text-anchor:start]",
+                first !== last &&
+                  index === years.length - 1 &&
+                  "max-sm:[text-anchor:end]",
+                years.length > 5 &&
+                  index % 2 === 1 &&
+                  index < years.length - 1 &&
+                  "max-sm:hidden",
+              )}
             >
               {period}
             </text>

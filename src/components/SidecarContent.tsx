@@ -36,7 +36,7 @@ export function SidecarContent({
         data-detail-drawer=""
         aria-describedby={undefined}
         onCloseAutoFocus={onCloseAutoFocus}
-        className="fixed inset-y-0 end-0 z-50 w-full overflow-y-auto overscroll-contain border-s bg-background shadow-lg motion-safe:data-[state=open]:animate-in motion-safe:data-[state=open]:slide-in-from-right sm:max-w-2xl lg:max-w-3xl"
+        className="fixed inset-y-0 end-0 z-50 h-dvh max-h-full w-full overflow-y-auto overscroll-contain border-s bg-background shadow-lg motion-safe:data-[state=open]:animate-in motion-safe:data-[state=open]:slide-in-from-right sm:max-w-2xl lg:max-w-3xl"
       >
         <DetailPanel
           className={scrollStyles.panel}

@@ -14,3 +14,33 @@
   flex: none;
   overflow: visible;
 }
+
+@media (width < 40rem) {
+  .panel > header h2 > span {
+    font-size: var(--text-xl);
+    line-height: var(--text-xl--line-height);
+  }
+
+  .countryPanel > header > div:first-child {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    row-gap: 4px;
+  }
+
+  .countryPanel > header > div:first-child > div {
+    display: contents;
+  }
+
+  .period {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
+
+@media (any-pointer: coarse) {
+  .panel > header button {
+    min-block-size: 44px;
+    min-inline-size: 44px;
+  }
+}

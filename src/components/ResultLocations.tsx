@@ -117,7 +117,7 @@ export function ResultLocations({
 
   return (
     <div className="mt-6 space-y-4">
-      <div ref={picker} className="w-fit">
+      <div ref={picker} className="w-fit max-w-full">
         <SearchablePicker
           label="Choose a country or area"
           selection={
@@ -143,7 +143,7 @@ export function ResultLocations({
                   <li key={id}>
                     <button
                       type="button"
-                      className={`${typography.body} w-full rounded-sm px-3 py-1.5 text-start hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset`}
+                      className={`${typography.body} w-full rounded-sm px-3 py-1.5 text-start hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset any-pointer-coarse:min-h-11`}
                       onClick={() => {
                         close();
                         setSelected(id);

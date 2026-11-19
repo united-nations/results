@@ -360,6 +360,37 @@ test("mobile entity headings wrap without card collisions or horizontal overflow
     .toBe(true);
 });
 
+test.describe("results before hydration on a phone", () => {
+  test.use({
+    viewport: { width: 320, height: 568 },
+    isMobile: true,
+    hasTouch: true,
+    javaScriptEnabled: false,
+  });
+
+  test("compact tiles fit inside their groups", async ({ page }) => {
+    await page.goto("/beneficiaries/");
+    const firstGroup = page.locator("section[data-priority-area]").first();
+    const tiles = firstGroup.locator("li[data-readable]");
+    await expect(tiles.first()).toHaveCSS("width", "36px");
+    expect(
+      await firstGroup.evaluate((section) => {
+        const group = section.getBoundingClientRect();
+        return [...section.querySelectorAll("li[data-readable]")].every(
+          (tile) => {
+            const { left, right, bottom } = tile.getBoundingClientRect();
+            return (
+              left >= group.left &&
+              right <= group.right &&
+              bottom <= group.bottom
+            );
+          },
+        );
+      }),
+    ).toBe(true);
+  });
+});
+
 test("global grouping controls work on the first keyboard activation while zoomed", async ({
   page,
 }) => {

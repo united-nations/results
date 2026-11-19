@@ -13,7 +13,7 @@ export function ResultViewToggle({
 }) {
   const name = useId();
   return (
-    <fieldset className="m-0 inline-flex h-9 shrink-0 rounded-md border border-border bg-secondary p-0.5">
+    <fieldset className="m-0 inline-flex h-9 shrink-0 rounded-md border border-border bg-secondary p-0.5 any-pointer-coarse:h-11">
       <legend className="sr-only">Card size</legend>
       {[
         { value: false, label: "Compact tiles", Icon: Grid3X3 },

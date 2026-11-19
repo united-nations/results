@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, type CSSProperties } from "react";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import { Button } from "@un-eosg/ui/components/button";
 import { SearchInput } from "@un-eosg/ui/components/search-input";
@@ -60,15 +60,15 @@ export function BudgetStructureFilter({
       return (
         <li key={node.value}>
           <div
-            className="flex items-center gap-1 rounded-sm hover:bg-accent"
-            style={{ paddingInlineStart: depth * 16 }}
+            className="flex items-center gap-1 rounded-sm ps-[calc(var(--depth)*0.5rem)] hover:bg-accent sm:ps-[calc(var(--depth)*1rem)]"
+            style={{ "--depth": depth } as CSSProperties}
           >
             {node.children.length ? (
               <button
                 type="button"
                 aria-label={`${open ? "Collapse" : "Expand"} ${label}`}
                 aria-expanded={open}
-                className="flex size-6 shrink-0 items-center justify-center rounded-sm focus-visible:outline-2 focus-visible:outline-ring"
+                className="flex size-6 shrink-0 items-center justify-center rounded-sm focus-visible:outline-2 focus-visible:outline-ring any-pointer-coarse:h-11 any-pointer-coarse:w-8"
                 onClick={() =>
                   setExpanded((current) => {
                     const next = new Set(current);
@@ -84,10 +84,10 @@ export function BudgetStructureFilter({
                 />
               </button>
             ) : (
-              <span className="w-6 shrink-0" />
+              <span className="w-6 shrink-0 any-pointer-coarse:w-8" />
             )}
             <label
-              className={`${typography.body} flex min-w-0 flex-1 cursor-pointer items-center gap-2 py-1.5 pe-2`}
+              className={`${typography.body} flex min-w-0 flex-1 cursor-pointer items-center gap-2 py-1.5 pe-2 any-pointer-coarse:min-h-11`}
             >
               <input
                 type="checkbox"
@@ -101,7 +101,10 @@ export function BudgetStructureFilter({
                   )
                 }
               />
-              <span className="min-w-0 flex-1 truncate" title={label}>
+              <span
+                className="min-w-0 flex-1 wrap-anywhere sm:truncate"
+                title={label}
+              >
                 {label}
               </span>
               <span className="shrink-0 text-muted-foreground tabular-nums">
@@ -127,13 +130,18 @@ export function BudgetStructureFilter({
         <Button
           variant="outline"
           size="sm"
-          className={`border-border bg-secondary text-foreground hover:bg-secondary/80 ${selected.length ? "bg-muted" : ""}`}
+          className={`border-border bg-secondary text-foreground hover:bg-secondary/80 any-pointer-coarse:min-h-11 ${selected.length ? "bg-muted" : ""}`}
         >
           Budget structure {selected.length ? `(${selected.length})` : ""}
           <ChevronDown className="opacity-60" aria-hidden="true" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent align="start" sideOffset={6} className="w-[28rem] p-2">
+      <PopoverContent
+        align="start"
+        sideOffset={6}
+        collisionPadding={8}
+        className="w-[28rem] p-2"
+      >
         <SearchInput
           aria-label="Search budget structure options"
           placeholder="Search budget structure"

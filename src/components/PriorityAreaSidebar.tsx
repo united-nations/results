@@ -56,7 +56,7 @@ function PriorityEntities({ priority }: { priority: string }) {
               {group.label && (
                 <h3 className={typography.sectionTitle}>{group.label}</h3>
               )}
-              <ul className="grid grid-cols-2 gap-3">
+              <ul className="grid gap-3 sm:grid-cols-2">
                 {group.entities.map((entity) => (
                   <li
                     key={entity.id}

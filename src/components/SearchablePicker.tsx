@@ -42,13 +42,18 @@ export function SearchablePicker({
           size="sm"
           variant="secondary"
           aria-label={selection ? `${label}: ${selection}` : label}
-          className="max-w-full rounded-full border border-border bg-muted text-foreground hover:bg-neutral-border"
+          className="max-w-full rounded-full border border-border bg-muted text-foreground hover:bg-neutral-border any-pointer-coarse:min-h-11"
         >
           <span className="truncate">{selection ?? label}</span>
           <ChevronDown className="size-3.5 text-muted-foreground" aria-hidden />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className={className} align={align} aria-label={label}>
+      <PopoverContent
+        className={className}
+        align={align}
+        collisionPadding={8}
+        aria-label={label}
+      >
         <SearchInput
           aria-label={searchLabel}
           placeholder={placeholder}

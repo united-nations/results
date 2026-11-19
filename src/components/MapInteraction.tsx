@@ -34,7 +34,7 @@ export function MapInteraction({ children }: { children: ReactNode }) {
       >
         {interactive ? "Stop panning map" : "Enable map panning"}
       </button>
-      <div ref={map} data-financial-map="">
+      <div ref={map} data-financial-map="" data-map-panning={interactive}>
         {children}
       </div>
     </>

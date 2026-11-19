@@ -1,7 +1,7 @@
 import { openOictResult } from "./open-result";
 import { test, expect } from "@playwright/test";
 
-test("result context shares one row and the full sidebar scrolls beneath its sticky header", async ({
+test("result context reflows and the full sidebar scrolls beneath its sticky header", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 1280, height: 700 });
@@ -16,7 +16,7 @@ test("result context shares one row and the full sidebar scrolls beneath its sti
     const boxes = await context.locator(":scope > *").evaluateAll((elements) =>
       elements.map((element) => {
         const r = element.getBoundingClientRect();
-        return { top: r.top, width: r.width, bottom: r.bottom };
+        return { left: r.left, top: r.top, width: r.width, bottom: r.bottom };
       }),
     );
     expect(boxes).toHaveLength(3);
@@ -25,10 +25,15 @@ test("result context shares one row and the full sidebar scrolls beneath its sti
       expect.stringContaining("Entity"),
       expect.stringContaining("Subprogramme"),
     ]);
-    for (const box of boxes) {
-      expect(box.top).toBeCloseTo(boxes[0].top, 0);
+    for (const [index, box] of boxes.entries()) {
       expect(box.width).toBeCloseTo(boxes[0].width, 0);
-      expect(box.bottom).toBeCloseTo(boxes[0].bottom, 0);
+      if (width === 390) {
+        expect(box.left).toBeCloseTo(boxes[0].left, 0);
+        if (index > 0) expect(box.top).toBeGreaterThan(boxes[index - 1].bottom);
+      } else {
+        expect(box.top).toBeCloseTo(boxes[0].top, 0);
+        expect(box.bottom).toBeCloseTo(boxes[0].bottom, 0);
+      }
     }
     expect(
       await dialog.evaluate((el) => el.scrollWidth <= el.clientWidth),

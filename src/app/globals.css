@@ -55,9 +55,54 @@
 }
 html {
   scrollbar-gutter: stable;
+  scroll-padding-block-start: var(--site-header-height, 0px);
+}
+
+@media (width < 40rem), (height < 32rem) {
+  /* The shared facet, country and period selectors portal outside the page. */
+  [data-radix-popper-content-wrapper] > [role="dialog"] {
+    max-inline-size: min(
+      calc(100vw - 2rem),
+      var(--radix-popover-content-available-width, 100vw)
+    );
+    max-block-size: var(--radix-popover-content-available-height);
+    overflow: auto;
+    overscroll-behavior: contain;
+  }
+
+  [role="listbox"][aria-multiselectable] [role="option"] > .truncate {
+    overflow: visible;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
 }
 
 @media (any-pointer: coarse) {
+  input[type="search"] {
+    min-block-size: 44px;
+    font-size: 16px;
+  }
+
+  input[type="search"] + button {
+    min-block-size: 44px;
+    min-inline-size: 32px;
+    display: grid;
+    place-items: center;
+    inset-inline-end: 0;
+  }
+
+  [data-radix-popper-content-wrapper] > :has([role="tooltip"]) {
+    pointer-events: none;
+  }
+
+  [data-map-panning="false"] svg {
+    touch-action: pan-y pinch-zoom;
+  }
+
+  [data-map-panning="true"] svg {
+    touch-action: none;
+  }
+
   .result-location-map .zoom-buttons button {
     min-width: 44px;
     min-height: 44px;

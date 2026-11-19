@@ -122,7 +122,7 @@ export function CountryResultsFrameworks({
                     <li key={code}>
                       <button
                         type="button"
-                        className={`${typography.body} w-full rounded px-3 py-2 text-start hover:bg-muted focus-visible:outline-2 focus-visible:outline-un-blue`}
+                        className={`${typography.body} w-full rounded px-3 py-2 text-start hover:bg-muted focus-visible:outline-2 focus-visible:outline-un-blue any-pointer-coarse:min-h-11`}
                         onClick={() => {
                           close();
                           select(code);
@@ -155,17 +155,19 @@ export function CountryResultsFrameworks({
           <FinancialDetailPanel
             title={<DrawerTitle>{country.name}</DrawerTitle>}
             titleId="uninfo-country-title"
-            className={`${scrollStyles.panel} sm:w-full`}
+            className={`${scrollStyles.panel} ${scrollStyles.countryPanel} sm:w-full`}
             contentClassName={scrollStyles.body}
             controls={
               <>
-                <FinancialPanelPeriodSelector
-                  options={periodOptions}
-                  selected={String(selectedPlan.id)}
-                  onChange={(value) => setPlanId(Number(value))}
-                  label="Select plan period"
-                  variant="pill"
-                />
+                <div className={scrollStyles.period}>
+                  <FinancialPanelPeriodSelector
+                    options={periodOptions}
+                    selected={String(selectedPlan.id)}
+                    onChange={(value) => setPlanId(Number(value))}
+                    label="Select plan period"
+                    variant="pill"
+                  />
+                </div>
                 <DetailPanelControls
                   close={{
                     label: "Close country results",

@@ -26,7 +26,7 @@ export function ResultGroupingSelect({
           variant="secondary"
           aria-label={`Grouping: ${label}`}
           data-grouping={value}
-          className="h-9 border border-border text-foreground"
+          className="h-9 border border-border text-foreground max-sm:has-[>svg]:px-2.5 any-pointer-coarse:min-h-11"
         >
           {label}
           <ChevronDown className="size-4 opacity-60" aria-hidden="true" />
@@ -48,7 +48,7 @@ export function ResultGroupingSelect({
               <DropdownMenu.RadioItem
                 key={option.value}
                 value={option.value}
-                className={`${typography.body} flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1.5 text-foreground outline-none data-[highlighted]:bg-accent data-[state=checked]:font-medium`}
+                className={`${typography.body} flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1.5 text-foreground outline-none data-[highlighted]:bg-accent data-[state=checked]:font-medium any-pointer-coarse:min-h-11`}
               >
                 <span className="flex size-4 items-center justify-center">
                   <DropdownMenu.ItemIndicator>

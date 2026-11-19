@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useMemo, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { Filter, Search } from "lucide-react";
 import { SearchInput } from "@un-eosg/ui/components/search-input";
 import { typography } from "@un-eosg/ui/typography";
@@ -25,6 +25,8 @@ export function ResultsSearch({
   onSelect: (suggestion: ExplorerSuggestion) => void;
 }) {
   const id = useId();
+  const input = useRef<HTMLInputElement>(null);
+  const listbox = useRef<HTMLUListElement>(null);
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const suggestions = useMemo(
@@ -34,15 +36,20 @@ export function ResultsSearch({
   const visible = open && query.trim().length > 0;
   const selectedIndex = Math.min(activeIndex, suggestions.length);
   useEffect(() => {
-    if (visible)
-      document
-        .getElementById(`${id}-${selectedIndex}`)
-        ?.scrollIntoView({ block: "nearest" });
+    const list = listbox.current;
+    const option = document.getElementById(`${id}-${selectedIndex}`);
+    if (!visible || !list || !option) return;
+    const bounds = list.getBoundingClientRect();
+    const item = option.getBoundingClientRect();
+    if (item.top < bounds.top) list.scrollTop += item.top - bounds.top;
+    else if (item.bottom > bounds.bottom)
+      list.scrollTop += item.bottom - bounds.bottom;
   }, [id, selectedIndex, visible]);
   const choose = (index: number) => {
     if (index > 0) onSelect(suggestions[index - 1]);
     setOpen(false);
     setActiveIndex(0);
+    if (window.matchMedia("(pointer: coarse)").matches) input.current?.blur();
   };
   return (
     <div
@@ -52,6 +59,7 @@ export function ResultsSearch({
       }}
     >
       <SearchInput
+        ref={input}
         variant="border-bottom"
         role="combobox"
         aria-label="Search all results"
@@ -102,10 +110,11 @@ export function ResultsSearch({
       />
       {visible && (
         <ul
+          ref={listbox}
           id={id}
           role="listbox"
           aria-label="Search suggestions"
-          className="absolute inset-x-0 top-full z-40 mt-2 max-h-80 overflow-y-auto rounded-md border border-border bg-background p-1 shadow-md"
+          className="absolute inset-x-0 top-full z-40 mt-2 max-h-[min(20rem,40dvh)] overflow-y-auto overscroll-contain rounded-md border border-border bg-background p-1 shadow-md sm:max-h-80"
         >
           {[null, ...suggestions].map((suggestion, index) => (
             <li
@@ -122,7 +131,7 @@ export function ResultsSearch({
                 role="option"
                 aria-selected={selectedIndex === index}
                 tabIndex={-1}
-                className={`${typography.body} flex w-full items-start gap-2 rounded-sm px-3 py-2 text-left text-foreground hover:bg-accent ${selectedIndex === index ? "bg-secondary" : ""}`}
+                className={`${typography.body} flex w-full items-start gap-2 rounded-sm px-3 py-2 text-left text-foreground hover:bg-accent any-pointer-coarse:min-h-11 ${selectedIndex === index ? "bg-secondary" : ""}`}
                 onMouseDown={(event) => event.preventDefault()}
                 onMouseMove={() => setActiveIndex(index)}
                 onClick={() => choose(index)}

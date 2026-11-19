@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { typography } from "@un-eosg/ui/typography";
 import { ChoroplethMap } from "@undp/data-viz/ChoroplethMap";
 import { MapInteraction } from "@/components/MapInteraction";
-import { useViewportMapHeight } from "@/hooks/useViewportMapHeight";
+import { useViewportMapLayout } from "@/hooks/useViewportMapLayout";
 import { withBasePath } from "@/lib/paths";
 import type { LocationCoverage } from "@/lib/result-location-coverage";
 
@@ -48,7 +48,7 @@ export function LocationChoropleth({
   getAreaName: (code: string) => string;
   onSelect: (code: string) => void;
 }) {
-  const height = useViewportMapHeight(540);
+  const { height, scale } = useViewportMapLayout();
   const [worldMap, setWorldMap] = useState<WorldMap>();
   const [failed, setFailed] = useState(false);
 
@@ -137,7 +137,7 @@ export function LocationChoropleth({
           ariaLabel="Map of countries and areas with Secretariat results"
           height={height}
           mapProjection="equalEarth"
-          scale={1.15}
+          scale={scale}
           centerPoint={[0, 6]}
           zoomInteraction="button"
           mapBorderWidth={0.5}

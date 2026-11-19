@@ -115,7 +115,7 @@ export function ResultsExplorerControls({
   return (
     <div ref={controlsRef} data-explorer-controls className="mt-5">
       <div className="flex flex-wrap items-center gap-2">
-        <div className="min-w-[min(100%,16rem)] flex-1">
+        <div className="w-full min-w-0 sm:w-auto sm:min-w-[min(100%,16rem)] sm:flex-1">
           <ResultsSearch
             query={query}
             options={options}
@@ -137,7 +137,7 @@ export function ResultsExplorerControls({
         </div>
         {active && (
           <p
-            className={`${typography.body} shrink-0 tabular-nums`}
+            className={`${typography.body} shrink-0 tabular-nums max-sm:order-last`}
             role="status"
           >
             {count} {count === 1 ? "result" : "results"}
@@ -149,7 +149,7 @@ export function ResultsExplorerControls({
           variant="secondary"
           aria-expanded={filtersOpen}
           aria-controls={filtersId}
-          className={`h-9 border border-border text-foreground ${filtersOpen ? "bg-muted" : ""}`}
+          className={`h-9 border border-border text-foreground max-sm:has-[>svg]:px-2.5 any-pointer-coarse:min-h-11 ${filtersOpen ? "bg-muted" : ""}`}
           onClick={() => setFiltersOpen((open) => !open)}
         >
           <SlidersHorizontal className="size-4" aria-hidden="true" />
@@ -198,7 +198,7 @@ export function ResultsExplorerControls({
                       onFiltersChange({ ...filters, [dimension]: values })
                     }
                     searchLabel={`Search ${labels[dimension].toLowerCase()} options`}
-                    className={`border-border bg-secondary text-foreground hover:bg-secondary/80 ${filters[dimension].length ? "bg-muted" : ""}`}
+                    className={`border-border bg-secondary text-foreground hover:bg-secondary/80 any-pointer-coarse:min-h-11 ${filters[dimension].length ? "bg-muted" : ""}`}
                   />
                 ),
               )}
@@ -223,7 +223,7 @@ export function ResultsExplorerControls({
               <Chip
                 key={`${dimension}:${value}`}
                 density="dense"
-                className="text-sm"
+                className="max-w-full text-sm any-pointer-coarse:min-h-11"
                 onClick={() =>
                   onFiltersChange({
                     ...filters,
@@ -234,9 +234,11 @@ export function ResultsExplorerControls({
                 }
                 aria-label={`Remove ${labels[dimension].toLowerCase()} filter: ${options[dimension].find((option) => option.value === value)?.label ?? value}`}
               >
-                {options[dimension].find((option) => option.value === value)
-                  ?.label ?? value}
-                <X className="size-3" aria-hidden="true" />
+                <span className="min-w-0 text-start wrap-anywhere">
+                  {options[dimension].find((option) => option.value === value)
+                    ?.label ?? value}
+                </span>
+                <X className="size-3 shrink-0" aria-hidden="true" />
               </Chip>
             )),
           )}

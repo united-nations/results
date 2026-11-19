@@ -57,7 +57,8 @@ export function SiteHeader({
         mobileMenuLabel="Open navigation menu"
         emblemPlacement="outboard"
         transparency="low"
-        containerClassName="max-w-6xl px-6 sm:px-8 lg:px-16"
+        containerClassName="max-w-6xl px-4 sm:px-8 lg:px-16"
+        className="any-pointer-coarse:[&_button[aria-haspopup=menu]]:size-11"
       >
         {children}
       </SharedHeader>

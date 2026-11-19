@@ -103,7 +103,7 @@ function Details({
       )}
       <nav
         aria-label="Result context"
-        className="flex items-stretch gap-3 *:max-w-1/2"
+        className="flex flex-col items-stretch gap-3 sm:flex-row sm:*:max-w-1/2"
       >
         {data?.entity.mainPriority && (
           <PriorityAreaSidebar

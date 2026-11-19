@@ -1,3 +1,9 @@
+.groups,
+.compactGrid {
+  --compact-tile-size: 28px;
+  --tile-size: var(--compact-tile-size);
+}
+
 .groups {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -149,6 +155,7 @@
   height: auto;
   min-height: 40px;
   justify-content: space-between;
+  gap: 8px;
   margin-bottom: 0;
   padding: 0 0 8px;
   color: var(--foreground);
@@ -230,6 +237,18 @@
   pointer-events: none;
 }
 
+/* Lay out compact tiles at the available width before the canvas is measured. */
+.groups[data-layout-ready="false"] .tiles {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--tile-size));
+  gap: 3px;
+}
+
+.groups:not([data-animate-layout]) :is(.group, .canvas, .tile) {
+  transition: none;
+}
+
 .tile {
   position: absolute;
   top: 0;
@@ -278,8 +297,7 @@
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));
 }
 .compactGrid {
-  --tile-size: 28px;
-  grid-template-columns: repeat(auto-fill, 28px);
+  grid-template-columns: repeat(auto-fill, var(--tile-size));
   gap: 3px;
 }
 .flatTile {
@@ -355,4 +373,25 @@
 
 .clusterTitle[data-muted="true"] {
   opacity: 0.35;
+}
+
+@media (width < 25rem) {
+  .expand > span:first-child {
+    display: none;
+  }
+}
+
+@media (pointer: coarse) {
+  .groups,
+  .compactGrid {
+    --compact-tile-size: 36px;
+  }
+
+  .groupHeading > button,
+  .entityHeadingRow > button {
+    min-inline-size: 44px;
+    min-block-size: 44px;
+    align-self: start;
+    justify-content: end;
+  }
 }

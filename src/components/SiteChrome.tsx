@@ -36,7 +36,7 @@ export function SiteChrome({
       <main
         id="main-content"
         tabIndex={-1}
-        className={`${pageContainer} flex-1 py-12`}
+        className={`${pageContainer} flex-1 py-7 sm:py-12`}
       >
         {children}
       </main>

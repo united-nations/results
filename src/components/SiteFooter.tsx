@@ -3,7 +3,7 @@ export function SiteFooter() {
   return (
     <SharedFooter
       locale="en"
-      containerClassName="max-w-6xl px-6 sm:px-8 lg:px-16"
+      containerClassName="max-w-6xl px-4 sm:px-8 lg:px-16"
     />
   );
 }

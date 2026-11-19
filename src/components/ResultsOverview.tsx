@@ -82,6 +82,7 @@ const resultTypography = {
 const labelHeight = 40;
 const groupInset = 18;
 const groupPaddingHeight = 14;
+const zoomTile = 56;
 
 function resultCardWidth(contentWidth: number) {
   const columns = Math.max(1, Math.floor((contentWidth - 16 + 10) / 230));
@@ -398,7 +399,11 @@ function ResultsOverviewContent({
     if (!selectedPriority || detailFocus) return;
     const collapseOutside = (event: MouseEvent) => {
       if (!(event.target instanceof Element)) return;
-      if (event.target.closest("[data-explorer-controls]")) {
+      if (
+        event.target.closest("[data-explorer-controls]") ||
+        (!container.current?.contains(event.target) &&
+          event.target.closest("a[href], button, [role='menuitem']"))
+      ) {
         setSelectedEntity(null);
         setSelectedPriority(null);
         return;
@@ -468,7 +473,7 @@ function ResultsOverviewContent({
     () => [...Map.groupBy(results, (result) => result.priority)],
     [results],
   );
-  const [layout, setLayout] = useState({ tile: 28, width: 900 });
+  const [layout, setLayout] = useState<{ tile: number; width: number }>();
 
   useLayoutEffect(() => {
     const measure = () => {
@@ -530,7 +535,7 @@ function ResultsOverviewContent({
       observer.observe(element);
     measure();
     return () => observer.disconnect();
-  }, [selectedPriority, selectedEntity, layout.width]);
+  }, [selectedPriority, selectedEntity, layout?.width]);
 
   useLayoutEffect(() => {
     const element = description.current;
@@ -547,18 +552,20 @@ function ResultsOverviewContent({
     observer.observe(element);
     measure();
     return () => observer.disconnect();
-  }, [selectedEntity, layout.width]);
+  }, [selectedEntity, layout?.width]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const element = container.current;
     if (!element) return;
 
     const resize = () => {
       const { width } = element.getBoundingClientRect();
       if (!width) return;
-      const tile = 28;
+      const tile = parseFloat(
+        getComputedStyle(element).getPropertyValue("--compact-tile-size"),
+      );
       setLayout((current) =>
-        current.tile === tile && current.width === width
+        current?.tile === tile && current.width === width
           ? current
           : { tile, width },
       );
@@ -576,9 +583,18 @@ function ResultsOverviewContent({
     observer.observe(element);
     window.addEventListener("resize", resize);
     resize();
+
+    // Let the measured layout paint before enabling transitions from the grid.
+    let animationFrame = requestAnimationFrame(() => {
+      animationFrame = requestAnimationFrame(() => {
+        element.dataset.animateLayout = "";
+      });
+    });
     return () => {
       observer.disconnect();
       window.removeEventListener("resize", resize);
+      cancelAnimationFrame(animationFrame);
+      delete element.dataset.animateLayout;
     };
   }, []);
 
@@ -628,13 +644,15 @@ function ResultsOverviewContent({
         result.reference.context.subprogramme?.id === detailFocus.subprogrammeId
       );
     };
-    const tile = expanded ? Math.max(36, layout.tile * 2) : layout.tile;
-    const contentWidth = Math.max(1, layout.width - groupInset);
+    const tile = expanded ? zoomTile : (layout?.tile ?? 28);
+    const contentWidth = Math.max(
+      1,
+      (layout?.width ?? groupInset) - groupInset,
+    );
     const columns = Math.max(
       1,
       Math.floor((contentWidth + gap) / (tile + gap)),
     );
-    const zoomTile = Math.max(36, layout.tile * 2);
     const zoomColumns = Math.max(
       1,
       Math.floor((contentWidth - 16 + gap) / (zoomTile + gap)),
@@ -861,8 +879,8 @@ function ResultsOverviewContent({
         inert={mutedPriority}
         style={
           {
-            height,
-            "--tile-size": `${tile}px`,
+            height: layout ? height : undefined,
+            "--tile-size": expanded ? `${zoomTile}px` : undefined,
             "--tile-color":
               entries[0].groupColor ??
               priorityAreaColors[priority] ??
@@ -909,7 +927,7 @@ function ResultsOverviewContent({
         <div
           id={contentId}
           className={styles.canvas}
-          style={{ height: bodyHeight }}
+          style={{ height: layout ? bodyHeight : undefined }}
         >
           {expanded &&
             clusterBlocks.map((cluster) => (
@@ -1092,7 +1110,7 @@ function ResultsOverviewContent({
                 result={result}
                 edition={edition}
                 contentRef={registerCardContent}
-                previewWidth={resultCardWidth(contentWidth)}
+                previewWidth={layout ? resultCardWidth(contentWidth) : 280}
                 muted={!mutedPriority && !matchesFocus(result)}
                 highlighted={
                   !mutedPriority &&
@@ -1104,12 +1122,14 @@ function ResultsOverviewContent({
                   expanded && selectedEntity === result.reference.entity
                 }
                 position={
-                  expanded
-                    ? positions.get(result.id)!
-                    : {
-                        x: (index % columns) * (tile + gap),
-                        y: Math.floor(index / columns) * (tile + gap),
-                      }
+                  !layout
+                    ? undefined
+                    : expanded
+                      ? positions.get(result.id)!
+                      : {
+                          x: (index % columns) * (tile + gap),
+                          y: Math.floor(index / columns) * (tile + gap),
+                        }
                 }
               />
             ))}
@@ -1122,6 +1142,7 @@ function ResultsOverviewContent({
     <div
       ref={container}
       className={`${styles.groups} mt-5`}
+      data-layout-ready={Boolean(layout)}
       aria-label="All Secretariat results"
     >
       {groupElements}

@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { ChoroplethMap } from "@undp/data-viz/ChoroplethMap";
 import { typography } from "@un-eosg/ui/typography";
 import { MapInteraction } from "@/components/MapInteraction";
-import { useViewportMapHeight } from "@/hooks/useViewportMapHeight";
+import { useViewportMapLayout } from "@/hooks/useViewportMapLayout";
 import { withBasePath } from "@/lib/paths";
 import type { UninfoCountrySummary } from "@/lib/uninfo";
 
@@ -30,7 +30,7 @@ export function UninfoChoropleth({
   countries: Record<string, UninfoCountrySummary>;
   onSelect: (code: string) => void;
 }) {
-  const height = useViewportMapHeight(540);
+  const { height, scale } = useViewportMapLayout();
   const [worldMap, setWorldMap] = useState<WorldMap>();
   const [failed, setFailed] = useState(false);
 
@@ -98,7 +98,7 @@ export function UninfoChoropleth({
           ariaLabel="Countries with available results frameworks"
           height={height}
           mapProjection="equalEarth"
-          scale={1.15}
+          scale={scale}
           centerPoint={[0, 6]}
           zoomInteraction="button"
           mapBorderWidth={0.5}

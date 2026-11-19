@@ -13,4 +13,4 @@ export const siteConfig = {
     websiteId: process.env.NEXT_PUBLIC_ANALYTICS_WEBSITE_ID,
   },
 } as const;
-export const pageContainer = "mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-16";
+export const pageContainer = "mx-auto w-full max-w-6xl px-4 sm:px-8 lg:px-16";

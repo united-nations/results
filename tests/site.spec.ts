@@ -237,3 +237,66 @@ test("result sidebars retain official figures and citations", async ({
   await expect(sidebar).toHaveCount(0);
   await expect(result).toBeFocused();
 });
+
+test.describe("touch navigation and search", () => {
+  test.use({
+    viewport: { width: 320, height: 568 },
+    isMobile: true,
+    hasTouch: true,
+  });
+
+  test("browse, search and open the current mobile views by tapping", async ({
+    page,
+  }) => {
+    await page.goto("/");
+    const firstGroup = page.locator("section[data-priority-area]").first();
+    await firstGroup.getByRole("button", { name: /^Expand/ }).tap();
+    await expect(firstGroup).toHaveAttribute("data-expanded", "true");
+    await page.getByRole("button", { name: "Open navigation menu" }).tap();
+    await page.getByRole("menuitem", { name: "UN System", exact: true }).tap();
+    await expect(page).toHaveURL(/\/un-system\/?$/);
+
+    await page.getByRole("button", { name: "Choose a country or area" }).tap();
+    await page.getByRole("searchbox").fill("Papua New Guinea");
+    await page
+      .getByRole("button", { name: "Papua New Guinea", exact: true })
+      .tap();
+    const country = page.getByRole("dialog", { name: "Papua New Guinea" });
+    const period = country.getByRole("button", { name: "Select plan period" });
+    const title = country.getByRole("heading", { name: "Papua New Guinea" });
+    await expect(period).toHaveText("2024–2028");
+    const titleBounds = (await title.boundingBox())!;
+    expect((await period.boundingBox())!.y).toBeGreaterThanOrEqual(
+      titleBounds.y + titleBounds.height,
+    );
+    await period.tap();
+    await page.getByRole("button", { name: "2018–2023", exact: true }).tap();
+    await expect(period).toHaveText("2018–2023");
+    await country.getByRole("button", { name: "Close country results" }).tap();
+    await expect(country).toHaveCount(0);
+
+    await page.getByRole("button", { name: "Open navigation menu" }).tap();
+    await page
+      .getByRole("menuitem", { name: "UN Secretariat", exact: true })
+      .tap();
+    const search = page.getByRole("combobox", { name: "Search all results" });
+    await search.tap();
+    await search.fill(
+      "More reliable and stable connectivity for delegates and staff",
+    );
+    await page.getByRole("option", { name: /^Search results for/ }).tap();
+    await expect(search).not.toBeFocused();
+    const tile = page.locator("li[data-readable]");
+    await expect(tile).toHaveCount(1);
+    await expect(tile).toHaveCSS("height", "36px");
+    await tile.getByRole("button").tap();
+    const result = page.getByRole("dialog", {
+      name: /More reliable and stable connectivity/,
+    });
+    await expect(
+      result.getByRole("img", { name: /number of Wi-Fi incidents/i }),
+    ).toBeVisible();
+    await result.getByRole("button", { name: "Close result" }).tap();
+    await expect(result).toHaveCount(0);
+  });
+});
