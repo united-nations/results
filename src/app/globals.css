@@ -58,6 +58,13 @@ html {
   scroll-padding-block-start: var(--site-header-height, 0px);
 }
 
+/* Open UN circle treatment: translucent fill and a strong outline. */
+.uninfo-expenditure-map svg circle {
+  fill-opacity: 0.28 !important;
+  stroke-opacity: 1;
+  stroke-width: 1.5px;
+}
+
 @media (width < 40rem), (height < 32rem) {
   /* The shared facet, country and period selectors portal outside the page. */
   [data-radix-popper-content-wrapper] > [role="dialog"] {

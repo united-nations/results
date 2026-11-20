@@ -1,0 +1,2146 @@
+{
+  "year": 2025,
+  "retrieved_at": "2026-11-17T21:30:46.662208+00:00",
+  "uninfoExpenditure": 15521335435.275,
+  "cebExpenditure": 64396743592.987045,
+  "countryTeamBenchmark": {
+    "year": 2024,
+    "amount": 43500000000,
+    "publishedPrecision": "USD billions, one decimal place",
+    "label": "UN country teams",
+    "source": "https://www.un.org/un80-initiative/sites/default/files/2026-01/UN80%20Look%20Public%20WP5%20UNCT%20Reconfiguration_for%20distribution_FINAL.pdf",
+    "sourceTitle": "UN80 work package 5: UN country team reconfiguration — Member State briefing",
+    "upstreamAttribution": "CEB 2024 expenditure data",
+    "methodNote": "Published rounded benchmark for spending through UN country teams, not a budget administered by Resident Coordinators. The briefing cites CEB 2024 expenditure data but does not provide complete filters. Current CEB country-attributed totals do not reproduce the amount; a source-vintage or population difference remains unresolved. This does not disprove the briefing's country-team label. It is not a 2025 estimate."
+  },
+  "developmentExpenditure": 22526462038.97789,
+  "humanitarianExpenditure": 25100379971.6394,
+  "developmentSystemActivitiesExpenditure": 47626842010.617294,
+  "cebFunctionsSource": "https://github.com/united-nations/transparency/blob/c903a319d59966d3d84c218db7879b5756acd7a7/public/data/function-geography-2025.json",
+  "cebFunctionsDownload": "https://unsceb.org/assets/data/FS/expenses_by_country_region_sub_agency.csv",
+  "cebFunctionReconciliationDifference": 1.1374282836914062,
+  "developmentDefinitionSource": "https://digitallibrary.un.org/record/4114681",
+  "uninfoCoverageSource": "https://www.unaids.org/sites/default/files/2025-09/2025_New-Generation-UN-Country-Teams_en_0.pdf",
+  "ratio": 0.24102671298685527,
+  "workspaceExpenditure": 15521335435.275,
+  "reconciliationDifference": 0.0,
+  "reportingWorkspaces": 111,
+  "reportingCountries": 147,
+  "uninfoSource": "https://uninfo.org/",
+  "scopeSource": "https://workspace.uninfo.org/",
+  "cebSource": "https://github.com/united-nations/transparency/blob/c903a319d59966d3d84c218db7879b5756acd7a7/public/data/entity-spending-2025.json",
+  "query": {
+    "endpoint": "https://api.uninfo.org/v1.0/planEntity/finance/overview",
+    "financeYears": 2025,
+    "grouping": [
+      "sdg"
+    ],
+    "planIds": [
+      762,
+      768,
+      771,
+      773,
+      774,
+      776,
+      777,
+      791,
+      792,
+      794,
+      795,
+      800,
+      802,
+      812,
+      813,
+      814,
+      815,
+      816,
+      817,
+      818,
+      820,
+      822,
+      836,
+      862,
+      875,
+      876,
+      882,
+      1018,
+      1024,
+      1025,
+      1030,
+      1033,
+      1035,
+      1036,
+      1037,
+      1038,
+      1059,
+      1148,
+      1190,
+      1193,
+      1196,
+      1199,
+      1200,
+      1203,
+      1481,
+      1482,
+      1483,
+      1485,
+      1486,
+      1488,
+      1490,
+      1491,
+      1496,
+      1497,
+      1498,
+      1499,
+      1501,
+      1503,
+      1504,
+      1505,
+      1506,
+      1507,
+      1508,
+      1509,
+      1510,
+      1511,
+      1512,
+      1513,
+      1514,
+      1515,
+      1516,
+      1517,
+      1518,
+      1521,
+      1522,
+      1523,
+      1524,
+      1525,
+      1526,
+      1527,
+      1528,
+      1529,
+      1530,
+      1532,
+      1533,
+      1534,
+      1535,
+      1536,
+      1538,
+      1539,
+      1540,
+      1945,
+      1947,
+      1953,
+      2088,
+      2089,
+      2090,
+      2091,
+      2092,
+      2093,
+      2094,
+      2095,
+      2096,
+      2097,
+      2098,
+      2099,
+      2101,
+      2102,
+      2103,
+      2104,
+      2106,
+      2107,
+      2108,
+      2111,
+      2113,
+      2114,
+      2244,
+      2245,
+      2693,
+      2694
+    ]
+  },
+  "method": "Sum Total Expenditure across all reported SDG groups, including unclassified. Map uses annual workspace totals once per workspace, with no full-plan fallback. The UN INFO/system ratio uses the same-year CEB snapshot. The separately labelled UN country team benchmark is the published 2024 UN80 figure, not a current-year estimate. The chart compares scale across different scopes and explicitly labelled years, not an accounting partition or an audited coverage rate.",
+  "countries": {
+    "CUW": {
+      "workspace_id": 252,
+      "expenditure": 152075132.992
+    },
+    "ABW": {
+      "workspace_id": 252,
+      "expenditure": 152075132.992
+    },
+    "VCT": {
+      "workspace_id": 252,
+      "expenditure": 152075132.992
+    },
+    "LCA": {
+      "workspace_id": 252,
+      "expenditure": 152075132.992
+    },
+    "KNA": {
+      "workspace_id": 252,
+      "expenditure": 152075132.992
+    },
+    "MSR": {
+      "workspace_id": 252,
+      "expenditure": 152075132.992
+    },
+    "GRD": {
+      "workspace_id": 252,
+      "expenditure": 152075132.992
+    },
+    "DMA": {
+      "workspace_id": 252,
+      "expenditure": 152075132.992
+    },
+    "VGB": {
+      "workspace_id": 252,
+      "expenditure": 152075132.992
+    },
+    "ATG": {
+      "workspace_id": 252,
+      "expenditure": 152075132.992
+    },
+    "AIA": {
+      "workspace_id": 252,
+      "expenditure": 152075132.992
+    },
+    "TCA": {
+      "workspace_id": 252,
+      "expenditure": 152075132.992
+    },
+    "CYM": {
+      "workspace_id": 252,
+      "expenditure": 152075132.992
+    },
+    "BMU": {
+      "workspace_id": 252,
+      "expenditure": 152075132.992
+    },
+    "BHS": {
+      "workspace_id": 252,
+      "expenditure": 152075132.992
+    },
+    "FSM": {
+      "workspace_id": 241,
+      "expenditure": 220970741.002
+    },
+    "PLW": {
+      "workspace_id": 241,
+      "expenditure": 220970741.002
+    },
+    "MHL": {
+      "workspace_id": 241,
+      "expenditure": 220970741.002
+    },
+    "KIR": {
+      "workspace_id": 241,
+      "expenditure": 220970741.002
+    },
+    "NRU": {
+      "workspace_id": 241,
+      "expenditure": 220970741.002
+    },
+    "WSM": {
+      "workspace_id": 241,
+      "expenditure": 220970741.002
+    },
+    "COK": {
+      "workspace_id": 241,
+      "expenditure": 220970741.002
+    },
+    "NIU": {
+      "workspace_id": 241,
+      "expenditure": 220970741.002
+    },
+    "TKL": {
+      "workspace_id": 241,
+      "expenditure": 220970741.002
+    },
+    "BLZ": {
+      "workspace_id": 252,
+      "expenditure": 152075132.992
+    },
+    "PRK": {
+      "workspace_id": 227,
+      "expenditure": null
+    },
+    "ARE": {
+      "workspace_id": 218,
+      "expenditure": null
+    },
+    "BRB": {
+      "workspace_id": 252,
+      "expenditure": 152075132.992
+    },
+    "FJI": {
+      "workspace_id": 241,
+      "expenditure": 220970741.002
+    },
+    "SLB": {
+      "workspace_id": 241,
+      "expenditure": 220970741.002
+    },
+    "TON": {
+      "workspace_id": 241,
+      "expenditure": 220970741.002
+    },
+    "TUV": {
+      "workspace_id": 241,
+      "expenditure": 220970741.002
+    },
+    "VUT": {
+      "workspace_id": 241,
+      "expenditure": 220970741.002
+    },
+    "GUY": {
+      "workspace_id": 252,
+      "expenditure": 152075132.992
+    },
+    "JAM": {
+      "workspace_id": 252,
+      "expenditure": 152075132.992
+    },
+    "JOR": {
+      "workspace_id": 137,
+      "expenditure": null
+    },
+    "KWT": {
+      "workspace_id": 130,
+      "expenditure": null
+    },
+    "MMR": {
+      "workspace_id": 109,
+      "expenditure": null
+    },
+    "NIC": {
+      "workspace_id": 100,
+      "expenditure": null
+    },
+    "PRY": {
+      "workspace_id": 81,
+      "expenditure": null
+    },
+    "SUR": {
+      "workspace_id": 252,
+      "expenditure": 152075132.992
+    },
+    "TTO": {
+      "workspace_id": 252,
+      "expenditure": 152075132.992
+    },
+    "SXM": {
+      "workspace_id": 252,
+      "expenditure": 152075132.992
+    },
+    "COD": {
+      "workspace_id": 251,
+      "expenditure": 399830673.003
+    },
+    "PSE": {
+      "workspace_id": 233,
+      "expenditure": null
+    },
+    "XKX": {
+      "workspace_id": 230,
+      "expenditure": 33159185.007
+    },
+    "SLV": {
+      "workspace_id": 228,
+      "expenditure": 53072043.016
+    },
+    "AGO": {
+      "workspace_id": 221,
+      "expenditure": 98121494.002
+    },
+    "ALB": {
+      "workspace_id": 220,
+      "expenditure": 47906747.0
+    },
+    "ARG": {
+      "workspace_id": 217,
+      "expenditure": 352500044.992
+    },
+    "ARM": {
+      "workspace_id": 216,
+      "expenditure": 47047563.001
+    },
+    "AZE": {
+      "workspace_id": 212,
+      "expenditure": 2068177.0
+    },
+    "BDI": {
+      "workspace_id": 211,
+      "expenditure": 168263788.992
+    },
+    "BEN": {
+      "workspace_id": 209,
+      "expenditure": 169405550.006
+    },
+    "BFA": {
+      "workspace_id": 208,
+      "expenditure": 214871382.007
+    },
+    "BGD": {
+      "workspace_id": 207,
+      "expenditure": 193225433.005
+    },
+    "BHR": {
+      "workspace_id": 205,
+      "expenditure": 4888552.001
+    },
+    "BIH": {
+      "workspace_id": 203,
+      "expenditure": 88572718.0
+    },
+    "BLR": {
+      "workspace_id": 202,
+      "expenditure": 0.0
+    },
+    "BOL": {
+      "workspace_id": 199,
+      "expenditure": 60094280.001
+    },
+    "BRA": {
+      "workspace_id": 198,
+      "expenditure": 215726709.991
+    },
+    "BTN": {
+      "workspace_id": 195,
+      "expenditure": 26314225.665
+    },
+    "BWA": {
+      "workspace_id": 193,
+      "expenditure": 7117663.003
+    },
+    "CAF": {
+      "workspace_id": 192,
+      "expenditure": 184277794.298
+    },
+    "CHL": {
+      "workspace_id": 190,
+      "expenditure": 183940.0
+    },
+    "CIV": {
+      "workspace_id": 189,
+      "expenditure": 128901335.994
+    },
+    "CMR": {
+      "workspace_id": 188,
+      "expenditure": null
+    },
+    "COG": {
+      "workspace_id": 187,
+      "expenditure": null
+    },
+    "COL": {
+      "workspace_id": 186,
+      "expenditure": 101981097.001
+    },
+    "COM": {
+      "workspace_id": 185,
+      "expenditure": 296185.0
+    },
+    "CRI": {
+      "workspace_id": 184,
+      "expenditure": 47720510.995
+    },
+    "CUB": {
+      "workspace_id": 183,
+      "expenditure": 82155947.002
+    },
+    "DJI": {
+      "workspace_id": 180,
+      "expenditure": 40870639.0
+    },
+    "DOM": {
+      "workspace_id": 178,
+      "expenditure": 43958019.0
+    },
+    "DZA": {
+      "workspace_id": 177,
+      "expenditure": 13619165.002
+    },
+    "ECU": {
+      "workspace_id": 176,
+      "expenditure": 138659586.993
+    },
+    "EGY": {
+      "workspace_id": 175,
+      "expenditure": 191504848.584
+    },
+    "ERI": {
+      "workspace_id": 174,
+      "expenditure": 29807945.005
+    },
+    "ETH": {
+      "workspace_id": 170,
+      "expenditure": 721053490.998
+    },
+    "GAB": {
+      "workspace_id": 166,
+      "expenditure": 18644629.0
+    },
+    "GEO": {
+      "workspace_id": 165,
+      "expenditure": 40380180.996
+    },
+    "GIN": {
+      "workspace_id": 162,
+      "expenditure": 69298175.002
+    },
+    "GMB": {
+      "workspace_id": 161,
+      "expenditure": 18952321.001
+    },
+    "GNB": {
+      "workspace_id": 160,
+      "expenditure": 47387798.997
+    },
+    "GNQ": {
+      "workspace_id": 159,
+      "expenditure": 24413406.0
+    },
+    "GTM": {
+      "workspace_id": 155,
+      "expenditure": 972674.0
+    },
+    "HND": {
+      "workspace_id": 151,
+      "expenditure": 228195300.004
+    },
+    "HTI": {
+      "workspace_id": 149,
+      "expenditure": 276857969.0
+    },
+    "IDN": {
+      "workspace_id": 147,
+      "expenditure": 102043688.0
+    },
+    "IND": {
+      "workspace_id": 146,
+      "expenditure": 157401453.998
+    },
+    "IRN": {
+      "workspace_id": 144,
+      "expenditure": 24850212.0
+    },
+    "IRQ": {
+      "workspace_id": 143,
+      "expenditure": 193602280.99
+    },
+    "KEN": {
+      "workspace_id": 135,
+      "expenditure": 458819964.004
+    },
+    "KGZ": {
+      "workspace_id": 134,
+      "expenditure": 55994296.016
+    },
+    "KHM": {
+      "workspace_id": 133,
+      "expenditure": 93480006.993
+    },
+    "LAO": {
+      "workspace_id": 129,
+      "expenditure": 62501061.0
+    },
+    "LBN": {
+      "workspace_id": 128,
+      "expenditure": 725000.0
+    },
+    "LBR": {
+      "workspace_id": 127,
+      "expenditure": 64611227.749
+    },
+    "LBY": {
+      "workspace_id": 126,
+      "expenditure": 101324920.884
+    },
+    "LKA": {
+      "workspace_id": 123,
+      "expenditure": 75242961.004
+    },
+    "LSO": {
+      "workspace_id": 122,
+      "expenditure": 9537220.997
+    },
+    "MDA": {
+      "workspace_id": 116,
+      "expenditure": 154952425.993
+    },
+    "MDG": {
+      "workspace_id": 115,
+      "expenditure": 211840997.018
+    },
+    "MDV": {
+      "workspace_id": 114,
+      "expenditure": 12165998.0
+    },
+    "MEX": {
+      "workspace_id": 113,
+      "expenditure": 126574260.999
+    },
+    "MLI": {
+      "workspace_id": 111,
+      "expenditure": null
+    },
+    "MNE": {
+      "workspace_id": 108,
+      "expenditure": 25199021.998
+    },
+    "MNG": {
+      "workspace_id": 107,
+      "expenditure": 41832892.014
+    },
+    "MRT": {
+      "workspace_id": 106,
+      "expenditure": 79839723.993
+    },
+    "MUS": {
+      "workspace_id": 105,
+      "expenditure": 14375803.999
+    },
+    "SYC": {
+      "workspace_id": 54,
+      "expenditure": 3943176.002
+    },
+    "NAM": {
+      "workspace_id": 104,
+      "expenditure": 25002205.003
+    },
+    "NER": {
+      "workspace_id": 102,
+      "expenditure": 336310804.001
+    },
+    "NPL": {
+      "workspace_id": 96,
+      "expenditure": 122595637.995
+    },
+    "PAK": {
+      "workspace_id": 92,
+      "expenditure": 696360561.988
+    },
+    "PAN": {
+      "workspace_id": 91,
+      "expenditure": 78456768.012
+    },
+    "PER": {
+      "workspace_id": 89,
+      "expenditure": 60982571.999
+    },
+    "PHL": {
+      "workspace_id": 88,
+      "expenditure": 189401980.003
+    },
+    "PNG": {
+      "workspace_id": 86,
+      "expenditure": 99296780.719
+    },
+    "RWA": {
+      "workspace_id": 75,
+      "expenditure": 61892876.0
+    },
+    "SAU": {
+      "workspace_id": 74,
+      "expenditure": 72175277.996
+    },
+    "SDN": {
+      "workspace_id": 73,
+      "expenditure": 434563212.999
+    },
+    "SEN": {
+      "workspace_id": 72,
+      "expenditure": 95227575.003
+    },
+    "SLE": {
+      "workspace_id": 66,
+      "expenditure": 110939652.011
+    },
+    "SOM": {
+      "workspace_id": 63,
+      "expenditure": null
+    },
+    "SRB": {
+      "workspace_id": 62,
+      "expenditure": null
+    },
+    "SSD": {
+      "workspace_id": 61,
+      "expenditure": 402139015.0
+    },
+    "STP": {
+      "workspace_id": 60,
+      "expenditure": 24504130.994
+    },
+    "SWZ": {
+      "workspace_id": 55,
+      "expenditure": 100000.0
+    },
+    "SYR": {
+      "workspace_id": 53,
+      "expenditure": 611315486.003
+    },
+    "TCD": {
+      "workspace_id": 52,
+      "expenditure": 111737514.999
+    },
+    "TGO": {
+      "workspace_id": 51,
+      "expenditure": 40075160.003
+    },
+    "THA": {
+      "workspace_id": 50,
+      "expenditure": 70257791.993
+    },
+    "TJK": {
+      "workspace_id": 49,
+      "expenditure": 74423781.001
+    },
+    "TKM": {
+      "workspace_id": 47,
+      "expenditure": 89681121.006
+    },
+    "TLS": {
+      "workspace_id": 46,
+      "expenditure": 30013837.0
+    },
+    "TUR": {
+      "workspace_id": 43,
+      "expenditure": 165475532.998
+    },
+    "URY": {
+      "workspace_id": 41,
+      "expenditure": 1906799.999
+    },
+    "VEN": {
+      "workspace_id": 40,
+      "expenditure": 96857594.999
+    },
+    "VNM": {
+      "workspace_id": 37,
+      "expenditure": 98419963.498
+    },
+    "TZA": {
+      "workspace_id": 36,
+      "expenditure": 65000.0
+    },
+    "UKR": {
+      "workspace_id": 35,
+      "expenditure": 647240470.992
+    },
+    "UZB": {
+      "workspace_id": 34,
+      "expenditure": 60212867.995
+    },
+    "YEM": {
+      "workspace_id": 33,
+      "expenditure": 130855577.998
+    },
+    "ZAF": {
+      "workspace_id": 32,
+      "expenditure": null
+    },
+    "MOZ": {
+      "workspace_id": 31,
+      "expenditure": 385741718.001
+    },
+    "ZMB": {
+      "workspace_id": 30,
+      "expenditure": 55311221.002
+    },
+    "TUN": {
+      "workspace_id": 29,
+      "expenditure": 120640469.003
+    },
+    "CPV": {
+      "workspace_id": 28,
+      "expenditure": 15047562.998
+    },
+    "MWI": {
+      "workspace_id": 27,
+      "expenditure": 173837891.002
+    },
+    "MYS": {
+      "workspace_id": 26,
+      "expenditure": 41486506.866
+    },
+    "BRN": {
+      "workspace_id": 26,
+      "expenditure": 41486506.866
+    },
+    "SGP": {
+      "workspace_id": 26,
+      "expenditure": 41486506.866
+    },
+    "CHN": {
+      "workspace_id": 24,
+      "expenditure": null
+    },
+    "MAR": {
+      "workspace_id": 23,
+      "expenditure": 70906616.005
+    },
+    "NGA": {
+      "workspace_id": 22,
+      "expenditure": 550980011.999
+    },
+    "AFG": {
+      "workspace_id": 21,
+      "expenditure": 1416255449.999
+    },
+    "GHA": {
+      "workspace_id": 20,
+      "expenditure": 115279254.996
+    },
+    "MKD": {
+      "workspace_id": 19,
+      "expenditure": 31227787.996
+    },
+    "KAZ": {
+      "workspace_id": 18,
+      "expenditure": 36889016.997
+    },
+    "UGA": {
+      "workspace_id": 15,
+      "expenditure": 188140901.996
+    },
+    "ZWE": {
+      "workspace_id": 14,
+      "expenditure": 204919819.999
+    }
+  },
+  "workspaces": {
+    "252": {
+      "id": 252,
+      "expenditure": 152075132.992,
+      "countries": [
+        "Curaçao",
+        "Aruba",
+        "Saint Vincent and the Grenadines",
+        "Saint Lucia",
+        "Saint Kitts and Nevis",
+        "Montserrat",
+        "Grenada",
+        "Dominica",
+        "Virgin Islands, British",
+        "Antigua and Barbuda",
+        "Anguilla (United Kingdom)",
+        "Turks and Caicos Islands",
+        "Cayman Islands",
+        "Bermuda",
+        "Bahamas",
+        "Belize",
+        "Barbados",
+        "Guyana",
+        "Jamaica",
+        "Suriname",
+        "Trinidad and Tobago",
+        "Sint Maarten (Dutch part)"
+      ],
+      "codes": [
+        "CUW",
+        "ABW",
+        "VCT",
+        "LCA",
+        "KNA",
+        "MSR",
+        "GRD",
+        "DMA",
+        "VGB",
+        "ATG",
+        "AIA",
+        "TCA",
+        "CYM",
+        "BMU",
+        "BHS",
+        "BLZ",
+        "BRB",
+        "GUY",
+        "JAM",
+        "SUR",
+        "TTO",
+        "SXM"
+      ]
+    },
+    "241": {
+      "id": 241,
+      "expenditure": 220970741.002,
+      "countries": [
+        "Micronesia, Federated States of",
+        "Palau",
+        "Marshall Islands",
+        "Kiribati",
+        "Nauru",
+        "Samoa",
+        "Cook Islands",
+        "Niue",
+        "Tokelau",
+        "Fiji",
+        "Solomon Islands",
+        "Tonga",
+        "Tuvalu",
+        "Vanuatu"
+      ],
+      "codes": [
+        "FSM",
+        "PLW",
+        "MHL",
+        "KIR",
+        "NRU",
+        "WSM",
+        "COK",
+        "NIU",
+        "TKL",
+        "FJI",
+        "SLB",
+        "TON",
+        "TUV",
+        "VUT"
+      ]
+    },
+    "227": {
+      "id": 227,
+      "expenditure": null,
+      "countries": [
+        "Korea, Democratic People's Republic of"
+      ],
+      "codes": [
+        "PRK"
+      ]
+    },
+    "218": {
+      "id": 218,
+      "expenditure": null,
+      "countries": [
+        "United Arab Emirates"
+      ],
+      "codes": [
+        "ARE"
+      ]
+    },
+    "137": {
+      "id": 137,
+      "expenditure": null,
+      "countries": [
+        "Jordan"
+      ],
+      "codes": [
+        "JOR"
+      ]
+    },
+    "130": {
+      "id": 130,
+      "expenditure": null,
+      "countries": [
+        "Kuwait"
+      ],
+      "codes": [
+        "KWT"
+      ]
+    },
+    "109": {
+      "id": 109,
+      "expenditure": null,
+      "countries": [
+        "Myanmar"
+      ],
+      "codes": [
+        "MMR"
+      ]
+    },
+    "100": {
+      "id": 100,
+      "expenditure": null,
+      "countries": [
+        "Nicaragua"
+      ],
+      "codes": [
+        "NIC"
+      ]
+    },
+    "81": {
+      "id": 81,
+      "expenditure": null,
+      "countries": [
+        "Paraguay"
+      ],
+      "codes": [
+        "PRY"
+      ]
+    },
+    "251": {
+      "id": 251,
+      "expenditure": 399830673.003,
+      "countries": [
+        "Congo, The Democratic Republic of the"
+      ],
+      "codes": [
+        "COD"
+      ]
+    },
+    "233": {
+      "id": 233,
+      "expenditure": null,
+      "countries": [
+        "occupied Palestinian territory"
+      ],
+      "codes": [
+        "PSE"
+      ]
+    },
+    "230": {
+      "id": 230,
+      "expenditure": 33159185.007,
+      "countries": [
+        "Kosovo"
+      ],
+      "codes": [
+        "XKX"
+      ]
+    },
+    "228": {
+      "id": 228,
+      "expenditure": 53072043.016,
+      "countries": [
+        "El Salvador"
+      ],
+      "codes": [
+        "SLV"
+      ]
+    },
+    "221": {
+      "id": 221,
+      "expenditure": 98121494.002,
+      "countries": [
+        "Angola"
+      ],
+      "codes": [
+        "AGO"
+      ]
+    },
+    "220": {
+      "id": 220,
+      "expenditure": 47906747.0,
+      "countries": [
+        "Albania"
+      ],
+      "codes": [
+        "ALB"
+      ]
+    },
+    "217": {
+      "id": 217,
+      "expenditure": 352500044.992,
+      "countries": [
+        "Argentina"
+      ],
+      "codes": [
+        "ARG"
+      ]
+    },
+    "216": {
+      "id": 216,
+      "expenditure": 47047563.001,
+      "countries": [
+        "Armenia"
+      ],
+      "codes": [
+        "ARM"
+      ]
+    },
+    "212": {
+      "id": 212,
+      "expenditure": 2068177.0,
+      "countries": [
+        "Azerbaijan"
+      ],
+      "codes": [
+        "AZE"
+      ]
+    },
+    "211": {
+      "id": 211,
+      "expenditure": 168263788.992,
+      "countries": [
+        "Burundi"
+      ],
+      "codes": [
+        "BDI"
+      ]
+    },
+    "209": {
+      "id": 209,
+      "expenditure": 169405550.006,
+      "countries": [
+        "Benin"
+      ],
+      "codes": [
+        "BEN"
+      ]
+    },
+    "208": {
+      "id": 208,
+      "expenditure": 214871382.007,
+      "countries": [
+        "Burkina Faso"
+      ],
+      "codes": [
+        "BFA"
+      ]
+    },
+    "207": {
+      "id": 207,
+      "expenditure": 193225433.005,
+      "countries": [
+        "Bangladesh"
+      ],
+      "codes": [
+        "BGD"
+      ]
+    },
+    "205": {
+      "id": 205,
+      "expenditure": 4888552.001,
+      "countries": [
+        "Bahrain"
+      ],
+      "codes": [
+        "BHR"
+      ]
+    },
+    "203": {
+      "id": 203,
+      "expenditure": 88572718.0,
+      "countries": [
+        "Bosnia and Herzegovina"
+      ],
+      "codes": [
+        "BIH"
+      ]
+    },
+    "202": {
+      "id": 202,
+      "expenditure": 0.0,
+      "countries": [
+        "Belarus"
+      ],
+      "codes": [
+        "BLR"
+      ]
+    },
+    "199": {
+      "id": 199,
+      "expenditure": 60094280.001,
+      "countries": [
+        "Bolivia, Plurinational State of"
+      ],
+      "codes": [
+        "BOL"
+      ]
+    },
+    "198": {
+      "id": 198,
+      "expenditure": 215726709.991,
+      "countries": [
+        "Brazil"
+      ],
+      "codes": [
+        "BRA"
+      ]
+    },
+    "195": {
+      "id": 195,
+      "expenditure": 26314225.665,
+      "countries": [
+        "Bhutan"
+      ],
+      "codes": [
+        "BTN"
+      ]
+    },
+    "193": {
+      "id": 193,
+      "expenditure": 7117663.003,
+      "countries": [
+        "Botswana"
+      ],
+      "codes": [
+        "BWA"
+      ]
+    },
+    "192": {
+      "id": 192,
+      "expenditure": 184277794.298,
+      "countries": [
+        "Central African Republic"
+      ],
+      "codes": [
+        "CAF"
+      ]
+    },
+    "190": {
+      "id": 190,
+      "expenditure": 183940.0,
+      "countries": [
+        "Chile"
+      ],
+      "codes": [
+        "CHL"
+      ]
+    },
+    "189": {
+      "id": 189,
+      "expenditure": 128901335.994,
+      "countries": [
+        "Côte d'Ivoire"
+      ],
+      "codes": [
+        "CIV"
+      ]
+    },
+    "188": {
+      "id": 188,
+      "expenditure": null,
+      "countries": [
+        "Cameroon"
+      ],
+      "codes": [
+        "CMR"
+      ]
+    },
+    "187": {
+      "id": 187,
+      "expenditure": null,
+      "countries": [
+        "Congo"
+      ],
+      "codes": [
+        "COG"
+      ]
+    },
+    "186": {
+      "id": 186,
+      "expenditure": 101981097.001,
+      "countries": [
+        "Colombia"
+      ],
+      "codes": [
+        "COL"
+      ]
+    },
+    "185": {
+      "id": 185,
+      "expenditure": 296185.0,
+      "countries": [
+        "Comoros"
+      ],
+      "codes": [
+        "COM"
+      ]
+    },
+    "184": {
+      "id": 184,
+      "expenditure": 47720510.995,
+      "countries": [
+        "Costa Rica"
+      ],
+      "codes": [
+        "CRI"
+      ]
+    },
+    "183": {
+      "id": 183,
+      "expenditure": 82155947.002,
+      "countries": [
+        "Cuba"
+      ],
+      "codes": [
+        "CUB"
+      ]
+    },
+    "180": {
+      "id": 180,
+      "expenditure": 40870639.0,
+      "countries": [
+        "Djibouti"
+      ],
+      "codes": [
+        "DJI"
+      ]
+    },
+    "178": {
+      "id": 178,
+      "expenditure": 43958019.0,
+      "countries": [
+        "Dominican Republic"
+      ],
+      "codes": [
+        "DOM"
+      ]
+    },
+    "177": {
+      "id": 177,
+      "expenditure": 13619165.002,
+      "countries": [
+        "Algeria"
+      ],
+      "codes": [
+        "DZA"
+      ]
+    },
+    "176": {
+      "id": 176,
+      "expenditure": 138659586.993,
+      "countries": [
+        "Ecuador"
+      ],
+      "codes": [
+        "ECU"
+      ]
+    },
+    "175": {
+      "id": 175,
+      "expenditure": 191504848.584,
+      "countries": [
+        "Egypt"
+      ],
+      "codes": [
+        "EGY"
+      ]
+    },
+    "174": {
+      "id": 174,
+      "expenditure": 29807945.005,
+      "countries": [
+        "Eritrea"
+      ],
+      "codes": [
+        "ERI"
+      ]
+    },
+    "170": {
+      "id": 170,
+      "expenditure": 721053490.998,
+      "countries": [
+        "Ethiopia"
+      ],
+      "codes": [
+        "ETH"
+      ]
+    },
+    "166": {
+      "id": 166,
+      "expenditure": 18644629.0,
+      "countries": [
+        "Gabon"
+      ],
+      "codes": [
+        "GAB"
+      ]
+    },
+    "165": {
+      "id": 165,
+      "expenditure": 40380180.996,
+      "countries": [
+        "Georgia"
+      ],
+      "codes": [
+        "GEO"
+      ]
+    },
+    "162": {
+      "id": 162,
+      "expenditure": 69298175.002,
+      "countries": [
+        "Guinea"
+      ],
+      "codes": [
+        "GIN"
+      ]
+    },
+    "161": {
+      "id": 161,
+      "expenditure": 18952321.001,
+      "countries": [
+        "Gambia"
+      ],
+      "codes": [
+        "GMB"
+      ]
+    },
+    "160": {
+      "id": 160,
+      "expenditure": 47387798.997,
+      "countries": [
+        "Guinea-Bissau"
+      ],
+      "codes": [
+        "GNB"
+      ]
+    },
+    "159": {
+      "id": 159,
+      "expenditure": 24413406.0,
+      "countries": [
+        "Equatorial Guinea"
+      ],
+      "codes": [
+        "GNQ"
+      ]
+    },
+    "155": {
+      "id": 155,
+      "expenditure": 972674.0,
+      "countries": [
+        "Guatemala"
+      ],
+      "codes": [
+        "GTM"
+      ]
+    },
+    "151": {
+      "id": 151,
+      "expenditure": 228195300.004,
+      "countries": [
+        "Honduras"
+      ],
+      "codes": [
+        "HND"
+      ]
+    },
+    "149": {
+      "id": 149,
+      "expenditure": 276857969.0,
+      "countries": [
+        "Haiti"
+      ],
+      "codes": [
+        "HTI"
+      ]
+    },
+    "147": {
+      "id": 147,
+      "expenditure": 102043688.0,
+      "countries": [
+        "Indonesia"
+      ],
+      "codes": [
+        "IDN"
+      ]
+    },
+    "146": {
+      "id": 146,
+      "expenditure": 157401453.998,
+      "countries": [
+        "India"
+      ],
+      "codes": [
+        "IND"
+      ]
+    },
+    "144": {
+      "id": 144,
+      "expenditure": 24850212.0,
+      "countries": [
+        "Iran, Islamic Republic of"
+      ],
+      "codes": [
+        "IRN"
+      ]
+    },
+    "143": {
+      "id": 143,
+      "expenditure": 193602280.99,
+      "countries": [
+        "Iraq"
+      ],
+      "codes": [
+        "IRQ"
+      ]
+    },
+    "135": {
+      "id": 135,
+      "expenditure": 458819964.004,
+      "countries": [
+        "Kenya"
+      ],
+      "codes": [
+        "KEN"
+      ]
+    },
+    "134": {
+      "id": 134,
+      "expenditure": 55994296.016,
+      "countries": [
+        "Kyrgyzstan"
+      ],
+      "codes": [
+        "KGZ"
+      ]
+    },
+    "133": {
+      "id": 133,
+      "expenditure": 93480006.993,
+      "countries": [
+        "Cambodia"
+      ],
+      "codes": [
+        "KHM"
+      ]
+    },
+    "129": {
+      "id": 129,
+      "expenditure": 62501061.0,
+      "countries": [
+        "Lao People's Democratic Republic"
+      ],
+      "codes": [
+        "LAO"
+      ]
+    },
+    "128": {
+      "id": 128,
+      "expenditure": 725000.0,
+      "countries": [
+        "Lebanon"
+      ],
+      "codes": [
+        "LBN"
+      ]
+    },
+    "127": {
+      "id": 127,
+      "expenditure": 64611227.749,
+      "countries": [
+        "Liberia"
+      ],
+      "codes": [
+        "LBR"
+      ]
+    },
+    "126": {
+      "id": 126,
+      "expenditure": 101324920.884,
+      "countries": [
+        "Libya"
+      ],
+      "codes": [
+        "LBY"
+      ]
+    },
+    "123": {
+      "id": 123,
+      "expenditure": 75242961.004,
+      "countries": [
+        "Sri Lanka"
+      ],
+      "codes": [
+        "LKA"
+      ]
+    },
+    "122": {
+      "id": 122,
+      "expenditure": 9537220.997,
+      "countries": [
+        "Lesotho"
+      ],
+      "codes": [
+        "LSO"
+      ]
+    },
+    "116": {
+      "id": 116,
+      "expenditure": 154952425.993,
+      "countries": [
+        "Moldova, Republic of"
+      ],
+      "codes": [
+        "MDA"
+      ]
+    },
+    "115": {
+      "id": 115,
+      "expenditure": 211840997.018,
+      "countries": [
+        "Madagascar"
+      ],
+      "codes": [
+        "MDG"
+      ]
+    },
+    "114": {
+      "id": 114,
+      "expenditure": 12165998.0,
+      "countries": [
+        "Maldives"
+      ],
+      "codes": [
+        "MDV"
+      ]
+    },
+    "113": {
+      "id": 113,
+      "expenditure": 126574260.999,
+      "countries": [
+        "Mexico"
+      ],
+      "codes": [
+        "MEX"
+      ]
+    },
+    "111": {
+      "id": 111,
+      "expenditure": null,
+      "countries": [
+        "Mali"
+      ],
+      "codes": [
+        "MLI"
+      ]
+    },
+    "108": {
+      "id": 108,
+      "expenditure": 25199021.998,
+      "countries": [
+        "Montenegro"
+      ],
+      "codes": [
+        "MNE"
+      ]
+    },
+    "107": {
+      "id": 107,
+      "expenditure": 41832892.014,
+      "countries": [
+        "Mongolia"
+      ],
+      "codes": [
+        "MNG"
+      ]
+    },
+    "106": {
+      "id": 106,
+      "expenditure": 79839723.993,
+      "countries": [
+        "Mauritania"
+      ],
+      "codes": [
+        "MRT"
+      ]
+    },
+    "105": {
+      "id": 105,
+      "expenditure": 14375803.999,
+      "countries": [
+        "Mauritius"
+      ],
+      "codes": [
+        "MUS"
+      ]
+    },
+    "54": {
+      "id": 54,
+      "expenditure": 3943176.002,
+      "countries": [
+        "Seychelles"
+      ],
+      "codes": [
+        "SYC"
+      ]
+    },
+    "104": {
+      "id": 104,
+      "expenditure": 25002205.003,
+      "countries": [
+        "Namibia"
+      ],
+      "codes": [
+        "NAM"
+      ]
+    },
+    "102": {
+      "id": 102,
+      "expenditure": 336310804.001,
+      "countries": [
+        "Niger"
+      ],
+      "codes": [
+        "NER"
+      ]
+    },
+    "96": {
+      "id": 96,
+      "expenditure": 122595637.995,
+      "countries": [
+        "Nepal"
+      ],
+      "codes": [
+        "NPL"
+      ]
+    },
+    "92": {
+      "id": 92,
+      "expenditure": 696360561.988,
+      "countries": [
+        "Pakistan"
+      ],
+      "codes": [
+        "PAK"
+      ]
+    },
+    "91": {
+      "id": 91,
+      "expenditure": 78456768.012,
+      "countries": [
+        "Panama"
+      ],
+      "codes": [
+        "PAN"
+      ]
+    },
+    "89": {
+      "id": 89,
+      "expenditure": 60982571.999,
+      "countries": [
+        "Peru"
+      ],
+      "codes": [
+        "PER"
+      ]
+    },
+    "88": {
+      "id": 88,
+      "expenditure": 189401980.003,
+      "countries": [
+        "Philippines"
+      ],
+      "codes": [
+        "PHL"
+      ]
+    },
+    "86": {
+      "id": 86,
+      "expenditure": 99296780.719,
+      "countries": [
+        "Papua New Guinea"
+      ],
+      "codes": [
+        "PNG"
+      ]
+    },
+    "75": {
+      "id": 75,
+      "expenditure": 61892876.0,
+      "countries": [
+        "Rwanda"
+      ],
+      "codes": [
+        "RWA"
+      ]
+    },
+    "74": {
+      "id": 74,
+      "expenditure": 72175277.996,
+      "countries": [
+        "Saudi Arabia"
+      ],
+      "codes": [
+        "SAU"
+      ]
+    },
+    "73": {
+      "id": 73,
+      "expenditure": 434563212.999,
+      "countries": [
+        "Sudan"
+      ],
+      "codes": [
+        "SDN"
+      ]
+    },
+    "72": {
+      "id": 72,
+      "expenditure": 95227575.003,
+      "countries": [
+        "Senegal"
+      ],
+      "codes": [
+        "SEN"
+      ]
+    },
+    "66": {
+      "id": 66,
+      "expenditure": 110939652.011,
+      "countries": [
+        "Sierra Leone"
+      ],
+      "codes": [
+        "SLE"
+      ]
+    },
+    "63": {
+      "id": 63,
+      "expenditure": null,
+      "countries": [
+        "Somalia"
+      ],
+      "codes": [
+        "SOM"
+      ]
+    },
+    "62": {
+      "id": 62,
+      "expenditure": null,
+      "countries": [
+        "Serbia"
+      ],
+      "codes": [
+        "SRB"
+      ]
+    },
+    "61": {
+      "id": 61,
+      "expenditure": 402139015.0,
+      "countries": [
+        "South Sudan"
+      ],
+      "codes": [
+        "SSD"
+      ]
+    },
+    "60": {
+      "id": 60,
+      "expenditure": 24504130.994,
+      "countries": [
+        "São Tomé and Príncipe"
+      ],
+      "codes": [
+        "STP"
+      ]
+    },
+    "55": {
+      "id": 55,
+      "expenditure": 100000.0,
+      "countries": [
+        "Eswatini"
+      ],
+      "codes": [
+        "SWZ"
+      ]
+    },
+    "53": {
+      "id": 53,
+      "expenditure": 611315486.003,
+      "countries": [
+        "Syrian Arab Republic"
+      ],
+      "codes": [
+        "SYR"
+      ]
+    },
+    "52": {
+      "id": 52,
+      "expenditure": 111737514.999,
+      "countries": [
+        "Chad"
+      ],
+      "codes": [
+        "TCD"
+      ]
+    },
+    "51": {
+      "id": 51,
+      "expenditure": 40075160.003,
+      "countries": [
+        "Togo"
+      ],
+      "codes": [
+        "TGO"
+      ]
+    },
+    "50": {
+      "id": 50,
+      "expenditure": 70257791.993,
+      "countries": [
+        "Thailand"
+      ],
+      "codes": [
+        "THA"
+      ]
+    },
+    "49": {
+      "id": 49,
+      "expenditure": 74423781.001,
+      "countries": [
+        "Tajikistan"
+      ],
+      "codes": [
+        "TJK"
+      ]
+    },
+    "47": {
+      "id": 47,
+      "expenditure": 89681121.006,
+      "countries": [
+        "Turkmenistan"
+      ],
+      "codes": [
+        "TKM"
+      ]
+    },
+    "46": {
+      "id": 46,
+      "expenditure": 30013837.0,
+      "countries": [
+        "Timor-Leste"
+      ],
+      "codes": [
+        "TLS"
+      ]
+    },
+    "43": {
+      "id": 43,
+      "expenditure": 165475532.998,
+      "countries": [
+        "Turkiye"
+      ],
+      "codes": [
+        "TUR"
+      ]
+    },
+    "41": {
+      "id": 41,
+      "expenditure": 1906799.999,
+      "countries": [
+        "Uruguay"
+      ],
+      "codes": [
+        "URY"
+      ]
+    },
+    "40": {
+      "id": 40,
+      "expenditure": 96857594.999,
+      "countries": [
+        "Venezuela, Bolivarian Republic of"
+      ],
+      "codes": [
+        "VEN"
+      ]
+    },
+    "37": {
+      "id": 37,
+      "expenditure": 98419963.498,
+      "countries": [
+        "Viet Nam"
+      ],
+      "codes": [
+        "VNM"
+      ]
+    },
+    "36": {
+      "id": 36,
+      "expenditure": 65000.0,
+      "countries": [
+        "Tanzania, United Republic of"
+      ],
+      "codes": [
+        "TZA"
+      ]
+    },
+    "35": {
+      "id": 35,
+      "expenditure": 647240470.992,
+      "countries": [
+        "Ukraine"
+      ],
+      "codes": [
+        "UKR"
+      ]
+    },
+    "34": {
+      "id": 34,
+      "expenditure": 60212867.995,
+      "countries": [
+        "Uzbekistan"
+      ],
+      "codes": [
+        "UZB"
+      ]
+    },
+    "33": {
+      "id": 33,
+      "expenditure": 130855577.998,
+      "countries": [
+        "Yemen"
+      ],
+      "codes": [
+        "YEM"
+      ]
+    },
+    "32": {
+      "id": 32,
+      "expenditure": null,
+      "countries": [
+        "South Africa"
+      ],
+      "codes": [
+        "ZAF"
+      ]
+    },
+    "31": {
+      "id": 31,
+      "expenditure": 385741718.001,
+      "countries": [
+        "Mozambique"
+      ],
+      "codes": [
+        "MOZ"
+      ]
+    },
+    "30": {
+      "id": 30,
+      "expenditure": 55311221.002,
+      "countries": [
+        "Zambia"
+      ],
+      "codes": [
+        "ZMB"
+      ]
+    },
+    "29": {
+      "id": 29,
+      "expenditure": 120640469.003,
+      "countries": [
+        "Tunisia"
+      ],
+      "codes": [
+        "TUN"
+      ]
+    },
+    "28": {
+      "id": 28,
+      "expenditure": 15047562.998,
+      "countries": [
+        "Cabo Verde"
+      ],
+      "codes": [
+        "CPV"
+      ]
+    },
+    "27": {
+      "id": 27,
+      "expenditure": 173837891.002,
+      "countries": [
+        "Malawi"
+      ],
+      "codes": [
+        "MWI"
+      ]
+    },
+    "26": {
+      "id": 26,
+      "expenditure": 41486506.866,
+      "countries": [
+        "Malaysia",
+        "Brunei Darussalam",
+        "Singapore"
+      ],
+      "codes": [
+        "MYS",
+        "BRN",
+        "SGP"
+      ]
+    },
+    "24": {
+      "id": 24,
+      "expenditure": null,
+      "countries": [
+        "China"
+      ],
+      "codes": [
+        "CHN"
+      ]
+    },
+    "23": {
+      "id": 23,
+      "expenditure": 70906616.005,
+      "countries": [
+        "Morocco"
+      ],
+      "codes": [
+        "MAR"
+      ]
+    },
+    "22": {
+      "id": 22,
+      "expenditure": 550980011.999,
+      "countries": [
+        "Nigeria"
+      ],
+      "codes": [
+        "NGA"
+      ]
+    },
+    "21": {
+      "id": 21,
+      "expenditure": 1416255449.999,
+      "countries": [
+        "Afghanistan"
+      ],
+      "codes": [
+        "AFG"
+      ]
+    },
+    "20": {
+      "id": 20,
+      "expenditure": 115279254.996,
+      "countries": [
+        "Ghana"
+      ],
+      "codes": [
+        "GHA"
+      ]
+    },
+    "19": {
+      "id": 19,
+      "expenditure": 31227787.996,
+      "countries": [
+        "North Macedonia, Republic of"
+      ],
+      "codes": [
+        "MKD"
+      ]
+    },
+    "18": {
+      "id": 18,
+      "expenditure": 36889016.997,
+      "countries": [
+        "Kazakhstan"
+      ],
+      "codes": [
+        "KAZ"
+      ]
+    },
+    "15": {
+      "id": 15,
+      "expenditure": 188140901.996,
+      "countries": [
+        "Uganda"
+      ],
+      "codes": [
+        "UGA"
+      ]
+    },
+    "14": {
+      "id": 14,
+      "expenditure": 204919819.999,
+      "countries": [
+        "Zimbabwe"
+      ],
+      "codes": [
+        "ZWE"
+      ]
+    }
+  }
+}

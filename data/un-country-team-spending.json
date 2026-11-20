@@ -1,0 +1,10 @@
+{
+  "year": 2024,
+  "amount": 43500000000,
+  "publishedPrecision": "USD billions, one decimal place",
+  "label": "UN country teams",
+  "source": "https://www.un.org/un80-initiative/sites/default/files/2026-01/UN80%20Look%20Public%20WP5%20UNCT%20Reconfiguration_for%20distribution_FINAL.pdf",
+  "sourceTitle": "UN80 work package 5: UN country team reconfiguration — Member State briefing",
+  "upstreamAttribution": "CEB 2024 expenditure data",
+  "methodNote": "Published rounded benchmark for spending through UN country teams, not a budget administered by Resident Coordinators. The briefing cites CEB 2024 expenditure data but does not provide complete filters. Current CEB country-attributed totals do not reproduce the amount; a source-vintage or population difference remains unresolved. This does not disprove the briefing's country-team label. It is not a 2025 estimate."
+}

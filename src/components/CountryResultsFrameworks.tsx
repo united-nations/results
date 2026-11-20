@@ -15,6 +15,8 @@ import { DetailPanelControls } from "@un-eosg/ui/components/detail-panel-control
 import { typography } from "@un-eosg/ui/typography";
 import { SearchablePicker } from "@/components/SearchablePicker";
 import { UninfoCountryDetails } from "@/components/UninfoCountryDetails";
+import { UninfoScopeComparison } from "@/components/UninfoScopeComparison";
+import annualExpenditure from "../../public/data/uninfo/annual-expenditure-2025.json";
 import { normalizeSearchText } from "@/lib/search-text";
 import { formatPlanPeriod, type UninfoManifest } from "@/lib/uninfo";
 
@@ -60,11 +62,22 @@ export function CountryResultsFrameworks({
   }));
   function select(code: string) {
     setSelected(code);
-    setPlanId(countries[code].latest_plan_id);
+    const year = String(annualExpenditure.year);
+    setPlanId(
+      countries[code].plan_ids.find((id) => {
+        const plan = manifest.plans[String(id)];
+        return (
+          plan.start &&
+          plan.end &&
+          plan.start <= `${year}-12-31` &&
+          plan.end >= `${year}-01-01`
+        );
+      }) ?? countries[code].latest_plan_id,
+    );
   }
 
   return (
-    <section aria-labelledby="country-frameworks" className="mt-8">
+    <section aria-labelledby="country-frameworks" className="min-w-0">
       <ChartFrame
         header={
           <>
@@ -75,8 +88,7 @@ export function CountryResultsFrameworks({
               Explore UN country teams’ strategic priorities, outcomes, outputs
               and activities in UN INFO.
             </p>
-            <p className={`${typography.caption} mt-4 flex items-center gap-2`}>
-              <span aria-hidden className="size-3 rounded-sm bg-un-blue" />
+            <p className={`${typography.caption} mt-4`}>
               {entries.length} countries with available results frameworks
             </p>
           </>
@@ -96,6 +108,7 @@ export function CountryResultsFrameworks({
           </p>
         }
       >
+        <UninfoScopeComparison data={annualExpenditure} />
         <div
           className="mt-4 w-fit max-w-full"
           ref={(node) => {
@@ -142,7 +155,36 @@ export function CountryResultsFrameworks({
             }}
           </SearchablePicker>
         </div>
-        <UninfoMap countries={countries} onSelect={select} />
+        <div
+          className={`${typography.caption} mt-4 mb-2 flex flex-wrap gap-x-5 gap-y-2`}
+        >
+          <span className="inline-flex items-center gap-2">
+            <span
+              aria-hidden="true"
+              className="size-3 rounded-sm border border-un-blue bg-un-blue-tint-50"
+            />
+            Single-country framework
+          </span>
+          <span className="inline-flex items-center gap-2">
+            <span
+              aria-hidden="true"
+              className="size-3 rounded-sm border border-un-orange bg-un-orange-tint"
+            />
+            Shared framework
+          </span>
+        </div>
+        <UninfoMap
+          countries={countries}
+          annual={annualExpenditure}
+          onSelect={select}
+        />
+        <p className={`${typography.caption} mt-3 max-w-3xl leading-relaxed`}>
+          Circle area shows reported expenditure in USD for{" "}
+          {annualExpenditure.year}. Shared country-team workspaces use one
+          circle, with no invented country allocation. Countries without
+          positive annual reported expenditure have no circle; their frameworks
+          remain available through the map and country selector.
+        </p>
       </ChartFrame>
       {country && selectedPlan && (
         <DetailDrawer
@@ -178,6 +220,10 @@ export function CountryResultsFrameworks({
               </>
             }
           >
+            <p className={`${typography.caption} mb-4`}>
+              The map shows {annualExpenditure.year} expenditure. The results
+              framework below shows the selected plan’s full-period figures.
+            </p>
             <UninfoCountryDetails
               key={selectedPlan.id}
               planId={selectedPlan.id}
