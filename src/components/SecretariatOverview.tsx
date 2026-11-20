@@ -1,4 +1,5 @@
 import { SecretariatPage } from "@/components/SecretariatPage";
+import { SecretariatContent } from "@/components/SecretariatContent";
 import { ResultsOverview } from "@/components/ResultsOverview";
 import { indexedBudgetResults } from "@/lib/budget-result-index";
 import { priorityAreaColors } from "@/lib/priority-area-colors";
@@ -231,26 +232,28 @@ export function SecretariatOverview({
 
   return (
     <SecretariatPage>
-      <ResultsOverview
-        results={results}
-        filterOptions={options}
-        initialGrouping={initialGrouping}
-        edition={budgetEdition}
-        entityObjectives={Object.fromEntries(
-          budgetEntities.map((entity) => [
-            entity.id,
-            objectiveSummary(entity.overview),
-          ]),
-        )}
-        subprogrammeObjectives={Object.fromEntries(
-          budgetEntities.flatMap((entity) =>
-            entity.subprogrammes.map((programme) => [
-              `${entity.id}:${programme.id}`,
-              objectiveSummary(programme.sections),
+      <SecretariatContent>
+        <ResultsOverview
+          results={results}
+          filterOptions={options}
+          initialGrouping={initialGrouping}
+          edition={budgetEdition}
+          entityObjectives={Object.fromEntries(
+            budgetEntities.map((entity) => [
+              entity.id,
+              objectiveSummary(entity.overview),
             ]),
-          ),
-        )}
-      />
+          )}
+          subprogrammeObjectives={Object.fromEntries(
+            budgetEntities.flatMap((entity) =>
+              entity.subprogrammes.map((programme) => [
+                `${entity.id}:${programme.id}`,
+                objectiveSummary(programme.sections),
+              ]),
+            ),
+          )}
+        />
+      </SecretariatContent>
     </SecretariatPage>
   );
 }
