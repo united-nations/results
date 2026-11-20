@@ -228,7 +228,7 @@ export function HierarchyPreview<T extends { id: string }>({
           : null;
         target
           ?.querySelector<HTMLElement>(
-            "[data-entity-expanded] h3 button, li[data-readable] button",
+            `[data-entity-expanded] h3 button, ${focusItemSelector}`,
           )
           ?.focus({ preventScroll: true });
       });

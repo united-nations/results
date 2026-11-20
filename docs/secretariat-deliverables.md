@@ -20,10 +20,16 @@ explicit; a planned value is labelled as planned. Narrative deliverables belong
 to the budget edition and are not presented as annual measured achievements.
 
 Entity joins use source names or unique ownership of the source document in the
-existing results snapshot. Shared documents are not forced onto one entity.
+existing results snapshot. Unnamed subprogrammes in known shared sections use
+the same section hosts as the results importer, including OHCHR for Section 24.
+Printed names take precedence over section hosts; conflicting named units are
+never replaced by the sole entity available in the results snapshot.
 Unmatched units remain under their printed source identity in Other budget
 units. Beneficiary and location tags from results are not copied to deliverables.
 
-The initial import contains 3,059 numerical leaves and 840 narrative leaves.
-This is a quick prototype; its new import and UI have not undergone a separate
-review or test cycle.
+Programme-wide and entity-wide tables retain distinct labels, and components
+keep their printed component numbers within the subprogramme breakdown.
+The import contains 3,059 numerical leaves and 840 narrative leaves. The
+post-publication review adds attribution and snapshot regression tests, plus
+browser coverage for category filters, planned/actual labels, responsive cards
+and keyboard navigation through the shared hierarchy.

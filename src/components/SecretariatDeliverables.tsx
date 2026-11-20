@@ -63,7 +63,7 @@ function DeliverableCard({ item, year }: { item: Deliverable; year: number }) {
       : planned?.value != null
         ? planned
         : (actual ?? planned);
-  const maximum = Math.max(1, actual?.value ?? 0, planned?.value ?? 0);
+  const maximum = Math.max(0, actual?.value ?? 0, planned?.value ?? 0) || 1;
   return (
     <article
       tabIndex={-1}
@@ -275,6 +275,8 @@ export function SecretariatDeliverables() {
       return (
         <section
           key={id}
+          data-entity-id={id}
+          data-entity-expanded={open}
           className={styles.readableEntity}
           data-focused={open}
           data-muted={Boolean(entity && !open)}
