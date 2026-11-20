@@ -39,8 +39,29 @@ the source system and SDG totals and is not merged into the Secretariat's figure
 The directory covers these financial reporting entities, rather than every body
 in the System Chart.
 
-The System page opens on an **Organizations** tab; **Country teams** contains
-the country map and scope note. Switching tabs preserves each view's controls.
+The SDG view can group goals into the five pillars plus **Other** for Non-SDG
+expenditure. Pillars are ordered by expenditure and open one at a time, with
+individual SDGs inside. Search uses the shared borderless input across all views.
+The **By function** view uses `data/system-entity-functions-2025.json`, sourced
+from Open UN's CEB Standard II export, and assigns each entity to its largest
+function allocation. Refresh that snapshot from the local Open UN checkout with
+`node scripts/prepare-system-functions.mjs ../open 2025`.
+
+The System page opens on **Organizations**; **Country teams** contains the map
+and scope note, and **Evaluations** links to independent evaluation resources.
+Switching tabs preserves each view's controls. Related-resource cards follow
+Open UN's layout: Secretariat links to the Mandate Registry and Open UN;
+organizations link to the System Chart and Open UN; country teams link to UN
+INFO, Open UN and UNSDG. Evaluation resources link to the System-Wide Evaluation
+Office, United Nations Evaluation Group and Global SDG Synthesis Coalition.
+The Evaluations tab also includes the UNSDG document library filtered to
+country-team evaluations and four evidence-map cards covering countries, SDGs,
+QCPR priorities and detailed QCPR evidence, with a link to the SWEO overview.
+Country-framework sidebars list all available verified
+reports, grouped by the country's latest framework and previous periods, with
+cover-preview placeholders. Financial period selection does not hide reports.
+They also link to the complete UNSDG listing.
+Discovery and period-matching evidence are described in `docs/uninfo-methodology.md`.
 The country map uses pale framework-coverage shading with proportional
 expenditure circles styled after Open UN. Each circle shows reported expenditure
 for calendar 2025; hover to see the annual USD amount. Shared country-team

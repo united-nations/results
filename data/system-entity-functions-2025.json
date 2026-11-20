@@ -1,0 +1,349 @@
+{
+  "year": 2025,
+  "totalSpending": 64396743592.987045,
+  "source": "https://github.com/united-nations/transparency/blob/c903a319d59966d3d84c218db7879b5756acd7a7/public/data/function-expenses.json",
+  "cebSource": "https://unsceb.org/statistics/expenses-by-function/",
+  "downloadUrl": "https://unsceb.org/assets/data/FS/expenses_sub_agency.csv",
+  "functions": [
+    {
+      "key": "development",
+      "label": "Development Assistance",
+      "description": "Activities supporting development in UN programme countries.",
+      "spending": 22526462044.308567,
+      "share": 0.34980747142564755
+    },
+    {
+      "key": "humanitarian",
+      "label": "Humanitarian Assistance",
+      "description": "Activities to save lives, alleviate suffering and protect human dignity during emergencies and their aftermath.",
+      "spending": 25100379970.310097,
+      "share": 0.38977716216451025
+    },
+    {
+      "key": "peace",
+      "label": "Peace Operations",
+      "description": "United Nations peacekeeping operations and special political missions.",
+      "spending": 7690955039.89,
+      "share": 0.11943080675786785
+    },
+    {
+      "key": "global",
+      "label": "Global Agenda and Specialised Assistance",
+      "description": "Global and regional activities outside the other functions, and support for sustainable development in non-programme countries.",
+      "spending": 9078946538.478378,
+      "share": 0.14098455965197434
+    }
+  ],
+  "entities": {
+    "CTBTO": {
+      "primaryFunction": "global",
+      "spending": {
+        "global": 143356822
+      }
+    },
+    "FAO": {
+      "primaryFunction": "development",
+      "spending": {
+        "development": 1078482292.7,
+        "global": 422460276.99,
+        "humanitarian": 666142138.6099999
+      }
+    },
+    "IAEA": {
+      "primaryFunction": "global",
+      "spending": {
+        "global": 866758823.529412
+      }
+    },
+    "IARC": {
+      "primaryFunction": "global",
+      "spending": {
+        "global": 54177704.705881
+      }
+    },
+    "ICAO": {
+      "primaryFunction": "global",
+      "spending": {
+        "global": 250366832.40673
+      }
+    },
+    "ICC": {
+      "primaryFunction": "global",
+      "spending": {
+        "global": 229970497.094117
+      }
+    },
+    "IFAD": {
+      "primaryFunction": "development",
+      "spending": {
+        "development": 263456000
+      }
+    },
+    "ILO": {
+      "primaryFunction": "development",
+      "spending": {
+        "development": 517286455.26,
+        "global": 236508035.04,
+        "humanitarian": 109246314.7
+      }
+    },
+    "IMO": {
+      "primaryFunction": "global",
+      "spending": {
+        "global": 99940527.665316
+      }
+    },
+    "IOM": {
+      "primaryFunction": "humanitarian",
+      "spending": {
+        "development": 834280011.8300002,
+        "global": 515156656.23,
+        "humanitarian": 1601841640.6899998
+      }
+    },
+    "IRMCT": {
+      "primaryFunction": "global",
+      "spending": {
+        "global": 67593000
+      }
+    },
+    "ISA": {
+      "primaryFunction": "global",
+      "spending": {
+        "global": 14344400
+      }
+    },
+    "ITLOS": {
+      "primaryFunction": "global",
+      "spending": {
+        "global": 19217471.764703
+      }
+    },
+    "ITU": {
+      "primaryFunction": "global",
+      "spending": {
+        "development": 80301647.655259,
+        "global": 174532319.391635
+      }
+    },
+    "OPCW": {
+      "primaryFunction": "global",
+      "spending": {
+        "global": 106037558.317646
+      }
+    },
+    "PAHO": {
+      "primaryFunction": "development",
+      "spending": {
+        "development": 1258109522
+      }
+    },
+    "Peacekeeping Operations": {
+      "primaryFunction": "peace",
+      "spending": {
+        "peace": 6146167051
+      }
+    },
+    "UN Secretariat": {
+      "primaryFunction": "global",
+      "spending": {
+        "development": 1369044547.89,
+        "global": 2456456308.6,
+        "humanitarian": 2250628629.52,
+        "peace": 1364660268
+      }
+    },
+    "UN Tourism": {
+      "primaryFunction": "global",
+      "spending": {
+        "global": 41963092.164705
+      }
+    },
+    "UN Women": {
+      "primaryFunction": "development",
+      "spending": {
+        "development": 475214615.15,
+        "global": 71785652.13,
+        "humanitarian": 91438212.717
+      }
+    },
+    "UN-Habitat": {
+      "primaryFunction": "development",
+      "spending": {
+        "development": 152554301,
+        "global": 12491245,
+        "humanitarian": 69669345.83
+      }
+    },
+    "UNAIDS": {
+      "primaryFunction": "development",
+      "spending": {
+        "development": 181043327
+      }
+    },
+    "UNCCD": {
+      "primaryFunction": "global",
+      "spending": {
+        "global": 34052056.730000004
+      }
+    },
+    "UNCDF": {
+      "primaryFunction": "development",
+      "spending": {
+        "development": 91108000
+      }
+    },
+    "UNDP": {
+      "primaryFunction": "development",
+      "spending": {
+        "development": 5008629820,
+        "humanitarian": 538794801.31
+      }
+    },
+    "UNEP": {
+      "primaryFunction": "development",
+      "spending": {
+        "development": 802622623.5600001
+      }
+    },
+    "UNESCO": {
+      "primaryFunction": "development",
+      "spending": {
+        "development": 633153971,
+        "global": 253261588,
+        "humanitarian": 18090114
+      }
+    },
+    "UNFCCC": {
+      "primaryFunction": "global",
+      "spending": {
+        "global": 145275238
+      }
+    },
+    "UNFPA": {
+      "primaryFunction": "development",
+      "spending": {
+        "development": 822550191,
+        "humanitarian": 675612969
+      }
+    },
+    "UNHCR": {
+      "primaryFunction": "humanitarian",
+      "spending": {
+        "humanitarian": 3977186528.633
+      }
+    },
+    "UNICEF": {
+      "primaryFunction": "humanitarian",
+      "spending": {
+        "development": 4084269039,
+        "humanitarian": 4491973611
+      }
+    },
+    "UNICRI": {
+      "primaryFunction": "development",
+      "spending": {
+        "development": 14365561.28
+      }
+    },
+    "UNIDO": {
+      "primaryFunction": "development",
+      "spending": {
+        "development": 414514812.729412
+      }
+    },
+    "UNITAID": {
+      "primaryFunction": "humanitarian",
+      "spending": {
+        "humanitarian": 197191000
+      }
+    },
+    "UNITAR": {
+      "primaryFunction": "global",
+      "spending": {
+        "global": 60992831.91
+      }
+    },
+    "UNODC": {
+      "primaryFunction": "development",
+      "spending": {
+        "development": 472661407.59
+      }
+    },
+    "UNOPS": {
+      "primaryFunction": "development",
+      "spending": {
+        "development": 2198097465.25,
+        "global": 145728872.21,
+        "humanitarian": 390074340.64,
+        "peace": 180127720.89
+      }
+    },
+    "UNRWA": {
+      "primaryFunction": "humanitarian",
+      "spending": {
+        "humanitarian": 1252004415.1
+      }
+    },
+    "UNSSC": {
+      "primaryFunction": "development",
+      "spending": {
+        "development": 20438200
+      }
+    },
+    "UNU": {
+      "primaryFunction": "global",
+      "spending": {
+        "global": 84117490
+      }
+    },
+    "UNV": {
+      "primaryFunction": "development",
+      "spending": {
+        "development": 29695108.56
+      }
+    },
+    "UPU": {
+      "primaryFunction": "global",
+      "spending": {
+        "development": 19469640.050697,
+        "global": 84437254.752851
+      }
+    },
+    "WFP": {
+      "primaryFunction": "humanitarian",
+      "spending": {
+        "development": 393774183.11,
+        "humanitarian": 8182929312.041999
+      }
+    },
+    "WHO": {
+      "primaryFunction": "global",
+      "spending": {
+        "development": 1179912428.9694996,
+        "global": 1661804501.5767007,
+        "humanitarian": 587556596.5181
+      }
+    },
+    "WIPO": {
+      "primaryFunction": "global",
+      "spending": {
+        "development": 107406742.775665,
+        "global": 405883051.47021407
+      }
+    },
+    "WMO": {
+      "primaryFunction": "global",
+      "spending": {
+        "global": 131148288.973374
+      }
+    },
+    "WTO": {
+      "primaryFunction": "global",
+      "spending": {
+        "development": 24020128.948035,
+        "global": 289128141.825094
+      }
+    }
+  }
+}
