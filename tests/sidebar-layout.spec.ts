@@ -1,5 +1,5 @@
 import { openOictResult } from "./open-result";
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./static-preview";
 
 test("result context reflows and the full sidebar scrolls beneath its sticky header", async ({
   page,
@@ -81,6 +81,10 @@ test("compact tiles stay the same clickable size across viewport sizes and group
   page,
 }) => {
   await page.goto("/");
+  await page
+    .getByRole("radio", { name: "Compact tiles", exact: true })
+    .locator("..")
+    .click();
   for (const width of [1920, 1280, 390]) {
     await page.setViewportSize({ width, height: 900 });
     const tile = page.locator("section[data-priority-area] li").first();
@@ -146,8 +150,10 @@ test("context cards open nested entity and subprogramme sidebars without navigat
   await expect(
     entities.getByRole("button", { name: /^Entity Office of Information/ }),
   ).toBeVisible();
-  const response = await page.request.get("/data/priority-entities.json");
-  const catalog = (await response.json()) as { priority: string | null }[];
+  const catalog = await page.evaluate(async () => {
+    const response = await fetch("/data/priority-entities.json");
+    return (await response.json()) as { priority: string | null }[];
+  });
   await expect(entities.getByRole("button")).toHaveCount(
     catalog.filter(
       (e) => e.priority === "Effective functioning of the organization",

@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { openOictResult } from "./open-result";
-import { test, expect, type Page } from "@playwright/test";
+import { test, expect, type Page } from "./static-preview";
 const snapshot = JSON.parse(
   readFileSync(new URL("../data/ppb-2027.json", import.meta.url), "utf8"),
 );
@@ -38,6 +38,10 @@ test("search survives grouping changes, ungrouped cards are unique, and empty se
   page,
 }) => {
   await page.goto("/");
+  await page
+    .getByRole("radio", { name: "Compact tiles", exact: true })
+    .locator("..")
+    .click();
   const search = page.getByRole("combobox", { name: "Search all results" });
   await search.fill("connectivity");
   const tiles = page.locator("li[data-readable]");
@@ -48,7 +52,7 @@ test("search survives grouping changes, ungrouped cards are unique, and empty se
   await expect(tiles).toHaveCount(count);
   await expect(search).toHaveValue("connectivity");
   await expect(
-    page.getByRole("radio", { name: "Readable cards" }),
+    page.getByRole("radio", { name: "Compact tiles" }),
   ).toBeChecked();
   await page
     .getByRole("radio", { name: "Compact tiles", exact: true })
@@ -67,6 +71,10 @@ test("location filter works while expanded and persists across grouping", async 
   page,
 }) => {
   await page.goto("/");
+  await page
+    .getByRole("radio", { name: "Compact tiles", exact: true })
+    .locator("..")
+    .click();
   await page
     .getByRole("button", { name: /^Expand / })
     .first()

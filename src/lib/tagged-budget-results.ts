@@ -41,6 +41,12 @@ for (const { id, code, name } of budgetEntities) {
       beneficiaries: tag.beneficiaries,
       locations:
         tag.locations === "global" ? "global" : (tag.locations as string[]),
+      cardMetadata: {
+        entity: { name, code },
+        beneficiaries: tag.beneficiaries,
+        locations:
+          tag.locations === "global" ? "global" : (tag.locations as string[]),
+      },
     };
   });
   taggedEntities.push({ id, code, name, results });

@@ -1,6 +1,8 @@
 import snapshot from "../../data/ppb-2027.json";
+import type { ResultCardMetadata } from "./result-card-metadata";
 
 export type BudgetResult = {
+  cardMetadata?: ResultCardMetadata;
   label: string;
   title: string;
   narrative: string;

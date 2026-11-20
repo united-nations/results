@@ -211,6 +211,10 @@ export function BudgetResultPreview({
                   : undefined
               }
               color={cardColor}
+              metadata={
+                initialResult?.cardMetadata ??
+                summary.cardMetadata ?? { entity: summary.context.entity }
+              }
             />
           )
         }

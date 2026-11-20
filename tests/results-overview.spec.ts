@@ -1,5 +1,5 @@
 import { readFileSync } from "node:fs";
-import { test, expect, type Locator, type Page } from "@playwright/test";
+import { test, expect, type Locator, type Page } from "./static-preview";
 async function selectGrouping(page: Page, value: string) {
   const labels: Record<string, string> = {
     priority: "Group by priority area",
@@ -108,6 +108,10 @@ test("grouping includes every result and keeps tile size stable across lenses", 
   page,
 }) => {
   await page.goto("/");
+  await page
+    .getByRole("radio", { name: "Compact tiles", exact: true })
+    .locator("..")
+    .click();
   await expect(page.locator("li[data-readable]")).toHaveCount(totalResults);
   await expect(
     page.getByRole("button", { name: /^Grouping:/ }),
@@ -157,6 +161,10 @@ test("hover cards show full result titles and clicking opens the full result sid
   page,
 }) => {
   await page.goto("/");
+  await page
+    .getByRole("radio", { name: "Compact tiles", exact: true })
+    .locator("..")
+    .click();
   const tile = group(page, operationsPriority)
     .locator("li[data-readable]")
     .filter({
@@ -193,6 +201,10 @@ test("entity zoom keeps headings clear, cards top aligned, and row heights equal
   page,
 }) => {
   await page.goto("/");
+  await page
+    .getByRole("radio", { name: "Compact tiles", exact: true })
+    .locator("..")
+    .click();
   const priority = await expandGroup(page, economicPriority);
   await expandEntity(priority, "desa");
   const cards = priority.locator('li[data-readable="true"]');
@@ -246,6 +258,10 @@ test("beneficiary slices identify partial entity and subprogramme coverage", asy
   page,
 }) => {
   await page.goto("/beneficiaries/");
+  await page
+    .getByRole("radio", { name: "Compact tiles", exact: true })
+    .locator("..")
+    .click();
   await expect(
     page.getByRole("button", { name: /^Grouping:/ }),
   ).toHaveAttribute("data-grouping", "beneficiary");
@@ -279,6 +295,10 @@ test("entity and subprogramme overviews open nested result sidebars and restore 
   page,
 }) => {
   await page.goto("/");
+  await page
+    .getByRole("radio", { name: "Compact tiles", exact: true })
+    .locator("..")
+    .click();
   const priority = await expandGroup(page, economicPriority);
   const desa = await expandEntity(priority, "desa");
   const learnMore = desa.getByRole("button", {
@@ -327,6 +347,10 @@ test("muted areas do not preview or activate during the dismissal click", async 
   page,
 }) => {
   await page.goto("/");
+  await page
+    .getByRole("radio", { name: "Compact tiles", exact: true })
+    .locator("..")
+    .click();
   const active = await expandGroup(page, economicPriority);
   const muted = group(page, operationsPriority);
   await expect(muted).toHaveAttribute("inert", "");
@@ -343,6 +367,10 @@ test("mobile entity headings wrap without card collisions or horizontal overflow
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
+  await page
+    .getByRole("radio", { name: "Compact tiles", exact: true })
+    .locator("..")
+    .click();
   const priority = await expandGroup(page, economicPriority);
   const desa = await expandEntity(priority, "desa");
   await expect(desa).toBeVisible();
@@ -368,11 +396,13 @@ test.describe("results before hydration on a phone", () => {
     javaScriptEnabled: false,
   });
 
-  test("compact tiles fit inside their groups", async ({ page }) => {
+  test("readable previews fit inside their groups before hydration", async ({
+    page,
+  }) => {
     await page.goto("/beneficiaries/");
     const firstGroup = page.locator("section[data-priority-area]").first();
     const tiles = firstGroup.locator("li[data-readable]");
-    await expect(tiles.first()).toHaveCSS("width", "36px");
+    await expect(tiles.first()).toHaveAttribute("data-readable", "true");
     expect(
       await firstGroup.evaluate((section) => {
         const group = section.getBoundingClientRect();
@@ -395,6 +425,10 @@ test("global grouping controls work on the first keyboard activation while zoome
   page,
 }) => {
   await page.goto("/");
+  await page
+    .getByRole("radio", { name: "Compact tiles", exact: true })
+    .locator("..")
+    .click();
   const priority = await expandGroup(page, economicPriority);
   await expandEntity(priority, "desa");
   const beneficiary = page.getByRole("button", { name: /^Grouping:/ });
@@ -421,6 +455,10 @@ test("a nested result sidebar highlights one exact result when titles are duplic
   page,
 }) => {
   await page.goto("/");
+  await page
+    .getByRole("radio", { name: "Compact tiles", exact: true })
+    .locator("..")
+    .click();
   const priority = await expandGroup(
     page,
     "Maintenance of international peace and security",

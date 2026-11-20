@@ -1,9 +1,13 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./static-preview";
 
 test("priority sidebars and expanded overview share entity groups and ordering", async ({
   page,
 }) => {
   await page.goto("/");
+  await page
+    .getByRole("radio", { name: "Compact tiles", exact: true })
+    .locator("..")
+    .click();
   const priority = "Maintenance of international peace and security";
   const group = page.locator(`section[data-priority-area="${priority}"]`);
   await group
@@ -76,6 +80,10 @@ test("Ethics Office is standalone before the offices group in both views", async
 }) => {
   await page.setViewportSize({ width: 1280, height: 900 });
   await page.goto("/");
+  await page
+    .getByRole("radio", { name: "Compact tiles", exact: true })
+    .locator("..")
+    .click();
   const priority = "Effective functioning of the organization";
   const group = page.locator(`section[data-priority-area="${priority}"]`);
   await group

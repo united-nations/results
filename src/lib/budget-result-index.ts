@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import type { ResultCardMetadata } from "./result-card-metadata";
 import {
   budgetEntities,
   type BudgetContent,
@@ -7,6 +8,7 @@ import {
 } from "./programme-budget";
 
 export type BudgetResultReference = {
+  cardMetadata?: ResultCardMetadata;
   id: string;
   entity: string;
   title: string;

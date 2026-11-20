@@ -17,7 +17,7 @@ import { typography } from "@un-eosg/ui/typography";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import { Button } from "@un-eosg/ui/components/button";
 import { ResultViewToggle } from "@/components/ResultViewToggle";
-import { Maximize2, Minimize2 } from "lucide-react";
+import { ArrowDown, Maximize2, Minimize2 } from "lucide-react";
 import { ResultCard, ResultCardContent } from "@/components/ResultCard";
 import {
   priorityAreaColors,
@@ -41,6 +41,14 @@ import {
 } from "@/lib/result-explorer";
 
 type OverviewResult = ExplorerResult;
+
+function resultColor(result: OverviewResult) {
+  return (
+    result.groupColor ??
+    priorityAreaColors[result.priority] ??
+    "var(--color-dusty-gray)"
+  );
+}
 
 type SubprogrammeBlock = {
   id: string;
@@ -104,6 +112,144 @@ function ExpandCue({ expanded }: { expanded: boolean }) {
   );
 }
 
+function OverviewGroupHeading({
+  title,
+  expanded,
+  onToggle,
+  contentId,
+  headingId,
+  headingRef,
+  disabled = false,
+  children,
+}: {
+  title: string;
+  expanded: boolean;
+  onToggle: () => void;
+  contentId: string;
+  headingId: string;
+  headingRef?: (element: HTMLHeadingElement | null) => void;
+  disabled?: boolean;
+  children?: ReactNode;
+}) {
+  return (
+    <h2 id={headingId} className={styles.groupHeading} ref={headingRef}>
+      <span className="flex min-w-0 flex-1 flex-col items-start gap-1">
+        <span
+          className={`${styles.priorityTitle} ${expanded ? resultTypography.priorityExpanded : resultTypography.priority}`}
+        >
+          {title}
+        </span>
+        {children}
+      </span>
+      <Button
+        variant="ghost"
+        size="xs"
+        className="h-auto shrink-0 p-0 hover:bg-transparent"
+        disabled={disabled}
+        aria-label={`${expanded ? "Collapse" : "Expand"} ${title}`}
+        aria-expanded={expanded}
+        aria-controls={contentId}
+        onClick={onToggle}
+      >
+        <ExpandCue expanded={expanded} />
+      </Button>
+    </h2>
+  );
+}
+
+function AnimatedResultsContent({
+  children,
+  transitionKey,
+}: {
+  children: ReactNode;
+  transitionKey: string;
+}) {
+  const content = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState<number>();
+  useLayoutEffect(() => {
+    const element = content.current;
+    if (!element) return;
+    const measure = () =>
+      setHeight(Math.ceil(element.getBoundingClientRect().height));
+    const observer = new ResizeObserver(measure);
+    observer.observe(element);
+    measure();
+    return () => observer.disconnect();
+  }, []);
+  useLayoutEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const animation = content.current?.animate(
+      [
+        { opacity: 0.45, transform: "translateY(5px)" },
+        { opacity: 1, transform: "translateY(0)" },
+      ],
+      { duration: 220, easing: "ease-out" },
+    );
+    return () => animation?.cancel();
+  }, [transitionKey]);
+  return (
+    <div className={styles.animatedContent} style={{ height }}>
+      <div ref={content} className={styles.animatedContentBody}>
+        {children}
+      </div>
+    </div>
+  );
+}
+
+function OverviewEntityHeading({
+  title,
+  code,
+  expanded,
+  onToggle,
+  contentId,
+  headingRef,
+  level = 3,
+  disabled = false,
+  children,
+}: {
+  title: string;
+  code: string | null;
+  expanded: boolean;
+  onToggle: () => void;
+  contentId?: string;
+  headingRef?: (element: HTMLHeadingElement | null) => void;
+  level?: number;
+  disabled?: boolean;
+  children?: ReactNode;
+}) {
+  return (
+    <h3 aria-level={level} className={styles.entityTitle} ref={headingRef}>
+      <span className={styles.entityHeadingRow}>
+        <span className={styles.entityIdentity}>
+          <span
+            className={`${styles.entityHeading} ${expanded ? resultTypography.entityExpanded : resultTypography.entity}`}
+          >
+            <span className="min-w-0 text-left whitespace-normal">
+              {title}
+              {code && code !== title && (
+                <span className="ms-2 font-normal">{code}</span>
+              )}
+            </span>
+          </span>
+        </span>
+        <Button
+          variant="ghost"
+          size="xs"
+          disabled={disabled}
+          className="pointer-events-auto h-auto shrink-0 p-0 hover:bg-transparent"
+          aria-expanded={expanded}
+          aria-controls={contentId}
+          aria-label={`${expanded ? "Collapse" : "Expand"} ${title}`}
+          onClick={onToggle}
+        >
+          <ExpandCue expanded={expanded} />
+        </Button>
+      </span>
+      {children}
+    </h3>
+  );
+}
+
 function ResultTile({
   result,
   edition,
@@ -132,13 +278,16 @@ function ResultTile({
       data-highlighted={highlighted}
       inert={muted}
       style={
-        position
-          ? {
-              transform: `translate(${position.x}px, ${position.y}px)`,
-              width: position.width,
-              height: position.height,
-            }
-          : undefined
+        {
+          "--tile-color": resultColor(result),
+          ...(position
+            ? {
+                transform: `translate(${position.x}px, ${position.y}px)`,
+                width: position.width,
+                height: position.height,
+              }
+            : {}),
+        } as CSSProperties
       }
     >
       <BudgetResultPreview
@@ -150,7 +299,12 @@ function ResultTile({
             <ResultCard
               resultTitle={result.title}
               thumbnail={result.thumbnail}
-              color={result.groupColor ?? priorityAreaColors[result.priority]}
+              color={resultColor(result)}
+              metadata={{
+                entity: result.reference.context.entity,
+                beneficiaries: result.beneficiaries,
+                locations: result.locations,
+              }}
               contentRef={(element) => contentRef(result.id, element)}
               disabled={muted}
               aria-label={`${result.organization}: ${result.title}`}
@@ -180,16 +334,18 @@ function ResultTile({
                     style={
                       {
                         width: previewWidth,
-                        "--tile-color":
-                          result.groupColor ??
-                          priorityAreaColors[result.priority] ??
-                          "var(--color-dusty-gray)",
+                        "--tile-color": resultColor(result),
                       } as CSSProperties
                     }
                   >
                     <ResultCardContent
                       title={result.title}
                       thumbnail={result.thumbnail}
+                      metadata={{
+                        entity: result.reference.context.entity,
+                        beneficiaries: result.beneficiaries,
+                        locations: result.locations,
+                      }}
                     />
                   </Tooltip.Content>
                 </Tooltip.Portal>
@@ -268,9 +424,7 @@ export function ResultsOverview(props: ResultsOverviewProps) {
         grouping={grouping}
         onGroupingChange={setGrouping}
       >
-        {grouping === "none" && (
-          <ResultViewToggle readable={readable} onChange={setReadable} />
-        )}
+        <ResultViewToggle readable={readable} onChange={setReadable} />
       </ResultsExplorerControls>
       {filtered.length === 0 ? (
         <div className="py-12">
@@ -291,6 +445,13 @@ export function ResultsOverview(props: ResultsOverviewProps) {
           results={filtered}
           edition={props.edition}
           readable={readable}
+        />
+      ) : readable ? (
+        <ReadableResultsOverview
+          key={viewKey}
+          {...props}
+          results={results}
+          beneficiaryMode={grouping === "beneficiary"}
         />
       ) : (
         <ResultsOverviewContent
@@ -332,6 +493,21 @@ function UngroupedResults({
       result.reference.context.subprogramme?.id === focus.subprogrammeId
     );
   };
+  if (readable)
+    return (
+      <ResultPreviewRow
+        results={results.map((result) => ({
+          ...result,
+          groupColor: "var(--muted-foreground)",
+        }))}
+        edition={edition}
+        label="All matching results"
+        matches={matches}
+        highlightedId={
+          focus?.kind === "result" && visibleTarget ? focus.resultId : undefined
+        }
+      />
+    );
   return (
     <ul
       aria-label="All matching results"
@@ -352,6 +528,412 @@ function UngroupedResults({
         />
       ))}
     </ul>
+  );
+}
+
+function ResultPreviewRow({
+  results,
+  edition,
+  label,
+  onExplore,
+  exploreTargetId,
+  matches = () => true,
+  highlightedId,
+}: {
+  results: OverviewResult[];
+  edition: number;
+  label: string;
+  onExplore?: () => void;
+  exploreTargetId?: string;
+  matches?: (result: OverviewResult) => boolean;
+  highlightedId?: string;
+}) {
+  const grid = useRef<HTMLUListElement>(null);
+  const [columns, setColumns] = useState(1);
+  const [showAll, setShowAll] = useState(false);
+  const contentId = useId();
+  useLayoutEffect(() => {
+    const element = grid.current;
+    if (!element) return;
+    const measure = () =>
+      setColumns(
+        Math.max(
+          1,
+          Math.min(
+            4,
+            Math.floor((element.getBoundingClientRect().width + 12) / 242),
+          ),
+        ),
+      );
+    const observer = new ResizeObserver(measure);
+    observer.observe(element);
+    measure();
+    return () => observer.disconnect();
+  }, []);
+  const total = new Set(results.map((result) => result.id)).size;
+  const expandable = Boolean(onExplore) || results.length > columns;
+  const previewCount = expandable ? Math.max(1, columns - 1) : columns;
+  const visible = showAll ? results : results.slice(0, previewCount);
+  const explore = () => {
+    if (onExplore) {
+      onExplore();
+      requestAnimationFrame(() => {
+        const target = exploreTargetId
+          ? document.getElementById(exploreTargetId)
+          : null;
+        target
+          ?.querySelector<HTMLElement>(
+            "[data-entity-expanded] h3 button, li[data-readable] button",
+          )
+          ?.focus({ preventScroll: true });
+      });
+    } else {
+      setShowAll(true);
+      requestAnimationFrame(() => {
+        grid.current
+          ?.querySelectorAll<HTMLElement>("li[data-readable] button")
+          [visible.length]?.focus({ preventScroll: true });
+      });
+    }
+  };
+  return (
+    <div>
+      <AnimatedResultsContent transitionKey={showAll ? "all" : "preview"}>
+        <ul
+          ref={grid}
+          id={contentId}
+          aria-label={label}
+          className={styles.previewGrid}
+          style={{ gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))` }}
+        >
+          {visible.map((result) => (
+            <ResultTile
+              key={result.id}
+              result={result}
+              edition={edition}
+              readable
+              previewWidth={280}
+              contentRef={ignoreContentRef}
+              muted={!matches(result)}
+              highlighted={result.id === highlightedId}
+            />
+          ))}
+          {!showAll && expandable && (
+            <li
+              className={
+                columns === 1 ? styles.exploreCompact : styles.exploreTile
+              }
+            >
+              <Button
+                variant="ghost"
+                aria-label={`${onExplore ? "Explore" : "Show"} all ${total} results in ${label}`}
+                aria-expanded={false}
+                aria-controls={onExplore ? exploreTargetId : contentId}
+                className={styles.exploreButton}
+                onClick={explore}
+              >
+                <span className={styles.exploreCircle}>
+                  <ArrowDown className="size-4" aria-hidden="true" />
+                </span>
+                <span className={typography.caption}>
+                  {onExplore ? "Explore" : "Show"} all {total} results
+                </span>
+              </Button>
+            </li>
+          )}
+        </ul>
+      </AnimatedResultsContent>
+      {showAll && (
+        <Button
+          variant="link"
+          className="mt-2 text-foreground"
+          aria-expanded={true}
+          aria-controls={contentId}
+          onClick={() => {
+            setShowAll(false);
+            requestAnimationFrame(() =>
+              grid.current
+                ?.querySelector<HTMLElement>("li:last-child button")
+                ?.focus({ preventScroll: true }),
+            );
+          }}
+        >
+          Show fewer results
+        </Button>
+      )}
+    </div>
+  );
+}
+
+function ReadableResultsOverview({
+  results,
+  edition,
+  entityObjectives,
+  subprogrammeObjectives,
+  beneficiaryMode,
+}: ResultsOverviewProps & { beneficiaryMode: boolean }) {
+  const [selectedGroup, setSelectedGroup] = useState<string | null>(null);
+  const [selectedEntity, setSelectedEntity] = useState<string | null>(null);
+  const detailFocus = useCurrentOverviewFocus();
+  const overviewId = useId();
+  const focusedGroup = detailFocus
+    ? (detailFocus.groupId ??
+      selectedGroup ??
+      (detailFocus.kind === "priority"
+        ? detailFocus.priority
+        : results.find(
+            (result) => result.reference.entity === detailFocus.entityId,
+          )?.priority) ??
+      null)
+    : selectedGroup;
+  const matches = (result: OverviewResult) => {
+    if (!detailFocus || detailFocus.kind === "priority") return true;
+    if (detailFocus.entityId !== result.reference.entity) return false;
+    if (
+      detailFocus.kind === "result" &&
+      detailFocus.resultId &&
+      results.some((item) => item.id === detailFocus.resultId)
+    )
+      return result.id === detailFocus.resultId;
+    return (
+      !detailFocus.subprogrammeId ||
+      result.reference.context.subprogramme?.id === detailFocus.subprogrammeId
+    );
+  };
+  return (
+    <div
+      className={`${styles.groups} mt-5`}
+      aria-label="All Secretariat results"
+      data-animate-layout=""
+    >
+      {[...Map.groupBy(results, (result) => result.priority)].map(
+        ([group, entries], index) => {
+          const expanded = selectedGroup === group;
+          const muted = Boolean(focusedGroup && focusedGroup !== group);
+          const focusedEntity =
+            detailFocus?.kind === "priority"
+              ? null
+              : (detailFocus?.entityId ?? (expanded ? selectedEntity : null));
+          const contentId = `${overviewId}-readable-${index}`;
+          const entityGroups = groupEntities(
+            beneficiaryMode ? "" : group,
+            [...Map.groupBy(entries, (result) => result.reference.entity)].map(
+              ([id, items]) => ({
+                id,
+                name: items[0].reference.context.entity.name,
+                results: items,
+              }),
+            ),
+          );
+          const ordered = entityGroups.flatMap((cluster) =>
+            cluster.entities.flatMap((entity) => entity.results),
+          );
+          const explore = () => {
+            setSelectedEntity(null);
+            setSelectedGroup(group);
+          };
+          return (
+            <section
+              key={group}
+              id={beneficiaryMode ? undefined : priorityAreaAnchor(group)}
+              className={styles.group}
+              data-priority-area={group}
+              data-expanded={expanded}
+              data-muted={muted}
+              data-focused={focusedGroup === group}
+              data-context={Boolean(expanded && focusedEntity && !muted)}
+              inert={muted}
+              aria-labelledby={`${contentId}-heading`}
+              style={
+                {
+                  "--tile-color": resultColor(entries[0]),
+                } as CSSProperties
+              }
+            >
+              <OverviewGroupHeading
+                title={group}
+                expanded={expanded}
+                contentId={contentId}
+                headingId={`${contentId}-heading`}
+                onToggle={() => {
+                  setSelectedEntity(null);
+                  setSelectedGroup(expanded ? null : group);
+                }}
+              >
+                {expanded && !beneficiaryMode && (
+                  <PriorityAreaSidebar priority={group} />
+                )}
+              </OverviewGroupHeading>
+              <div id={contentId}>
+                <AnimatedResultsContent
+                  transitionKey={expanded ? "entities" : "preview"}
+                >
+                  {!expanded ? (
+                    <ResultPreviewRow
+                      results={ordered}
+                      edition={edition}
+                      label={group}
+                      onExplore={explore}
+                      exploreTargetId={contentId}
+                      matches={matches}
+                    />
+                  ) : (
+                    <div className="space-y-5">
+                      {entityGroups.map((cluster) => (
+                        <section
+                          key={cluster.key}
+                          data-entity-cluster={
+                            cluster.label ? cluster.key : undefined
+                          }
+                          className="space-y-3"
+                        >
+                          {cluster.label && (
+                            <h3 className={typography.sectionTitle}>
+                              {cluster.label}
+                            </h3>
+                          )}
+                          {cluster.entities.map((entity) => {
+                            const entityExpanded = selectedEntity === entity.id;
+                            const identity =
+                              entity.results[0].reference.context.entity;
+                            const entityContentId = `${contentId}-${entity.id}`;
+                            const entityMuted = Boolean(
+                              focusedEntity && focusedEntity !== entity.id,
+                            );
+                            return (
+                              <section
+                                key={entity.id}
+                                data-entity-id={entity.id}
+                                data-entity-expanded={entityExpanded}
+                                inert={entityMuted}
+                                className={styles.readableEntity}
+                                data-muted={entityMuted}
+                                data-focused={focusedEntity === entity.id}
+                              >
+                                <OverviewEntityHeading
+                                  title={identity.name}
+                                  code={identity.code}
+                                  expanded={entityExpanded}
+                                  level={cluster.label ? 4 : 3}
+                                  contentId={entityContentId}
+                                  onToggle={() =>
+                                    setSelectedEntity(
+                                      entityExpanded ? null : entity.id,
+                                    )
+                                  }
+                                />
+                                <div id={entityContentId} className="px-2 pb-2">
+                                  <AnimatedResultsContent
+                                    transitionKey={
+                                      entityExpanded
+                                        ? "subprogrammes"
+                                        : "preview"
+                                    }
+                                  >
+                                    {!entityExpanded ? (
+                                      <ResultPreviewRow
+                                        results={entity.results}
+                                        edition={edition}
+                                        label={identity.name}
+                                        onExplore={() =>
+                                          setSelectedEntity(entity.id)
+                                        }
+                                        exploreTargetId={entityContentId}
+                                        matches={matches}
+                                      />
+                                    ) : (
+                                      <div className="space-y-5">
+                                        <p className={typography.body}>
+                                          {entityObjectives[entity.id]}{" "}
+                                          <BudgetOverviewSidebar
+                                            entityId={entity.id}
+                                            title={identity.name}
+                                            label={
+                                              beneficiaryMode
+                                                ? "View all results for this entity."
+                                                : undefined
+                                            }
+                                          />
+                                        </p>
+                                        {[
+                                          ...Map.groupBy(
+                                            entity.results,
+                                            (result) =>
+                                              result.reference.context
+                                                .subprogramme?.id ?? "entity",
+                                          ),
+                                        ].map(([programmeId, items]) => {
+                                          const programme =
+                                            items[0].reference.context
+                                              .subprogramme;
+                                          const title = programme
+                                            ? `Subprogramme ${programme.number} · ${programme.name}`
+                                            : "Entity results";
+                                          return (
+                                            <section key={programmeId}>
+                                              <h4
+                                                aria-level={
+                                                  cluster.label ? 5 : 4
+                                                }
+                                                className={
+                                                  resultTypography.subprogramme
+                                                }
+                                              >
+                                                {title}
+                                              </h4>
+                                              {programme && (
+                                                <p
+                                                  className={`${typography.body} mt-1.5`}
+                                                >
+                                                  {
+                                                    subprogrammeObjectives[
+                                                      `${entity.id}:${programmeId}`
+                                                    ]
+                                                  }{" "}
+                                                  <BudgetOverviewSidebar
+                                                    entityId={entity.id}
+                                                    title={title}
+                                                    subprogrammeId={programmeId}
+                                                    label={
+                                                      beneficiaryMode
+                                                        ? "View all results for this subprogramme."
+                                                        : undefined
+                                                    }
+                                                  />
+                                                </p>
+                                              )}
+                                              <ResultPreviewRow
+                                                results={items}
+                                                edition={edition}
+                                                label={title}
+                                                matches={matches}
+                                                highlightedId={
+                                                  detailFocus?.kind === "result"
+                                                    ? detailFocus.resultId
+                                                    : undefined
+                                                }
+                                              />
+                                            </section>
+                                          );
+                                        })}
+                                      </div>
+                                    )}
+                                  </AnimatedResultsContent>
+                                </div>
+                              </section>
+                            );
+                          })}
+                        </section>
+                      ))}
+                    </div>
+                  )}
+                </AnimatedResultsContent>
+              </div>
+            </section>
+          );
+        },
+      )}
+    </div>
   );
 }
 
@@ -497,19 +1079,23 @@ function ResultsOverviewContent({
         return { ...current, ...Object.fromEntries(measured) };
       });
       const cards = [...cardContents.current].map(([id, element]) => {
-        const { width } = element.getBoundingClientRect();
+        const card = element.closest("button") ?? element;
+        const { width } = card.getBoundingClientRect();
+        const contentStyle = getComputedStyle(element);
+        const cardStyle = getComputedStyle(card);
         const children = [...element.children];
         const height =
           children.reduce(
             (total, child) => total + child.getBoundingClientRect().height,
             0,
           ) +
-          Math.max(0, children.length - 1) * 12 +
-          24;
-        return [
-          id,
-          { width: width + 2, height: Math.ceil(height) + 2 },
-        ] as const;
+          Math.max(0, children.length - 1) *
+            (parseFloat(contentStyle.rowGap) || 0) +
+          (parseFloat(contentStyle.paddingTop) || 0) +
+          (parseFloat(contentStyle.paddingBottom) || 0) +
+          (parseFloat(cardStyle.borderTopWidth) || 0) +
+          (parseFloat(cardStyle.borderBottomWidth) || 0);
+        return [id, { width, height: Math.ceil(height) }] as const;
       });
       setCardSizes((current) => {
         if (
@@ -793,7 +1379,10 @@ function ResultsOverviewContent({
                   result.title.length / Math.max(1, (cardWidth - 24) / 7),
                 ) *
                   23 +
-                (result.thumbnail ? 32 + 12 : 0) +
+                (result.thumbnail ? 32 + 8 : 0) +
+                18 +
+                (result.beneficiaries.length ? 40 : 0) +
+                12 +
                 26
               );
             });
@@ -876,54 +1465,35 @@ function ResultsOverviewContent({
         data-priority-area={priority}
         data-muted={mutedPriority}
         data-focused={focusedPriority === priority}
+        data-context={Boolean(expanded && focusedEntity && !mutedPriority)}
         inert={mutedPriority}
         style={
           {
             height: layout ? height : undefined,
             "--tile-size": expanded ? `${zoomTile}px` : undefined,
-            "--tile-color":
-              entries[0].groupColor ??
-              priorityAreaColors[priority] ??
-              "var(--color-dusty-gray)",
+            "--tile-color": resultColor(entries[0]),
           } as CSSProperties
         }
       >
-        <h2
-          id={headingId}
-          className={styles.groupHeading}
-          ref={(element) => {
-            registerHeading(priorityHeadingKey, element);
+        <OverviewGroupHeading
+          title={priority}
+          expanded={expanded}
+          contentId={contentId}
+          headingId={headingId}
+          headingRef={(element) => registerHeading(priorityHeadingKey, element)}
+          disabled={Boolean(focusedEntity)}
+          onToggle={() => {
+            setSelectedEntity(null);
+            setSelectedPriority(expanded ? null : priority);
           }}
         >
-          <span className="flex min-w-0 flex-1 flex-col items-start gap-1">
-            <span
-              className={`${styles.priorityTitle} ${expanded ? resultTypography.priorityExpanded : resultTypography.priority}`}
-            >
-              {priority}
-            </span>
-            {expanded && !beneficiaryMode && (
-              <PriorityAreaSidebar
-                priority={priority}
-                disabled={Boolean(focusedEntity)}
-              />
-            )}
-          </span>
-          <Button
-            variant="ghost"
-            size="xs"
-            className="h-auto shrink-0 p-0 hover:bg-transparent"
-            disabled={Boolean(focusedEntity)}
-            aria-label={`${expanded ? "Collapse" : "Expand"} ${priority}`}
-            aria-expanded={expanded}
-            aria-controls={contentId}
-            onClick={() => {
-              setSelectedEntity(null);
-              setSelectedPriority(expanded ? null : priority);
-            }}
-          >
-            <ExpandCue expanded={expanded} />
-          </Button>
-        </h2>
+          {expanded && !beneficiaryMode && (
+            <PriorityAreaSidebar
+              priority={priority}
+              disabled={Boolean(focusedEntity)}
+            />
+          )}
+        </OverviewGroupHeading>
         <div
           id={contentId}
           className={styles.canvas}
@@ -987,40 +1557,19 @@ function ResultsOverviewContent({
               style={{ top: block.top, height: block.height }}
               aria-hidden={!expanded}
             >
-              <h3
-                aria-level={block.clusterKey ? 4 : 3}
-                className={styles.entityTitle}
-                ref={(element) => {
-                  registerHeading(block.headingKey, element);
-                }}
+              <OverviewEntityHeading
+                title={block.label}
+                code={block.code}
+                expanded={block.expanded}
+                level={block.clusterKey ? 4 : 3}
+                disabled={!expanded}
+                headingRef={(element) =>
+                  registerHeading(block.headingKey, element)
+                }
+                onToggle={() =>
+                  setSelectedEntity(block.expanded ? null : block.entity)
+                }
               >
-                <span className={styles.entityHeadingRow}>
-                  <span className={styles.entityIdentity}>
-                    <span
-                      className={`${styles.entityHeading} ${block.expanded ? resultTypography.entityExpanded : resultTypography.entity}`}
-                    >
-                      <span className="min-w-0 text-left whitespace-normal">
-                        {block.label}
-                        {block.code && block.code !== block.label && (
-                          <span className="ms-2 font-normal">{block.code}</span>
-                        )}
-                      </span>
-                    </span>
-                  </span>
-                  <Button
-                    variant="ghost"
-                    size="xs"
-                    disabled={!expanded}
-                    className="pointer-events-auto h-auto shrink-0 p-0 hover:bg-transparent"
-                    aria-expanded={block.expanded}
-                    aria-label={`${block.expanded ? "Collapse" : "Expand"} ${block.label}`}
-                    onClick={() =>
-                      setSelectedEntity(block.expanded ? null : block.entity)
-                    }
-                  >
-                    <ExpandCue expanded={block.expanded} />
-                  </Button>
-                </span>
                 {beneficiaryMode && (
                   <span
                     className={`${resultTypography.metadata} mt-1 block font-normal`}
@@ -1028,14 +1577,14 @@ function ResultsOverviewContent({
                     {scopeLabel} · {block.count} of {block.total} results
                   </span>
                 )}
-              </h3>
+              </OverviewEntityHeading>
               {block.expanded && (
                 <p
                   ref={registerDescription}
                   style={{ top: block.headingSpace }}
                   className={`${resultTypography.description} ${styles.entityDescription}`}
                 >
-                  {block.description || "[TODO: Add entity objective text]"}{" "}
+                  {block.description}{" "}
                   <BudgetOverviewSidebar
                     entityId={block.entity}
                     title={block.label}

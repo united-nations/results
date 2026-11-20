@@ -49,7 +49,12 @@ export function ResultSidecar({
   const heading = formatBudgetHeading(title);
   const dialogTrigger = (
     <Dialog.Trigger asChild>
-      {trigger ?? <ResultCard resultTitle={heading} />}
+      {trigger ?? (
+        <ResultCard
+          resultTitle={heading}
+          metadata={context ? { entity: context.entity } : undefined}
+        />
+      )}
     </Dialog.Trigger>
   );
   return (
