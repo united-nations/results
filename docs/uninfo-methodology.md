@@ -194,6 +194,50 @@ outcomes and outputs retain their null parent and actual level. Regression
 checks verify every exported identity, description, parent, finance join and
 country-to-plan relationship, including its basemap representation.
 
+## Country-framework evaluation links
+
+The UNSDG [country-team evaluation listing](https://unsdg.un.org/resources/unct-key-documents?f%5B0%5D=country_document_type_api:Eval&page=0)
+is a separate document source. The 20 November 2026 discovery snapshot covers
+all 18 paginated pages and 207 entries, including repeated uploads and documents
+that the source classifies as evaluations but are actually terms of reference,
+inception reports, drafts or supporting files.
+
+`data/unct-evaluations-source.json` retains the listing inventory and document
+verification evidence. `public/data/uninfo/evaluations.json` contains the compact
+links indexed by existing UN INFO plan ID. Links require an explicit evaluated
+framework cycle and matching country or shared workspace. Publication year alone
+does not establish the evaluated period. Sidebars list all verified reports
+across the country's retained plans and verified historical reports, grouped into the latest framework (current
+period) and previous periods, independently of the selected financial period.
+Each report retains its own evaluated cycle. Cover previews are explicitly
+marked placeholders until real cover images are extracted.
+`data/unct-evaluation-country-reports.json` retains evidence for additional
+country reports whose cycles have no exact retained financial plan. These do
+not get invented plan IDs. Reports predating the latest framework appear under
+previous periods; those covering its time span appear under current period,
+retaining their own explicit evaluated dates rather than claiming an exact
+framework match. Regional scope conflicts, preliminary reports and ambiguous
+cycles remain excluded. `node scripts/export-unct-evaluations.mjs` combines the
+plan-bound reports and this reviewed inventory into the public country groups.
+Duplicate uploads of the same report are shown
+once. Non-final documents and unresolved matches are omitted from direct report
+links. The sidebar always links to the full source listing; an absent match does
+not mean that no evaluation exists.
+
+To rediscover the complete listing, install Playwright's Chromium runtime and run:
+
+```sh
+pnpm exec playwright install chromium
+node scripts/fetch-unct-evaluation-listing.mjs /tmp/unct-evaluation-listing.json
+```
+
+The crawler follows and validates pagination, checks every item range and the
+final total, records page hashes and writes the inventory atomically only when
+complete. This discovery output does not overwrite reviewed plan matches.
+Inspect each report's actual title, document type and evaluated cycle before
+updating the source evidence and public link index. Unavailable or ambiguous
+documents stay unresolved rather than acquiring a country-only match.
+
 ## Shared UI
 
 The sidebar uses `FinancialDetailPanel`, the shared

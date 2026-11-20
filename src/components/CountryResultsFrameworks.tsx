@@ -15,6 +15,7 @@ import { DetailPanelControls } from "@un-eosg/ui/components/detail-panel-control
 import { typography } from "@un-eosg/ui/typography";
 import { SearchablePicker } from "@/components/SearchablePicker";
 import { UninfoCountryDetails } from "@/components/UninfoCountryDetails";
+import { UninfoEvaluationLinks } from "@/components/UninfoEvaluationLinks";
 import { UninfoScopeComparison } from "@/components/UninfoScopeComparison";
 import annualExpenditure from "../../public/data/uninfo/annual-expenditure-2025.json";
 import { normalizeSearchText } from "@/lib/search-text";
@@ -228,6 +229,15 @@ export function CountryResultsFrameworks({
               key={selectedPlan.id}
               planId={selectedPlan.id}
             />
+            <div className="mt-6">
+              <UninfoEvaluationLinks
+                key={selected}
+                countryCode={selected!}
+                currentPeriod={formatPlanPeriod(
+                  manifest.plans[String(country.latest_plan_id)],
+                )}
+              />
+            </div>
           </FinancialDetailPanel>
         </DetailDrawer>
       )}

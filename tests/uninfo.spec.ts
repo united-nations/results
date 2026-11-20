@@ -48,6 +48,105 @@ function mapYearPlan(code: string) {
   ];
 }
 
+test("three system tabs expose their own ordered resources and support keyboard navigation", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 320, height: 844 });
+  await page.goto("/system/");
+  const organizations = page.getByRole("tab", {
+    name: "Organizations",
+    exact: true,
+  });
+  const countryTeams = page.getByRole("tab", {
+    name: "Country teams",
+    exact: true,
+  });
+  const evaluations = page.getByRole("tab", {
+    name: "Evaluations",
+    exact: true,
+  });
+  await expect(page.getByRole("tab")).toHaveCount(3);
+
+  async function expectResources(hrefs: string[]) {
+    const region = page.getByRole("region", {
+      name: "Related resources",
+      exact: true,
+    });
+    await expect(region).toHaveCount(1);
+    const links = region.getByRole("link");
+    await expect(links).toHaveCount(hrefs.length);
+    expect(
+      await links.evaluateAll((nodes) =>
+        nodes.map((node) => node.getAttribute("href")),
+      ),
+    ).toEqual(hrefs);
+    for (const link of await links.all()) {
+      await expect(link).toHaveAttribute("target", "_blank");
+      await expect(link).toHaveAttribute("rel", /noopener/);
+      await expect(link).toHaveAttribute("rel", /noreferrer/);
+      await expect(link).toHaveAccessibleName(/\(opens in new tab\)$/);
+    }
+  }
+
+  await expectResources([
+    "https://systemchart.un.org/",
+    "https://open.un.org/",
+  ]);
+  await organizations.focus();
+  await page.keyboard.press("End");
+  await expect(evaluations).toBeFocused();
+  await expect(evaluations).toHaveAttribute("aria-selected", "true");
+  await expectResources([
+    "https://unsdg.un.org/resources/unct-key-documents?f%5B0%5D=country_document_type_api:Eval&page=0",
+    "https://www.un.org/system-wide-evaluation-office/en",
+    "https://www.unevaluation.org/",
+    "https://www.sdgsynthesiscoalition.org/",
+  ]);
+  const evidenceMaps = page.getByRole("region", {
+    name: "Evaluation evidence maps",
+    exact: true,
+  });
+  expect(
+    await evidenceMaps
+      .getByRole("link")
+      .evaluateAll((nodes) => nodes.map((node) => node.getAttribute("href"))),
+  ).toEqual([
+    "https://system-wide-evaluation-office.github.io/UN_evaluation_evidence_map/#",
+    "https://www.sdgsynthesiscoalition.org/sites/default/files/2024-10/UNSWE_Interactive%20Evaluation%20Evidence%20Map_SDGs_v1.0.html",
+    "https://www.sdgsynthesiscoalition.org/sites/default/files/2024-10/UNSWE_Interactive%20Evaluation%20Evidence%20Map_QCPR_coverage_v1.0.html",
+    "https://www.sdgsynthesiscoalition.org/sites/default/files/2024-10/UNSWE_Interactive%20Evaluation%20Evidence%20Map_QCPR_detailed%20evidence_V1.0.html",
+    "https://www.un.org/system-wide-evaluation-office/en/evidence-maps",
+  ]);
+  await expect(
+    page.getByRole("link", { name: /^UN System Chart/ }),
+  ).toHaveCount(0);
+  await page.keyboard.press("ArrowLeft");
+  await expect(countryTeams).toBeFocused();
+  await expect(countryTeams).toHaveAttribute("aria-selected", "true");
+  await expectResources([
+    "https://uninfo.org/",
+    "https://open.un.org/",
+    "https://unsdg.un.org/",
+  ]);
+  await expect(
+    page.getByRole("link", { name: /^Country-team evaluations/ }),
+  ).toHaveCount(0);
+  await page.keyboard.press("Home");
+  await expect(organizations).toBeFocused();
+  await expect(organizations).toHaveAttribute("aria-selected", "true");
+  await expectResources([
+    "https://systemchart.un.org/",
+    "https://open.un.org/",
+  ]);
+  await page.keyboard.press("ArrowLeft");
+  await expect(evaluations).toBeFocused();
+  await page.keyboard.press("ArrowRight");
+  await expect(organizations).toBeFocused();
+  expect(
+    await page.evaluate(() => document.documentElement.scrollWidth),
+  ).toBeLessThanOrEqual(320);
+});
+
 test("organizations open by default, keep one group open, and retain view state across tabs", async ({
   page,
 }) => {
@@ -207,6 +306,157 @@ test("sidebar changes plan periods and offers collapsed entity and resource view
   await expect(
     reopened.getByRole("button", { name: "Select plan period" }),
   ).toHaveText("Jul 2025–Jun 2030");
+});
+
+test("all country evaluation reports stay grouped by current and previous periods when the financial period changes", async ({
+  page,
+}) => {
+  await page.goto("/system/");
+  await showCountryTeams(page);
+  const kenya = await openCountry(page, "Kenya");
+  const period = kenya.getByRole("button", { name: "Select plan period" });
+  const evaluations = kenya.getByRole("region", {
+    name: "Framework evaluations",
+    exact: true,
+  });
+  const currentGroup = evaluations.getByRole("region", {
+    name: "Current period evaluations",
+    exact: true,
+  });
+  const previousGroup = evaluations.getByRole("region", {
+    name: "Previous period evaluations",
+    exact: true,
+  });
+  const current = currentGroup.getByRole("link", {
+    name: /^Kenya 2022–2027 framework evaluation/,
+  });
+  const past = previousGroup.getByRole("link", {
+    name: /^Kenya 2018–2022 framework evaluation/,
+  });
+  await expect(period).toHaveText(formatPlanPeriod(manifest.plans["1488"]));
+  await expect(current).toHaveAttribute(
+    "href",
+    "https://document.ess.uninfo.org/uninfo-production-main/c855f461-6678-4032-bfde-dcc166724932_FinalUNSDCFEvaluationKenya.pdf",
+  );
+  await expect(current).toHaveAttribute("target", "_blank");
+  await expect(current).toHaveAccessibleName(/\(opens in new tab\)$/);
+  await expect(past).toHaveAttribute(
+    "href",
+    "https://document.ess.uninfo.org/uninfo-production-main/cce7e9d4-ca27-46f7-b264-0a28848ecec5_Final_UNDAF_Kenya_Evaluation_Report_25_01_2022_(005).pdf",
+  );
+  await expect(
+    evaluations.getByText("Cover preview", { exact: true }),
+  ).toHaveCount(2);
+  await period.click();
+  await page
+    .getByRole("button", {
+      name: formatPlanPeriod(manifest.plans["838"]),
+      exact: true,
+    })
+    .click();
+  await expect(past).toHaveAttribute(
+    "href",
+    "https://document.ess.uninfo.org/uninfo-production-main/cce7e9d4-ca27-46f7-b264-0a28848ecec5_Final_UNDAF_Kenya_Evaluation_Report_25_01_2022_(005).pdf",
+  );
+  await expect(current).toBeVisible();
+  await expect(
+    currentGroup.getByRole("heading", { name: /^Current period/ }),
+  ).toHaveText("Current period (Jul 2022–Jun 2027)");
+  await period.click();
+  await page
+    .getByRole("button", {
+      name: formatPlanPeriod(manifest.plans["1488"]),
+      exact: true,
+    })
+    .click();
+  await expect(current).toBeVisible();
+  await expect(past).toBeVisible();
+  await kenya.getByRole("button", { name: "Close country results" }).click();
+
+  const india = await openCountry(page, "India");
+  await expect(
+    india.getByRole("region", {
+      name: "Current period evaluations",
+      exact: true,
+    }),
+  ).toContainText("No verified report for the current period.");
+  await expect(
+    india
+      .getByRole("region", { name: "Previous period evaluations", exact: true })
+      .getByRole("link", { name: /^India 2018–2022 framework evaluation/ }),
+  ).toBeVisible();
+  await india.getByRole("button", { name: "Close country results" }).click();
+
+  const bangladesh = await openCountry(page, "Bangladesh");
+  await expect(
+    bangladesh
+      .getByRole("region", { name: "Previous period evaluations", exact: true })
+      .getByRole("link", {
+        name: /^Bangladesh 2017–2021 framework evaluation/,
+      }),
+  ).toBeVisible();
+  await bangladesh
+    .getByRole("button", { name: "Close country results" })
+    .click();
+
+  const bahrain = await openCountry(page, "Bahrain");
+  const unmatched = bahrain.getByRole("region", {
+    name: "Framework evaluations",
+    exact: true,
+  });
+  await expect(unmatched).toContainText(
+    "No verified report for the current period.",
+  );
+  await expect(unmatched).toContainText(
+    "No verified reports for previous periods.",
+  );
+  await expect(unmatched.getByRole("link")).toHaveCount(2);
+  await expect(
+    unmatched.getByRole("link", { name: /^Evaluating impact/ }),
+  ).toHaveAttribute("href", "https://unsdg.un.org/evaluating-impact");
+  expect(
+    await bahrain.evaluate((node) => {
+      const framework = node.querySelector(
+        'section[aria-label="Results framework"]',
+      );
+      const reports = node.querySelector(
+        'section[aria-label="Framework evaluations"]',
+      );
+      return (
+        !!framework &&
+        !!reports &&
+        !!(
+          framework.compareDocumentPosition(reports) &
+          Node.DOCUMENT_POSITION_FOLLOWING
+        )
+      );
+    }),
+  ).toBe(true);
+  await expect(
+    unmatched.getByRole("link", {
+      name: /^Browse all country-team evaluation documents/,
+    }),
+  ).toHaveAttribute(
+    "href",
+    "https://unsdg.un.org/resources/unct-key-documents?f%5B0%5D=country_document_type_api:Eval&page=0",
+  );
+  await expect(
+    bahrain.getByRole("region", { name: "Framework expenditure overview" }),
+  ).toBeVisible();
+  await expect(
+    bahrain.getByRole("heading", { name: "Results Framework", exact: true }),
+  ).toBeVisible();
+  await page.setViewportSize({ width: 320, height: 844 });
+  await bahrain.getByRole("button", { name: "Close country results" }).click();
+  const mobileKenya = await openCountry(page, "Kenya");
+  await expect(
+    mobileKenya.getByRole("link", {
+      name: /^Kenya 2018–2022 framework evaluation/,
+    }),
+  ).toBeVisible();
+  expect(
+    await mobileKenya.evaluate((node) => node.scrollWidth <= node.clientWidth),
+  ).toBe(true);
 });
 
 test("framework expenditure rows keep descriptions before children and drilldowns at each level", async ({

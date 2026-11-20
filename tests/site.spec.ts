@@ -176,6 +176,28 @@ test("shared location results are grouped by entity with their own coverage", as
   ).toBeVisible();
 });
 
+test("Secretariat related resources retain their order and announce external tabs", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const resources = page.getByRole("region", {
+    name: "Related resources",
+    exact: true,
+  });
+  const links = resources.getByRole("link");
+  await expect(links).toHaveCount(2);
+  await expect(links.nth(0)).toHaveAttribute(
+    "href",
+    "https://mandates.un.org/",
+  );
+  await expect(links.nth(1)).toHaveAttribute("href", "https://open.un.org/");
+  for (const link of await links.all()) {
+    await expect(link).toHaveAttribute("target", "_blank");
+    await expect(link).toHaveAttribute("rel", /noopener/);
+    await expect(link).toHaveAccessibleName(/\(opens in new tab\)$/);
+  }
+});
+
 test("public pages share navigation, branded footer and keyboard skip link", async ({
   page,
 }) => {

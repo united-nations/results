@@ -6,20 +6,28 @@ import { SecondaryHeader } from "@un-eosg/ui/components/secondary-header";
 const views = [
   { value: "organizations", label: "Organizations" },
   { value: "country-teams", label: "Country teams" },
+  { value: "evaluations", label: "Evaluations" },
 ] as const;
 type View = (typeof views)[number]["value"];
 
 export function SystemOverviewTabs({
   organizations,
   countryTeams,
+  evaluations,
 }: {
   organizations: ReactNode;
   countryTeams: ReactNode;
+  evaluations: ReactNode;
 }) {
   const id = useId();
   const [active, setActive] = useState<View>("organizations");
   const [visited, setVisited] = useState<View[]>(["organizations"]);
   const buttons = useRef<(HTMLButtonElement | null)[]>([]);
+  const panels: Record<View, ReactNode> = {
+    organizations,
+    "country-teams": countryTeams,
+    evaluations,
+  };
   function select(value: View) {
     setActive(value);
     setVisited((current) =>
@@ -81,8 +89,7 @@ export function SystemOverviewTabs({
           tabIndex={0}
           className="pt-6 focus-visible:outline-2 focus-visible:outline-un-blue"
         >
-          {visited.includes(view.value) &&
-            (view.value === "organizations" ? organizations : countryTeams)}
+          {visited.includes(view.value) && panels[view.value]}
         </div>
       ))}
     </div>

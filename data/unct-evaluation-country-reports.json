@@ -1,0 +1,765 @@
+{
+  "retrievedAt": "2026-11-20",
+  "note": "Country-specific evaluations with explicit country and cycle evidence, independent of retained financial-plan periods. Groups use reported dates; no exact plan identity is inferred. Regional scopes and preliminary drafts remain excluded.",
+  "reports": [
+    {
+      "countryCode": "TCD",
+      "sourceRecordIndex": 6,
+      "period": {
+        "startYear": 2022,
+        "endYear": 2026
+      },
+      "countryEvidence": {
+        "evidence": "ÉVALUATION FINALE DE LA COOPERATION DES NATIONS UNIES AVEC LE TCHAD SUR LA PÉRIODE 2022-2026 RAPPORT DE L’ÉVALUATION Version du 25 mai 2026 Présenté par : • MIANGOTAR YODE, Chef de mission et responsable de l’évaluation du résultat s",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/262351e4-870a-43c1-a80a-082b37ea700e_RapportdelEvaluationFinaleUNSDCF31032026VF28052026.pdf"
+      },
+      "periodEvidence": {
+        "startYear": 2022,
+        "endYear": 2026,
+        "evidence": "ÉVALUATION FINALE DE LA COOPERATION DES NATIONS UNIES AVEC LE TCHAD SUR LA PÉRIODE 2022-2026 RAPPORT DE L’ÉVALUATION Version du 25 mai 2026 Présenté par : • MIANGOTAR YODE, Chef de mission et responsable de l’évaluation du résultat straté",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/262351e4-870a-43c1-a80a-082b37ea700e_RapportdelEvaluationFinaleUNSDCF31032026VF28052026.pdf"
+      },
+      "language": "fr",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": []
+    },
+    {
+      "countryCode": "TUN",
+      "sourceRecordIndex": 28,
+      "period": {
+        "startYear": 2021,
+        "endYear": 2025
+      },
+      "countryEvidence": {
+        "evidence": "• NATIONS UNIES EN TUNISIE REPUBLIQUE TUNISIENNE 11 Mai 2025 ÉVALUATION FINALE DU CADRE DE COOPERATION DES NAT",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/f3d9b398-d69c-4b65-9467-f5fe2b7b009c_RAPPORT DEVALUATION UNSDCF TUNISIE 20212025.pdf"
+      },
+      "periodEvidence": {
+        "startYear": 2021,
+        "endYear": 2025,
+        "evidence": "REPUBLIQUE TUNISIENNE 11 Mai 2025 ÉVALUATION FINALE DU CADRE DE COOPERATION DES NATIONS UNIES POUR LE DEVELOPPEMENT DURABLE – TUNISIE (UNSDCF 2021-2025) RAPPORT FINAL Programme Plan Cadre de Coopération des Nations Unies pour le Développement Durable (UNSDCF) Période couverte 2021-2025 Pays Tunisie Type d’évaluation Formativ",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/f3d9b398-d69c-4b65-9467-f5fe2b7b009c_RAPPORT DEVALUATION UNSDCF TUNISIE 20212025.pdf"
+      },
+      "language": "fr",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": []
+    },
+    {
+      "countryCode": "SYR",
+      "sourceRecordIndex": 50,
+      "period": {
+        "startYear": 2022,
+        "endYear": 2025
+      },
+      "countryEvidence": {
+        "evidence": "Rapid Assessment | Report United Nations Strategic Framework for Syria 2022-2025 Contents Rapid Assessment Purpose & Criteria ............................................................................... 2 Overall Purpose ......................................",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/dec8de20-ade8-4c63-8b67-20acaa080f29_Rapid AssessmentReport Final for publishCLNrev.pdf"
+      },
+      "periodEvidence": {
+        "startYear": 2022,
+        "endYear": 2025,
+        "evidence": "Rapid Assessment | Report United Nations Strategic Framework for Syria 2022-2025 Contents Rapid Assessment Purpose & Criteria ............................................................................... 2 Overall Purpose .............................",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/dec8de20-ade8-4c63-8b67-20acaa080f29_Rapid AssessmentReport Final for publishCLNrev.pdf"
+      },
+      "language": "en",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": []
+    },
+    {
+      "countryCode": "GMB",
+      "sourceRecordIndex": 57,
+      "period": {
+        "startYear": 2017,
+        "endYear": 2021
+      },
+      "countryEvidence": {
+        "evidence": "Timeframe of the Evaluation 13 December 2021 to 30 June 2022 Date of the Evaluation Report 30 June 2022 Location of the Intervention The Gambia Names of Evaluators Richard Pagett Kebba Ngumbo Sima Michal Obuch Momodou Sowe Project Managers Aime Pari Francesca Carbone EVALUATION OF THE UNITED NATIONS DEVELOPMENT ASSISTANCE FRAMEW",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/10761c33-586b-4eb6-a331-3b8ac74614d6_Draft UNDAF Evaluation Final.pdf"
+      },
+      "periodEvidence": {
+        "startYear": 2017,
+        "endYear": 2021,
+        "evidence": "o Sima Michal Obuch Momodou Sowe Project Managers Aime Pari Francesca Carbone EVALUATION OF THE UNITED NATIONS DEVELOPMENT ASSISTANCE FRAMEWORK (UNDAF) FOR THE GAMBIA 2017-2021 2021/UNDP/GAM/OPS/176 EVALUATION REPORT",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/10761c33-586b-4eb6-a331-3b8ac74614d6_Draft UNDAF Evaluation Final.pdf"
+      },
+      "language": "en",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": [58, 89, 113]
+    },
+    {
+      "countryCode": "DJI",
+      "sourceRecordIndex": 60,
+      "period": {
+        "startYear": 2018,
+        "endYear": 2024
+      },
+      "countryEvidence": {
+        "evidence": "Mai 2024 EVALUATION FINALE DU PLAN CADRE DES NATIONS UNIES POUR L’AIDE AU DEVELOPPEMENT DE DJIBOUTI (PNUAD) 2018-2024",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/2e15e37c-ab50-4887-ba8d-38755aadcc8e_20240630 Djibouti UNDAF Final Version.pdf"
+      },
+      "periodEvidence": {
+        "startYear": 2018,
+        "endYear": 2024,
+        "evidence": "Mai 2024 EVALUATION FINALE DU PLAN CADRE DES NATIONS UNIES POUR L’AIDE AU DEVELOPPEMENT DE DJIBOUTI (PNUAD) 2018-2024",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/2e15e37c-ab50-4887-ba8d-38755aadcc8e_20240630 Djibouti UNDAF Final Version.pdf"
+      },
+      "language": "fr",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": []
+    },
+    {
+      "countryCode": "MLI",
+      "sourceRecordIndex": 69,
+      "period": {
+        "startYear": 2020,
+        "endYear": 2024
+      },
+      "countryEvidence": {
+        "evidence": "ick Oumar TRAORE Consultant national left3411855évaluation du Cadre de Coopération des Nations Unies pour le Développement Durable(UNSDCF MALI 2020-2024)00évaluation du Cadre de Coopération des Nations Unies pour le Développement Durable(UNSDCF MALI 2020-2024)2222502324100Bamako, Décembre 2023 941000Bamako, Décembre 2023 RAPPORT",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/f0c9cf5a-9dc1-44f1-9bc7-f6ef3d0fc737_UNSDCF Rapport final evaluation de lUNSDCF 19 décembre 2023 1.docx"
+      },
+      "periodEvidence": {
+        "startYear": 2020,
+        "endYear": 2024,
+        "evidence": "t nationalCheick Oumar TRAORE Consultant national left3411855évaluation du Cadre de Coopération des Nations Unies pour le Développement Durable(UNSDCF MALI 2020-2024)00évaluation du Cadre de Coopération des Nations Unies pour le Développement Durable(UNSDCF MALI 2020-2024)2222502324100Bamako, Décembre 2023 941000Bamako, Décembre 2023",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/f0c9cf5a-9dc1-44f1-9bc7-f6ef3d0fc737_UNSDCF Rapport final evaluation de lUNSDCF 19 décembre 2023 1.docx"
+      },
+      "language": "fr",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": []
+    },
+    {
+      "countryCode": "STP",
+      "sourceRecordIndex": 70,
+      "period": {
+        "startYear": 2017,
+        "endYear": 2022
+      },
+      "countryEvidence": {
+        "evidence": "1 São Tomé & Principe Evaluation of the UNDAF 2017 – 2022 Final Report January 2022 Prepared by: CLIFF BERNARD NUWAKORA And LALAO RAMANARIVO – RAHARISOA International Evaluation Consultants Email: clif",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/684443ba-a2b2-48d9-bbdb-9c6893d8736b_STPUNDAFEvaluationReport.pdf"
+      },
+      "periodEvidence": {
+        "startYear": 2017,
+        "endYear": 2022,
+        "evidence": "1 São Tomé & Principe Evaluation of the UNDAF 2017 – 2022 Final Report January 2022 Prepared by: CLIFF BERNARD NUWAKORA And LALAO RAMANARIVO – RAHARISOA International Evaluation Consultants Email: cliff.nuwakora@gmail.com and raha",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/684443ba-a2b2-48d9-bbdb-9c6893d8736b_STPUNDAFEvaluationReport.pdf"
+      },
+      "language": "en",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": [126]
+    },
+    {
+      "countryCode": "SYC",
+      "sourceRecordIndex": 86,
+      "period": {
+        "startYear": 2019,
+        "endYear": 2023
+      },
+      "countryEvidence": {
+        "evidence": "Evaluation of the Government of Seychelles & United Nations Strategic Partnership Framework (SPF) 2019-2023 March 2023 VOLUME 1: MAIN REPORT",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/2f46da1b-fbf3-4ada-b8b7-67efe2c89a1e_Final_Evaluation_UN_Gov_Seychelles_SPF_Report.pdf"
+      },
+      "periodEvidence": {
+        "startYear": 2019,
+        "endYear": 2023,
+        "evidence": "Evaluation of the Government of Seychelles & United Nations Strategic Partnership Framework (SPF) 2019-2023 March 2023 VOLUME 1: MAIN REPORT",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/2f46da1b-fbf3-4ada-b8b7-67efe2c89a1e_Final_Evaluation_UN_Gov_Seychelles_SPF_Report.pdf"
+      },
+      "language": "en",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": []
+    },
+    {
+      "countryCode": "MUS",
+      "sourceRecordIndex": 87,
+      "period": {
+        "startYear": 2019,
+        "endYear": 2023
+      },
+      "countryEvidence": {
+        "evidence": "i Evaluation of the Government of Mauritius & United Nations Strategic Partnership Framework (SPF) 2019-2023 Feb 2023 VOLUME 1: MAIN REPORT",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/96b5b150-7e07-46d4-abaa-3cb4b910bf72_Final_Evaluation_UN_Gov_Mauritius_SPF_Report.pdf"
+      },
+      "periodEvidence": {
+        "startYear": 2019,
+        "endYear": 2023,
+        "evidence": "i Evaluation of the Government of Mauritius & United Nations Strategic Partnership Framework (SPF) 2019-2023 Feb 2023 VOLUME 1: MAIN REPORT",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/96b5b150-7e07-46d4-abaa-3cb4b910bf72_Final_Evaluation_UN_Gov_Mauritius_SPF_Report.pdf"
+      },
+      "language": "en",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": [90]
+    },
+    {
+      "countryCode": "BFA",
+      "sourceRecordIndex": 97,
+      "period": {
+        "startYear": 2018,
+        "endYear": 2022
+      },
+      "countryEvidence": {
+        "evidence": "Evaluation du Plan Cadre des Nations Unies pour l’Assistance au Développement au Burkina Faso (PNUAD 2018-2022) Rapport d’Evaluation (Version Finale) Commanditaire Equipe Pays des Nations Unies au Burkina Faso 15 septembre 2022",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/557a13aa-2f03-4d57-b8b2-7ea92ca93517_BF_Rapport_Final_Evaluation_UNDAF2018-2022.pdf"
+      },
+      "periodEvidence": {
+        "startYear": 2018,
+        "endYear": 2022,
+        "evidence": "Evaluation du Plan Cadre des Nations Unies pour l’Assistance au Développement au Burkina Faso (PNUAD 2018-2022) Rapport d’Evaluation (Version Finale) Commanditaire Equipe Pays des Nations Unies au Burkina Faso 15 septembre 2022",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/557a13aa-2f03-4d57-b8b2-7ea92ca93517_BF_Rapport_Final_Evaluation_UNDAF2018-2022.pdf"
+      },
+      "language": "fr",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": []
+    },
+    {
+      "countryCode": "MRT",
+      "sourceRecordIndex": 109,
+      "period": {
+        "startYear": 2018,
+        "endYear": 2022
+      },
+      "countryEvidence": {
+        "evidence": "Consultant National 1 Isselmou Mohamed Taleb, Ingénieur Statisticien-Economiste Consultant National 2 Ahmed Isselmou, Démographe Carte administrative de la Mauritanie -330201962830 Informations sur le CPDD Informations sur le CPDD Titre du Programme Cadre de Partenariat pour le Développement Durable 2018-2022 Numéro Atlas n/a Produits et résultats inst",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/684443ba-a2b2-48d9-bbdb-9c6893d8736b_Rapport_final_CPDD_Mauritanie_20182022_15_08_22.docx"
+      },
+      "periodEvidence": {
+        "startYear": 2018,
+        "endYear": 2022,
+        "evidence": "osoft.Word\\\\WebArchiveCopyPasteTempFiles\\\\page1image1784\" \\* MERGEFORMAT -677252-2328456 center43180EVALUATION DU CADRE DE PARTENARIAT POUR LE DEVELOPPEMENT DURABLE(CPDD 2018-2022)RAPPORT FINAL00EVALUATION DU CADRE DE PARTENARIAT POUR LE DEVELOPPEMENT DURABLE(CPDD 2018-2022)RAPPORT FINAL EVALUATION DU CADRE DE PARTENARIAT POUR LE DEVELOPPEMENT DURABLE (CPDD",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/684443ba-a2b2-48d9-bbdb-9c6893d8736b_Rapport_final_CPDD_Mauritanie_20182022_15_08_22.docx"
+      },
+      "language": "fr",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": []
+    },
+    {
+      "countryCode": "ECU",
+      "sourceRecordIndex": 119,
+      "period": {
+        "startYear": 2019,
+        "endYear": 2022
+      },
+      "countryEvidence": {
+        "evidence": "Mayo 2022 EVALUACIÓN FINAL DEL MARCO DE COOPERACIÓN PARA EL DESARROLLO SOSTENIBLE ONU - ECUADOR 2019-2022 -Informe final- Nexus Inter-American Consulting S.C. Equipo consultor: Patricio Chávez, Evaluador Coordinador; Iván Fernández, Evaluador de apoyo; Natalia Arce, Control de calidad",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/fdd8d920-d818-4c5c-a2f2-0ce0ad228237_Ecuador_-_Informe_Final_de_evaluación_del_MC_2019-2022.pdf"
+      },
+      "periodEvidence": {
+        "startYear": 2019,
+        "endYear": 2022,
+        "evidence": "Mayo 2022 EVALUACIÓN FINAL DEL MARCO DE COOPERACIÓN PARA EL DESARROLLO SOSTENIBLE ONU - ECUADOR 2019-2022 -Informe final- Nexus Inter-American Consulting S.C. Equipo consultor: Patricio Chávez, Evaluador Coordinador; Iván Fernández, Evaluador de apoyo; Natalia Arce, Control de c",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/fdd8d920-d818-4c5c-a2f2-0ce0ad228237_Ecuador_-_Informe_Final_de_evaluación_del_MC_2019-2022.pdf"
+      },
+      "language": "es",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": []
+    },
+    {
+      "countryCode": "TCD",
+      "sourceRecordIndex": 120,
+      "period": {
+        "startYear": 2017,
+        "endYear": 2022
+      },
+      "countryEvidence": {
+        "evidence": "1 Évaluation finale du « Plan Cadre des Nations Unies pour l’Assistance au Développement » -Tchad (2017-2022) Rapport final Mars 2022",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/29d27e75-622e-4cf1-aa43-bdcce9a25506_Rapport_Final_Evaluation_UNDAF_28032022.pdf"
+      },
+      "periodEvidence": {
+        "startYear": 2017,
+        "endYear": 2022,
+        "evidence": "1 Évaluation finale du « Plan Cadre des Nations Unies pour l’Assistance au Développement » -Tchad (2017-2022) Rapport final Mars 2022",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/29d27e75-622e-4cf1-aa43-bdcce9a25506_Rapport_Final_Evaluation_UNDAF_28032022.pdf"
+      },
+      "language": "fr",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": [131]
+    },
+    {
+      "countryCode": "BRA",
+      "sourceRecordIndex": 124,
+      "period": {
+        "startYear": 2017,
+        "endYear": 2021
+      },
+      "countryEvidence": {
+        "evidence": "Assessment of the United Nations Sustainable Development Cooperation Framework for Brazil (2017-2021) Product 5 - Final Report Version 4 CONTRACT Nº: BRA10-846-38689/2021 JOF-2468/2020 Brasília and São Paulo, April 22nd, 2022 Prepared by: Reviewed by: Version: Date: CC/RA/",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/684443ba-a2b2-48d9-bbdb-9c6893d8736b_Final_Report___UNSDCF_Brazil.pdf"
+      },
+      "periodEvidence": {
+        "startYear": 2017,
+        "endYear": 2021,
+        "evidence": "Assessment of the United Nations Sustainable Development Cooperation Framework for Brazil (2017-2021) Product 5 - Final Report Version 4 CONTRACT Nº: BRA10-846-38689/2021 JOF-2468/2020 Brasília and São Paulo, April 22nd, 2022 Prepared by: Reviewed by: Version: Date:",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/684443ba-a2b2-48d9-bbdb-9c6893d8736b_Final_Report___UNSDCF_Brazil.pdf"
+      },
+      "language": "en",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": []
+    },
+    {
+      "countryCode": "GIN",
+      "sourceRecordIndex": 135,
+      "period": {
+        "startYear": 2018,
+        "endYear": 2022
+      },
+      "countryEvidence": {
+        "evidence": "ÉQUIPE PAYS DES NATIONS UNIES République de Guinée ÉVALUATION SOMMATIVE DU PLAN CADRE DES NATIONS UNIES POUR L’AIDE AU DEVELOPPEMENT (PNUAD) 2018-2022 Rapport final Requise par le Bureau de la Coordination des Nations Unies",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/7242a1cf-19fe-4c0f-a97f-6e1f3b228acf_Guinea_Rapport_Final_Evaluation_Sommative_du_PNUAD_2018-2022_v301221+_QA.pdf"
+      },
+      "periodEvidence": {
+        "startYear": 2018,
+        "endYear": 2022,
+        "evidence": "ÉQUIPE PAYS DES NATIONS UNIES République de Guinée ÉVALUATION SOMMATIVE DU PLAN CADRE DES NATIONS UNIES POUR L’AIDE AU DEVELOPPEMENT (PNUAD) 2018-2022 Rapport final Requise par le Bureau de la Coordination des Nations Unies Guinée Présenté par : 1. Gustave Ouattara, Consultant international, chef de mi",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/7242a1cf-19fe-4c0f-a97f-6e1f3b228acf_Guinea_Rapport_Final_Evaluation_Sommative_du_PNUAD_2018-2022_v301221+_QA.pdf"
+      },
+      "language": "fr",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": [136]
+    },
+    {
+      "countryCode": "ZMB",
+      "sourceRecordIndex": 141,
+      "period": {
+        "startYear": 2016,
+        "endYear": 2022
+      },
+      "countryEvidence": {
+        "evidence": "EVALUATION OF THE 2016-2022 ZAMBIA UNITED NATIONS SUSTAINABLE DEVELOPMENT PARTNERSHIP FRAMEWORK FINAL EVALUATION REPORT December, 2021",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/b129efd5-c48a-4e96-b39a-810896a54596_ZambiaUNSDPFFINALEVALUATIONREPORTVersion 60.pdf"
+      },
+      "periodEvidence": {
+        "startYear": 2016,
+        "endYear": 2022,
+        "evidence": "EVALUATION OF THE 2016-2022 ZAMBIA UNITED NATIONS SUSTAINABLE DEVELOPMENT PARTNERSHIP FRAMEWORK FINAL EVALUATION REPORT December, 2021",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/b129efd5-c48a-4e96-b39a-810896a54596_ZambiaUNSDPFFINALEVALUATIONREPORTVersion 60.pdf"
+      },
+      "language": "en",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": [140]
+    },
+    {
+      "countryCode": "THA",
+      "sourceRecordIndex": 142,
+      "period": {
+        "startYear": 2017,
+        "endYear": 2021
+      },
+      "countryEvidence": {
+        "evidence": "INDEPENDENT REVIEW & LESSONS LEARNED UNITED NATIONS PARTNERSHIP ASSISTANCE FRAMEWORK (UNPAF) 2017 – 2021 THAILAND Final Report of the Independent Consultant 21 October 2021",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/822f2083-400c-4f2d-a5ab-be2f192a5271_Thailand_UNPAF_Lessons_Learned_Report_211021_revpdf"
+      },
+      "periodEvidence": {
+        "startYear": 2017,
+        "endYear": 2021,
+        "evidence": "INDEPENDENT REVIEW & LESSONS LEARNED UNITED NATIONS PARTNERSHIP ASSISTANCE FRAMEWORK (UNPAF) 2017 – 2021 THAILAND Final Report of the Independent Consultant 21 October 2021",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/822f2083-400c-4f2d-a5ab-be2f192a5271_Thailand_UNPAF_Lessons_Learned_Report_211021_revpdf"
+      },
+      "language": "en",
+      "reportKind": "review",
+      "alternateRecordIndexes": []
+    },
+    {
+      "countryCode": "PER",
+      "sourceRecordIndex": 144,
+      "period": {
+        "startYear": 2017,
+        "endYear": 2021
+      },
+      "countryEvidence": {
+        "evidence": "1 Evaluación Final del Marco de Cooperación de las Naciones Unidas para el Desarrollo en Perú (UNDAF 2017-2021) INFORME FINAL Resumen Noviembre de 2021 ------------------------------------------------------------------------- Sr. Christian Privat Consultor Internacional",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/a67d51ba-4b55-4682-8a1c-4eeb0a9a28d7_Evaluacion_UNDAF_Peru_(2017-2021)_-_Informe_Final_Nov_2021_Resumen_version_Final.pdf"
+      },
+      "periodEvidence": {
+        "startYear": 2017,
+        "endYear": 2021,
+        "evidence": "1 Evaluación Final del Marco de Cooperación de las Naciones Unidas para el Desarrollo en Perú (UNDAF 2017-2021) INFORME FINAL Resumen Noviembre de 2021 ------------------------------------------------------------------------- Sr. Christian Privat Consultor Internacional",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/a67d51ba-4b55-4682-8a1c-4eeb0a9a28d7_Evaluacion_UNDAF_Peru_(2017-2021)_-_Informe_Final_Nov_2021_Resumen_version_Final.pdf"
+      },
+      "language": "es",
+      "reportKind": "summary",
+      "alternateRecordIndexes": [151]
+    },
+    {
+      "countryCode": "BGD",
+      "sourceRecordIndex": 146,
+      "period": {
+        "startYear": 2017,
+        "endYear": 2021
+      },
+      "countryEvidence": {
+        "evidence": "UNDAF 2017-2021 Independent Evaluation 1 Evaluation Report United Nations Development Assistance Framework 2017 - 2021 UN Bangladesh April 2021 Independent Evaluator Ann Lund Commissioning Office This independent evaluation is commissioned by the United",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/684443ba-a2b2-48d9-bbdb-9c6893d8736b_UNDAF_20172021_Evaluation_Report_Bangladesh_2021.pdf"
+      },
+      "periodEvidence": {
+        "startYear": 2017,
+        "endYear": 2021,
+        "evidence": "UNDAF 2017-2021 Independent Evaluation 1 Evaluation Report United Nations Development Assistance Framework 2017 - 2021 UN Bangladesh April 2021 Independent Evaluator Ann Lund",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/684443ba-a2b2-48d9-bbdb-9c6893d8736b_UNDAF_20172021_Evaluation_Report_Bangladesh_2021.pdf"
+      },
+      "language": "en",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": [177, 188]
+    },
+    {
+      "countryCode": "LBY",
+      "sourceRecordIndex": 152,
+      "period": {
+        "startYear": 2019,
+        "endYear": 2022
+      },
+      "countryEvidence": {
+        "evidence": "1 UNSF 2019-2022 –Libya Evaluation Report October 2021 Prepared by: Rania Fazah & Kathleen White",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/0e0fab08-3573-46d9-a96e-d175d888c1de_UNSF_Final_Evaluation_Report_final.pdf"
+      },
+      "periodEvidence": {
+        "startYear": 2019,
+        "endYear": 2022,
+        "evidence": "1 UNSF 2019-2022 –Libya Evaluation Report October 2021 Prepared by: Rania Fazah & Kathleen White",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/0e0fab08-3573-46d9-a96e-d175d888c1de_UNSF_Final_Evaluation_Report_final.pdf"
+      },
+      "language": "en",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": []
+    },
+    {
+      "countryCode": "MAR",
+      "sourceRecordIndex": 157,
+      "period": {
+        "startYear": 2017,
+        "endYear": 2021
+      },
+      "countryEvidence": {
+        "evidence": "ipe d’évaluation adresse ses remerciements au Ministère des Affaires Étrangères, de la Coopération Africaine et des Marocains Résidant à l’Étranger du Royaume du Maroc, aux partenaires gouvernementaux et aux membres du Comité Directeur de l’évaluation, pour la disponibilité et le sens de responsabilité avec lesquels ils ont pris part au processus d’évaluation.",
+        "sourcePage": 3,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/684443ba-a2b2-48d9-bbdb-9c6893d8736b_Rapport_FinalEFIUNDAF20172021logosvf.pdf"
+      },
+      "periodEvidence": {
+        "startYear": 2017,
+        "endYear": 2021,
+        "evidence": "Évaluation finale indépendante UNDAF 2017-2021 - Rapport 2 ÉQUIPE DE L’ÉVALUATION M. Abderrahmane Ait Essbaa Expert spécialiste en programmes développement M. Enric Grau Expert spécialiste en évaluation Mme. Eva",
+        "sourcePage": 2,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/684443ba-a2b2-48d9-bbdb-9c6893d8736b_Rapport_FinalEFIUNDAF20172021logosvf.pdf"
+      },
+      "language": "fr",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": []
+    },
+    {
+      "countryCode": "PSE",
+      "sourceRecordIndex": 163,
+      "period": {
+        "startYear": 2014,
+        "endYear": 2017
+      },
+      "countryEvidence": {
+        "evidence": "United Nations Development Assistance Framework for the State of Palestine 2014-2017 Evaluation Report February 2018 Table of Contents TOC \\o \"1-3\" Acknowledgements PAGEREF _Toc383330347 \\h i Acronyms and Abbreviations PAGEREF _Toc383330348 \\h ii Executive Summary PAG",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/9b6d522e-59aa-44d1-92d1-4e161de0c3ff_UNDAF__PALESTINE_FEB_2018_FINAL_EVALUATION.docx"
+      },
+      "periodEvidence": {
+        "startYear": 2014,
+        "endYear": 2017,
+        "evidence": "United Nations Development Assistance Framework for the State of Palestine 2014-2017 Evaluation Report February 2018 Table of Contents TOC \\o \"1-3\" Acknowledgements PAGEREF _Toc383330347 \\h i Acronyms and Abbreviations PAGEREF _Toc383330348 \\h ii Executive S",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/9b6d522e-59aa-44d1-92d1-4e161de0c3ff_UNDAF__PALESTINE_FEB_2018_FINAL_EVALUATION.docx"
+      },
+      "language": "en",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": []
+    },
+    {
+      "countryCode": "SLV",
+      "sourceRecordIndex": 166,
+      "period": {
+        "startYear": 2016,
+        "endYear": 2020
+      },
+      "countryEvidence": {
+        "evidence": "EVALUACIÓN DEL MARCO DE ASISTENCIA DE LAS NACIONES UNIDAS PARA EL DESARROLLO EL SALVADOR 2016-2020",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/684443ba-a2b2-48d9-bbdb-9c6893d8736b_UNDAF_2016__2020_Cooperation_Framework_Evaluation.pdf"
+      },
+      "periodEvidence": {
+        "startYear": 2016,
+        "endYear": 2020,
+        "evidence": "EVALUACIÓN DEL MARCO DE ASISTENCIA DE LAS NACIONES UNIDAS PARA EL DESARROLLO EL SALVADOR 2016-2020",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/684443ba-a2b2-48d9-bbdb-9c6893d8736b_UNDAF_2016__2020_Cooperation_Framework_Evaluation.pdf"
+      },
+      "language": "es",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": []
+    },
+    {
+      "countryCode": "MKD",
+      "sourceRecordIndex": 167,
+      "period": {
+        "startYear": 2016,
+        "endYear": 2020
+      },
+      "countryEvidence": {
+        "evidence": "FINAL EVALUATION North Macedonia - United Nations Partnership for Sustainable Development 2016-2020 Commissioned by the UN Resident Coordinator Office for North Macedonia December 2019",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/88eb2628-9433-43f7-9785-b45251b9d4de_NorthMacedonia_PSDEvaluation_2019.12.pdf"
+      },
+      "periodEvidence": {
+        "startYear": 2016,
+        "endYear": 2020,
+        "evidence": "FINAL EVALUATION North Macedonia - United Nations Partnership for Sustainable Development 2016-2020 Commissioned by the UN Resident Coordinator Office for North Macedonia December 2019",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/88eb2628-9433-43f7-9785-b45251b9d4de_NorthMacedonia_PSDEvaluation_2019.12.pdf"
+      },
+      "language": "en",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": [189]
+    },
+    {
+      "countryCode": "LAO",
+      "sourceRecordIndex": 168,
+      "period": {
+        "startYear": 2012,
+        "endYear": 2016
+      },
+      "countryEvidence": {
+        "evidence": "The United Nations in the Lao PDR Michael Askwith, Andrea Lee Esser, Sharon Low, Souklaty Sysaneth Vientiane, 23 October 2015 LAO PDR EVALUATION REPORT United Nations Development Assistance Framework 2012-2016",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/2e752fc3-5ba9-4736-a959-f9900298b68d_UNDAF_Evaluation_Report,_Lao_PDR_FINAL.pdf"
+      },
+      "periodEvidence": {
+        "startYear": 2012,
+        "endYear": 2016,
+        "evidence": "the Lao PDR Michael Askwith, Andrea Lee Esser, Sharon Low, Souklaty Sysaneth Vientiane, 23 October 2015 LAO PDR EVALUATION REPORT United Nations Development Assistance Framework 2012-2016",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/2e752fc3-5ba9-4736-a959-f9900298b68d_UNDAF_Evaluation_Report,_Lao_PDR_FINAL.pdf"
+      },
+      "language": "en",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": []
+    },
+    {
+      "countryCode": "TUR",
+      "sourceRecordIndex": 170,
+      "period": {
+        "startYear": 2016,
+        "endYear": 2020
+      },
+      "countryEvidence": {
+        "evidence": "Evaluation of the United Nations Development Cooperation Strategy in Turkey (UNDCS) 2016-2020 Evaluation Report - Executive Summary",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/007d4f59-60e4-4c05-b52e-ea5b5f80b545_UNDCS_2016-2020_Evaluation-Final.pdf"
+      },
+      "periodEvidence": {
+        "startYear": 2016,
+        "endYear": 2020,
+        "evidence": "Evaluation of the United Nations Development Cooperation Strategy in Turkey (UNDCS) 2016-2020 Evaluation Report - Executive Summary",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/007d4f59-60e4-4c05-b52e-ea5b5f80b545_UNDCS_2016-2020_Evaluation-Final.pdf"
+      },
+      "language": "en",
+      "reportKind": "summary",
+      "alternateRecordIndexes": []
+    },
+    {
+      "countryCode": "GUY",
+      "sourceRecordIndex": 180,
+      "period": {
+        "startYear": 2012,
+        "endYear": 2016
+      },
+      "countryEvidence": {
+        "evidence": "1 | P a g e INDEPENDENT EVALUATION UNDAF 2012-16 GUYANA BY BARBARA ORLANDINI, PHD Independent Consultant FINAL REPORT DECEMBER 2015",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/97ca6cc0-5806-4a92-8f8f-3da5534c495f_Guyana_UNDAF_evaluation_2015.12.pdf"
+      },
+      "periodEvidence": {
+        "startYear": 2012,
+        "endYear": 2016,
+        "evidence": "1 | P a g e INDEPENDENT EVALUATION UNDAF 2012-16 GUYANA BY BARBARA ORLANDINI, PHD Independent Consultant FINAL REPORT DECEMBER 2015",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/97ca6cc0-5806-4a92-8f8f-3da5534c495f_Guyana_UNDAF_evaluation_2015.12.pdf"
+      },
+      "language": "en",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": []
+    },
+    {
+      "countryCode": "MNE",
+      "sourceRecordIndex": 192,
+      "period": {
+        "startYear": 2017,
+        "endYear": 2021
+      },
+      "countryEvidence": {
+        "evidence": "Final Evaluation of the United Nations Development Assistance Framework (UNDAF) for Montenegro (2017-2021) Podgorica, Montenegro June 2020",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/7ea1d943-e120-439c-90a3-50ba645dde3f_UNDAF_MNE_final_evaluation.pdf"
+      },
+      "periodEvidence": {
+        "startYear": 2017,
+        "endYear": 2021,
+        "evidence": "Final Evaluation of the United Nations Development Assistance Framework (UNDAF) for Montenegro (2017-2021) Podgorica, Montenegro June 2020",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/7ea1d943-e120-439c-90a3-50ba645dde3f_UNDAF_MNE_final_evaluation.pdf"
+      },
+      "language": "en",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": [191]
+    },
+    {
+      "countryCode": "ARM",
+      "sourceRecordIndex": 193,
+      "period": {
+        "startYear": 2016,
+        "endYear": 2020
+      },
+      "countryEvidence": {
+        "evidence": "Final Evaluation of the United Nations Development Assistance Framework (UNDAF) for Armenia (2016-2020) Yerevan, Armenia June 2020",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/e3e69667-764d-4925-8994-6807429f9366_Armenia_UNDAF_Evaluation_Report_2020.05.pdf"
+      },
+      "periodEvidence": {
+        "startYear": 2016,
+        "endYear": 2020,
+        "evidence": "Final Evaluation of the United Nations Development Assistance Framework (UNDAF) for Armenia (2016-2020) Yerevan, Armenia June 2020",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/e3e69667-764d-4925-8994-6807429f9366_Armenia_UNDAF_Evaluation_Report_2020.05.pdf"
+      },
+      "language": "en",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": []
+    },
+    {
+      "countryCode": "KAZ",
+      "sourceRecordIndex": 199,
+      "period": {
+        "startYear": 2016,
+        "endYear": 2020
+      },
+      "countryEvidence": {
+        "evidence": "m020000Prepared by Marina GurboIndependent evaluation consultantmarinagurbo@gmail.com5768013164040Final Evaluation of the Partnership Framework for Development Kazakhstan 2016-2020 (PFD)FINAL REPORTMG00Final Evaluation of the Partnership Framework for Development Kazakhstan 2016-2020 (PFD)FINAL REPORTMG 2019 2019 Prepared by Marina Gurbo Independent evaluation consu",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/7a3b7384-d2be-4c2b-a553-11b40cba8942_PFD_Kazakhstan_final_evaluation_(2019).docx"
+      },
+      "periodEvidence": {
+        "startYear": 2016,
+        "endYear": 2020,
+        "evidence": "@gmail.com020000Prepared by Marina GurboIndependent evaluation consultantmarinagurbo@gmail.com5768013164040Final Evaluation of the Partnership Framework for Development Kazakhstan 2016-2020 (PFD)FINAL REPORTMG00Final Evaluation of the Partnership Framework for Development Kazakhstan 2016-2020 (PFD)FINAL REPORTMG 2019 2019 Prepared by Marina Gurbo Independent evalua",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/7a3b7384-d2be-4c2b-a553-11b40cba8942_PFD_Kazakhstan_final_evaluation_(2019).docx"
+      },
+      "language": "en",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": []
+    },
+    {
+      "countryCode": "CMR",
+      "sourceRecordIndex": 202,
+      "period": {
+        "startYear": 2018,
+        "endYear": 2020
+      },
+      "countryEvidence": {
+        "evidence": "Plan Cadre des Nations Unies pour l’Aide au Développement (UNDAF) 2018-2020 Tous unis dans l’action. Cameroun : Revue à mi-parcours de l’UNDAF 2018-2020 OCTOBRE 2019 CAMEROUN",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/3adcbd42-7bf9-45e8-951b-20b0afe7caa1_UNDAF_2018-2020_Mid-Term_Review_Cameroon_2019.pdf"
+      },
+      "periodEvidence": {
+        "startYear": 2018,
+        "endYear": 2020,
+        "evidence": "Plan Cadre des Nations Unies pour l’Aide au Développement (UNDAF) 2018-2020 Tous unis dans l’action. Cameroun : Revue à mi-parcours de l’UNDAF 2018-2020 OCTOBRE 2019 CAMEROUN",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/3adcbd42-7bf9-45e8-951b-20b0afe7caa1_UNDAF_2018-2020_Mid-Term_Review_Cameroon_2019.pdf"
+      },
+      "language": "en",
+      "reportKind": "mid_term_evaluation",
+      "alternateRecordIndexes": []
+    },
+    {
+      "countryCode": "MDV",
+      "sourceRecordIndex": 204,
+      "period": {
+        "startYear": 2016,
+        "endYear": 2020
+      },
+      "countryEvidence": {
+        "evidence": "11 July 2019 Prepared for UN Maldives by Aminath Haifa Naeem Editing and Layout by RCO Maldives Final Evaluation Report of the United Nations Development Assistance Framework (UNDAF) 2016 2020 for Republic of Maldives",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/684443ba-a2b2-48d9-bbdb-9c6893d8736b_C12_MaldivesUNDAFFinalEvaluationReport11July20195.pdf"
+      },
+      "periodEvidence": {
+        "evidence": "Major findings of the final evaluation of UNDAF for Maldives2016-2020",
+        "sourcePage": 4,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/684443ba-a2b2-48d9-bbdb-9c6893d8736b_C12_MaldivesUNDAFFinalEvaluationReport11July20195.pdf",
+        "startYear": 2016,
+        "endYear": 2020
+      },
+      "language": "en",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": []
+    },
+    {
+      "countryCode": "ZAF",
+      "sourceRecordIndex": 205,
+      "period": {
+        "startYear": 2013,
+        "endYear": 2017
+      },
+      "countryEvidence": {
+        "evidence": "-914400-9144000 Evaluation of the United Nations-South Africa Strategic Cooperation Framework 2013 - 2017 4 August 2017 Final Report Prepared by Angela Bester(Consultant) Contents TOC \\o Acknowledgements PAGEREF _Toc363487240 \\h iv Acronyms and Ab",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/684443ba-a2b2-48d9-bbdb-9c6893d8736b_FINAL_UNSCF_evaluation_report_4_August_20171clean.docx"
+      },
+      "periodEvidence": {
+        "startYear": 2013,
+        "endYear": 2017,
+        "evidence": "-914400-9144000 Evaluation of the United Nations-South Africa Strategic Cooperation Framework 2013 - 2017 4 August 2017 Final Report Prepared by Angela Bester(Consultant) Contents TOC \\o Acknowledgements PAGEREF _Toc363487240 \\h iv Acronyms and Abbreviations PAGEREF _Toc",
+        "sourcePage": 1,
+        "sourceURL": "https://document.ess.uninfo.org/uninfo-production-main/684443ba-a2b2-48d9-bbdb-9c6893d8736b_FINAL_UNSCF_evaluation_report_4_August_20171clean.docx"
+      },
+      "language": "en",
+      "reportKind": "evaluation",
+      "alternateRecordIndexes": []
+    }
+  ]
+}
