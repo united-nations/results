@@ -427,5 +427,71 @@
     }
   ],
   "indicatorCount": 87,
-  "cellCount": 2437
+  "cellCount": 2437,
+  "metadataRetrievedAt": "2026-11-20T20:57:42.853010+00:00",
+  "metadataRequests": [
+    {
+      "endpoint": "plan/public/entity/search",
+      "request": {
+        "planIds": [
+          1488
+        ],
+        "page": 1,
+        "limit": 200
+      },
+      "sha256": "a7296e24a26d98d7618c21601874599be02fe950e12cbcd47bf87d9489741e7f",
+      "rows": 200
+    },
+    {
+      "endpoint": "plan/public/entity/search",
+      "request": {
+        "planIds": [
+          1488
+        ],
+        "page": 2,
+        "limit": 200
+      },
+      "sha256": "d0a2be2c2172b62f648dc126a8dd197e9d39330906e3684494c12ab25f62f560",
+      "rows": 200
+    },
+    {
+      "endpoint": "plan/public/entity/search",
+      "request": {
+        "planIds": [
+          1488
+        ],
+        "page": 3,
+        "limit": 200
+      },
+      "sha256": "e55613db32a94f15257c95ec7105100736778ebbed6766ef9c35d924ce3278c6",
+      "rows": 33
+    },
+    {
+      "endpoint": "indicator/search",
+      "request": {
+        "page": 1,
+        "limit": 200
+      },
+      "sha256": "dd3da77396a5cb6750b97da0307247478cd766301da19f7384a23e29cbf84f36",
+      "rows": 200
+    },
+    {
+      "endpoint": "indicator/search",
+      "request": {
+        "page": 2,
+        "limit": 200
+      },
+      "sha256": "dbddca1f8092777a3c217ec6b94ffbe1c207ed9fd2471af545cebf520561e9e3",
+      "rows": 200
+    },
+    {
+      "endpoint": "indicator/search",
+      "request": {
+        "page": 3,
+        "limit": 200
+      },
+      "sha256": "7460d6a1a47a064b6d8dfdf87e11bb5c4c72b1af490fed87229e8a3175345dcd",
+      "rows": 105
+    }
+  ]
 }

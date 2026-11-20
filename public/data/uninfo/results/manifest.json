@@ -1,0 +1,102 @@
+{
+  "defaultPlanId": 1488,
+  "frameworks": [
+    {
+      "planId": 1945,
+      "label": "Afghanistan",
+      "countries": [
+        "Afghanistan"
+      ],
+      "planName": "United Nations Strategic Framework for Afghanistan",
+      "start": "2023-07-01",
+      "end": "2027-12-31",
+      "retrievedAt": "2026-11-20T21:09:21.990515+00:00",
+      "source": "https://api.uninfo.org/v1.0/plan/public/1945",
+      "indicatorCount": 133,
+      "cellCount": 2107
+    },
+    {
+      "planId": 2093,
+      "label": "Colombia",
+      "countries": [
+        "Colombia"
+      ],
+      "planName": "United Nations Sustainable Development Cooperation Framework (2024-2027)",
+      "start": "2024-01-01",
+      "end": "2027-12-31",
+      "retrievedAt": "2026-11-20T21:09:27.306016+00:00",
+      "source": "https://api.uninfo.org/v1.0/plan/public/2093",
+      "indicatorCount": 39,
+      "cellCount": 1404
+    },
+    {
+      "planId": 1488,
+      "label": "Kenya",
+      "countries": [
+        "Kenya"
+      ],
+      "planName": "United Nations Sustainable Development Cooperation Framework 2022 - 2027",
+      "start": "2022-07-01",
+      "end": "2027-06-30",
+      "retrievedAt": "2026-11-20T20:32:00.386878+00:00",
+      "source": "https://api.uninfo.org/v1.0/plan/public/1488",
+      "indicatorCount": 87,
+      "cellCount": 2437
+    },
+    {
+      "planId": 1539,
+      "label": "Nepal",
+      "countries": [
+        "Nepal"
+      ],
+      "planName": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2027-12-31",
+      "retrievedAt": "2026-11-20T21:09:12.335726+00:00",
+      "source": "https://api.uninfo.org/v1.0/plan/public/1539",
+      "indicatorCount": 87,
+      "cellCount": 1248
+    },
+    {
+      "planId": 1517,
+      "label": "Pacific · shared framework (14 countries)",
+      "countries": [
+        "Cook Islands",
+        "Fiji",
+        "Kiribati",
+        "Marshall Islands",
+        "Micronesia, Federated States of",
+        "Nauru",
+        "Niue",
+        "Palau",
+        "Samoa",
+        "Solomon Islands",
+        "Tokelau",
+        "Tonga",
+        "Tuvalu",
+        "Vanuatu"
+      ],
+      "planName": "United Nations Sustainable Development Cooperation Framework",
+      "start": "2023-01-01",
+      "end": "2027-12-31",
+      "retrievedAt": "2026-11-20T21:09:33.381629+00:00",
+      "source": "https://api.uninfo.org/v1.0/plan/public/1517",
+      "indicatorCount": 84,
+      "cellCount": 319
+    },
+    {
+      "planId": 2694,
+      "label": "Ukraine",
+      "countries": [
+        "Ukraine"
+      ],
+      "planName": "United Nations Sustainable Development Cooperation Framework (2025-2029)",
+      "start": "2025-01-01",
+      "end": "2029-12-31",
+      "retrievedAt": "2026-11-20T21:09:16.379167+00:00",
+      "source": "https://api.uninfo.org/v1.0/plan/public/2694",
+      "indicatorCount": 109,
+      "cellCount": 668
+    }
+  ]
+}

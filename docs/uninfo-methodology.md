@@ -270,8 +270,8 @@ reports Penta-3 baseline 61% in timeframe 1289, reached 78.7% in 2024, and targe
 country indicator view with disaggregation and year-specific comparisons.
 The baseline and target reporting periods need to stay visible.
 
-A future results import can paginate published indicator entities, batch their
-IDs into cell searches, resolve timeframe IDs, and retain the raw observations,
+The results importer paginates published indicator entities, batches their
+IDs into cell searches, resolves timeframe IDs, and retains the raw observations,
 units, parent relationships, and source IDs. Values include percentage strings,
 numbers, free text, and blanks. Preserve their types and disaggregations
 through processing. Aggregate only indicators with compatible units, definitions,
@@ -283,6 +283,27 @@ those rows country observations. The country entity search above provides the
 verified path for country-specific indicator records. The administrative
 `GET /plan/indicator/evaluate/1945` returned HTTP 401.
 
+The country result-card prototype retains explicit `planEntitySdgs` associations,
+including goal, target and global SDG indicator references. The importer checks
+the nearest tagged ancestor when no direct association exists and labels that
+as a parent-framework link. It never borrows tags from sibling or child results.
+The shared indicator catalogue also exposes `primarySdgGoalId` and
+`sdgIndicators`. A unique exact title match (after stripping markup, folding case
+and normalizing whitespace) supplies additional catalogue mappings, explicitly
+labelled as such rather than as country-reported SDG measurements. Ambiguous
+matches are excluded. These links describe relevance; they do not establish
+equivalence between a delivery result and every linked global SDG indicator.
+The prototype displays goal links in card metadata and folds multiple precise
+target/indicator links into a compact disclosure. The reporting period stays in
+the section selector rather than repeating on every card.
+
+The unit filter uses the source `isCommonIndicator` flag and reported unit.
+Its options contain only units of flagged common indicators; selecting any
+option excludes unflagged indicators even if their unit label matches. Without
+a selected unit, all indicators remain visible. The metadata-only fetch mode
+preserves the earlier observation snapshot and records a separate metadata
+retrieval timestamp and request hashes.
+
 Other available leads include framework-cycle dates, means-of-verification form
 definitions, SDG links, milestone planned/actual dates and comments, and
 assessment disaggregation by designed category, agency, location, or partner
@@ -293,3 +314,42 @@ references. [UN INFO API documentation](https://api.uninfo.org/docs),
 [public portal JavaScript](https://uninfo.org/main.js),
 [Afghanistan public plan](https://api.uninfo.org/v1.0/plan/public/1945),
 [Georgia public plan](https://api.uninfo.org/v1.0/plan/public/774).
+
+## Multi-framework result-card coverage
+
+`public/data/uninfo/results/manifest.json` indexes six complete published
+indicator exports: Kenya (1488, 87 indicators), Nepal (1539, 87), Ukraine
+(2694, 109), Afghanistan (1945, 133), Colombia (2093, 39) and the Pacific shared
+framework (1517, 84). This selection varies regional context, fiscal/calendar
+reporting and single/shared workspaces. It is an exploratory selection, not a
+statistical sample. The Pacific framework covers the 14 countries listed in its
+source workspace; its observations are not allocated to individual countries.
+
+Each import fetches every page of indicator definitions and reporting cells.
+The source files record request bodies, response hashes and row counts. A full
+refresh uses `python/13-fetch_uninfo_results.py --plan-id <id>` through the
+requirements-based `uv run` command in README. Metadata-only refreshes preserve
+observation timestamps and record their own retrieval date. Missing indicator
+cells and blank source assessments remain missing, rather than becoming zeros
+or invented narrative achievements. The Pacific export currently contains
+baselines and targets but no reached assessments; the UI explicitly states that
+limitation while keeping its definitions and targets browsable.
+
+Changing framework remounts its result controls, preventing filters or reporting
+periods from one framework carrying into another. The default interval favours
+non-custom reporting periods ending in 2025 with a reached observation, then a
+completed non-custom interval with reached observations. Target-only intervals
+remain selectable but do not displace a populated 2025 interval by default.
+Section-level period labels retain exact custom dates and fiscal month bounds;
+card footers do not repeat those dates. Baseline dates stay visible with their
+values in expanded details. Even a framework with no target/reached reporting
+periods can retain its indicator-definition cards.
+
+Reporting entity labels use only agencies attached to that indicator's source
+cells, deduplicated by agency ID. They are associations in the indicator snapshot,
+not a claim that every listed agency reported an achieved value in the selected
+period. Parent-outcome finance allocations are not used as result attribution.
+The compact paired bars compare only compatible numeric values within one
+indicator and preserve separate agency/population cells. Categorical scales and
+narratives stay textual; ambiguous numeric grouping is not silently reinterpreted.
+There is no aggregation of results across indicators or countries.

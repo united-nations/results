@@ -1,9 +1,12 @@
 "use client";
 
+/* eslint-disable @next/next/no-img-element -- Official SDG artwork from the local snapshot. */
 import { useState } from "react";
 import { ExternalLink } from "@un-eosg/ui/components/external-link";
 import { SearchInput } from "@un-eosg/ui/components/search-input";
 import { SegmentedControl } from "@un-eosg/ui/components/segmented-control";
+import { FilterPopover } from "@un-eosg/ui/components/filter-popover";
+import { Tooltip } from "@un-eosg/ui/components/tooltip";
 import { Button } from "@un-eosg/ui/components/button";
 import {
   FinancialPanelBar,
@@ -12,8 +15,11 @@ import {
 import { typography } from "@un-eosg/ui/typography";
 import { usePublicJson } from "@/hooks/usePublicJson";
 import { normalizeSearchText, searchTerms } from "@/lib/search-text";
+import { withBasePath } from "@/lib/paths";
 import {
+  availableReportingPeriods,
   hasResult,
+  resolveReportingPeriod,
   isOverallCell,
   observation,
   periodLabel,
@@ -22,8 +28,11 @@ import {
   resultNumberFormat,
   resultText,
   type CountryResultsData,
+  type CountryResultsManifest,
+  type ResultFramework,
   type ReportedIndicator,
   type ResultCell,
+  type ResultSdgLink,
 } from "@/lib/uninfo-results";
 
 const kindLabels = {
@@ -219,6 +228,75 @@ function BreakdownRows({
   );
 }
 
+function SdgMetadata({ links }: { links: ResultSdgLink[] }) {
+  const goals = [...new Set(links.map((link) => link.goal))].map(
+    (goal) =>
+      links.find((link) => link.goal === goal && link.source !== "catalogue") ??
+      links.find((link) => link.goal === goal)!,
+  );
+  const precise = links.filter((link) => link.indicator || link.target);
+  const explanation = (link: ResultSdgLink) => (
+    <div className="space-y-2">
+      <p>{link.indicatorName || link.targetName || link.goalName}</p>
+      <p>
+        {link.source === "catalogue"
+          ? "Catalogue links describe related SDG measures, rather than asserting that this result measures each one."
+          : link.source === "framework"
+            ? "Linked through the parent framework item."
+            : "Linked directly in the country framework."}
+      </p>
+    </div>
+  );
+  const detailLinks = (
+    <ul className="mt-2 space-y-2">
+      {precise.map((link) => (
+        <li key={`${link.goal}-${link.target}-${link.indicator}`}>
+          <Tooltip content={explanation(link)} width={300}>
+            <ExternalLink
+              href={`https://unstats.un.org/sdgs/metadata/?Goal=${link.goal}&Target=${encodeURIComponent(link.target ?? "")}&Text=${encodeURIComponent(link.indicator ?? "")}`}
+              className={`text-un-blue-text underline underline-offset-2 ${link.source === "catalogue" ? "decoration-dashed" : ""}`}
+            >
+              {link.indicator
+                ? `SDG indicator ${link.indicator}`
+                : `SDG target ${link.target}`}
+            </ExternalLink>
+          </Tooltip>
+        </li>
+      ))}
+    </ul>
+  );
+  return (
+    <div className={`${typography.caption} mt-2`}>
+      {goals.length ? (
+        <p className="flex flex-wrap gap-x-3 gap-y-1">
+          {goals.map((link) => (
+            <Tooltip key={link.goal} content={explanation(link)} width={300}>
+              <ExternalLink
+                href={`https://sdgs.un.org/goals/goal${link.goal}`}
+                className={`text-un-blue-text underline underline-offset-2 ${link.source === "catalogue" ? "decoration-dashed" : ""}`}
+              >
+                SDG {link.goal}
+              </ExternalLink>
+            </Tooltip>
+          ))}
+        </p>
+      ) : (
+        <p className="text-muted-foreground">No SDG link provided</p>
+      )}
+      {precise.length > 1 ? (
+        <details className="mt-2">
+          <summary className="cursor-pointer text-un-blue-text">
+            Related SDG targets and indicators ({precise.length})
+          </summary>
+          {detailLinks}
+        </details>
+      ) : precise.length ? (
+        detailLinks
+      ) : null}
+    </div>
+  );
+}
+
 function IndicatorCard({
   indicator,
   data,
@@ -236,11 +314,22 @@ function IndicatorCard({
     ) ?? [];
   const fullText = actual ? resultText(actual.value) : "";
   const numerical = kind === "numeric" || kind === "percentage";
+  const reportingEntities = [
+    ...new Map(
+      indicator.cells
+        .filter((cell) => cell.agency)
+        .map((cell) => [cell.agency!.id, cell.agency!]),
+    ).values(),
+  ].sort((a, b) => (a.code || a.name).localeCompare(b.code || b.name));
   const mainRows = agencies.length ? agencies : breakdowns;
   const otherRows = agencies.length
     ? breakdowns.filter((cell) => !agencies.includes(cell))
     : [];
-  const period = data.periods.find((item) => item.id === periodId);
+  const goals = [
+    ...new Map(
+      (indicator.sdgs ?? []).map((link) => [link.goal, link]),
+    ).values(),
+  ];
   const unit =
     indicator.unit &&
     !/^(number|numbers|%|percent|binary|scale|range)$/i.test(indicator.unit)
@@ -251,41 +340,66 @@ function IndicatorCard({
       aria-label={indicator.title}
       className="flex min-h-64 min-w-0 flex-col rounded-[5px] border border-un-blue/40 bg-background p-4"
     >
-      <div>
-        {actual ? (
-          <>
-            <p
-              className={`${kind === "narrative" ? typography.lead : typography.chartTotal} break-words whitespace-pre-line tabular-nums`}
-              title={fullText}
-            >
-              {numerical
-                ? displayNumber(actual.value, indicator.unit)
-                : fullText.length > 240
-                  ? `${fullText.slice(0, 240)}…`
-                  : fullText}
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0 flex-1">
+          {actual ? (
+            <>
+              <p
+                className={`${kind === "narrative" ? typography.lead : typography.chartTotal} break-words whitespace-pre-line tabular-nums`}
+                title={fullText}
+              >
+                {numerical
+                  ? displayNumber(actual.value, indicator.unit)
+                  : fullText.length > 240
+                    ? `${fullText.slice(0, 240)}…`
+                    : fullText}
+              </p>
+              {numerical && unit && (
+                <p className={`${typography.meta} mt-1`}>{unit}</p>
+              )}
+              {kind === "narrative" && fullText.length > 240 && (
+                <details className="mt-2">
+                  <summary
+                    className={`${typography.caption} cursor-pointer text-un-blue-text`}
+                  >
+                    Read full result
+                  </summary>
+                  <p
+                    className={`${typography.body} mt-2 break-words whitespace-pre-line`}
+                  >
+                    {fullText}
+                  </p>
+                </details>
+              )}
+            </>
+          ) : (
+            <p className={`${typography.chartTotal} text-muted-foreground`}>
+              {kind === "breakdowns" ? "By entity / group" : "Not reported"}
             </p>
-            {numerical && unit && (
-              <p className={`${typography.meta} mt-1`}>{unit}</p>
-            )}
-            {kind === "narrative" && fullText.length > 240 && (
-              <details className="mt-2">
-                <summary
-                  className={`${typography.caption} cursor-pointer text-un-blue-text`}
-                >
-                  Read full result
-                </summary>
-                <p
-                  className={`${typography.body} mt-2 break-words whitespace-pre-line`}
-                >
-                  {fullText}
-                </p>
-              </details>
-            )}
-          </>
-        ) : (
-          <p className={`${typography.chartTotal} text-muted-foreground`}>
-            {kind === "breakdowns" ? "By entity / group" : "Not reported"}
-          </p>
+          )}
+        </div>
+        {goals.length > 0 && (
+          <div className="flex max-w-24 shrink-0 flex-wrap justify-end gap-1">
+            {goals.map((link) => (
+              <ExternalLink
+                key={link.goal}
+                href={`https://sdgs.un.org/goals/goal${link.goal}`}
+                title={`SDG ${link.goal}${link.goalName ? `: ${link.goalName}` : ""}`}
+                className="rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-un-blue"
+              >
+                <img
+                  src={withBasePath(
+                    `/images/sdgs/${String(link.goal).padStart(2, "0")}.jpg`,
+                  )}
+                  alt={`SDG ${link.goal}${link.goalName ? `: ${link.goalName}` : ""}`}
+                  width={28}
+                  height={28}
+                  loading="lazy"
+                  className="size-7"
+                />
+              </ExternalLink>
+            ))}
+          </div>
         )}
       </div>
       <h3
@@ -314,8 +428,8 @@ function IndicatorCard({
       <div className="mt-auto pt-4">
         <p className={`${typography.caption} border-t pt-3`}>
           {[
-            period ? periodLabel(period) : "",
             indicator.code ? `Indicator ${indicator.code}` : "",
+            indicator.commonIndicator ? "Common indicator" : "",
             kindLabels[kind],
           ]
             .filter(Boolean)
@@ -332,6 +446,20 @@ function IndicatorCard({
             UN INFO
           </ExternalLink>
         </p>
+        {reportingEntities.length > 0 && (
+          <p className={`${typography.caption} mt-2`}>
+            <span className="text-muted-foreground">Reporting entities: </span>
+            {reportingEntities.map((entity, index) => (
+              <span key={entity.id}>
+                {index > 0 ? ", " : ""}
+                <abbr title={entity.name} className="no-underline">
+                  {entity.code || entity.name}
+                </abbr>
+              </span>
+            ))}
+          </p>
+        )}
+        <SdgMetadata links={indicator.sdgs ?? []} />
         <details className="mt-2">
           <summary
             className={`${typography.caption} cursor-pointer text-un-blue-text`}
@@ -392,17 +520,21 @@ function IndicatorCard({
   );
 }
 
-export function CountryReportedResults() {
+function FrameworkReportedResults({
+  framework,
+}: {
+  framework: ResultFramework;
+}) {
   const { data, failed, retry } = usePublicJson<CountryResultsData>(
-    "/data/uninfo/results/1488.json",
+    `/data/uninfo/results/${framework.planId}.json`,
   );
   const [selectedPeriod, setSelectedPeriod] = useState<number>();
   const [query, setQuery] = useState("");
   const [type, setType] = useState("all");
+  const [units, setUnits] = useState<string[]>([]);
   if (!data)
     return (
-      <section className="mt-12 border-t pt-8">
-        <h2 className={typography.sectionTitle}>Reported results · Kenya</h2>
+      <div>
         <p
           role={failed ? "alert" : "status"}
           className={`${typography.meta} mt-3`}
@@ -416,97 +548,112 @@ export function CountryReportedResults() {
             Try again
           </Button>
         )}
-      </section>
+      </div>
     );
-  const periods = data.periods
-    .filter((period) =>
-      data.indicators.some((indicator) =>
-        indicator.cells.some((cell) =>
-          cell.observations.some(
-            (item) =>
-              item.periodId === period.id &&
-              [2, 3].includes(item.metricId) &&
-              hasResult(item.value),
-          ),
-        ),
-      ),
-    )
-    .sort(
-      (a, b) => b.start.localeCompare(a.start) || b.end.localeCompare(a.end),
-    );
-  const periodId =
-    selectedPeriod ??
-    periods.find(
-      (period) => period.start === "2024-07-01" && period.end === "2025-06-30",
-    )?.id ??
-    periods[0]?.id;
-  if (periodId === undefined)
-    return (
-      <section className="mt-12 border-t pt-8">
-        <h2 className={typography.sectionTitle}>Reported results · Kenya</h2>
-        <p className={`${typography.meta} mt-3`}>
-          No reporting periods are available.
-        </p>
-      </section>
-    );
+  const periods = availableReportingPeriods(data);
+  const periodId = resolveReportingPeriod(data, selectedPeriod) ?? -1;
   const terms = searchTerms(query);
   const cards = data.indicators.map((indicator) => ({
     indicator,
     summary: indicatorSummary(indicator, periodId),
   }));
+  const unitOptions = [
+    ...new Set(
+      data.indicators
+        .filter((indicator) => indicator.commonIndicator && indicator.unit)
+        .map((indicator) => indicator.unit!),
+    ),
+  ]
+    .sort((a, b) => a.localeCompare(b))
+    .map((unit) => ({
+      value: unit,
+      label: unit,
+      count: data.indicators.filter(
+        (indicator) => indicator.commonIndicator && indicator.unit === unit,
+      ).length,
+    }));
   const filtered = cards.filter(({ indicator, summary }) => {
     const text = normalizeSearchText(
-      `${indicator.title} ${indicator.description} ${indicator.parentTitle} ${resultText(summary.actual?.value)} ${summary.breakdowns.map(cellLabel).join(" ")}`,
+      `${indicator.title} ${indicator.description} ${indicator.parentTitle} ${indicator.unit ?? ""} ${(indicator.sdgs ?? []).map((link) => `SDG ${link.goal} ${link.goalName} ${link.target ?? ""} ${link.indicator ?? ""}`).join(" ")} ${indicator.cells.map((cell) => `${cell.agency?.code ?? ""} ${cell.agency?.name ?? ""}`).join(" ")} ${resultText(summary.actual?.value)} ${summary.breakdowns.map(cellLabel).join(" ")}`,
     );
     return (
       terms.every((term) => text.includes(term)) &&
+      (!units.length ||
+        (indicator.commonIndicator === true &&
+          units.includes(indicator.unit ?? ""))) &&
       (type === "all" ||
         (type === "numeric" &&
           ["numeric", "percentage"].includes(summary.kind)) ||
-        type === summary.kind)
+        type === summary.kind ||
+        (summary.kind === "breakdowns" &&
+          summary.breakdowns.some((cell) => {
+            const kind = resultKind(
+              observation(cell, periodId)?.value,
+              indicator.unit,
+            );
+            return type === "numeric"
+              ? ["numeric", "percentage"].includes(kind)
+              : type === kind;
+          })))
     );
   });
   const reportedCount = cards.filter(
     ({ summary }) => summary.kind !== "missing",
   ).length;
   return (
-    <section
-      aria-labelledby="country-reported-results"
-      className="mt-12 border-t pt-8"
-    >
+    <div>
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <h2 id="country-reported-results" className={typography.sectionTitle}>
-            Reported results · Kenya
-          </h2>
           <p className={`${typography.body} mt-2 max-w-3xl`}>
-            What changed, who was reached, and what was delivered. Explore
-            Kenya’s reported indicators, with the original units, targets and
-            reporting periods.
+            What changed, who was reached, and what was delivered. Explore the
+            published indicators, with the original units, targets and reporting
+            periods.
           </p>
         </div>
-        <FinancialPanelPeriodSelector
-          label="Select results reporting period"
-          variant="pill"
-          options={periods.map((period) => ({
-            value: String(period.id),
-            label: periodLabel(period),
-          }))}
-          selected={String(periodId)}
-          onChange={(value) => setSelectedPeriod(Number(value))}
-        />
+        {periods.length > 0 && (
+          <FinancialPanelPeriodSelector
+            label="Select results reporting period"
+            variant="pill"
+            options={periods.map((period) => ({
+              value: String(period.id),
+              label: periodLabel(period),
+            }))}
+            selected={String(periodId)}
+            onChange={(value) => setSelectedPeriod(Number(value))}
+          />
+        )}
       </div>
+      {framework.countries.length > 1 && (
+        <p className={`${typography.caption} mt-3`}>
+          Shared framework covering {framework.countries.join(", ")}. Results
+          are reported for the shared framework, without separate country
+          allocations.
+        </p>
+      )}
+      {!data.indicators.some((indicator) =>
+        indicator.cells.some((cell) =>
+          cell.observations.some(
+            (item) => item.metricId === 3 && hasResult(item.value),
+          ),
+        ),
+      ) && (
+        <p className={`${typography.caption} mt-3`}>
+          No achievements have been reported in this published snapshot.
+          Indicator definitions, baselines and any targets remain available.
+        </p>
+      )}
       <p className={`${typography.caption} mt-4`}>
         {data.indicators.length} indicators · {reportedCount} with reported
-        achievements or breakdowns for this period. Counts and categories are
-        shown as reported; overlapping agency or population breakdowns are kept
-        separate.
+        achievements or breakdowns{" "}
+        {periods.length ? "for this period" : "in this snapshot"}. Counts and
+        categories are shown as reported; overlapping agency or population
+        breakdowns are kept separate.
       </p>
       <div className="my-5 flex flex-wrap items-center justify-between gap-4">
         <div className="w-full sm:w-80">
           <SearchInput
             variant="border-bottom"
-            aria-label="Search Kenya results"
+            aria-label={`Search ${framework.label} results`}
             placeholder="Search results, agencies or topics…"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
@@ -514,21 +661,31 @@ export function CountryReportedResults() {
             onClear={() => setQuery("")}
           />
         </div>
-        <SegmentedControl
-          label="Filter results by type"
-          value={type}
-          onValueChange={setType}
-          options={[
-            { value: "all", label: "All results" },
-            { value: "numeric", label: "Numbers" },
-            { value: "categorical", label: "Categories" },
-            { value: "narrative", label: "Narratives" },
-            { value: "missing", label: "Not reported" },
-          ]}
-        />
+        <div className="flex flex-wrap items-center gap-3">
+          <FilterPopover
+            label="Common indicator unit"
+            options={unitOptions}
+            selected={units}
+            onChange={setUnits}
+            className={`border-border bg-secondary text-foreground hover:bg-secondary/80 any-pointer-coarse:min-h-11 ${units.length ? "bg-muted" : ""}`}
+          />
+          <SegmentedControl
+            label="Filter results by type"
+            value={type}
+            onValueChange={setType}
+            options={[
+              { value: "all", label: "All results" },
+              { value: "numeric", label: "Numbers" },
+              { value: "categorical", label: "Categories" },
+              { value: "narrative", label: "Narratives" },
+              { value: "missing", label: "Not reported" },
+            ]}
+          />
+        </div>
       </div>
       <p role="status" className={`${typography.caption} mb-4`}>
         {filtered.length} results shown
+        {units.length ? " · Common indicators only" : ""}
       </p>
       <div className="grid items-stretch gap-4 md:grid-cols-2 xl:grid-cols-3">
         {filtered.map(({ indicator }) => (
@@ -551,11 +708,69 @@ export function CountryReportedResults() {
           href={data.source}
           className="text-un-blue-text underline"
         >
-          UN INFO · Kenya Cooperation Framework
+          UN INFO · {framework.label}
         </ExternalLink>
         . The cards include both UN-supported delivery and broader country
         outcomes; each indicator’s definition provides its scope.
       </p>
+    </div>
+  );
+}
+
+export function CountryReportedResults() {
+  const {
+    data: manifest,
+    failed,
+    retry,
+  } = usePublicJson<CountryResultsManifest>(
+    "/data/uninfo/results/manifest.json",
+  );
+  const [selectedPlan, setSelectedPlan] = useState<number>();
+  const framework =
+    manifest?.frameworks.find(
+      (item) => item.planId === (selectedPlan ?? manifest.defaultPlanId),
+    ) ?? manifest?.frameworks[0];
+  return (
+    <section
+      aria-labelledby="country-reported-results"
+      className="mt-12 border-t pt-8"
+    >
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-4">
+        <h2 id="country-reported-results" className={typography.sectionTitle}>
+          Reported results{framework ? ` · ${framework.label}` : ""}
+        </h2>
+        {manifest && framework && (
+          <FinancialPanelPeriodSelector
+            label="Select results country or framework"
+            variant="pill"
+            options={manifest.frameworks.map((item) => ({
+              value: String(item.planId),
+              label: item.label,
+            }))}
+            selected={String(framework.planId)}
+            onChange={(value) => setSelectedPlan(Number(value))}
+          />
+        )}
+      </div>
+      {framework ? (
+        <FrameworkReportedResults
+          key={framework.planId}
+          framework={framework}
+        />
+      ) : (
+        <div>
+          <p role={failed ? "alert" : "status"} className={typography.meta}>
+            {failed
+              ? "The results framework list could not be loaded."
+              : "Loading results frameworks…"}
+          </p>
+          {failed && (
+            <Button className="mt-3" onClick={retry}>
+              Try again
+            </Button>
+          )}
+        </div>
+      )}
     </section>
   );
 }

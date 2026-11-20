@@ -1,0 +1,366 @@
+{
+  "planId": 1517,
+  "retrievedAt": "2026-11-20T21:09:33.381629+00:00",
+  "requests": [
+    {
+      "endpoint": "plan/public/entity/search",
+      "request": {
+        "planIds": [
+          1517
+        ],
+        "coreentityTypeIds": [
+          7
+        ],
+        "page": 1,
+        "limit": 200
+      },
+      "sha256": "b3b6a79524026bcddc4551dff504cf2f4b18c2423666968097cc1664901c64ac",
+      "rows": 84
+    },
+    {
+      "endpoint": "planEntityCell/search",
+      "request": {
+        "planEntityIds": [
+          178935,
+          178933,
+          169637,
+          169636,
+          169634,
+          169633,
+          169632,
+          152788,
+          152787,
+          152786,
+          152785,
+          152782,
+          152780,
+          152779,
+          152778
+        ],
+        "page": 1,
+        "limit": 200
+      },
+      "sha256": "b26f96c9369348d350f16d9411922baccedb98cb6e8af0ff02c963572a23a15d",
+      "rows": 141
+    },
+    {
+      "endpoint": "planEntityCell/search",
+      "request": {
+        "planEntityIds": [
+          152776,
+          152774,
+          152772,
+          152771,
+          152770,
+          152769,
+          152768,
+          152766,
+          104905,
+          104904,
+          104903,
+          104902,
+          104901,
+          104900,
+          104899
+        ],
+        "page": 1,
+        "limit": 200
+      },
+      "sha256": "32b5329edd7e63445c730233cb392b6c43fa2d1c71216365ecaebd2a08a24a54",
+      "rows": 133
+    },
+    {
+      "endpoint": "planEntityCell/search",
+      "request": {
+        "planEntityIds": [
+          104898,
+          104897,
+          104896,
+          104895,
+          104894,
+          104893,
+          104892,
+          104891,
+          104890,
+          104889,
+          104888,
+          104887,
+          104886,
+          104885,
+          104884
+        ],
+        "page": 1,
+        "limit": 200
+      },
+      "sha256": "b195e871d7bffa2dc01d85dfd3b7376b448d2d28e4576633f067047a0ab263bc",
+      "rows": 8
+    },
+    {
+      "endpoint": "planEntityCell/search",
+      "request": {
+        "planEntityIds": [
+          104883,
+          104882,
+          104881,
+          104880,
+          104879,
+          104878,
+          104877,
+          104876,
+          104875,
+          104874,
+          104873,
+          104872,
+          104871,
+          104870,
+          104869
+        ],
+        "page": 1,
+        "limit": 200
+      },
+      "sha256": "e4af5e1fe9fc1fde9ab75b8d0b076271545d97ee792191ebe51d863ceecc3784",
+      "rows": 13
+    },
+    {
+      "endpoint": "planEntityCell/search",
+      "request": {
+        "planEntityIds": [
+          104868,
+          104867,
+          104812,
+          104810,
+          104809,
+          104808,
+          104805,
+          104803,
+          104802,
+          104800,
+          104798,
+          104794,
+          104788,
+          104783,
+          104782
+        ],
+        "page": 1,
+        "limit": 200
+      },
+      "sha256": "88fcf8169e616a867e5330ba3bc96103f975d14ccd08d47fcdd7c10f63f1dc9a",
+      "rows": 15
+    },
+    {
+      "endpoint": "planEntityCell/search",
+      "request": {
+        "planEntityIds": [
+          104781,
+          104780,
+          104779,
+          104778,
+          104776,
+          104775,
+          104774,
+          104773,
+          104358
+        ],
+        "page": 1,
+        "limit": 200
+      },
+      "sha256": "4b7a7f91fab1207c73f2647e8c3fa233d057a0d62c0cf33050a22eddcff10c96",
+      "rows": 9
+    },
+    {
+      "endpoint": "timeframe/search",
+      "request": {
+        "timeframeIds": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          1339,
+          2166,
+          2254,
+          2362,
+          3179,
+          4398
+        ],
+        "page": 1,
+        "limit": 200
+      },
+      "sha256": "68ee5872217740ab53745e7b34b4ec18aed55f5a36366f03477e092555e07ce0",
+      "rows": 11
+    },
+    {
+      "endpoint": "plan/public/entity/search",
+      "request": {
+        "planIds": [
+          1517
+        ],
+        "page": 1,
+        "limit": 200
+      },
+      "sha256": "856e7475fa0ec28e6781074fa9ce14247643b904cf9d66c2d1c47f40e1a85582",
+      "rows": 200
+    },
+    {
+      "endpoint": "plan/public/entity/search",
+      "request": {
+        "planIds": [
+          1517
+        ],
+        "page": 2,
+        "limit": 200
+      },
+      "sha256": "03822fbfbca942dcc9cf4220d37545f8440d1e399a03e9db65fe6a8f180bcfc1",
+      "rows": 200
+    },
+    {
+      "endpoint": "plan/public/entity/search",
+      "request": {
+        "planIds": [
+          1517
+        ],
+        "page": 3,
+        "limit": 200
+      },
+      "sha256": "7104a83c9cb4d32995db8cc1d884a5cbfd29851278f888a09e476f05dec89a7d",
+      "rows": 200
+    },
+    {
+      "endpoint": "plan/public/entity/search",
+      "request": {
+        "planIds": [
+          1517
+        ],
+        "page": 4,
+        "limit": 200
+      },
+      "sha256": "589b3fa83e7abc24e3e3d9013202884f66403b425aec8cd84a92ad5ddf7e3b52",
+      "rows": 200
+    },
+    {
+      "endpoint": "plan/public/entity/search",
+      "request": {
+        "planIds": [
+          1517
+        ],
+        "page": 5,
+        "limit": 200
+      },
+      "sha256": "98c3840750b8451957c1ffdcd886e3a5483dc51ebbd95b35d67d4892fe48881c",
+      "rows": 200
+    },
+    {
+      "endpoint": "plan/public/entity/search",
+      "request": {
+        "planIds": [
+          1517
+        ],
+        "page": 6,
+        "limit": 200
+      },
+      "sha256": "1e96525776d1b5d4d6a00585513865822d59e8660fbc2792bf5ee8c49d081f3c",
+      "rows": 200
+    },
+    {
+      "endpoint": "plan/public/entity/search",
+      "request": {
+        "planIds": [
+          1517
+        ],
+        "page": 7,
+        "limit": 200
+      },
+      "sha256": "278393f058b4bf5320ae4f611ad53f4d53632ece47b49c0f4a9af2fbe2f7eea1",
+      "rows": 200
+    },
+    {
+      "endpoint": "plan/public/entity/search",
+      "request": {
+        "planIds": [
+          1517
+        ],
+        "page": 8,
+        "limit": 200
+      },
+      "sha256": "07ee356ad606f272d6de7a23a23dd5a3bf355e98a28746ab61f31fd61121838f",
+      "rows": 200
+    },
+    {
+      "endpoint": "plan/public/entity/search",
+      "request": {
+        "planIds": [
+          1517
+        ],
+        "page": 9,
+        "limit": 200
+      },
+      "sha256": "323b32a7f5e26d82566de3600a7d2a73be76e4250bf562fbc27b069e99e7608a",
+      "rows": 200
+    },
+    {
+      "endpoint": "plan/public/entity/search",
+      "request": {
+        "planIds": [
+          1517
+        ],
+        "page": 10,
+        "limit": 200
+      },
+      "sha256": "3cbf7ec7609f76e43e33f77dd2609c433a1c47a94b069058c4478ba3969dee46",
+      "rows": 200
+    },
+    {
+      "endpoint": "plan/public/entity/search",
+      "request": {
+        "planIds": [
+          1517
+        ],
+        "page": 11,
+        "limit": 200
+      },
+      "sha256": "9b02d96f144cedce87d42633a0a59068f91a89b1addb4a20e7d27d15b2c4dfe6",
+      "rows": 200
+    },
+    {
+      "endpoint": "plan/public/entity/search",
+      "request": {
+        "planIds": [
+          1517
+        ],
+        "page": 12,
+        "limit": 200
+      },
+      "sha256": "51e3b1732d7e9b6e5153efe4d4a638b28284a00e9255671e2f0e1d9ceb014319",
+      "rows": 47
+    },
+    {
+      "endpoint": "indicator/search",
+      "request": {
+        "page": 1,
+        "limit": 200
+      },
+      "sha256": "dd3da77396a5cb6750b97da0307247478cd766301da19f7384a23e29cbf84f36",
+      "rows": 200
+    },
+    {
+      "endpoint": "indicator/search",
+      "request": {
+        "page": 2,
+        "limit": 200
+      },
+      "sha256": "dbddca1f8092777a3c217ec6b94ffbe1c207ed9fd2471af545cebf520561e9e3",
+      "rows": 200
+    },
+    {
+      "endpoint": "indicator/search",
+      "request": {
+        "page": 3,
+        "limit": 200
+      },
+      "sha256": "7460d6a1a47a064b6d8dfdf87e11bb5c4c72b1af490fed87229e8a3175345dcd",
+      "rows": 105
+    }
+  ],
+  "indicatorCount": 84,
+  "cellCount": 319
+}

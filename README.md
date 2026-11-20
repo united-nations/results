@@ -82,15 +82,32 @@ output retain their headline expenditure figures and bars, without detailed
 financial breakdowns. Missing metrics remain unreported. All money on the system page uses
 `formatBudget` from `@un-eosg/ui/format-budget`, matching Open UN.
 
-The Country teams main page also prototypes one card per published Kenya
-indicator in `public/data/uninfo/results/1488.json`. Values lead each card,
-followed by the indicator description and compact reported/target comparisons.
-Entity totals and population breakdowns remain separate; missing achievements
-are labelled unreported. The default period is July 2024–June 2025, with other
-published periods available through the selector. Refresh all definitions,
-reporting cells and periods with
+The Country teams main page also offers one card per published indicator across
+six frameworks: Kenya, Nepal, Ukraine, Afghanistan, Colombia and the shared
+Pacific framework. The country/framework selector resets reporting periods and
+filters when switching datasets. Kenya starts on July 2024–June 2025; other
+frameworks prefer a populated annual interval ending in 2025, then a completed
+interval with reported achievements. Full source reporting intervals remain
+available through the period selector. Pacific currently publishes baselines
+and targets without reached values; those missing achievements remain explicit.
+
+Values lead each card, followed by the indicator description and compact
+reported/target comparisons. Entity totals and population breakdowns remain
+separate, without inferred totals. Known reporting entities appear directly in
+card metadata. The unit filter offers units reported by common indicators;
+selecting a unit restricts the cards to flagged common indicators with that unit.
+Clearing the filter restores all results. Official SDG icons and goal links
+appear on cards, with precise target/indicator links where supplied. Shared
+catalogue mappings use a unique exact definition match and have dashed
+underlines with explanatory tooltips, distinct from direct country links.
+
+The export index is `public/data/uninfo/results/manifest.json`. Refresh all
+indicator definitions, reporting cells and periods for a selected plan with
 `uv run --no-project --python 3.13 --with-requirements python/uninfo-requirements.txt python python/13-fetch_uninfo_results.py --plan-id 1488`.
-Request provenance is retained in `data/uninfo/results/1488-sources.json`.
+The included plan IDs are 1488, 1539, 2694, 1945, 2093 and 1517. Each successful
+export updates the index; request hashes and retrieval dates are retained in
+`data/uninfo/results/<plan-id>-sources.json`. Add `--metadata-only` to update SDG
+mappings while retaining the existing observation snapshot and its retrieval date.
 SDG groups can be sorted by goal number (with Non-SDG last) or by expenditure,
 highest first, including the Non-SDG category. Changing sort preserves the open
 group and the original goal numbers.
