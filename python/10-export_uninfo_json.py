@@ -79,6 +79,10 @@ def build_framework_tree(fw: dict, allow_roots: bool = False) -> list[dict] | No
             "code": item.get("code", ""),
             "name": item.get("name", ""),
             **m,
+            "reported_metrics": [key for name, key in {
+                "Total Required Resources": "required", "Total Available Resources": "available",
+                "Total Expenditure": "spent",
+            }.items() if any(metric["metricName"] == name for metric in item.get("metrics", []))],
         }
         if "has_financial_data" in item:
             result["has_financial_data"] = item["has_financial_data"]
@@ -154,6 +158,32 @@ def build_projects(agencies):
     return sorted(projects, key=lambda row: -row["required"])
 
 
+def agency_finance(agency, metrics=None):
+    values = {metric["metricName"]: metric["total"] for metric in (metrics if metrics is not None else agency.get("metrics", []))}
+    result = {
+        "id": agency["id"], "code": agency.get("abbreviation") or str(agency["id"]),
+        "name": agency.get("name") or agency.get("abbreviation") or str(agency["id"]),
+    }
+    for name, key in {"Total Required Resources": "required", "Total Available Resources": "available", "Total Expenditure": "spent"}.items():
+        result[key] = round(values[name], 2) if name in values else None
+    return result
+
+
+def framework_resources(framework):
+    def branch(node, metric):
+        if metric in node.get("reported_metrics", []):
+            return node[metric]
+        values = [branch(child, metric) for child in node.get("children", [])]
+        observed = [value for value in values if value is not None]
+        return sum(observed) if observed else None
+    result = {}
+    for metric in ("required", "available", "spent"):
+        values = [branch(node, metric) for node in framework]
+        observed = [value for value in values if value is not None]
+        result[metric] = round(sum(observed), 2) if observed else None
+    return result
+
+
 def plan_summary(plan):
     version = plan["planVersion"]
     return {
@@ -163,10 +193,57 @@ def plan_summary(plan):
     }
 
 
+def framework_expenditure(framework):
+    """Use the same per-metric frontier as the published financial overview."""
+    return framework_resources(framework)["spent"]
+
+
 def export_snapshot(raw=RAW, output=OUT):
     plans = json.loads((raw / "public_plans.json").read_text())
     entities = json.loads((raw / "public_framework_entities.json").read_text())
     finances = json.loads((raw / "plan_finances.json").read_text())
+    provenance_path = raw / "provenance.json"
+    base_provenance = json.loads(provenance_path.read_text()) if provenance_path.exists() else {}
+    parents = {row["id"]: row["parentId"] for row in entities}
+    agency_nodes = defaultdict(dict)
+    # Keep every reported finance row: the source agency totals include dated
+    # rows sharing an ID. These are not duplicated parent/child hierarchy totals.
+    for observations in finances.values():
+        for agency in observations.get("projects", []):
+            for project in agency.get("planEntities", []):
+                record = agency_finance(agency, project.get("metrics", []))
+                parent = project.get("parentId")
+                visited = set()
+                while parent is not None:
+                    if parent in visited or parent not in parents:
+                        raise ValueError(f"Invalid financial parent chain for node {parent}")
+                    visited.add(parent)
+                    allocation = agency_nodes[parent].setdefault(agency["id"], {
+                        **record, "required": None, "available": None, "spent": None,
+                    })
+                    for metric in ("required", "available", "spent"):
+                        if record[metric] is not None:
+                            allocation[metric] = (allocation[metric] or 0) + record[metric]
+                    parent = parents[parent]
+    agency_path = raw / "agency_framework_finances.json"
+    agency_snapshot = json.loads(agency_path.read_text()) if agency_path.exists() else {}
+    direct_nodes = defaultdict(dict)
+    for agencies in agency_snapshot.get("groupings", {}).values():
+        for agency in agencies:
+            for node in agency.get("planEntities", []):
+                record = agency_finance(agency, node.get("metrics", []))
+                previous = direct_nodes[node["id"]].get(agency["id"])
+                if previous is not None and previous != record:
+                    raise ValueError(f"Conflicting agency allocation for framework node {node['id']}")
+                direct_nodes[node["id"]][agency["id"]] = record
+    # Direct published allocations take precedence where a source grouping
+    # discrepancy makes the project roll-up unsuitable (notably Mali plan 1024).
+    agency_nodes.update(direct_nodes)
+
+    def attach_agencies(nodes):
+        for node in nodes:
+            node["agencies"] = list(agency_nodes.get(node["id"], {}).values())
+            attach_agencies(node.get("children", []))
     workspaces = {
         workspace["id"]: workspace for workspace in json.loads((raw / "workspaces.json").read_text())
     }
@@ -184,13 +261,26 @@ def export_snapshot(raw=RAW, output=OUT):
         framework = build_plan_framework(plan, rows, observations)
         if not framework:
             continue
+        attach_agencies(framework)
         summary = plan_summary(plan)
         workspace = workspaces[plan["workspaceId"]]
-        summaries[str(plan["id"])] = summary
+        summaries[str(plan["id"])] = {
+            **summary,
+            "expenditure": framework_expenditure(framework),
+            "workspace_countries": sorted(country["name"] for country in workspace["countries"]),
+        }
         payloads[plan["id"]] = {
             **summary,
             "workspace_countries": sorted(country["name"] for country in workspace["countries"]),
             "framework": framework,
+            "resources": framework_resources(framework),
+            "agencies": [agency_finance(agency) for agency in observations.get("projects", [])],
+            "agency_finances_retrieved_at": base_provenance.get("retrieved_at"),
+            "direct_agency_finances_retrieved_at": (
+                agency_snapshot.get("retrieved_at_by_plan", {}).get(str(plan["id"]), agency_snapshot.get("retrieved_at"))
+                if plan["id"] in agency_snapshot.get("finance_plan_ids", []) else None
+            ),
+            "agency_finances_basis": "Project allocations linked by source parent IDs, with direct agency/framework API allocations where separately retained.",
             "projects": build_projects(observations.get("projects", [])),
         }
         for country in workspace["countries"]:

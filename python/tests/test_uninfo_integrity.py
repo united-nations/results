@@ -38,6 +38,25 @@ def source_metrics(item):
 
 
 class UninfoIntegrityTests(unittest.TestCase):
+    def test_expenditure_distinguishes_unreported_zero_and_parent_coverage(self):
+        required_only = node(1, metrics=[{'metricName': METRICS['required'], 'total': 100}])
+        missing = exporter.build_framework_tree({'sp': [required_only]})
+        self.assertIsNone(exporter.framework_expenditure(missing))
+        self.assertEqual(exporter.framework_resources(missing)['required'], 100)
+
+        explicit_zero = exporter.build_framework_tree({'sp': [node(1, spent=0)]})
+        self.assertEqual(exporter.framework_expenditure(explicit_zero), 0)
+
+        child_reported = exporter.build_framework_tree({
+            'sp': [required_only], 'oc': [node(2, parent=1, spent=30)],
+        })
+        self.assertEqual(exporter.framework_expenditure(child_reported), 30)
+
+        parent_reported = exporter.build_framework_tree({
+            'sp': [node(1, spent=50)], 'oc': [node(2, parent=1, spent=30)],
+        })
+        self.assertEqual(exporter.framework_expenditure(parent_reported), 50)
+
     def test_finances_bind_to_plan_and_include_its_whole_reported_period(self):
         with patch.object(fetcher, 'request', return_value=[]) as request:
             fetcher.finance(794, ['sdg'])
@@ -83,6 +102,8 @@ class UninfoIntegrityTests(unittest.TestCase):
         source_plans = {plan['id']: plan for plan in json.loads((raw / 'public_plans.json').read_text())}
         entities = json.loads((raw / 'public_framework_entities.json').read_text())
         finances = json.loads((raw / 'plan_finances.json').read_text())
+        base_retrieved = json.loads((raw / 'provenance.json').read_text())['retrieved_at']
+        direct = json.loads((raw / 'agency_framework_finances.json').read_text())
         for plan_key, summary in manifest['plans'].items():
             plan_id = int(plan_key)
             expected = {}
@@ -101,6 +122,13 @@ class UninfoIntegrityTests(unittest.TestCase):
                 for row in finances[plan_key][level]
             }
             with self.subTest(plan=plan_id):
+                self.assertEqual(summary['expenditure'], payload['resources']['spent'])
+                self.assertEqual(payload['agency_finances_retrieved_at'], base_retrieved)
+                expected_direct = (
+                    direct.get('retrieved_at_by_plan', {}).get(str(plan_id), direct.get('retrieved_at'))
+                    if plan_id in direct['finance_plan_ids'] else None
+                )
+                self.assertEqual(payload['direct_agency_finances_retrieved_at'], expected_direct)
                 self.assertEqual({row['id'] for row, _ in actual}, set(expected))
                 self.assertEqual(len(actual), len(expected))
                 self.assertEqual(summary['start'], source_plans[plan_id]['planVersion']['startDate'])

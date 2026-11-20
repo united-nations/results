@@ -3,7 +3,7 @@
 # UN Results
 
 - **UN Secretariat:** Explore programme-budget results as a grid grouped by priority area or beneficiary, or as an ungrouped grid. Expand groups into entities and subprogrammes, preview results, and open official objectives, strategies and full result content in sidebars. The locations map remains available at `/locations/`.
-- **UN System:** Explore UN country results frameworks and browse entity reports, strategic plans and results frameworks by System Chart category at `/system/` (also `/un-system/`).
+- **UN System:** Explore UN country results frameworks and browse 46 reporting entities by their largest SDG expenditure allocation or by Open UN's System Chart grouping at `/system/` (also `/un-system/`). The directory prototype includes sample impact statements, strategic plan and results framework links, and inactive annual report placeholders.
 
 ## Run locally
 
@@ -19,12 +19,75 @@ settings, copy `.env.example` to `.env.local`.
 
 ## Refresh the data
 
-The entity directory uses a one-time copy of the UN System Chart export in
-`data/systemchart-entity-documents.json`. The snapshot records the source and
-includes entities with at least one report, strategic plan or results framework
-link. Where the source has no category, the directory uses its principal-organ
-group. The UNHCR and WFP strategic plan fields each contained two concatenated
-URLs. The snapshot uses the official document URL from each field.
+The entity directory uses `data/system-entities.json`, a local 2025 snapshot of
+Open UN's CEB SDG expenditure, entity expenditure totals and organization
+grouping. Source URLs pinned to repository commits are recorded in the snapshot.
+Descriptions and available logos come from the UN System Chart; missing logos
+use a generic icon. The earlier `data/systemchart-entity-documents.json` snapshot
+is retained as an input for its cleaned strategic plan and results framework
+links. Annual reports are intentionally inactive placeholders, and the five
+impact statements per entity are explicitly labelled illustrative copy.
+
+Each entity is assigned to its largest positive allocation across SDGs 1–17.
+Equal allocations use the lower goal number. Entities with no allocation to
+those goals appear in an eighteenth **Non-SDG** entry. This represents explicitly
+reported CEB code X00, not missing reporting. Other positive contributors to each
+category appear in a compact, progressively revealed list. The 2025 snapshot
+displays 46 reporting entities, of which five have no allocation to goals 1–17.
+UNODC is excluded as a separate directory entry; its expenditure remains in
+the source system and SDG totals and is not merged into the Secretariat's figures.
+The directory covers these financial reporting entities, rather than every body
+in the System Chart.
+
+The System page opens on an **Organizations** tab; **Country teams** contains
+the country map and scope note. Switching tabs preserves each view's controls.
+The country map uses pale framework-coverage shading with proportional
+expenditure circles styled after Open UN. Each circle shows reported expenditure
+for calendar 2025; hover to see the annual USD amount. Shared country-team
+workspaces have one joint circle rather than duplicated country totals. A compact
+three-bar note compares 2025 CEB system expenditure, the published 2024 UN
+country-team benchmark and 2025 reported UN INFO expenditure; each label shows
+its year, and definitions and sources are in its
+expander. `python/09-fetch_uninfo_annual.py --years 2025` refreshes the annual raw
+observations; `python/11-export_uninfo_annual.py --year 2025` creates
+`public/data/uninfo/annual-expenditure-2025.json`. The CEB function input is kept
+at `data/system-function-expenditure-2025.json`; the published country-team
+benchmark is in `data/un-country-team-spending.json`. See `docs/uninfo-methodology.md`
+for source definitions, the annual processing commands and coverage limitations.
+Country sidebars focus on expenditure for the selected framework period. A
+country/shared-framework overview and every strategic priority, outcome and
+output offer collapsed **Expenditure by entity** and **Required, available and
+expenditure** sections. Entity allocations follow source project-to-framework
+parent IDs; separately retained direct API groupings take precedence where
+available. Missing metrics remain unreported. All money on the system page uses
+`formatBudget` from `@un-eosg/ui/format-budget`, matching Open UN.
+SDG groups can be sorted by goal number (with Non-SDG last) or by expenditure,
+highest first, including the Non-SDG category. Changing sort preserves the open
+group and the original goal numbers.
+System Chart categories also show their share of total system expenditure and
+can be sorted by chart order or expenditure. Category totals retain all source
+expenditure, including UNODC even though it has no separate directory entry.
+
+Category percentages use total CEB system expenditure as the denominator,
+including Non-SDG and signed "Not specified" reconciliation differences. The
+latter remain separate from the Non-SDG entry; displayed category shares can
+therefore differ from 100% in total. Open UN combines accrual and budgetary
+expenditure in this export. These allocations describe reported expenditure,
+not mandates or measured impact.
+
+To regenerate the snapshot and copy available organization logos, provide local
+Open UN and System Chart checkouts and their source commit identifiers:
+
+```bash
+node scripts/prepare-system-entities.mjs ../open ../un-system-chart-navigator <open-commit> <system-chart-commit>
+```
+
+This is an explicit preparation step with no database access or runtime writes.
+The script currently selects 2025. Official SDG artwork is stored locally in
+`public/images/sdgs/01.jpg` through `17.jpg`, downloaded from
+`https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-01.jpg` (substitute each
+two-digit goal number). Copied organization logos live in
+`public/images/system-entities/`.
 
 The site builds from `data/ppb-2027.json`. Page content comes from the 2027
 proposed programme budget exports. Priority grouping assigns each entity to its

@@ -400,7 +400,19 @@ test("global grouping controls work on the first keyboard activation while zoome
   const beneficiary = page.getByRole("button", { name: /^Grouping:/ });
   await beneficiary.focus();
   await page.keyboard.press("Enter");
+  await expect(
+    page.getByRole("menuitemradio", {
+      name: "Group by priority area",
+      exact: true,
+    }),
+  ).toBeFocused();
   await page.keyboard.press("ArrowDown");
+  await expect(
+    page.getByRole("menuitemradio", {
+      name: "Group by beneficiary",
+      exact: true,
+    }),
+  ).toBeFocused();
   await page.keyboard.press("Enter");
   await expect(beneficiary).toHaveAttribute("data-grouping", "beneficiary");
 });

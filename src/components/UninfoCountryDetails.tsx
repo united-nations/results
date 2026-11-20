@@ -2,20 +2,15 @@
 
 import { typography } from "@un-eosg/ui/typography";
 import { Button } from "@un-eosg/ui/components/button";
-import { FinancialPanelHeading } from "@un-eosg/ui/components/financial-panel-parts";
-import { ResultsFramework } from "@un-eosg/ui/components/results-framework";
+import {
+  FinancialPanelHeading,
+  FinancialPanelTotalRow,
+} from "@un-eosg/ui/components/financial-panel-parts";
+import { formatBudget } from "@un-eosg/ui/format-budget";
+import { UninfoResultsFramework } from "@/components/UninfoResultsFramework";
+import { UninfoFinancialDetails } from "@/components/UninfoFinancialDetails";
 import { usePublicJson } from "@/hooks/usePublicJson";
 import type { UninfoPlan } from "@/lib/uninfo";
-
-const resourceLabels = {
-  required: "Required resources",
-  available: "Available resources",
-  spent: "Expenditure",
-};
-const frameworkLabels = {
-  ...resourceLabels,
-  levels: ["Strategic priority", "Outcome", "Output"],
-};
 
 export function UninfoCountryDetails({ planId }: { planId: number }) {
   const {
@@ -39,27 +34,43 @@ export function UninfoCountryDetails({ planId }: { planId: number }) {
 
   return (
     <div className="space-y-6">
-      <section aria-label="Results framework">
-        <FinancialPanelHeading
-          className="mb-3"
-          controls={
-            <span className={typography.caption}>
-              Available resources (USD)
-            </span>
-          }
-        >
-          Results Framework
+      <section aria-label="Framework expenditure overview">
+        <FinancialPanelHeading className="mb-3">
+          {plan.workspace_countries.length > 1
+            ? "Shared framework overview"
+            : "Country framework overview"}
         </FinancialPanelHeading>
         {plan.workspace_countries.length > 1 && (
           <p className={`${typography.caption} mb-3`}>
             Shared workspace covering {plan.workspace_countries.join(", ")}.
           </p>
         )}
+        <FinancialPanelTotalRow
+          label="Expenditure"
+          value={
+            plan.resources?.spent == null
+              ? "Not reported"
+              : formatBudget(plan.resources.spent)
+          }
+        />
+        <UninfoFinancialDetails
+          resources={
+            plan.resources ?? { required: null, available: null, spent: null }
+          }
+          entities={plan.agencies}
+        />
+      </section>
+      <section aria-label="Results framework">
+        <FinancialPanelHeading
+          className="mb-3"
+          controls={
+            <span className={typography.caption}>Expenditure (USD)</span>
+          }
+        >
+          Results Framework
+        </FinancialPanelHeading>
         {plan.framework?.length ? (
-          <ResultsFramework
-            framework={plan.framework}
-            labels={frameworkLabels}
-          />
+          <UninfoResultsFramework framework={plan.framework} />
         ) : (
           <p className={typography.meta}>
             No published results framework available for this plan.

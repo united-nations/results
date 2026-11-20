@@ -256,6 +256,7 @@ test.describe("touch navigation and search", () => {
     await page.getByRole("menuitem", { name: "UN System", exact: true }).tap();
     await expect(page).toHaveURL(/\/un-system\/?$/);
 
+    await page.getByRole("tab", { name: "Country teams", exact: true }).tap();
     await page.getByRole("button", { name: "Choose a country or area" }).tap();
     await page.getByRole("searchbox").fill("Papua New Guinea");
     await page
