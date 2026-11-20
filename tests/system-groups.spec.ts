@@ -124,7 +124,7 @@ test("function view assigns every displayed entity once and retains secondary co
   expect(seen.length).toBe(expectedEntities.size);
 });
 
-test("borderless search opens matching entities across all three grouping views and handles empty results", async ({
+test("underlined search opens matching entities across all three grouping views and handles empty results", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 320, height: 844 });
@@ -139,6 +139,9 @@ test("borderless search opens matching entities across all three grouping views 
   expect(
     await search.evaluate((node) => getComputedStyle(node).borderTopWidth),
   ).toBe("0px");
+  expect(
+    await search.evaluate((node) => getComputedStyle(node).borderBottomWidth),
+  ).toBe("1px");
   await search.fill("wfp");
   await expect(
     directory.getByRole("article", {

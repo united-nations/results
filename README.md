@@ -41,7 +41,7 @@ in the System Chart.
 
 The SDG view can group goals into the five pillars plus **Other** for Non-SDG
 expenditure. Pillars are ordered by expenditure and open one at a time, with
-individual SDGs inside. Search uses the shared borderless input across all views.
+individual SDGs inside. Search uses the shared underline input across all views.
 The **By function** view uses `data/system-entity-functions-2025.json`, sourced
 from Open UN's CEB Standard II export, and assigns each entity to its largest
 function allocation. Refresh that snapshot from the local Open UN checkout with
@@ -63,7 +63,8 @@ cover-preview placeholders. Financial period selection does not hide reports.
 They also link to the complete UNSDG listing.
 Discovery and period-matching evidence are described in `docs/uninfo-methodology.md`.
 The country map uses pale framework-coverage shading with proportional
-expenditure circles styled after Open UN. Each circle shows reported expenditure
+blue expenditure circles styled after Open UN, using the same colours for single
+and shared frameworks. Each circle shows reported expenditure
 for calendar 2025; hover to see the annual USD amount. Shared country-team
 workspaces have one joint circle rather than duplicated country totals. A compact
 three-bar note compares 2025 CEB system expenditure, the published 2024 UN
@@ -77,11 +78,19 @@ benchmark is in `data/un-country-team-spending.json`. See `docs/uninfo-methodolo
 for source definitions, the annual processing commands and coverage limitations.
 Country sidebars focus on expenditure for the selected framework period. A
 country/shared-framework overview and every strategic priority, outcome and
-output offer collapsed **Expenditure by entity** and **Required, available and
-expenditure** sections. Entity allocations follow source project-to-framework
-parent IDs; separately retained direct API groupings take precedence where
-available. Missing metrics remain unreported. All money on the system page uses
+output retain their headline expenditure figures and bars, without detailed
+financial breakdowns. Missing metrics remain unreported. All money on the system page uses
 `formatBudget` from `@un-eosg/ui/format-budget`, matching Open UN.
+
+The Country teams main page also prototypes one card per published Kenya
+indicator in `public/data/uninfo/results/1488.json`. Values lead each card,
+followed by the indicator description and compact reported/target comparisons.
+Entity totals and population breakdowns remain separate; missing achievements
+are labelled unreported. The default period is July 2024–June 2025, with other
+published periods available through the selector. Refresh all definitions,
+reporting cells and periods with
+`uv run --no-project --python 3.13 --with-requirements python/uninfo-requirements.txt python python/13-fetch_uninfo_results.py --plan-id 1488`.
+Request provenance is retained in `data/uninfo/results/1488-sources.json`.
 SDG groups can be sorted by goal number (with Non-SDG last) or by expenditure,
 highest first, including the Non-SDG category. Changing sort preserves the open
 group and the original goal numbers.

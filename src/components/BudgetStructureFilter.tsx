@@ -143,6 +143,7 @@ export function BudgetStructureFilter({
         className="w-[28rem] p-2"
       >
         <SearchInput
+          variant="border-bottom"
           aria-label="Search budget structure options"
           placeholder="Search budget structure"
           value={query}

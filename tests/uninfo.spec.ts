@@ -196,7 +196,7 @@ test("organizations open by default, keep one group open, and retain view state 
   await expect(wfp).toBeVisible();
 });
 
-test("map shows annual circles once per workspace, shared colors, and a plan overlapping the map year", async ({
+test("map shows annual circles once per workspace in one blue style and a plan overlapping the map year", async ({
   page,
 }) => {
   await page.goto("/system/");
@@ -215,17 +215,14 @@ test("map shows annual circles once per workspace, shared colors, and a plan ove
     (workspace) => (workspace.expenditure ?? 0) > 0,
   );
   await expect(circles).toHaveCount(positive.length);
-  const sharedCount = positive.filter(
-    (workspace) => workspace.countries.length > 1,
-  ).length;
   await expect
     .poll(() =>
       circles.evaluateAll((nodes) => {
-        const orange = getComputedStyle(document.documentElement)
-          .getPropertyValue("--color-un-orange")
+        const blue = getComputedStyle(document.documentElement)
+          .getPropertyValue("--color-un-blue")
           .trim();
         const sample = document.createElement("span");
-        sample.style.color = orange;
+        sample.style.color = blue;
         document.body.append(sample);
         const expected = getComputedStyle(sample).color;
         sample.remove();
@@ -233,7 +230,7 @@ test("map shows annual circles once per workspace, shared colors, and a plan ove
           .length;
       }),
     )
-    .toBe(sharedCount);
+    .toBe(positive.length);
   const country = manifest.countries[covered[0].properties.ISO3];
   await highlighted.first().dispatchEvent("click");
   const dialog = page.getByRole("dialog", { name: country.name, exact: true });
@@ -266,7 +263,7 @@ test("map shows annual circles once per workspace, shared colors, and a plan ove
   ).toBeLessThan(0.5);
 });
 
-test("sidebar changes plan periods and offers collapsed entity and resource views", async ({
+test("sidebar changes plan periods and keeps expenditure without financial disclosures", async ({
   page,
 }) => {
   await page.goto("/un-system/");
@@ -292,15 +289,10 @@ test("sidebar changes plan periods and offers collapsed entity and resource view
   await expect(
     overview.getByText("Required resources", { exact: true }),
   ).toBeHidden();
-  const entities = overview.locator("details").nth(0);
-  await expect(entities).not.toHaveAttribute("open", "");
-  await entities.locator("summary").click();
-  await expect(entities.getByText("UNICEF", { exact: true })).toBeVisible();
-  const resources = overview.locator("details").nth(1);
-  await resources.locator("summary").click();
   await expect(
-    resources.getByText("Required resources", { exact: true }),
+    overview.getByText("Expenditure", { exact: true }),
   ).toBeVisible();
+  await expect(overview.locator("details")).toHaveCount(0);
   await dialog.getByRole("button", { name: "Close country results" }).click();
   const reopened = await openCountry(page, "Ethiopia");
   await expect(
@@ -459,7 +451,7 @@ test("all country evaluation reports stay grouped by current and previous period
   ).toBe(true);
 });
 
-test("framework expenditure rows keep descriptions before children and drilldowns at each level", async ({
+test("framework expenditure rows keep descriptions before children without financial drilldowns", async ({
   page,
 }) => {
   const plan = JSON.parse(
@@ -491,19 +483,10 @@ test("framework expenditure rows keep descriptions before children and drilldown
   expect(textBounds!.y + textBounds!.height).toBeLessThanOrEqual(
     childBounds!.y,
   );
-  const priorityEntities = priorityItem.locator("details").nth(0);
-  await priorityEntities.locator("summary").click();
-  await expect(
-    priorityEntities.getByText("UNICEF", { exact: true }),
-  ).toBeVisible();
+  await expect(priorityItem.locator("details")).toHaveCount(0);
   await outcome.click();
   const outcomeItem = outcome.locator("xpath=ancestor::li[1]");
-  await expect(
-    outcomeItem.locator("details").first().locator("summary"),
-  ).toHaveText("Expenditure by entity");
-  await expect(
-    outcomeItem.locator("details").nth(1).locator("summary"),
-  ).toHaveText("Required, available and expenditure");
+  await expect(outcomeItem.locator("details")).toHaveCount(0);
   expect(
     await dialog.evaluate(
       (element) => element.scrollWidth <= element.clientWidth,

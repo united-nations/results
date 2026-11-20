@@ -6,6 +6,7 @@ import { SystemEntityDocuments } from "@/components/SystemEntityDocuments";
 import { SystemOverviewTabs } from "@/components/SystemOverviewTabs";
 import { RelatedResources } from "@/components/RelatedResources";
 import { SystemEvaluations } from "@/components/SystemEvaluations";
+import { CountryReportedResults } from "@/components/CountryReportedResults";
 import {
   organizationResources,
   countryTeamResources,
@@ -31,6 +32,7 @@ export default function UNSystem() {
         countryTeams={
           <>
             <CountryResultsFrameworks manifest={manifest} />
+            <CountryReportedResults />
             <RelatedResources
               id="country-team-resources"
               resources={countryTeamResources}

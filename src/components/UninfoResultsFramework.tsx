@@ -5,7 +5,6 @@ import { FinancialBreakdownRow } from "@un-eosg/ui/components/financial-breakdow
 import { FinancialPanelBar } from "@un-eosg/ui/components/financial-panel-parts";
 import { typography } from "@un-eosg/ui/typography";
 import { formatBudget } from "@un-eosg/ui/format-budget";
-import { UninfoFinancialDetails } from "@/components/UninfoFinancialDetails";
 import type { UninfoFrameworkNode, UninfoResources } from "@/lib/uninfo";
 
 const levels = ["Strategic priority", "Outcome", "Output"];
@@ -94,10 +93,6 @@ function FrameworkBranch({
             {node.description}
           </p>
         )}
-        <UninfoFinancialDetails
-          resources={resources}
-          entities={node.agencies}
-        />
         {node.children?.length ? (
           <ul className="mt-4 space-y-1">
             {node.children.map((child) => (

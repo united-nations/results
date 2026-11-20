@@ -96,7 +96,7 @@ export function UninfoChoropleth({
           ? [
               {
                 id: properties.featureId,
-                x: shared ? "Shared" : "Single-country",
+                x: "Available",
                 data: {
                   code: properties.ISO3,
                   name: country.name,
@@ -180,14 +180,7 @@ export function UninfoChoropleth({
       })
       .sort((a, b) => (b.data.expenditure ?? 0) - (a.data.expenditure ?? 0));
   }, [map, countries, annual]);
-  const circleColors = useMemo(
-    () =>
-      bubbles.map((point) =>
-        point.data.shared ? "var(--color-un-orange)" : "var(--color-un-blue)",
-      ),
-    [bubbles],
-  );
-  const container = useMapBubbleZoom(circleColors);
+  const container = useMapBubbleZoom();
 
   if (!map)
     return (
@@ -219,11 +212,8 @@ export function UninfoChoropleth({
           mapBorderColor="var(--color-background)"
           mapNoDataColor="var(--color-muted)"
           choroplethScaleType="categorical"
-          colorDomain={["Single-country", "Shared"]}
-          colors={[
-            "var(--color-un-blue-tint-50)",
-            "var(--color-un-orange-tint)",
-          ]}
+          colorDomain={["Available"]}
+          colors={["var(--color-un-blue-tint-50)"]}
           dotColor="var(--color-un-blue)"
           dotBorderColor="var(--color-un-blue)"
           radius={referenceRadius}
@@ -269,7 +259,7 @@ export function UninfoChoropleth({
       <div
         className={`${typography.caption} pointer-events-none absolute bottom-3 left-3 flex items-center gap-2 rounded border bg-background/95 px-3 py-2 shadow-sm`}
       >
-        <svg aria-hidden="true" width="58" height="28">
+        <svg aria-hidden="true" width="28" height="28">
           <circle
             cx="14"
             cy="14"
@@ -277,15 +267,6 @@ export function UninfoChoropleth({
             fill="var(--color-un-blue)"
             fillOpacity="0.28"
             stroke="var(--color-un-blue)"
-            strokeWidth="1.5"
-          />
-          <circle
-            cx="44"
-            cy="14"
-            r={referenceRadius}
-            fill="var(--color-un-orange)"
-            fillOpacity="0.28"
-            stroke="var(--color-un-orange)"
             strokeWidth="1.5"
           />
         </svg>

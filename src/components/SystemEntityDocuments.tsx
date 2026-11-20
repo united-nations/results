@@ -628,7 +628,7 @@ export function SystemEntityDocuments() {
       <div className="mb-5 flex flex-wrap items-center justify-between gap-4">
         <div className="w-full sm:w-80">
           <SearchInput
-            variant="minimal"
+            variant="border-bottom"
             aria-label="Search entities and groups"
             placeholder="Search entities or groups…"
             value={query}

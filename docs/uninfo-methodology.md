@@ -19,22 +19,20 @@ Financial requests use explicit `planIds` and include all reported financial
 years for the selected plan. The API's `workspaceIds` parameter otherwise
 selects its newest plan, which can hide an older plan's financial observations.
 Each framework row shows expenditure in USD, with an expenditure-only tooltip.
-The country/shared-framework overview and every hierarchy item have separate,
-collapsed sections for entity expenditure and for the required/available/spent
-comparison. Parent and child hierarchy finances overlap.
+The country/shared-framework overview and every hierarchy item retain headline
+expenditure figures and bars; entity and required/available/spent breakdowns are
+omitted from the sidebar. Parent and child hierarchy finances overlap.
 
 ## Expenditure circles
 
 The map overlays expenditure circles using Open UN's circle styling: translucent
 blue fill, solid blue outlines and circle area proportional to USD expenditure.
 A $1 billion reference circle has a 12px radius at the initial zoom. The country
-fill is pale blue for single-country frameworks and pale orange for shared
-frameworks. Shared expenditure circles use orange outlines and fills, while
-single-country circles retain UN Blue. The legend labels both categories; size
-scaling is the same for both. Circles counter-scale map zoom completely to keep
+fill is pale blue for all available frameworks, and all expenditure circles use
+UN Blue. Shared and single-country frameworks use the same visual treatment.
+Circles counter-scale map zoom completely to keep
 their screen sizes consistent with the fixed expenditure-size legend.
-The category legend sits directly above the map, after the scope note and country
-selector. The initial map scale is capped at 0.9 to leave space for the shared
+The initial map scale is capped at 0.9 to leave space for the shared
 Pacific marker near the date line; the earlier enlarged view could clip it.
 
 The map uses calendar-year **2025** expenditure, rather than full-plan figures.

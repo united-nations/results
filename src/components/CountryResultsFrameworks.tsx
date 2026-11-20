@@ -156,24 +156,6 @@ export function CountryResultsFrameworks({
             }}
           </SearchablePicker>
         </div>
-        <div
-          className={`${typography.caption} mt-4 mb-2 flex flex-wrap gap-x-5 gap-y-2`}
-        >
-          <span className="inline-flex items-center gap-2">
-            <span
-              aria-hidden="true"
-              className="size-3 rounded-sm border border-un-blue bg-un-blue-tint-50"
-            />
-            Single-country framework
-          </span>
-          <span className="inline-flex items-center gap-2">
-            <span
-              aria-hidden="true"
-              className="size-3 rounded-sm border border-un-orange bg-un-orange-tint"
-            />
-            Shared framework
-          </span>
-        </div>
         <UninfoMap
           countries={countries}
           annual={annualExpenditure}

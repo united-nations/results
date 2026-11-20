@@ -8,7 +8,6 @@ import {
 } from "@un-eosg/ui/components/financial-panel-parts";
 import { formatBudget } from "@un-eosg/ui/format-budget";
 import { UninfoResultsFramework } from "@/components/UninfoResultsFramework";
-import { UninfoFinancialDetails } from "@/components/UninfoFinancialDetails";
 import { usePublicJson } from "@/hooks/usePublicJson";
 import type { UninfoPlan } from "@/lib/uninfo";
 
@@ -52,12 +51,6 @@ export function UninfoCountryDetails({ planId }: { planId: number }) {
               ? "Not reported"
               : formatBudget(plan.resources.spent)
           }
-        />
-        <UninfoFinancialDetails
-          resources={
-            plan.resources ?? { required: null, available: null, spent: null }
-          }
-          entities={plan.agencies}
         />
       </section>
       <section aria-label="Results framework">

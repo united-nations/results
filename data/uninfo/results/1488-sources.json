@@ -1,0 +1,431 @@
+{
+  "planId": 1488,
+  "retrievedAt": "2026-11-20T20:32:00.386878+00:00",
+  "requests": [
+    {
+      "endpoint": "plan/public/entity/search",
+      "request": {
+        "planIds": [
+          1488
+        ],
+        "coreentityTypeIds": [
+          7
+        ],
+        "page": 1,
+        "limit": 200
+      },
+      "sha256": "74bb20f81587de7d835ab9b1a0c222402b1a6fddb8140a0fd79c2a2b781a54d6",
+      "rows": 87
+    },
+    {
+      "endpoint": "planEntityCell/search",
+      "request": {
+        "planEntityIds": [
+          149753,
+          146967,
+          140951,
+          140868,
+          127408,
+          117424,
+          115854,
+          115681,
+          114261,
+          114257,
+          113416,
+          113415,
+          113284,
+          113282,
+          113281
+        ],
+        "page": 1,
+        "limit": 200
+      },
+      "sha256": "8a383af262ee14bf68d0f4af2b9b447e8472cd642c2c5d1df35229ce774182eb",
+      "rows": 200
+    },
+    {
+      "endpoint": "planEntityCell/search",
+      "request": {
+        "planEntityIds": [
+          149753,
+          146967,
+          140951,
+          140868,
+          127408,
+          117424,
+          115854,
+          115681,
+          114261,
+          114257,
+          113416,
+          113415,
+          113284,
+          113282,
+          113281
+        ],
+        "page": 2,
+        "limit": 200
+      },
+      "sha256": "5bd849f053a78d108d0ef132353e54435e4821d1551a3c61e3fc22c2383a9451",
+      "rows": 105
+    },
+    {
+      "endpoint": "planEntityCell/search",
+      "request": {
+        "planEntityIds": [
+          112696,
+          112694,
+          112693,
+          112688,
+          112679,
+          112678,
+          112636,
+          112635,
+          112634,
+          112632,
+          112631,
+          112630,
+          112628,
+          112627,
+          112625
+        ],
+        "page": 1,
+        "limit": 200
+      },
+      "sha256": "aec784c728860ea1b13198c0dbdcaf2cbf2b409b9a0f73bf8633129364d3d96f",
+      "rows": 200
+    },
+    {
+      "endpoint": "planEntityCell/search",
+      "request": {
+        "planEntityIds": [
+          112696,
+          112694,
+          112693,
+          112688,
+          112679,
+          112678,
+          112636,
+          112635,
+          112634,
+          112632,
+          112631,
+          112630,
+          112628,
+          112627,
+          112625
+        ],
+        "page": 2,
+        "limit": 200
+      },
+      "sha256": "ac25dd250e3726ee979d9b8823292ec5350f60826ad00b03bd7c91e515400c18",
+      "rows": 200
+    },
+    {
+      "endpoint": "planEntityCell/search",
+      "request": {
+        "planEntityIds": [
+          112696,
+          112694,
+          112693,
+          112688,
+          112679,
+          112678,
+          112636,
+          112635,
+          112634,
+          112632,
+          112631,
+          112630,
+          112628,
+          112627,
+          112625
+        ],
+        "page": 3,
+        "limit": 200
+      },
+      "sha256": "f30e8be91ce0977be1cdac95610befb356ef3ae6d9b4b123f2a9f606b7858968",
+      "rows": 200
+    },
+    {
+      "endpoint": "planEntityCell/search",
+      "request": {
+        "planEntityIds": [
+          112696,
+          112694,
+          112693,
+          112688,
+          112679,
+          112678,
+          112636,
+          112635,
+          112634,
+          112632,
+          112631,
+          112630,
+          112628,
+          112627,
+          112625
+        ],
+        "page": 4,
+        "limit": 200
+      },
+      "sha256": "0c3a5ce077a2c356b7915fe4e1bcd54c34d9a1667c1c9b213a885fb71e5c206b",
+      "rows": 48
+    },
+    {
+      "endpoint": "planEntityCell/search",
+      "request": {
+        "planEntityIds": [
+          112622,
+          112229,
+          112161,
+          110789,
+          102493,
+          102492,
+          102489,
+          102488,
+          102487,
+          102486,
+          102485,
+          102484,
+          102479,
+          102476,
+          95049
+        ],
+        "page": 1,
+        "limit": 200
+      },
+      "sha256": "a27fa91d9cc446e6cdc40fe4e0be1fec5b497f51139c1fefbffb8a9c432c4c18",
+      "rows": 200
+    },
+    {
+      "endpoint": "planEntityCell/search",
+      "request": {
+        "planEntityIds": [
+          112622,
+          112229,
+          112161,
+          110789,
+          102493,
+          102492,
+          102489,
+          102488,
+          102487,
+          102486,
+          102485,
+          102484,
+          102479,
+          102476,
+          95049
+        ],
+        "page": 2,
+        "limit": 200
+      },
+      "sha256": "5129ba8f588d93719287cfc9ae439f081c170a4be11bba737b241d6eed94cbef",
+      "rows": 200
+    },
+    {
+      "endpoint": "planEntityCell/search",
+      "request": {
+        "planEntityIds": [
+          112622,
+          112229,
+          112161,
+          110789,
+          102493,
+          102492,
+          102489,
+          102488,
+          102487,
+          102486,
+          102485,
+          102484,
+          102479,
+          102476,
+          95049
+        ],
+        "page": 3,
+        "limit": 200
+      },
+      "sha256": "80a697c219eccefc4a334527e7db27099e1f776e6c0a11a2b88cd974048b232c",
+      "rows": 77
+    },
+    {
+      "endpoint": "planEntityCell/search",
+      "request": {
+        "planEntityIds": [
+          95047,
+          95044,
+          95043,
+          95040,
+          95039,
+          95034,
+          95033,
+          95028,
+          95027,
+          95025,
+          95023,
+          95014,
+          95010,
+          95008,
+          95006
+        ],
+        "page": 1,
+        "limit": 200
+      },
+      "sha256": "aac9f7062ce45274691010dee94949a3d8f1ccbf133b2b3a5cb0f94f81941a6d",
+      "rows": 200
+    },
+    {
+      "endpoint": "planEntityCell/search",
+      "request": {
+        "planEntityIds": [
+          95047,
+          95044,
+          95043,
+          95040,
+          95039,
+          95034,
+          95033,
+          95028,
+          95027,
+          95025,
+          95023,
+          95014,
+          95010,
+          95008,
+          95006
+        ],
+        "page": 2,
+        "limit": 200
+      },
+      "sha256": "58d89c35b86bc91b6590b04c5b306ad69be53b442bbac0e02f83cde5b36e0749",
+      "rows": 200
+    },
+    {
+      "endpoint": "planEntityCell/search",
+      "request": {
+        "planEntityIds": [
+          95047,
+          95044,
+          95043,
+          95040,
+          95039,
+          95034,
+          95033,
+          95028,
+          95027,
+          95025,
+          95023,
+          95014,
+          95010,
+          95008,
+          95006
+        ],
+        "page": 3,
+        "limit": 200
+      },
+      "sha256": "bef0575a08d17a18c0f2419a82c23ccf2e3994e8e599f448744397264b0ea6d1",
+      "rows": 200
+    },
+    {
+      "endpoint": "planEntityCell/search",
+      "request": {
+        "planEntityIds": [
+          95047,
+          95044,
+          95043,
+          95040,
+          95039,
+          95034,
+          95033,
+          95028,
+          95027,
+          95025,
+          95023,
+          95014,
+          95010,
+          95008,
+          95006
+        ],
+        "page": 4,
+        "limit": 200
+      },
+      "sha256": "ea5155ede4cd6c658d9b4f66e498dc8c5d16fab9f52a4858cb1f1b878dad5c30",
+      "rows": 32
+    },
+    {
+      "endpoint": "planEntityCell/search",
+      "request": {
+        "planEntityIds": [
+          95005,
+          94990,
+          94989,
+          94985,
+          90637,
+          90636,
+          90635,
+          90632,
+          90631,
+          90630,
+          90629,
+          90628,
+          90625,
+          90623,
+          90622
+        ],
+        "page": 1,
+        "limit": 200
+      },
+      "sha256": "b4c22ba91fed452a688979f9cffe2787606f0fb7270297abf931ceae9c129748",
+      "rows": 200
+    },
+    {
+      "endpoint": "planEntityCell/search",
+      "request": {
+        "planEntityIds": [
+          90620,
+          90618,
+          90615,
+          90613,
+          90612,
+          90611,
+          90610,
+          90609,
+          90608,
+          86885,
+          86884,
+          86882
+        ],
+        "page": 1,
+        "limit": 200
+      },
+      "sha256": "c7c2d682cb999f5e11864097570e6b2b98772d8d85e87a8e37fa96d8adfdbfcf",
+      "rows": 175
+    },
+    {
+      "endpoint": "timeframe/search",
+      "request": {
+        "timeframeIds": [
+          67,
+          1087,
+          1669,
+          1670,
+          1671,
+          1672,
+          2205,
+          4730,
+          11468,
+          13329
+        ],
+        "page": 1,
+        "limit": 200
+      },
+      "sha256": "0aac70a5075545dec8b6abc54b7699968d9f85c696641e1368ab1a70d2189570",
+      "rows": 10
+    }
+  ],
+  "indicatorCount": 87,
+  "cellCount": 2437
+}
